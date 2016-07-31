@@ -1,0 +1,62 @@
+%% LyX 2.1.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[LGR,T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amstext}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\DeclareRobustCommand{\greektext}{%
+  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}}
+\DeclareRobustCommand{\textgreek}[1]{\leavevmode{\greektext #1}}
+\DeclareFontEncoding{LGR}{}{}
+\DeclareTextSymbol{\~}{LGR}{126}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\part*{Arbres}
+
+Els arbres es defineixen com a grafs connexos sense cicles, de tal
+manera que hi ha un únic camí entre dos nodes qualsevols. Per això
+es diu que si $G$ és un arbre, tan sols existeix un camí elemental
+entre $u,v$ \ensuremath{\in} $V(G)$. Si a un arbre se li afegeix
+una aresta, genera cicles, i per tant deixa de ser un arbre. De la
+mateixa manera, si es treu una aresta, el graf deixa de ser connex. 
+
+
+\subsection*{Proposicions}
+
+
+\paragraph{Proposició 1: Si $T$ és un arbre amb $n\geq2$, $\delta=1$ i hi
+ha com a mínim 2 nodes de grau 1.}
+
+Demostració 1: Tots els nodes d'un arbre tenen tan sols un ``pare'',
+per tant, tots els nodes que no tinguin ``fills'' seràn de grau
+1. Si això no es complís, voldria dir que hi ha cicles. Com que hi
+haurà un noment que l'arbre deixi de créixer, els últims nodes seràn
+de grau 1. De la mateixa manera, com que el graf té com a mínim 2
+nodes i no pot decrèixer, haurà de tenir com a mínim dues branques,
+i pel que hem dit abans, també dues fulles. 
+
+
+\paragraph*{Proposició 2: El nombre de fulles de $T$ és més gran o igual que
+$\text{\textgreek{D}}$}
+
+Demostració 2: Del node amb grau $\text{\textgreek{D}}$ en sortiràn
+$\text{\textgreek{D}}$ nodes. Com que el graf no pot decrèixer ni
+crèixer infinitament, cadascun d'aquests nodes tindrà o bé una fulla
+o bé una branca, que acabarà en una fulla.
+
+
+\paragraph{Proposició 3: Tot graf connex conté un arbre amb el mateix nombre
+de nodes}
+
+Demostració 3: Tot el que priva a un graf de ser un arbre són els
+cicles. Si es treu una aresta d'un cicle, el graf segueix siguent
+conex. Si anem trient arestes dels cicles del graf sense fer-lo disconex.
+\end{document}

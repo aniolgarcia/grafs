@@ -217,6 +217,8 @@ El nombre d'arestes que són incidents a un vèrtex
 .
  La successió de graus d'un graf serà la successió que s'obté al ordenar
  de manera creixent els graus dels seus vèrtex.
+ Cal dir que no és un problema gens trivial saber si una successió determinada
+ pot ser una successió de graus d'un graf.
  El grau mínim d'un graf 
 \begin_inset Formula $G$
 \end_inset
@@ -235,7 +237,38 @@ El nombre d'arestes que són incidents a un vèrtex
 \end_inset
 
 .
- Amb tots aquests conceptes ja podem veure el teorema d'Euler, un dels primers
+ Si a un graf en treiem una aresta o un node, en resulta un altre (o més
+ d'un) graf connex.
+ D'aquesta manera, si 
+\begin_inset Formula $v\text{∈}V(G)$
+\end_inset
+
+, 
+\begin_inset Formula $G-v$
+\end_inset
+
+ és el graf que s'obté al suprimir el vèrtex 
+\begin_inset Formula $v$
+\end_inset
+
+ i totes les seves arestes incidents.
+ De la mateixa manera, si 
+\begin_inset Formula $e\text{∈}E(G)$
+\end_inset
+
+, 
+\begin_inset Formula $G-e$
+\end_inset
+
+ és el graf que s'obté al eliminiar la aresta 
+\begin_inset Formula $e$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Amb tots aquests conceptes ja podem veure el teorema d'Euler, un dels primers
  teoremes en teoria de grafs i un dels més importants.
 \end_layout
 
@@ -357,7 +390,7 @@ status open
 \backslash
 sum_{v
 \backslash
-in v(G)}d(v)=
+in V(G)}d(v)=
 \backslash
 sum_{v
 \backslash
@@ -379,6 +412,592 @@ D'aquesta demostració en treiem una altra afirmació:
 
 En tot graf, el nombre de vèrtex amb grau imparell, és parell.
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tipus de grafs
+\end_layout
+
+\begin_layout Standard
+Fins ara hem vist els conceptes bèsics en teoria de grafis i algunes de
+ les propietats que compleixen tots els grafs.
+ No obstant, existeixen diversos tipus de grafs que tenen propietats especials:
+\end_layout
+
+\begin_layout Subsection
+Grafs complementaris
+\end_layout
+
+\begin_layout Standard
+El graf complementari del graf 
+\begin_inset Formula $G$
+\end_inset
+
+ és el graf 
+\begin_inset Formula $H$
+\end_inset
+
+ amb els mateixos vèrtexs que 
+\begin_inset Formula $G$
+\end_inset
+
+, de manera que dos vèrtexs de 
+\begin_inset Formula $H$
+\end_inset
+
+ seràn adjacents si i només si a 
+\begin_inset Formula $G$
+\end_inset
+
+ no ho són.
+ Formalment, si 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ és un graf simple i 
+\begin_inset Formula $K$
+\end_inset
+
+ és el conjunt de totes les possibles combinacions de dos elements de 
+\begin_inset Formula $V$
+\end_inset
+
+, llavors 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$H=(V,K
+\backslash
+setminus E)$
+\end_layout
+
+\end_inset
+
+.
+ Pel complementari de 
+\begin_inset Formula $G$
+\end_inset
+
+ s'escriu 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+bar{G}$
+\end_layout
+
+\end_inset
+
+ o 
+\begin_inset Formula $G'$
+\end_inset
+
+.
+ Per obtenir el graf complementari de 
+\begin_inset Formula $G$
+\end_inset
+
+ tan sols s'han de posar les arestes que falten per obtenir un graf complet
+ i trure totes les que hi eren inicialment (ja que 
+\begin_inset Formula $|E(G)|+|E(\bar{{G}})|=|E(K_{n})|$
+\end_inset
+
+, on 
+\begin_inset Formula $n=|V(G)|$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+(Adjuntar imatge de grafs complementaris)
+\end_layout
+
+\begin_layout Subsection
+Grafs regulars
+\end_layout
+
+\begin_layout Standard
+Es diu que un graf és regular de grau 
+\begin_inset Formula $r$
+\end_inset
+
+ quan tots els seus vèrtexs tenen grau 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ Formalment, un graf és 
+\begin_inset Formula $r$
+\end_inset
+
+-regular quan 
+\begin_inset Formula $Δ=δ=r$
+\end_inset
+
+.
+ Un graf 
+\begin_inset Formula $0$
+\end_inset
+
+-regular és un graf nul (veure apartat 2.3), un graf 
+\begin_inset Formula $1$
+\end_inset
+
+-regular consisteix en arestes separades entre elles i un graf 
+\begin_inset Formula $2$
+\end_inset
+
+-regular consisteix en un o més cicles separats.
+ A partir d'aquí, els més importants tenen noms propis, com per exemple
+ els 
+\begin_inset Formula $3$
+\end_inset
+
+-regulars, que són els cúbics; els 
+\begin_inset Formula $4$
+\end_inset
+
+-regulars, quàrtics; els 
+\begin_inset Formula $7$
+\end_inset
+
+-regulars, grafs de Witt truncats dobles; els 
+\begin_inset Formula $8$
+\end_inset
+
+-regulars, grafs de 24 cel·les...
+ Evidentment, per un 
+\begin_inset Formula $r$
+\end_inset
+
+-regular no necessàriament existeix només un graf, sinó que sovint s'en
+ poden fer d'altres amb diferent nombre de vèrtexs.
+ A la següent imatge es poden veure diversos exemples de grafs regulars,
+ alguns d'ells amb el mateix ordre i diferent nombre de vèrtexs:
+\end_layout
+
+\begin_layout Standard
+Per a tots els grafs 
+\begin_inset Formula $r$
+\end_inset
+
+-regulars amb 
+\begin_inset Formula $n$
+\end_inset
+
+ vèrtexs es compleix que 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ |E|=
+\backslash
+frac{1}{2}nr 
+\backslash
+]
+\end_layout
+
+\end_inset
+
+on 
+\begin_inset Formula $|E|$
+\end_inset
+
+ és el nombre d'arestes.
+\end_layout
+
+\begin_layout Standard
+(Adjuntar imatge de grafs regulars)
+\end_layout
+
+\begin_layout Subsection
+Grafs nuls o buits
+\end_layout
+
+\begin_layout Standard
+Els grafs nuls o buits són grafs sense arestes, conjunts de 
+\begin_inset Formula $n$
+\end_inset
+
+ vértexs.
+ Són els complementaris dels grafs complets, i per tant la seva nomenclatura
+ és 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+bar{K}_{n}$
+\end_layout
+
+\end_inset
+
+ o simplement 
+\begin_inset Formula $N_{n}$
+\end_inset
+
+.
+ S'anomena grafs nuls a 
+\begin_inset Formula $N_{0}$
+\end_inset
+
+ i buits a la resta, però com que normalment no s'utilitza 
+\begin_inset Formula $N_{0}$
+\end_inset
+
+, convencionalment es diuen nuls a tot el conjunt dels buits.
+ (Adjuntar imatge dels grafs buits).
+\end_layout
+
+\begin_layout Subsection
+Grafs complets
+\end_layout
+
+\begin_layout Standard
+Un graf complet és un graf on cada vèrtex està unit a tots els altres una
+ sola vegada.
+ Un graf complet amb 
+\begin_inset Formula $n$
+\end_inset
+
+ nodes és un graf simple i 
+\begin_inset Formula $(n-1)$
+\end_inset
+
+-regular i la seva nomenclatura és 
+\begin_inset Formula $K_{n}$
+\end_inset
+
+.
+ Els grafs complets tenen 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+${n
+\backslash
+choose 2}=
+\backslash
+frac{n(n-1)}{2}$
+\end_layout
+
+\end_inset
+
+ arestes.
+ El nombre de cicles que conté un graf complet queda determinat per la següent
+ igualtat:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ C_{n} =
+\backslash
+sum_{K=3}^{n}
+\backslash
+frac{1}{2}{n
+\backslash
+choose k}(k-1)! 
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Adjuntar imatge de grafs complets)
+\end_layout
+
+\begin_layout Subsection
+Cicles
+\end_layout
+
+\begin_layout Standard
+Els cicles són grafs 2-regulars amb 
+\begin_inset Formula $n$
+\end_inset
+
+ vèrtexs i 
+\begin_inset Formula $n$
+\end_inset
+
+ arestes, i s'anomenen 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+.
+ El graf lineal d'un cicle és ell mateix.
+ (Adjuntar imatge de cicles)
+\end_layout
+
+\begin_layout Subsection
+Grafs bipartits
+\end_layout
+
+\begin_layout Standard
+Els grafs bipartits són aquells en els quals els vèrtexs es poden separar
+ en dos conjunts disjunts
+\begin_inset Formula $U$
+\end_inset
+
+ i 
+\begin_inset Formula $V$
+\end_inset
+
+ (és a dir, que els dos conjunts no tinguin elements comuns) de tal manera
+ que un vèrtex d'un conjunt no sigui mai adjacent a un altre vèrtex del
+ seu mateix conjunt.
+ Es pot dir també que un graf és bipartit si no conté cicles de longitud
+ senar.
+ Llavors, podem deduïr que tots els els grafs 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+ amb 
+\begin_inset Formula $n$
+\end_inset
+
+ parell, són també grafs bipartits.
+ (adjuntar imatge de grafs bipartits)
+\end_layout
+
+\begin_layout Subsection
+Grafs bipartits complets
+\end_layout
+
+\begin_layout Standard
+Els grafs bipartits complets són grafs bipartits en esl quals cada element
+ del conjunt 
+\begin_inset Formula $U$
+\end_inset
+
+ està unit a tots els elements dels del conjunt 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ S'anomenen 
+\begin_inset Formula $K_{m,n}$
+\end_inset
+
+, on 
+\begin_inset Formula $m=|U|$
+\end_inset
+
+ i 
+\begin_inset Formula $n=|N|$
+\end_inset
+
+.
+ En els grafs bipartits 
+\begin_inset Formula $K_{m,n}=K_{n,m}$
+\end_inset
+
+ , 
+\begin_inset Formula $|V|=n+m$
+\end_inset
+
+ i 
+\begin_inset Formula $|E|=mn$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Grafs estrella
+\end_layout
+
+\begin_layout Standard
+Un graf estrella de grau 
+\begin_inset Formula $n$
+\end_inset
+
+, conté un vèrtex amb grau 
+\begin_inset Formula $n-1$
+\end_inset
+
+ i els 
+\begin_inset Formula $n-1$
+\end_inset
+
+ vèrtexs restants tenen grau 1.
+ S'anomena 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ i són estrelles tots els grafs bipartits de la forma 
+\begin_inset Formula $K_{1,n-1}$
+\end_inset
+
+o 
+\begin_inset Formula $K_{n-1,1}$
+\end_inset
+
+.
+ El graf lineal de 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ és 
+\begin_inset Formula $K_{n-1}$
+\end_inset
+
+.
+ (Afegir imatge de graf estrella)
+\end_layout
+
+\begin_layout Subsection
+Graf lineal
+\end_layout
+
+\begin_layout Standard
+Un graf lineal 
+\begin_inset Formula $L(G)$
+\end_inset
+
+ d'un graf 
+\begin_inset Formula $G$
+\end_inset
+
+ és un graf que representa les adjacències entre les arestes de 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Formalment, donat un graf 
+\begin_inset Formula $G$
+\end_inset
+
+, el graf lineal 
+\begin_inset Formula $L(G)$
+\end_inset
+
+ és aquell en el qual cada vèrtex correspon a una aresta de 
+\begin_inset Formula $G$
+\end_inset
+
+ i dos vèrtexs són adjacents només si les arestes corresponents a 
+\begin_inset Formula $G$
+\end_inset
+
+ són adjacents (comparteixen un vèrtex).
+ El graf lineal d'un graf amb 
+\begin_inset Formula $n$
+\end_inset
+
+ nodes, 
+\begin_inset Formula $e$
+\end_inset
+
+ arestes i amb vèrtexs de graus 
+\begin_inset Formula $d_{i}$
+\end_inset
+
+ té 
+\begin_inset Formula $n'=e$
+\end_inset
+
+ nodes i 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ e'=
+\backslash
+frac{1}{2} 
+\backslash
+sum_{i=1}^{n}d_{i}^{2}-e 
+\backslash
+]
+\end_layout
+
+\end_inset
+
+arestes.
+\end_layout
+
+\begin_layout Subsection
+Arbres
+\end_layout
+
+\begin_layout Standard
+Els arbres són un tipus molt important de grafs: són grafs connexos sense
+ cicles, de manera que existeix un únic camí entre dos vèrtexs.
+ Si a un arbre se li afegeix una aresta, es genera un cicle, i se s'en treu
+ una, el graf deixa de ser connex.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Teorema 2
+\end_layout
+
+\begin_layout Quote
+Un arbre amb 
+\begin_inset Formula $n$
+\end_inset
+
+ nodes té 
+\begin_inset Formula $n-1$
+\end_inset
+
+ arestes.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Demostració: 
+\emph default
+Si comprovem el cas on 
+\begin_inset Formula $n=1$
+\end_inset
+
+, veiem que l'arbre no té arestes, i per tant, es compleix el teorema.
+ Sabem que si treiem una aresta a un arbre, aquest deixa de ser connex,
+ i en sortiran 2 arbres, 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ i 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+.
+ Per hipòtesis, 
+\begin_inset Formula $T_{1}$
 \end_inset
 
 

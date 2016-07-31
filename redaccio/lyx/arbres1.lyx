@@ -1,0 +1,181 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Arbres
+\end_layout
+
+\begin_layout Standard
+Els arbres es defineixen com a grafs connexos sense cicles, de tal manera
+ que hi ha un únic camí entre dos nodes qualsevols.
+ Per això es diu que si 
+\begin_inset Formula $G$
+\end_inset
+
+ és un arbre, tan sols existeix un camí elemental entre 
+\begin_inset Formula $u,v$
+\end_inset
+
+ ∈ 
+\begin_inset Formula $V(G)$
+\end_inset
+
+.
+ Si a un arbre se li afegeix una aresta, genera cicles, i per tant deixa
+ de ser un arbre.
+ De la mateixa manera, si es treu una aresta, el graf deixa de ser connex.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Proposicions
+\end_layout
+
+\begin_layout Paragraph
+Proposició 1: Si 
+\begin_inset Formula $T$
+\end_inset
+
+ és un arbre amb 
+\begin_inset Formula $n\geq2$
+\end_inset
+
+, 
+\begin_inset Formula $δ=1$
+\end_inset
+
+ i hi ha com a mínim 2 nodes de grau 1.
+\end_layout
+
+\begin_layout Standard
+Demostració 1: Tots els nodes d'un arbre tenen tan sols un 
+\begin_inset Quotes eld
+\end_inset
+
+pare
+\begin_inset Quotes erd
+\end_inset
+
+, per tant, tots els nodes que no tinguin 
+\begin_inset Quotes eld
+\end_inset
+
+fills
+\begin_inset Quotes erd
+\end_inset
+
+ seràn de grau 1.
+ Si això no es complís, voldria dir que hi ha cicles.
+ Com que hi haurà un noment que l'arbre deixi de créixer, els últims nodes
+ seràn de grau 1.
+ De la mateixa manera, com que el graf té com a mínim 2 nodes i no pot decrèixer
+, haurà de tenir com a mínim dues branques, i pel que hem dit abans, també
+ dues fulles.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Proposició 2: El nombre de fulles de 
+\begin_inset Formula $T$
+\end_inset
+
+ és més gran o igual que 
+\begin_inset Formula $\text{Δ}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Demostració 2: Del node amb grau 
+\begin_inset Formula $\text{Δ}$
+\end_inset
+
+ en sortiràn 
+\begin_inset Formula $\text{Δ}$
+\end_inset
+
+ nodes.
+ Com que el graf no pot decrèixer ni crèixer infinitament, cadascun d'aquests
+ nodes tindrà o bé una fulla o bé una branca, que acabarà en una fulla.
+\end_layout
+
+\begin_layout Paragraph
+Proposició 3: Tot graf connex conté un arbre amb el mateix nombre de nodes
+\end_layout
+
+\begin_layout Standard
+Demostració 3: Tot el que priva a un graf de ser un arbre són els cicles.
+ Si es treu una aresta d'un cicle, el graf segueix siguent conex.
+ Si anem trient arestes dels cicles del graf sense fer-lo disconex.
+\end_layout
+
+\end_body
+\end_document

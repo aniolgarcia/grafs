@@ -4,8 +4,13 @@
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{amstext}
+\usepackage{amsmath}
 \usepackage{babel}
+\usepackage{graphicx}
 \begin{document}
+
+\section{Principis bàsics}
+
 Un graf $G=(V,E)$ es defineix com un conjunt de vèrtex (o nodes)
 $V=\{v_{1},v_{2},...,v_{n}\}$ i un conjunt d'arestes $E=\{e_{1},e_{2},...,e_{m}\}$,
 que uneixen dos vèrtexs $v_{i}$ i $v_{j}$, tals que $v_{i},v_{j}\text{\ensuremath{\in}}V$.
@@ -49,9 +54,17 @@ quan es parli de grafs, s'exclouràn els multigrafs i grafs dirigits.}
 El nombre d'arestes que són incidents a un vèrtex $v$ (contant els
 llaços com a dues arestes) determinen el grau de $v$, que es representa
 amb $d(v)$. La successió de graus d'un graf serà la successió que
-s'obté al ordenar de manera creixent els graus dels seus vèrtex. El
-grau mínim d'un graf $G$ queda determinat de la següent manera: $\delta(G)=min\{d(g):v\text{\ensuremath{\in}}V(G)\}$.
+s'obté al ordenar de manera creixent els graus dels seus vèrtex. Cal
+dir que no és un problema gens trivial saber si una successió determinada
+pot ser una successió de graus d'un graf. El grau mínim d'un graf
+$G$ queda determinat de la següent manera: $\delta(G)=min\{d(g):v\text{\ensuremath{\in}}V(G)\}$.
 De manera similar, el grau màxim de $G$, $\text{\ensuremath{\Delta}}(G)=max\{d(v):v\text{\ensuremath{\in}}V\}$.
+Si a un graf en treiem una aresta o un node, en resulta un altre (o
+més d'un) graf connex. D'aquesta manera, si $v\text{\ensuremath{\in}}V(G)$,
+$G-v$ és el graf que s'obté al suprimir el vèrtex $v$ i totes les
+seves arestes incidents. De la mateixa manera, si $e\text{\ensuremath{\in}}E(G)$,
+$G-e$ és el graf que s'obté al eliminiar la aresta $e$.
+
 Amb tots aquests conceptes ja podem veure el teorema d'Euler, un dels
 primers teoremes en teoria de grafs i un dels més importants.
 
@@ -59,12 +72,182 @@ primers teoremes en teoria de grafs i un dels més importants.
 \subparagraph{Teorema 1 (Euler)}
 \begin{quotation}
 ``En tot graf, la suma dels graus dels vèrtex és igual al doble del
-nombre d'arestes.''
-
-\[
-\sum_{vV}
-\]
-
+nombre d'arestes.''\[ \sum_{v\in V}d(v)=2|E| \]
 \end{quotation}
+\emph{Demostració}: Només cal veure que cada aresta té dos extrems
+i que suma dos en el total dels graus. La demostració formal és més
+complicada, i es troba mitjançant el nombre d'arestes:
+
+Si $|E|=0$, no cal considerar el cas. Si $|E|=1$, o $|V|=2$ i cada
+vèrtex té grau 1 o la aresta és un llaç i hi ha un sol vèrtex de grau
+2. En qualsevol d'aquests dos casos, el toerema es verifica. Ara suposem
+que el teorema està demostrat per a $|E|\leq k$ i que $G$ és un
+graf amb $|E|=k+1$. Si $e$ és una aresta de $G$ i el graf $H=G-e$,
+llavors tots els vèrtexs de $H$ tenen el mateix grau a $H$ que a
+$G$ excepte 2 que tenen un grau menys o un que té dos graus menys
+(només en el cas que $e$ sigués un llaç). En tots dos casos obtenim
+que:\[ \sum_{v\in V(G)}d(v)=\sum_{v\in V(H)}d(v)+2=2(|E|-1)+2=2|E| \]D'aquesta
+demostració en treiem una altra afirmació:
+\begin{quotation}
+\emph{``En tot graf, el nombre de vèrtex amb grau imparell, és parell.''}
+\end{quotation}
+
+\section{Tipus de grafs}
+
+Fins ara hem vist els conceptes bèsics en teoria de grafis i algunes
+de les propietats que compleixen tots els grafs. No obstant, existeixen
+diversos tipus de grafs que tenen propietats especials:
+
+
+\subsection{Grafs complementaris}
+
+El graf complementari del graf $G$ és el graf $H$ amb els mateixos
+vèrtexs que $G$, de manera que dos vèrtexs de $H$ seràn adjacents
+si i només si a $G$ no ho són. Formalment, si $G=(V,E)$ és un graf
+simple i $K$ és el conjunt de totes les possibles combinacions de
+dos elements de $V$, llavors $H=(V,K\setminus E)$. Pel complementari
+de $G$ s'escriu $\bar{G}$ o $G'$. Per obtenir el graf complementari
+de $G$ tan sols s'han de posar les arestes que falten per obtenir
+un graf complet i trure totes les que hi eren inicialment (ja que
+$|E(G)|+|E(\bar{{G}})|=|E(K_{n})|$, on $n=|V(G)|$). 
+
+(Adjuntar imatge de grafs complementaris)
+
+
+\subsection{Grafs regulars}
+
+Es diu que un graf és regular de grau $r$ quan tots els seus vèrtexs
+tenen grau $r$. Formalment, un graf és $r$-regular quan $\Delta=\delta=r$.
+Un graf $0$-regular és un graf nul (veure apartat 2.3), un graf $1$-regular
+consisteix en arestes separades entre elles i un graf $2$-regular
+consisteix en un o més cicles separats. A partir d'aquí, els més importants
+tenen noms propis, com per exemple els $3$-regulars, que són els
+cúbics; els $4$-regulars, quàrtics; els $7$-regulars, grafs de Witt
+truncats dobles; els $8$-regulars, grafs de 24 cel·les... Evidentment,
+per un $r$-regular no necessàriament existeix només un graf, sinó
+que sovint s'en poden fer d'altres amb diferent nombre de vèrtexs.
+A la següent imatge es poden veure diversos exemples de grafs regulars,
+alguns d'ells amb el mateix ordre i diferent nombre de vèrtexs:
+
+Per a tots els grafs $r$-regulars amb $n$ vèrtexs es compleix que 
+
+\[ |E|=\frac{1}{2}nr \]on $|E|$ és el nombre d'arestes.
+
+(Adjuntar imatge de grafs regulars)
+
+
+\subsection{Grafs nuls o buits}
+
+Els grafs nuls o buits són grafs sense arestes, conjunts de $n$ vértexs.
+Són els complementaris dels grafs complets, i per tant la seva nomenclatura
+és $\bar{K}_{n}$ o simplement $N_{n}$. S'anomena grafs nuls a $N_{0}$
+i buits a la resta, però com que normalment no s'utilitza $N_{0}$,
+convencionalment es diuen nuls a tot el conjunt dels buits. (Adjuntar
+imatge dels grafs buits).
+
+
+\subsection{Grafs complets}
+
+Un graf complet és un graf on cada vèrtex està unit a tots els altres
+una sola vegada. Un graf complet amb $n$ nodes és un graf simple
+i $(n-1)$-regular i la seva nomenclatura és $K_{n}$. Els grafs complets
+tenen ${n\choose 2}=\frac{n(n-1)}{2}$ arestes. El nombre de cicles
+que conté un graf complet queda determinat per la següent igualtat:
+
+\[ C_{n} =\sum_{K=3}^{n}\frac{1}{2}{n\choose k}(k-1)! \]
+
+(Adjuntar imatge de grafs complets)
+
+
+\subsection{Cicles}
+
+Els cicles són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i
+s'anomenen $C_{n}$. El graf lineal d'un cicle és ell mateix. (Adjuntar
+imatge de cicles)
+
+
+\subsection{Grafs bipartits}
+
+Els grafs bipartits són aquells en els quals els vèrtexs es poden
+separar en dos conjunts disjunts$U$ i $V$ (és a dir, que els dos
+conjunts no tinguin elements comuns) de tal manera que un vèrtex d'un
+conjunt no sigui mai adjacent a un altre vèrtex del seu mateix conjunt.
+Es pot dir també que un graf és bipartit si no conté cicles de longitud
+senar. Llavors, podem deduïr que tots els els grafs $C_{n}$ amb $n$
+parell, són també grafs bipartits. (adjuntar imatge de grafs bipartits)
+
+
+\subsection{Grafs bipartits complets}
+
+Els grafs bipartits complets són grafs bipartits en esl quals cada
+element del conjunt $U$ està unit a tots els elements dels del conjunt
+$V$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|N|$. En els grafs
+bipartits $K_{m,n}=K_{n,m}$ , $|V|=n+m$ i $|E|=mn$.
+
+
+\subsection{Grafs estrella}
+
+Un graf estrella de grau $n$, conté un vèrtex amb grau $n-1$ i els
+$n-1$ vèrtexs restants tenen grau 1. S'anomena $S_{n}$ i són estrelles
+tots els grafs bipartits de la forma $K_{1,n-1}$o $K_{n-1,1}$. El
+graf lineal de $S_{n}$ és $K_{n-1}$. (Afegir imatge de graf estrella)
+
+
+\subsection{Graf lineal}
+
+Un graf lineal $L(G)$ d'un graf $G$ és un graf que representa les
+adjacències entre les arestes de $G$. Formalment, donat un graf $G$,
+el graf lineal $L(G)$ és aquell en el qual cada vèrtex correspon
+a una aresta de $G$ i dos vèrtexs són adjacents només si les arestes
+corresponents a $G$ són adjacents (comparteixen un vèrtex). El graf
+lineal d'un graf amb $n$ nodes, $e$ arestes i amb vèrtexs de graus
+$d_{i}$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}d_{i}^{2}-e \]arestes.
+(Afegir procediment de creació del graf lineal)
+
+\subsection{Rodes}
+
+Un graf roda amb $n$ vèrtex ès un graf que conté un cicle de longitud $n-1$, on cada vèrtex del cicle està connectat a un alte vèrtex fora del cicle, anomenat node cenmtral. El node central té grau $n-1$, i la resta de nodes tenen grau $3$. S'escriu $W_{n}$, i a vegades simplement s'estudia com a $C_{n-1}+K_{1}$. El nombre de cicles que conté un graf amb $n$ vètrexs està determinat per $n^{2}-3n+3$.
+(Afegir exemple de graf roda)
+
+\subsection{Xarxes}
+
+Els grafs xarxes bidimensionsals $G_{m,n}$ són grafs bipartits que formen una xarxa de $m*n$ vèrtexs. Un graf xarxa té $mn$ vèrtexs i $(m-1)n+(n-1)m$. Es pot greneralitzar per a xarxes de més dimensions com a $G_{m,n,o,...}$.
+
+(afegir exemple de graf xarxa)
+
+
+\subsection{Arbres}
+
+Els arbres són un tipus molt important de grafs: són grafs connexos
+sense cicles, de manera que existeix un únic camí entre dos vèrtexs.
+Si a un arbre se li afegeix una aresta, es genera un cicle, i se s'en
+treu una, el graf deixa de ser connex. 
+\\
+Hi ha un tipus especial d'arbres anomenats elementals, que són els arbres amb $|V|=1$, $|V|=2$ i en general tots aquells on $\delta=1$ i $\Delta=2$. S'anomenen $P_{n}$, on $n=|V|$. També es pot pensar en grafs elementals com a $G_{n,1}$.(adjuntar exemples de grafs elementals) 
+
+
+\subsubsection*{Teorema 2}
+\begin{quote}
+Un arbre amb $n$ nodes té $n-1$ arestes. 
+\end{quote}
+\emph{Demostració: }Si comprovem el cas on un arbre $T$ té $n=1$ vèrtexs, veiem que no té cap aresta, per tant el teorema es compleix. Si treiem una aresta de l'arbre,en sorgiran 2 arbres més $T_{1}$ i $T_{2}$. Per hipòtesi, $T_{1}$ tindrà $v_{1}=|V|(T_{1})$ vèrtexs i $v_{1}-1=|E|(T_{1})$ arestes, i $T_{2}$ tindrà $v_{2}=|V|(T_{1})$ vèrtexs i $v_{2}-1=|E|(T_{2})$ arestes. Deduïm llavors que el nombre de nodes de $T$ és $v_{1}+v_{2}$. Llavors el nombre d'arestes de $T$ és $(v_{1}-1)+(v_{2}-1)+1 = (v_{1}+v_{2})-1$. Dit d'una altra manera, $|E|(T)=|V|(T)-1$
+Com a conseqüència d'aquest teorema, en podem aarribar a un altre:
+
+\subsubsection*{Teorema 3}
+\begin{quote}
+En un arbre $T$ amb $|V|\geq 2$, hi ha com a mínim dos vèrtexs de grau 1 (anomenats fulles).
+\end{quote}
+\emph{Demostració: } Com a conseqüència del Teorema 1 i Teorema 2 podem dir que en un arbre \[\sum_{v\in V}d(v)=2|E|=2|V|-2\] També podem deduïr que si tots els vèrtexs tinguessin un grau $d(v_{i}) > 1$, llavors \[ \sum_{v\in V}d(v) \geq \sum_{v\in V}2 =2|V|\] Sabem que això no és correcte, ja que estem dient que $2|V|-2\geq2|V|$. Amb això ja podem veure que necessitem treure com a mínim dos graus, però demostrem també que amb un sol node de grau 1 tampoc és suficient. \smallskip Suposem ara que l'arbre té un sol node tal que $d(v)=1$ i elsaltres tenencom a mínim grau 2. Llavors \[ 2|V|-2=\sum_{v\in V}d(v)=1+\sum_{\substack{v\in V\\\text{si }d(v)\neq 1}}d(v)\geq 1+\sum_{\substack{v\in V \\\text{si }d(v)\neq 1}}2=1+2(|V|-1)=2|V|-1 \] Ara estem dient que $2|V|-2 \geq 2|V|-1$, que torna a ser una contradicció. Sabem que si treiem un grau més, el teorema es complirà, i hem demostrat que el mínim nombre de vèrtexs de grau 1 és 2.
+
+Hi ha un altre teorema que relaciona el nombre de fulles amb el grau màxim d'un arbre:
+
+\subsection*{Teorema 4}
+\begin{quote}
+El nombre de fulles d'un arbre $T$ és més gran o igual a $\Delta$.
+\end{quote}
+\emph{Demostració: }Si eliminem el node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles.Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent a el node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi hauràn com a mínim $\Delta$ fulles.
+
+
+
 
 \end{document}
