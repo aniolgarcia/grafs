@@ -1,0 +1,388 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Principis bàsics
+\end_layout
+
+\begin_layout Standard
+Un graf 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ es defineix com un conjunt de vèrtex (o nodes) 
+\begin_inset Formula $V=\{v_{1},v_{2},...,v_{n}\}$
+\end_inset
+
+ i un conjunt d'arestes 
+\begin_inset Formula $E=\{e_{1},e_{2},...,e_{m}\}$
+\end_inset
+
+, que uneixen dos vèrtexs 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+ i 
+\begin_inset Formula $v_{j}$
+\end_inset
+
+, tals que 
+\begin_inset Formula $v_{i},v_{j}\text{∈}V$
+\end_inset
+
+.
+ És a dir: un graf està format pe un conjunt de punts i un conjunt d'arestes
+ que uneixen alguns d'aquests punts.
+ El nombre de vèrtexs d'un graf queda determinat pel nombre d'elements que
+ hi ha en el grup 
+\begin_inset Formula $V$
+\end_inset
+
+, per tant ens referirem a ell com a 
+\begin_inset Formula $|V|$
+\end_inset
+
+(cardinal de 
+\begin_inset Formula $V$
+\end_inset
+
+).
+ Amb les arestes passa el mateix, i també utilitzarem 
+\begin_inset Formula $|E|$
+\end_inset
+
+per determinar el nombre d'arestes d'un graf.
+ Definim també que dos vèrtexs són adjacents si estàn units per una aresta,
+ i com a conseqüència, són incidents a l'aresta.
+ 
+\end_layout
+
+\begin_layout Standard
+En la figura (index de la figura) es mostra un graf simple 
+\begin_inset Formula $G$
+\end_inset
+
+ format per:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V=\{v_{1},v_{2},v_{3},v_{4},v_{5},v_{6}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E=\{(v_{1},v_{2}),(v_{1},v_{4}),(v_{1},v_{5}),(v_{2},v_{5}),(v_{3},v_{4}),(v_{3},v_{5}),(v_{3},v_{6}),(v_{4},v_{6})\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+(adjuntar fiura del garf anterior)
+\end_layout
+
+\begin_layout Standard
+Si una aresta comença i acaba en el mateix vèrtex (per exemple 
+\begin_inset Formula $e_{m}=\{v_{i},v_{i}\}$
+\end_inset
+
+) s'anomena llaç.
+ També pot ser que hi hagi dues arestes idèntiques, és a dir, dues arestes
+ que comencin en el vèrtex 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+ i acabin en el vèrtex 
+\begin_inset Formula $v_{j}$
+\end_inset
+
+.
+ En qualsevol d'aquests dos casos anteriors, el graf s'anomena multigraf
+ o pseudograf.
+ En cas contrari, el graf serà simple i simètric.
+ Amb el que hem vist fins ara, podem dir que 
+\begin_inset Formula $e_{1}=(v_{1},v_{2})$
+\end_inset
+
+ és equivalent a 
+\begin_inset Formula $e_{2}=(v_{2},v_{1})$
+\end_inset
+
+, però en els grafs dirigits això no es compleix.
+ En aquest tipus de graf, les arestes només permeten viatjar en un sentit.
+ En la següent imatge es mostren els grafs esmentats anteriorment:
+\end_layout
+
+\begin_layout Standard
+(Adjuntar imatge de graf amb llaços, graf amb arestes múltiples i graf dirigit)
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Nota de l'autor: a partir d'ara, i si no s'indica el contrari, quan es parli
+ de grafs, s'exclouràn els multigrafs i grafs dirigits.
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Standard
+El nombre d'arestes que són incidents a un vèrtex 
+\begin_inset Formula $v$
+\end_inset
+
+ (contant els llaços com a dues arestes) determinen el grau de 
+\begin_inset Formula $v$
+\end_inset
+
+, que es representa amb 
+\begin_inset Formula $d(v)$
+\end_inset
+
+.
+ La successió de graus d'un graf serà la successió que s'obté al ordenar
+ de manera creixent els graus dels seus vèrtex.
+ El grau mínim d'un graf 
+\begin_inset Formula $G$
+\end_inset
+
+ queda determinat de la següent manera: 
+\begin_inset Formula $δ(G)=min\{d(g):v\text{∈}V(G)\}$
+\end_inset
+
+.
+ De manera similar, el grau màxim de 
+\begin_inset Formula $G$
+\end_inset
+
+, 
+\begin_inset Formula $\text{∆}(G)=max\{d(v):v\text{∈}V\}$
+\end_inset
+
+.
+ Amb tots aquests conceptes ja podem veure el teorema d'Euler, un dels primers
+ teoremes en teoria de grafs i un dels més importants.
+\end_layout
+
+\begin_layout Subparagraph
+Teorema 1 (Euler)
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Quotes eld
+\end_inset
+
+En tot graf, la suma dels graus dels vèrtex és igual al doble del nombre
+ d'arestes.
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\backslash
+sum_{v
+\backslash
+in V}d(v)=2|E| 
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Demostració
+\emph default
+: Només cal veure que cada aresta té dos extrems i que suma dos en el total
+ dels graus.
+ La demostració formal és més complicada, i es troba mitjançant el nombre
+ d'arestes:
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $|E|=0$
+\end_inset
+
+, no cal considerar el cas.
+ Si 
+\begin_inset Formula $|E|=1$
+\end_inset
+
+, o 
+\begin_inset Formula $|V|=2$
+\end_inset
+
+ i cada vèrtex té grau 1 o la aresta és un llaç i hi ha un sol vèrtex de
+ grau 2.
+ En qualsevol d'aquests dos casos, el toerema es verifica.
+ Ara suposem que el teorema està demostrat per a 
+\begin_inset Formula $|E|\leq k$
+\end_inset
+
+ i que 
+\begin_inset Formula $G$
+\end_inset
+
+ és un graf amb 
+\begin_inset Formula $|E|=k+1$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $e$
+\end_inset
+
+ és una aresta de 
+\begin_inset Formula $G$
+\end_inset
+
+ i el graf 
+\begin_inset Formula $H=G-e$
+\end_inset
+
+, llavors tots els vèrtexs de 
+\begin_inset Formula $H$
+\end_inset
+
+ tenen el mateix grau a 
+\begin_inset Formula $H$
+\end_inset
+
+ que a 
+\begin_inset Formula $G$
+\end_inset
+
+ excepte 2 que tenen un grau menys o un que té dos graus menys (només en
+ el cas que 
+\begin_inset Formula $e$
+\end_inset
+
+ sigués un llaç).
+ En tots dos casos obtenim que:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\backslash
+sum_{v
+\backslash
+in v(G)}d(v)=
+\backslash
+sum_{v
+\backslash
+in V(H)}d(v)+2=2(|E|-1)+2=2|E| 
+\backslash
+]
+\end_layout
+
+\end_inset
+
+D'aquesta demostració en treiem una altra afirmació:
+\end_layout
+
+\begin_layout Quotation
+
+\emph on
+\begin_inset Quotes eld
+\end_inset
+
+En tot graf, el nombre de vèrtex amb grau imparell, és parell.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

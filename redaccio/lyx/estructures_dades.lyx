@@ -1,0 +1,240 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+ESTRUCTURES DE DADES DELS GRAFS
+\end_layout
+
+\begin_layout Standard
+En els grafs, normalement s'ha de tractar una gran quantitat d'informació:
+ nodes, arestes, pesos, sentits...
+ Tota aquesta informació no és difícil de gestionar si el graf que s'estudia
+ és petit, ja que fins i tot es pot dibuixar.
+ El problema sorgeix quan el graf en qüestió és més gran, com per exemple
+ podria ser una xarxa de clavagueram o de metro.
+ Llavors la informació a tractar és molta, i és convenient organitzar-la
+ en estructures de dades.
+ Les estructures de dades solen ser utilitzades en la programació, però
+ en aquest cas sol ser beneficiós tenir-ne fins i tot quan no es treballa
+ amb informàtica.
+\end_layout
+
+\begin_layout Subsection*
+Matrius
+\end_layout
+
+\begin_layout Subsubsection*
+Matriu d'adjacència
+\end_layout
+
+\begin_layout Standard
+La matriu d'adjacència d'un graf és una matriu quadrada que conté informació
+ respecte el nombre d'arestes que uneixen dos nodes, i s'organitza de la
+ següent manera:
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $G$
+\end_inset
+
+ és un graf amb 
+\begin_inset Formula $n$
+\end_inset
+
+ nodes, 
+\begin_inset Formula $A(G)=(a_{i,j})_{i,j}=1,...,n$
+\end_inset
+
+ és la seva matriu d'adjacència de 
+\begin_inset Formula $n$
+\end_inset
+
+ x 
+\begin_inset Formula $n$
+\end_inset
+
+, on 
+\begin_inset Formula $a_{i,j}$
+\end_inset
+
+ correspon al nombre d'arestes que uneixen els nodes 
+\begin_inset Formula $i,j$
+\end_inset
+
+, contant com a 2 els llaços, que sempre es trobaràn a la diagonal.
+ La matriu serà simètrica si el graf ho ès, i podrem conèixer el grau d'un
+ node 
+\begin_inset Formula $i$
+\end_inset
+
+ contant els 
+\begin_inset Formula $1$
+\end_inset
+
+de la
+\begin_inset Formula $i$
+\end_inset
+
+-èsima fila.
+ Tot i això, en termes de programació, utilitzar aquesta estructura de dades
+ (sobretot en grafs grans) no és del tot eficient, ja que creix molt ràpidament.
+ La matriu d'un graf de 
+\begin_inset Formula $n$
+\end_inset
+
+ nodes té 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+, i en grafs poc densos, la majoria d'espais estan ocupats per 
+\begin_inset Formula $0$
+\end_inset
+
+, de tal manera que s'està utilitzant molta memòria que no conté informació
+ útil.
+ De la mateixa manera, si afegim un nou node al graf, s'hauràn d'afegir
+ 
+\begin_inset Formula $2n-1$
+\end_inset
+
+ espais a la matriu.
+\end_layout
+
+\begin_layout Subsubsection*
+Matriu d'incidència
+\end_layout
+
+\begin_layout Standard
+La matriu d'incidència d'un graf 
+\begin_inset Formula $G$
+\end_inset
+
+ sense llaços, 
+\begin_inset Formula $I(G)=(b_{i,j})_{i=1,...,v,j=1,...,α}$
+\end_inset
+
+ és la matriu binaria 
+\begin_inset Formula $v$
+\end_inset
+
+ x 
+\begin_inset Formula $α$
+\end_inset
+
+ on 
+\begin_inset Formula $b_{i,j}$
+\end_inset
+
+ indica si la aresta 
+\begin_inset Formula $j$
+\end_inset
+
+ és incident al node 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(afegir exemple de graf amb les seves dues matrius)
+\end_layout
+
+\begin_layout Subsection*
+Llistes d'adjacència
+\end_layout
+
+\begin_layout Standard
+Aquesta estructura de dades és la més utilitzada per tractar grafs, ja que
+ ocupa menys memòria i només inclou l'informació necessària.
+ Les llistes d'adjacència consisteixen en un conjunt de 
+\begin_inset Formula $n$
+\end_inset
+
+ llistes.
+ Cada llista correspon a un node del graf, i conté els nodes al quals és
+ adjacent.
+ En informàtica s'acostumen a fer mitjançant apuntadors, de tal manera que,
+ a partir de cada element de la llista, es pugui accedir a la seva pròpia
+ llista, siguent així molt més senzill fer iteracions.
+ Amb l'esquema següent es pot veure més clarament:
+\end_layout
+
+\begin_layout Standard
+(afegir esquema de les llistes d'adjacència)
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

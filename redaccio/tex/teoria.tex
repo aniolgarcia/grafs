@@ -1,0 +1,70 @@
+%% LyX 2.1.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amstext}
+\usepackage{babel}
+\begin{document}
+Un graf $G=(V,E)$ es defineix com un conjunt de vèrtex (o nodes)
+$V=\{v_{1},v_{2},...,v_{n}\}$ i un conjunt d'arestes $E=\{e_{1},e_{2},...,e_{m}\}$,
+que uneixen dos vèrtexs $v_{i}$ i $v_{j}$, tals que $v_{i},v_{j}\text{\ensuremath{\in}}V$.
+És a dir: un graf està format pe un conjunt de punts i un conjunt
+d'arestes que uneixen alguns d'aquests punts. El nombre de vèrtexs
+d'un graf queda determinat pel nombre d'elements que hi ha en el grup
+$V$, per tant ens referirem a ell com a $|V|$(cardinal de $V$).
+Amb les arestes passa el mateix, i també utilitzarem $|E|$per determinar
+el nombre d'arestes d'un graf. Definim també que dos vèrtexs són adjacents
+si estàn units per una aresta, i com a conseqüència, són incidents
+a l'aresta. 
+
+En la figura (index de la figura) es mostra un graf simple $G$ format
+per:
+\begin{itemize}
+\item $V=\{v_{1},v_{2},v_{3},v_{4},v_{5},v_{6}\}$
+\item $E=\{(v_{1},v_{2}),(v_{1},v_{4}),(v_{1},v_{5}),(v_{2},v_{5}),(v_{3},v_{4}),(v_{3},v_{5}),(v_{3},v_{6}),(v_{4},v_{6})\}$
+\item (adjuntar fiura del garf anterior)
+\end{itemize}
+Si una aresta comença i acaba en el mateix vèrtex (per exemple $e_{m}=\{v_{i},v_{i}\}$)
+s'anomena llaç. També pot ser que hi hagi dues arestes idèntiques,
+és a dir, dues arestes que comencin en el vèrtex $v_{i}$ i acabin
+en el vèrtex $v_{j}$. En qualsevol d'aquests dos casos anteriors,
+el graf s'anomena multigraf o pseudograf. En cas contrari, el graf
+serà simple i simètric. Amb el que hem vist fins ara, podem dir que
+$e_{1}=(v_{1},v_{2})$ és equivalent a $e_{2}=(v_{2},v_{1})$, però
+en els grafs dirigits això no es compleix. En aquest tipus de graf,
+les arestes només permeten viatjar en un sentit. En la següent imatge
+es mostren els grafs esmentats anteriorment:
+
+(Adjuntar imatge de graf amb llaços, graf amb arestes múltiples i
+graf dirigit)
+
+
+
+\emph{Nota de l'autor: a partir d'ara, i si no s'indica el contrari,
+quan es parli de grafs, s'exclouràn els multigrafs i grafs dirigits.}
+
+
+
+El nombre d'arestes que són incidents a un vèrtex $v$ (contant els
+llaços com a dues arestes) determinen el grau de $v$, que es representa
+amb $d(v)$. La successió de graus d'un graf serà la successió que
+s'obté al ordenar de manera creixent els graus dels seus vèrtex. El
+grau mínim d'un graf $G$ queda determinat de la següent manera: $\delta(G)=min\{d(g):v\text{\ensuremath{\in}}V(G)\}$.
+De manera similar, el grau màxim de $G$, $\text{\ensuremath{\Delta}}(G)=max\{d(v):v\text{\ensuremath{\in}}V\}$.
+Amb tots aquests conceptes ja podem veure el teorema d'Euler, un dels
+primers teoremes en teoria de grafs i un dels més importants.
+
+
+\subparagraph{Teorema 1 (Euler)}
+\begin{quotation}
+``En tot graf, la suma dels graus dels vèrtex és igual al doble del
+nombre d'arestes.''
+
+\[
+\sum_{vV}
+\]
+
+\end{quotation}
+
+\end{document}

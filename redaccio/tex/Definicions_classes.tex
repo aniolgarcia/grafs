@@ -1,0 +1,82 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[catalan]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\begin{document}
+
+\title{Teoria de grafs}
+
+\maketitle
+
+\section{Introducció}
+
+Abans de començar, és necessari fer una introducció més teòrica a
+la teoria de grafs, per tal de poder comprendre la resta del treball.
+(...)
+
+
+\subsection{Definicions}
+\begin{itemize}
+\item Graf: un graf $G=(V,E)$ és un conjunt de vèrtex $V$ o nodes i un
+conjunt d'arestes $E$, que uneixen dos vèrtex.
+\item Arestes múltiples: Són aquelles que uneixen el mateix parell de vértex.
+\item Llaç: És una aresta que uneix un vértex amb ell mateix.
+\item Vértex adjacents: Són aquells que estan units per una mateixa aresta.
+\item Vértex incidents (a una aresta): Són aquells que estan units a una
+aresta determinada.
+\item Grafs isomorfs: Dos grafs $G$ i $H$ són isomorfs sempre que existeixi
+una funció bijectiva $f$ entre els vèrtex d'ambdós grafs i que $f(v)$
+i $f(u)$ siguin adjacents només si $v$ i $u$ ho són. 
+\item Subgraf: Un subgraf d'un graf $G$ és un graf amb vèrtex i arestes
+pertanyents a $G$.
+\item Grau d'un vèrtex: És el nombre d'arestes incidents a un vértex (els
+llaços conten com dues arestes). S'escriu $g(v)$.
+\item Successió de graus: és la successió que s'obté al ordenar de manera
+creixent els graus dels vèrtex.
+\item (...)
+\end{itemize}
+
+\subsection{Classificacions de grafs}
+
+
+\paragraph{Regulars:}
+
+Són aquells en els quals tots els vèrtex tenen el mateig grau $k$.
+S'anomenen $k$-regulars.
+
+
+\paragraph*{Complets:}
+
+Cadascun dels vèrtex està unit a la resta només una vegada. S'anomenen
+$K_{n}$ i són $(n-1)$-regulars.
+
+
+\paragraph*{Nuls:}
+
+Són aquells que no tenen arestes. S'anomenen $N_{n}$.
+
+
+\paragraph{Platònics:}
+
+Són aquells que representen les arestes i vèrtex dels sòlids platònics.
+Són també grafs regulars.
+
+
+\paragraph{Simple:}
+
+Són aquells que no tenen arestes múltiples ni llaços.
+
+
+\paragraph*{Pseudografs:}
+
+Són aquells que inclouen, com a mínim, un llaç.
+
+
+\paragraph*{Multigrafs:}
+
+Són aquells que tenen accepten més d'una aresta entre dos vèrtex.
+
+
+\end{document}

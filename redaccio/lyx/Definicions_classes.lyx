@@ -1,0 +1,275 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Teoria de grafs
+\end_layout
+
+\begin_layout Section
+Introducció
+\end_layout
+
+\begin_layout Standard
+Abans de començar, és necessari fer una introducció més teòrica a la teoria
+ de grafs, per tal de poder comprendre la resta del treball.
+ (...)
+\end_layout
+
+\begin_layout Subsection
+Definicions
+\end_layout
+
+\begin_layout Itemize
+Graf: un graf 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ és un conjunt de vèrtex 
+\begin_inset Formula $V$
+\end_inset
+
+ o nodes i un conjunt d'arestes 
+\begin_inset Formula $E$
+\end_inset
+
+, que uneixen dos vèrtex.
+\end_layout
+
+\begin_layout Itemize
+Arestes múltiples: Són aquelles que uneixen el mateix parell de vértex.
+\end_layout
+
+\begin_layout Itemize
+Llaç: És una aresta que uneix un vértex amb ell mateix.
+\end_layout
+
+\begin_layout Itemize
+Vértex adjacents: Són aquells que estan units per una mateixa aresta.
+\end_layout
+
+\begin_layout Itemize
+Vértex incidents (a una aresta): Són aquells que estan units a una aresta
+ determinada.
+\end_layout
+
+\begin_layout Itemize
+Grafs isomorfs: Dos grafs 
+\begin_inset Formula $G$
+\end_inset
+
+ i 
+\begin_inset Formula $H$
+\end_inset
+
+ són isomorfs sempre que existeixi una funció bijectiva 
+\begin_inset Formula $f$
+\end_inset
+
+ entre els vèrtex d'ambdós grafs i que 
+\begin_inset Formula $f(v)$
+\end_inset
+
+ i 
+\begin_inset Formula $f(u)$
+\end_inset
+
+ siguin adjacents només si 
+\begin_inset Formula $v$
+\end_inset
+
+ i 
+\begin_inset Formula $u$
+\end_inset
+
+ ho són.
+ 
+\end_layout
+
+\begin_layout Itemize
+Subgraf: Un subgraf d'un graf 
+\begin_inset Formula $G$
+\end_inset
+
+ és un graf amb vèrtex i arestes pertanyents a 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Grau d'un vèrtex: És el nombre d'arestes incidents a un vértex (els llaços
+ conten com dues arestes).
+ S'escriu 
+\begin_inset Formula $g(v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Successió de graus: és la successió que s'obté al ordenar de manera creixent
+ els graus dels vèrtex.
+\end_layout
+
+\begin_layout Itemize
+(...)
+\end_layout
+
+\begin_layout Subsection
+Classificacions de grafs
+\end_layout
+
+\begin_layout Paragraph
+Regulars:
+\end_layout
+
+\begin_layout Standard
+Són aquells en els quals tots els vèrtex tenen el mateig grau 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ S'anomenen 
+\begin_inset Formula $k$
+\end_inset
+
+-regulars.
+\end_layout
+
+\begin_layout Paragraph*
+Complets:
+\end_layout
+
+\begin_layout Standard
+Cadascun dels vèrtex està unit a la resta només una vegada.
+ S'anomenen 
+\begin_inset Formula $K_{n}$
+\end_inset
+
+ i són 
+\begin_inset Formula $(n-1)$
+\end_inset
+
+-regulars.
+\end_layout
+
+\begin_layout Paragraph*
+Nuls:
+\end_layout
+
+\begin_layout Standard
+Són aquells que no tenen arestes.
+ S'anomenen 
+\begin_inset Formula $N_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Platònics:
+\end_layout
+
+\begin_layout Standard
+Són aquells que representen les arestes i vèrtex dels sòlids platònics.
+ Són també grafs regulars.
+\end_layout
+
+\begin_layout Paragraph
+Simple:
+\end_layout
+
+\begin_layout Standard
+Són aquells que no tenen arestes múltiples ni llaços.
+\end_layout
+
+\begin_layout Paragraph*
+Pseudografs:
+\end_layout
+
+\begin_layout Standard
+Són aquells que inclouen, com a mínim, un llaç.
+\end_layout
+
+\begin_layout Paragraph*
+Multigrafs:
+\end_layout
+
+\begin_layout Standard
+Són aquells que tenen accepten més d'una aresta entre dos vèrtex.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
