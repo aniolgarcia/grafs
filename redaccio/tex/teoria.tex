@@ -53,12 +53,12 @@ quan es parli de grafs, s'exclouràn els multigrafs i grafs dirigits.}
 
 El nombre d'arestes que són incidents a un vèrtex $v$ (contant els
 llaços com a dues arestes) determinen el grau de $v$, que es representa
-amb $d(v)$. La successió de graus d'un graf serà la successió que
+amb $g(v)$. La successió de graus d'un graf serà la successió que
 s'obté al ordenar de manera creixent els graus dels seus vèrtex. Cal
 dir que no és un problema gens trivial saber si una successió determinada
 pot ser una successió de graus d'un graf. El grau mínim d'un graf
-$G$ queda determinat de la següent manera: $\delta(G)=min\{d(g):v\text{\ensuremath{\in}}V(G)\}$.
-De manera similar, el grau màxim de $G$, $\text{\ensuremath{\Delta}}(G)=max\{d(v):v\text{\ensuremath{\in}}V\}$.
+$G$ queda determinat de la següent manera: $\delta(G)=min\{g(v):v\text{\ensuremath{\in}}V(G)\}$.
+De manera similar, el grau màxim de $G$, $\text{\ensuremath{\Delta}}(G)=max\{g(v):v\text{\ensuremath{\in}}V\}$.
 Si a un graf en treiem una aresta o un node, en resulta un altre (o
 més d'un) graf connex. D'aquesta manera, si $v\text{\ensuremath{\in}}V(G)$,
 $G-v$ és el graf que s'obté al suprimir el vèrtex $v$ i totes les
@@ -67,12 +67,13 @@ $G-e$ és el graf que s'obté al eliminiar la aresta $e$.
 
 Amb tots aquests conceptes ja podem veure el teorema d'Euler, un dels
 primers teoremes en teoria de grafs i un dels més importants.
-
+\\
+\\
 
 \subparagraph{Teorema 1 (Euler)}
 \begin{quotation}
 ``En tot graf, la suma dels graus dels vèrtex és igual al doble del
-nombre d'arestes.''\[ \sum_{v\in V}d(v)=2|E| \]
+nombre d'arestes.''\[ \sum_{v\in V}g(v)=2|E| \]
 \end{quotation}
 \emph{Demostració}: Només cal veure que cada aresta té dos extrems
 i que suma dos en el total dels graus. La demostració formal és més
@@ -86,7 +87,7 @@ graf amb $|E|=k+1$. Si $e$ és una aresta de $G$ i el graf $H=G-e$,
 llavors tots els vèrtexs de $H$ tenen el mateix grau a $H$ que a
 $G$ excepte 2 que tenen un grau menys o un que té dos graus menys
 (només en el cas que $e$ sigués un llaç). En tots dos casos obtenim
-que:\[ \sum_{v\in V(G)}d(v)=\sum_{v\in V(H)}d(v)+2=2(|E|-1)+2=2|E| \]D'aquesta
+que:\[ \sum_{v\in V(G)}g(v)=\sum_{v\in V(H)}g(v)+2=2(|E|-1)+2=2|E| \]D'aquesta
 demostració en treiem una altra afirmació:
 \begin{quotation}
 \emph{``En tot graf, el nombre de vèrtex amb grau imparell, és parell.''}
@@ -169,7 +170,7 @@ imatge de cicles)
 \subsection{Grafs bipartits}
 
 Els grafs bipartits són aquells en els quals els vèrtexs es poden
-separar en dos conjunts disjunts$U$ i $V$ (és a dir, que els dos
+separar en dos conjunts disjunts $U$ i $V$ (és a dir, que els dos
 conjunts no tinguin elements comuns) de tal manera que un vèrtex d'un
 conjunt no sigui mai adjacent a un altre vèrtex del seu mateix conjunt.
 Es pot dir també que un graf és bipartit si no conté cicles de longitud
@@ -211,7 +212,7 @@ Un graf roda amb $n$ vèrtex ès un graf que conté un cicle de longitud $n-1$, on 
 
 \subsection{Xarxes}
 
-Els grafs xarxes bidimensionsals $G_{m,n}$ són grafs bipartits que formen una xarxa de $m*n$ vèrtexs. Un graf xarxa té $mn$ vèrtexs i $(m-1)n+(n-1)m$. Es pot greneralitzar per a xarxes de més dimensions com a $G_{m,n,o,...}$.
+Els grafs xarxes bidimensionsals $G_{m,n}$ són grafs bipartits que formen una xarxa de $m$x$n$ vèrtexs. Un graf xarxa té $mn$ vèrtexs i $(m-1)n+(n-1)m$. Es pot greneralitzar per a xarxes de més dimensions com a $G_{m,n,o,...}$.
 
 (afegir exemple de graf xarxa)
 
@@ -223,7 +224,7 @@ sense cicles, de manera que existeix un únic camí entre dos vèrtexs.
 Si a un arbre se li afegeix una aresta, es genera un cicle, i se s'en
 treu una, el graf deixa de ser connex. 
 \\
-Hi ha un tipus especial d'arbres anomenats elementals, que són els arbres amb $|V|=1$, $|V|=2$ i en general tots aquells on $\delta=1$ i $\Delta=2$. S'anomenen $P_{n}$, on $n=|V|$. També es pot pensar en grafs elementals com a $G_{n,1}$.(adjuntar exemples de grafs elementals) 
+Hi ha un tipus especial d'arbres anomenats elementals o camins, que són els arbres amb $|V|=1$, $|V|=2$ i en general tots aquells on $\delta=1$ i $\Delta=2$. S'anomenen $P_{n}$, on $n=|V|$. També es pot pensar en grafs elementals com a $G_{n,1}$.(adjuntar exemples de grafs elementals) 
 
 
 \subsubsection*{Teorema 2}
@@ -237,7 +238,7 @@ Com a conseqüència d'aquest teorema, en podem aarribar a un altre:
 \begin{quote}
 En un arbre $T$ amb $|V|\geq 2$, hi ha com a mínim dos vèrtexs de grau 1 (anomenats fulles).
 \end{quote}
-\emph{Demostració: } Com a conseqüència del Teorema 1 i Teorema 2 podem dir que en un arbre \[\sum_{v\in V}d(v)=2|E|=2|V|-2\] També podem deduïr que si tots els vèrtexs tinguessin un grau $d(v_{i}) > 1$, llavors \[ \sum_{v\in V}d(v) \geq \sum_{v\in V}2 =2|V|\] Sabem que això no és correcte, ja que estem dient que $2|V|-2\geq2|V|$. Amb això ja podem veure que necessitem treure com a mínim dos graus, però demostrem també que amb un sol node de grau 1 tampoc és suficient. \smallskip Suposem ara que l'arbre té un sol node tal que $d(v)=1$ i elsaltres tenencom a mínim grau 2. Llavors \[ 2|V|-2=\sum_{v\in V}d(v)=1+\sum_{\substack{v\in V\\\text{si }d(v)\neq 1}}d(v)\geq 1+\sum_{\substack{v\in V \\\text{si }d(v)\neq 1}}2=1+2(|V|-1)=2|V|-1 \] Ara estem dient que $2|V|-2 \geq 2|V|-1$, que torna a ser una contradicció. Sabem que si treiem un grau més, el teorema es complirà, i hem demostrat que el mínim nombre de vèrtexs de grau 1 és 2.
+\emph{Demostració: } Com a conseqüència del Teorema 1 i Teorema 2 podem dir que en un arbre \[\sum_{v\in V}g(v)=2|E|=2|V|-2\] També podem deduïr que si tots els vèrtexs tinguessin un grau $g(v_{i}) > 1$, llavors \[ \sum_{v\in V}g(v) \geq \sum_{v\in V}2 =2|V|\] Sabem que això no és correcte, ja que estem dient que $2|V|-2\geq2|V|$. Amb això ja podem veure que necessitem treure com a mínim dos graus, però demostrem també que amb un sol node de grau 1 tampoc és suficient. \smallskip Suposem ara que l'arbre té un sol node tal que $g(v)=1$ i elsaltres tenencom a mínim grau 2. Llavors \[ 2|V|-2=\sum_{v\in V}g(v)=1+\sum_{\substack{v\in V\\\text{si }g(v)\neq 1}}g(v)\geq 1+\sum_{\substack{v\in V \\\text{si }g(v)\neq 1}}2=1+2(|V|-1)=2|V|-1 \] Ara estem dient que $2|V|-2 \geq 2|V|-1$, que torna a ser una contradicció. Sabem que si treiem un grau més, el teorema es complirà, i hem demostrat que el mínim nombre de vèrtexs de grau 1 és 2.
 
 Hi ha un altre teorema que relaciona el nombre de fulles amb el grau màxim d'un arbre:
 
@@ -245,7 +246,7 @@ Hi ha un altre teorema que relaciona el nombre de fulles amb el grau màxim d'un 
 \begin{quote}
 El nombre de fulles d'un arbre $T$ és més gran o igual a $\Delta$.
 \end{quote}
-\emph{Demostració: }Si eliminem el node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles.Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent a el node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi hauràn com a mínim $\Delta$ fulles.
+\emph{Demostració: }Si eliminem el node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles.Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent a el node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi haurà com a mínim $\Delta$ fulles.
 
 
 

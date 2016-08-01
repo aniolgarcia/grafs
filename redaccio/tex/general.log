@@ -1,0 +1,1162 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  1 AUG 2016 13:35
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**general.tex
+(./general.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 8 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin9.def
+File: latin9.def 2015/03/17 v1.2c Input encoding file
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/02/24 3.9q The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/02/24 3.9q Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)) (./general.aux)
+\openout1 = `general.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.12 ...er apartat consisteix en la part m√©s te√≤
+                                                  rica del treball.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 12.
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.12 ...er apartat consisteix en la part m√©s te√≤
+                                                  rica del treball.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 13.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 13.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 13.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 13.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 16.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 16.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.18 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≤ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (1257.09882pt too wide) in paragraph at lines 12--18
+[]\T1/cmr/m/n/10 Aquest primer apartat con-sis-teix en la part m√[]s te√$[]\OML
+/cmm/m/it/10 ricadeltreball:Explicarbreumentl[]hist[]riad[]aquestabrancadelamat
+em ticaiposteriormentensendinsaremenlateoriadegrafscomatal:Lateoriadegrafspotse
+rbastantabstractaiavegadescomplicadad[]entendre; per[]estar acompanyadadedemost
+racionsiexemplespropisquepretenenfacilitarelseguimentdeltreball:$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.20 \section{Hist√≤ria del grafs}
+                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 20.
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.20 \section{Hist√≤ria del grafs}
+                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.20 \section{Hist√≤ria del grafs}
+                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.20 \section{Hist√≤ria del grafs}
+                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.28 La teoria de grafs no n'√©s una excepci√≥
+                                               i tot seguit presentar√© els
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.28 La teoria de grafs no n'√©s una excepci√≥
+                                               i tot seguit presentar√© els
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 28.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 29.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.30 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (65.81824pt too wide) in paragraph at lines 25--30
+\T1/cmr/m/n/10 una excepci√$[]\OML/cmm/m/it/10 itotseguitpresentar[]elsprobleme
+sdeterminantsperalacreaci[]d[]aquestabranca:$ 
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 32.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 ...oria de grafs neix a partir de la soluci√≥
+                                                   de Leonhard Euler d'un
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.34 ...oria de grafs neix a partir de la soluci√≥
+                                                   de Leonhard Euler d'un
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 36.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 37.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.38 \begin{quote}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.38 \begin{quote}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (512.69029pt too wide) in paragraph at lines 34--38
+\T1/cmr/m/n/10 La teo-ria de grafs neix a par-tir de la soluci√$[]\OML/cmm/m/it
+/10 deLeonhardEulerd[]unproblemacuri[]s:Aquestmatem ticvareoldreelproblemadelsp
+ontsdelaciutatdeK\OMS/cmsy/m/n/10 {\OML/cmm/m/it/10 nigsberg\OT1/cmr/m/n/10 (\O
+ML/cmm/m/it/10 l[]actualKaliningrad; Rusia\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; q
+uediuaix\T1/cmr/m/n/10 -
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 \begin{quote}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin9'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 per tots els ponts tan sols una vegada?''}
+                                               
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! LaTeX Error: \begin{document} ended by \end{quote}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 \end{quote}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.42 \end{quote}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.42 \end{quote}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.42 \end{quote}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.42 \end{quote}
+                
+Things are pretty mixed up, but I think the worst is over.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.44 que no era possible, per√≤
+                                mai ning√∫ ho havia demostrat fins que Euler
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.44 que no era possible, per√≤
+                                mai ning√∫ ho havia demostrat fins que Euler
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 44.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 44.
+
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 45.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 45.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 47.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 47.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 49.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 50.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 52.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 53.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 54.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 55.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 55.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 56.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 57.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 58.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 58.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 58.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 58.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 59.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 59.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 60.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 60.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 60.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.62 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (3028.60034pt too wide) in paragraph at lines 43--62
+\T1/cmr/m/n/10 pos-si-ble, per√$[]\OML/cmm/m/it/10 maining[]hohaviademostratfin
+squeEulerhovafer:Lademostraci[]dequeaix[]noerapossiblequedarecollidaenel[][]pub
+licatel\OT1/cmr/m/n/10 1736\OML/cmm/m/it/10 ; il[]articletamb[]vaserincl[]senel
+volum\OT1/cmr/m/n/10 8\OML/cmm/m/it/10 de[]publicatel\OT1/cmr/m/n/10 1741\OML/c
+mm/m/it/10 :[]Perferaquestademostraci[]; Eulervahaverderepresentarelproblemacom
+unmapatopol[]gic; posantlesmassesdeterracomapuntsielspontscomasegmentsqueuniena
+questspunts; creantd[]aquestamaneraelprimergrafdel[]hist[]ria:Aquestresulatesco
+nsideraelprimerentoeriadegrafs; jaquecont[]unimportantteoremad[]aquestabranca:A
+m[]sd[]iniciarlateoriadegrafs; ambaquestresultattamb[]comen\OMS/cmsy/m/n/10 x\O
+ML/cmm/m/it/10 al[]estudidelsgrafsplanars; introdueixelconceptedecaracter\T1/cm
+r/m/n/10 -
+ []
+
+
+Overfull \hbox (711.03642pt too wide) in paragraph at lines 43--62
+\OML/cmm/m/it/10 sticad[]Eulerdel[]espaiielteoremadepoliedresd[]Euler\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 teoremaquedespr[]svautilitzarperdemostrarquenohihavienm
+ess[]lidsregularsqueelss[]lidsplat[]nics\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :Ambt
+otaix[]; Eulerposalesbasesnotansolsdel[]estudidelsgrafs; sin[]tamb[]delatopolog
+\T1/cmr/m/n/10 -
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.67 ...e la topologia (o geometria de la posici√≥
+                                                  ,
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.67 ...e la topologia (o geometria de la posici√≥
+                                                  ,
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 69.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 72.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 76.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.78 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (205.53903pt too wide) in paragraph at lines 66--78
+\T1/cmr/m/n/10 pel camp de la topolo-gia (o ge-ome-tria de la posici√$[]\OML/cm
+m/m/it/10 ; comlideienenaquellmoment\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :Concreta
+menthihaunpersonatgeimportant \OT1/cmr/m/n/10 :
+ []
+
+
+Overfull \hbox (2041.36368pt too wide) in paragraph at lines 66--78
+\OML/cmm/m/it/10 Alexandre \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 Th[]ophileVand
+ermonde:Vandermorevatreballariestudiarelproblemadelscavalls; quepreguntaquinsmo
+vimentshemdeferpertalqueuncavallpassipertoteslescasellesdeltaulerd[]escacs; pro
+blemaquetamb[]vatractaarEuler:Elsestudisquevafersobreaquestproblemavanserpublic
+atsel\OT1/cmr/m/n/10 1771\OML/cmm/m/it/10 enel\OT1/cmr/m/n/10 \[]\OML/cmm/m/it/
+10 ; iperlarelativaproximitatalstreballsd[]Euler; encaranoparlavadegrafs; totiq
+uearaelproblemaesresolmitjan\OMS/cmsy/m/n/10 x\OML/cmm/m/it/10 antaquests:Aques
+ttreballinicial[]estudidelateoriadenusos; unaaltrabrancadelatopologia:$ 
+ []
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin9'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.92 tan sols quatre colors?''}
+                               
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.99 va fer una demostraci√≥
+                             publicada el 1879), Heawood (que va demostrar
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.99 va fer una demostraci√≥
+                             publicada el 1879), Heawood (que va demostrar
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 100.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 101.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 102.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 103.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 104.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 104.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 107.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.109 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (1300.52011pt too wide) in paragraph at lines 94--109
+\T1/cmr/m/n/10 Hamil-ton, Cay-ley, Kempe (que va fer una demostraci√$[]\OML/cmm
+/m/it/10 publicadael\OT1/cmr/m/n/10 1879)\OML/cmm/m/it/10 ; Heawood\OT1/cmr/m/n
+/10 (\OML/cmm/m/it/10 quevademostrarquelademostraci[]deKempenoeracorrecta\OT1/c
+mr/m/n/10 )\OML/cmm/m/it/10 :::Finalmentel\OT1/cmr/m/n/10 1976\OML/cmm/m/it/10 
+AppeliHankenvandemostraratrav[]sd[]unprogramad[]ordinadorquetotmapaespodiapinta
+rnom[]sambquatrecolors:Pelfetdebasarlademostraci[]enunprogramad[]ordinador; mol
+tagentnovaacceptarlademstraci[]:Aix\T1/cmr/m/n/10 -
+ []
+
+
+Overfull \hbox (998.1032pt too wide) in paragraph at lines 94--109
+\OML/cmm/m/it/10 doncs; aquestproblemanovasersolucionatdemaneraformal\OT1/cmr/m
+/n/10 1996\OML/cmm/m/it/10 quan; recorrentalateoriadegrafsjadesenvolupada; Neil
+Robertson; DanielP:anders; PaulSeymouriRobinThomasvanpublicarundemostraci[]:Ene
+lstreballsd[]AppeliHankenesvandefiniralgunsdelsconceptesifonamentsdel[]actualte
+oriadegrafs:$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.116 la f√≤
+            rmula $n^{n-2}$, que determina les nombre d'arbres expansius
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.116 la f√≤
+            rmula $n^{n-2}$, que determina les nombre d'arbres expansius
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.116 la f√≤rmula $n^
+                     {n-2}$, que determina les nombre d'arbres expansius
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.117 ...© un graf complet de $n$ v√®rtex. Una f√≤
+                                                  rmula semblant apareixia
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.117 ...© un graf complet de $n$ v√®rtex. Una f√≤
+                                                  rmula semblant apareixia
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 119.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 119.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 119.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 119.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.121 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (421.41046pt too wide) in paragraph at lines 113--121
+\T1/cmr/m/n/10 Una f√$[]\OML/cmm/m/it/10 rmulasemblantapareixiaentreballsdeCarl
+WilhelmBorchardt; enelsqualsCayleyesvabasarivaextendre; per[]elqueactualmentd[]
+nanomalaf[]rmula[]selmateixCayley:$ 
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.122 ...ballar en desenvolupar una representaci√≥
+                                                   de l'estructura
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.122 ...ballar en desenvolupar una representaci√≥
+                                                   de l'estructura
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 124.
+
+
+LaTeX Warning: Command \= invalid in math mode on input line 124.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.124 ... aquests. Finalment, Cayley va contribu√Ø
+                                                  r tamb√© el 1857
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! Missing { inserted.
+<to be read again> 
+                   \egroup 
+l.124 ... aquests. Finalment, Cayley va contribu√Ø
+                                                  r tamb√© el 1857
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.124 ... aquests. Finalment, Cayley va contribu√Ø
+                                                  r tamb√© el 1857
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 124.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 125.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 125.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 125.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 125.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 126.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 126.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 126.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 127.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 128.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 128.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 129.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 129.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 129.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.131 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.131 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no Ë in font cmex10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (2042.2783pt too wide) in paragraph at lines 122--131
+[]\T1/cmr/m/n/10 Tamb√[] va tre-bal-lar en de-sen-volu-par una representaci√$[]
+\OML/cmm/m/it/10 del[]estructuraabstractad[]uncgrup; creantelsgrafsdeCayleyielt
+eoremadeCayleyreferentaaquests:Finalment; Cayleyvacontribu[]$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.139 ...ut a que utilitz√©s un icosahedre, snin√≥
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.139 ...ut a que utilitz√©s un icosahedre, snin√≥
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 140.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 140.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 140.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 141.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 141.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.145 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≤ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≤ in font cmr10!
+
+Overfull \hbox (1130.08469pt too wide) in paragraph at lines 135--145
+\T1/cmr/m/n/10 que utilitz√[]s un icosa-he-dre, snin√$[]\OML/cmm/m/it/10 quefei
+arefernciaals\OT1/cmr/m/n/10 20\OML/cmm/m/it/10 v[]rtexdeldodecahedreperons[]ha
+viadepassar\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :Entornaquestjocexisteixungrancont
+rovrsia; jaqueEulervaplantejarunproblemasemblantmentreestudiavaelproblemadelsca
+valls; iKirkmanvaplantejarexactamentelmateixproblemaqueHamiltonalaRoyalSocietyu
+ntempsabans:$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.152 en la teoria de grafs, per√≤
+                                   a m√©s, va ser el primer d'utilitzar els
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.152 en la teoria de grafs, per√≤
+                                   a m√©s, va ser el primer d'utilitzar els
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 152.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 154.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 156.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 157.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 157.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.158 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (1171.48018pt too wide) in paragraph at lines 149--158
+\T1/cmr/m/n/10 per√$[]\OML/cmm/m/it/10 am[]s; vaserelprimerd[]utilitzarelsgrafs
+enaplicacionsindustrials:Vaestudiarsobretotelsgrafsdetipusarbrei; ambl[]investi
+gaci[]quevaduratermesobreaquesttipusdegrafs; vaformularelteoremadeKirchhoff; so
+bredelnombred[]arbresd[]expansi[]queespodentrobarenungraf:Aquestteoremaesconsid
+eraunageneralitzaci[]delaf[]rmuladeCayley:$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.168 t√®cniques de computaci√≥
+                                van permetre treballar amb grafs a molt m√©s
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.168 t√®cniques de computaci√≥
+                                van permetre treballar amb grafs a molt m√©s
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 168.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 169.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.171 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (543.3751pt too wide) in paragraph at lines 162--171
+\T1/cmr/m/n/10 l'inform√ tica i les noves t√≤c-niques de computaci√$[]\OML/cmm/
+m/it/10 vanpermetretreballarambgrafsamoltm[]sgranescala; fentpossible; perexemp
+le; laprimerademostraci[]delteoremadelsquatrecolorsperAppeliHanken:$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.174 la topologia, la combinat√≤
+                                 ria, la teoria de grups, la geometria algeb...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.174 la topologia, la combinat√≤
+                                 ria, la teoria de grups, la geometria algeb...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 176.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 177.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 177.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 177.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 178.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 178.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 178.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 179.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 179.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 179.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.180 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no √ in font cmr10!
+
+Overfull \hbox (4.58742pt too wide) in paragraph at lines 172--180
+[]\T1/cmr/m/n/10 Actualment la teo-ria de grafs √[]s una part molt im-por-tant 
+de la matem√ tica
+ []
+
+
+Overfull \hbox (855.37766pt too wide) in paragraph at lines 172--180
+\T1/cmr/m/n/10 topolo-gia, la combinat√$[]\OML/cmm/m/it/10 ria; lateoriadegrups
+; lageometriaalgebraica:::Desdelseudesenvolupaments[]hanutilitzatelsgrafsperres
+oldreirepresentardemaneravisualproblemesenaquestscamps:T[]aplicacionsenmoltsalt
+res mbitscomperexemplelacomputaci[]; l[]inform tica; laf\T1/cmr/m/n/10 -
+ []
+
+
+Overfull \hbox (92.88313pt too wide) in paragraph at lines 172--180
+\OML/cmm/m/it/10 sica; laqu\T1/cmr/m/n/10 -\OML/cmm/m/it/10 mica; l[]electr[]ni
+ca; lestelecomunicacions; labiologia; lalog\T1/cmr/m/n/10 -\OML/cmm/m/it/10 sti
+caifinsitotenl[] mbitecon[]mic:$ 
+ []
+
+[2] (./general.aux) )
+(\end occurred inside a group at level 10)
+
+### simple group (level 10) entered at line 174 ({)
+### simple group (level 9) entered at line 168 ({)
+### simple group (level 8) entered at line 152 ({)
+### simple group (level 7) entered at line 139 ({)
+### simple group (level 6) entered at line 122 ({)
+### simple group (level 5) entered at line 117 ({)
+### simple group (level 4) entered at line 116 ({)
+### simple group (level 3) entered at line 99 ({)
+### simple group (level 2) entered at line 67 ({)
+### simple group (level 1) entered at line 44 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 906 strings out of 494850
+ 10239 string characters out of 6178024
+ 70956 words of memory out of 5000000
+ 4255 multiletter control sequences out of 15000+600000
+ 10884 words of font info for 26 fonts, out of 8000000 for 9000
+ 62 hyphenation exceptions out of 8191
+ 24i,10n,23p,175b,254s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.6
+00pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </hom
+e/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/aniol/.te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/aniol/.texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/aniol/.texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on general.pdf (2 pages, 134397 bytes).
+PDF statistics:
+ 235 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
