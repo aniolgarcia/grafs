@@ -1,9 +1,10 @@
 %% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[english]{article}
+\documentclass[catalan]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{babel}
+\usepackage{amsfonts}
 \begin{document}
 
 \section{Camins i algorismes}
@@ -16,6 +17,13 @@ els camins, que trobarem o generarem mitjnçant diversos algorismes.
 En aquesta secció mostraré diverses maneres de recòrrer un graf, torbant
 la manera més eficient per a cada cas.
 
+\subsection{Grafs ponderats i dirigits}
+\subsubsection*{Grafs ponderats}
+Els grafs ponderats són grafs on cada aresta $e$ està asociada a un nombre $w(e)$ anomenat pes o cost, tal que $w(e)\in \mathbb{R}$. El pes pot representar diverses quantitats, segons el que es vulgui modelitzar. Moltes vegades s'utilitza per representar distàncies, però si per exemple modelitzem una xarxa de distribució d'aigua, ens pot interessar representar el cabal de les canonades, o en una xarxa de bus, la densitat de trànsit de cada tram. 
+
+\subsection*{Grafs dirigits}
+Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. D'aquesta manera, una aresta $e_{0}=(v_{0},v_{1}) \neq e_{1}=(v_{1},v_{0})$, contràriament als grafs no dirigits. DE fet, no necessàriament ha d'existir una aresta contrària a una altra. Aquest tipus de grafs poden ser útils per representar carreteres, o moviments vàlids en algun joc. 
+
 
 \subsection{Camins}
 
@@ -23,8 +31,11 @@ Un camí $p$ és una seqüència finita i ordenada d'arestes que connecta
 una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En auqest cas,pot ser tractat com un graf elemental $P_{n}$. Un cas especial és quan el camí comenca i acaba al mateix vèrtex ($v_{0} = v_{k}$). Llavors el camí és un cicle, i és l'equivalent a un graf cicle $C_{n}$. 
 Quan un camí té totes les arestes diferents, s'anomena simple, i si a més té tots els vèrtexs diferents, s'anomena elemental.
 
-\subsection{Grafs ponderats i dirigits}
+En els grafs, ponderats, la longitud d'un camí $c=v_{0},v_{1},\cdots,v_{n}$ no es defineix pel nombre d'arestes per on passa el camí, sinó fent el sumatori dels pesos de les arestes
+\[ \textbf{longitud}_{w}(c)=\sum_{i=0}^{n-1}w(\overline{v_{i},v_{i+1}}) \]
 
 
-\paragraph{Grafs ponderats}
+
+
+
 \end{document}

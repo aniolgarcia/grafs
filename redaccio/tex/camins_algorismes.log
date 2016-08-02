@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  1 AUG 2016 14:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  2 AUG 2016 13:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -41,143 +41,80 @@ File: latin9.def 2015/03/17 v1.2c Input encoding file
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/02/24 3.9q The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
-Language: english 2012/08/20 v3.3p English support from the babel system
+(/usr/share/texlive/texmf-dist/tex/generic/babel-catalan/catalan.ldf
+Language: catalan 2005/03/29 v2.2p Catalan support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
 )
-\l@canadian = a dialect from \language\l@american 
-\l@australian = a dialect from \language\l@british 
-\l@newzealand = a dialect from \language\l@british 
+Package babel Info: Making " an active character on input line 91.
+\leftllkern=\dimen104
+\rightllkern=\dimen105
+\raiselldim=\dimen106
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
 (./camins_algorismes.aux)
 \openout1 = `camins_algorismes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Info: Redefining \l on input line 8.
+LaTeX Info: Redefining \L on input line 8.
+LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.9 ...oler trobar un cam√≠ entre dos punts, rec√≤
-                                                  rrer el graf sencer o  tro...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 9.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 9.
-! Extra }, or forgotten $.
-\mathtwosuperior ->{^2}
-                       
-l.9 ...oler trobar un cam√≠ entre dos punts, rec√≤
-                                                  rrer el graf sencer o  tro...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 9.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 9.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 
-
-LaTeX Warning: Command \~ invalid in math mode on input line 9.
-
-
-LaTeX Warning: Command \v invalid in math mode on input line 9.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 9.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 9.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 9.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 9.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 9.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.10 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-Missing character: There is no √ in font cmr10!
-Missing character: There is no √ in font cmr10!
-Missing character: There is no √ in font cmr10!
-Missing character: There is no ≤ in font cmr10!
-Missing character: There is no √ in font cmr10!
-Missing character: There is no √ in font cmr10!
-Missing character: There is no √ in font cmr10!
-Missing character: There is no √ in font cmr10!
-Missing character: There is no √ in font cmr10!
-
-Overfull \hbox (860.54457pt too wide) in paragraph at lines 9--10
-\T1/cmr/m/n/10 rec√$[]\OML/cmm/m/it/10 rrerelgrafsencerotrobarelcam\T1/cmr/m/n/
-10 -\OML/cmm/m/it/10 m[]scurtperanard[]unvrtexaunaltre:Peraquestmotiuutilitzeme
-lscamins; quetrobaremogeneraremmitjn\OMS/cmsy/m/n/10 x\OML/cmm/m/it/10 antdiver
-sosalgorismes:Enaquestasecci[]mostrar[]diversesmaneresderec[]rrerungraf; torban
-tlamaneram[]seficientperacadacas:$ 
- []
-
-[1
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./camins_algorismes.aux) 
-)
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 9 ({)
-### bottom level 
+) 
 Here is how much of TeX's memory you used:
- 884 strings out of 494850
- 10057 string characters out of 6178024
- 63956 words of memory out of 5000000
- 4241 multiletter control sequences out of 15000+600000
- 5946 words of font info for 17 fonts, out of 8000000 for 9000
+ 1003 strings out of 494850
+ 11520 string characters out of 6178024
+ 67959 words of memory out of 5000000
+ 4343 multiletter control sequences out of 15000+600000
+ 9961 words of font info for 28 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 24i,9n,23p,557b,121s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.6
-00pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on camins_algorismes.pdf (1 page, 47616 bytes).
+ 24i,4n,24p,702b,115s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/an
+iol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/aniol/.texmf-
+var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/aniol/.texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecbx1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on camins_algorismes.pdf (1 page, 87569 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 150 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
