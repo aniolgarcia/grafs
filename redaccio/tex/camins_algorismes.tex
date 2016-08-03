@@ -5,6 +5,13 @@
 \usepackage[latin9]{inputenc}
 \usepackage{babel}
 \usepackage{amsfonts}
+\usepackage[ruled, boxed]{algorithm2e}
+
+\newenvironment{algorisme}[1][htb]
+  {\renewcommand{\algorithmcfname}{Algorisme}% Canviem Algorithm a Algorisme
+   \begin{algorithm}[#1]%
+  }{\end{algorithm}}
+
 \begin{document}
 
 \section{Camins i algorismes}
@@ -28,12 +35,51 @@ Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. 
 \subsection{Camins}
 
 Un camí $p$ és una seqüència finita i ordenada d'arestes que connecta
-una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En auqest cas,pot ser tractat com un graf elemental $P_{n}$. Un cas especial és quan el camí comenca i acaba al mateix vèrtex ($v_{0} = v_{k}$). Llavors el camí és un cicle, i és l'equivalent a un graf cicle $C_{n}$. 
+una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En auqest cas,pot ser tractat com un graf elemental $P_{n}$. Un cas especial és quan el camí comença i acaba al mateix vèrtex ($v_{0} = v_{k}$). Llavors el camí és un cicle, i és l'equivalent a un graf cicle $C_{n}$. 
 Quan un camí té totes les arestes diferents, s'anomena simple, i si a més té tots els vèrtexs diferents, s'anomena elemental.
 
 En els grafs, ponderats, la longitud d'un camí $c=v_{0},v_{1},\cdots,v_{n}$ no es defineix pel nombre d'arestes per on passa el camí, sinó fent el sumatori dels pesos de les arestes
 \[ \textbf{longitud}_{w}(c)=\sum_{i=0}^{n-1}w(\overline{v_{i},v_{i+1}}) \]
 
+La distància entre dos vèrtexs $v$ i $u$, $d_{w}(v,u)$, és la que s'obté al agafar la menor longitud d'entre tots els camins elementals entre $v$ i $u$. 
+(adjunjtar exemple de distància)
+
+
+\subsection{Algorismes}
+Un algorisme és un conjunt d'instruccions precises i ben definides que, donada una entrada, calculen la sortida corresponent segons les instruccions que té.
+A continuació 
+
+\subsubsection{BFS}
+Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritàtia (\emph{breadht first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
+(Adjuntar imatge de BFS)
+ 
+Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig de la cua.    
+
+\begin{algorisme}
+\KwData{un graf $G$ i un node inicial $v$}
+\KwResult{Seqüència de de nodes visitats}
+nova cua Q\;
+marquem $v$ com a visitat\;
+imprimim($v$)\;
+posem $v$ a la cua\;
+nou node $auxiliar$\;
+nou node $següent$\;
+\While{la cua no estigui buida}
+{
+	$auxiliar$ = primer element de $Q$\;
+	imprimeix($auxiliar$)\;
+	elimina(primer element de $Q$)\;
+	
+	\While{hi hagi nodes adjacents a $auxiliar$ i aquests no s'hagin visitat}
+	 {
+	 	marca adjacent($auxiliar$) com a visitat\;
+	 	posa adjacent($auxiliar$) a la cua\; 
+	 }
+	   
+}
+\ForEach{node de $G$}{marca'l com a no visitat}
+\caption{BFS}
+\end{algorisme}
 
 
 
