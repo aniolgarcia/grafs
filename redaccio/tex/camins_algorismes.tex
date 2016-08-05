@@ -1,16 +1,20 @@
 %% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[catalan]{article}
+\documentclass[catalan,a4]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{babel}
 \usepackage{amsfonts}
+\usepackage{xcolor}
 \usepackage[ruled, boxed]{algorithm2e}
 
 \newenvironment{algorisme}[1][htb]
   {\renewcommand{\algorithmcfname}{Algorisme}% Canviem Algorithm a Algorisme
    \begin{algorithm}[#1]%
   }{\end{algorithm}}
+  
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
 
 \begin{document}
 
@@ -50,20 +54,21 @@ Un algorisme és un conjunt d'instruccions precises i ben definides que, donada u
 A continuació 
 
 \subsubsection{BFS}
-Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritàtia (\emph{breadht first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
+Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritàtia (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
 (Adjuntar imatge de BFS)
  
-Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig de la cua.    
+Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig de la cua.
+El que farà això és bàsicament imprimir per pantalla la seqncia de vèrtex ordenada segons l'ordre en que els ha visitat.    
 
 \begin{algorisme}
-\KwData{un graf $G$ i un node inicial $v$}
+\KwData{Un graf $G$ i un node inicial $v$}
 \KwResult{Seqüència de de nodes visitats}
 nova cua Q\;
-marquem $v$ com a visitat\;
-imprimim($v$)\;
-posem $v$ a la cua\;
+marca $v$ com a visitat\;
+imprimeix($v$)\;
+afegeix $v$ a la cua $Q$\;
 nou node $auxiliar$\;
-nou node $següent$\;
+nou node $seg\ddot{u}ent$\;
 \While{la cua no estigui buida}
 {
 	$auxiliar$ = primer element de $Q$\;
@@ -73,7 +78,7 @@ nou node $següent$\;
 	\While{hi hagi nodes adjacents a $auxiliar$ i aquests no s'hagin visitat}
 	 {
 	 	marca adjacent($auxiliar$) com a visitat\;
-	 	posa adjacent($auxiliar$) a la cua\; 
+	 	afegeix adjacent($auxiliar$) a la cua\; 
 	 }
 	   
 }
@@ -81,9 +86,87 @@ nou node $següent$\;
 \caption{BFS}
 
 \end{algorisme}
+Aquesta és una manera bastant usual de programar el BFS, i encara que ès eficient, estem desaprofitant propietats de l'algorime. Amb BFS podem saber a quna distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot podem generar un arbre expansiu mínim. 
+El següent algorisme té en compte aquests detalls.Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té un nom i una clau), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
 
+\begin{algorisme}
+\KwData{Un graf $G$ i un node inicial $v$}
+\KwResult{Seqüència de nodes visitats, distància de cada node resperce $v$}
+nou diccionari $dist$\;
+$dist[v]=0$\;
+nou diccionari $anterior$\;
+$anterior[v]=Nul$\;
+$i=0$\;
+nova llista $frontera$
+afegeix $v$ a $frontera$\;
+imprimeix($v$)\;
+\While{frontera no estigui buida}
+{
+	nova llista $seg\ddot{u}ent$\;
+	\ForEach{node $x$ de $frontera$} 
+	{
+		\tcc{A cada iteració, $x$ agafarà un valor diferent de $frontera$} 
+		\ForEach{node $y$ adjacent a $x$ }
+		{
+			\If{$y$ no existeix dins $dist$}
+			{
+				$dist[y]=i$\;
+				$anterior[y]=x$\;
+				afegeix $y$ a $seg\ddot{u}ent$\;
+				imprimeix($y$)\;			
+			}		
+		}
+	}
+	$frontera=seg\ddot{u}ent$\;
+	$i=i+1$\;
+}
+imprimeix($dist$)\;
+\end{algorisme}
+
+Encara que aquest algorisme sembli molt senzill, ens pot aportar informació important, i fins i tot permet resoldre problemes senzills on haguem de trobar distàncies o el camí més curt entre dos nodes. Tot i això aquest algorisme s'utilitza també per operacions més complexes: 
+\begin{itemize}
+
+\item Google l'utilitza per indexar pàgines web noves al seu buscador. Amb BFS es pot recòrrer tota la xarxa d'internet sencera, i si cada pàgina web és un node i cada enllaç és una aresta, si es posa un link d'una pàgina no indexada a una que sí ho està, l'algorisme trobarà el nou node).
+\item Les xarxes socials l'utilitzen per suggerir-te amistats. Amb BFS poden trobar els amics dels teus amics (els nodes que estàn a distància 2 de tu), que són susceptibles a ser amics teus. Com més amics teus tingui la persona a distància 2 de tu, més probable és que també la coneguis. 
+\item Es pot sil·lucionar un cub de rubik amb aquest algorisme. Si s'aconsegueix generar un graf on cada node sigui un estat diferent del cub i les arestes siguin un moviment d'una cara, donat un estat inicial, amb BFS arribes a l'estat resolt amb els mínims moviments possibles.
+
+\end{itemize}
+ 
 
 \subsubsection{DFS}
+La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'aquí \textbf{DFS}) és un algorime que utilitza uns proncipis semblants al BFS, però en lloc de cobrir tota l'amplada d'un nivell abans de passar al següent, el que fa és cobrir tota la prfunditat possible (arribar el més lluny possible) abans de tornar enrere. En la següent imatge es pot veure un esquema del funcionament de l'algorisme:
+(adjuntar imatge de DFS)
+Tal com en el BFS, també hi ha diverses maneres de fer l'algorisme, i jo en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegi o treure l'element de dalt de tot de la pila.
+
+\begin{algorisme}
+\KwData{Un graf $G$ i un node inicial $v$}
+\KwResult{Seqüència de nodes visitats}
+nova pila $S$\;
+nou node $seg\ddot{u}ent$\;
+marca $v$ com a visitat\;
+imprimeix($v$)\;
+afegeix $v$ a la pila $S$\;
+\While{la pila no estigui buida}
+{	
+	$seg\ddot{u}ent=$ node adjacent no visitat de l'element superior de $S$\;
+	\tcc{En cas que no n'hi hagi cap, $seg\ddot{u}ent=Nul$} 
+	\uIf{$seg\ddot{u}ent=Nul$}
+	{
+		elimina(element superior de $S$)\;	
+	}
+	\Else
+	{
+		marca $seg\ddot{u}ent$ com a visitat\;
+		imprimeix($seg\ddot{u}ent$)
+		afegeix $seg\ddot{u}ent$ a $S$ 
+	}
+}
+
+
+
+\caption{DFS}
+\end{algorisme}
+
 
 
 
