@@ -19,6 +19,7 @@
 \SetKwProg{Fn}{Funció}{}
 
 
+
 \begin{document}
 
 \section{Camins i algorismes}
@@ -54,14 +55,14 @@ La distància entre dos vèrtexs $v$ i $u$, $d_{w}(v,u)$, és la que s'obté al agaf
 
 \subsection{Algorismes}
 Un algorisme és un conjunt d'instruccions precises i ben definides que, donada una entrada, calculen la sortida corresponent segons les instruccions que té.
-A continuació 
+A continuació s'en mostren uns quants d'importants.
 
 \subsubsection{BFS}
 Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritàtia (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
 (Adjuntar imatge de BFS)
  
 Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig de la cua.
-El que farà això és bàsicament imprimir per pantalla la seqncia de vèrtex ordenada segons l'ordre en que els ha visitat.    
+El que farà això és bàsicament imprimir per pantalla la seqüència de vèrtexs ordenada segons l'ordre en que els ha visitat.    
 
 \begin{algorisme}
 \KwData{Un graf $G$ i un node inicial $v$}
@@ -89,8 +90,8 @@ nou node $seg\ddot{u}ent$\;
 \caption{BFS}
 
 \end{algorisme}
-Aquesta és una manera bastant usual de programar el BFS, i encara que ès eficient, estem desaprofitant propietats de l'algorime. Amb BFS podem saber a quna distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot podem generar un arbre expansiu mínim. 
-El següent algorisme té en compte aquests detalls.Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té un nom i una clau), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
+Aquesta és una manera bastant usual de programar el BFS, i encara que ès eficient, s'està desaprofitant propietats de l'algorime. Amb BFS es pot saber a quina distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot es pot generar un arbre expansiu mínim, agafant les arestes per on passa el BFS.
+El següent algorisme té en compte aquests detalls. Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té un nom i una clau), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
 
 \begin{algorisme}
 \KwData{Un graf $G$ i un node inicial $v$}
@@ -126,11 +127,12 @@ imprimeix($v$)\;
 imprimeix($dist$)\;
 \end{algorisme}
 
-Encara que aquest algorisme sembli molt senzill, ens pot aportar informació important, i fins i tot permet resoldre problemes senzills on haguem de trobar distàncies o el camí més curt entre dos nodes. Tot i això aquest algorisme s'utilitza també per operacions més complexes: 
+Encara que aquest algorisme sembli molt senzill, ens pot aportar informació important, i fins i tot permet resoldre problemes senzills on haguem de trobar distàncies o el camí més curt entre dos nodes.
+Aquest algorisme s'utilitza també per operacions més complexes, com les següents: 
 \begin{itemize}
 
-\item Google l'utilitza per indexar pàgines web noves al seu buscador. Amb BFS es pot recòrrer tota la xarxa d'internet sencera, i si cada pàgina web és un node i cada enllaç és una aresta, si es posa un link d'una pàgina no indexada a una que sí ho està, l'algorisme trobarà el nou node).
-\item Les xarxes socials l'utilitzen per suggerir-te amistats. Amb BFS poden trobar els amics dels teus amics (els nodes que estàn a distància 2 de tu), que són susceptibles a ser amics teus. Com més amics teus tingui la persona a distància 2 de tu, més probable és que també la coneguis. 
+\item Google l'utilitza per indexar pàgines web noves al seu buscador. Amb BFS pot recòrrer tota la xarxa d'internet sencera, i ,si cada pàgina web és un node i cada enllaç és una aresta, si es posa un link d'una pàgina no indexada a una que sí ho està, l'algorisme trobarà el nou node).
+\item Les xarxes socials l'utilitzen per suggerir amistats. Amb BFS poden trobar els amics d'una persona (els nodes que estàn a distància 2 d'aquesta), que són susceptibles a ser amics seus. Com més amistats en comú amb la persona a distància 2, més probable és que es coneguin. 
 \item Es pot sil·lucionar un cub de rubik amb aquest algorisme. Si s'aconsegueix generar un graf on cada node sigui un estat diferent del cub i les arestes siguin un moviment d'una cara, donat un estat inicial, amb BFS arribes a l'estat resolt amb els mínims moviments possibles.
 
 \end{itemize}
@@ -139,7 +141,7 @@ Encara que aquest algorisme sembli molt senzill, ens pot aportar informació impo
 \subsubsection{DFS}
 La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'aquí \textbf{DFS}) és un algorime que utilitza uns proncipis semblants al BFS, però en lloc de cobrir tota l'amplada d'un nivell abans de passar al següent, el que fa és cobrir tota la prfunditat possible (arribar el més lluny possible) abans de tornar enrere. En la següent imatge es pot veure un esquema del funcionament de l'algorisme:
 (adjuntar imatge de DFS)
-Tal com en el BFS, també hi ha diverses maneres de fer l'algorisme, i jo en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegi o treure l'element de dalt de tot de la pila.
+Tal com en el BFS, també hi ha diverses maneres de fer l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegi o treure l'element de dalt de tot de la pila.
 
 \begin{algorisme}
 \KwData{Un graf $G$ i un node inicial $v$}
@@ -160,8 +162,8 @@ afegeix $v$ a la pila $S$\;
 	\Else
 	{
 		marca $seg\ddot{u}ent$ com a visitat\;
-		imprimeix($seg\ddot{u}ent$)
-		afegeix $seg\ddot{u}ent$ a $S$ 
+		imprimeix($seg\ddot{u}ent$)\;
+		afegeix $seg\ddot{u}ent$ a $S$\; 
 	}
 }
 
@@ -170,37 +172,57 @@ afegeix $v$ a la pila $S$\;
 \caption{DFS}
 \end{algorisme}
 
-Aquest métode, però, té un problema, i és que només funciona per a grafs no dirigits. Hi ha la possibilitat que, treballant amb un graf dirigit, un node del graf no sigui accessible des del node inicial que hem determinat. Aixó es pot arreglar executant l'algorisme fent que cada node no visitat per les iteracions anteriors sigui l'inicial. El segon algorisme, a part d'arreglar això, utilitza una funció recursiva (una funció que es crida a si mateixa).
+Aquest métode, però, té un problema, i és que només funciona per a grafs no dirigits. Hi ha la possibilitat que, treballant amb un graf dirigit, un node del graf no sigui accessible des del node inicial que hem determinat. Aquest cas excepcional es pot arreglar fent que cada node no visitat per les iteracions anteriors sigui l'inicial. El segon algorisme, a part d'arreglar això, utilitza una funció recursiva (una funció que es crida a si mateixa).
 
-\begin{algorisme}
+
+
+\begin{algorithm}
 \KwData{Un graf $G$}
 \KwResult{Seqüència de nodes visitats des de cada node}
-nova llista $anterior$\;
-\Fn{DFS_recursiu($G, v$)}
+\DontPrintSemicolon
+\SetKwFunction{Fdfs}{DFSrecursiu}
+\SetKwFunction{FMain}{Programa principal}
+\SetKwProg{Fn}{Funció}{}{}
+\Fn{\Fdfs{$G$, $v$}}
 {
-	\ForEach{node $s$ adjacent a $v$}
-	{	
-		\If{$s$ no existeix dins $anterior$}
+	\ForEach{node $x$ adjacent a $v$}
+	{
+		\If{$x$ no existeix a $anterior$}
 		{
-			$anterior[s]=v$\;
-			DFS_recursiu($Adj, s$)\;		
+			imprimeix($x$)\;
+			$anterior[x]=Nul$\;
+			DFSrecursiu($G, x$)\;
 		}
-	
-	}	
-
+	}	       
 }
 
+  
+\;
+\tcc{A partir d'aquí ja no és part de la funció, és el programa en si} 
 \ForEach{node $u$ del graf}
 {
 	\If{$u$ no existeix dins $anterior$}
 	{
+		imprimeix($u$)\;
 		$anterior[u]=Nul$\;
-		DFS_recursiu($G, u$)
+		DFSrecursiu($G, u$)\;
 	}
 
 }
-\caption{DFS}
-\end{algorisme}
+\end{algorithm}
+
+Aquest algorisme no té tantes utilitats pràctiques com el BFS, però també té propuietats utils, com per exemple, que passa per totes les arestes.A través d'ell podem obtenir informació importanat d'un graf:
+\begin{itemize}
+\item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix. En cas afirmatiu voldrà dir que hi ha un cicle.
+\item Es pot saber si un graf és bipartit assignant un color (entre un total de 2 colors possibles) a cada node mentre es recorre el graf, de manera que un node tingui un color diferent al dels nodes adjacents. Si això és possible voldrà dir que el graf és bipartit.
+\item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quna hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb el DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques.
+(Adjuntar exemple d'ordenació topològica i la seva sol·lució donada mitjancant DFS)
+\end{itemize}
+
+\subsubsection{}
+
+
+
 
 
 
