@@ -1,6 +1,6 @@
 %% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[catalan,a4]{article}
+\documentclass[catalan]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{babel}
@@ -15,6 +15,9 @@
   
 \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
 \SetCommentSty{mycommfont}
+
+\SetKwProg{Fn}{Funció}{}
+
 
 \begin{document}
 
@@ -167,7 +170,37 @@ afegeix $v$ a la pila $S$\;
 \caption{DFS}
 \end{algorisme}
 
+Aquest métode, però, té un problema, i és que només funciona per a grafs no dirigits. Hi ha la possibilitat que, treballant amb un graf dirigit, un node del graf no sigui accessible des del node inicial que hem determinat. Aixó es pot arreglar executant l'algorisme fent que cada node no visitat per les iteracions anteriors sigui l'inicial. El segon algorisme, a part d'arreglar això, utilitza una funció recursiva (una funció que es crida a si mateixa).
 
+\begin{algorisme}
+\KwData{Un graf $G$}
+\KwResult{Seqüència de nodes visitats des de cada node}
+nova llista $anterior$\;
+\Fn{DFS_recursiu($G, v$)}
+{
+	\ForEach{node $s$ adjacent a $v$}
+	{	
+		\If{$s$ no existeix dins $anterior$}
+		{
+			$anterior[s]=v$\;
+			DFS_recursiu($Adj, s$)\;		
+		}
+	
+	}	
+
+}
+
+\ForEach{node $u$ del graf}
+{
+	\If{$u$ no existeix dins $anterior$}
+	{
+		$anterior[u]=Nul$\;
+		DFS_recursiu($G, u$)
+	}
+
+}
+\caption{DFS}
+\end{algorisme}
 
 
 
