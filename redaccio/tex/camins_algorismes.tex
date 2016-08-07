@@ -65,6 +65,7 @@ Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua,
 El que farà això és bàsicament imprimir per pantalla la seqüència de vèrtexs ordenada segons l'ordre en que els ha visitat.    
 
 \begin{algorisme}
+\DontPrintSemicolon
 \KwData{Un graf $G$ i un node inicial $v$}
 \KwResult{Seqüència de de nodes visitats}
 nova cua Q\;
@@ -94,6 +95,7 @@ Aquesta és una manera bastant usual de programar el BFS, i encara que ès eficien
 El següent algorisme té en compte aquests detalls. Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té un nom i una clau), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
 
 \begin{algorisme}
+\DontPrintSemicolon
 \KwData{Un graf $G$ i un node inicial $v$}
 \KwResult{Seqüència de nodes visitats, distància de cada node resperce $v$}
 nou diccionari $dist$\;
@@ -144,6 +146,7 @@ La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'a
 Tal com en el BFS, també hi ha diverses maneres de fer l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegi o treure l'element de dalt de tot de la pila.
 
 \begin{algorisme}
+\DontPrintSemicolon
 \KwData{Un graf $G$ i un node inicial $v$}
 \KwResult{Seqüència de nodes visitats}
 nova pila $S$\;
@@ -180,6 +183,23 @@ Aquest métode, però, té un problema, i és que només funciona per a grafs no diri
 \KwData{Un graf $G$}
 \KwResult{Seqüència de nodes visitats des de cada node}
 \DontPrintSemicolon
+nou diccionari $anterior$\;
+nova llista $ordre$\;
+\ForEach{node $u$ del graf}
+{
+	\If{$u$ no existeix dins $anterior$}
+	{
+		imprimeix($u$)\;
+		$anterior[u]=Nul$\;
+		DFSrecursiu($G, u$)\;
+	}
+
+}
+inverteix $ordre$\;
+imprimeix($ordre$)\;
+
+\;
+\tcc{La funció DFSrecursiu queda determinada pel següent algorisme:} 
 \SetKwFunction{Fdfs}{DFSrecursiu}
 \SetKwFunction{FMain}{Programa principal}
 \SetKwProg{Fn}{Funció}{}{}
@@ -193,34 +213,75 @@ Aquest métode, però, té un problema, i és que només funciona per a grafs no diri
 			$anterior[x]=Nul$\;
 			DFSrecursiu($G, x$)\;
 		}
-	}	       
+	}
+	\tcc{Només si es vol obtenir la seqüència de recursió o ordenació topològica per a grafs dirigits acíclics,}  
+	afegeix $v$ a $ordre$\;	     
 }
 
   
-\;
-\tcc{A partir d'aquí ja no és part de la funció, és el programa en si} 
-\ForEach{node $u$ del graf}
-{
-	\If{$u$ no existeix dins $anterior$}
-	{
-		imprimeix($u$)\;
-		$anterior[u]=Nul$\;
-		DFSrecursiu($G, u$)\;
-	}
 
-}
 \end{algorithm}
 
 Aquest algorisme no té tantes utilitats pràctiques com el BFS, però també té propuietats utils, com per exemple, que passa per totes les arestes.A través d'ell podem obtenir informació importanat d'un graf:
 \begin{itemize}
 \item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix. En cas afirmatiu voldrà dir que hi ha un cicle.
 \item Es pot saber si un graf és bipartit assignant un color (entre un total de 2 colors possibles) a cada node mentre es recorre el graf, de manera que un node tingui un color diferent al dels nodes adjacents. Si això és possible voldrà dir que el graf és bipartit.
-\item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quna hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb el DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques.
+\item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quan hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb el DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques.
 (Adjuntar exemple d'ordenació topològica i la seva sol·lució donada mitjancant DFS)
 \end{itemize}
 
-\subsubsection{}
+\subsubsection{Dijkstra}
+Aquest algorisme, desdenvolupat per Edsger W. Dijkstra el 1956, serveix per trobar el camí més curt entre dos nodes d'un gaf ponderat. De fet, això és el que feia la variant original, però la variant presentada aquí troba el camí més curt entre un node inicial i tota la resta de nodes dels graf. Tot i això es pot modificar lleugerament el programa perquè pari quan hagi trobat el camí més curt entre dos nodes especificats. El que fa el programa és suposar quines són les distàncies mínimes des del node inicial fins la resta, i va descobrint el graf fins que pot assegurar el camé més curt. Al principi, suposa que el moviment amb menys cost és no moure's (això serà cert si el graf no conté arestes amb pesos negartius, que l'algorisme no pot tractar). Després busca els nodes adjacents al node inicial, i suposa que les distàncies mínimes entre l'inicial i aquests és simplement l'aresta que els uneix. Es pot assegurar que serà cert pel node unit amb l'aresta de menys pes, per la desigualtat triangular (si s'hi pogués accedir per un altre camí, aquest seria més llarg, ja que per força alguna de les arestes amb més pes que s'han descartat ha de formar part del camí alternatiu, i la suma serà sempre superior). Un cop hi ha el primer node amb mínim pes assegurat (i per tant ja sap un camí), es busquen els seus adjacents, el pes dels quals inicialment és infinit. La suposició del pes equivaldrà a el pes del node d'on venen més el de l'aresta que els uneix, i es canviarà pel pes que tenen si aquest és mes gran que el nou. Ara es torna a agafar el node amb el pes menor (que segur que és el mínim) i es torna a mirar els adjacents i assignar pesos. Quan tots els nodes hagin estat visitats, el pes de cada node serà la distància mínima que s'ha de recòrrer per anar del node inicial fins a aquest.
 
+(Adjuntar esquema de procediment de Dijkstra)
+
+Aquest algorisme, encara que no pot treballar amb pesos negatius és molt útil té una gran quantitat d'aplicacions pràctiques:
+\begin{itemize}
+\item Navegadors GPS, on les arestes són carrers i carreteres, els nodes cruïlles i els pesos distàncies. S'utilitza l'algorisme de Dijkstra per trobar els camins més curts entre dues destincaions.
+\item Problemes de canvis de divisa, on volem trobar la miillor manera de canviar divises i guanyar més diners. Aquí els nodes són les diferents monedes o divises, les arestes les transaccions i els pesos les taxes de canvi. Amb aquest algorisme podem trobar la millor manera de fer els canvis de moneda.
+\item Els routers utilitzen l'algorisme per portar-te a través d'internet al servidor desitjat amb la menor cantitat de passos possibles.
+\item En robòtica s'utilitza per fer la planificació de moviment del robot. Cada node és una unitat d'espai, i omplint tot l'espai de nodes excepte els obstacles i executant l'algorisme en el graf resultant, s'obté el camí més òptim per arribar a la posició desitjada.
+\item En epidemologia es pot utilitzar per modelitzar un grup de persones i els seus familiars per veure qui és més susceptible a emmalaltir. Això també pot funcionar entre ciutats o col·lectius més grans. 
+ 
+\end{itemize}
+
+
+\begin{algorisme}
+\DontPrintSemicolon
+\KwData{Un graf ponderat $G$ i un node inicial $s$}
+\KwResult{Distància mínima entre $v$ i la resta de nodes del graf}
+nou diccionari $dist$\;
+nou diccionari $Q$\;
+\ForEach{node $v$ de $G$}
+{
+	$Q[v]=\infty$\;
+	$dist[v]=\infty$\;
+}
+$Q[s]=0$\;
+\While{$Q$ no estigui buit}
+{
+	$u=min{valor de Q}$\;
+	$dist[u]=Q[u]$\;
+	\ForEach{node $v$ adjacent a $u$}
+	{
+		\If{$v$ existeix dins $Q$}
+		{
+			
+			\If{$Q[v]>Q[u]+w(u,v)$}
+			{
+				\tcc{$w(u,v)$ és el pes de l'aresta \{$u,v$\}}
+				$Q[v]=Q[u]+w(u,v)$\;
+			}
+		}
+	}
+	elimina($Q[u]$)\;
+}
+imprimeix($dist$)
+\;
+
+\end{algorisme}
+
+\subsubsection{Bellman-Ford}
 
 
 
