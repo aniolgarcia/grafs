@@ -47,6 +47,7 @@ def BFS(Adj, s):
 def Dijkstra(Adj, s):
     Q={}
     dist={}
+    tree={}
     for i in range(0, len(Adj)):
         Q[i]=float("inf")
         dist[i]=float("inf")
@@ -58,16 +59,61 @@ def Dijkstra(Adj, s):
             if v in Q:
                 if Q[v] > Q[u] + Adj[u][v]:
                     Q[v] = Q[u] + Adj[u][v]
+                    tree[v] = u
         Q.pop(u)
+    print "Distances:"
     print dist
+    print "Shortest-path tree:"
+    print tree
+
+    
+def BellmanFord(Adj, s):
+    dist={}
+    tree={}
+    for i in range(0, len(Adj)):
+        dist[i]=float("inf")
+        tree[i]=None
+    dist[s]=0
+    
+    for i in range(0, len(Adj)-1):
+        for u in range(0, len(Adj)):
+            for v in Adj[u]:
+                if dist[v] > dist[u] + Adj[u][v]:
+                    dist[v] = dist[u] + Adj[u][v]
+                    tree[v]=u
+    for u in range(0, len(Adj)):
+        for v in Adj[u]:
+            if dist[v] > dist[u] + Adj[u][v]:
+                print "There are negative-weight cycles"
+                break
+            
+    print "Distances:"
+    print dist
+    print "Shortest-path tree:"
+    print tree
+    
+                
+            
+                
+        
+   
+
+
+
+
+
 
 v=[[1,2],[0,2,4],[0,1,3],[2,4,5],[1,3,5],[3,4]]
 w=[[1,2],[],[],[0,1,2]]
 dag=[[1],[2,3,5],[4],[7],[],[6],[],[]]
 weight=[{1:10,2:3},{2:1, 3:2},{1:4, 3:8, 4:2},{4:7},{3:9}]
-killer=[{1:16,2:0},{2:-32},{3:8,4:0},{4:-16},{5:4,6:0},{6:-8},{7:2,8:0},{8:-4},{9:1,10:-2},{}]
+killer=[{1:16,2:0},{2:-32},{3:8,4:0},{4:-16},{5:4,6:0},{6:-8},{7:2,8:0},{8:-4},{9:1,10:0},{10:-2},{}]
 non_co=[{1:1, 2:1},{2:1, 3:1},{3:1, 5:1},{4:1},{},{},{},{6:1}]
 non_dir=[{1:8,3:2},{0:8,2:5,3:3,4:1},{1:5,3:2,4:4},{0:2,1:3,2:2},{1:1,2:4}]
-Dijkstra(non_dir,0)
+lit=[{1:5,3:-2},{2:1},{3:2,5:3,4:7},{1:2},{5:10},{}]
+test=[{1:1,2:10},{3:2},{3:-10},{4:3},{}]
+#FordBellman(killer,0)
+
+BellmanFord(killer,0)
 
 

@@ -249,7 +249,7 @@ Aquest algorisme, encara que no pot treballar amb pesos negatius és molt útil té
 \begin{algorisme}
 \DontPrintSemicolon
 \KwData{Un graf ponderat $G$ i un node inicial $s$}
-\KwResult{Distància mínima entre $v$ i la resta de nodes del graf}
+\KwResult{Distància mínima entre $s$ i la resta de nodes del graf, arbre expensiu mínim}
 nou diccionari $dist$\;
 nou diccionari $Q$\;
 \ForEach{node $v$ de $G$}
@@ -278,10 +278,56 @@ $Q[s]=0$\;
 }
 imprimeix($dist$)
 \;
-
+\caption{Dijkstra}
 \end{algorisme}
 
 \subsubsection{Bellman-Ford}
+Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algorisme de Dijkstra, però té la particularitat de poder tractar sense problemes les arestes amb pesos negatius, mentre que Dijkstra no ho permet. Dijkstra es basa en la desigualtat triangular per tobar el camímés curt, però amb pesos negatius no es pot suposar que la desigualtat triangular es compleixi. A més, permet saber si un graf cinté cicles negatius. Si un camí entre dos nodes conté un cile de pes negatiu, no es pot trobar un camí mínim entre aquests dos nodes. Això es deu a que recorrent aquest cicle sempre es podria escurçar el camí, i llavors el mínim possible seria de $-\infty$.
+
+
+\begin{algorisme}
+\SetKwFunction{Range}{range}%%
+\KwData{Un graf ponderat $G$ i un node inicia $s$}
+\KwResult{Distància mínima entre $s$ i la resta de nodes del graf, arbre expansiu mínim}
+nou diccionari $dist$\;
+nou diccionari $anterior$\;
+\ForEach{node $v$ de $G$}
+{
+	$dist[v]=\infty$\;
+	$anterior[v]=Nul$\;
+}
+$dist[s]=0$\;
+\For{i in range(0, len(Adj)-1)}
+{
+	\ForEach{$u$ dins $Adj$}
+	{
+		\ForEach{$v$ dins $Adj[u]$}
+		{
+			\If{$dist[v]>dist[u]+w(u,v)$}
+			{
+				\tcc{$w(u,v)$ és el pes de l'aresta \{$u,v$\}}
+				$dist[v]=dist[u]+w(u,v)$\;
+			}
+		}
+	}
+}
+
+\ForEach{$u$ dins $Adj$}
+	{
+		\ForEach{$v$ dins $Adj[u]$}
+		{
+			\If{$dist[v]>dist[u]+w(u,v)$}
+			{
+				imprimeix("Hi ha cicles de pesos negatius")\;
+				
+		}
+	}		
+}
+imprimeix($dist$)\;
+imprimeix($anterior$)\;
+	
+\caption{Bellman-Ford}
+\end{algorisme}
 
 
 

@@ -7,6 +7,20 @@
 \usepackage{amstext}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage[ruled, boxed]{algorithm2e}
+
+\newenvironment{algorisme}[1][htb]
+  {\renewcommand{\algorithmcfname}{Algorisme}% Canviem Algorithm a Algorisme
+   \begin{algorithm}[#1]%
+  }{\end{algorithm}}
+  
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+
+\SetKwProg{Fn}{Funció}{}
+
+
 \begin{document}
 
 \part{Introducció a la teoria de grafs}
@@ -426,7 +440,6 @@ El nombre de fulles d'un arbre $T$ és més gran o igual a $\Delta$.
 \end{quote}
 \emph{Demostració: }Si eliminem el node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles.Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent a el node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi haurà com a mínim $\Delta$ fulles.
 
-
 \section{Camins i algorismes}
 
 Sovint, quan utilitzem un graf per modelitzar quelcom, ens interessa
@@ -448,12 +461,14 @@ Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. 
 \subsection{Camins}
 
 Un camí $p$ és una seqüència finita i ordenada d'arestes que connecta
-una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En auqest cas,pot ser tractat com un graf elemental $P_{n}$. Un cas especial és quan el camí comenca i acaba al mateix vèrtex ($v_{0} = v_{k}$). Llavors el camí és un cicle, i és l'equivalent a un graf cicle $C_{n}$. 
+una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En auqest cas,pot ser tractat com un graf elemental $P_{n}$. Un cas especial és quan el camí comença i acaba al mateix vèrtex ($v_{0} = v_{k}$). Llavors el camí és un cicle, i és l'equivalent a un graf cicle $C_{n}$. 
 Quan un camí té totes les arestes diferents, s'anomena simple, i si a més té tots els vèrtexs diferents, s'anomena elemental.
 
 En els grafs, ponderats, la longitud d'un camí $c=v_{0},v_{1},\cdots,v_{n}$ no es defineix pel nombre d'arestes per on passa el camí, sinó fent el sumatori dels pesos de les arestes
 \[ \textbf{longitud}_{w}(c)=\sum_{i=0}^{n-1}w(\overline{v_{i},v_{i+1}}) \]
 
+La distància entre dos vèrtexs $v$ i $u$, $d_{w}(v,u)$, és la que s'obté al agafar la menor longitud d'entre tots els camins elementals entre $v$ i $u$. 
+(adjunjtar exemple de distància)
 
 
 \section{Estructures de dades dels grafs}
@@ -514,5 +529,283 @@ accedir a la seva pròpia llista, siguent així molt més senzill fer
 iteracions. Amb l'esquema següent es pot veure més clarament:
 
 (afegir esquema de les llistes d'adjacència)
+
+
+
+\subsection{Algorismes}
+Un algorisme és un conjunt d'instruccions precises i ben definides que, donada una entrada, calculen la sortida corresponent segons les instruccions que té.
+A continuació s'en mostren uns quants d'importants.
+
+\subsubsection{BFS}
+Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritàtia (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
+(Adjuntar imatge de BFS)
+ 
+Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig de la cua.
+El que farà això és bàsicament imprimir per pantalla la seqüència de vèrtexs ordenada segons l'ordre en que els ha visitat.    
+
+\begin{algorisme}
+\DontPrintSemicolon
+\KwData{Un graf $G$ i un node inicial $v$}
+\KwResult{Seqüència de de nodes visitats}
+nova cua Q\;
+marca $v$ com a visitat\;
+imprimeix($v$)\;
+afegeix $v$ a la cua $Q$\;
+nou node $auxiliar$\;
+nou node $seg\ddot{u}ent$\;
+\While{la cua no estigui buida}
+{
+	$auxiliar$ = primer element de $Q$\;
+	imprimeix($auxiliar$)\;
+	elimina(primer element de $Q$)\;
+	
+	\While{hi hagi nodes adjacents a $auxiliar$ i aquests no s'hagin visitat}
+	 {
+	 	marca adjacent($auxiliar$) com a visitat\;
+	 	afegeix adjacent($auxiliar$) a la cua\; 
+	 }
+	   
+}
+\ForEach{node de $G$}{marca'l com a no visitat}
+\caption{BFS}
+
+\end{algorisme}
+Aquesta és una manera bastant usual de programar el BFS, i encara que ès eficient, s'està desaprofitant propietats de l'algorime. Amb BFS es pot saber a quina distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot es pot generar un arbre expansiu mínim, agafant les arestes per on passa el BFS.
+El següent algorisme té en compte aquests detalls. Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té un nom i una clau), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
+
+\begin{algorisme}
+\DontPrintSemicolon
+\KwData{Un graf $G$ i un node inicial $v$}
+\KwResult{Seqüència de nodes visitats, distància de cada node resperce $v$}
+nou diccionari $dist$\;
+$dist[v]=0$\;
+nou diccionari $anterior$\;
+$anterior[v]=Nul$\;
+$i=0$\;
+nova llista $frontera$
+afegeix $v$ a $frontera$\;
+imprimeix($v$)\;
+\While{frontera no estigui buida}
+{
+	nova llista $seg\ddot{u}ent$\;
+	\ForEach{node $x$ de $frontera$} 
+	{
+		\tcc{A cada iteració, $x$ agafarà un valor diferent de $frontera$} 
+		\ForEach{node $y$ adjacent a $x$ }
+		{
+			\If{$y$ no existeix dins $dist$}
+			{
+				$dist[y]=i$\;
+				$anterior[y]=x$\;
+				afegeix $y$ a $seg\ddot{u}ent$\;
+				imprimeix($y$)\;			
+			}		
+		}
+	}
+	$frontera=seg\ddot{u}ent$\;
+	$i=i+1$\;
+}
+imprimeix($dist$)\;
+\end{algorisme}
+
+Encara que aquest algorisme sembli molt senzill, ens pot aportar informació important, i fins i tot permet resoldre problemes senzills on haguem de trobar distàncies o el camí més curt entre dos nodes.
+Aquest algorisme s'utilitza també per operacions més complexes, com les següents: 
+\begin{itemize}
+
+\item Google l'utilitza per indexar pàgines web noves al seu buscador. Amb BFS pot recòrrer tota la xarxa d'internet sencera, i ,si cada pàgina web és un node i cada enllaç és una aresta, si es posa un link d'una pàgina no indexada a una que sí ho està, l'algorisme trobarà el nou node).
+\item Les xarxes socials l'utilitzen per suggerir amistats. Amb BFS poden trobar els amics d'una persona (els nodes que estàn a distància 2 d'aquesta), que són susceptibles a ser amics seus. Com més amistats en comú amb la persona a distància 2, més probable és que es coneguin. 
+\item Es pot sil·lucionar un cub de rubik amb aquest algorisme. Si s'aconsegueix generar un graf on cada node sigui un estat diferent del cub i les arestes siguin un moviment d'una cara, donat un estat inicial, amb BFS arribes a l'estat resolt amb els mínims moviments possibles.
+
+\end{itemize}
+ 
+
+\subsubsection{DFS}
+La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'aquí \textbf{DFS}) és un algorime que utilitza uns proncipis semblants al BFS, però en lloc de cobrir tota l'amplada d'un nivell abans de passar al següent, el que fa és cobrir tota la prfunditat possible (arribar el més lluny possible) abans de tornar enrere. En la següent imatge es pot veure un esquema del funcionament de l'algorisme:
+(adjuntar imatge de DFS)
+Tal com en el BFS, també hi ha diverses maneres de fer l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegi o treure l'element de dalt de tot de la pila.
+
+\begin{algorisme}
+\DontPrintSemicolon
+\KwData{Un graf $G$ i un node inicial $v$}
+\KwResult{Seqüència de nodes visitats}
+nova pila $S$\;
+nou node $seg\ddot{u}ent$\;
+marca $v$ com a visitat\;
+imprimeix($v$)\;
+afegeix $v$ a la pila $S$\;
+\While{la pila no estigui buida}
+{	
+	$seg\ddot{u}ent=$ node adjacent no visitat de l'element superior de $S$\;
+	\tcc{En cas que no n'hi hagi cap, $seg\ddot{u}ent=Nul$} 
+	\uIf{$seg\ddot{u}ent=Nul$}
+	{
+		elimina(element superior de $S$)\;	
+	}
+	\Else
+	{
+		marca $seg\ddot{u}ent$ com a visitat\;
+		imprimeix($seg\ddot{u}ent$)\;
+		afegeix $seg\ddot{u}ent$ a $S$\; 
+	}
+}
+
+
+
+\caption{DFS}
+\end{algorisme}
+
+Aquest métode, però, té un problema, i és que només funciona per a grafs no dirigits. Hi ha la possibilitat que, treballant amb un graf dirigit, un node del graf no sigui accessible des del node inicial que hem determinat. Aquest cas excepcional es pot arreglar fent que cada node no visitat per les iteracions anteriors sigui l'inicial. El segon algorisme, a part d'arreglar això, utilitza una funció recursiva (una funció que es crida a si mateixa).
+
+
+
+\begin{algorithm}
+\KwData{Un graf $G$}
+\KwResult{Seqüència de nodes visitats des de cada node}
+\DontPrintSemicolon
+nou diccionari $anterior$\;
+nova llista $ordre$\;
+\ForEach{node $u$ del graf}
+{
+	\If{$u$ no existeix dins $anterior$}
+	{
+		imprimeix($u$)\;
+		$anterior[u]=Nul$\;
+		DFSrecursiu($G, u$)\;
+	}
+
+}
+inverteix $ordre$\;
+imprimeix($ordre$)\;
+
+\;
+\tcc{La funció DFSrecursiu queda determinada pel següent algorisme:} 
+\SetKwFunction{Fdfs}{DFSrecursiu}
+\SetKwFunction{FMain}{Programa principal}
+\SetKwProg{Fn}{Funció}{}{}
+\Fn{\Fdfs{$G$, $v$}}
+{
+	\ForEach{node $x$ adjacent a $v$}
+	{
+		\If{$x$ no existeix a $anterior$}
+		{
+			imprimeix($x$)\;
+			$anterior[x]=Nul$\;
+			DFSrecursiu($G, x$)\;
+		}
+	}
+	\tcc{Només si es vol obtenir la seqüència de recursió o ordenació topològica per a grafs dirigits acíclics,}  
+	afegeix $v$ a $ordre$\;	     
+}
+
+  
+
+\end{algorithm}
+
+Aquest algorisme no té tantes utilitats pràctiques com el BFS, però també té propuietats utils, com per exemple, que passa per totes les arestes.A través d'ell podem obtenir informació importanat d'un graf:
+\begin{itemize}
+\item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix. En cas afirmatiu voldrà dir que hi ha un cicle.
+\item Es pot saber si un graf és bipartit assignant un color (entre un total de 2 colors possibles) a cada node mentre es recorre el graf, de manera que un node tingui un color diferent al dels nodes adjacents. Si això és possible voldrà dir que el graf és bipartit.
+\item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quan hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb el DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques.
+(Adjuntar exemple d'ordenació topològica i la seva sol·lució donada mitjancant DFS)
+\end{itemize}
+
+\subsubsection{Dijkstra}
+Aquest algorisme, desdenvolupat per Edsger W. Dijkstra el 1956, serveix per trobar el camí més curt entre dos nodes d'un gaf ponderat. De fet, això és el que feia la variant original, però la variant presentada aquí troba el camí més curt entre un node inicial i tota la resta de nodes dels graf. Tot i això es pot modificar lleugerament el programa perquè pari quan hagi trobat el camí més curt entre dos nodes especificats. El que fa el programa és suposar quines són les distàncies mínimes des del node inicial fins la resta, i va descobrint el graf fins que pot assegurar el camé més curt. Al principi, suposa que el moviment amb menys cost és no moure's (això serà cert si el graf no conté arestes amb pesos negartius, que l'algorisme no pot tractar). Després busca els nodes adjacents al node inicial, i suposa que les distàncies mínimes entre l'inicial i aquests és simplement l'aresta que els uneix. Es pot assegurar que serà cert pel node unit amb l'aresta de menys pes, per la desigualtat triangular (si s'hi pogués accedir per un altre camí, aquest seria més llarg, ja que per força alguna de les arestes amb més pes que s'han descartat ha de formar part del camí alternatiu, i la suma serà sempre superior). Un cop hi ha el primer node amb mínim pes assegurat (i per tant ja sap un camí), es busquen els seus adjacents, el pes dels quals inicialment és infinit. La suposició del pes equivaldrà a el pes del node d'on venen més el de l'aresta que els uneix, i es canviarà pel pes que tenen si aquest és mes gran que el nou. Ara es torna a agafar el node amb el pes menor (que segur que és el mínim) i es torna a mirar els adjacents i assignar pesos. Quan tots els nodes hagin estat visitats, el pes de cada node serà la distància mínima que s'ha de recòrrer per anar del node inicial fins a aquest.
+
+(Adjuntar esquema de procediment de Dijkstra)
+
+Aquest algorisme, encara que no pot treballar amb pesos negatius és molt útil té una gran quantitat d'aplicacions pràctiques:
+\begin{itemize}
+\item Navegadors GPS, on les arestes són carrers i carreteres, els nodes cruïlles i els pesos distàncies. S'utilitza l'algorisme de Dijkstra per trobar els camins més curts entre dues destincaions.
+\item Problemes de canvis de divisa, on volem trobar la miillor manera de canviar divises i guanyar més diners. Aquí els nodes són les diferents monedes o divises, les arestes les transaccions i els pesos les taxes de canvi. Amb aquest algorisme podem trobar la millor manera de fer els canvis de moneda.
+\item Els routers utilitzen l'algorisme per portar-te a través d'internet al servidor desitjat amb la menor cantitat de passos possibles.
+\item En robòtica s'utilitza per fer la planificació de moviment del robot. Cada node és una unitat d'espai, i omplint tot l'espai de nodes excepte els obstacles i executant l'algorisme en el graf resultant, s'obté el camí més òptim per arribar a la posició desitjada.
+\item En epidemologia es pot utilitzar per modelitzar un grup de persones i els seus familiars per veure qui és més susceptible a emmalaltir. Això també pot funcionar entre ciutats o col·lectius més grans. 
+ 
+\end{itemize}
+
+
+\begin{algorisme}
+\DontPrintSemicolon
+\KwData{Un graf ponderat $G$ i un node inicial $s$}
+\KwResult{Distància mínima entre $s$ i la resta de nodes del graf, arbre expensiu mínim}
+nou diccionari $dist$\;
+nou diccionari $Q$\;
+\ForEach{node $v$ de $G$}
+{
+	$Q[v]=\infty$\;
+	$dist[v]=\infty$\;
+}
+$Q[s]=0$\;
+\While{$Q$ no estigui buit}
+{
+	$u=min{valor de Q}$\;
+	$dist[u]=Q[u]$\;
+	\ForEach{node $v$ adjacent a $u$}
+	{
+		\If{$v$ existeix dins $Q$}
+		{
+			
+			\If{$Q[v]>Q[u]+w(u,v)$}
+			{
+				\tcc{$w(u,v)$ és el pes de l'aresta \{$u,v$\}}
+				$Q[v]=Q[u]+w(u,v)$\;
+			}
+		}
+	}
+	elimina($Q[u]$)\;
+}
+imprimeix($dist$)
+\;
+\caption{Dijkstra}
+\end{algorisme}
+
+\subsubsection{Bellman-Ford}
+Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algorisme de Dijkstra, però té la particularitat de poder tractar sense problemes les arestes amb pesos negatius, mentre que Dijkstra no ho permet. Dijkstra es basa en la desigualtat triangular per tobar el camímés curt, però amb pesos negatius no es pot suposar que la desigualtat triangular es compleixi. A més, permet saber si un graf cinté cicles negatius. Si un camí entre dos nodes conté un cile de pes negatiu, no es pot trobar un camí mínim entre aquests dos nodes. Això es deu a que recorrent aquest cicle sempre es podria escurçar el camí, i llavors el mínim possible seria de $-\infty$.
+
+
+\begin{algorisme}
+\SetKwFunction{Range}{range}%%
+\KwData{Un graf ponderat $G$ i un node inicia $s$}
+\KwResult{Distància mínima entre $s$ i la resta de nodes del graf, arbre expansiu mínim}
+nou diccionari $dist$\;
+nou diccionari $anterior$\;
+\ForEach{node $v$ de $G$}
+{
+	$dist[v]=\infty$\;
+	$anterior[v]=Nul$\;
+}
+$dist[s]=0$\;
+\For{i in range(0, len(Adj)-1)}
+{
+	\ForEach{$u$ dins $Adj$}
+	{
+		\ForEach{$v$ dins $Adj[u]$}
+		{
+			\If{$dist[v]>dist[u]+w(u,v)$}
+			{
+				\tcc{$w(u,v)$ és el pes de l'aresta \{$u,v$\}}
+				$dist[v]=dist[u]+w(u,v)$\;
+			}
+		}
+	}
+}
+
+\ForEach{$u$ dins $Adj$}
+	{
+		\ForEach{$v$ dins $Adj[u]$}
+		{
+			\If{$dist[v]>dist[u]+w(u,v)$}
+			{
+				imprimeix("Hi ha cicles de pesos negatius")\;
+				
+		}
+	}		
+}
+imprimeix($dist$)\;
+imprimeix($anterior$)\;
+	
+\caption{Bellman-Ford}
+\end{algorisme}
 
 \end{document}
