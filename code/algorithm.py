@@ -1,3 +1,6 @@
+from UnionFind import UnionFind
+
+
 parent={}
 topo=[] 
 def DFS(Adj):
@@ -92,6 +95,38 @@ def BellmanFord(Adj, s):
     print "Shortest-path tree:"
     print tree
     
+def Prim(Adj):
+    Q={}
+    tree={}
+    for i in range(0,len(Adj)):
+        Q[i]=float("inf")
+    Q[0]=0
+    while Q:
+        u = min(Q, key=Q.get)
+        for v in Adj[u]:
+            if v in Q and Adj[u][v] < Q[v]:
+                Q[v] = Adj[u][v]
+                tree[v] = u
+        Q.pop(u)
+    print tree
+                
+def Kruskal(Adj):
+    subtree = UnionFind()
+    tree = [] 
+    for e, u, v in sorted((Adj[u][v],u,v) for u in Adj for v in Adj[u]):
+        for u in Adj:
+            for v in Adj[u]:
+                if subtree[u] != subtree[v]:
+                    tree.append((u,v))
+                    subtree.union(u,v)
+    print tree
+                    
+    
+    
+        
+    
+                
+    
                 
             
                 
@@ -112,8 +147,13 @@ non_co=[{1:1, 2:1},{2:1, 3:1},{3:1, 5:1},{4:1},{},{},{},{6:1}]
 non_dir=[{1:8,3:2},{0:8,2:5,3:3,4:1},{1:5,3:2,4:4},{0:2,1:3,2:2},{1:1,2:4}]
 lit=[{1:5,3:-2},{2:1},{3:2,5:3,4:7},{1:2},{5:10},{}]
 test=[{1:1,2:10},{3:2},{3:-10},{4:3},{}]
-#FordBellman(killer,0)
+prim=[{1:6,2:5,3:14,4:8},{0:6,2:12},{1:12, 0:5,5:7,6:9},{0:14,4:3},{0:8,3:3,5:10},{2:7,4:10,7:15},{2:9},{5:15}]
+weight2={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
+weight3={1:{2:1, 3:2},0:{1:10,2:3},2:{1:4, 3:8, 4:2},4:{3:9},3:{4:7}}
 
-BellmanFord(killer,0)
+
+Dijkstra(weight,0)
+Dijkstra(weight2,0)
+Dijkstra(weight3,0)
 
 
