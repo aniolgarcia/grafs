@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  13 AUG 2016 10:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.4)  13 AUG 2016 20:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **camins_algorismes.tex
 (./camins_algorismes.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 8 language(s) loaded.
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -39,22 +39,29 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 File: latin9.def 2015/03/17 v1.2c Input encoding file
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2016/02/24 3.9q The Babel package
+Package: babel 2014/09/25 3.9l The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-catalan/catalan.ldf
 Language: catalan 2005/03/29 v2.2p Catalan support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2016/02/24 3.9q Babel common definitions
+File: babel.def 2014/09/25 3.9l Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
 )
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language `Catalan' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for english instead on input line 53.
+
+\l@catalan = a dialect from \language0
 Package babel Info: Making " an active character on input line 91.
 \leftllkern=\dimen104
 \rightllkern=\dimen105
 \raiselldim=\dimen106
-))
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -129,8 +136,6 @@ Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip43
-
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
@@ -138,41 +143,40 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 Package: relsize 2013/03/29 ver 4.1
 )
 ********************************************************
-Package `algorithm2e' Release 5.1 -- october 19 2015 --
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
 - algorithm2e-announce@lirmm.fr mailing list for announcement about releases
 - algorithm2e-discussion@lirmm.fr mailing list for discussion about package
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
-- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
+- Author: Christophe Fiorio (cfiorio@um2.fr)
 ********************************************************
-\skiptotal=\skip44
-\skiplinenumber=\skip45
-\skiprule=\skip46
-\skiphlne=\skip47
-\skiptext=\skip48
-\skiplength=\skip49
-\algomargin=\skip50
-\skipalgocfslide=\skip51
+\skiptotal=\skip43
+\skiplinenumber=\skip44
+\skiprule=\skip45
+\skiphlne=\skip46
+\skiptext=\skip47
+\skiplength=\skip48
+\algomargin=\skip49
+\skipalgocfslide=\skip50
 \algowidth=\dimen115
 \inoutsize=\dimen116
 \inoutindent=\dimen117
 \interspacetitleruled=\dimen118
 \interspacealgoruled=\dimen119
 \interspacetitleboxruled=\dimen120
-\algocf@ruledwidth=\skip52
 \algocf@inoutbox=\box26
 \algocf@inputbox=\box27
-\AlCapSkip=\skip53
-\AlCapHSkip=\skip54
-\algoskipindent=\skip55
+\AlCapSkip=\skip51
+\AlCapHSkip=\skip52
+\algoskipindent=\skip53
 \algocf@nlbox=\box28
 \algocf@hangingbox=\box29
 \algocf@untilbox=\box30
-\algocf@skipuntil=\skip56
+\algocf@skipuntil=\skip54
 \algocf@capbox=\box31
-\algoheightruledefault=\skip57
-\algoheightrule=\skip58
-\algotitleheightruledefault=\skip59
-\algotitleheightrule=\skip60
+\algoheightruledefault=\skip55
+\algoheightrule=\skip56
+\algotitleheightruledefault=\skip57
+\algotitleheightrule=\skip58
 \c@algocfline=\count93
 \c@algocfproc=\count94
 \c@algocf=\count95
@@ -267,7 +271,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 130.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 129.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -275,13 +279,13 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [2] [3] [4] [5]
 [6] [7] [8] [9] (./camins_algorismes.aux) ) 
 Here is how much of TeX's memory you used:
- 3765 strings out of 494850
- 51050 string characters out of 6178024
- 137165 words of memory out of 5000000
- 7029 multiletter control sequences out of 15000+600000
+ 4195 strings out of 494957
+ 55259 string characters out of 6180029
+ 153836 words of memory out of 5000000
+ 7401 multiletter control sequences out of 15000+600000
  16685 words of font info for 50 fonts, out of 8000000 for 9000
- 62 hyphenation exceptions out of 8191
- 31i,20n,35p,1842b,626s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36 hyphenation exceptions out of 8191
+ 29i,20n,35p,1842b,594s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/aniol/.texmf-var/fonts/pk/lj
 four/jknappen/ec/ectt1200.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknapp
 en/ec/ectt1000.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1
@@ -298,7 +302,7 @@ cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on camins_algorismes.pdf (9 pages, 169649 bytes).
+Output written on camins_algorismes.pdf (9 pages, 169677 bytes).
 PDF statistics:
  325 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream
