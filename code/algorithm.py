@@ -121,7 +121,15 @@ def Kruskal(Adj):
                     subtree.union(u,v)
     print tree
                     
-    
+def FloydWarshall(Adj):
+    for i in range(0,len(Adj)):
+        for u in Adj:
+            for v in Adj:
+                for x in Adj:
+                    if Adj[u][v] > Adj[u][x] + Adj[x][v]:
+                        
+                        
+                
     
         
     
