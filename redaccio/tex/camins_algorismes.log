@@ -1,11 +1,24 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2016.7.26)  14 AUG 2016 10:15
+=======
+<<<<<<< HEAD
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.4)  13 AUG 2016 20:34
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  13 AUG 2016 16:13
+>>>>>>> ae11538f11e79bc8895b342b78c14a7032027820
+>>>>>>> e537bff050cfedfe1236ae520e62ed6286e8c375
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **camins_algorismes.tex
 (./camins_algorismes.tex
+<<<<<<< HEAD
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 4 languages loaded.
+=======
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 4 languages loaded.
+>>>>>>> e537bff050cfedfe1236ae520e62ed6286e8c375
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -39,9 +52,14 @@ Package: inputenc 2014/04/30 v1.2b Input encoding file
 File: latin9.def 2014/04/30 v1.2b Input encoding file
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+<<<<<<< HEAD
 Package: babel 2014/03/24 3.9k The Babel package
+=======
+Package: babel 2014/09/25 3.9l The Babel package
+>>>>>>> e537bff050cfedfe1236ae520e62ed6286e8c375
 
 
+<<<<<<< HEAD
 ! Package babel Error: You haven't specified a language option.
 
 See the babel package documentation for explanation.
@@ -55,6 +73,26 @@ or as an optional argument to the \usepackage command;
 You shouldn't try to proceed from here, type x to quit.
 
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+=======
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2014/09/25 3.9l Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language `Catalan' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for english instead on input line 53.
+
+\l@catalan = a dialect from \language0
+Package babel Info: Making " an active character on input line 91.
+\leftllkern=\dimen104
+\rightllkern=\dimen105
+\raiselldim=\dimen106
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+>>>>>>> e537bff050cfedfe1236ae520e62ed6286e8c375
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -150,12 +188,21 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \skiplength=\skip48
 \algomargin=\skip49
 \skipalgocfslide=\skip50
+<<<<<<< HEAD
 \algowidth=\dimen111
 \inoutsize=\dimen112
 \inoutindent=\dimen113
 \interspacetitleruled=\dimen114
 \interspacealgoruled=\dimen115
 \interspacetitleboxruled=\dimen116
+=======
+\algowidth=\dimen115
+\inoutsize=\dimen116
+\inoutindent=\dimen117
+\interspacetitleruled=\dimen118
+\interspacealgoruled=\dimen119
+\interspacetitleboxruled=\dimen120
+>>>>>>> e537bff050cfedfe1236ae520e62ed6286e8c375
 \algocf@inoutbox=\box26
 \algocf@inputbox=\box27
 \AlCapSkip=\skip51
@@ -170,9 +217,15 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \algoheightrule=\skip56
 \algotitleheightruledefault=\skip57
 \algotitleheightrule=\skip58
+<<<<<<< HEAD
 \c@algocfline=\count92
 \c@algocfproc=\count93
 \c@algocf=\count94
+=======
+\c@algocfline=\count93
+\c@algocfproc=\count94
+\c@algocf=\count95
+>>>>>>> e537bff050cfedfe1236ae520e62ed6286e8c375
 \algocf@algoframe=\box32
 \algocf@algobox=\box33
 )
@@ -281,6 +334,7 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) [2] [3] [4] [5]
 [6] [7] [8] [9] (./camins_algorismes.aux) ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  3825 strings out of 494978
  50705 string characters out of 6180203
  141341 words of memory out of 5000000
@@ -288,6 +342,15 @@ Here is how much of TeX's memory you used:
  16685 words of font info for 50 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  29i,20n,35p,1842b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+=======
+ 4195 strings out of 494957
+ 55259 string characters out of 6180029
+ 153836 words of memory out of 5000000
+ 7401 multiletter control sequences out of 15000+600000
+ 16685 words of font info for 50 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 29i,20n,35p,1842b,594s stack positions out of 5000i,500n,10000p,200000b,80000s
+>>>>>>> e537bff050cfedfe1236ae520e62ed6286e8c375
  </home/aniol/.texmf-var/fonts/pk/lj
 four/jknappen/ec/ectt1200.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknapp
 en/ec/ectt1000.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1
