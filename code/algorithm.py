@@ -120,28 +120,27 @@ def Kruskal(Adj):
                     tree.append((u,v))
                     subtree.union(u,v)
     print tree
-                    
+ 
+
 def FloydWarshall(Adj):
+    dist=[[float("inf") for x in range(len(Adj))] for y in range(len(Adj))]
     for i in range(0,len(Adj)):
-        for u in Adj:
-            for v in Adj:
-                for x in Adj:
-                    if Adj[u][v] > Adj[u][x] + Adj[x][v]:
-                        
+       dist[i][i] = 0
+    for v in range(len(Adj)):
+        for u in Adj[v]:
+            dist[v][u] = Adj[v][u]
+    for x in range(len(Adj)):
+        for u in range(len(Adj)):
+            for v in range(len(Adj)):
+                if dist[u][v] > dist[u][x] + dist[x][v]:
+                    dist[u][v] = dist[u][x] + dist[x][v]
+    print dist
+                    
+    
                         
                 
     
         
-    
-                
-    
-                
-            
-                
-        
-   
-
-
 
 
 
@@ -160,8 +159,18 @@ weight2={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
 weight3={1:{2:1, 3:2},0:{1:10,2:3},2:{1:4, 3:8, 4:2},4:{3:9},3:{4:7}}
 
 
-Dijkstra(weight,0)
-Dijkstra(weight2,0)
-Dijkstra(weight3,0)
+#Dijkstra(weight,0)
+#BellmanFord(weight,0)
+#Prim(weight)
+#BFS(weight,0)
+#DFS(weight)
+#Kruskal(weight2)
+BFS(non_dir, 0)
+FloydWarshall(killer)
+#for v in range(len(weight3)):
+#    print "v: %d" %v
+#    for u in weight3[v]:
+#        print "u: %d" %u
+#        print "weight: %d" %weight3[v][u]
 
 
