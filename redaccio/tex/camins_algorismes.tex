@@ -225,6 +225,7 @@ imprimeix($ordre$)\;
 
 Aquest algorisme no té tantes utilitats pràctiques com el BFS, però també té propuietats utils, com per exemple, que passa per totes les arestes.A través d'ell podem obtenir informació importanat d'un graf:
 \begin{itemize}
+
 \item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix. En cas afirmatiu voldrà dir que hi ha un cicle.
 \item Es pot saber si un graf és bipartit assignant un color (entre un total de 2 colors possibles) a cada node mentre es recorre el graf, de manera que un node tingui un color diferent al dels nodes adjacents. Si això és possible voldrà dir que el graf és bipartit.
 \item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quan hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb el DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques.
@@ -261,7 +262,7 @@ nou diccionari $Q$\;
 $Q[s]=0$\;
 \While{$Q$ no estigui buit}
 {
-	$u=min{valor de Q}$\;
+	$u=min\{$valor de $Q\}$\;
 	$dist[u]=Q[u]$\;
 	\ForEach{node $v$ adjacent a $u$}
 	{
@@ -287,6 +288,7 @@ Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algoris
 
 
 \begin{algorisme}
+\DontPrintSemicolon
 \SetKwFunction{Range}{range}%%
 \KwData{Un graf ponderat $G$ i un node inicia $s$}
 \KwResult{Distància mínima entre $s$ i la resta de nodes del graf, arbre expansiu mínim}
@@ -331,12 +333,123 @@ imprimeix($anterior$)\;
 \end{algorisme}
 
 \subsubsection{Kruskal}
+L'algorisme de Kruskal serveix per trobar un arbre expansiu mínim. Aquest algorisme utilitza una estructura de dades especial, anomenada union-find. Aquesta estructura permet fer tres operacions diferents: crear conjunts (Make Set), determinar a quin conjunt està un element (Find) i unir dos subconjunts en un de nou (Union). L'ús d'aquesta estructura especialitzada fa que en grafs petits o poc densos l'algorisme sigui molt ràpid, però en grafs més grans es relantitzi el procés, siguent més eficient utilitzar altres algorismes en aquest cas. L'algorisme, al principi crea un conjunt per a cada node i ordena les arestes de manera creixent segons elsseu pes. Llavors agafa la primera aresta (la de menys pes), que serà una aresta de l'arbre expansiu mínim, i posa en el mateix conjunt els nodes que unia. Després agafa la següent aresta i repeteix el procediment. 
 
+\begin{algorisme}
+\DontPrintSemicolon
+\KwData{Un graf $G$ i un node inicial $s$}
+\KwResult{Arbre expansiu mínim de $G$}
+nova estructura union-find $subgraf$\;
+nova llista $arbre$
+ordena $G$ per ordre creixent de pesos\;
+\ForEach{node $u$ de $G$}
+{
+	\ForEach{node $v$ adjacent a $u$}
+	{
+		\If{$subgraf[u] != subgarf[v]$}
+		{
+			afegeix $(u,v)$ a $arbre$\;
+			$union(subgraf[u], subgraf[v])$\;
+		}
+	}
+}
+imprimeix($arbre$)\;
+\end{algorisme}
 
 \subsubsection{Prim}
+L'algorisme de Prim, tal com del de Kruskal, serveix per trobar l'arbre expansiu mínim d'un graf ponderat no dirigit. Aquest algorisme funciona amb diccionaris, estructures de dades més normalitzades que el Union-Find. Com a conseqüència, Prim és més lent en grafs petits, però més ràpid en grafs molt densos. Prim divideix els nodes en dos grups, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon, i afegeix el node final de l'aresta al primer grup. D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, peró executant-lo per a cada node del graf, trobaria el bosc (conjunt d'arbres) mínim d'un graf no connex.
+ 
+\begin{algorisme}
+\DontPrintSemicolon
+\KwData{Un graf $G$}
+\KwResult{Arbre expansiu mínim de $G$}
+nou diccionari $anterior$\;
+nou diccionari $Q$\;
+\ForEach{node $v$ de $G$}
+{
+	$Q[v]=\infty$\;	
+}
+$Q[0]=0$\;
+\While{$Q$ no estigui buit}
+{
+	$u=min\{$valor de $Q\}$\;
+	\ForEach{node $v$ adjacent a $u$}
+	{
+		\If{$v$ existeix dins $Q$}
+		{
+			\If{$Q[v] > w(u,v)$}
+			{
+				$Q[v]=w(u,v)$\;
+				$anterior[v]=0$\;
+			}
+		}
+	}
+	elimina($Q[u]$)\;
+}
+imprimeix($anterior$)\;
 
+\caption{Prim}
+\end{algorisme}
 
+Tant l'algorisme de Kruskal com del de Prim tenen aplicacions semblants, però segons la mida del graf és més convenient utilitzar-ne un o altre. Entre les aplicacions d'aquests dos algorismes hi ha:
+\begin{itemize}
+\item S'utilitzen per dissenyar xarxes de telèfon, aigua, gas, internet... En aquestes xarxes s'ha d'arribar a tots els punts on s'ha de fer la distribució, i amb l'arbre expansiu mínim es pot assegurar que la xarxa és el més curta possible.
+\item Els arbres expansius mínims es poden utilitzar per generar laberints.
+\item S'utilitzen com a subrutines (o funcions) d'algorismes més complexes.
+\end{itemize}
 
+\subsubsection{Floyd-Warshall}
+L'algorisme de Floyd-Warshall és un algorisme que permet calcular les distàncies entre tots els nodes d'un graf ponderat. Per fer-ho, compara els pesos de tots els camins possibles. A cada iteració, es defineix el conjunt de nodes que pot tenir cada camí i si ja s'ha trobat un camí amb els mateixos extrems es compara el pes total d'ambdós . El conjunt és de la forma ${1,2,\cdots,k}$ i a cada iteració es va incrememntant $k$ (a l'inici $k=0$). El resultat d'aquest algorisme és una matriu quadrada $D$ de $|V|$x$|v|$ on $D_{i,j}=w(i,j)$.
+
+\begin{algorisme}
+\DontPrintSemicolon
+\KwData{un graf $G$}
+\KwResult{una matriu quadrada amb les distàncies entre tots els nodes}
+nova matriu $dist$ de $|V|x|V|$\;
+\For{$i$ in range($0, |V|$)}
+{
+	\For{$j$ in range($0, |V|$)}
+	{
+		\uIf{$i = j$}
+		{
+			$dist[i][j]=0$\;
+		}
+		\Else
+		{
+			$dist[i][j]=\infty$\;
+		}
+	}
+}
+\ForEach{node $u$ de $G$}
+{
+	\ForEach{node $v$ adjacent a $u$}
+	{
+		$dist[u][v]=w(u,v)$\;
+	}
+}
+\For{$x$ in range($0, |V|$)}
+{
+	\For{$u$ in range($0, |V|$)}
+	{
+		\For{$v$ in range($0, |V|$)}
+		{
+			\If{$dist[u][v] > dist[u][x] + dist[x][v]$}
+			{
+				$dist[u][v] = dist[u][x] + dist[x][v]$\;
+			}
+		}
+	}
+}
+\caption{Floyd-Warshall}
+\end{algorisme}
+ 
+Aquest algorisme es pot utilitzar per qualsevol de les aplicacions en que s'utilitzaria Dijkstra en més d'un node. S'utilitza sobretot quan es vol mantenir una base de dades de pesos precalculats, per no haver d'executar Dijkstra en cada cas concret. 
+A part d'aquesta aplicació, s'utilitza també d'altres maneres:
+\begin{itemize}
+\item Per detectar cicles de pes negatiu, cosa que passarà quan $D_{i,i} < 0$, quan a la diagonal de la matriu hi hagi un valor negatiu. 
+\item Estudiar la clausura transitiva d'un graf, és a dir, veure quins nodes són accessibles des de cada node. Això es pot veure a la matriu resultant, on els valors $\infty$ indiquen que no espot accedir a el node concret.
+\end{itemize}
+ 
 
 
 \end{document}
