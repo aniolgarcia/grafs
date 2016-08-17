@@ -15,9 +15,13 @@
 \usepackage[ruled, boxed]{algorithm2e}
 \usepackage[a4paper]{geometry}
 \usepackage{float}
+\usepackage{verbatim}
+\usepackage[position=top]{subfig}
 \usetikzlibrary{arrows,%
                 petri,%
                 topaths}%
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
 
 
 \newenvironment{algorisme}[1][htb]
@@ -31,7 +35,22 @@
 \SetKwProg{Fn}{Funció}{}
 
 
+\makeatletter
+\tikzset{looop/.style =  {to path={
+  \pgfextra{\let\tikztotarget=\tikztostart}
+  [looseness=12,min distance=10mm]
+  \tikz@to@curve@path},font=\sffamily\small
+  }}  
+\makeatletter 
+
+
+
+
+
+
+
 \begin{document}
+
 
 \part{Introducció a la teoria de grafs}
 
@@ -91,6 +110,28 @@ havia mes sòlids regulars que els sòlids platònics). Amb tot això,
 Euler posa les bases no tan sols de l'estudi dels grafs, sinó també
 de la topología, una altra branca que també serà tractada en aquest
 treball. 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.75,transform shape]
+  \Vertex[x=0,y=0]0
+  \Vertex[x=0,y=2]1
+  \Vertex[x=0,y=4]2
+  \Vertex[x=5,y=2]3
+  \tikzstyle{LabelStyle}=[fill=white,sloped]
+  \Edge(1)(3)
+  \tikzstyle{EdgeStyle}=[bend left]
+  \Edge(0)(1)
+  \Edge(1)(2)
+  \Edge(2)(3)
+  \tikzstyle{EdgeStyle}=[bend right]
+  \Edge(0)(1)
+  \Edge(1)(2)
+  \Edge(0)(3)
+\end{tikzpicture}
+\caption{Representació topològica dels ponts de Köinsberg}
+\end{figure}
+
 
 
 \subsubsection*{Vandermonde i el tour del cavall}
@@ -225,13 +266,37 @@ el nombre d'arestes d'un graf. Definim també que dos vèrtexs són adjacents
 si estàn units per una aresta, i com a conseqüència, són incidents
 a l'aresta. 
 
-En la figura (index de la figura) es mostra un graf simple $G$ format
+En la figura $2$ es mostra un graf simple $G$ format
 per:
 \begin{itemize}
 \item $V=\{v_{1},v_{2},v_{3},v_{4},v_{5},v_{6}\}$
 \item $E=\{(v_{1},v_{2}),(v_{1},v_{4}),(v_{1},v_{5}),(v_{2},v_{5}),(v_{3},v_{4}),(v_{3},v_{5}),(v_{3},v_{6}),(v_{4},v_{6})\}$
-\item (adjuntar fiura del garf anterior)
+
+
 \end{itemize}
+
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape]
+		\node[round] (a) at (0,4) {$v_{1}$};
+		\node[round] (b) at (0,0) {$v_{2}$};
+		\node[round] (c) at (4,0) {$v_{3}$};
+		\node[round] (d) at (4,4) {$v_{4}$};
+		\node[round] (e) at (2,2) {$v_{5}$};
+		\node[round] (f) at (6,2) {$v_{6}$};
+		\draw (a) edge (b);
+		\draw (a) edge (d);
+		\draw (a) edge (e);
+		\draw (b) edge (e);
+		\draw (c) edge (d);
+		\draw (c) edge (e);
+		\draw (c) edge (f);
+		\draw (d) edge (f);
+	\end{tikzpicture}
+\caption{}
+\end{figure}
+
+
 Si una aresta comença i acaba en el mateix vèrtex (per exemple $e_{m}=\{v_{i},v_{i}\}$)
 s'anomena llaç. També pot ser que hi hagi dues arestes idèntiques,
 és a dir, dues arestes que comencin en el vèrtex $v_{i}$ i acabin
@@ -243,8 +308,52 @@ en els grafs dirigits això no es compleix. En aquest tipus de graf,
 les arestes només permeten viatjar en un sentit. En la següent imatge
 es mostren els grafs esmentats anteriorment:
 
-(Adjuntar imatge de graf amb llaços, graf amb arestes múltiples i
-graf dirigit)
+
+\begin{figure}[H]
+\centering
+	\subfloat[]{
+		\begin{tikzpicture}[round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}, transform shape]
+			\node[round] (a) at (0,0){};
+			\node[round] (b) at (0,2) {};
+			\node[round] (c) at (2,0) {};
+			\node[round] (d) at (2,2) {};
+			\draw (a) edge (b);
+			\draw (a) edge (c);
+			\draw (b) edge (d);
+			\draw (d) edge (c);
+			\draw (a) edge [looop] (a);
+
+		\end{tikzpicture}
+	}
+	\subfloat[]{
+		\begin{tikzpicture}[round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}, transform shape]
+			\node[round] (a) at (0,0){};
+			\node[round] (b) at (0,2) {};
+			\node[round] (c) at (2,0) {};
+			\node[round] (d) at (2,2) {};
+			\draw (a) edge [bend left](b);
+			\draw (a) edge [bend right](b);
+			\draw (a) edge [bend left](c);
+			\draw (a) edge [bend right](c);
+			\draw (b) edge (d);
+			\draw (d) edge (c);
+		\end{tikzpicture}
+	}
+	\subfloat[]{
+		\begin{tikzpicture}[round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}, transform shape]
+			\node[round] (a) at (0,0){};
+			\node[round] (b) at (0,2) {};
+			\node[round] (c) at (2,0) {};
+			\node[round] (d) at (2,2) {};
+			\draw (a) edge[->, -Latex] (b);
+			\draw (c) edge[->, -Latex] (a);
+			\draw (b) edge[->, -Latex] (d);
+			\draw (c) edge[->, -Latex] (d);
+		\end{tikzpicture}
+	}
+\caption{Graf amb un llaç (a), graf amb arestes múltiples (b) i graf dirigit (c)}
+\end{figure}
+
 
 
 
@@ -314,7 +423,20 @@ de $G$ tan sols s'han de posar les arestes que falten per obtenir
 un graf complet i trure totes les que hi eren inicialment (ja que
 $|E(G)|+|E(\bar{{G}})|=|E(K_{n})|$, on $n=|V(G)|$). 
 
-(Adjuntar imatge de grafs complementaris)
+\begin{figure}[H]
+\centering
+	\subfloat{
+		\begin{tikzpicture}[scale=.5]
+			\grCirculant[RA=3, prefix=v,Math=true]{6}{2,3}
+		\end{tikzpicture}
+	}
+	\subfloat{
+		\begin{tikzpicture}[scale=.5]
+			\grCirculant[RA=3, prefix=v,Math=true]{6}{1}
+		\end{tikzpicture}
+	}
+\caption{Un graf $G$ i el seu complementari $\bar{G}$}
+\end{figure}
 
 
 \subsection{Grafs regulars}
@@ -336,7 +458,23 @@ Per a tots els grafs $r$-regulars amb $n$ vèrtexs es compleix que
 
 \[ |E|=\frac{1}{2}nr \]on $|E|$ és el nombre d'arestes.
 
-(Adjuntar imatge de grafs regulars)
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
+		\node[round] (a) at (0,0){$v_{2}$};
+		\node[round] (b) at (4,0){$v_{0}$};
+		\node[round] (c) at (2,1.5){$v_{3}$};
+		\node[round] (d) at (2,4){$v_{1}$};
+		\draw (a) edge (b);
+		\draw (a) edge (c);
+		\draw (a) edge (d);
+		\draw (b) edge (c);
+		\draw (b) edge (d);
+		\draw (c) edge (d);
+
+	\end{tikzpicture}
+\caption{Graf cúbic (3-regular)}
+\end{figure}
 
 
 \subsection{Grafs nuls o buits}
@@ -345,8 +483,20 @@ Els grafs nuls o buits són grafs sense arestes, conjunts de $n$ vértexs.
 Són els complementaris dels grafs complets, i per tant la seva nomenclatura
 és $\bar{K}_{n}$ o simplement $N_{n}$. S'anomena grafs nuls a $N_{0}$
 i buits a la resta, però com que normalment no s'utilitza $N_{0}$,
-convencionalment es diuen nuls a tot el conjunt dels buits. (Adjuntar
-imatge dels grafs buits).
+convencionalment es diuen nuls a tot el conjunt dels buits.
+
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
+		\node[round] (a) at (0,0){$v_{0}$};
+		\node[round] (b) at (4,0){$v_{1}$};
+		\node[round] (c) at (8,0){$v_{2}$};
+		\node[round] (d) at (0,2){$v_{3}$};
+		\node[round] (d) at (4,2){$v_{4}$};
+		\node[round] (d) at (8,2){$v_{5}$};
+	\end{tikzpicture}
+\caption{Graf buit $N_{6}$}
+\end{figure}
 
 
 \subsection{Grafs complets}
@@ -359,14 +509,35 @@ que conté un graf complet queda determinat per la següent igualtat:
 
 \[ C_{n} =\sum_{K=3}^{n}\frac{1}{2}{n\choose k}(k-1)! \]
 
-(Adjuntar imatge de grafs complets)
+\begin{figure}[H]
+\centering
+	\subfloat[]{	
+		\begin{tikzpicture}
+			\grComplete[RA=2, prefix=v, Math=true]{7}
+		\end{tikzpicture}
+	}
+	\subfloat[]{
+		\begin{tikzpicture}
+			\grComplete[RA=2, prefix=v, Math=true]{5}
+		\end{tikzpicture}
+	}
+\caption{Grafs complets $K_{7}$(a) i $K_{5}$(b)}
+\end{figure}
+
 
 
 \subsection{Cicles}
 
 Els cicles són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i
-s'anomenen $C_{n}$. El graf lineal d'un cicle és ell mateix. (Adjuntar
-imatge de cicles)
+s'anomenen $C_{n}$. El graf lineal d'un cicle és ell mateix.
+
+\begin{figure}[H]
+\centering	
+	\begin{tikzpicture}
+		\grCycle[RA=2, prefix=v, Math=true]{9}
+	\end{tikzpicture}
+\caption{Cicle $C_{9}$}
+\end{figure}
 
 
 \subsection{Grafs bipartits}
@@ -377,23 +548,89 @@ conjunts no tinguin elements comuns) de tal manera que un vèrtex d'un
 conjunt no sigui mai adjacent a un altre vèrtex del seu mateix conjunt.
 Es pot dir també que un graf és bipartit si no conté cicles de longitud
 senar. Llavors, podem deduïr que tots els els grafs $C_{n}$ amb $n$
-parell, són també grafs bipartits. (adjuntar imatge de grafs bipartits)
+parell, són també grafs bipartits.
+
+\begin{figure}[H]
+\centering	
+	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum 			size=.5mm}, u/.style={circle, fill=blue, text=white, thin, 					minimum size=.5mm}, transform shape, scale=0.80]
+		\node[v] (a) at (0,0){$v_{0}$};
+		\node[v] (b) at (2,0){$v_{1}$};
+		\node[v] (c) at (4,0){$v_{2}$};
+		\node[v] (d) at (6,0){$v_{3}$};
+		\node[u] (e) at (1,2){$u_{0}$};
+		\node[u] (f) at (3,2){$u_{1}$};
+		\node[u] (g) at (5,2){$u_{2}$};
+		\draw (a) edge (e);
+		\draw (b) edge (e);
+		\draw (b) edge (f);
+		\draw (b) edge (g);
+		\draw (c) edge (e);
+		\draw (c) edge (f);
+		\draw (d) edge (f);
+		\draw (d) edge (g);
+	\end{tikzpicture}
+\caption{Graf bipartit}
+\end{figure}
 
 
 \subsection{Grafs bipartits complets}
 
 Els grafs bipartits complets són grafs bipartits en esl quals cada
 element del conjunt $U$ està unit a tots els elements dels del conjunt
-$V$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|N|$. En els grafs
+$V$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|V|$. En els grafs
 bipartits $K_{m,n}=K_{n,m}$ , $|V|=n+m$ i $|E|=mn$.
+
+\begin{figure}[H]
+\centering	
+	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum 			size=.5mm}, u/.style={circle, fill=blue, text=white, thin, 					minimum size=.5mm}, transform shape, scale=0.80]
+		\node[v] (a) at (0,0){$v_{0}$};
+		\node[v] (b) at (2,0){$v_{1}$};
+		\node[v] (c) at (4,0){$v_{2}$};
+		\node[v] (d) at (6,0){$v_{3}$};
+		\node[v] (h) at (8,0){$v_{4}$};
+		\node[u] (e) at (1,2){$u_{0}$};
+		\node[u] (f) at (3,2){$u_{1}$};
+		\node[u] (g) at (5,2){$u_{2}$};
+		\node[u] (i) at (7,2){$u_{3}$};
+		\draw (a) edge (e);
+		\draw (a) edge (f);
+		\draw (a) edge (g);
+		\draw (a) edge (i);
+		\draw (b) edge (e);
+		\draw (b) edge (f);
+		\draw (b) edge (g);
+		\draw (b) edge (i);
+		\draw (c) edge (e);
+		\draw (c) edge (f);
+		\draw (c) edge (g);
+		\draw (c) edge (i);
+		\draw (d) edge (e);
+		\draw (d) edge (f);
+		\draw (d) edge (g);
+		\draw (d) edge (i);
+		\draw (h) edge (e);
+		\draw (h) edge (f);
+		\draw (h) edge (g);
+		\draw (h) edge (i);
+	\end{tikzpicture}
+\caption{Graf bipartit complet $K_{4,5}$}
+\end{figure}
 
 
 \subsection{Grafs estrella}
 
 Un graf estrella de grau $n$, conté un vèrtex amb grau $n-1$ i els
 $n-1$ vèrtexs restants tenen grau 1. S'anomena $S_{n}$ i són estrelles
-tots els grafs bipartits de la forma $K_{1,n-1}$o $K_{n-1,1}$. El
-graf lineal de $S_{n}$ és $K_{n-1}$. (Afegir imatge de graf estrella)
+tots els grafs bipartits amb forma $K_{1,n-1}$ o $K_{n-1,1}$. El
+graf lineal de $S_{n}$ és $K_{n-1}$.
+
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}
+		\grStar[RA=2, prefix=v, Math=true]{7}
+	\end{tikzpicture}
+\caption{Graf estrella $S_{7}$}
+\end{figure}
 
 
 \subsection{Graf lineal}
@@ -405,12 +642,98 @@ a una aresta de $G$ i dos vèrtexs són adjacents només si les arestes
 corresponents a $G$ són adjacents (comparteixen un vèrtex). El graf
 lineal d'un graf amb $n$ nodes, $e$ arestes i amb vèrtexs de graus
 $d_{i}$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}d_{i}^{2}-e \]arestes.
-(Afegir procediment de creació del graf lineal)
+\begin{figure}[H]
+\centering
+	\subfloat[$G$]{
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.5]
+			\node[round] (a) at (8,4){$v_{0}$};
+			\node[round] (b) at (4,8){$v_{1}$};
+			\node[round] (c) at (0,8){$v_{2}$};
+			\node[round] (d) at (0,4){$v_{3}$};
+			\node[round] (e) at (4,0){$v_{4}$};
+			\draw (a) edge (b);
+			\draw (a) edge (d);
+			\draw (a) edge (e);
+			\draw (b) edge (c);
+			\draw (b) edge (d);
+			\draw (d) edge (e);
+		\end{tikzpicture}
+	}
+	\subfloat[$G+L(G)$]{
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.5]
+			\node[round] (a) at (8,4){$v_{0}$};
+			\node[round] (b) at (4,8){$v_{1}$};
+			\node[round] (c) at (0,8){$v_{2}$};
+			\node[round] (d) at (0,4){$v_{3}$};
+			\node[round] (e) at (4,0){$v_{4}$};
+			\node[draw, diamond] (f) at (6,6){$u_{0}$};
+			\node[draw, diamond] (g) at (2,8){$u_{1}$};
+			\node[draw, diamond] (h) at (2,6){$u_{2}$};
+			\node[draw, diamond] (i) at (2,2){$u_{3}$};
+			\node[draw, diamond] (j) at (6,2){$u_{4}$};
+			\node[draw, diamond] (k) at (4,4){$u_{5}$};
+			\draw (a) edge (f);
+			\draw (a) edge (j);
+			\draw (a) edge (k);
+			\draw (f) edge (b);
+			\draw (j) edge (e);
+			\draw (k) edge (d);
+			\draw (b) edge (g);
+			\draw (g) edge (c);
+			\draw (b) edge (h);
+			\draw (h) edge (d);
+			\draw (d) edge (i);
+			\draw (i) edge (e);
+			
+			\draw (f) edge[dashed] (h);
+			\draw (k) edge[dashed] (f);
+			\draw (k) edge[dashed] (j);
+			\draw (k) edge[dashed] (i);
+			\draw (k) edge[dashed] (h);
+			\draw (f) edge[dashed] (h);
+			\draw (i) edge[dashed] (j);
+			\draw (g) edge[dashed] (h);
+			\draw (f) edge[dashed] (j);
+			\draw (h) edge[dashed] (i);
+			\draw (g) edge[dashed, bend left=75] (f);
+			
+		\end{tikzpicture}
+	}
+	\subfloat[$L(G)$]{
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.5]
+			\node[round] (f) at (6,6){$u_{0}$};
+			\node[round] (g) at (2,8){$u_{1}$};
+			\node[round] (h) at (2,6){$u_{2}$};
+			\node[round] (i) at (2,2){$u_{3}$};
+			\node[round] (j) at (6,2){$u_{4}$};
+			\node[round] (k) at (4,4){$u_{5}$};
+			\draw (f) edge (h);
+			\draw (k) edge (f);
+			\draw (k) edge (j);
+			\draw (k) edge (i);
+			\draw (k) edge (h);
+			\draw (f) edge (h);
+			\draw (i) edge (j);
+			\draw (g) edge (h);
+			\draw (f) edge (j);
+			\draw (h) edge (i);
+			\draw (g) edge (f);
+		\end{tikzpicture}
+	}
+\caption{Procés de construcció d'un graf lineal}
+\end{figure}
 
 \subsection{Rodes}
 
 Un graf roda amb $n$ vèrtex ès un graf que conté un cicle de longitud $n-1$, on cada vèrtex del cicle està connectat a un alte vèrtex fora del cicle, anomenat node cenmtral. El node central té grau $n-1$, i la resta de nodes tenen grau $3$. S'escriu $W_{n}$, i a vegades simplement s'estudia com a $C_{n-1}+K_{1}$. El nombre de cicles que conté un graf amb $n$ vètrexs està determinat per $n^{2}-3n+3$.
-(Afegir exemple de graf roda)
+
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}
+		\grWheel[RA=2, prefix=v, Math=true]{10}
+	\end{tikzpicture}
+\caption{Roda $W_{10}$}
+\end{figure}
 
 \subsection{Xarxes}
 
@@ -988,7 +1311,7 @@ Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitza
   \Edge[label=$210$](S)(N)
   \Edge[label=$230$](S)(M)
 \end{tikzpicture}
-\caption{Ei, bon dia!!!!}
+\caption{Prova!}
 \end{figure}
 
 \end{document}
