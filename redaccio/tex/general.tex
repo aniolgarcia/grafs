@@ -8,8 +8,17 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{xcolor}
+\usepackage{graphics, graphicx}
+\usepackage{tikz, tkz-graph}
+\usepackage{graphviz, tkz-berge}
+\usepackage{pstricks, pst-node, pst-tree}
 \usepackage[ruled, boxed]{algorithm2e}
 \usepackage[a4paper]{geometry}
+\usepackage{float}
+\usetikzlibrary{arrows,%
+                petri,%
+                topaths}%
+
 
 \newenvironment{algorisme}[1][htb]
   {\renewcommand{\algorithmcfname}{Algorisme}% Canviem Algorithm a Algorisme
@@ -765,7 +774,7 @@ imprimeix($dist$)
 Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algorisme de Dijkstra, però té la particularitat de poder tractar sense problemes les arestes amb pesos negatius, mentre que Dijkstra no ho permet. Dijkstra es basa en la desigualtat triangular per tobar el camímés curt, però amb pesos negatius no es pot suposar que la desigualtat triangular es compleixi. A més, permet saber si un graf cinté cicles negatius. Si un camí entre dos nodes conté un cile de pes negatiu, no es pot trobar un camí mínim entre aquests dos nodes. Això es deu a que recorrent aquest cicle sempre es podria escurçar el camí, i llavors el mínim possible seria de $-\infty$.
 
 
-\begin{algorisme}
+\begin{algorisme}[H]
 \SetKwFunction{Range}{range}%%
 \KwData{Un graf ponderat $G$ i un node inicia $s$}
 \KwResult{Distància mínima entre $s$ i la resta de nodes del graf, arbre expansiu mínim}
@@ -808,5 +817,178 @@ imprimeix($anterior$)\;
 	
 \caption{Bellman-Ford}
 \end{algorisme}
+
+
+\subsubsection{Kruskal}
+L'algorisme de Kruskal serveix per trobar un arbre expansiu mínim. Aquest algorisme utilitza una estructura de dades especial, anomenada union-find. Aquesta estructura permet fer tres operacions diferents: crear conjunts (Make Set), determinar a quin conjunt està un element (Find) i unir dos subconjunts en un de nou (Union). L'ús d'aquesta estructura especialitzada fa que en grafs petits o poc densos l'algorisme sigui molt ràpid, però en grafs més grans es relantitzi el procés, siguent més eficient utilitzar altres algorismes en aquest cas. L'algorisme, al principi crea un conjunt per a cada node i ordena les arestes de manera creixent segons elsseu pes. Llavors agafa la primera aresta (la de menys pes), que serà una aresta de l'arbre expansiu mínim, i posa en el mateix conjunt els nodes que unia. Després agafa la següent aresta i repeteix el procediment. 
+
+\begin{algorisme}[H]
+\DontPrintSemicolon
+\KwData{Un graf $G$ i un node inicial $s$}
+\KwResult{Arbre expansiu mínim de $G$}
+nova estructura union-find $subgraf$\;
+nova llista $arbre$
+ordena $G$ per ordre creixent de pesos\;
+\ForEach{node $u$ de $G$}
+{
+	\ForEach{node $v$ adjacent a $u$}
+	{
+		\If{$subgraf[u] != subgarf[v]$}
+		{
+			afegeix $(u,v)$ a $arbre$\;
+			$union(subgraf[u], subgraf[v])$\;
+		}
+	}
+}
+imprimeix($arbre$)\;
+\end{algorisme}
+
+\subsubsection{Prim}
+L'algorisme de Prim, tal com del de Kruskal, serveix per trobar l'arbre expansiu mínim d'un graf ponderat no dirigit. Aquest algorisme funciona amb diccionaris, estructures de dades més normalitzades que el Union-Find. Com a conseqüència, Prim és més lent en grafs petits, però més ràpid en grafs molt densos. Prim divideix els nodes en dos grups, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon, i afegeix el node final de l'aresta al primer grup. D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, peró executant-lo per a cada node del graf, trobaria el bosc (conjunt d'arbres) mínim d'un graf no connex.
+ 
+\begin{algorisme}[H]
+\DontPrintSemicolon
+\KwData{Un graf $G$}
+\KwResult{Arbre expansiu mínim de $G$}
+nou diccionari $anterior$\;
+nou diccionari $Q$\;
+\ForEach{node $v$ de $G$}
+{
+	$Q[v]=\infty$\;	
+}
+$Q[0]=0$\;
+\While{$Q$ no estigui buit}
+{
+	$u=min\{$valor de $Q\}$\;
+	\ForEach{node $v$ adjacent a $u$}
+	{
+		\If{$v$ existeix dins $Q$}
+		{
+			\If{$Q[v] > w(u,v)$}
+			{
+				$Q[v]=w(u,v)$\;
+				$anterior[v]=0$\;
+			}
+		}
+	}
+	elimina($Q[u]$)\;
+}
+imprimeix($anterior$)\;
+
+\caption{Prim}
+\end{algorisme}
+
+Tant l'algorisme de Kruskal com del de Prim tenen aplicacions semblants, però segons la mida del graf és més convenient utilitzar-ne un o altre. Entre les aplicacions d'aquests dos algorismes hi ha:
+\begin{itemize}
+\item S'utilitzen per dissenyar xarxes de telèfon, aigua, gas, internet... En aquestes xarxes s'ha d'arribar a tots els punts on s'ha de fer la distribució, i amb l'arbre expansiu mínim es pot assegurar que la xarxa és el més curta possible.
+\item Els arbres expansius mínims es poden utilitzar per generar laberints.
+\item S'utilitzen com a subrutines (o funcions) d'algorismes més complexes.
+\end{itemize}
+
+\subsubsection{Floyd-Warshall}
+L'algorisme de Floyd-Warshall és un algorisme que permet calcular les distàncies entre tots els nodes d'un graf ponderat. Per fer-ho, compara els pesos de tots els camins possibles. A cada iteració, es defineix el conjunt de nodes que pot tenir cada camí i si ja s'ha trobat un camí amb els mateixos extrems es compara el pes total d'ambdós . El conjunt és de la forma ${1,2,\cdots,k}$ i a cada iteració es va incrememntant $k$ (a l'inici $k=0$). El resultat d'aquest algorisme és una matriu quadrada $D$ de $|V|$x$|v|$ on $D_{i,j}=w(i,j)$.
+
+Aquest algorisme es pot utilitzar per qualsevol de les aplicacions en que s'utilitzaria Dijkstra en més d'un node. S'utilitza sobretot quan es vol mantenir una base de dades de pesos precalculats, per no haver d'executar Dijkstra en cada cas concret. 
+A part d'aquesta aplicació, s'utilitza també d'altres maneres:
+\begin{itemize}
+\item Per detectar cicles de pes negatiu, cosa que passarà quan $D_{i,i} < 0$, quan a la diagonal de la matriu hi hagi un valor negatiu. 
+\item Estudiar la clausura transitiva d'un graf, és a dir, veure quins nodes són accessibles des de cada node. Això es pot veure a la matriu resultant, on els valors $\infty$ indiquen que no espot accedir a el node concret.
+\end{itemize}
+
+
+\begin{algorisme}[H]
+\DontPrintSemicolon
+\KwData{un graf $G$}
+\KwResult{una matriu quadrada amb les distàncies entre tots els nodes}
+nova matriu $dist$ de $|V|x|V|$\;
+\For{$i$ in range($0, |V|$)}
+{
+	\For{$j$ in range($0, |V|$)}
+	{
+		\uIf{$i = j$}
+		{
+			$dist[i][j]=0$\;
+		}
+		\Else
+		{
+			$dist[i][j]=\infty$\;
+		}
+	}
+}
+\ForEach{node $u$ de $G$}
+{
+	\ForEach{node $v$ adjacent a $u$}
+	{
+		$dist[u][v]=w(u,v)$\;
+	}
+}
+\For{$x$ in range($0, |V|$)}
+{
+	\For{$u$ in range($0, |V|$)}
+	{
+		\For{$v$ in range($0, |V|$)}
+		{
+			\If{$dist[u][v] > dist[u][x] + dist[x][v]$}
+			{
+				$dist[u][v] = dist[u][x] + dist[x][v]$\;
+			}
+		}
+	}
+}
+\caption{Floyd-Warshall}
+\end{algorisme}
+ 
+
+\part{Disseny de grafs}
+Fins ara, s'han mostrat i estudiat grafs que ja estan definits i que s'ha de fer alguna sobre ells. Ara bé, en aplicacions reals de teoria de grafs, sovint no hi ha un graf determinat, sinó que s'ha de generar.  
+
+\section{Punt de Fermat i l'arbre de Steiner}
+Normalment, els nodes ja estaran determinats i el problema consistirà en trobar les arestes.
+Si aquest és així, segurament es podràn afegir altres nodes. Un exemple d'aquest cas consistiria en haver d'unir tres ciutats amb carreteres de tal manera que des d'una es pugui arribar directament a les altres dues. La primera sol·lució en que sol pensar una persona és fer un triangle en el qual les ciutats siguin els vèrtexs (l'equivalent a un graf $K_{3}$). Aquesta sol·lució és òptima si es vol anar d'una ciutat a l'altre amb la mínima distància possible, però si es vol construïr el mínim de carreteres possibles, aquesta sol·lució no és la millor. En aquest cas, el millor és posar un altre node en el punt de Fermat del triangle que formen i obtenir un graf $S_{4}$.
+El punt de Fermat, també anomenat $X(13)$, és el punt del triangle tal que la suma de les distàncies des de cada vèrtex fins a aquest punt és la mínima. El punt de Fermat s'aconsegueix amb el procediment següent:
+\begin{itemize}
+\item Donat un triangle $T$, es generen dos triangles equlàters a partir de dos costats arbitraris de $T$.
+\item S'uneixen els nous vèrtexs dels triangles equilàters amb els vèrtexs oposats a $T$.
+\item L'intersecció d'aquests dos segments dona la posició del punt de Fermat.
+\end{itemize}
+(adjuntar imatge de punt de fermat)
+Aquest procediment és vàlid per a triangles amb angles menors a $120º$, però en cas contrari, el punt de Fermat serà l'angle que els superi.
+
+El punt de Fermat es pot generalitzar per a altres polígons convexos a partir de triangulacions d'aquests. Un exemple senzill és el del quadrilàter, on en fer les diagonals ja es generen quatre triangles. En aquest cas, trobant els punts en dos dels triangles i unint-los ja s'uneixen tots els punts amb la menor distància possible. 
+(adjuntar imatge del punt de fermat en quadrilàters i superiors)
+
+El problema de connectar amb la mínima distància un nombre determinat de punts siguent possible aferigir nodes és conegut com el problema de l'arbre de Steiner. Per aquest problema s'ha demostrat que en l'arbre òptim té com a màxim $n-2$ nodes afegits (siguent $n$ el nombre inicial de nodes), que aquests tenen sempre grau $3$, i que formen sempre angles de $120º$.   
+
+\section{Arbres expansius}
+Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitzar els algorismes per trobar arbres expansius que ja s'han vist. Una opció és construïr el graf complet amb totesles arestes i els seus corresponents pesos i executar algun algorisme que en trobi l'arbre expansiu mínim. 
+\\
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.75,transform shape]
+  \Vertex[x=0,y=0]K
+  \Vertex[x=0,y=2]F
+  \Vertex[x=-1,y=4]D
+  \Vertex[x=3,y=7]H
+  \Vertex[x=8,y=5]B
+  \Vertex[x=9,y=2]N
+  \Vertex[x=5,y=0]M
+  \Vertex[x=3,y=1]S
+  \tikzstyle{LabelStyle}=[fill=white,sloped]
+  %\tikzstyle{EdgeStyle}=[bend left]
+  \Edge[label=$120$](K)(F)
+  \Edge[label=$650$](H)(S)
+  \Edge[label=$780$](H)(M)
+  \Edge[label=$490$](D)(B)
+  \Edge[label=$600$](D)(M)
+  \Edge[label=$580$](B)(M)
+  \Edge[label=$600$](H)(N)
+  \Edge[label=$490$](F)(H)
+ % \tikzstyle{EdgeStyle}=[bend right]
+  \Edge[label=$630$](S)(B)
+  \Edge[label=$210$](S)(N)
+  \Edge[label=$230$](S)(M)
+\end{tikzpicture}
+\caption{Ei, bon dia!!!!}
+\end{figure}
 
 \end{document}
