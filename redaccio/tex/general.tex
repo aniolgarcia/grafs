@@ -10,6 +10,7 @@
 \usepackage{xcolor}
 \usepackage{graphics, graphicx}
 \usepackage{tikz, tkz-graph}
+\usepackage{pgfplots}
 \usepackage{graphviz, tkz-berge}
 \usepackage{pstricks, pst-node, pst-tree}
 \usepackage[ruled, boxed]{algorithm2e}
@@ -50,6 +51,7 @@
 
 
 \begin{document}
+
 
 
 \part{Introducció a la teoria de grafs}
@@ -701,12 +703,12 @@ $d_{i}$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}d_{i}^{2}-e \]arestes.
 	}
 	\subfloat[$L(G)$]{
 		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.5]
-			\node[round] (f) at (6,6){$u_{0}$};
-			\node[round] (g) at (2,8){$u_{1}$};
-			\node[round] (h) at (2,6){$u_{2}$};
-			\node[round] (i) at (2,2){$u_{3}$};
-			\node[round] (j) at (6,2){$u_{4}$};
-			\node[round] (k) at (4,4){$u_{5}$};
+			\node[draw, diamond] (f) at (6,6){$u_{0}$};
+			\node[draw, diamond] (g) at (2,8){$u_{1}$};
+			\node[draw, diamond] (h) at (2,6){$u_{2}$};
+			\node[draw, diamond] (i) at (2,2){$u_{3}$};
+			\node[draw, diamond] (j) at (6,2){$u_{4}$};
+			\node[draw, diamond] (k) at (4,4){$u_{5}$};
 			\draw (f) edge (h);
 			\draw (k) edge (f);
 			\draw (k) edge (j);
@@ -739,7 +741,33 @@ Un graf roda amb $n$ vèrtex ès un graf que conté un cicle de longitud $n-1$, on 
 
 Els grafs xarxes bidimensionsals $G_{m,n}$ són grafs bipartits que formen una xarxa de $m$x$n$ vèrtexs. Un graf xarxa té $mn$ vèrtexs i $(m-1)n+(n-1)m$. Es pot greneralitzar per a xarxes de més dimensions com a $G_{m,n,o,...}$.
 
-(afegir exemple de graf xarxa)
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
+		\node[round] (a) at (0,0){$v_{0}$};
+		\node[round] (b) at (4,0){$v_{1}$};
+		\node[round] (c) at (8,0){$v_{2}$};
+		\node[round] (d) at (0,2){$v_{3}$};
+		\node[round] (e) at (4,2){$v_{4}$};
+		\node[round] (f) at (8,2){$v_{5}$};
+		\node[round] (g) at (0,4){$v_{6}$};
+		\node[round] (h) at (4,4){$v_{7}$};
+		\node[round] (i) at (8,4){$v_{8}$};
+		\draw (a) edge (b);
+		\draw (a) edge (d);
+		\draw (b) edge (c);
+		\draw (b) edge (e);
+		\draw (c) edge (f);
+		\draw (d) edge (e);
+		\draw (d) edge (g);
+		\draw (e) edge (h);
+		\draw (e) edge (f);
+		\draw (f) edge (i);
+		\draw (h) edge (i);
+		\draw (h) edge (g);
+	\end{tikzpicture}
+\caption{Graf buit $N_{6}$}
+\end{figure}
 
 
 \subsection{Arbres}
@@ -749,7 +777,30 @@ sense cicles, de manera que existeix un únic camí entre dos vèrtexs.
 Si a un arbre se li afegeix una aresta, es genera un cicle, i se s'en
 treu una, el graf deixa de ser connex. 
 \\
-Hi ha un tipus especial d'arbres anomenats elementals o camins, que són els arbres amb $|V|=1$, $|V|=2$ i en general tots aquells on $\delta=1$ i $\Delta=2$. S'anomenen $P_{n}$, on $n=|V|$. També es pot pensar en grafs elementals com a $G_{n,1}$.(adjuntar exemples de grafs elementals) 
+Hi ha un tipus especial d'arbres anomenats elementals o camins, que són els arbres amb $|V|=1$, $|V|=2$ i en general tots aquells on $\delta=1$ i $\Delta=2$. S'anomenen $P_{n}$, on $n=|V|$. També es pot pensar en grafs elementals com a $G_{n,1}$.
+
+\begin{figure}[H]
+\centering
+	\subfloat[]{
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
+			\tikzstyle{level 1}=[level distance=15mm,sibling distance=35mm]
+			\node(0)[round]{$v_{0}$}
+				child{node[round]{$v_{1}$}
+					child{node[round]{$v_{3}$}}}
+				child{node[round]{$v_{2}$}
+					child{node[round]{$v_{4}$}}
+					child{node[round]{$v_{5}$}}
+			};
+		\end{tikzpicture}
+	}
+	\subfloat[]{
+		\begin{tikzpicture}
+			\grEmptyPath[RA=1, prefix=v, Math=true]{4}
+			\EdgeInGraphLoop*{v}{4}
+		\end{tikzpicture}	
+	}
+\caption{Arbre (a) i graf elemental $P_{4}$ (b)}
+\end{figure} 
 
 
 \subsubsection*{Teorema 2}
@@ -1285,33 +1336,28 @@ El problema de connectar amb la mínima distància un nombre determinat de punts s
 \section{Arbres expansius}
 Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitzar els algorismes per trobar arbres expansius que ja s'han vist. Una opció és construïr el graf complet amb totesles arestes i els seus corresponents pesos i executar algun algorisme que en trobi l'arbre expansiu mínim. 
 \\
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=0.75,transform shape]
-  \Vertex[x=0,y=0]K
-  \Vertex[x=0,y=2]F
-  \Vertex[x=-1,y=4]D
-  \Vertex[x=3,y=7]H
-  \Vertex[x=8,y=5]B
-  \Vertex[x=9,y=2]N
-  \Vertex[x=5,y=0]M
-  \Vertex[x=3,y=1]S
-  \tikzstyle{LabelStyle}=[fill=white,sloped]
-  %\tikzstyle{EdgeStyle}=[bend left]
-  \Edge[label=$120$](K)(F)
-  \Edge[label=$650$](H)(S)
-  \Edge[label=$780$](H)(M)
-  \Edge[label=$490$](D)(B)
-  \Edge[label=$600$](D)(M)
-  \Edge[label=$580$](B)(M)
-  \Edge[label=$600$](H)(N)
-  \Edge[label=$490$](F)(H)
- % \tikzstyle{EdgeStyle}=[bend right]
-  \Edge[label=$630$](S)(B)
-  \Edge[label=$210$](S)(N)
-  \Edge[label=$230$](S)(M)
+
+
+\part{Topologia}
+
+
+
+\begin{tikzpicture}
+  \begin{axis}
+     \addplot3[
+         surf,
+         colormap/cool,
+         samples=20,
+         domain=0:2*pi,
+         y domain=0:2*pi,
+         z buffer=sort
+       ]
+       ( {(2+cos(deg(x)))*cos(deg(y+pi/2))}, 
+         {(2+cos(deg(x)))*sin(deg(y+pi/2))}, 
+         {sin(deg(x))}
+       );
+  \end{axis}
 \end{tikzpicture}
-\caption{Prova!}
-\end{figure}
+
 
 \end{document}
