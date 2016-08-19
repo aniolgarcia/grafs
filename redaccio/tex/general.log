@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  18 AUG 2016 18:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  19 AUG 2016 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1134,13 +1134,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1337--1339
 
 [29] (./general.aux) ) 
 Here is how much of TeX's memory you used:
- 32573 strings out of 494850
- 772459 string characters out of 6178024
- 1261165 words of memory out of 5000000
- 35292 multiletter control sequences out of 15000+600000
+ 31345 strings out of 494850
+ 742331 string characters out of 6178024
+ 963329 words of memory out of 5000000
+ 34064 multiletter control sequences out of 15000+600000
  20546 words of font info for 55 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 61i,21n,96p,1832b,3590s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,21n,96p,1832b,1390s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt
 1200.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk>
  </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/ani
@@ -1160,9 +1160,9 @@ c/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb>
-Output written on general.pdf (29 pages, 297267 bytes).
+Output written on general.pdf (29 pages, 290636 bytes).
 PDF statistics:
- 540 PDF objects out of 1000 (max. 8388607)
+ 542 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)

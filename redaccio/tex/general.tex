@@ -57,9 +57,9 @@
 \part{Introducció a la teoria de grafs}
 
 Aquest primer apartat consisteix en la part més teòrica del treball.
-Explicarè breument l'història d'aquesta branca de la matemàtica i
+Explicaré breument la història d'aquesta branca de la matemàtica i
 posteriorment ens endinsarem en la teoria de grafs com a tal. La teoria
-de grafs pot ser bastant abstracta i a vegades complicada d'entendre,
+de grafs pot semblar bastant abstracta i, a vegades, complicada d'entendre,
 però estarà acompanyada de demostracions i exemples propis que pretenen
 facilitar el seguiment del treball. 
 
@@ -69,11 +69,11 @@ facilitar el seguiment del treball.
 
 \subsection{Els primers passos}
 
-Tot sovint, les noves branques de la matemàtica sorgeixen de solucions
+Tot sovint, les noves branques de la matemàtica sorgeixen de cercar solucions
 a problemes. Problemes que no poden ser resolts ni demostrats amb
-el que coneixem, que forcen a desenvolupar nous mètodes i teories.
+el que coneixem i que forcen a desenvolupar nous mètodes i teories.
 La teoria de grafs no n'és una excepció i tot seguit presentaré els
-problemes determinants per a la creació d'aquesta branca.
+problemes que van forjar la creació d'aquesta branca.
 
 
 \subsubsection*{Euler i els ponts de Königsberg}
@@ -1340,24 +1340,51 @@ Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitza
 
 \part{Topologia}
 
+La topologia és la branca de les matemàtiques que estudia les propietats de l'espai i si aquestes es conserven després de deformacions. Des d'un punt de vista teòric, 
+
+\section{Isomorfismes}
+
+Es diu que dos grafs són isomorfs si existeix una funció bijectiva $\varphi$ entre els seus vèrtexs que conservi les arestes. Formalment dos grafs $G$ i $H$ són isomorfs si
+
+\[\exists\varphi:V(G)\rightarrow V(H) \text{ tal que } \overline{\varphi(v)\varphi(u)}\in E(H) \text{ si i només si } \overline{vu}\in E(G)\]
+
+\begin{figure}
+\centering
+	\subfloat{
+		\begin{tikzpicture}[round/.style={circle, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
+			\node[round, fill=blue] (a) at (0,0){2};
+			\node[round, fill=red] (b) at (4,0){0};
+			\node[round, fill=green] (c) at (2,1.5){3};
+			\node[round, fill=purple] (d) at (2,4){1};
+			\draw (a) edge (b);
+			\draw (a) edge (c);
+			\draw (a) edge (d);
+			\draw (b) edge (c);
+			\draw (b) edge (d);
+			\draw (c) edge (d);
+		\end{tikzpicture}
+	}
+	\subfloat{
+		\begin{tikzpicture}[round/.style={circle, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
+			\node[round, fill=blue] (a) at (0,0){c};
+			\node[round, fill=red] (b) at (4,0){a};
+			\node[round, fill=green] (c) at (0,4){d};
+			\node[round, fill=purple] (d) at (4,4){b};
+			\draw (a) edge (b);
+			\draw (a) edge (c);
+			\draw (a) edge (d);
+			\draw (b) edge (c);
+			\draw (b) edge (d);
+			\draw (c) edge (d);
+		\end{tikzpicture}
+	}
+	\caption{Grafs isomorfs}
+\end{figure}
 
 
-\begin{tikzpicture}
-  \begin{axis}
-     \addplot3[
-         surf,
-         colormap/cool,
-         samples=20,
-         domain=0:2*pi,
-         y domain=0:2*pi,
-         z buffer=sort
-       ]
-       ( {(2+cos(deg(x)))*cos(deg(y+pi/2))}, 
-         {(2+cos(deg(x)))*sin(deg(y+pi/2))}, 
-         {sin(deg(x))}
-       );
-  \end{axis}
-\end{tikzpicture}
+
+
+ 
 
 
 \end{document}
