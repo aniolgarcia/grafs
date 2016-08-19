@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  19 AUG 2016 14:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  19 AUG 2016 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1053,12 +1053,12 @@ your preamble.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 99.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 92.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
  [1
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -1072,32 +1072,24 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 95.
 
 [2]
-LaTeX Font Info:    Try loading font information for U+msa on input line 192.
+LaTeX Font Info:    Try loading font information for U+msa on input line 163.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 192.
+LaTeX Font Info:    Try loading font information for U+msb on input line 163.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3] [4]
-Overfull \hbox (9.03282pt too wide) in paragraph at lines 259--270
-\T1/cmr/m/n/12 Un graf $\OML/cmm/m/it/12 G \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 
-V; E\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 es de-fi-neix com un con-junt de vèr-tex 
-(o no-des) $\OML/cmm/m/it/12 V \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/i
-t/12 v[]; v[]; :::; v[]\OMS/cmsy/m/n/12 g$
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 381--385
+) [3] [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 336--340
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--385
+Underfull \hbox (badness 10000) in paragraph at lines 336--340
 
  []
 
@@ -1105,10 +1097,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 381--385
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 509.
+(amsmath)                 on input line 464.
 
 [9] [10] [11] [12] [13] [14] [15] [16] [17]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 992.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 947.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -1120,15 +1112,15 @@ Overfull \vbox (245.76031pt too high) has occurred while \output is active []
 
 [24] [25] [26] [27]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 132
-9.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 133
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 128
 4.
 
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 128
+9.
+
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1337--1339
+Underfull \hbox (badness 10000) in paragraph at lines 1292--1294
 
  []
 
@@ -1136,7 +1128,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1337--1339
 Here is how much of TeX's memory you used:
  31345 strings out of 494850
  742331 string characters out of 6178024
- 963329 words of memory out of 5000000
+ 962329 words of memory out of 5000000
  34064 multiletter control sequences out of 15000+600000
  20546 words of font info for 55 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
@@ -1160,9 +1152,9 @@ c/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb>
-Output written on general.pdf (29 pages, 290636 bytes).
+Output written on general.pdf (29 pages, 290379 bytes).
 PDF statistics:
- 542 PDF objects out of 1000 (max. 8388607)
+ 541 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
