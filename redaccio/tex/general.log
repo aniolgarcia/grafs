@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  19 AUG 2016 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  22 AUG 2016 10:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1106,11 +1106,7 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 947.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [18] [19] [20]
-[21] [22] [23]
-Overfull \vbox (245.76031pt too high) has occurred while \output is active []
-
-
-[24] [25] [26] [27]
+[21] [22] [23] [24] [25] [26] [27]
 
 LaTeX Warning: Command \textordmasculine invalid in math mode on input line 128
 4.
@@ -1152,9 +1148,9 @@ c/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb>
-Output written on general.pdf (29 pages, 290359 bytes).
+Output written on general.pdf (29 pages, 291800 bytes).
 PDF statistics:
- 541 PDF objects out of 1000 (max. 8388607)
+ 542 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)

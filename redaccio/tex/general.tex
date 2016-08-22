@@ -779,7 +779,7 @@ El nombre de fulles d'un arbre $T$ és més gran o igual a $\Delta$.
 \end{quote}
 \emph{Demostració: }Si eliminem el node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles.Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent a el node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi haurà com a mínim $\Delta$ fulles.
 
-\section{Camins i algorismes}
+\part{Camins i algorismes}
 
 Sovint, quan utilitzem un graf per modelitzar quelcom, ens interessa
 poder-hi fer algunes operacions. Podem, per exemple, voler trobar
@@ -997,7 +997,7 @@ Aquest métode, però, té un problema, i és que només funciona per a grafs no diri
 
 
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \KwData{Un graf $G$}
 \KwResult{Seqüència de nodes visitats des de cada node}
 \DontPrintSemicolon
@@ -1064,7 +1064,7 @@ Aquest algorisme, encara que no pot treballar amb pesos negatius és molt útil té
 \end{itemize}
 
 
-\begin{algorisme}
+\begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf ponderat $G$ i un node inicial $s$}
 \KwResult{Distància mínima entre $s$ i la resta de nodes del graf, arbre expensiu mínim}
