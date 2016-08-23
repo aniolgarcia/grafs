@@ -7,6 +7,7 @@
 \usepackage{amstext}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{mathtools}
 \usepackage{xcolor}
 \usepackage{graphics, graphicx}
 \usepackage{tikz, tkz-graph}
@@ -84,7 +85,7 @@ La teoria de grafs neix a partir de la solució d'un problema curiós: el problema
 i connectades per set ponts. És possible caminar per la ciutat passant
 per tots els ponts tan sols una vegada?''}
 \end{quote}
-Els ciutadans de Königsberg sabien que no era possible, però mai ningú ho havia demostrat fins que Leonhard Euler ho va fer. La demostració de que això no era possible queda recollida en el \emph{``Solutio problmatis ad geometriam situs pertinentis}''publicat el 1736, i l'article també va ser inclòs en el volum 8 de
+Els ciutadans de Königsberg sabien que no era possible, però mai ningú ho havia demostrat fins que Leonhard Euler ho va fer. La demostració de que això no era possible queda recollida en el \emph{``Solutio problematis ad geometriam situs pertinentis}'' publicat el 1736, i l'article també va ser inclòs en el volum 8 de
 \emph{``Commentarii Academiae Scientiarum Imperialis Petropolitanae''
 }publicat el 1741. En aquest text, Euler diu el següent:
 \begin{quote}
@@ -92,10 +93,12 @@ Els ciutadans de Königsberg sabien que no era possible, però mai ningú ho havia 
 \emph{"A més d'aquella part de la geometria que s'ocupa de les quantitats, la qual sempre ha generat un interés preferent, hi ha una altra part -encara pràcticament desconeguda- que ja fou esmentada per Leibniz amb el nom de geometria de posició. Aquesta part de la geometria estudia tot allò que pot ésser determinat únicament per la posició, així com les propietats de la posició; en aquest camp hom no hauria de preocupar-se de quantitats ni de com obtenir-les. No obstant això, els tipus de problemes que pertanyen a aquesta geometria de posició i els mètodes usats per resoldre'ls encara no són suficientment definits. Així doncs, quan darrerement se'm va plantejar un problema que semblava bàsicament geomètric, però que no demanava l'obtenció de quantitats ni admetia una sol·lució basada en el càlcul de quantitats, em vaig adonar que pertanyia a la geometria de posició, sobretot perquè només es podia usar la posició per resolde'l, mentre que el càlcul es mostrava inútil. Així, he decidit exposar ací, com a mostra de la geometria de posició, el mètode que he deduït per a resoldre problemes d'aquesta mena."}
 \end{quote}
 
+%Afegir mapa geogràfic dels ponts de Königsberg
+
 Per aconseguir demostrar que el problema no tenia sol·lució, Euler va haver
 de representar el problema com un mapa topològic, posant les masses
 de terra com a punts i els ponts com a segments que unien aquests
-punts, creant d'aquesta manera el primer graf de la història. Aquest
+punts, i creant d'aquesta manera el primer graf de la història. Aquest
 resulat es considera el primer en teoria de grafs ja que conté un
 important teorema d'aquesta branca. A més d'iniciar la teoria de grafs,
 amb aquest resultat també comença l'estudi dels grafs planars, introdueix
@@ -103,7 +106,7 @@ el concepte de característica d'Euler de l'espai i el teorema de poliedres
 d'Euler (teorema que després va utilitzar per demostrar que no hi
 havia mes sòlids regulars que els sòlids platònics). Amb tot això,
 Euler posa les bases, no tan sols de l'estudi dels grafs, sinó també
-de la topología, una altra branca que també serà tractada en aquest
+de la topologia, una altra branca que també serà tractada en aquest
 treball. 
 
 \begin{figure}[H]
@@ -124,12 +127,12 @@ treball.
   \Edge(1)(2)
   \Edge(0)(3)
 \end{tikzpicture}
-\caption{Representació topològica dels ponts de Köinsberg}
+\caption{Representació topològica dels ponts de Königsberg}
 \end{figure}
 
 
 
-\subsubsection*{Vandermonde i el tour del cavall}
+\subsubsection*{Vandermonde i el tour del cavall d'escacs}
 
 A partir de l'article d'Euler, diversos matemàtics van començar a
 interessar-se pel camp de la topologia (o geometria de la posició,
@@ -138,22 +141,22 @@ com li deien en aquell moment). Un d'ells fou Alexandre-Théophile Vandermonde. V
 
 \subsection{Les primeres descobertes i aplicacions}
 
-Un cop establert l'inici, és difícil veure com va continuar desesenvolupant-se la teoria, ja que en els primers treballs es volia resoldre problemes concrets sense establir la relació entre ells. Tot i així, durant el segle XIX es van plantejar una gran qüantitat de problemes i es van desenvolupar molts teoremes referens els grafs.
+Un cop establert l'inici, és difícil veure com va continuar desesenvolupant-se la teoria, ja que en els primers treballs es volien resoldre problemes concrets sense establir relacions entre ells. Tot i així, durant el segle XIX es van plantejar una gran qüantitat de problemes i es van desenvolupar molts teoremes referents els grafs.
 
 
 \subsubsection*{Francis Guthrie}
 
-El 1852, Francis Guthrie, matemàtic britànic, es planteja el següent problema mentre intenta pintar un mapa del regne unit:
+El 1852, Francis Guthrie, matemàtic britànic, es planteja el següent problema mentre intenta pintar un mapa del Regne Unit:
 \begin{quote}
 \emph{``És possible pintar qualsevol mapa de països de tal manera
 que un país tingui un color diferent al de tots els seus veïns, utilitzant
 tan sols quatre colors?''}
 \end{quote}
-D'aquest problema en surt el teorema a partir del qual s'sestableix que qualsevol mapa pot ser pintat únicament amb quatre colors diferents, de tal manera que dues regions adjacents no tinguin colors iguals. Aquest problema, que pot semblar tan trivial, no va ser demostrat fins l'any 1976. Va passar
+D'aquest problema en surt el teorema a partir del qual s'sestableix que qualsevol mapa pot ser pintat únicament amb quatre colors diferents, de tal manera que dues regions adjacents (entenem com a adjacents dues regions que comparteixiin frontera, no tan sols un punt) no tinguin colors iguals. Aquest problema, que pot semblar tan trivial, no va ser demostrat fins l'any 1976. Va passar
 per mans de pioners com De Morgan, Hamilton, Cayley, Kempe (que
 va fer una demostració publicada el 1879), Heawood (que va concloure que la demostració de Kempe no era correcta)... Finalment el 1976
 Appel i Hanken van demostrar, mitjançant un programa d'ordinador, que
-tot mapa es podia pintar només amb quatre colors. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demstració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne un demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
+tot mapa es podia pintar només amb quatre colors. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demostració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne un demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
 
 
 \subsubsection*{Arthur Cayley}
@@ -161,37 +164,37 @@ tot mapa es podia pintar només amb quatre colors. Pel fet de basar-se en un prog
 Arthur Cayley, matemàtic que treballava en la teoria de grups, topologia
 i combintòria, també va aportar una gran quantitat de coneixement a la teoria de grafs. Va treballar amb grafs de tipus arbre i va desenvolupar
 la fòrmula $n^{n-2}$, que determina el nombre d'arbres expansius
-que té un graf complet de $n$ vèrtex. Una fòrmula semblant apareixia
+que té un graf complet de $n$ vèrtex (veure apartat \ref{sec:Complets}). Una fórmula semblant apareixia
 en treballs de Carl Wilhelm Borchardt, en els quals Cayley es va basar
-i va extendre, tot i que el que actualment dóna nom a la fòrmula és el
+i va extendre, tot i que el que actualment dóna nom a la fórmula és el
 mateix Cayley. 
 
 També va treballar en el desenvolupament d'una representació de l'estructura
-abstracta d'un grup, creant els grafs de Cayley i el teorema de Cayley. Finalment va contribuïr també, l'any 1857, en la representació i ennumeració dels isòmers alcans (composts químics que comparteixen fòrmula o composició però tenen diferent estructura molecular), representant cada compost mitjançant un graf de tipus arbre. Tot i això, Cayley no només va ser actiu en teoria de grafs, sinó que també va desenvolupar teoremes en àlgebra lineal, topologia i geometria.
+abstracta d'un grup, creant els grafs de Cayley i el teorema de Cayley. Finalment va contribuir també, l'any 1857, en la representació i ennumeració dels isòmers alcans (composts químics que comparteixen fórmula o composició però tenen diferent estructura molecular), representant cada compost mitjançant un graf de tipus arbre. Tot i això, Cayley no només va ser actiu en teoria de grafs, sinó que també va desenvolupar teoremes en àlgebra lineal, topologia i geometria.
 
 
 \subsubsection*{William Hamilton i Thomas Kirkman }
 
 William Rowan Hamilton va plantejar un problema el 1859 que consistia
-en trobar un camí que passés pels 20 vèrtex d'un dodecàedre una sola
+a trobar un camí que passés pels 20 vèrtex d'un dodecàedre una sola
 vegada a través de les seves arestes. Hamilton va comercialitzar
 el joc sota el nom de ``The Icosian game'' (és important dir que
 el nom de icosian no va ser degut a que utilitzés un icosaedre, sinó
 que feia referència als 20 vèrtexs del dodecaedre per on s'havia de
-passar). Entorn aquest joc existeix un gran controvèrsia, ja que Euler anteriorment havia plantejat un problema semblant mentre estudiava el problema dels cavalls, i Kirkman va plantejar exactament el mateix problema que Hamilton a la Royal Society un temps abans. 
+passar). Entorn aquest joc existeix un gran controvèrsia, ja que Euler anteriorment havia plantejat un problema semblant mentre estudiava el problema dels cavalls d'escacs, i Kirkman va plantejar exactament el mateix problema que Hamilton a la Royal Society un temps abans. 
 
 
 \subsubsection*{Gustav Kirchhoff}
 
 Gustav Kirchhoff, conegut majoritàriament en el camp de l'electrotècnia
-per les seves lleis de Kirchhoff, també va fer aportacions importants
+per les lleis de Kirchhoff, també va fer aportacions importants
 a la teoria de grafs. Les seves lleis, publicades el 1874, es basen
 en la teoria de grafs, però a més, va ser el primer d'utilitzar els
 grafs en aplicacions industrials. Va estudiar sobretot els grafs de
 tipus arbre i, amb l'investigació que va dur a terme sobre aquest
 tipus de grafs, va formular el teorema de Kirchhoff, referent al nombre
 d'arbres d'expansió que es poden trobar en un graf. Aquest teorema
-es considera una generalització de la fòrmula de Cayley.
+es considera una generalització de la fórmula de Cayley.
 
 
 \subsection{Teoria de grafs moderna}
@@ -200,34 +203,33 @@ Durant el segle XX, la teoria de grafs es va continuar desenvolupant.
 Amb les bases ja establertes durant el segle XIX, els matemàtics hi
 van començar a treballar i el 1936 Dénes König va escriure el primer
 llibre de teoria de grafs. Frank Harary va escriure un altre llibre
-el 1969, fent més accessible la teoria de grafs. El desenvolupament de l'informàtica i les noves tècniques de computació van permetre treballar amb grafs a molt més gran escala, fent possible, per exemple, la primera demostració del teorema dels quatre colors per Appel i Hanken. 
+el 1969, fent més accessible la teoria de grafs. El desenvolupament de l'informàtica i les noves tècniques de computació van permetre treballar amb grafs a molt més gran escala, fent possible, per exemple, la ja citada primera demostració del teorema dels quatre colors per Appel i Hanken. 
 
 Actualment la teoria de grafs és una part molt important de la matemàtica
 discreta i està relacionada amb molts àmbits diferents, com per exemple
 la topologia, la combinatòria, la teoria de grups, la geometria algebraica...
 Des del seu desenvolupament s'han utilitzat els grafs per resoldre
 i representar de manera visual problemes en aquests camps. Té aplicacions
-en molts altres àmbits com per exemple la computació, l'informàtica,
+en molts altres àmbits com per exemple la computació, la informàtica,
 la física, la química, l'electrònica, les telecomunicacions, la biologia,
 la logística i fins i tot en l'àmbit econòmic. 
 
 \section{Principis bàsics}
 
-Un \textbf{graf} $G=(V,E)$ es defineix com un conjunt de vèrtexs (o nodes)
-$V=\{v_{1},v_{2},...,v_{n}\}$ i un conjunt d'arestes $E=\{e_{1},e_{2},...,e_{m}\}$,
-que uneixen dos vèrtexs $v_{i}$ i $v_{j}$, tals que $v_{i},v_{j}\text{\ensuremath{\in}}V$.
-És a dir: un graf està format per un conjunt de punts i un conjunt
+Un \textit{graf} $G=(V,E)$ es defineix com un conjunt de \textit{vèrtexs} (o nodes)
+$V=\{v_{1},v_{2},...,v_{n}\}$ i un conjunt d'\textit{arestes} $E=\{e_{1},e_{2},...,e_{m}\}$, cadascuna de les quals uneix dos vèrtex de $V$. Si $v_{i}$ i $v_{j}$, amb $v_{i},v_{j}\in V$, estan units per l'aresta $e_{k}$ escriurem $e_{k}=\{v_{i},v_{j}\}$. Quan volguem especificar el graf concret empararem les notacions $V(G)$ i $E(G)$.
+Així doncs un graf està format per un conjunt de punts i un conjunt
 d'arestes que uneixen alguns d'aquests punts. El nombre de vèrtexs
-d'un graf queda determinat pel nombre d'elements que hi ha en el grup
-$V$, per tant ens referirem a ell com a $|V|$(cardinal de $V$).
-Amb les arestes passa el mateix, i també utilitzarem $|E|$ per determinar
-el nombre d'arestes d'un graf. Definim també que dos vèrtexs són \textbf{adjacents} si estàn units per una aresta i, com a conseqüència, són \textbf{incidents} a l'aresta. 
-
-En la figura $2$ es mostra un graf simple $G$ format
+d'un graf queda determinat pel nombre d'elements que hi ha en el conjunt
+$V$, per tant ens referirem a ell com a $|V|$ (cardinal de $V$).
+Amb les arestes passa el mateix, i també utilitzarem $|E|$ per indicar
+el nombre d'arestes d'un graf. Definim també que dos vèrtexs són \textit{adjacents} si estàn units per una aresta i, com a conseqüència, són \textit{incidents} a l'aresta. 
+\\
+La idea intuitiva de graf convida a utilitzar representacions gràfiques. Així, en la figura \ref{fig:exemple} es mostra un graf simple $G$ format
 per:
 \begin{itemize}
 \item $V=\{v_{1},v_{2},v_{3},v_{4},v_{5},v_{6}\}$
-\item $E=\{(v_{1},v_{2}),(v_{1},v_{4}),(v_{1},v_{5}),(v_{2},v_{5}),(v_{3},v_{4}),(v_{3},v_{5}),(v_{3},v_{6}),(v_{4},v_{6})\}$
+\item $E=\{\{v_{1},v_{2}\},\{v_{1},v_{4}\},\{v_{1},v_{5}\},\{v_{2},v_{5}\},\{v_{3},v_{4}\},\{v_{3},v_{5}\},\{v_{3},v_{6}\},\{v_{4},v_{6}\}\}$
 
 
 \end{itemize}
@@ -250,19 +252,17 @@ per:
 		\draw (c) edge (f);
 		\draw (d) edge (f);
 	\end{tikzpicture}
-\caption{}
+\caption{Representació gràfica del graf $G=(V,E)$ que s'ha presentat}
+\label{fig:exemple}
 \end{figure}
 
 
-Si una aresta comença i acaba en el mateix vèrtex (per exemple $e_{m}=\{v_{i},v_{i}\}$)
-s'anomena llaç. També pot ser que hi hagi dues arestes idèntiques,
-és a dir, dues arestes que comencin en el vèrtex $v_{i}$ i acabin
-en el vèrtex $v_{j}$. En qualsevol d'aquests dos casos anteriors,
-el graf s'anomena multigraf o pseudograf. En cas contrari, el graf
-serà simple i simètric. Amb el que hem vist fins ara, podem dir que
-$e_{1}=(v_{1},v_{2})$ és equivalent a $e_{2}=(v_{2},v_{1})$, però
-en els grafs dirigits això no es compleix. En aquest tipus de graf,
-les arestes només permeten viatjar en un sentit. En la següent imatge
+Si una aresta comença i acaba en el mateix vèrtex (per exemple $e_{m}=\{v_{i},v_{i}\}$
+s'anomena llaç (figura \ref{fig:exemples_tipus}, cas (a)). També pot ser que hi hagi dues arestes idèntiques,
+és a dir, dues arestes que uneixin $v_{i}$ i $v_{j}$ (figura \ref{fig:exemples_tipus}, cas (b)). En qualsevol d'aquests dos casos anteriors,
+el graf s'anomena \textit{multigraf} o \textit{pseudograf}. En cas contrari, el graf
+serà anomenat \textit{simple}. Amb el que hem vist fins ara, podem dir que
+$e_{1}=\{v_{1},v_{2}\}$ és equivalent a $e_{2}=\{v_{2},v_{1}\}$ (ja que es tracta de parells no ordenats). Tanmateix, existeixen grafs en els quals les arestes han de ser recorregudes en una direcció determinada. S'anomenen grafs \textit{dirigits} i, en aquest cas, si $e_{1}=(v_{1},v_{2})$ i $e_{2}=(v_{2},v_{1})$, $e_{1}\neq e_{2}$, ja que es tracta de parells ordenats (figura \ref{fig:exemples_tipus}, cas (c)). En la següent imatge
 es mostren els grafs esmentats anteriorment:
 
 
@@ -309,29 +309,31 @@ es mostren els grafs esmentats anteriorment:
 		\end{tikzpicture}
 	}
 \caption{Graf amb un llaç (a), graf amb arestes múltiples (b) i graf dirigit (c)}
+\label{fig:exemples_tipus}
 \end{figure}
 
 
 
 
 \emph{Nota de l'autor: a partir d'ara, i si no s'indica el contrari,
-quan es parli de grafs, s'exclouràn els multigrafs i grafs dirigits.}
+quan es parli de grafs, s'exclouran els multigrafs i grafs dirigits.}
 
-
-
-El nombre d'arestes que són incidents a un vèrtex $v$ (contant els
-llaços com a dues arestes) determinen el grau de $v$, que es representa
+Direm que un graf no dirigit $G=(V,E)$ és \textit{connex} si per a qualsevol $v_{i}, v_{j}\in V$ $v_{i}\neq v_{j}$ existeix un \textit{camí}(successió d'arestes) que els uneix.
+\\
+El nombre d'arestes que són incidents a un vèrtex $v$ (comptant els
+llaços com a dues arestes) determinen el que anomenarem \textit{grau} de $v$, que es representa
 amb $g(v)$. La successió de graus d'un graf serà la successió que
-s'obté al ordenar de manera creixent els graus dels seus vèrtex. Cal
-dir que no és un problema gens trivial saber si una successió determinada
+s'obté a l'ordenar de manera creixent els graus dels seus vèrtex. Cal
+dir que no és un problema gens trivial saber si una successió de nombres naturals donada
 pot ser una successió de graus d'un graf. El grau mínim d'un graf
-$G$ queda determinat de la següent manera: $\delta(G)=min\{g(v):v\text{\ensuremath{\in}}V(G)\}$.
+$G=(V,E)$ queda determinat de la següent manera: $\delta(G)=min\{g(v):v\text{\ensuremath{\in}}V\}$.
 De manera similar, el grau màxim de $G$, $\text{\ensuremath{\Delta}}(G)=max\{g(v):v\text{\ensuremath{\in}}V\}$.
-Si a un graf en treiem una aresta o un node, en resulta un altre (o
-més d'un) graf connex. D'aquesta manera, si $v\text{\ensuremath{\in}}V(G)$,
-$G-v$ és el graf que s'obté al suprimir el vèrtex $v$ i totes les
+\\
+Si d'un graf connex en treiem una aresta o un node, en resulta un altre (o
+més d'un) graf connex. Si $v\text{\ensuremath{\in}}V(G)$, indicarem per
+$G-v$ al graf que s'obté al suprimir el vèrtex $v$ i totes les
 seves arestes incidents. De la mateixa manera, si $e\text{\ensuremath{\in}}E(G)$,
-$G-e$ és el graf que s'obté al eliminiar la aresta $e$.
+$G-e$ indicarà el graf que s'obté a l'eliminiar la aresta $e$.
 
 Amb tots aquests conceptes ja podem veure el teorema d'Euler, un dels
 primers teoremes en teoria de grafs i un dels més importants.
@@ -339,46 +341,54 @@ primers teoremes en teoria de grafs i un dels més importants.
 \\
 
 \subparagraph{Teorema 1 (Euler)}
+\label{teorema:Euler}
 \begin{quotation}
-``En tot graf, la suma dels graus dels vèrtex és igual al doble del
-nombre d'arestes.''\[ \sum_{v\in V}g(v)=2|E| \]
+En tot graf $G=(V,E)$, la suma dels graus dels vèrtex és igual al doble del
+nombre d'arestes.\[ \sum_{v\in V(G)}g(v)=2|E|(G) \]
 \end{quotation}
 \emph{Demostració}: Només cal veure que cada aresta té dos extrems
 i que suma dos en el total dels graus. La demostració formal és més
-complicada, i es troba mitjançant el nombre d'arestes:
+complicada, i comporta desenvolupar una inducció respecte del nombre d'arestes:
 
-Si $|E|=0$, no cal considerar el cas. Si $|E|=1$, o $|V|=2$ i cada
+\begin{itemize}
+
+
+\item Si $|E|=0$, no cal considerar el cas. Si $|E|=1$, o $|V|=2$ i cada
 vèrtex té grau 1 o la aresta és un llaç i hi ha un sol vèrtex de grau
-2. En qualsevol d'aquests dos casos, el toerema es verifica. Ara suposem
-que el teorema està demostrat per a $|E|\leq k$ i que $G$ és un
-graf amb $|E|=k+1$. Si $e$ és una aresta de $G$ i el graf $H=G-e$,
-llavors tots els vèrtexs de $H$ tenen el mateix grau a $H$ que a
+2. En qualsevol d'aquests dos casos, el teorema es verifica.
+\item Ara suposem que el teorema està demostrat per a $|E|\leq k$ i que $G$ és un
+graf amb $|E|=k+1$. Si $e$ és una aresta de $G$ prenem $H=G-e$.
+\item Llavors tots els vèrtexs de $H$ tenen el mateix grau a $H$ que a
 $G$ excepte 2 que tenen un grau menys o un que té dos graus menys
 (només en el cas que $e$ sigués un llaç). En tots dos casos obtenim
 que:\[ \sum_{v\in V(G)}g(v)=\sum_{v\in V(H)}g(v)+2=2(|E|-1)+2=2|E| \]D'aquesta
 demostració en treiem una altra afirmació:
+
+\end{itemize}
+
 \begin{quotation}
-\emph{``En tot graf, el nombre de vèrtex amb grau imparell, és parell.''}
+\emph{En tot graf, el nombre de vèrtex amb grau imparell, és parell.}
 \end{quotation}
 
 \section{Tipus de grafs}
 
-Fins ara hem vist els conceptes bèsics en teoria de grafis i algunes
+Fins ara hem vist els conceptes bàsics en teoria de grafs i algunes
 de les propietats que compleixen tots els grafs. No obstant, existeixen
-diversos tipus de grafs que tenen propietats especials:
+diversos tipus de grafs que tenen propietats especials. A continuació se'n presenten alguns
 
 
-\subsection{Grafs complementaris}
+\subsection{Grafs complementaris} 
+\label{sec:complementaris}
 
 El graf complementari del graf $G$ és el graf $H$ amb els mateixos
-vèrtexs que $G$, de manera que dos vèrtexs de $H$ seràn adjacents
+vèrtexs que $G$, de manera que dos vèrtexs d'$H$ seran adjacents
 si i només si a $G$ no ho són. Formalment, si $G=(V,E)$ és un graf
-simple i $K$ és el conjunt de totes les possibles combinacions de
-dos elements de $V$, llavors $H=(V,K\setminus E)$. Pel complementari
-de $G$ s'escriu $\bar{G}$ o $G'$. Per obtenir el graf complementari
+simple i $K=E(K_{n})$ és el conjunt d'arestes derivades de totes les possibles combinacions de
+dos elements de $V$, essent $n=|V(G)|$, llavors $H=(V,K\setminus E)$\footnote{La notació $K\setminus E$ indica el conjunt dels elements de $K$ que no són a $E$}. 
+Per indicar el complementari de $G$ s'escriu $\bar{G}$ o $G'$. Per obtenir el graf complementari
 de $G$ tan sols s'han de posar les arestes que falten per obtenir
-un graf complet i trure totes les que hi eren inicialment (ja que
-$|E(G)|+|E(\bar{{G}})|=|E(K_{n})|$, on $n=|V(G)|$). 
+un graf complet i treure totes les que hi eren inicialment (ja que
+$|E(G)|+|E(\bar{{G}})|=|K|$). Vegi's figura \ref{fig:complementari}.
 
 \begin{figure}[H]
 \centering
@@ -393,27 +403,31 @@ $|E(G)|+|E(\bar{{G}})|=|E(K_{n})|$, on $n=|V(G)|$).
 		\end{tikzpicture}
 	}
 \caption{Un graf $G$ i el seu complementari $\bar{G}$}
+\label{fig:complementari}
 \end{figure}
 
 
-\subsection{Grafs regulars}
+\subsection{Grafs regulars} 
+\label{sec:regulars}
 
-Es diu que un graf és regular de grau $r$ quan tots els seus vèrtexs
-tenen grau $r$. Formalment, un graf és $r$-regular quan $\Delta=\delta=r$.
-Un graf $0$-regular és un graf nul (veure apartat 2.3), un graf $1$-regular
+Es diu que un graf $G=(V,E)$ és \textit{regular de grau $r$} quan tots els seus vèrtexs
+tenen grau $r$. Formalment, un graf és $r$-regular quan $\Delta(G)=\delta(G)=r$.
+Un graf $0$-regular és un graf nul \footnote{Vegi's apartat \ref{sec:buits}}, un graf $1$-regular
 consisteix en arestes separades entre elles i un graf $2$-regular
-consisteix en un o més cicles separats. A partir d'aquí, els més importants
+consisteix en un o més cicles \footnote{Vegi's apartat \ref{sec:cicles}} separats. A partir d'aquí, els grafs regulars més importants
 tenen noms propis, com per exemple els $3$-regulars, que són els
-cúbics; els $4$-regulars, quàrtics; els $7$-regulars, grafs de Witt
-truncats dobles; els $8$-regulars, grafs de 24 cel·les... Evidentment,
-per un $r$-regular no necessàriament existeix només un graf, sinó
-que sovint s'en poden fer d'altres amb diferent nombre de vèrtexs.
+\textit{cúbics}; els $4$-regulars, \textit{quàrtics}; els $7$-regulars, \textit{grafs de Witt
+truncats dobles}; els $8$-regulars, \textit{grafs de 24 cel·les}... Evidentment,
+no necessàriament existeix un únic graf $r$-regular, sinó
+que sovint s'en poden fer amb diferent nombre de vèrtexs.
 A la següent imatge es poden veure diversos exemples de grafs regulars,
-alguns d'ells amb el mateix ordre i diferent nombre de vèrtexs:
+alguns d'ells amb el mateix grau i diferent nombre de vèrtexs:
 
-Per a tots els grafs $r$-regulars amb $n$ vèrtexs es compleix que 
+Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-regulars amb $n$ vèrtexs es compleix que 
 
-\[ |E|=\frac{1}{2}nr \]on $|E|$ és el nombre d'arestes.
+\[ |E|(G)=\frac{1}{2}nr \]on $|E|(G)$ és el nombre d'arestes.
+
+%Cal afegir imatges de més grafs 3-regulars.
 
 \begin{figure}[H]
 \centering
@@ -434,13 +448,14 @@ Per a tots els grafs $r$-regulars amb $n$ vèrtexs es compleix que
 \end{figure}
 
 
-\subsection{Grafs nuls o buits}
+\subsection{Graf nul i grafs buits}
+\label{sec:buits}
 
-Els grafs nuls o buits són grafs sense arestes, conjunts de $n$ vértexs.
-Són els complementaris dels grafs complets, i per tant la seva nomenclatura
-és $\bar{K}_{n}$ o simplement $N_{n}$. S'anomena grafs nuls a $N_{0}$
+Els \textit{grafs buits} són grafs sense arestes, és a dir, conjunts d'$n$ vértexs.
+Són els complementaris dels grafs complets $K_{n}$ \footnote{Vegi's apartat \ref{sec:Complets}}, i per tant la seva nomenclatura
+és $\bar{K}_{n}$ o, simplement, $N_{n}$. Estrictament s'anomena \textit{graf nul} a $N_{0}$
 i buits a la resta, però com que normalment no s'utilitza $N_{0}$,
-convencionalment es diuen nuls a tot el conjunt dels buits.
+convencionalment es diuen nuls tots els elements del conjunt dels buits.
 
 \begin{figure}[H]
 \centering
@@ -457,14 +472,23 @@ convencionalment es diuen nuls a tot el conjunt dels buits.
 
 
 \subsection{Grafs complets}
+\label{sec:Complets}
 
-Un graf complet és un graf on cada vèrtex està unit a tots els altres
+Un \textit{graf complet} és un graf on cada vèrtex està unit a tots els altres
 una sola vegada. Un graf complet amb $n$ nodes és un graf simple
-i $(n-1)$-regular i la seva nomenclatura és $K_{n}$. Els grafs complets
-tenen ${n\choose 2}=\frac{n(n-1)}{2}$ arestes. El nombre de cicles
-que conté un graf complet queda determinat per la següent igualtat:
+i $(n-1)$-regular i la seva nomenclatura és $K_{n}$. 
+
+Els grafs complets tenen ${n\choose 2}=\frac{n(n-1)}{2}$ arestes. 
+El nombre de cicles que conté un graf complet queda determinat per la següent igualtat:
 
 \[ C_{n} =\sum_{K=3}^{n}\frac{1}{2}{n\choose k}(k-1)! \]
+
+On:
+\begin{description}
+\item[$\frac{1}{2}$],ja que contem dues vegades el cicle, ja que no són dirigits.
+\item[$n\choose k$] és el nombre de grups de $k$ elements que podem agafar.
+\item[$(k-1)!$] és el nombre de permutacions circulars de $k$ elements.
+\end{description}
 
 \begin{figure}[H]
 \centering
@@ -484,9 +508,11 @@ que conté un graf complet queda determinat per la següent igualtat:
 
 
 \subsection{Cicles}
+\label{sec:cicles}
 
-Els cicles són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i
-s'anomenen $C_{n}$. El graf lineal d'un cicle és ell mateix.
+Els \textit{cicles} són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i
+s'anomenen $C_{n}$. 
+El graf lineal \footnote{Vegi's apartat\ref{sec:lineal}} d'un cicle és ell mateix.
 
 \begin{figure}[H]
 \centering	
@@ -498,13 +524,15 @@ s'anomenen $C_{n}$. El graf lineal d'un cicle és ell mateix.
 
 
 \subsection{Grafs bipartits}
+\label{sec:bipartits}
 
-Els grafs bipartits són aquells en els quals els vèrtexs es poden
-separar en dos conjunts disjunts $U$ i $V$ (és a dir, que els dos
+Els \textit{grafs bipartits} són aquells en els quals els vèrtexs es poden
+separar en dos conjunts disjunts $U$ i $W$ (és a dir, que els dos
 conjunts no tinguin elements comuns) de tal manera que un vèrtex d'un
-conjunt no sigui mai adjacent a un altre vèrtex del seu mateix conjunt.
-Es pot dir també que un graf és bipartit si no conté cicles de longitud
-senar. Llavors, podem deduïr que tots els els grafs $C_{n}$ amb $n$
+conjunt no sigui mai adjacent a un altre vèrtex del mateix conjunt.
+Es pot dir també que un graf és bipartit si i sols si no conté cicles de longitud
+senar. 
+Llavors, podem deduïr que tots els grafs $C_{n}$ amb $n$
 parell, són també grafs bipartits.
 
 \begin{figure}[H]
@@ -531,11 +559,13 @@ parell, són també grafs bipartits.
 
 
 \subsection{Grafs bipartits complets}
+\label{sec:bipartits_complets}
 
-Els grafs bipartits complets són grafs bipartits en esl quals cada
+Els \textit{grafs bipartits complets} són grafs bipartits \footnote{Vegi's apartat \ref{sec:bipartits}} en els quals cada
 element del conjunt $U$ està unit a tots els elements dels del conjunt
-$V$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|V|$. En els grafs
-bipartits $K_{m,n}=K_{n,m}$ , $|V|=n+m$ i $|E|=mn$.
+$W$. 
+S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|W|$.
+En els grafs bipartits $K_{m,n}=K_{n,m}$ , $|V|=n+m$ i $|E|=mn$.
 
 \begin{figure}[H]
 \centering	
@@ -574,12 +604,13 @@ bipartits $K_{m,n}=K_{n,m}$ , $|V|=n+m$ i $|E|=mn$.
 \end{figure}
 
 
-\subsection{Grafs estrella}
+\subsection{Grafs estrella}	
+\label{sec:estrella}
 
-Un graf estrella de grau $n$, conté un vèrtex amb grau $n-1$ i els
-$n-1$ vèrtexs restants tenen grau 1. S'anomena $S_{n}$ i són estrelles
-tots els grafs bipartits amb forma $K_{1,n-1}$ o $K_{n-1,1}$. El
-graf lineal de $S_{n}$ és $K_{n-1}$.
+Un \textit{graf estrella} de grau $n$ és aquell que conté un vèrtex amb grau $n-1$ i els
+$n-1$ vèrtexs restants de grau 1.
+S'anomenen $S_{n}$ i són estrelles tots els grafs bipartits de la forma $K_{1,n-1}$ o $K_{n-1,1}$. 
+El graf lineal de $S_{n}$ és $K_{n-1}$.
 
 \begin{figure}[H]
 \centering
@@ -591,14 +622,17 @@ graf lineal de $S_{n}$ és $K_{n-1}$.
 
 
 \subsection{Graf lineal}
-
+\label{sec:lineal}
 Un graf lineal $L(G)$ d'un graf $G$ és un graf que representa les
 adjacències entre les arestes de $G$. Formalment, donat un graf $G$,
 el graf lineal $L(G)$ és aquell en el qual cada vèrtex correspon
 a una aresta de $G$ i dos vèrtexs són adjacents només si les arestes
-corresponents a $G$ són adjacents (comparteixen un vèrtex). El graf
-lineal d'un graf amb $n$ nodes, $e$ arestes i amb vèrtexs de graus
-$d_{i}$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}d_{i}^{2}-e \]arestes.
+corresponents a $G$ comparteixen un vèrtex.
+El graf lineal d'un graf amb $n$ nodes, $e$ arestes i amb vèrtexs de graus
+$g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]arestes.
+\\
+\emph{Demostració}: Cada node $v_{i}$ amb grau $g(v_{i})$ del graf original generarà un graf complet de $g(v_{i})$ nodes ($K_{g(v_{i})}$). Tal com s'ha vist a l'apartat \ref{sec:Complets}, un graf complet té ${n\choose k} = \frac{n(n-1)}{2}$, per tant en aquest cas se'n generen $\frac{g(v_{i})(g(v_{i})-1)}{2}$. Però això es compleix per a cada vèrtex, i llavors podem escriure \[ \sum_{i=1}^{n}\frac{1}{2}g(v_{i})(g(v_{i})-1) = \frac{1}{2}\sum_{i=1}^{n}(g(v_{i})^{2}-g(v_{i})) = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2} - \underbracket{\frac{1}{2}\underbracket{\sum_{i=0}^{n}g(v_{i})}_{2|E|}}_{|E|} = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2}-e\]
+
 \begin{figure}[H]
 \centering
 	\subfloat[$G$]{
@@ -682,7 +716,12 @@ $d_{i}$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}d_{i}^{2}-e \]arestes.
 
 \subsection{Rodes}
 
-Un graf roda amb $n$ vèrtex ès un graf que conté un cicle de longitud $n-1$, on cada vèrtex del cicle està connectat a un alte vèrtex fora del cicle, anomenat node cenmtral. El node central té grau $n-1$, i la resta de nodes tenen grau $3$. S'escriu $W_{n}$, i a vegades simplement s'estudia com a $C_{n-1}+K_{1}$. El nombre de cicles que conté un graf amb $n$ vètrexs està determinat per $n^{2}-3n+3$.
+Un \textit{graf roda} amb $n$ vèrtex ès un graf que conté un cicle de longitud $n-1$, on tots els vèrtex del cicle estan connectats a un vèrtex fora del cicle, anomenat node central. S'escriu $W_{n}$, i a vegades simplement s'estudia com a $C_{n-1}+K_{1}$. 
+El node central té grau $n-1$, i la resta de nodes tenen grau $3$.
+El nombre de cicles que conté un graf amb $n$ vètrexs està determinat per $n^{2}-3n+3$.
+\\
+\emph{Demostració}: El nombre de cicles que conté un graf roda és la suma del nombre de cicles de longitud des de 3 fins a $n$ ($\sum_{i=3}^{n}C_{i}$). Amb l'exepció de $C_{n-1}$, el nombre de cicles per a cada $i$ és $n-1$. En el cas de $C_{n-1}$ n'hi ha $n$ de possibles, però ho representem de la manera $n-1+1$, per tal que sigui més còmode operar. Com que els cicles són possibles a partir de longitud 3, en total hi ha $n-2$ longituds possibles. D'aquesta manera podem escriure $(n-2)(n-1)+1=\boxed{n^{2}-3n+3}$.  
+
 
 \begin{figure}[H]
 \centering
