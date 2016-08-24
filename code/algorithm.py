@@ -26,7 +26,8 @@ def DFS_recursive(Adj, s):
             parent[v]=s
             DFS_recursive(Adj, v)
     topo.append(s)
-        
+
+#______________________________________________________________________________
 
 def BFS(Adj, s):
     level={s:0}
@@ -46,6 +47,8 @@ def BFS(Adj, s):
         frontier=next
         i+=1
     print level
+    
+#______________________________________________________________________________    
     
 def Dijkstra(Adj, s):
     Q={}
@@ -69,6 +72,7 @@ def Dijkstra(Adj, s):
     print "Shortest-path tree:"
     print tree
 
+#______________________________________________________________________________
     
 def BellmanFord(Adj, s):
     dist={}
@@ -95,6 +99,8 @@ def BellmanFord(Adj, s):
     print "Shortest-path tree:"
     print tree
     
+#______________________________________________________________________________    
+    
 def Prim(Adj):
     Q={}
     tree={}
@@ -110,6 +116,8 @@ def Prim(Adj):
         Q.pop(u)
     print tree
                 
+#______________________________________________________________________________                
+                
 def Kruskal(Adj):
     subtree = UnionFind()
     tree = [] 
@@ -121,6 +129,7 @@ def Kruskal(Adj):
                     subtree.union(u,v)
     print tree
  
+#______________________________________________________________________________
 
 def FloydWarshall(Adj):
     dist=[[float("inf") for x in range(len(Adj))] for y in range(len(Adj))]
@@ -136,14 +145,29 @@ def FloydWarshall(Adj):
                     dist[u][v] = dist[u][x] + dist[x][v]
     print dist
                     
+#______________________________________________________________________________    
+
+def Hamilton_recursive(Adj, s, e, path):
+    path = path + [s]
+    if s == e:
+        return path
+    for n in Adj[s]:
+        if n not in path:
+            nou_path = Hamilton_recursive(Adj, n, e, path)
+            if nou_path: 
+                return nou_path
+    return None
     
-                        
-                
+def Hamilton(Adj, s, e):
+    path=[]
+    Hamilton_recursive(Adj, s, e, path)
+    print path    
     
-        
+    
 
+#______________________________________________________________________________
 
-
+## Falten: Camins Eulerians, Camins Hamiltonians, A*, K*, Eppstein
 
 v=[[1,2],[0,2,4],[0,1,3],[2,4,5],[1,3,5],[3,4]]
 w=[[1,2],[],[],[0,1,2]]
@@ -157,16 +181,20 @@ test=[{1:1,2:10},{3:2},{3:-10},{4:3},{}]
 prim=[{1:6,2:5,3:14,4:8},{0:6,2:12},{1:12, 0:5,5:7,6:9},{0:14,4:3},{0:8,3:3,5:10},{2:7,4:10,7:15},{2:9},{5:15}]
 weight2={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
 weight3={1:{2:1, 3:2},0:{1:10,2:3},2:{1:4, 3:8, 4:2},4:{3:9},3:{4:7}}
+hamilton={0:[1,3],1:[0,2,4,5],2:[1,4,5],3:[1,2],4:[1,2],5:[1,2]}
+treball={0:[3],1:[],2:[1,4,5,9,11],3:[],4:[0,3,7,9],5:[6,7,10],6:[],7:[],8:[2,7],9:[],10:[11],11:[]}
 
 
+DFS(treball)
 #Dijkstra(weight,0)
 #BellmanFord(weight,0)
 #Prim(weight)
 #BFS(weight,0)
 #DFS(weight)
 #Kruskal(weight2)
-BFS(non_dir, 0)
-FloydWarshall(killer)
+#Hamilton(hamilton, 0, 0)
+#BFS(non_dir, 0)
+#FloydWarshall(killer)
 #for v in range(len(weight3)):
 #    print "v: %d" %v
 #    for u in weight3[v]:

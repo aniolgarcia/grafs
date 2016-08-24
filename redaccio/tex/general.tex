@@ -31,10 +31,17 @@
    \begin{algorithm}[#1]%
   }{\end{algorithm}}
   
+%\newtheorem{propietat}{Propietat}  
+    
 \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
 \SetCommentSty{mycommfont}
 
 \SetKwProg{Fn}{Funció}{}
+
+\newcounter{propietat}[subsection]
+\newenvironment{propietat}[1][]{\refstepcounter{propietat}\par\medskip
+  \noindent \textbf{Propietat~\thepropietat #1} \rmfamily}
+   {\medskip}
 
 
 \makeatletter
@@ -385,10 +392,14 @@ vèrtexs que $G$, de manera que dos vèrtexs d'$H$ seran adjacents
 si i només si a $G$ no ho són. Formalment, si $G=(V,E)$ és un graf
 simple i $K=E(K_{n})$ és el conjunt d'arestes derivades de totes les possibles combinacions de
 dos elements de $V$, essent $n=|V(G)|$, llavors $H=(V,K\setminus E)$\footnote{La notació $K\setminus E$ indica el conjunt dels elements de $K$ que no són a $E$}. 
-Per indicar el complementari de $G$ s'escriu $\bar{G}$ o $G'$. Per obtenir el graf complementari
+Per indicar el complementari de $G$ s'escriu $\bar{G}$ o $G'$. 
+
+\begin{propietat}
+Per obtenir el graf complementari
 de $G$ tan sols s'han de posar les arestes que falten per obtenir
 un graf complet i treure totes les que hi eren inicialment (ja que
 $|E(G)|+|E(\bar{{G}})|=|K|$). Vegi's figura \ref{fig:complementari}.
+\end{propietat}
 
 \begin{figure}[H]
 \centering
@@ -417,19 +428,25 @@ consisteix en arestes separades entre elles i un graf $2$-regular
 consisteix en un o més cicles \footnote{Vegi's apartat \ref{sec:cicles}} separats. A partir d'aquí, els grafs regulars més importants
 tenen noms propis, com per exemple els $3$-regulars, que són els
 \textit{cúbics}; els $4$-regulars, \textit{quàrtics}; els $7$-regulars, \textit{grafs de Witt
-truncats dobles}; els $8$-regulars, \textit{grafs de 24 cel·les}... Evidentment,
-no necessàriament existeix un únic graf $r$-regular, sinó
-que sovint s'en poden fer amb diferent nombre de vèrtexs.
-A la següent imatge es poden veure diversos exemples de grafs regulars,
-alguns d'ells amb el mateix grau i diferent nombre de vèrtexs:
+truncats dobles}; els $8$-regulars, \textit{grafs de 24 cel·les}... 
 
+\begin{propietat}
+No necessàriament existeix un únic graf $r$-regular, sinó
+que sovint s'en poden fer amb diferent nombre de vèrtexs.
+A l'imatge \ref{fig:complementari} es poden veure diversos exemples de grafs regulars,
+alguns d'ells amb el mateix grau i diferent nombre de vèrtexs.
+\end{propietat}
+
+\begin{propietat}
 Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-regulars amb $n$ vèrtexs es compleix que 
 
 \[ |E|(G)=\frac{1}{2}nr \]on $|E|(G)$ és el nombre d'arestes.
+\end{propietat}
 
 %Cal afegir imatges de més grafs 3-regulars.
 
 \begin{figure}[H]
+\label{fig:regulars}
 \centering
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
 		\node[round] (a) at (0,0){$v_{2}$};
@@ -478,17 +495,23 @@ Un \textit{graf complet} és un graf on cada vèrtex està unit a tots els altres
 una sola vegada. Un graf complet amb $n$ nodes és un graf simple
 i $(n-1)$-regular i la seva nomenclatura és $K_{n}$. 
 
+\begin{propietat}
 Els grafs complets tenen ${n\choose 2}=\frac{n(n-1)}{2}$ arestes. 
+\end{propietat}
+
+\begin{propietat}
 El nombre de cicles que conté un graf complet queda determinat per la següent igualtat:
 
 \[ C_{n} =\sum_{K=3}^{n}\frac{1}{2}{n\choose k}(k-1)! \]
 
 On:
 \begin{description}
-\item[$\frac{1}{2}$],ja que contem dues vegades el cicle, ja que no són dirigits.
+\item[$\frac{1}{2}$] es multiplica perquè contem dues vegades els cicles, ja que no són dirigits.
 \item[$n\choose k$] és el nombre de grups de $k$ elements que podem agafar.
 \item[$(k-1)!$] és el nombre de permutacions circulars de $k$ elements.
 \end{description}
+
+\end{propietat}
 
 \begin{figure}[H]
 \centering
@@ -511,8 +534,11 @@ On:
 \label{sec:cicles}
 
 Els \textit{cicles} són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i
-s'anomenen $C_{n}$. 
+s'anomenen $C_{n}$.
+ 
+\begin{propietat}
 El graf lineal \footnote{Vegi's apartat\ref{sec:lineal}} d'un cicle és ell mateix.
+\end{propietat}
 
 \begin{figure}[H]
 \centering	
@@ -532,12 +558,14 @@ conjunts no tinguin elements comuns) de tal manera que un vèrtex d'un
 conjunt no sigui mai adjacent a un altre vèrtex del mateix conjunt.
 Es pot dir també que un graf és bipartit si i sols si no conté cicles de longitud
 senar. 
-Llavors, podem deduïr que tots els grafs $C_{n}$ amb $n$
-parell, són també grafs bipartits.
+
+\begin{propietat}
+Tots els grafs $C_{n}$ amb $n$ parell, són també grafs bipartits.
+\end{propietat}
 
 \begin{figure}[H]
 \centering	
-	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum 			size=.5mm}, u/.style={circle, fill=blue, text=white, thin, 					minimum size=.5mm}, transform shape, scale=0.80]
+	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, u/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
 		\node[v] (a) at (0,0){$v_{0}$};
 		\node[v] (b) at (2,0){$v_{1}$};
 		\node[v] (c) at (4,0){$v_{2}$};
@@ -563,13 +591,15 @@ parell, són també grafs bipartits.
 
 Els \textit{grafs bipartits complets} són grafs bipartits \footnote{Vegi's apartat \ref{sec:bipartits}} en els quals cada
 element del conjunt $U$ està unit a tots els elements dels del conjunt
-$W$. 
-S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|W|$.
+$W$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|W|$.
+
+\begin{propietat}
 En els grafs bipartits $K_{m,n}=K_{n,m}$ , $|V|=n+m$ i $|E|=mn$.
+\end{propietat}
 
 \begin{figure}[H]
 \centering	
-	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum 			size=.5mm}, u/.style={circle, fill=blue, text=white, thin, 					minimum size=.5mm}, transform shape, scale=0.80]
+	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, u/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
 		\node[v] (a) at (0,0){$v_{0}$};
 		\node[v] (b) at (2,0){$v_{1}$};
 		\node[v] (c) at (4,0){$v_{2}$};
@@ -609,8 +639,14 @@ En els grafs bipartits $K_{m,n}=K_{n,m}$ , $|V|=n+m$ i $|E|=mn$.
 
 Un \textit{graf estrella} de grau $n$ és aquell que conté un vèrtex amb grau $n-1$ i els
 $n-1$ vèrtexs restants de grau 1.
-S'anomenen $S_{n}$ i són estrelles tots els grafs bipartits de la forma $K_{1,n-1}$ o $K_{n-1,1}$. 
+La seva nomenclatura és $S_{n}$. 
+
+\begin{propietat}
+Són estrelles tots els grafs bipartits de la forma $K_{1,n-1}$ o $K_{n-1,1}$. 
+\end{propietat}
+\begin{propietat}
 El graf lineal de $S_{n}$ és $K_{n-1}$.
+\end{propietat}
 
 \begin{figure}[H]
 \centering
@@ -628,15 +664,17 @@ adjacències entre les arestes de $G$. Formalment, donat un graf $G$,
 el graf lineal $L(G)$ és aquell en el qual cada vèrtex correspon
 a una aresta de $G$ i dos vèrtexs són adjacents només si les arestes
 corresponents a $G$ comparteixen un vèrtex.
+
+\begin{propietat}
 El graf lineal d'un graf amb $n$ nodes, $e$ arestes i amb vèrtexs de graus
 $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]arestes.
 \\
 \emph{Demostració}: Cada node $v_{i}$ amb grau $g(v_{i})$ del graf original generarà un graf complet de $g(v_{i})$ nodes ($K_{g(v_{i})}$). Tal com s'ha vist a l'apartat \ref{sec:Complets}, un graf complet té ${n\choose k} = \frac{n(n-1)}{2}$, per tant en aquest cas se'n generen $\frac{g(v_{i})(g(v_{i})-1)}{2}$. Però això es compleix per a cada vèrtex, i llavors podem escriure \[ \sum_{i=1}^{n}\frac{1}{2}g(v_{i})(g(v_{i})-1) = \frac{1}{2}\sum_{i=1}^{n}(g(v_{i})^{2}-g(v_{i})) = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2} - \underbracket{\frac{1}{2}\underbracket{\sum_{i=0}^{n}g(v_{i})}_{2|E|}}_{|E|} = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2}-e\]
-
+\end{propietat}
 \begin{figure}[H]
 \centering
 	\subfloat[$G$]{
-		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.5]
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.5]
 			\node[round] (a) at (8,4){$v_{0}$};
 			\node[round] (b) at (4,8){$v_{1}$};
 			\node[round] (c) at (0,8){$v_{2}$};
@@ -651,7 +689,7 @@ $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]ar
 		\end{tikzpicture}
 	}
 	\subfloat[$G+L(G)$]{
-		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.5]
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.5]
 			\node[round] (a) at (8,4){$v_{0}$};
 			\node[round] (b) at (4,8){$v_{1}$};
 			\node[round] (c) at (0,8){$v_{2}$};
@@ -691,7 +729,7 @@ $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]ar
 		\end{tikzpicture}
 	}
 	\subfloat[$L(G)$]{
-		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.5]
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.5]
 			\node[draw, diamond] (f) at (6,6){$u_{0}$};
 			\node[draw, diamond] (g) at (2,8){$u_{1}$};
 			\node[draw, diamond] (h) at (2,6){$u_{2}$};
@@ -715,12 +753,18 @@ $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]ar
 \end{figure}
 
 \subsection{Rodes}
+\label{sec:rodes}
 
 Un \textit{graf roda} amb $n$ vèrtex ès un graf que conté un cicle de longitud $n-1$, on tots els vèrtex del cicle estan connectats a un vèrtex fora del cicle, anomenat node central. S'escriu $W_{n}$, i a vegades simplement s'estudia com a $C_{n-1}+K_{1}$. 
+
+\begin{propietat}
 El node central té grau $n-1$, i la resta de nodes tenen grau $3$.
-El nombre de cicles que conté un graf amb $n$ vètrexs està determinat per $n^{2}-3n+3$.
+\end{propietat}
+\begin{propietat}
+El nombre de cicles que conté un graf roda amb $n$ vètrexs està determinat per $n^{2}-3n+3$.
 \\
 \emph{Demostració}: El nombre de cicles que conté un graf roda és la suma del nombre de cicles de longitud des de 3 fins a $n$ ($\sum_{i=3}^{n}C_{i}$). Amb l'exepció de $C_{n-1}$, el nombre de cicles per a cada $i$ és $n-1$. En el cas de $C_{n-1}$ n'hi ha $n$ de possibles, però ho representem de la manera $n-1+1$, per tal que sigui més còmode operar. Com que els cicles són possibles a partir de longitud 3, en total hi ha $n-2$ longituds possibles. D'aquesta manera podem escriure $(n-2)(n-1)+1=\boxed{n^{2}-3n+3}$.  
+\end{propietat}
 
 
 \begin{figure}[H]
@@ -732,8 +776,54 @@ El nombre de cicles que conté un graf amb $n$ vètrexs està determinat per $n^{2}
 \end{figure}
 
 \subsection{Xarxes}
+\label{sec:xarxes}
 
-Els grafs xarxes bidimensionsals $G_{m,n}$ són grafs bipartits que formen una xarxa de $m$x$n$ vèrtexs. Un graf xarxa té $mn$ vèrtexs i $(m-1)n+(n-1)m$. Es pot greneralitzar per a xarxes de més dimensions com a $G_{m,n,o,...}$.
+Els \textit{grafs xarxes} bidimensionsals $G_{m,n}$ són grafs bipartits que formen un entramaten forma de cuadrícula de $mn$ vèrtexs. 
+\begin{propietat}
+Es pot greneralitzar per a xarxes de més dimensions com a $G_{m,n,o,...}$. 
+\end{propietat}
+\begin{propietat}
+Un graf xarxa té $mn$ vèrtexs i $(m-1)n+(n-1)m$ arestes. 
+	\begin{figure}[H]
+	\centering
+		\begin{tikzpicture}[round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}, invisible/.style={shape=coordinate}, central/.style={circle, draw=white, fill=white, thin, minimum size=1mm}, transform shape]
+			\node (a)[round,label=grau 2] at (0,0){};
+			\node (b)[round,label=grau 2] at (12,0){};
+			\node (c)[round,label=grau 2] at (0,8){};
+			\node (d)[round,label=grau 2] at (12,8){};
+			\node (e)[invisible] at (1,0){};
+			\node (f)[invisible] at (11,0){};
+			\node (g)[invisible] at (0,1){};
+			\node (h)[invisible] at (12,1){};
+			\node (i)[invisible] at (0,7){};
+			\node (j)[invisible] at (1,8){};
+			\node (k)[invisible] at (11,8){};
+			\node (l)[invisible] at (12,7){};
+			\node (m)[invisible] at (1,1){};
+			\node (n)[invisible] at (1,7){};
+			\node (o)[invisible] at (11,1){};
+			\node (p)[invisible] at (11,7){};
+			\node (q)[central] at (6,4){grau 4};
+			
+			\draw (m) edge node [midway, fill=white]{\scriptsize{$n-2$}}(n);
+			\draw (n) edge node [midway, fill=white]{\scriptsize{$m-2$}}(p);
+			\draw (p) edge (o);
+			\draw (o) edge (m);
+			
+			\draw (j) edge node [midway, fill=white, label={[yshift=0.01cm]\scriptsize{grau 3}}]{\scriptsize{$m-2$}}(k);
+			\draw (e) edge node [midway, fill=white, label={[yshift=0.01cm]\scriptsize{grau 3}}]{\scriptsize{$m-2$}}(f);
+			\draw (g) edge node [midway, fill=white, label={[xshift=-1cm]\scriptsize{grau 3}}]{\scriptsize{$n-2$}}(i);
+			\draw (h) edge node [midway, fill=white, label={[xshift=1cm]\scriptsize{grau 3}}]{\scriptsize{$n-2$}}(l);
+		
+		
+
+		\end{tikzpicture}
+	\end{figure}
+
+
+
+\end{propietat}
+
 
 \begin{figure}[H]
 \centering
@@ -765,13 +855,19 @@ Els grafs xarxes bidimensionsals $G_{m,n}$ són grafs bipartits que formen una xa
 
 
 \subsection{Arbres}
+\label{sec:arbres}
 
-Els arbres són un tipus molt important de grafs: són grafs connexos
+Els \textit{arbres} són un tipus molt important de grafs: són grafs connexos
 sense cicles, de manera que existeix un únic camí entre dos vèrtexs.
+\begin{propietat}
 Si a un arbre se li afegeix una aresta, es genera un cicle, i se s'en
-treu una, el graf deixa de ser connex. 
-\\
-Hi ha un tipus especial d'arbres anomenats elementals o camins, que són els arbres amb $|V|=1$, $|V|=2$ i en general tots aquells on $\delta=1$ i $\Delta=2$. S'anomenen $P_{n}$, on $n=|V|$. També es pot pensar en grafs elementals com a $G_{n,1}$.
+treu una, el graf deixa de ser connex.
+\end{propietat} 
+\begin{propietat}
+Hi ha un tipus especial d'arbres anomenats \textit{elementals o camins}, que són els arbres amb $|V|=1$, $|V|=2$ i en general tots aquells on $\delta=1$ i $\Delta=2$. S'anomenen $P_{n}$, on $n=|V|$.
+També es pot pensar en grafs elementals com a $G_{n,1}$.
+\end{propietat}
+
 
 \begin{figure}[H]
 \centering
@@ -801,8 +897,9 @@ Hi ha un tipus especial d'arbres anomenats elementals o camins, que són els arbr
 \begin{quote}
 Un arbre amb $n$ nodes té $n-1$ arestes. 
 \end{quote}
-\emph{Demostració: }Si comprovem el cas on un arbre $T$ té $n=1$ vèrtexs, veiem que no té cap aresta, per tant el teorema es compleix. Si treiem una aresta de l'arbre,en sorgiran 2 arbres més $T_{1}$ i $T_{2}$. Per hipòtesi, $T_{1}$ tindrà $v_{1}=|V|(T_{1})$ vèrtexs i $v_{1}-1=|E|(T_{1})$ arestes, i $T_{2}$ tindrà $v_{2}=|V|(T_{1})$ vèrtexs i $v_{2}-1=|E|(T_{2})$ arestes. Deduïm llavors que el nombre de nodes de $T$ és $v_{1}+v_{2}$. Llavors el nombre d'arestes de $T$ és $(v_{1}-1)+(v_{2}-1)+1 = (v_{1}+v_{2})-1$. Dit d'una altra manera, $|E|(T)=|V|(T)-1$
-Com a conseqüència d'aquest teorema, en podem aarribar a un altre:
+\emph{Demostració: }Si comprovem el cas on un arbre $T$ té $n=1$ vèrtexs, veiem que no té cap aresta, per tant el teorema es compleix. Si treiem una aresta de l'arbre,en sorgiran 2 arbres més $T_{1}$ i $T_{2}$. Per hipòtesi, $T_{1}$ tindrà $v_{1}=|V|(T_{1})$ vèrtexs i $n_{1}-1=|E(T_{1})|$ arestes, i $T_{2}$ tindrà $n_{2}=|V(T_{2})|$ vèrtexs i $n_{2}-1=|E|(T_{2})$ arestes.  Llavors el nombre d'arestes de $T$ és $(n_{1}-1)+(n_{2}-1)+1 = (n_{1}+n_{2})-1$. Deduïm llavors que el nombre de nodes de $T$ és $n_{1}+n_{2}$. Dit d'una altra manera, $|E(T)|=|V(T)|-1$.
+
+Com a conseqüència d'aquest teorema, en podem arribar a un altre:
 
 \subsubsection*{Teorema 3}
 \begin{quote}
