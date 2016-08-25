@@ -18,20 +18,22 @@
 \usepackage[a4paper]{geometry}
 \usepackage{float}
 \usepackage{verbatim}
+\usepackage{cancel}
 \usepackage[position=top]{subfig}
 \usetikzlibrary{arrows,%
                 petri,%
                 topaths}%
 \usetikzlibrary{shapes}
 \usetikzlibrary{arrows.meta}
-
+\usetikzlibrary{positioning,automata}
 
 \newenvironment{algorisme}[1][htb]
   {\renewcommand{\algorithmcfname}{Algorisme}% Canviem Algorithm a Algorisme
    \begin{algorithm}[#1]%
   }{\end{algorithm}}
   
-%\newtheorem{propietat}{Propietat}  
+\newcommand{\important}[1]{%
+  \colorbox{green!25}{$\displaystyle#1$}}
     
 \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
 \SetCommentSty{mycommfont}
@@ -669,7 +671,50 @@ corresponents a $G$ comparteixen un vèrtex.
 El graf lineal d'un graf amb $n$ nodes, $e$ arestes i amb vèrtexs de graus
 $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]arestes.
 \\
-\emph{Demostració}: Cada node $v_{i}$ amb grau $g(v_{i})$ del graf original generarà un graf complet de $g(v_{i})$ nodes ($K_{g(v_{i})}$). Tal com s'ha vist a l'apartat \ref{sec:Complets}, un graf complet té ${n\choose k} = \frac{n(n-1)}{2}$, per tant en aquest cas se'n generen $\frac{g(v_{i})(g(v_{i})-1)}{2}$. Però això es compleix per a cada vèrtex, i llavors podem escriure \[ \sum_{i=1}^{n}\frac{1}{2}g(v_{i})(g(v_{i})-1) = \frac{1}{2}\sum_{i=1}^{n}(g(v_{i})^{2}-g(v_{i})) = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2} - \underbracket{\frac{1}{2}\underbracket{\sum_{i=0}^{n}g(v_{i})}_{2|E|}}_{|E|} = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2}-e\]
+\emph{Demostració}: Cada node $v_{i}$ amb grau $g(v_{i})$ del graf original generarà un graf complet de $g(v_{i})$ nodes ($K_{g(v_{i})}$).
+
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, invisible/.style={shape=coordinate}, transform shape, scale=0.5]
+			\node (a)[invisible] at (0,0){};
+			\node (k)[invisible] at (12,0){};
+
+			\node (g)[invisible] at (0,0.5){};
+			\node (h)[invisible] at (4,0.5){};
+			\node (i)[invisible] at (8,0.5){};
+			\node (j)[invisible] at (12,0.5){};
+			
+			\node (b)[round] at (0, 6){$v_{i}$};
+
+			\node (c) at (0,3){$w_{i_{0}}$};
+			\node (d) at (2,3){$w_{i_{1}}$};
+			\node (e) at (4,3){$w_{i_{2}}$};
+			\node (f) at (6,3){$w_{i_{g(v_{i})}}$};
+			
+			\draw (b) edge (c);
+			\draw (b) edge (d);
+			\draw (b) edge (e);
+			\draw (b) edge (f);
+			\draw (c) edge (g);
+			\draw (d) edge (h);
+			\draw (e) edge (i);
+			\draw (f) edge (j);
+						
+			%\draw (c) edge[dashed] (d);
+			%\draw (c) edge[dashed] (e);
+			%\draw (c) edge[dashed] (f);
+			%\draw (d) edge[dashed] (e);
+			%\draw (d) edge[dashed] (f);
+			%\draw (e) edge[dashed] (f);
+			
+			\tikzset{doble/.style={<->,dashed}}
+			\draw (a) edge[doble] node[midway,below]{$g(v_{i})$}(k);
+						
+		\end{tikzpicture}
+	\end{figure}
+
+
+Tal com s'ha vist a l'apartat \ref{sec:Complets}, un graf complet té ${n\choose k} = \frac{n(n-1)}{2}$, per tant en aquest cas se'n generen $\frac{g(v_{i})(g(v_{i})-1)}{2}$. Però això es compleix per a cada vèrtex, i llavors podem escriure \[ \sum_{i=1}^{n}\frac{1}{2}g(v_{i})(g(v_{i})-1) = \frac{1}{2}\sum_{i=1}^{n}(g(v_{i})^{2}-g(v_{i})) = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2} - \underbracket{\frac{1}{2}\underbracket{\sum_{i=0}^{n}g(v_{i})}_{2|E|}}_{|E|} = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2}-e\]
 \end{propietat}
 \begin{figure}[H]
 \centering
@@ -784,7 +829,25 @@ Es pot greneralitzar per a xarxes de més dimensions com a $G_{m,n,o,...}$.
 \end{propietat}
 \begin{propietat}
 Un graf xarxa té $mn$ vèrtexs i $(m-1)n+(n-1)m$ arestes. 
+
+\emph{Demostració}: Tal com es pot veure a la figura \ref{fig:graus_xarxes}, un graf xarxa té 
+\[
+(n-2)(m-2)+2(m-2)+2(n-2)+4 = nm -\cancel{2m}-\cancel{2n}+\cancel{4}+\cancel{2m}-\cancel{4}+\cancel{2n}-\cancel{4}+\cancel{4} = mn
+\] vèrtexs. D'altra banda, la suma dels graus de tots els vèrtexs és
+\[
+\frac{4(m-2)(n-2)+3\times 2(m-2+n-2)+4\times 2}{2} = 2(m-2)(n-2)+3(m-2)+3(n-2)+4
+\]
+Si es desenvolpua, s'obté
+\[
+(n-2)(m-2) + \important{(n-2)(m-2)+2(m-2)}+(m-2)+\important{2(n-2)}+(n-2)+\important{4}
+\]
+on la suma dels elements marcats equival a $mn$. Si es continua desenvolupant tinguent en compte aquest detall, s'obté
+\[
+mn-2m-2n+4+m-2+n-2+mn = 2mn-m-n=\boxed{m(n-1)+n(m-1)}
+\]
+
 	\begin{figure}[H]
+	\label{fig:graus_xarxes}
 	\centering
 		\begin{tikzpicture}[round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}, invisible/.style={shape=coordinate}, central/.style={circle, draw=white, fill=white, thin, minimum size=1mm}, transform shape]
 			\node (a)[round,label=grau 2] at (0,0){};
@@ -812,12 +875,13 @@ Un graf xarxa té $mn$ vèrtexs i $(m-1)n+(n-1)m$ arestes.
 			
 			\draw (j) edge node [midway, fill=white, label={[yshift=0.01cm]\scriptsize{grau 3}}]{\scriptsize{$m-2$}}(k);
 			\draw (e) edge node [midway, fill=white, label={[yshift=0.01cm]\scriptsize{grau 3}}]{\scriptsize{$m-2$}}(f);
-			\draw (g) edge node [midway, fill=white, label={[xshift=-1cm]\scriptsize{grau 3}}]{\scriptsize{$n-2$}}(i);
-			\draw (h) edge node [midway, fill=white, label={[xshift=1cm]\scriptsize{grau 3}}]{\scriptsize{$n-2$}}(l);
+			\draw (g) edge node [midway, fill=white, label={[xshift=-1cm, yshift=0cm]\scriptsize{grau 3}}]{\scriptsize{$n-2$}}(i);
+			\draw (h) edge node [midway, fill=white, label={[xshift=1cm, yshift=0cm]\scriptsize{grau 3}}]{\scriptsize{$n-2$}}(l);
 		
-		
+			
 
 		\end{tikzpicture}
+		\caption{Representació dels graus dels diferents nodes d'un grau xarxa}
 	\end{figure}
 
 
@@ -850,7 +914,7 @@ Un graf xarxa té $mn$ vèrtexs i $(m-1)n+(n-1)m$ arestes.
 		\draw (h) edge (i);
 		\draw (h) edge (g);
 	\end{tikzpicture}
-\caption{Graf buit $N_{6}$}
+\caption{Graf xarxa $G_{3,3}$}
 \end{figure}
 
 
