@@ -327,7 +327,7 @@ es mostren els grafs esmentats anteriorment:
 \emph{Nota de l'autor: a partir d'ara, i si no s'indica el contrari,
 quan es parli de grafs, s'exclouran els multigrafs i grafs dirigits.}
 
-Direm que un graf no dirigit $G=(V,E)$ és \textit{connex} si per a qualsevol $v_{i}, v_{j}\in V$ $v_{i}\neq v_{j}$ existeix un \textit{camí}(successió d'arestes) que els uneix.
+Direm que un graf no dirigit $G=(V,E)$ és \textit{connex} si per a qualsevol $v_{i}, v_{j}\in V$ $v_{i}\neq v_{j}$ existeix un \textit{camí} (successió d'arestes) que els uneix.
 \\
 El nombre d'arestes que són incidents a un vèrtex $v$ (comptant els
 llaços com a dues arestes) determinen el que anomenarem \textit{grau} de $v$, que es representa
@@ -335,8 +335,8 @@ amb $g(v)$. La successió de graus d'un graf serà la successió que
 s'obté a l'ordenar de manera creixent els graus dels seus vèrtex. Cal
 dir que no és un problema gens trivial saber si una successió de nombres naturals donada
 pot ser una successió de graus d'un graf. El grau mínim d'un graf
-$G=(V,E)$ queda determinat de la següent manera: $\delta(G)=min\{g(v):v\text{\ensuremath{\in}}V\}$.
-De manera similar, el grau màxim de $G$, $\text{\ensuremath{\Delta}}(G)=max\{g(v):v\text{\ensuremath{\in}}V\}$.
+$G=(V,E)$ queda determinat de la següent manera: $\delta(G)=min\{g(v):v\text{\ensuremath{\in}}V(G)\}$.
+De manera similar, el grau màxim de $G$, $\text{\ensuremath{\Delta}}(G)=max\{g(v):v\text{\ensuremath{\in}}V(G)\}$.
 \\
 Si d'un graf connex en treiem una aresta o un node, en resulta un altre (o
 més d'un) graf connex. Si $v\text{\ensuremath{\in}}V(G)$, indicarem per
@@ -380,6 +380,7 @@ demostració en treiem una altra afirmació:
 \end{quotation}
 
 \section{Tipus de grafs}
+\label{Sec:tipus}
 
 Fins ara hem vist els conceptes bàsics en teoria de grafs i algunes
 de les propietats que compleixen tots els grafs. No obstant, existeixen
@@ -400,7 +401,7 @@ Per indicar el complementari de $G$ s'escriu $\bar{G}$ o $G'$.
 Per obtenir el graf complementari
 de $G$ tan sols s'han de posar les arestes que falten per obtenir
 un graf complet i treure totes les que hi eren inicialment (ja que
-$|E(G)|+|E(\bar{{G}})|=|K|$). Vegi's figura \ref{fig:complementari}.
+$|E(G)|+|E(\bar{{G}})|=|K|$). Veure figura \ref{fig:complementari}.
 \end{propietat}
 
 \begin{figure}[H]
@@ -425,9 +426,9 @@ $|E(G)|+|E(\bar{{G}})|=|K|$). Vegi's figura \ref{fig:complementari}.
 
 Es diu que un graf $G=(V,E)$ és \textit{regular de grau $r$} quan tots els seus vèrtexs
 tenen grau $r$. Formalment, un graf és $r$-regular quan $\Delta(G)=\delta(G)=r$.
-Un graf $0$-regular és un graf nul \footnote{Vegi's apartat \ref{sec:buits}}, un graf $1$-regular
+Un graf $0$-regular és un graf nul \footnote{Veure apartat \ref{sec:buits}}, un graf $1$-regular
 consisteix en arestes separades entre elles i un graf $2$-regular
-consisteix en un o més cicles \footnote{Vegi's apartat \ref{sec:cicles}} separats. A partir d'aquí, els grafs regulars més importants
+consisteix en un o més cicles \footnote{Veure apartat \ref{sec:cicles}} separats. A partir d'aquí, els grafs regulars més importants
 tenen noms propis, com per exemple els $3$-regulars, que són els
 \textit{cúbics}; els $4$-regulars, \textit{quàrtics}; els $7$-regulars, \textit{grafs de Witt
 truncats dobles}; els $8$-regulars, \textit{grafs de 24 cel·les}... 
@@ -471,7 +472,7 @@ Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-reg
 \label{sec:buits}
 
 Els \textit{grafs buits} són grafs sense arestes, és a dir, conjunts d'$n$ vértexs.
-Són els complementaris dels grafs complets $K_{n}$ \footnote{Vegi's apartat \ref{sec:Complets}}, i per tant la seva nomenclatura
+Són els complementaris dels grafs complets $K_{n}$ \footnote{Veure apartat \ref{sec:Complets}}, i per tant la seva nomenclatura
 és $\bar{K}_{n}$ o, simplement, $N_{n}$. Estrictament s'anomena \textit{graf nul} a $N_{0}$
 i buits a la resta, però com que normalment no s'utilitza $N_{0}$,
 convencionalment es diuen nuls tots els elements del conjunt dels buits.
@@ -508,8 +509,8 @@ El nombre de cicles que conté un graf complet queda determinat per la següent ig
 
 On:
 \begin{description}
-\item[$\frac{1}{2}$] es multiplica perquè contem dues vegades els cicles, ja que no són dirigits.
-\item[$n\choose k$] és el nombre de grups de $k$ elements que podem agafar.
+\item[$\frac{1}{2}$] es multiplica perquè es contes dues vegades els cicles, ja que no són dirigits.
+\item[$n\choose k$] és el nombre de grups de $k$ elements que es poden agafar.
 \item[$(k-1)!$] és el nombre de permutacions circulars de $k$ elements.
 \end{description}
 
@@ -539,7 +540,7 @@ Els \textit{cicles} són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i
 s'anomenen $C_{n}$.
  
 \begin{propietat}
-El graf lineal \footnote{Vegi's apartat\ref{sec:lineal}} d'un cicle és ell mateix.
+El graf lineal \footnote{Veure apartat\ref{sec:lineal}} d'un cicle és ell mateix.
 \end{propietat}
 
 \begin{figure}[H]
@@ -591,7 +592,7 @@ Tots els grafs $C_{n}$ amb $n$ parell, són també grafs bipartits.
 \subsection{Grafs bipartits complets}
 \label{sec:bipartits_complets}
 
-Els \textit{grafs bipartits complets} són grafs bipartits \footnote{Vegi's apartat \ref{sec:bipartits}} en els quals cada
+Els \textit{grafs bipartits complets} són grafs bipartits \footnote{Veure apartat \ref{sec:bipartits}} en els quals cada
 element del conjunt $U$ està unit a tots els elements dels del conjunt
 $W$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|W|$.
 
@@ -677,19 +678,19 @@ $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]ar
 		\centering
 		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, invisible/.style={shape=coordinate}, transform shape, scale=0.5]
 			\node (a)[invisible] at (0,0){};
-			\node (k)[invisible] at (12,0){};
+			\node (k)[invisible] at (14,0){};
 
 			\node (g)[invisible] at (0,0.5){};
-			\node (h)[invisible] at (4,0.5){};
-			\node (i)[invisible] at (8,0.5){};
-			\node (j)[invisible] at (12,0.5){};
+			\node (h)[invisible] at (3.5,0.5){};
+			\node (i)[invisible] at (6.75,0.5){};
+			\node (j)[invisible] at (14,0.5){};
 			
 			\node (b)[round] at (0, 6){$v_{i}$};
 
 			\node (c) at (0,3){$w_{i_{0}}$};
-			\node (d) at (2,3){$w_{i_{1}}$};
-			\node (e) at (4,3){$w_{i_{2}}$};
-			\node (f) at (6,3){$w_{i_{g(v_{i})}}$};
+			\node (d) at (2.5,2){$w_{i_{1}}$};
+			\node (e) at (5,2){$w_{i_{2}}$};
+			\node (f) at (7.5,3){$w_{i_{g(v_{i})}}$};
 			
 			\draw (b) edge (c);
 			\draw (b) edge (d);
@@ -700,12 +701,12 @@ $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]ar
 			\draw (e) edge (i);
 			\draw (f) edge (j);
 						
-			%\draw (c) edge[dashed] (d);
-			%\draw (c) edge[dashed] (e);
-			%\draw (c) edge[dashed] (f);
-			%\draw (d) edge[dashed] (e);
-			%\draw (d) edge[dashed] (f);
-			%\draw (e) edge[dashed] (f);
+			\draw (c) edge[dashed] (d);
+			\draw (c) edge[dashed] (e);
+			\draw (c) edge[dashed] (f);
+			\draw (d) edge[dashed] (e);
+			\draw (d) edge[dashed] (f);
+			\draw (e) edge[dashed] (f);
 			
 			\tikzset{doble/.style={<->,dashed}}
 			\draw (a) edge[doble] node[midway,below]{$g(v_{i})$}(k);
@@ -973,11 +974,11 @@ En un arbre $T$ amb $|V|\geq 2$, hi ha com a mínim dos vèrtexs de grau 1 (anomen
 
 Hi ha un altre teorema que relaciona el nombre de fulles amb el grau màxim d'un arbre:
 
-\subsection*{Teorema 4}
+\subsubsection*{Teorema 4}
 \begin{quote}
 El nombre de fulles d'un arbre $T$ és més gran o igual a $\Delta$.
 \end{quote}
-\emph{Demostració: }Si eliminem el node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles.Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent a el node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi haurà com a mínim $\Delta$ fulles.
+\emph{Demostració: }Si eliminem el node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles. Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent a el node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi haurà com a mínim $\Delta$ fulles.
 
 \part{Camins i algorismes}
 
@@ -986,27 +987,34 @@ poder-hi fer algunes operacions. Podem, per exemple, voler trobar
 un camí entre dos punts, recòrrer el graf sencer o trobar el camí
 més curt per anar d'un vèrtex a un altre. Per aquest motiu utilitzem
 els camins, que trobarem o generarem mitjnçant diversos algorismes.
+
 En aquesta secció mostraré diverses maneres de recòrrer un graf, torbant
 la manera més eficient per a cada cas.
 
 \subsection{Grafs ponderats i dirigits}
 \subsubsection*{Grafs ponderats}
-Els grafs ponderats són grafs on cada aresta $e$ està asociada a un nombre $w(e)$ anomenat pes o cost, tal que $w(e)\in \mathbb{R}$. El pes pot representar diverses quantitats, segons el que es vulgui modelitzar. Moltes vegades s'utilitza per representar distàncies, però si per exemple modelitzem una xarxa de distribució d'aigua, ens pot interessar representar el cabal de les canonades, o en una xarxa de bus, la densitat de trànsit de cada tram. 
+Els grafs ponderats són grafs on cada aresta $e$ està asociada a un nombre $w(e)$ anomenat pes o cost, tal que $w(e)\in \mathbb{R}$. El pes pot representar diverses quantitats, segons el que es vulgui modelitzar. 
+Moltes vegades s'utilitza per representar distàncies, però si per exemple modelitzem una xarxa de distribució d'aigua, ens pot interessar representar el cabal de les canonades, o en una xarxa de bus, la densitat de trànsit de cada tram. 
 
-\subsection*{Grafs dirigits}
-Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. D'aquesta manera, una aresta $e_{0}=(v_{0},v_{1}) \neq e_{1}=(v_{1},v_{0})$, contràriament als grafs no dirigits. DE fet, no necessàriament ha d'existir una aresta contrària a una altra. Aquest tipus de grafs poden ser útils per representar carreteres, o moviments vàlids en algun joc. 
+\subsubsection*{Grafs dirigits}
+Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. D'aquesta manera, una aresta $e_{0}=(v_{0},v_{1}) \neq e_{1}=(v_{1},v_{0})$. De fet, no necessàriament ha d'existir una aresta contrària a una altra. 
+
+Aquest tipus de grafs poden ser útils per representar carreteres, o moviments vàlids en algun joc. 
 
 
 \subsection{Camins}
 
-Un camí $p$ és una seqüència finita i ordenada d'arestes que connecta
-una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En auqest cas,pot ser tractat com un graf elemental $P_{n}$. Un cas especial és quan el camí comença i acaba al mateix vèrtex ($v_{0} = v_{k}$). Llavors el camí és un cicle, i és l'equivalent a un graf cicle $C_{n}$. 
-Quan un camí té totes les arestes diferents, s'anomena simple, i si a més té tots els vèrtexs diferents, s'anomena elemental.
+Un \textit{camí} $p$ és una seqüència finita i ordenada d'arestes que connecta
+una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En aquest cas, pot ser tractat com un graf elemental $P_{n}$. 
 
-En els grafs, ponderats, la longitud d'un camí $c=v_{0},v_{1},\cdots,v_{n}$ no es defineix pel nombre d'arestes per on passa el camí, sinó fent el sumatori dels pesos de les arestes
+Un cas especial és quan el camí comença i acaba al mateix vèrtex ($v_{0} = v_{k}$). Llavors el camí és un cicle, i és l'equivalent a un graf cicle $C_{n}$. 
+
+Quan un camí té totes les arestes diferents, s'anomena \textit{simple}, i si a més té tots els vèrtexs diferents, s'anomena \textit{elemental}.
+
+En els grafs, ponderats, la \textit{longitud} d'un camí $c=v_{0},v_{1},\cdots,v_{n}$ no es defineix pel nombre d'arestes per on passa el camí, sinó fent el sumatori dels pesos de les arestes
 \[ \textbf{longitud}_{w}(c)=\sum_{i=0}^{n-1}w(\overline{v_{i},v_{i+1}}) \]
 
-La distància entre dos vèrtexs $v$ i $u$, $d_{w}(v,u)$, és la que s'obté al agafar la menor longitud d'entre tots els camins elementals entre $v$ i $u$. 
+La \textit{distància} entre dos vèrtexs $v$ i $u$, $d_{w}(v,u)$, és la que s'obté al agafar la menor longitud d'entre tots els camins elementals entre $v$ i $u$. 
 (adjunjtar exemple de distància)
 
 
@@ -1049,16 +1057,36 @@ $2n-1$ espais a la matriu.
 
 \subsubsection*{Matriu d'incidència}
 
-La matriu d'incidència d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1,...,v,j=1,...,\alpha}$
-, on $v=|V|$ i és la matriu binaria $v$ x $\alpha$ on $b_{i,j}$
+La matriu d'incidència d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1,...,|V|(G),j=1,...,|E|(G)}$, és la matriu binaria de $|V|(G)\times |E|(G)$ on $b_{i,j}$
 indica si la aresta $j$ és incident al node $i$.
 
-(afegir exemple de graf amb les seves dues matrius)
+
+\begin{figure}[H]
+\label{fig:exemple matrius}
+	\subfloat[]{
+		\begin{tikzpicture}[round/.style={circle, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
+			\node[round] (a) at (4,0){$v_{0}$};
+			\node[round] (b) at (2,4){$v_{1}$};
+			\node[round] (c) at (0,0){$v_{2}$};
+			\node[round] (d) at (2,0){$v_{3}$}
+			\node[round] (e) at (2,1.5){$v_{4}$};
+			\draw (a) edge (b);
+			\draw (a) edge (d);
+			\draw (b) edge (c);
+			\draw (b) edge (e);
+			\draw (c) edge (d);
+			\draw (d) edge (e);
+		
+		\end{tikzpicture}
+	
+	}
+\caption{Graf (a) amb la seva matriu d'adjacència (b) i d'incidència (c)}
+\end{figure}
 
 
 \subsection*{Llistes d'adjacència}
 
-Aquesta estructura de dades és la més utilitzada per tractar grafs,
+Aquesta estructura de dades és molt utilitzada per tractar grafs,
 ja que ocupa menys memòria i només inclou l'informació necessària.
 Les llistes d'adjacència consisteixen en un conjunt de $n$ llistes.
 Cada llista correspon a un node del graf, i conté els nodes al quals
@@ -1244,12 +1272,53 @@ Aquest algorisme no té tantes utilitats pràctiques com el BFS, però també té pro
 \begin{itemize}
 \item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix. En cas afirmatiu voldrà dir que hi ha un cicle.
 \item Es pot saber si un graf és bipartit assignant un color (entre un total de 2 colors possibles) a cada node mentre es recorre el graf, de manera que un node tingui un color diferent al dels nodes adjacents. Si això és possible voldrà dir que el graf és bipartit.
-\item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quan hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb el DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques.
-(Adjuntar exemple d'ordenació topològica i la seva sol·lució donada mitjancant DFS)
+\item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quan hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb el DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques. A continuació es presenta un exemple d'ordenació topològica utilitzat dirant la creació d'aquest treball:
+
+Resulta que, a la secció \ref{Sec:tipus}, quan explicava un tipus concret de graf, sovint utilitzava altres tipus de graf. Per determinar en quin ordre havien d'estar els apartats, de tal manera que quan apareixès un tipus de graf (a una altra definició) aquest ja s'hagués explicat, es va utilitzar una ordenació topològica. Es va construïr un graf dirigit representant les dependències de cada apartat (veure figura \ref{fig:topological_sort}), i es va executar l'algorisme d'ordenació topològica.
 \end{itemize}
 
+\begin{figure}[H]
+\centering
+\label{fig:topological_sort}
+	\begin{tikzpicture}
+		\node (a) at (0,0){xarxes};
+		\node (b) at (3,0){arbres};
+		\node (c) at (6,0){rodes};
+		\node (d) at (9,0){buits};
+		\node (e) at (0,2){bipartits complets};
+		\node (f) at (3,2){bipartits};
+		\node (g) at (6,2){cicles};
+		\node (h) at (9,2){complets};
+		\node (i) at (0,4){regulars};
+		\node (j) at (3,4){lineals};
+		\node (k) at (6,4){estrelles};
+		\node (l) at (9,4){complementaris};
+		
+		\draw (a) edge[->,-latex] (b);
+		\draw (f) edge[->,-latex] (a);
+		\draw (f) edge[->,-latex] (e);
+		\draw (f) edge[->,-latex] (k);
+		\draw (g) edge[->,-latex] (f);
+		\draw (g) edge[->,-latex] (h);
+		\draw (g) edge[->,-latex] (i);
+		\draw (g) edge[->,-latex] (b);
+		\draw (g) edge[->,-latex] (c);
+		\draw (h) edge[->,-latex] (c);
+		\draw (h) edge[->,-latex] (d);
+		\draw (h) edge[->,-latex] (k);
+		\draw (h) edge[->,-latex] (l);
+		\draw (j) edge[->,-latex] (g);
+		\draw (j) edge[->,-latex] (k);
+		\draw (l) edge[->,-latex, bend left=50] (d);
+		
+		
+	\end{tikzpicture}
+	\caption{Graf de les dependències de cada apartat}
+\end{figure}
+
+
 \subsubsection{Dijkstra}
-Aquest algorisme, desdenvolupat per Edsger W. Dijkstra el 1956, serveix per trobar el camí més curt entre dos nodes d'un gaf ponderat. De fet, això és el que feia la variant original, però la variant presentada aquí troba el camí més curt entre un node inicial i tota la resta de nodes dels graf. Tot i això es pot modificar lleugerament el programa perquè pari quan hagi trobat el camí més curt entre dos nodes especificats. El que fa el programa és suposar quines són les distàncies mínimes des del node inicial fins la resta, i va descobrint el graf fins que pot assegurar el camé més curt. Al principi, suposa que el moviment amb menys cost és no moure's (això serà cert si el graf no conté arestes amb pesos negartius, que l'algorisme no pot tractar). Després busca els nodes adjacents al node inicial, i suposa que les distàncies mínimes entre l'inicial i aquests és simplement l'aresta que els uneix. Es pot assegurar que serà cert pel node unit amb l'aresta de menys pes, per la desigualtat triangular (si s'hi pogués accedir per un altre camí, aquest seria més llarg, ja que per força alguna de les arestes amb més pes que s'han descartat ha de formar part del camí alternatiu, i la suma serà sempre superior). Un cop hi ha el primer node amb mínim pes assegurat (i per tant ja sap un camí), es busquen els seus adjacents, el pes dels quals inicialment és infinit. La suposició del pes equivaldrà a el pes del node d'on venen més el de l'aresta que els uneix, i es canviarà pel pes que tenen si aquest és mes gran que el nou. Ara es torna a agafar el node amb el pes menor (que segur que és el mínim) i es torna a mirar els adjacents i assignar pesos. Quan tots els nodes hagin estat visitats, el pes de cada node serà la distància mínima que s'ha de recòrrer per anar del node inicial fins a aquest.
+Aquest algorisme, desdenvolupat per Edsger W. Dijkstra el 1956, serveix per trobar el camí més curt entre dos nodes d'un gaf ponderat. De fet, això és el que feia la variant original, però la variant presentada aquí troba el camí més curt entre un node inicial i tota la resta de nodes dels graf. Tot i això es pot modificar lleugerament el programa perquè pari quan hagi trobat el camí més curt entre dos nodes especificats. El que fa el programa és suposar quines són les distàncies mínimes des del node inicial fins la resta, i va descobrint el graf fins que pot assegurar el camí més curt. Al principi, suposa que el moviment amb menys cost és no moure's (això serà cert si el graf no conté arestes amb pesos negartius, que l'algorisme no pot tractar). Després busca els nodes adjacents al node inicial, i suposa que les distàncies mínimes entre l'inicial i aquests és simplement l'aresta que els uneix. Es pot assegurar que serà cert pel node unit amb l'aresta de menys pes, per la desigualtat triangular (si s'hi pogués accedir per un altre camí, aquest seria més llarg, ja que per força alguna de les arestes amb més pes que s'han descartat ha de formar part del camí alternatiu, i la suma serà sempre superior). Un cop hi ha el primer node amb mínim pes assegurat (i per tant ja sap un camí), es busquen els seus adjacents, el pes dels quals inicialment és infinit. La suposició del pes equivaldrà a el pes del node d'on venen més el de l'aresta que els uneix, i es canviarà pel pes que tenen si aquest és mes gran que el nou. Ara es torna a agafar el node amb el pes menor (que segur que és el mínim) i es torna a mirar els adjacents i assignar pesos. Quan tots els nodes hagin estat visitats, el pes de cada node serà la distància mínima que s'ha de recòrrer per anar del node inicial fins a aquest.
 
 (Adjuntar esquema de procediment de Dijkstra)
 
