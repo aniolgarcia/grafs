@@ -327,7 +327,7 @@ es mostren els grafs esmentats anteriorment:
 \emph{Nota de l'autor: a partir d'ara, i si no s'indica el contrari,
 quan es parli de grafs, s'exclouran els multigrafs i grafs dirigits.}
 
-Direm que un graf no dirigit $G=(V,E)$ és \textit{connex} si per a qualsevol $v_{i}, v_{j}\in V$ $v_{i}\neq v_{j}$ existeix un \textit{camí}(successió d'arestes) que els uneix.
+Direm que un graf no dirigit $G=(V,E)$ és \textit{connex} si per a qualsevol $v_{i}, v_{j}\in V$ $v_{i}\neq v_{j}$ existeix un \textit{camí} (successió d'arestes) que els uneix.
 \\
 El nombre d'arestes que són incidents a un vèrtex $v$ (comptant els
 llaços com a dues arestes) determinen el que anomenarem \textit{grau} de $v$, que es representa
@@ -335,8 +335,8 @@ amb $g(v)$. La successió de graus d'un graf serà la successió que
 s'obté a l'ordenar de manera creixent els graus dels seus vèrtex. Cal
 dir que no és un problema gens trivial saber si una successió de nombres naturals donada
 pot ser una successió de graus d'un graf. El grau mínim d'un graf
-$G=(V,E)$ queda determinat de la següent manera: $\delta(G)=min\{g(v):v\text{\ensuremath{\in}}V\}$.
-De manera similar, el grau màxim de $G$, $\text{\ensuremath{\Delta}}(G)=max\{g(v):v\text{\ensuremath{\in}}V\}$.
+$G=(V,E)$ queda determinat de la següent manera: $\delta(G)=min\{g(v):v\text{\ensuremath{\in}}V(G)\}$.
+De manera similar, el grau màxim de $G$, $\text{\ensuremath{\Delta}}(G)=max\{g(v):v\text{\ensuremath{\in}}V(G)\}$.
 \\
 Si d'un graf connex en treiem una aresta o un node, en resulta un altre (o
 més d'un) graf connex. Si $v\text{\ensuremath{\in}}V(G)$, indicarem per
@@ -380,6 +380,7 @@ demostració en treiem una altra afirmació:
 \end{quotation}
 
 \section{Tipus de grafs}
+\label{Sec:tipus}
 
 Fins ara hem vist els conceptes bàsics en teoria de grafs i algunes
 de les propietats que compleixen tots els grafs. No obstant, existeixen
@@ -400,7 +401,7 @@ Per indicar el complementari de $G$ s'escriu $\bar{G}$ o $G'$.
 Per obtenir el graf complementari
 de $G$ tan sols s'han de posar les arestes que falten per obtenir
 un graf complet i treure totes les que hi eren inicialment (ja que
-$|E(G)|+|E(\bar{{G}})|=|K|$). Vegi's figura \ref{fig:complementari}.
+$|E(G)|+|E(\bar{{G}})|=|K|$). Veure figura \ref{fig:complementari}.
 \end{propietat}
 
 \begin{figure}[H]
@@ -425,9 +426,9 @@ $|E(G)|+|E(\bar{{G}})|=|K|$). Vegi's figura \ref{fig:complementari}.
 
 Es diu que un graf $G=(V,E)$ és \textit{regular de grau $r$} quan tots els seus vèrtexs
 tenen grau $r$. Formalment, un graf és $r$-regular quan $\Delta(G)=\delta(G)=r$.
-Un graf $0$-regular és un graf nul \footnote{Vegi's apartat \ref{sec:buits}}, un graf $1$-regular
+Un graf $0$-regular és un graf nul \footnote{Veure apartat \ref{sec:buits}}, un graf $1$-regular
 consisteix en arestes separades entre elles i un graf $2$-regular
-consisteix en un o més cicles \footnote{Vegi's apartat \ref{sec:cicles}} separats. A partir d'aquí, els grafs regulars més importants
+consisteix en un o més cicles \footnote{Veure apartat \ref{sec:cicles}} separats. A partir d'aquí, els grafs regulars més importants
 tenen noms propis, com per exemple els $3$-regulars, que són els
 \textit{cúbics}; els $4$-regulars, \textit{quàrtics}; els $7$-regulars, \textit{grafs de Witt
 truncats dobles}; els $8$-regulars, \textit{grafs de 24 cel·les}... 
@@ -471,7 +472,7 @@ Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-reg
 \label{sec:buits}
 
 Els \textit{grafs buits} són grafs sense arestes, és a dir, conjunts d'$n$ vértexs.
-Són els complementaris dels grafs complets $K_{n}$ \footnote{Vegi's apartat \ref{sec:Complets}}, i per tant la seva nomenclatura
+Són els complementaris dels grafs complets $K_{n}$ \footnote{Veure apartat \ref{sec:Complets}}, i per tant la seva nomenclatura
 és $\bar{K}_{n}$ o, simplement, $N_{n}$. Estrictament s'anomena \textit{graf nul} a $N_{0}$
 i buits a la resta, però com que normalment no s'utilitza $N_{0}$,
 convencionalment es diuen nuls tots els elements del conjunt dels buits.
@@ -508,8 +509,8 @@ El nombre de cicles que conté un graf complet queda determinat per la següent ig
 
 On:
 \begin{description}
-\item[$\frac{1}{2}$] es multiplica perquè contem dues vegades els cicles, ja que no són dirigits.
-\item[$n\choose k$] és el nombre de grups de $k$ elements que podem agafar.
+\item[$\frac{1}{2}$] es multiplica perquè es conten dues vegades els cicles, ja que no són dirigits.
+\item[$n\choose k$] és el nombre de grups de $k$ elements que es poden agafar.
 \item[$(k-1)!$] és el nombre de permutacions circulars de $k$ elements.
 \end{description}
 
@@ -539,7 +540,7 @@ Els \textit{cicles} són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i
 s'anomenen $C_{n}$.
  
 \begin{propietat}
-El graf lineal \footnote{Vegi's apartat\ref{sec:lineal}} d'un cicle és ell mateix.
+El graf lineal \footnote{Veure apartat\ref{sec:lineal}} d'un cicle és ell mateix.
 \end{propietat}
 
 \begin{figure}[H]
@@ -591,7 +592,7 @@ Tots els grafs $C_{n}$ amb $n$ parell, són també grafs bipartits.
 \subsection{Grafs bipartits complets}
 \label{sec:bipartits_complets}
 
-Els \textit{grafs bipartits complets} són grafs bipartits \footnote{Vegi's apartat \ref{sec:bipartits}} en els quals cada
+Els \textit{grafs bipartits complets} són grafs bipartits \footnote{Veure apartat \ref{sec:bipartits}} en els quals cada
 element del conjunt $U$ està unit a tots els elements dels del conjunt
 $W$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|W|$.
 
@@ -677,19 +678,19 @@ $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]ar
 		\centering
 		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, invisible/.style={shape=coordinate}, transform shape, scale=0.5]
 			\node (a)[invisible] at (0,0){};
-			\node (k)[invisible] at (12,0){};
+			\node (k)[invisible] at (14,0){};
 
 			\node (g)[invisible] at (0,0.5){};
-			\node (h)[invisible] at (4,0.5){};
-			\node (i)[invisible] at (8,0.5){};
-			\node (j)[invisible] at (12,0.5){};
+			\node (h)[invisible] at (3.5,0.5){};
+			\node (i)[invisible] at (6.75,0.5){};
+			\node (j)[invisible] at (14,0.5){};
 			
 			\node (b)[round] at (0, 6){$v_{i}$};
 
 			\node (c) at (0,3){$w_{i_{0}}$};
-			\node (d) at (2,3){$w_{i_{1}}$};
-			\node (e) at (4,3){$w_{i_{2}}$};
-			\node (f) at (6,3){$w_{i_{g(v_{i})}}$};
+			\node (d) at (2.5,2){$w_{i_{1}}$};
+			\node (e) at (5,2){$w_{i_{2}}$};
+			\node (f) at (7.5,3){$w_{i_{g(v_{i})}}$};
 			
 			\draw (b) edge (c);
 			\draw (b) edge (d);
@@ -700,12 +701,12 @@ $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]ar
 			\draw (e) edge (i);
 			\draw (f) edge (j);
 						
-			%\draw (c) edge[dashed] (d);
-			%\draw (c) edge[dashed] (e);
-			%\draw (c) edge[dashed] (f);
-			%\draw (d) edge[dashed] (e);
-			%\draw (d) edge[dashed] (f);
-			%\draw (e) edge[dashed] (f);
+			\draw (c) edge[dashed] (d);
+			\draw (c) edge[dashed] (e);
+			\draw (c) edge[dashed] (f);
+			\draw (d) edge[dashed] (e);
+			\draw (d) edge[dashed] (f);
+			\draw (e) edge[dashed] (f);
 			
 			\tikzset{doble/.style={<->,dashed}}
 			\draw (a) edge[doble] node[midway,below]{$g(v_{i})$}(k);
@@ -969,15 +970,22 @@ Com a conseqüència d'aquest teorema, en podem arribar a un altre:
 \begin{quote}
 En un arbre $T$ amb $|V|\geq 2$, hi ha com a mínim dos vèrtexs de grau 1 (anomenats fulles).
 \end{quote}
-\emph{Demostració: } Com a conseqüència del Teorema 1 i Teorema 2 podem dir que en un arbre \[\sum_{v\in V}g(v)=2|E|=2|V|-2\] També podem deduïr que si tots els vèrtexs tinguessin un grau $g(v_{i}) > 1$, llavors \[ \sum_{v\in V}g(v) \geq \sum_{v\in V}2 =2|V|\] Sabem que això no és correcte, ja que estem dient que $2|V|-2\geq2|V|$. Amb això ja podem veure que necessitem treure com a mínim dos graus, però demostrem també que amb un sol node de grau 1 tampoc és suficient. \smallskip Suposem ara que l'arbre té un sol node tal que $g(v)=1$ i elsaltres tenencom a mínim grau 2. Llavors \[ 2|V|-2=\sum_{v\in V}g(v)=1+\sum_{\substack{v\in V\\\text{si }g(v)\neq 1}}g(v)\geq 1+\sum_{\substack{v\in V \\\text{si }g(v)\neq 1}}2=1+2(|V|-1)=2|V|-1 \] Ara estem dient que $2|V|-2 \geq 2|V|-1$, que torna a ser una contradicció. Sabem que si treiem un grau més, el teorema es complirà, i hem demostrat que el mínim nombre de vèrtexs de grau 1 és 2.
+\emph{Demostració: } Fem un raonament per reducció a l'absurd. Suposem que no es compleix el teorema que volem demostrar, és a dir, que $g(v_{i}) > 1$ per a tots els vèrtexs. Llavors es compleix que \[ \sum_{v\in V}g(v) > \sum_{v\in V}2 =2|V|\] Però això no és correcte, ja que, com a conseqüència del Teorema 1 i Teorema 2 podem dir que en un arbre \[\sum_{v\in V}g(v)=2|E|=2|V|-2\]  i estem dient que $2|V|-2\geq2|V|$. Amb això ja podem veure que necessitem treure com a mínim dos graus, però demostrem també que amb un sol node de grau 1 tampoc és suficient. \smallskip Suposem ara que l'arbre té un sol node tal que $g(v)=1$ i elsaltres tenencom a mínim grau 2. Llavors \[ 2|V|-2=\sum_{v\in V}g(v)=1+\sum_{\substack{v\in V\\\text{si }g(v)\neq 1}}g(v)\geq 1+\sum_{\substack{v\in V \\\text{si }g(v)\neq 1}}2=1+2(|V|-1)=2|V|-1 \] Ara estem dient que $2|V|-2 \geq 2|V|-1$, que torna a ser una contradicció. Sabem que si treiem un grau més, el teorema es complirà, i hem demostrat que el mínim nombre de vèrtexs de grau 1 és 2.
 
+Hi ha una altra manera de demostrar-ho, més directa:
+Suposem que a l'arbre hi ha $k$ vèrtex de grau $1$, i $|V|-k$ de grau $g(v_{i})\geq 2$. D'aquesta manera
+\[
+2|V|-2=\sum_{v\in V}g(v) \geq k+2(|V|-k)=2|V|-k
+\]
+Llavors podem dir que $-2 \geq -k$ i per tant $2 \leq k$.
+\\
 Hi ha un altre teorema que relaciona el nombre de fulles amb el grau màxim d'un arbre:
 
-\subsection*{Teorema 4}
+\subsubsection*{Teorema 4}
 \begin{quote}
 El nombre de fulles d'un arbre $T$ és més gran o igual a $\Delta$.
 \end{quote}
-\emph{Demostració: }Si eliminem el node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles.Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent a el node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi haurà com a mínim $\Delta$ fulles.
+\emph{Demostració: }Si eliminem un node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs disconnexos. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles. Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent al node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi haurà com a mínim $\Delta$ fulles.
 
 \part{Camins i algorismes}
 
@@ -986,28 +994,35 @@ poder-hi fer algunes operacions. Podem, per exemple, voler trobar
 un camí entre dos punts, recòrrer el graf sencer o trobar el camí
 més curt per anar d'un vèrtex a un altre. Per aquest motiu utilitzem
 els camins, que trobarem o generarem mitjnçant diversos algorismes.
-En aquesta secció mostraré diverses maneres de recòrrer un graf, torbant
+
+En aquesta secció es mostraran i s'implementaran diverses maneres de recòrrer un graf, torbant
 la manera més eficient per a cada cas.
 
 \subsection{Grafs ponderats i dirigits}
 \subsubsection*{Grafs ponderats}
-Els grafs ponderats són grafs on cada aresta $e$ està asociada a un nombre $w(e)$ anomenat pes o cost, tal que $w(e)\in \mathbb{R}$. El pes pot representar diverses quantitats, segons el que es vulgui modelitzar. Moltes vegades s'utilitza per representar distàncies, però si per exemple modelitzem una xarxa de distribució d'aigua, ens pot interessar representar el cabal de les canonades, o en una xarxa de bus, la densitat de trànsit de cada tram. 
+Els grafs ponderats són grafs on cada aresta $e$ està asociada a un nombre $w(e)$ anomenat pes o cost, tal que $w(e)\in \mathbb{R}$. El pes pot representar diverses quantitats, segons el que es vulgui modelitzar. 
+Moltes vegades s'utilitza per representar distàncies, però si per exemple modelitzem una xarxa de distribució d'aigua, ens pot interessar representar el cabal de les canonades, o en una xarxa de bus, la densitat de trànsit de cada tram. 
 
-\subsection*{Grafs dirigits}
-Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. D'aquesta manera, una aresta $e_{0}=(v_{0},v_{1}) \neq e_{1}=(v_{1},v_{0})$, contràriament als grafs no dirigits. DE fet, no necessàriament ha d'existir una aresta contrària a una altra. Aquest tipus de grafs poden ser útils per representar carreteres, o moviments vàlids en algun joc. 
+\subsubsection*{Grafs dirigits}
+Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. D'aquesta manera, una aresta $e_{0}=(v_{0},v_{1}) \neq e_{1}=(v_{1},v_{0})$ \footnote{Observi's la diferència de notacióper a les arestes dels grafs dirigits i no dirigits, atenent al fet que l'ordre dels vèrtexs en un cas importa i en l'altre no}. De fet, no necessàriament ha d'existir una aresta contrària a una altra. 
+
+Aquest tipus de grafs poden ser útils per representar carreteres, o moviments vàlids en algun joc. 
 
 
 \subsection{Camins}
 
-Un camí $p$ és una seqüència finita i ordenada d'arestes que connecta
-una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En auqest cas,pot ser tractat com un graf elemental $P_{n}$. Un cas especial és quan el camí comença i acaba al mateix vèrtex ($v_{0} = v_{k}$). Llavors el camí és un cicle, i és l'equivalent a un graf cicle $C_{n}$. 
-Quan un camí té totes les arestes diferents, s'anomena simple, i si a més té tots els vèrtexs diferents, s'anomena elemental.
+Un \textit{camí} $p$ és una seqüència finita i ordenada d'arestes que connecta
+una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ (sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En aquest cas, pot ser tractat com un graf elemental $P_{n}$. 
 
-En els grafs, ponderats, la longitud d'un camí $c=v_{0},v_{1},\cdots,v_{n}$ no es defineix pel nombre d'arestes per on passa el camí, sinó fent el sumatori dels pesos de les arestes
+Un cas especial és quan el camí comença i acaba al mateix vèrtex ($v_{0} = v_{k}$). Llavors el camí és un cicle, i és l'equivalent a un graf cicle $C_{n}$. 
+
+Quan un camí té totes les arestes diferents, s'anomena \textit{simple}, i si a més té tots els vèrtexs diferents, s'anomena \textit{elemental}.
+
+En els grafs, ponderats, la \textit{longitud} d'un camí $p=v_{0}v_{1}\cdots v_{n}$ no es defineix pel nombre d'arestes per on passa el camí, sinó fent el sumatori dels pesos de les arestes
 \[ \textbf{longitud}_{w}(c)=\sum_{i=0}^{n-1}w(\overline{v_{i},v_{i+1}}) \]
 
-La distància entre dos vèrtexs $v$ i $u$, $d_{w}(v,u)$, és la que s'obté al agafar la menor longitud d'entre tots els camins elementals entre $v$ i $u$. 
-(adjunjtar exemple de distància)
+La \textit{distància} entre dos vèrtexs $v$ i $u$, $d_{w}(v,u)$, és la que s'obté a l'agafar la menor longitud d'entre tots els camins elementals entre $v$ i $u$. 
+(adjuntar exemple de distància)
 
 
 \section{Estructures de dades dels grafs}
@@ -1019,7 +1034,7 @@ es pot dibuixar. El problema sorgeix quan el graf en qüestió és més
 gran, com per exemple podria ser una xarxa de clavagueram o de metro.
 Llavors la informació a tractar és molta, i és convenient organitzar-la
 en estructures de dades. Les estructures de dades solen ser utilitzades
-en la programació, però en aquest cas sol ser beneficiós tenir-ne
+en la programació, però en aquest cas sol ser beneficiós usar-ne
 fins i tot quan no es treballa amb informàtica.
 
 
@@ -1029,16 +1044,16 @@ fins i tot quan no es treballa amb informàtica.
 \subsubsection*{Matriu d'adjacència}
 
 La matriu d'adjacència d'un graf és una matriu quadrada que conté
-informació respecte el nombre d'arestes que uneixen dos nodes, i s'organitza
+informació respecte el nombre d'arestes que uneixen qulsevol parella de nodes, i s'organitza
 de la següent manera:
 
-Si $G$ és un graf amb $n$ nodes, $A(G)=(a_{i,j})_{i,j}=1,...,n$
-és la seva matriu d'adjacència de $n$ x $n$, on $a_{i,j}$ correspon
-al nombre d'arestes que uneixen els nodes $i,j$, contant com a 2
+Si $G$ és un graf amb $|V|$ nodes, $A(G)=(a_{ij})_{ij=1,...,|V|}$
+és la seva matriu d'adjacència de $|V|\times|V|$, on $a_{ij}$ correspon
+al nombre d'arestes que uneixen els nodes $i$ i $j$, contant com a 2
 els llaços, que sempre es trobaràn a la diagonal. La matriu serà simètrica
-si el graf ho ès, i podrem conèixer el grau d'un node $i$ fent el sumatori de les caselles de la $i$-èsima fila. A vegades, quan s'utilitzen grafs ponderats, les matrius d'adjacència s'omplen amb els pesos de les arestes, per no haver d'utilitzar altres estructures per emmagatzemar la resta d'informació. En aquest tipus de grafs, els llaços no necessàriament valdràn 2, però es podràn diferenciar perquè estaràn a la diagonal. En aquest cas, el problema serà que no es podràn representar arestes múltiples amb pesos diferents. Tot i això, en termes de programació, utilitzar aquesta estructura de dades (sobretot en grafs grans) no
-és el més eficient, ja que creix molt ràpidament. La matriu d'un graf
-de $n$ nodes té $n^{2}$ espais, i en grafs poc densos, la majoria
+si el graf ho ès, i podrem conèixer el grau d'un node $i$ fent el sumatori de les caselles de la $i$-èsima fila. A vegades, quan s'utilitzen grafs ponderats, les matrius d'adjacència s'omplen amb els pesos de les arestes, per no haver d'utilitzar altres estructures per emmagatzemar la resta d'informació. En aquest tipus de grafs, els llaços no necessàriament valdran 2, però es podran diferenciar perquè estaràn a la diagonal. En aquest cas, el problema serà que no es podràn representar arestes múltiples amb pesos diferents. Tot i això, en termes de programació, utilitzar aquesta estructura de dades (sobretot en grafs grans) no
+és el més eficient, ja que la matriu creix molt ràpidament. La matriu d'un graf
+de $|V|$ nodes té $|V|^{2}$ espais, i en grafs poc densos, la majoria
 d'espais estan ocupats per $0$, de tal manera que s'està utilitzant
 molta memòria que no conté informació útil. De la mateixa manera,
 si afegim un nou node al graf, que serà l'$n$-èssim, s'hauràn d'afegir
@@ -1049,16 +1064,16 @@ $2n-1$ espais a la matriu.
 
 \subsubsection*{Matriu d'incidència}
 
-La matriu d'incidència d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1,...,v,j=1,...,\alpha}$
-, on $v=|V|$ i és la matriu binaria $v$ x $\alpha$ on $b_{i,j}$
+La matriu d'incidència d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1,...,|V|(G),j=1,...,|E|(G)}$, és la matriu binaria de $|V|(G)\times |E|(G)$ on $b_{i,j}$
 indica si la aresta $j$ és incident al node $i$.
 
 (afegir exemple de graf amb les seves dues matrius)
 
 
+
 \subsection*{Llistes d'adjacència}
 
-Aquesta estructura de dades és la més utilitzada per tractar grafs,
+Aquesta estructura de dades és molt utilitzada per tractar grafs,
 ja que ocupa menys memòria i només inclou l'informació necessària.
 Les llistes d'adjacència consisteixen en un conjunt de $n$ llistes.
 Cada llista correspon a un node del graf, i conté els nodes al quals
@@ -1073,10 +1088,10 @@ iteracions. Amb l'esquema següent es pot veure més clarament:
 
 \subsection{Algorismes}
 Un algorisme és un conjunt d'instruccions precises i ben definides que, donada una entrada, calculen la sortida corresponent segons les instruccions que té.
-A continuació s'en mostren uns quants d'importants.
+A continuació se'n mostren uns quants d'importants per fer operacions sobre grafs.
 
-\subsubsection{BFS}
-Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritàtia (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
+\subsubsection{Algorisme BFS}
+Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritària (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
 (Adjuntar imatge de BFS)
  
 Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig de la cua.
@@ -1088,7 +1103,6 @@ El que farà això és bàsicament imprimir per pantalla la seqüència de vèrtexs ord
 \KwResult{Seqüència de de nodes visitats}
 nova cua Q\;
 marca $v$ com a visitat\;
-imprimeix($v$)\;
 afegeix $v$ a la cua $Q$\;
 nou node $auxiliar$\;
 nou node $seg\ddot{u}ent$\;
@@ -1109,7 +1123,7 @@ nou node $seg\ddot{u}ent$\;
 \caption{BFS}
 
 \end{algorisme}
-Aquesta és una manera bastant usual de programar el BFS, i encara que ès eficient, s'està desaprofitant propietats de l'algorime. Amb BFS es pot saber a quina distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot es pot generar un arbre expansiu mínim, agafant les arestes per on passa el BFS.
+Aquesta és una manera bastant usual de programar l'algorisme BFS, i encara que ès eficient, s'està desaprofitant propietats de l'algorime. Amb l'algorisme BFS es pot saber a quina distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot es pot generar un arbre expansiu mínim, agafant les arestes per on "passa" l'algorisme.
 El següent algorisme té en compte aquests detalls. Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té un nom i una clau), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
 
 \begin{algorisme}
@@ -1151,17 +1165,17 @@ Encara que aquest algorisme sembli molt senzill, ens pot aportar informació impo
 Aquest algorisme s'utilitza també per operacions més complexes, com les següents: 
 \begin{itemize}
 
-\item Google l'utilitza per indexar pàgines web noves al seu buscador. Amb BFS pot recòrrer tota la xarxa d'internet sencera, i ,si cada pàgina web és un node i cada enllaç és una aresta, si es posa un link d'una pàgina no indexada a una que sí ho està, l'algorisme trobarà el nou node).
-\item Les xarxes socials l'utilitzen per suggerir amistats. Amb BFS poden trobar els amics d'una persona (els nodes que estàn a distància 2 d'aquesta), que són susceptibles a ser amics seus. Com més amistats en comú amb la persona a distància 2, més probable és que es coneguin. 
-\item Es pot sil·lucionar un cub de rubik amb aquest algorisme. Si s'aconsegueix generar un graf on cada node sigui un estat diferent del cub i les arestes siguin un moviment d'una cara, donat un estat inicial, amb BFS arribes a l'estat resolt amb els mínims moviments possibles.
+\item Google l'utilitza per indexar pàgines web noves al seu buscador. Amb l'algorisme BFS pot recòrrer tota la xarxa d'internet sencera, i, si cada pàgina web és un node i cada enllaç és una aresta, si es posa un link d'una pàgina no indexada a una que sí ho està, l'algorisme trobarà el nou node).
+\item Les xarxes socials l'utilitzen per suggerir amistats. Amb aquest algorisme es poden trobar els amics d'una persona (els nodes que estàn a distància 2 d'aquesta), que són susceptibles a ser amics seus. Com més amistats en comú amb la persona a distància 2, més probable és que es coneguin. 
+\item Es pot sol·lucionar un cub de rubik. Si s'aconsegueix generar un graf on cada node sigui un estat diferent del cub i les arestes siguin un moviment d'una cara, donat un estat inicial, amb BFS es pot arribar a l'estat resolt amb els mínims moviments possibles.
 
 \end{itemize}
  
 
 \subsubsection{DFS}
-La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'aquí \textbf{DFS}) és un algorime que utilitza uns proncipis semblants al BFS, però en lloc de cobrir tota l'amplada d'un nivell abans de passar al següent, el que fa és cobrir tota la prfunditat possible (arribar el més lluny possible) abans de tornar enrere. En la següent imatge es pot veure un esquema del funcionament de l'algorisme:
+La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'aquí \textbf{DFS}) és un algorime que utilitza uns proncipis semblants als de l'algorisme BFS, però en lloc de cobrir tota l'amplada d'un nivell abans de passar al següent, el que fa és cobrir tota la profunditat possible (arribar el més lluny possible) abans de tornar enrere. En la següent imatge es pot veure un esquema del funcionament de l'algorisme:
 (adjuntar imatge de DFS)
-Tal com en el BFS, també hi ha diverses maneres de fer l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegi o treure l'element de dalt de tot de la pila.
+Tal com en el BFS, també hi ha diverses maneres d'implementar l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegir o treure l'element de dalt de tot de la pila.
 
 \begin{algorisme}
 \DontPrintSemicolon
@@ -1240,26 +1254,69 @@ imprimeix($ordre$)\;
 
 \end{algorithm}
 
-Aquest algorisme no té tantes utilitats pràctiques com el BFS, però també té propuietats utils, com per exemple, que passa per totes les arestes.A través d'ell podem obtenir informació importanat d'un graf:
+Aquest algorisme no té tantes utilitats pràctiques com l'algorisme BFS, però també té propietats útils, com per exemple, que passa per totes les arestes. A través d'ell podem obtenir informació importanat d'un graf:
 \begin{itemize}
-\item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix. En cas afirmatiu voldrà dir que hi ha un cicle.
+\item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix.
 \item Es pot saber si un graf és bipartit assignant un color (entre un total de 2 colors possibles) a cada node mentre es recorre el graf, de manera que un node tingui un color diferent al dels nodes adjacents. Si això és possible voldrà dir que el graf és bipartit.
-\item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quan hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb el DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques.
-(Adjuntar exemple d'ordenació topològica i la seva sol·lució donada mitjancant DFS)
+\item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quan hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb l'algorisme DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques. A continuació es presenta un exemple d'ordenació topològica utilitzat dirant la creació d'aquest treball:
+
+Resulta que, a la secció \ref{Sec:tipus}, quan explicava un tipus concret de graf, sovint utilitzava altres tipus de graf. Per determinar en quin ordre havien d'estar els apartats, de tal manera que quan apareixès un tipus de graf (a una altra definició) aquest ja s'hagués explicat, es va utilitzar una ordenació topològica. Es va construïr un graf dirigit representant les dependències de cada apartat (veure figura \ref{fig:topological_sort}), i es va executar l'algorisme d'ordenació topològica.
 \end{itemize}
 
+\begin{figure}[H]
+\centering
+\label{fig:topological_sort}
+	\begin{tikzpicture}
+		\node (a) at (0,0){xarxes};
+		\node (b) at (3,0){arbres};
+		\node (c) at (6,0){rodes};
+		\node (d) at (9,0){buits};
+		\node (e) at (0,2){bipartits complets};
+		\node (f) at (3,2){bipartits};
+		\node (g) at (6,2){cicles};
+		\node (h) at (9,2){complets};
+		\node (i) at (0,4){regulars};
+		\node (j) at (3,4){lineals};
+		\node (k) at (6,4){estrelles};
+		\node (l) at (9,4){complementaris};
+		
+		\draw (a) edge[->,-latex] (b);
+		\draw (f) edge[->,-latex] (a);
+		\draw (f) edge[->,-latex] (e);
+		\draw (f) edge[->,-latex] (k);
+		\draw (g) edge[->,-latex] (f);
+		\draw (g) edge[->,-latex] (h);
+		\draw (g) edge[->,-latex] (i);
+		\draw (g) edge[->,-latex] (b);
+		\draw (g) edge[->,-latex] (c);
+		\draw (h) edge[->,-latex] (c);
+		\draw (h) edge[->,-latex] (d);
+		\draw (h) edge[->,-latex] (k);
+		\draw (h) edge[->,-latex] (l);
+		\draw (j) edge[->,-latex] (g);
+		\draw (j) edge[->,-latex] (k);
+		\draw (l) edge[->,-latex, bend left=50] (d);
+		
+		
+	\end{tikzpicture}
+	\caption{Graf de les dependències de cada apartat}
+\end{figure}
+
+
 \subsubsection{Dijkstra}
-Aquest algorisme, desdenvolupat per Edsger W. Dijkstra el 1956, serveix per trobar el camí més curt entre dos nodes d'un gaf ponderat. De fet, això és el que feia la variant original, però la variant presentada aquí troba el camí més curt entre un node inicial i tota la resta de nodes dels graf. Tot i això es pot modificar lleugerament el programa perquè pari quan hagi trobat el camí més curt entre dos nodes especificats. El que fa el programa és suposar quines són les distàncies mínimes des del node inicial fins la resta, i va descobrint el graf fins que pot assegurar el camé més curt. Al principi, suposa que el moviment amb menys cost és no moure's (això serà cert si el graf no conté arestes amb pesos negartius, que l'algorisme no pot tractar). Després busca els nodes adjacents al node inicial, i suposa que les distàncies mínimes entre l'inicial i aquests és simplement l'aresta que els uneix. Es pot assegurar que serà cert pel node unit amb l'aresta de menys pes, per la desigualtat triangular (si s'hi pogués accedir per un altre camí, aquest seria més llarg, ja que per força alguna de les arestes amb més pes que s'han descartat ha de formar part del camí alternatiu, i la suma serà sempre superior). Un cop hi ha el primer node amb mínim pes assegurat (i per tant ja sap un camí), es busquen els seus adjacents, el pes dels quals inicialment és infinit. La suposició del pes equivaldrà a el pes del node d'on venen més el de l'aresta que els uneix, i es canviarà pel pes que tenen si aquest és mes gran que el nou. Ara es torna a agafar el node amb el pes menor (que segur que és el mínim) i es torna a mirar els adjacents i assignar pesos. Quan tots els nodes hagin estat visitats, el pes de cada node serà la distància mínima que s'ha de recòrrer per anar del node inicial fins a aquest.
+Aquest algorisme, desdenvolupat per Edsger W. Dijkstra el 1956, serveix per trobar el camí més curt entre dos nodes d'un gaf ponderat. De fet, això és el que feia la variant original, però la variant presentada aquí troba el camí més curt entre un node inicial i tota la resta de nodes dels graf. Tot i això es pot modificar lleugerament el programa perquè pari quan hagi trobat el camí més curt entre dos nodes especificats. El que fa el programa és suposar quines són les distàncies mínimes des del node inicial fins la resta, i va descobrint el graf fins que pot assegurar el camí més curt. Al principi, suposa que el moviment amb menys cost és no moure's (això serà cert si el graf no conté arestes amb pesos negatius, que l'algorisme no pot tractar). Després busca els nodes adjacents al node inicial, i suposa que les distàncies mínimes entre l'inicial i aquests és simplement l'aresta que els uneix. Es pot assegurar que serà cert pel node unit amb l'aresta de menys pes, per la desigualtat triangular (si s'hi pogués accedir per un altre camí, aquest seria més llarg, ja que per força alguna de les arestes amb més pes que s'han descartat ha de formar part del camí alternatiu, i la suma serà sempre superior). Un cop hi ha el primer node amb mínim pes assegurat (i per tant ja sap un camí), es busquen els seus adjacents, el pes dels quals inicialment és infinit. La suposició del pes equivaldrà a el pes del node d'on venen més el de l'aresta que els uneix, i es canviarà pel pes que tenen si aquest és mes gran que el nou. Ara es torna a agafar el node amb el pes menor (que segur que és el mínim) i es torna a mirar els adjacents i assignar pesos. Quan tots els nodes hagin estat visitats, el pes de cada node serà la distància mínima que s'ha de recòrrer per anar del node inicial fins a aquest.
 
 (Adjuntar esquema de procediment de Dijkstra)
 
 Aquest algorisme, encara que no pot treballar amb pesos negatius és molt útil té una gran quantitat d'aplicacions pràctiques:
 \begin{itemize}
-\item Navegadors GPS, on les arestes són carrers i carreteres, els nodes cruïlles i els pesos distàncies. S'utilitza l'algorisme de Dijkstra per trobar els camins més curts entre dues destincaions.
-\item Problemes de canvis de divisa, on volem trobar la miillor manera de canviar divises i guanyar més diners. Aquí els nodes són les diferents monedes o divises, les arestes les transaccions i els pesos les taxes de canvi. Amb aquest algorisme podem trobar la millor manera de fer els canvis de moneda.
+\item Navegadors GPS, on les arestes són carrers i carreteres, els nodes cruïlles i els pesos distàncies. S'utilitza l'algorisme de Dijkstra per trobar els camins més curts entre dues destinacions.
+\item Problemes de canvis de divisa, on volem trobar la millor manera de canviar divises successives i guanyar més diners. Aquí els nodes són les diferents monedes o divises, les arestes les transaccions i els pesos les taxes de canvi. Amb aquest algorisme podem trobar la millor manera de fer els canvis de moneda. 
+En aquest context prenen sentit les arestes amb pesos negatius, encara que l'algorisme de Dijkstra no els pot tractar. 
+
 \item Els routers utilitzen l'algorisme per portar-te a través d'internet al servidor desitjat amb la menor cantitat de passos possibles.
-\item En robòtica s'utilitza per fer la planificació de moviment del robot. Cada node és una unitat d'espai, i omplint tot l'espai de nodes excepte els obstacles i executant l'algorisme en el graf resultant, s'obté el camí més òptim per arribar a la posició desitjada.
-\item En epidemologia es pot utilitzar per modelitzar un grup de persones i els seus familiars per veure qui és més susceptible a emmalaltir. Això també pot funcionar entre ciutats o col·lectius més grans. 
+\item En robòtica s'utilitza per fer la planificació de moviment del robot. Cada node és una posició i representa una unitat d'espai, i omplint tot l'espai de nodes excepte els obstacles i executant l'algorisme en el graf resultant, s'obté el camí més òptim per arribar a la posició desitjada.
+\item En epidemologia aquest algorisme es pot utilitzar per modelitzar un grup de persones i els seus familiars per veure qui és més susceptible a emmalaltir. Això també pot funcionar entre ciutats o col·lectius més grans. 
  
 \end{itemize}
 
@@ -1287,7 +1344,7 @@ $Q[s]=0$\;
 			
 			\If{$Q[v]>Q[u]+w(u,v)$}
 			{
-				\tcc{$w(u,v)$ és el pes de l'aresta \{$u,v$\}}
+				\tcc{$w(u,v)$ és el pes de l'aresta $(u,v)$}
 				$Q[v]=Q[u]+w(u,v)$\;
 			}
 		}
@@ -1300,7 +1357,7 @@ imprimeix($dist$)
 \end{algorisme}
 
 \subsubsection{Bellman-Ford}
-Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algorisme de Dijkstra, però té la particularitat de poder tractar sense problemes les arestes amb pesos negatius, mentre que Dijkstra no ho permet. Dijkstra es basa en la desigualtat triangular per tobar el camímés curt, però amb pesos negatius no es pot suposar que la desigualtat triangular es compleixi. A més, permet saber si un graf cinté cicles negatius. Si un camí entre dos nodes conté un cile de pes negatiu, no es pot trobar un camí mínim entre aquests dos nodes. Això es deu a que recorrent aquest cicle sempre es podria escurçar el camí, i llavors el mínim possible seria de $-\infty$.
+Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algorisme de Dijkstra, però té la particularitat de poder tractar sense problemes les arestes amb pesos negatius, mentre que l'algorisme de Dijkstra no ho permet.L'algorisme de  Dijkstra es basa en la desigualtat triangular per tobar el camí més curt, però amb pesos negatius no es pot suposar que la desigualtat triangular es compleixi. A més, permet saber si un graf conté cicles negatius. Si un camí entre dos nodes conté un cicle de pes negatiu, no es pot trobar un camí mínim entre aquests dos nodes. Això es deu a que recorrent aquest cicle sempre es podria escurçar el camí, i llavors el mínim possible seria de $-\infty$.
 
 
 \begin{algorisme}[H]
@@ -1349,15 +1406,15 @@ imprimeix($anterior$)\;
 
 
 \subsubsection{Kruskal}
-L'algorisme de Kruskal serveix per trobar un arbre expansiu mínim. Aquest algorisme utilitza una estructura de dades especial, anomenada union-find. Aquesta estructura permet fer tres operacions diferents: crear conjunts (Make Set), determinar a quin conjunt està un element (Find) i unir dos subconjunts en un de nou (Union). L'ús d'aquesta estructura especialitzada fa que en grafs petits o poc densos l'algorisme sigui molt ràpid, però en grafs més grans es relantitzi el procés, siguent més eficient utilitzar altres algorismes en aquest cas. L'algorisme, al principi crea un conjunt per a cada node i ordena les arestes de manera creixent segons elsseu pes. Llavors agafa la primera aresta (la de menys pes), que serà una aresta de l'arbre expansiu mínim, i posa en el mateix conjunt els nodes que unia. Després agafa la següent aresta i repeteix el procediment. 
+L'algorisme de Kruskal serveix per trobar un arbre expansiu mínim. Aquest algorisme utilitza una estructura de dades especial, anomenada union-find. Aquesta estructura permet fer tres operacions diferents: crear conjunts (\textit{make set}), determinar a quin conjunt està un element (\textit{find}) i unir dos subconjunts en un de nou (\textit{union}). L'ús d'aquesta estructura especialitzada fa que en grafs petits o poc densos l'algorisme sigui molt ràpid, però en grafs més grans es relantitzi el procés, siguent més eficient utilitzar altres algorismes en aquest cas. L'algorisme, al principi crea un conjunt per a cada node i ordena les arestes de manera creixent segons el seu pes. Llavors agafa la primera aresta (la de menys pes), que serà una aresta de l'arbre expansiu mínim, i posa en el mateix conjunt els nodes que unia. Després agafa la següent aresta i repeteix el procediment. 
 
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf $G$ i un node inicial $s$}
 \KwResult{Arbre expansiu mínim de $G$}
 nova estructura union-find $subgraf$\;
-nova llista $arbre$
-ordena $G$ per ordre creixent de pesos\;
+nova llista $arbre$\;
+ordena $E(G)$ per ordre creixent de pesos\;
 \ForEach{node $u$ de $G$}
 {
 	\ForEach{node $v$ adjacent a $u$}
@@ -1373,7 +1430,7 @@ imprimeix($arbre$)\;
 \end{algorisme}
 
 \subsubsection{Prim}
-L'algorisme de Prim, tal com del de Kruskal, serveix per trobar l'arbre expansiu mínim d'un graf ponderat no dirigit. Aquest algorisme funciona amb diccionaris, estructures de dades més normalitzades que el Union-Find. Com a conseqüència, Prim és més lent en grafs petits, però més ràpid en grafs molt densos. Prim divideix els nodes en dos grups, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon, i afegeix el node final de l'aresta al primer grup. D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, peró executant-lo per a cada node del graf, trobaria el bosc (conjunt d'arbres) mínim d'un graf no connex.
+L'algorisme de Prim, tal com el de Kruskal, serveix per trobar l'arbre expansiu mínim d'un graf ponderat no dirigit. Aquest algorisme funciona amb diccionaris, estructures de dades més normalitzades que les Union-Find. Com a conseqüència, l'algorisme de Prim és més lent en grafs petits, però més ràpid en grafs molt densos. Prim divideix els nodes en dos grups, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon, i afegeix el node final de l'aresta al primer grup. D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, però executant-lo per a cada node del graf, trobaria el \textit{bosc} (conjunt d'arbres) mínim d'un graf no connex.
  
 \begin{algorisme}[H]
 \DontPrintSemicolon
@@ -1407,21 +1464,21 @@ imprimeix($anterior$)\;
 \caption{Prim}
 \end{algorisme}
 
-Tant l'algorisme de Kruskal com del de Prim tenen aplicacions semblants, però segons la mida del graf és més convenient utilitzar-ne un o altre. Entre les aplicacions d'aquests dos algorismes hi ha:
+Tant l'algorisme de Kruskal com el de Prim tenen aplicacions semblants, però segons la mida del graf és més convenient utilitzar-ne un o altre. Entre les aplicacions d'aquests dos algorismes hi ha:
 \begin{itemize}
-\item S'utilitzen per dissenyar xarxes de telèfon, aigua, gas, internet... En aquestes xarxes s'ha d'arribar a tots els punts on s'ha de fer la distribució, i amb l'arbre expansiu mínim es pot assegurar que la xarxa és el més curta possible.
+\item El disseny de xarxes de telèfon, aigua, gas, internet... En aquestes xarxes s'ha d'arribar a tots els punts on s'ha de fer la distribució, i amb l'arbre expansiu mínim es pot assegurar que la xarxa és la més curta possible.
 \item Els arbres expansius mínims es poden utilitzar per generar laberints.
-\item S'utilitzen com a subrutines (o funcions) d'algorismes més complexes.
+\item S'utilitzen com a subrutines (o funcions) d'algorismes més complexos.
 \end{itemize}
 
 \subsubsection{Floyd-Warshall}
-L'algorisme de Floyd-Warshall és un algorisme que permet calcular les distàncies entre tots els nodes d'un graf ponderat. Per fer-ho, compara els pesos de tots els camins possibles. A cada iteració, es defineix el conjunt de nodes que pot tenir cada camí i si ja s'ha trobat un camí amb els mateixos extrems es compara el pes total d'ambdós . El conjunt és de la forma ${1,2,\cdots,k}$ i a cada iteració es va incrememntant $k$ (a l'inici $k=0$). El resultat d'aquest algorisme és una matriu quadrada $D$ de $|V|$x$|v|$ on $D_{i,j}=w(i,j)$.
+L'algorisme de Floyd-Warshall és un algorisme que permet calcular les distàncies entre tots els nodes d'un graf ponderat. Per fer-ho, compara els pesos de tots els camins possibles. A cada iteració, es defineix el conjunt de nodes que pot tenir cada camí i si ja s'ha trobat un camí amb els mateixos extrems es compara el pes total d'ambdós. El conjunt és de la forma ${1,2,\cdots,k}$ i a cada iteració es va incrememntant $k$ (a l'inici $k=0$). El resultat d'aquest algorisme és una matriu quadrada $D$ de $|V|\times |V|$ on $D_{ij}=w(i,j)$.
 
-Aquest algorisme es pot utilitzar per qualsevol de les aplicacions en que s'utilitzaria Dijkstra en més d'un node. S'utilitza sobretot quan es vol mantenir una base de dades de pesos precalculats, per no haver d'executar Dijkstra en cada cas concret. 
+Aquest algorisme es pot utilitzar per a qualsevol de les aplicacions en que s'utilitzaria Dijkstra amb més d'un node. S'utilitza sobretot quan es vol mantenir una base de dades de pesos precalculats, per no haver d'executar Dijkstra en cada cas concret. 
 A part d'aquesta aplicació, s'utilitza també d'altres maneres:
 \begin{itemize}
-\item Per detectar cicles de pes negatiu, cosa que passarà quan $D_{i,i} < 0$, quan a la diagonal de la matriu hi hagi un valor negatiu. 
-\item Estudiar la clausura transitiva d'un graf, és a dir, veure quins nodes són accessibles des de cada node. Això es pot veure a la matriu resultant, on els valors $\infty$ indiquen que no espot accedir a el node concret.
+\item Per detectar cicles de pes negatiu, cosa que passarà quan $D_{ii} < 0$, quan a la diagonal de la matriu hi hagi un valor negatiu. 
+\item Estudiar la \textit{clausura transitiva} d'un graf, és a dir, veure quins nodes són accessibles des de cada node. Això es pot veure a la matriu resultant, on els valors $\infty$ indiquen que no es pot accedir a el node concret.
 \end{itemize}
 
 
@@ -1469,27 +1526,27 @@ nova matriu $dist$ de $|V|x|V|$\;
  
 
 \part{Disseny de grafs}
-Fins ara, s'han mostrat i estudiat grafs que ja estan definits i que s'ha de fer alguna sobre ells. Ara bé, en aplicacions reals de teoria de grafs, sovint no hi ha un graf determinat, sinó que s'ha de generar.  
+Fins ara, s'han mostrat i estudiat grafs que ja estan definits sobre els quals s'ha de fer alguna operació. Ara bé, en aplicacions reals de teoria de grafs, sovint no hi ha un graf determinat, sinó que s'ha de generar.  
 
 \section{Punt de Fermat i l'arbre de Steiner}
-Normalment, els nodes ja estaran determinats i el problema consistirà en trobar les arestes.
-Si aquest és així, segurament es podràn afegir altres nodes. Un exemple d'aquest cas consistiria en haver d'unir tres ciutats amb carreteres de tal manera que des d'una es pugui arribar directament a les altres dues. La primera sol·lució en que sol pensar una persona és fer un triangle en el qual les ciutats siguin els vèrtexs (l'equivalent a un graf $K_{3}$). Aquesta sol·lució és òptima si es vol anar d'una ciutat a l'altre amb la mínima distància possible, però si es vol construïr el mínim de carreteres possibles, aquesta sol·lució no és la millor. En aquest cas, el millor és posar un altre node en el punt de Fermat del triangle que formen i obtenir un graf $S_{4}$.
-El punt de Fermat, també anomenat $X(13)$, és el punt del triangle tal que la suma de les distàncies des de cada vèrtex fins a aquest punt és la mínima. El punt de Fermat s'aconsegueix amb el procediment següent:
+Normalment, quan s'utilitzen els grafs com a mdels matemàtics de situacions reals,els nodes ja estaran determinats i el problema consistirà a trobar les arestes.
+Si això és així, segurament es podràn afegir altres nodes. Un exemple d'aquest cas consistiria a haver d'unir tres ciutats amb carreteres de tal manera que des d'una es pugui arribar directament a les altres dues. La primera sol·lució en que sol pensar una persona és fer un triangle en el qual les ciutats siguin els vèrtexs (l'equivalent a un graf $K_{3}$). Aquesta sol·lució és òptima si es vol anar d'una ciutat a l'altra amb la mínima distància possible, però si es vol construïr el mínim de carreteres possibles per a la xarxa conjunta, aquesta sol·lució no és la millor. En aquest cas, el millor és posar un altre node en el punt de Fermat del triangle que formen i obtenir un graf $S_{4}$.
+Donat un triangle acutangle, el punt de Fermat (també anomenat $X(13)$) és el punt tal que la suma de les distàncies des de cada vèrtex fins a aquest punt és la mínima. El punt de Fermat es determina gràficament amb el procediment següent:
 \begin{itemize}
 \item Donat un triangle $T$, es generen dos triangles equlàters a partir de dos costats arbitraris de $T$.
-\item S'uneixen els nous vèrtexs dels triangles equilàters amb els vèrtexs oposats a $T$.
-\item L'intersecció d'aquests dos segments dona la posició del punt de Fermat.
+\item S'uneixen els nous vèrtexs externs dels triangles equilàters amb els vèrtexs oposats de $T$.
+\item L'intersecció d'aquests dos segments dóna la posició del punt de Fermat.
 \end{itemize}
 (adjuntar imatge de punt de fermat)
-Aquest procediment és vàlid per a triangles amb angles menors a $120º$, però en cas contrari, el punt de Fermat serà l'angle que els superi.
+Aquest procediment és vàlid per a triangles amb angles menors a $120º$, però en cas contrari, el punt de Fermat s'identificarà amb vèrtex corresponent a l'angle que els superi.
 
-El punt de Fermat es pot generalitzar per a altres polígons convexos a partir de triangulacions d'aquests. Un exemple senzill és el del quadrilàter, on en fer les diagonals ja es generen quatre triangles. En aquest cas, trobant els punts en dos dels triangles i unint-los ja s'uneixen tots els punts amb la menor distància possible. 
+El punt de Fermat es pot generalitzar per a altres polígons convexos a partir de triangulacions d'aquests. Un exemple senzill és el del quadrilàter, on en fer les diagonals ja es generen quatre triangles. En aquest cas, trobant els punts de Fermat en dos dels triangles oposats i unint-los ja es connecten tots els punts del quàdrilàter amb la menor distància possible. 
 (adjuntar imatge del punt de fermat en quadrilàters i superiors)
 
-El problema de connectar amb la mínima distància un nombre determinat de punts siguent possible aferigir nodes és conegut com el problema de l'arbre de Steiner. Per aquest problema s'ha demostrat que en l'arbre òptim té com a màxim $n-2$ nodes afegits (siguent $n$ el nombre inicial de nodes), que aquests tenen sempre grau $3$, i que formen sempre angles de $120º$.   
+El problema de connectar amb la mínima distància un nombre determinat de punts essent possible afegir nodes és conegut com el problema de l'arbre de Steiner. Per aquest problema s'ha demostrat que l'arbre òptim té com a màxim $n-2$ nodes afegits (siguent $n$ el nombre inicial de nodes), que aquests tenen sempre grau $3$, i que formen sempre angles de $120º$.   
 
 \section{Arbres expansius}
-Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitzar els algorismes per trobar arbres expansius que ja s'han vist. Una opció és construïr el graf complet amb totesles arestes i els seus corresponents pesos i executar algun algorisme que en trobi l'arbre expansiu mínim. 
+Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitzar els algorismes per trobar arbres expansius que ja s'han vist. Una opció és construïr el graf complet amb totes                         les arestes i els seus corresponents pesos i executar algun algorisme que en trobi l'arbre expansiu mínim. 
 \\
 
 
