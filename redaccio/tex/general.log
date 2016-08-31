@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  30 AUG 2016 01:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  30 AUG 2016 13:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1180,33 +1180,36 @@ Overfull \hbox (11.52757pt too wide) in paragraph at lines 884--885
  [][] 
  []
 
-[15] [16] [17] [18] [19] [20]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 1161
+[15] [16] [17] [18] [19] [20] [21]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 1199
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [21] [22] [23]
+) [22] [23]
+Overfull \vbox (102.14638pt too high) has occurred while \output is active []
+
+
 [24]
 
-Package caption Warning: \label without proper reference on input line 1269.
+Package caption Warning: \label without proper reference on input line 1297.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:topological_sort' on page 25 undefined on input l
-ine 1263.
+ine 1301.
 
 [25] [26] [27] [28] [29] [30] [31]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 154
-1.
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 157
+9.
 
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 154
-6.
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 158
+4.
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1549--1551
+Underfull \hbox (badness 10000) in paragraph at lines 1587--1589
 
  []
 
@@ -1221,7 +1224,7 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Here is how much of TeX's memory you used:
  32168 strings out of 494850
  758078 string characters out of 6178024
- 976478 words of memory out of 5000000
+ 976479 words of memory out of 5000000
  34866 multiletter control sequences out of 15000+600000
  21314 words of font info for 56 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
@@ -1248,9 +1251,9 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on general.pdf (33 pages, 338618 bytes).
+Output written on general.pdf (33 pages, 340663 bytes).
 PDF statistics:
- 625 PDF objects out of 1000 (max. 8388607)
+ 628 PDF objects out of 1000 (max. 8388607)
  157 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)

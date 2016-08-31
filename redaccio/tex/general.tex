@@ -1068,6 +1068,44 @@ La matriu d'incidència d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1,...,|V|(
 indica si la aresta $j$ és incident al node $i$.
 
 (afegir exemple de graf amb les seves dues matrius)
+\begin{figure}[H]
+\centering
+	\subfloat[Graf G]{
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
+				\node[round] (a) at (4,0){$v_{0}$};
+				\node[round] (b) at (2,4){$v_{1}$};
+				\node[round] (c) at (0,0){$v_{2}$};
+				\node[round] (d) at (2,0){$v_{3}$};
+				\node[round] (e) at (2,2){$v_{4}$};
+				\draw (a) edge (b);
+				\draw (a) edge (d);
+				\draw (b) edge (c);
+				\draw (b) edge (e);
+				\draw (c) edge (d);
+				\draw (d) edge (e);	
+	
+		\end{tikzpicture}
+	}
+	\subfloat[A(G)]{
+		$\begin{bmatrix}
+			0 & 1 & 0 & 1 & 0 \\
+			1 & 0 & 1 & 0 & 1 \\
+			0 & 1 & 0 & 1 & 0 \\
+			1 & 0 & 1 & 0 & 1 \\
+			0 & 1 & 0 & 1 & 0
+		\end{bmatrix}$
+	}
+	\subfloat[I(G)]{
+		$\begin{bmatrix}
+			1 & 1 & 1 & 0 & 0 & 0 \\
+			1 & 0 & 0 & 1 & 0 & 0 \\
+			0 & 1 & 0 & 0 & 1 & 0 \\
+			0 & 0 & 1 & 0 & 0 & 1 \\
+			0 & 0 & 0 & 1 & 1 & 1  
+		\end{bmatrix}$	
+	}
+
+\end{figure}
 
 
 
