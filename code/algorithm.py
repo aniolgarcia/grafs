@@ -167,6 +167,32 @@ def Hamilton(Adj, s, e):
 
 #______________________________________________________________________________
 
+
+def Euler(Adj):
+    graf = Adj
+    senar = [v for v in graf.keys() if len(graf[v])%2 != 0]
+    senar.append(graf.keys()[0])
+    print senar
+    
+    if len(senar)>3:
+        return None
+        
+    Q = [senar[0]]
+    path = []
+    while Q:
+        v = Q[-1]
+        if graf[v]:
+            u = graf[v][0]
+            Q.append(u)
+            del graf[u][graf[u].index(v)]
+            del graf[v][0]
+        else:
+            path.append(Q.pop())
+            
+    return path
+            
+
+
 ## Falten: Camins Eulerians, Camins Hamiltonians, A*, K*, Eppstein
 
 v=[[1,2],[0,2,4],[0,1,3],[2,4,5],[1,3,5],[3,4]]
@@ -183,9 +209,13 @@ weight2={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
 weight3={1:{2:1, 3:2},0:{1:10,2:3},2:{1:4, 3:8, 4:2},4:{3:9},3:{4:7}}
 hamilton={0:[1,3],1:[0,2,4,5],2:[1,4,5],3:[1,2],4:[1,2],5:[1,2]}
 treball={0:[3],1:[],2:[1,4,5,9,11],3:[],4:[0,3,7,9],5:[6,7,10],6:[],7:[],8:[2,7],9:[],10:[11],11:[]}
+euler={0:[1,3],1:[0,2,4,5],2:[1,3,4,5],3:[0,2],4:[1,2],5:[1,2]}
+euler2={0:[1,2,3],1:[0,2,3],2:[0,1,3,4],3:[0,1,2,4],4:[3,2]}
 
 
-DFS(treball)
+print Euler(euler2)
+print euler2
+print 6&1
 #Dijkstra(weight,0)
 #BellmanFord(weight,0)
 #Prim(weight)
