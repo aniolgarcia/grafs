@@ -5,7 +5,7 @@ parent={}
 topo=[] 
 def DFS(Adj):
     node=[]
-    for i in range(0, len(Adj)):
+    for i in range(1, len(Adj)):
         node.append(i)
 
     for s in node:
@@ -17,6 +17,7 @@ def DFS(Adj):
     print "Recursion order (topological sort for directed acyclic graphs):"
     topo.reverse()    
     print topo
+    
 
 
 def DFS_recursive(Adj, s):
@@ -183,9 +184,13 @@ weight2={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
 weight3={1:{2:1, 3:2},0:{1:10,2:3},2:{1:4, 3:8, 4:2},4:{3:9},3:{4:7}}
 hamilton={0:[1,3],1:[0,2,4,5],2:[1,4,5],3:[1,2],4:[1,2],5:[1,2]}
 treball={0:[3],1:[],2:[1,4,5,9,11],3:[],4:[0,3,7,9],5:[6,7,10],6:[],7:[],8:[2,7],9:[],10:[11],11:[]}
+treball2={1:[4],2:[],3:[2,5,6,10,12],4:[],5:[1,4,8,10],6:[7,8,11],7:[],8:[],9:[3,8],10:[],11:[12],12:[]}
 
-
-DFS(treball)
+#DFS(treball)
+parent={}
+topo=[]
+print 1
+DFS(treball2)
 #Dijkstra(weight,0)
 #BellmanFord(weight,0)
 #Prim(weight)
