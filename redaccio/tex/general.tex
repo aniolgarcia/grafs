@@ -1124,18 +1124,24 @@ iteracions. Amb l'esquema següent es pot veure més clarament:
 
 
 
-\subsection{Algorismes}
+\section{Algorismes}
 Un algorisme és un conjunt d'instruccions precises i ben definides que, donada una entrada, calculen la sortida corresponent segons les instruccions que té.
 A continuació se'n mostren uns quants d'importants per fer operacions sobre grafs.
 
-\subsubsection{Algorisme BFS}
+\subsection{Algorisme BFS}
 Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritària (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
 (Adjuntar imatge de BFS)
  
 Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig de la cua.
-El que farà això és bàsicament imprimir per pantalla la seqüència de vèrtexs ordenada segons l'ordre en que els ha visitat.    
+El que farà això és bàsicament imprimir per pantalla la seqüència de vèrtexs ordenada segons l'ordre en que els ha visitat.   
 
-\begin{algorisme}
+\subsubsection{Funcionament}
+
+Donat un node incial $v$, es busquen tots els nodes no visitats que estiguin a distància $i$ de $v$. Inicialment $i=0$ i l'únic a distància 0 de $v$ és ell mateix. Després, $i=1$ i per tant, en aquesta iteració es visitaran tots els nodes adjacents a $v$. Quan $i=2$ es visitaran els nodes adjacents als adjacent de $v$ que no s'hagin visitat, i així consecutivament fins a visitar tots els nodes.
+
+\subsubsection{Pseudocodi}
+
+\begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf $G$ i un node inicial $v$}
 \KwResult{Seqüència de de nodes visitats}
@@ -1161,8 +1167,9 @@ nou node $seg\ddot{u}ent$\;
 \caption{BFS}
 
 \end{algorisme}
+
 Aquesta és una manera bastant usual de programar l'algorisme BFS, i encara que ès eficient, s'està desaprofitant propietats de l'algorime. Amb l'algorisme BFS es pot saber a quina distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot es pot generar un arbre expansiu mínim, agafant les arestes per on "passa" l'algorisme.
-El següent algorisme té en compte aquests detalls. Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té un nom i una clau), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
+El següent algorisme té en compte aquests detalls. Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té una clau i un valor), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
 
 \begin{algorisme}
 \DontPrintSemicolon
@@ -1199,6 +1206,9 @@ imprimeix($v$)\;
 imprimeix($dist$)\;
 \end{algorisme}
 
+ 
+
+\subsubsection*{Aplicacions}
 Encara que aquest algorisme sembli molt senzill, ens pot aportar informació important, i fins i tot permet resoldre problemes senzills on haguem de trobar distàncies o el camí més curt entre dos nodes.
 Aquest algorisme s'utilitza també per operacions més complexes, com les següents: 
 \begin{itemize}
@@ -1210,12 +1220,17 @@ Aquest algorisme s'utilitza també per operacions més complexes, com les següents
 \end{itemize}
  
 
-\subsubsection{DFS}
+\subsection{DFS}
 La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'aquí \textbf{DFS}) és un algorime que utilitza uns proncipis semblants als de l'algorisme BFS, però en lloc de cobrir tota l'amplada d'un nivell abans de passar al següent, el que fa és cobrir tota la profunditat possible (arribar el més lluny possible) abans de tornar enrere. En la següent imatge es pot veure un esquema del funcionament de l'algorisme:
 (adjuntar imatge de DFS)
+\subsubsection{Funcionament}
+L'algorisme DFS arriba el mes lluny possible abans de retrocedir. Això significa que quan arriba a un node se'n va a un d'adjacent no visitat i va emmagatzemant l'ordre amb el qual els visita. Quan un node no té nodes adjacents no visitats, torna al node anterior i continua a partir d'allà.
+ 
+\subsubsection*{Pseudocodi}
+
 Tal com en el BFS, també hi ha diverses maneres d'implementar l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegir o treure l'element de dalt de tot de la pila.
 
-\begin{algorisme}
+\begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf $G$ i un node inicial $v$}
 \KwResult{Seqüència de nodes visitats}
@@ -1292,9 +1307,34 @@ imprimeix($ordre$)\;
 
 \end{algorithm}
 
+\subsubsection{Propietats}
+\begin{propietat}
+En grafs dirigits es passa una vegada per cada aresta, mentre que en grafs no dirigits es passa dues vegades (una des de cada vèrtex).
+\end{propietat}
+\begin{propietat}
+El segon algorisme, implementat en Python amb llistes d'adjacència, té un temps d'execució de $O(|V|+|E|)$, i per tant, un templs lineal.
+\\ 
+\emph{Demostració}: El bucle principal s'executa $|V|$ vegades (d'aquí $O(|V|)$). D'aquesta manera, s'executa la funció recursiva una vegada per vèrtex, i dins d'aquest es miren tots els nodes adjacents. El temps total que triguen totes les funcions recursives és de $O(\sum_{v\in V}|adjacents[v]|)$ que equival a $O(|E|)$.
+\end{propietat}
+
+\begin{propietat}
+A través de l'algorisme es podrien classificar les arestes en 4 tipus diferents:
+\begin{itemize}
+\item Arestes de l'arbre: Són les arestes que pertanyen a l'arbre expansiu del graf.
+\item Arestes cap endavant: Són les que van d'un node cap a un dels seus descendents de l'arbre.
+\item Arestes cap enrere: Són les que van d'un node cap a un dels seus antecessors de l'arbre.
+\item Arestes creuades: Són les que no pertanyen a cap de les categories anteriors.
+\end{itemize}
+En el cas de grafs no dirigits, només hi ha arestes de l'arbre i arestes cap enrere.
+\end{propietat}
+\begin{propietat}
+
+\end{propietat}
+
+\subsubsection*{Aplicacions}
 Aquest algorisme no té tantes utilitats pràctiques com l'algorisme BFS, però també té propietats útils, com per exemple, que passa per totes les arestes. A través d'ell podem obtenir informació importanat d'un graf:
 \begin{itemize}
-\item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix.
+\item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix. De la mateixa manera, es pot dir que un graf conté un cicle si i només si conté una aresta cap enrere.
 \item Es pot saber si un graf és bipartit assignant un color (entre un total de 2 colors possibles) a cada node mentre es recorre el graf, de manera que un node tingui un color diferent al dels nodes adjacents. Si això és possible voldrà dir que el graf és bipartit.
 \item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quan hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb l'algorisme DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques. A continuació es presenta un exemple d'ordenació topològica utilitzat dirant la creació d'aquest treball:
 
@@ -1341,24 +1381,18 @@ Resulta que, a la secció \ref{Sec:tipus}, quan explicava un tipus concret de gra
 \end{figure}
 
 
-\subsubsection{Dijkstra}
+\subsection{Dijkstra}
 Aquest algorisme, desdenvolupat per Edsger W. Dijkstra el 1956, serveix per trobar el camí més curt entre dos nodes d'un gaf ponderat. De fet, això és el que feia la variant original, però la variant presentada aquí troba el camí més curt entre un node inicial i tota la resta de nodes dels graf. Tot i això es pot modificar lleugerament el programa perquè pari quan hagi trobat el camí més curt entre dos nodes especificats. El que fa el programa és suposar quines són les distàncies mínimes des del node inicial fins la resta, i va descobrint el graf fins que pot assegurar el camí més curt. Al principi, suposa que el moviment amb menys cost és no moure's (això serà cert si el graf no conté arestes amb pesos negatius, que l'algorisme no pot tractar). Després busca els nodes adjacents al node inicial, i suposa que les distàncies mínimes entre l'inicial i aquests és simplement l'aresta que els uneix. Es pot assegurar que serà cert pel node unit amb l'aresta de menys pes, per la desigualtat triangular (si s'hi pogués accedir per un altre camí, aquest seria més llarg, ja que per força alguna de les arestes amb més pes que s'han descartat ha de formar part del camí alternatiu, i la suma serà sempre superior). Un cop hi ha el primer node amb mínim pes assegurat (i per tant ja sap un camí), es busquen els seus adjacents, el pes dels quals inicialment és infinit. La suposició del pes equivaldrà a el pes del node d'on venen més el de l'aresta que els uneix, i es canviarà pel pes que tenen si aquest és mes gran que el nou. Ara es torna a agafar el node amb el pes menor (que segur que és el mínim) i es torna a mirar els adjacents i assignar pesos. Quan tots els nodes hagin estat visitats, el pes de cada node serà la distància mínima que s'ha de recòrrer per anar del node inicial fins a aquest.
+
+\subsubsection{funcionament}
+L'algorisme de Dijkstra es basa en dos principis:
+\begin{itemize}
+\item La desigualtat triangular: La desigualtat triangular com a tal diu que per a qualsevol triangle, la suma de dos dels seus costats serà igual o superior que el costat restant. Si $a, b$ i $c$ són les longituds dels costats d'unt triangle i $c$ é el costat més gran, llavors $c \leq a+b$.  Aplicant la desigualtat a un graf ponderat (sense pesos nogatius) s'obté que 
+\end{itemize}
 
 (Adjuntar esquema de procediment de Dijkstra)
 
-Aquest algorisme, encara que no pot treballar amb pesos negatius és molt útil té una gran quantitat d'aplicacions pràctiques:
-\begin{itemize}
-\item Navegadors GPS, on les arestes són carrers i carreteres, els nodes cruïlles i els pesos distàncies. S'utilitza l'algorisme de Dijkstra per trobar els camins més curts entre dues destinacions.
-\item Problemes de canvis de divisa, on volem trobar la millor manera de canviar divises successives i guanyar més diners. Aquí els nodes són les diferents monedes o divises, les arestes les transaccions i els pesos les taxes de canvi. Amb aquest algorisme podem trobar la millor manera de fer els canvis de moneda. 
-En aquest context prenen sentit les arestes amb pesos negatius, encara que l'algorisme de Dijkstra no els pot tractar. 
-
-\item Els routers utilitzen l'algorisme per portar-te a través d'internet al servidor desitjat amb la menor cantitat de passos possibles.
-\item En robòtica s'utilitza per fer la planificació de moviment del robot. Cada node és una posició i representa una unitat d'espai, i omplint tot l'espai de nodes excepte els obstacles i executant l'algorisme en el graf resultant, s'obté el camí més òptim per arribar a la posició desitjada.
-\item En epidemologia aquest algorisme es pot utilitzar per modelitzar un grup de persones i els seus familiars per veure qui és més susceptible a emmalaltir. Això també pot funcionar entre ciutats o col·lectius més grans. 
- 
-\end{itemize}
-
-
+\subsubsection*{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf ponderat $G$ i un node inicial $s$}
@@ -1394,9 +1428,25 @@ imprimeix($dist$)
 \caption{Dijkstra}
 \end{algorisme}
 
-\subsubsection{Bellman-Ford}
+\subsubsection*{Aplicacions}
+Aquest algorisme, encara que no pot treballar amb pesos negatius és molt útil té una gran quantitat d'aplicacions pràctiques:
+\begin{itemize}
+\item Navegadors GPS, on les arestes són carrers i carreteres, els nodes cruïlles i els pesos distàncies. S'utilitza l'algorisme de Dijkstra per trobar els camins més curts entre dues destinacions.
+\item Problemes de canvis de divisa, on volem trobar la millor manera de canviar divises successives i guanyar més diners. Aquí els nodes són les diferents monedes o divises, les arestes les transaccions i els pesos les taxes de canvi. Amb aquest algorisme podem trobar la millor manera de fer els canvis de moneda. 
+En aquest context prenen sentit les arestes amb pesos negatius, encara que l'algorisme de Dijkstra no els pot tractar. 
+
+\item Els routers utilitzen l'algorisme per portar-te a través d'internet al servidor desitjat amb la menor cantitat de passos possibles.
+\item En robòtica s'utilitza per fer la planificació de moviment del robot. Cada node és una posició i representa una unitat d'espai, i omplint tot l'espai de nodes excepte els obstacles i executant l'algorisme en el graf resultant, s'obté el camí més òptim per arribar a la posició desitjada.
+\item En epidemologia aquest algorisme es pot utilitzar per modelitzar un grup de persones i els seus familiars per veure qui és més susceptible a emmalaltir. Això també pot funcionar entre ciutats o col·lectius més grans. 
+ 
+\end{itemize}
+
+
+
+\subsection{Bellman-Ford}
 Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algorisme de Dijkstra, però té la particularitat de poder tractar sense problemes les arestes amb pesos negatius, mentre que l'algorisme de Dijkstra no ho permet.L'algorisme de  Dijkstra es basa en la desigualtat triangular per tobar el camí més curt, però amb pesos negatius no es pot suposar que la desigualtat triangular es compleixi. A més, permet saber si un graf conté cicles negatius. Si un camí entre dos nodes conté un cicle de pes negatiu, no es pot trobar un camí mínim entre aquests dos nodes. Això es deu a que recorrent aquest cicle sempre es podria escurçar el camí, i llavors el mínim possible seria de $-\infty$.
 
+\subsubsection*{Pseudocodi}
 
 \begin{algorisme}[H]
 \SetKwFunction{Range}{range}%%
@@ -1443,9 +1493,10 @@ imprimeix($anterior$)\;
 \end{algorisme}
 
 
-\subsubsection{Kruskal}
+\subsection{Kruskal}
 L'algorisme de Kruskal serveix per trobar un arbre expansiu mínim. Aquest algorisme utilitza una estructura de dades especial, anomenada union-find. Aquesta estructura permet fer tres operacions diferents: crear conjunts (\textit{make set}), determinar a quin conjunt està un element (\textit{find}) i unir dos subconjunts en un de nou (\textit{union}). L'ús d'aquesta estructura especialitzada fa que en grafs petits o poc densos l'algorisme sigui molt ràpid, però en grafs més grans es relantitzi el procés, siguent més eficient utilitzar altres algorismes en aquest cas. L'algorisme, al principi crea un conjunt per a cada node i ordena les arestes de manera creixent segons el seu pes. Llavors agafa la primera aresta (la de menys pes), que serà una aresta de l'arbre expansiu mínim, i posa en el mateix conjunt els nodes que unia. Després agafa la següent aresta i repeteix el procediment. 
 
+\subsubsection*{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf $G$ i un node inicial $s$}
@@ -1470,6 +1521,7 @@ imprimeix($arbre$)\;
 \subsubsection{Prim}
 L'algorisme de Prim, tal com el de Kruskal, serveix per trobar l'arbre expansiu mínim d'un graf ponderat no dirigit. Aquest algorisme funciona amb diccionaris, estructures de dades més normalitzades que les Union-Find. Com a conseqüència, l'algorisme de Prim és més lent en grafs petits, però més ràpid en grafs molt densos. Prim divideix els nodes en dos grups, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon, i afegeix el node final de l'aresta al primer grup. D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, però executant-lo per a cada node del graf, trobaria el \textit{bosc} (conjunt d'arbres) mínim d'un graf no connex.
  
+\subsubsection*{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf $G$}
@@ -1502,6 +1554,7 @@ imprimeix($anterior$)\;
 \caption{Prim}
 \end{algorisme}
 
+\subsubsection*{Aplicacions}
 Tant l'algorisme de Kruskal com el de Prim tenen aplicacions semblants, però segons la mida del graf és més convenient utilitzar-ne un o altre. Entre les aplicacions d'aquests dos algorismes hi ha:
 \begin{itemize}
 \item El disseny de xarxes de telèfon, aigua, gas, internet... En aquestes xarxes s'ha d'arribar a tots els punts on s'ha de fer la distribució, i amb l'arbre expansiu mínim es pot assegurar que la xarxa és la més curta possible.
@@ -1509,17 +1562,12 @@ Tant l'algorisme de Kruskal com el de Prim tenen aplicacions semblants, però seg
 \item S'utilitzen com a subrutines (o funcions) d'algorismes més complexos.
 \end{itemize}
 
-\subsubsection{Floyd-Warshall}
+\subsection{Floyd-Warshall}
 L'algorisme de Floyd-Warshall és un algorisme que permet calcular les distàncies entre tots els nodes d'un graf ponderat. Per fer-ho, compara els pesos de tots els camins possibles. A cada iteració, es defineix el conjunt de nodes que pot tenir cada camí i si ja s'ha trobat un camí amb els mateixos extrems es compara el pes total d'ambdós. El conjunt és de la forma ${1,2,\cdots,k}$ i a cada iteració es va incrememntant $k$ (a l'inici $k=0$). El resultat d'aquest algorisme és una matriu quadrada $D$ de $|V|\times |V|$ on $D_{ij}=w(i,j)$.
 
-Aquest algorisme es pot utilitzar per a qualsevol de les aplicacions en que s'utilitzaria Dijkstra amb més d'un node. S'utilitza sobretot quan es vol mantenir una base de dades de pesos precalculats, per no haver d'executar Dijkstra en cada cas concret. 
-A part d'aquesta aplicació, s'utilitza també d'altres maneres:
-\begin{itemize}
-\item Per detectar cicles de pes negatiu, cosa que passarà quan $D_{ii} < 0$, quan a la diagonal de la matriu hi hagi un valor negatiu. 
-\item Estudiar la \textit{clausura transitiva} d'un graf, és a dir, veure quins nodes són accessibles des de cada node. Això es pot veure a la matriu resultant, on els valors $\infty$ indiquen que no es pot accedir a el node concret.
-\end{itemize}
 
 
+\subsubsection*{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{un graf $G$}
@@ -1562,6 +1610,14 @@ nova matriu $dist$ de $|V|x|V|$\;
 \caption{Floyd-Warshall}
 \end{algorisme}
  
+ 
+\subsubsection*{Aplicacions}
+Aquest algorisme es pot utilitzar per a qualsevol de les aplicacions en que s'utilitzaria Dijkstra amb més d'un node. S'utilitza sobretot quan es vol mantenir una base de dades de pesos precalculats, per no haver d'executar Dijkstra en cada cas concret. 
+A part d'aquesta aplicació, s'utilitza també d'altres maneres:
+\begin{itemize}
+\item Per detectar cicles de pes negatiu, cosa que passarà quan $D_{ii} < 0$, quan a la diagonal de la matriu hi hagi un valor negatiu. 
+\item Estudiar la \textit{clausura transitiva} d'un graf, és a dir, veure quins nodes són accessibles des de cada node. Això es pot veure a la matriu resultant, on els valors $\infty$ indiquen que no es pot accedir a el node concret.
+\end{itemize}
 
 \part{Disseny de grafs}
 Fins ara, s'han mostrat i estudiat grafs que ja estan definits sobre els quals s'ha de fer alguna operació. Ara bé, en aplicacions reals de teoria de grafs, sovint no hi ha un graf determinat, sinó que s'ha de generar.  
