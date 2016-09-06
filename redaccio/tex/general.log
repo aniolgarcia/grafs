@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  5 SEP 2016 23:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  6 SEP 2016 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1189,7 +1189,7 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [22] [23] [24]
 [25]
 
-Package caption Warning: \label without proper reference on input line 1344.
+Package caption Warning: \label without proper reference on input line 1346.
 See the caption package documentation for explanation.
 
 
@@ -1198,24 +1198,21 @@ ine 1341.
 
 [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 163
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 164
 5.
 
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 164
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 165
 0.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1643--1645
+Underfull \hbox (badness 10000) in paragraph at lines 1653--1655
 
  []
 
 [36] [37] (./general.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
@@ -1248,7 +1245,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on general.pdf (37 pages, 348716 bytes).
+Output written on general.pdf (37 pages, 350460 bytes).
 PDF statistics:
  652 PDF objects out of 1000 (max. 8388607)
  168 compressed objects within 2 object streams
