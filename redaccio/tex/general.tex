@@ -1437,6 +1437,25 @@ imprimeix($dist$)
 \;
 \caption{Dijkstra}
 \end{algorisme}
+\subsubsection{Propietats}
+\begin{propietat}
+L'algorisme de Dijkstra és el que s'anomena un \emph{algorisme voraç}. Això significa que sempre agafa la millor opció en aquell moment, suposant que les opcions que es trobin posteriorment no la podràn millorar. Aquest és el motiu per al qual l'algorisme de Dijkstra no funciona amb pesos negatius. En un graf amb pesos negatius això no necessàriament es complirà.
+\end{propietat}
+\begin{propietat}
+L'algorisme de Dijkstra no troba únicament el camí m?im entre un node i un altre perquè la millor manera de fer-ho que es coneix és precisament trobar els camins mínims des d'un node fins a tota la resta.
+\end{propietat}
+\begin{propietat}
+L'algorisme té un temps d'execució de $O(|E|+|V|^{2})$.
+\emph{Demostració}: Les operacions que es fan són les següents:
+\begin{itemize}
+\item S'inicialitzen la cua i les distàncies per a cada node, operació que triga $O(|V|)$.
+\item Es busca el valor mínim de la cua que, en cas d'estar optimitzada, triga $O(log|V|)$.
+\item Es calcula la ditància provisional per a cada node, que en principi tan sols ha de trigar $O(1)$.
+\end{itemize}
+La iteració principal acaba quan no queden nodes a la pila. Inicialment tots els nodes són a la pila i cada node el treiem nomé una vegad. Per tant, per a cada node es buscarà una vegada el valor mínim de la pila. Això és un total de $O(|V|log(|V|))$. Per aquest mateix motiu, les adjacències  
+
+\end{propietat}
+\  
 
 \subsubsection*{Aplicacions}
 Aquest algorisme, encara que no pot treballar amb pesos negatius és molt útil té una gran quantitat d'aplicacions pràctiques:
@@ -1455,6 +1474,9 @@ En aquest context prenen sentit les arestes amb pesos negatius, encara que l'alg
 
 \subsection{Bellman-Ford}
 Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algorisme de Dijkstra, però té la particularitat de poder tractar sense problemes les arestes amb pesos negatius, mentre que l'algorisme de Dijkstra no ho permet.L'algorisme de  Dijkstra es basa en la desigualtat triangular per tobar el camí més curt, però amb pesos negatius no es pot suposar que la desigualtat triangular es compleixi. A més, permet saber si un graf conté cicles negatius. Si un camí entre dos nodes conté un cicle de pes negatiu, no es pot trobar un camí mínim entre aquests dos nodes. Això es deu a que recorrent aquest cicle sempre es podria escurçar el camí, i llavors el mínim possible seria de $-\infty$.
+
+\subsubsection{Funcionament}
+El que fa l'algorisme de Bellman-Ford
 
 \subsubsection*{Pseudocodi}
 

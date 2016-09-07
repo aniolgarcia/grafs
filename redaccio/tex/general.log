@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  6 SEP 2016 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  7 SEP 2016 15:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1196,21 +1196,21 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:topological_sort' on page 26 undefined on input l
 ine 1341.
 
-[26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
+[26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 164
-5.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 165
-0.
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 166
+7.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1653--1655
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 167
+2.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1675--1677
 
  []
 
-[36] [37] (./general.aux)
+[37] [38] (./general.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1245,10 +1245,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on general.pdf (37 pages, 350460 bytes).
+Output written on general.pdf (38 pages, 353272 bytes).
 PDF statistics:
- 652 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
+ 657 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
