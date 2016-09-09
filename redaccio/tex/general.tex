@@ -1343,7 +1343,6 @@ Resulta que, a la secció \ref{Sec:tipus}, quan explicava un tipus concret de gra
 
 \begin{figure}[H]
 \centering
-\label{fig:topological_sort}
 	\begin{tikzpicture}
 		\node (a) at (0,0){xarxes};
 		\node (b) at (3,0){arbres};
@@ -1378,6 +1377,8 @@ Resulta que, a la secció \ref{Sec:tipus}, quan explicava un tipus concret de gra
 		
 	\end{tikzpicture}
 	\caption{Graf de les dependències de cada apartat}
+	\label{fig:topological_sort}
+
 \end{figure}
 
 
@@ -1443,7 +1444,7 @@ imprimeix($dist$)
 L'algorisme de Dijkstra és el que s'anomena un \emph{algorisme voraç}. Això significa que sempre agafa la millor opció en aquell moment, suposant que les opcions que es trobin posteriorment no la podràn millorar. Aquest és el motiu per al qual l'algorisme de Dijkstra no funciona amb pesos negatius. En un graf amb pesos negatius això no necessàriament es complirà.
 \end{propietat}
 \begin{propietat}
-L'algorisme de Dijkstra no troba únicament el camí m?im entre un node i un altre perquè la millor manera de fer-ho que es coneix és precisament trobar els camins mínims des d'un node fins a tota la resta.
+L'algorisme de Dijkstra no troba únicament el camí mínim entre un node i un altre perquè la millor manera de fer-ho que es coneix és precisament trobar els camins mínims des d'un node fins a tota la resta.
 \end{propietat}
 \begin{propietat}
 L'algorisme té un temps d'execució de $O(|E|+|V|log(|V|))$.
@@ -1479,7 +1480,8 @@ En aquest context prenen sentit les arestes amb pesos negatius, encara que l'alg
 Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algorisme de Dijkstra, però té la particularitat de poder tractar sense problemes les arestes amb pesos negatius, mentre que l'algorisme de Dijkstra no ho permet.L'algorisme de  Dijkstra es basa en la desigualtat triangular per tobar el camí més curt, però amb pesos negatius no es pot suposar que la desigualtat triangular es compleixi. A més, permet saber si un graf conté cicles negatius. Si un camí entre dos nodes conté un cicle de pes negatiu, no es pot trobar un camí mínim entre aquests dos nodes. Això es deu a que recorrent aquest cicle sempre es podria escurçar el camí, i llavors el mínim possible seria de $-\infty$.
 
 \subsubsection{Funcionament}
-El que fa l'algorisme de Bellman-Ford, tal com el de Dijkstra, és suposar la distància a la que es troben els nodes 
+
+L'algorisme de Bellman-Ford utilitza una part de l'algorisme de Dijkstra, concretament la part on comprova si la distància suposada és major a la distància calculada en aquell moment. La diferència amb l'algorisme de Dijkstra és que, en lloc de sel·leccionar el node amb menor distància i fer l'operació sobre totes lse seves arestes incidents, simplement fa l'operació sobre totes les arestes del graf. Aquesta operació sobre les arestes es fa un total de $|V|-1$ vegades, i a cada iteració el nombre de nodes amb distàncies mínimes augmenta, fins que tots els nodes tenen la distància correcta. 
 
 \subsubsection*{Pseudocodi}
 
@@ -1526,11 +1528,48 @@ imprimeix($anterior$)\;
 	
 \caption{Bellman-Ford}
 \end{algorisme}
+\subsubsection{Propietats}
+\begin{propietat}
+L'algorisme de Bellman-Ford pot treballar amb pesos negatius ja que no es basa en la desigualtat triangular.  
+\begin{figure}
+\centering
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
+				\node[round] (s) at (0,0){$s$};
+				\node[round] (x) at (4,0){$x$};
+				\node[round] (v) at (2,4){$v$};
+				
+				\draw (s) edge[->,-latex]  node[above]{$3$}(v);
+				\draw (s) edge[->,-latex]  node[above]{$4$}(x);
+				\draw (x) edge[->,-latex]  node[above]{$-2$}(v);
+	\end{tikzpicture}
+	\caption{Graf on la desigualtat triangular no es compleix}
+	\label{fig:no_tri}
+\end{figure}
+
+En el graf de la figura \ref{fig:no_tri}, l'algorisme de Dijkstra calcularia malament el camí mínim entre $s$ i $v$: la distància provisional seria de $3$ per arribar a $v$ i de $4$ per arribar a $x$. Llavors, com que $3$ és la distància més petita que ha trobat (i suposa que és la correcta), visita $v$. Però $v$ no té nodes adjacents, per tant acaba l'iteració del node $v$. El següent node no visitat amb mínim valor és $x$. Encara que $v$ sigui adjacent a $x$, com que $v$ ja ha estat visitat i per la desigualtat trianglar s'asegurava que era el mínim, no el pot canviar. 
+
+En canvi, si s'executés l'algorisme de Bellman-Ford en aquest graf, el procediment que faria seria el següent: tal com l'algorisme de Dijkstra, posaria una distància provisional de $3$ per arribar a $v$ i de $4$ per arribar a $x$. Ara visitaria $v$, però com que no té nodes adjacents, no hi faria res. A continuació visitaria $x$, que té $v$ com a node adjacent. Com que la distància calculara des de $x$ és de $4-2=2$ i $2<3$, simplement canviaria el valor de la distància entre $s$ i $v$.
+
+\end{propietat}
+\begin{propietat}
+Es pot aconseguir reduïr el temps d'execució amb una implementació diferent de l'algorisme, que funciona per a grafs dirigits sense ccles. En aquesta nova implementació es fa una ordenació topològica del graf i es visiten de manera ordenada tots els nodes. A cada node es comprova si el pes suposat per arribar a cadascun dels seus adjacentses pot millorar. Aquesta implementació permtet reduïr el temps d'execució fins a $O(|V|+|E|)$.
+\end{propietat}
+\begin{propietat}
+L'algorisme de Bellman-Ford té un temps d'execució de $O(|E|\times |V|)$. Es fan $|V|-1$ iteracions, i a cada iteració es comproven totes les arestes. A tot això cal afegir-hi el temps de l'inicialització, que és de $O(|V|)$. Per simplificar-ho, es sol dir que té un temps d'execució de $O(|E|\times |V|)$, un temps que sempre serà lleugerament superior al temps real.
+\end{propietat}
 
 
 \subsection{Kruskal}
-L'algorisme de Kruskal serveix per trobar un arbre expansiu mínim. Aquest algorisme utilitza una estructura de dades especial, anomenada union-find. Aquesta estructura permet fer tres operacions diferents: crear conjunts (\textit{make set}), determinar a quin conjunt està un element (\textit{find}) i unir dos subconjunts en un de nou (\textit{union}). L'ús d'aquesta estructura especialitzada fa que en grafs petits o poc densos l'algorisme sigui molt ràpid, però en grafs més grans es relantitzi el procés, siguent més eficient utilitzar altres algorismes en aquest cas. L'algorisme, al principi crea un conjunt per a cada node i ordena les arestes de manera creixent segons el seu pes. Llavors agafa la primera aresta (la de menys pes), que serà una aresta de l'arbre expansiu mínim, i posa en el mateix conjunt els nodes que unia. Després agafa la següent aresta i repeteix el procediment. 
-
+L'algorisme de Kruskal serveix per trobar un arbre expansiu mínim. Aquest algorisme utilitza una estructura de dades especial, anomenada union-find. Aquesta estructura permet fer tres operacions diferents: crear conjunts (\textit{make set}), determinar a quin conjunt està un element (\textit{find}) i unir dos subconjunts en un de nou (\textit{union}). L'ús d'aquesta estructura especialitzada fa que en grafs petits o poc densos l'algorisme sigui molt ràpid, però en grafs més grans es relantitzi el procés, siguent més eficient utilitzar altres algorismes en aquest cas. 
+\subsubsection{Funcionament}
+L'algorisme es basa en les següents propietats:
+\begin{itemize}
+\item Si un graf ponderat conté un cicle $C$ i $e$ és l'aresta de més pes de $C$, $e$ no forma part de l'arbre expansiu mínim del graf.
+\emph{Demostració}: Suposem que $e$ pertany a l'arbre expansiu mínim. Llavors, si s'elimina $e$, l'arbre queda trencat en dos arbres, cadascun dels quals conté un extrem de $e$. Però la resta del cicle fa que els dos arbres siguin connexos, i en particular hi haurà una aresta $f$ que tindrà un extrem  a cadascún del arbres i que tindrà un pes inferior que $e$. Concretament $f$ formarà part de l'arbre expansiu mínim.
+\item Si en un graf $G=(V,E)$ es fa un \emph{tall}, es paretixen els vèrtex del graf en dos conjunts disjunts $(S, V(G)-S$). D'enrte les arestes que tenen un extrem a $S$ i l'altre a $V(G)-S$, $e$ és la de menor pes i forma part de l'arbre expansiu mínim.
+\emph{Demostració}: Suposem que $e$ no forma part de l'arbre expansiu mínim. Llavors, si s'afegeix $e$ a aquest arbre expansiu, es genera un cicle $C$. Això comporta que hi ha una altra aresta $f$ amb un un extrem a $S$ i l'altre a $V(G)-S$. D'aquesta manera, si es canvia $f$ per $e$ es genera també un arbre expansiu que és mínim, ja que $w(e) < w(f)$.
+\end{itemize} 
+El que fa l'algorisme és anar construïnt arbres expansius separats per acabar unint-los si el graf és connex. Per aconseguir-ho, l'algorisme crea un conjunt per a cada node del graf (representant cadascun dels arbres) i ordena les arestes amb ordre creixent segons el seu pes i itera sobre elles. Quan es visita una aresta, s'uneixen els conjunts que les contenien (és a dir, es connecten els arbres). Si una aresta uneix nodes que formen part del mateix conjunt (és a dir, es crea un cicle), vol dir que l'aresta en concret no forma part de l'arbre expansiu del graf, tal com estableix la primera propietat. 
 \subsubsection*{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
@@ -1552,8 +1591,13 @@ ordena $E(G)$ per ordre creixent de pesos\;
 }
 imprimeix($arbre$)\;
 \end{algorisme}
+\subsubsection{Propietats}
+\begin{propietat}
+El temps d'execució de l'algorisme de Kruskal és de $O(|E|\times log(|V|))$.
+L'operació d'ordenar les arestes triga $O(|E|\times log(|E|))$ i el total de les operacions find i union és de $O(|E|\times log(|V|))$. La suma total és de $O(|E|\times log(|V|) + |E|\times log(|E|))$. Tot i això, com que $|E|$ pot ser com a màxim $|V|^{2}$ podem escriure que $log(|E|) = log(|V|)$ ($log(|E|) = log(|V|^{2}) = 2\times log(|V|)$, però en la notació de Landau $2\times log(|V|)$ és essencialment $log(|V|)$). D'aquesta manera el total és de $O(2\times(|E|\times log(|V|))) = O(|E|\times log(|V|))$.
+\end{propietat}
 
-\subsubsection{Prim}
+\subsection{Prim}
 L'algorisme de Prim, tal com el de Kruskal, serveix per trobar l'arbre expansiu mínim d'un graf ponderat no dirigit. Aquest algorisme funciona amb diccionaris, estructures de dades més normalitzades que les Union-Find. Com a conseqüència, l'algorisme de Prim és més lent en grafs petits, però més ràpid en grafs molt densos. Prim divideix els nodes en dos grups, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon, i afegeix el node final de l'aresta al primer grup. D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, però executant-lo per a cada node del graf, trobaria el \textit{bosc} (conjunt d'arbres) mínim d'un graf no connex.
  
 \subsubsection*{Pseudocodi}
