@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  9 SEP 2016 01:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  10 SEP 2016 00:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1187,21 +1187,21 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 1206
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [22] [23] [24]
-[25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
+[25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 171
-4.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 171
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 173
 9.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1722--1724
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 174
+4.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1747--1749
 
  []
 
-[39] [40] (./general.aux)
+[40] [41] (./general.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1236,10 +1236,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on general.pdf (40 pages, 360411 bytes).
+Output written on general.pdf (41 pages, 364105 bytes).
 PDF statistics:
- 663 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
+ 667 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

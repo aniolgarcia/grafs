@@ -1208,7 +1208,7 @@ imprimeix($dist$)\;
 
  
 
-\subsubsection*{Aplicacions}
+\subsubsection{Aplicacions}
 Encara que aquest algorisme sembli molt senzill, ens pot aportar informació important, i fins i tot permet resoldre problemes senzills on haguem de trobar distàncies o el camí més curt entre dos nodes.
 Aquest algorisme s'utilitza també per operacions més complexes, com les següents: 
 \begin{itemize}
@@ -1226,7 +1226,7 @@ La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'a
 \subsubsection{Funcionament}
 L'algorisme DFS arriba el mes lluny possible abans de retrocedir. Això significa que quan arriba a un node se'n va a un d'adjacent no visitat i va emmagatzemant l'ordre amb el qual els visita. Quan un node no té nodes adjacents no visitats, torna al node anterior i continua a partir d'allà.
  
-\subsubsection*{Pseudocodi}
+\subsubsection{Pseudocodi}
 
 Tal com en el BFS, també hi ha diverses maneres d'implementar l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegir o treure l'element de dalt de tot de la pila.
 
@@ -1331,7 +1331,7 @@ En el cas de grafs no dirigits, només hi ha arestes de l'arbre i arestes cap enr
 
 \end{propietat}
 
-\subsubsection*{Aplicacions}
+\subsubsection{Aplicacions}
 Aquest algorisme no té tantes utilitats pràctiques com l'algorisme BFS, però també té propietats útils, com per exemple, que passa per totes les arestes. A través d'ell podem obtenir informació importanat d'un graf:
 \begin{itemize}
 \item Es pot saber si un graf té cicles, comprovant si quan estem a l'iteració d'un node (encara no n'hem explorat tots els nodes adjacents) el trobem a ell mateix. De la mateixa manera, es pot dir que un graf conté un cicle si i només si conté una aresta cap enrere.
@@ -1403,7 +1403,7 @@ A partir del node $v$, es busquen els seus adjacents i es calcula la distància a
 
 (Adjuntar esquema de procediment de Dijkstra)
 
-\subsubsection*{Pseudocodi}
+\subsubsection{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf ponderat $G$ i un node inicial $s$}
@@ -1461,7 +1461,7 @@ D'aquesta manera el temps d'execució total és de $O(|E|+|V|log(|V|))$ per cues o
 \end{propietat}
 \  
 
-\subsubsection*{Aplicacions}
+\subsubsection{Aplicacions}
 Aquest algorisme, encara que no pot treballar amb pesos negatius és molt útil té una gran quantitat d'aplicacions pràctiques:
 \begin{itemize}
 \item Navegadors GPS, on les arestes són carrers i carreteres, els nodes cruïlles i els pesos distàncies. S'utilitza l'algorisme de Dijkstra per trobar els camins més curts entre dues destinacions.
@@ -1483,7 +1483,7 @@ Aquest algorisme té un funcionament i utilitats molt seblants a les de l'algoris
 
 L'algorisme de Bellman-Ford utilitza una part de l'algorisme de Dijkstra, concretament la part on comprova si la distància suposada és major a la distància calculada en aquell moment. La diferència amb l'algorisme de Dijkstra és que, en lloc de sel·leccionar el node amb menor distància i fer l'operació sobre totes lse seves arestes incidents, simplement fa l'operació sobre totes les arestes del graf. Aquesta operació sobre les arestes es fa un total de $|V|-1$ vegades, i a cada iteració el nombre de nodes amb distàncies mínimes augmenta, fins que tots els nodes tenen la distància correcta. 
 
-\subsubsection*{Pseudocodi}
+\subsubsection{Pseudocodi}
 
 \begin{algorisme}[H]
 \SetKwFunction{Range}{range}%%
@@ -1570,7 +1570,7 @@ L'algorisme es basa en les següents propietats:
 \emph{Demostració}: Suposem que $e$ no forma part de l'arbre expansiu mínim. Llavors, si s'afegeix $e$ a aquest arbre expansiu, es genera un cicle $C$. Això comporta que hi ha una altra aresta $f$ amb un un extrem a $S$ i l'altre a $V(G)-S$. D'aquesta manera, si es canvia $f$ per $e$ es genera també un arbre expansiu que és mínim, ja que $w(e) < w(f)$.
 \end{itemize} 
 El que fa l'algorisme és anar construïnt arbres expansius separats per acabar unint-los si el graf és connex. Per aconseguir-ho, l'algorisme crea un conjunt per a cada node del graf (representant cadascun dels arbres) i ordena les arestes amb ordre creixent segons el seu pes i itera sobre elles. Quan es visita una aresta, s'uneixen els conjunts que les contenien (és a dir, es connecten els arbres). Si una aresta uneix nodes que formen part del mateix conjunt (és a dir, es crea un cicle), vol dir que l'aresta en concret no forma part de l'arbre expansiu del graf, tal com estableix la primera propietat. 
-\subsubsection*{Pseudocodi}
+\subsubsection{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf $G$ i un node inicial $s$}
@@ -1593,14 +1593,19 @@ imprimeix($arbre$)\;
 \end{algorisme}
 \subsubsection{Propietats}
 \begin{propietat}
-El temps d'execució de l'algorisme de Kruskal és de $O(|E|\times log(|V|))$.
+Com que l'algorisme construeix l'arbre expansiu mínim a partir de diversos components inicialment disconnexos, encara que el graf no sigui connex funcionarà correctament. En particular, trobarà l'arbre expansiu mínim de cadascun dels conjunts de nodes connexos.
+\end{propietat}
+\begin{propietat}
+El temps d'execució aproximat de l'algorisme de Kruskal és de $O(|E|\times log(|V|))$.
 L'operació d'ordenar les arestes triga $O(|E|\times log(|E|))$ i el total de les operacions find i union és de $O(|E|\times log(|V|))$. La suma total és de $O(|E|\times log(|V|) + |E|\times log(|E|))$. Tot i això, com que $|E|$ pot ser com a màxim $|V|^{2}$ podem escriure que $log(|E|) = log(|V|)$ ($log(|E|) = log(|V|^{2}) = 2\times log(|V|)$, però en la notació de Landau $2\times log(|V|)$ és essencialment $log(|V|)$). D'aquesta manera el total és de $O(2\times(|E|\times log(|V|))) = O(|E|\times log(|V|))$.
 \end{propietat}
 
 \subsection{Prim}
-L'algorisme de Prim, tal com el de Kruskal, serveix per trobar l'arbre expansiu mínim d'un graf ponderat no dirigit. Aquest algorisme funciona amb diccionaris, estructures de dades més normalitzades que les Union-Find. Com a conseqüència, l'algorisme de Prim és més lent en grafs petits, però més ràpid en grafs molt densos. Prim divideix els nodes en dos grups, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon, i afegeix el node final de l'aresta al primer grup. D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, però executant-lo per a cada node del graf, trobaria el \textit{bosc} (conjunt d'arbres) mínim d'un graf no connex.
+L'algorisme de Prim, tal com el de Kruskal, serveix per trobar l'arbre expansiu mínim d'un graf ponderat no dirigit. Aquest algorisme funciona amb diccionaris, estructures de dades més normalitzades que les Union-Find. Com a conseqüència, l'algorisme de Prim és més lent en grafs petits, però més ràpid en grafs molt densos. 
+\subsubsection{Funcionament}
+L'algorisme de Prim es basa en la mateixa propietat dels talls que l'algorisme de Kruskal. L'algorisme de Prim divideix els nodes en dos grups $S$ i $V(G)-S$, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon que ebem que formarà part de l'arbre expansiu mínim, i afegeix el node final de l'aresta al primer grup (el que seria euivalent a la funció union de l'algorisme de Kruskal). D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, però executant-lo per a cada node del graf, trobaria el \textit{bosc} (conjunt d'arbres) mínim d'un graf no connex.
  
-\subsubsection*{Pseudocodi}
+\subsubsection{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf $G$}
@@ -1633,7 +1638,15 @@ imprimeix($anterior$)\;
 \caption{Prim}
 \end{algorisme}
 
-\subsubsection*{Aplicacions}
+\subsubsection{Propietats}
+\begin{propietat}
+En l'algorisme de Prim tan sols es necessiten dos conjunts, un que contindrà els nodes de l'arbre expansiu mínim i l'altre els que encara no en formen part. D'aquesta manera l'arbre creix en només un component, mentre que a l'algorisme de Kruskal l'arbre es forma enmés components. Això fa que en grafs molt densos l'algorisme de Prim sigui més ràpid, però, com a contrapartida, no pot tractar amb grafs disconnexos.
+\end{propietat}
+\begin{propietat}
+El temps d'execució aproximat d'aquesta implementació de l'algorisme de Prim és de $O(|E|+|V|\times log(|V|))$, però hi ha implementacions que aconseguiexen temps de $O(|V|^{2})$ o $O(|V|\times log(|V|))$. En aquest cas es busca el mínim valor de $Q$ un total de $|V|$ vegades, i es fan $|E|$ comparacions de cost $1$.
+\end{propietat}
+
+\subsubsection{Aplicacions}
 Tant l'algorisme de Kruskal com el de Prim tenen aplicacions semblants, però segons la mida del graf és més convenient utilitzar-ne un o altre. Entre les aplicacions d'aquests dos algorismes hi ha:
 \begin{itemize}
 \item El disseny de xarxes de telèfon, aigua, gas, internet... En aquestes xarxes s'ha d'arribar a tots els punts on s'ha de fer la distribució, i amb l'arbre expansiu mínim es pot assegurar que la xarxa és la més curta possible.
@@ -1643,10 +1656,15 @@ Tant l'algorisme de Kruskal com el de Prim tenen aplicacions semblants, però seg
 
 \subsection{Floyd-Warshall}
 L'algorisme de Floyd-Warshall és un algorisme que permet calcular les distàncies entre tots els nodes d'un graf ponderat. Per fer-ho, compara els pesos de tots els camins possibles. A cada iteració, es defineix el conjunt de nodes que pot tenir cada camí i si ja s'ha trobat un camí amb els mateixos extrems es compara el pes total d'ambdós. El conjunt és de la forma ${1,2,\cdots,k}$ i a cada iteració es va incrememntant $k$ (a l'inici $k=0$). El resultat d'aquest algorisme és una matriu quadrada $D$ de $|V|\times |V|$ on $D_{ij}=w(i,j)$.
+\subsubsection{Funcionament}
+Per funcionar, l'algorisme de Floyd-Warshall manté una matriu $D^{(x)}$ de mida $|V|\times|V|$, on $D_{vu}^{(x)}$ és la logitid del camí mínim entre $v$ i $u$ que està passa com a màxim per $x$ nodes.  A cada iteració principal s'afegeix un node al conjunt de nodes que poden ser utilitzats, i es recalculen els valors de la matriu de la següent manera:
+\[
+D_{vu}^{(x)}=min(D_{vu}^{(x-1)}, D_{vk}^{(x-1)}+D_{ku}^{(x-1)})
+\]
+on $D^{(x)}$ és la matriu on hi ha les distàncies amb camins de com a màxim $x$ nodes intermitjos.
+(Comprovar notació: $k$ vs. $x$)
 
-
-
-\subsubsection*{Pseudocodi}
+\subsubsection{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{un graf $G$}
@@ -1688,9 +1706,16 @@ nova matriu $dist$ de $|V|x|V|$\;
 }
 \caption{Floyd-Warshall}
 \end{algorisme}
+
+\subsubsection{Propietats}
+\begin{propietat}
+Assumint que l'entrada de l'algorisme és $D^{0}$, el temps d'execució de l'algorisme és de $O(|V|^{3})$. Tan sols cal veure que hi ha tres bucles un dins l'altre, i cadascun fa $|V|$ iteracions.
+\end{propietat}
+
+(afegir propietats de l'algorisme)
+
  
- 
-\subsubsection*{Aplicacions}
+\subsubsection{Aplicacions}
 Aquest algorisme es pot utilitzar per a qualsevol de les aplicacions en que s'utilitzaria Dijkstra amb més d'un node. S'utilitza sobretot quan es vol mantenir una base de dades de pesos precalculats, per no haver d'executar Dijkstra en cada cas concret. 
 A part d'aquesta aplicació, s'utilitza també d'altres maneres:
 \begin{itemize}

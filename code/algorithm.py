@@ -208,15 +208,27 @@ def Euler(Adj):
     
 #______________________________________________________________________________
     
+#Avis: aixo basicament no fa res, no funciona. S'ha de fer que les funcions que
+#conte retornin el que pertoca i comprovar que la sortida esta en el format que 
+#toca. Tot i aixi, es una bona guia per entendre el que fa.
 def Johnson(Adj, s):
+    original = Adj
     new = Adj
     for i in range(len(Adj)):
         new[-1][i] = 0
-    print new
+    optimized = BellmanFord(new, -1) #Bellman ford ha de tornar alguna cosa...
+    
+    for v in original:
+        for u in original[v]:
+            original[v][u] = original[v][u] + optimized[v] - optimized[u]
+    return Dijkstra(original, 0)
+    
+    
+    
             
 
 
-## Falten: Camins Eulerians, Camins Hamiltonians, A*, K*, Eppstein
+## Falten: Camins Eulerians(done), Camins Hamiltonians(cal repassar l'algorisme), A*, K*, Eppstein
 
 v=[[1,2],[0,2,4],[0,1,3],[2,4,5],[1,3,5],[3,4]]
 w=[[1,2],[],[],[0,1,2]]
@@ -237,7 +249,6 @@ euler2={0:[1,2,3],1:[0,2,3],2:[0,1,3,4],3:[0,1,2,4],4:[3,2]}
 proves_dijkstra={0:{1:3,2:4},1:{},2:{1:-2}}
 
 Dijkstra(proves_dijkstra, 0)
-Johnson(killer, 0)
 DFS(dag)
 print TopologicalSort(dag)
 #print Euler(euler2)
