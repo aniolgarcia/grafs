@@ -27,25 +27,31 @@
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning,automata}
 
+%Definim un nou entorn "algorisme"
 \newenvironment{algorisme}[1][htb]
   {\renewcommand{\algorithmcfname}{Algorisme}% Canviem Algorithm a Algorisme
    \begin{algorithm}[#1]%
   }{\end{algorithm}}
-  
+ 
+%Definim una orfre per subratllar amb color verd
 \newcommand{\important}[1]{%
   \colorbox{green!25}{$\displaystyle#1$}}
     
+%Definim que els comentaris siguin de color blau
 \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
 \SetCommentSty{mycommfont}
 
+%Definim un apartat de funció per al pseudocodi
 \SetKwProg{Fn}{Funció}{}
 
+%Definim el contador per les propietats (que fa un reset cada subsecció)
 \newcounter{propietat}[subsection]
+%Definim l'entorn per a les propietats
 \newenvironment{propietat}[1][]{\refstepcounter{propietat}\par\medskip
   \noindent \textbf{Propietat~\thepropietat #1} \rmfamily}
    {\medskip}
 
-
+%Redefinim el llaç de tikz (l'original és esquifit i no m'agrada massa), i sí, el nom que he definit és "looop", amb 3 "o". 
 \makeatletter
 \tikzset{looop/.style =  {to path={
   \pgfextra{\let\tikztotarget=\tikztostart}
@@ -54,9 +60,32 @@
   }}  
 \makeatletter 
 
+%Creem els conjunts per a les llistes d'adjacència
+\tikzset{
+node of list/.style = { 
+             draw, 
+             minimum height=6mm, 
+             minimum width=6mm,
+             node distance=6mm
+   },
+link/.style = {
+     -stealth,
+     shorten >=1pt
+     },
+array element/.style = {
+    draw, fill=white,
+    minimum width = 6mm,
+    minimum height = 10mm
+  }
+}
 
-
-
+\def\LinkedList#1{%
+  \foreach \element in \list {
+     \node[node of list, right = of aux, name=\element] {\element};
+     \draw[link] (aux) -- (\element);
+     \coordinate (aux) at (\element.east);
+  } 
+}
 
 
 
@@ -1004,7 +1033,7 @@ Els grafs ponderats són grafs on cada aresta $e$ està asociada a un nombre $w(e)
 Moltes vegades s'utilitza per representar distàncies, però si per exemple modelitzem una xarxa de distribució d'aigua, ens pot interessar representar el cabal de les canonades, o en una xarxa de bus, la densitat de trànsit de cada tram. 
 
 \subsubsection*{Grafs dirigits}
-Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. D'aquesta manera, una aresta $e_{0}=(v_{0},v_{1}) \neq e_{1}=(v_{1},v_{0})$ \footnote{Observi's la diferència de notacióper a les arestes dels grafs dirigits i no dirigits, atenent al fet que l'ordre dels vèrtexs en un cas importa i en l'altre no}. De fet, no necessàriament ha d'existir una aresta contrària a una altra. 
+Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. D'aquesta manera, una aresta $e_{0}=(v_{0},v_{1}) \neq e_{1}=(v_{1},v_{0})$ \footnote{Observi's la diferència de notació per a les arestes dels grafs dirigits i no dirigits, atenent al fet que l'ordre dels vèrtexs en un cas importa i en l'altre no}. De fet, no necessàriament ha d'existir una aresta contrària a una altra. 
 
 Aquest tipus de grafs poden ser útils per representar carreteres, o moviments vàlids en algun joc. 
 
@@ -1121,11 +1150,43 @@ accedir a la seva pròpia llista, siguent així molt més senzill fer
 iteracions. Amb l'esquema següent es pot veure més clarament:
 
 (afegir esquema de les llistes d'adjacència)
-
+\begin{figure}[H]
+\setcounter{subfigure}{0}
+\centering
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
+				\node[round] (a) at (0,3){$v_{0}$};
+				\node[round] (b) at (3,3){$v_{1}$};
+				\node[round] (c) at (0,0){$v_{2}$};
+				\node[round] (d) at (3,0){$v_{3}$};
+				\node[round] (e) at (5,1.5){$v_{4}$};
+				\draw (a) edge (b);
+				\draw (b) edge (c);
+				\draw (b) edge (d);
+				\draw (b) edge (e);
+				\draw (c) edge (d);
+				\draw (c) edge (e);
+	
+		\end{tikzpicture}
+}
+\subfloat[]{
+	\begin{tikzpicture}
+		\foreach [count=\i] \index/\list in {$v_{0}$/{$v_{1}$}, $v_{1}$/{$v_{0}$,$v_{2}$,$v_{3}$,$v_{4}$}, $v_{2}$/{$v_{1}$,$v_{3}$,$v_{4}$}, $v_{3}$/{$v_{1}$, $v_{2}$}, $v_{4}$/{$v_{1}$,$v_{2}$}} {
+    		\node[array element] (aux) at (0,-\i) {\index};
+    		\LinkedList{\list}
+}
+	
+	\end{tikzpicture}
+}
+\caption{Un graf $G$(a) i la seva llista d'adjacència (b)}
+\end{figure}
 
 
 \section{Algorismes}
 Un algorisme és un conjunt d'instruccions precises i ben definides que, donada una entrada, calculen la sortida corresponent segons les instruccions que té.
+
+(Reescriure la definició d'algorisme...)
+
 A continuació se'n mostren uns quants d'importants per fer operacions sobre grafs.
 
 \subsection{Algorisme BFS}
@@ -1138,6 +1199,36 @@ El que farà això és bàsicament imprimir per pantalla la seqüència de vèrtexs ord
 \subsubsection{Funcionament}
 
 Donat un node incial $v$, es busquen tots els nodes no visitats que estiguin a distància $i$ de $v$. Inicialment $i=0$ i l'únic a distància 0 de $v$ és ell mateix. Després, $i=1$ i per tant, en aquesta iteració es visitaran tots els nodes adjacents a $v$. Quan $i=2$ es visitaran els nodes adjacents als adjacent de $v$ que no s'hagin visitat, i així consecutivament fins a visitar tots els nodes.
+
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[round/.style={circle, draw=black, black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
+		\tikzstyle{level 1}=[level distance=15mm,sibling distance=60mm]
+		\tikzstyle{level 2}=[level distance=15mm,sibling distance=30mm]
+		\node(0)[round](0){$0$}
+			child[blue,shift={(0,0)}]{node[round](1){$1$}
+				child[green]{node[round](2){$2$}}
+				child[green]{node[round](3){$3$}}
+				child[green]{node[round](4){$4$}}}
+			child[blue]{node[round](5){$5$}
+				child[green]{node[round](6){$6$}
+					child[red]{node[round](7){$7$}}}
+				child[green]{node[round](8){$8$}}
+			};
+			
+		\tikzset{dfs/.style={bend right=15}}
+		\draw (0) edge[dfs,green] (1);
+		\draw (0) edge[dfs,red] (5);
+		\draw (5) edge[dfs,green] (0);
+		\draw (5) edge[dfs,red] (6);		
+		
+	\end{tikzpicture}
+\caption{Exemple del recorregut que realitzaria l'algorisme}
+\label{fig:bfs}		
+
+\end{figure}
 
 \subsubsection{Pseudocodi}
 
@@ -1222,9 +1313,51 @@ Aquest algorisme s'utilitza també per operacions més complexes, com les següents
 
 \subsection{DFS}
 La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'aquí \textbf{DFS}) és un algorime que utilitza uns proncipis semblants als de l'algorisme BFS, però en lloc de cobrir tota l'amplada d'un nivell abans de passar al següent, el que fa és cobrir tota la profunditat possible (arribar el més lluny possible) abans de tornar enrere. En la següent imatge es pot veure un esquema del funcionament de l'algorisme:
-(adjuntar imatge de DFS)
+
+
 \subsubsection{Funcionament}
-L'algorisme DFS arriba el mes lluny possible abans de retrocedir. Això significa que quan arriba a un node se'n va a un d'adjacent no visitat i va emmagatzemant l'ordre amb el qual els visita. Quan un node no té nodes adjacents no visitats, torna al node anterior i continua a partir d'allà.
+L'algorisme DFS arriba el mes lluny possible abans de retrocedir. Això significa que quan arriba a un node se'n va a un d'adjacent no visitat i va emmagatzemant l'ordre amb el qual els visita. Quan un node no té nodes adjacents no visitats, torna al node anterior i continua a partir d'allà. 
+A la figura \ref{fig:bfs} es mostra un graf amb els nodes numerats segons l'ordre en el qual es visiten i amb el recorregut que faria l'algorisme:
+
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
+		\tikzstyle{level 1}=[level distance=15mm,sibling distance=60mm]
+		\tikzstyle{level 2}=[level distance=15mm,sibling distance=30mm]
+		\node(0)[round](0){$0$}
+			child{node[round](1){$1$}
+				child{node[round](2){$2$}}
+				child{node[round](3){$3$}}
+				child{node[round](4){$4$}}}
+			child{node[round](5){$5$}
+				child{node[round](6){$6$}
+					child{node[round](7){$7$}}}
+				child{node[round](8){$8$}}
+			};
+			
+		\tikzset{dfs/.style={red,dashed,->,bend right=25, -latex}}
+		\draw (0) edge[dfs] (1);
+		\draw (1) edge[dfs] (2);
+		\draw (2) edge[dfs] (1);
+		\draw (1) edge[dfs] (3);
+		\draw (3) edge[dfs] (1);
+		\draw (1) edge[dfs] (4);
+		\draw (4) edge[dfs] (1);
+		\draw (1) edge[dfs] (0);
+		\draw (0) edge[dfs] (5);
+		\draw (5) edge[dfs] (6);
+		\draw (6) edge[dfs] (7);
+		\draw (7) edge[dfs] (6);
+		\draw (6) edge[dfs] (5);
+		\draw (5) edge[dfs] (8);		
+		
+	\end{tikzpicture}
+\caption{Exemple del recorregut que realitzaria l'algorisme}
+\label{fig:dfs}		
+
+\end{figure}
  
 \subsubsection{Pseudocodi}
 
