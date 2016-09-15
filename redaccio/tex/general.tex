@@ -15,6 +15,7 @@
 \usepackage{graphviz, tkz-berge}
 \usepackage{pstricks, pst-node, pst-tree}
 \usepackage[ruled, boxed]{algorithm2e}
+\usepackage{multicol, multirow, rotating} %Paquets de taules
 \usepackage[a4paper]{geometry}
 \usepackage{float}
 \usepackage{verbatim}
@@ -1516,7 +1517,9 @@ Resulta que, a la secció \ref{Sec:tipus}, quan explicava un tipus concret de gra
 
 
 \subsection{Dijkstra}
-Aquest algorisme, desdenvolupat per Edsger W. Dijkstra el 1956, serveix per trobar el camí més curt entre dos nodes d'un gaf ponderat. De fet, això és el que feia la variant original, però la variant presentada aquí troba el camí més curt entre un node inicial i tota la resta de nodes dels graf. Tot i això es pot modificar lleugerament el programa perquè pari quan hagi trobat el camí més curt entre dos nodes especificats. El que fa el programa és suposar quines són les distàncies mínimes des del node inicial fins la resta, i va descobrint el graf fins que pot assegurar el camí més curt. Al principi, suposa que el moviment amb menys cost és no moure's (això serà cert si el graf no conté arestes amb pesos negatius, que l'algorisme no pot tractar). Després busca els nodes adjacents al node inicial, i suposa que les distàncies mínimes entre l'inicial i aquests és simplement l'aresta que els uneix. Es pot assegurar que serà cert pel node unit amb l'aresta de menys pes, per la desigualtat triangular (si s'hi pogués accedir per un altre camí, aquest seria més llarg, ja que per força alguna de les arestes amb més pes que s'han descartat ha de formar part del camí alternatiu, i la suma serà sempre superior). Un cop hi ha el primer node amb mínim pes assegurat (i per tant ja sap un camí), es busquen els seus adjacents, el pes dels quals inicialment és infinit. La suposició del pes equivaldrà a el pes del node d'on venen més el de l'aresta que els uneix, i es canviarà pel pes que tenen si aquest és mes gran que el nou. Ara es torna a agafar el node amb el pes menor (que segur que és el mínim) i es torna a mirar els adjacents i assignar pesos. Quan tots els nodes hagin estat visitats, el pes de cada node serà la distància mínima que s'ha de recòrrer per anar del node inicial fins a aquest.
+Aquest algorisme, desdenvolupat per Edsger W. Dijkstra el 1956, serveix per trobar el camí més curt entre dos nodes d'un gaf ponderat. De fet, això és el que feia la variant original, però la variant presentada aquí troba el camí més curt entre un node inicial i tota la resta de nodes dels graf. Tot i això es pot modificar lleugerament el programa perquè pari quan hagi trobat el camí més curt entre dos nodes especificats. 
+
+%El que fa el programa és suposar quines són les distàncies mínimes des del node inicial fins la resta, i va descobrint el graf fins que pot assegurar el camí més curt. Al principi, suposa que el moviment amb menys cost és no moure's (això serà cert si el graf no conté arestes amb pesos negatius, que l'algorisme no pot tractar). Després busca els nodes adjacents al node inicial, i suposa que les distàncies mínimes entre l'inicial i aquests és simplement l'aresta que els uneix. Es pot assegurar que serà cert pel node unit amb l'aresta de menys pes, per la desigualtat triangular (si s'hi pogués accedir per un altre camí, aquest seria més llarg, ja que per força alguna de les arestes amb més pes que s'han descartat ha de formar part del camí alternatiu, i la suma serà sempre superior). Un cop hi ha el primer node amb mínim pes assegurat (i per tant ja sap un camí), es busquen els seus adjacents, el pes dels quals inicialment és infinit. La suposició del pes equivaldrà a el pes del node d'on venen més el de l'aresta que els uneix, i es canviarà pel pes que tenen si aquest és mes gran que el nou. Ara es torna a agafar el node amb el pes menor (que segur que és el mínim) i es torna a mirar els adjacents i assignar pesos. Quan tots els nodes hagin estat visitats, el pes de cada node serà la distància mínima que s'ha de recòrrer per anar del node inicial fins a aquest.
 
 \subsubsection{Funcionament}
 L'algorisme de Dijkstra es basa en dos principis:
@@ -1533,8 +1536,51 @@ Un cop fet aquest pas s'obtenen les distàncies provisionals des del node $s$ fin
 
 A partir del node $v$, es busquen els seus adjacents i es calcula la distància a la qual estan respecte $s$ (és a dir, la suma del camí acumulat i el pes de l'aresta). Si la nova distància calculada és menor a la provisional (cosa que passarà quan es trobi un camí més curt), la provisional passarà a ser la calculada. Un cop s'hagi fet tots els canvis necessaris, es buscarà el node no visitat que estigui a menor distància de $s$ (i que per tant formarà part de l'arbre expansiu mínim), que passarà a ser $v$ i es tornarà a fer el mateix procediment. Això s'anirà repetint fins que s'hagi visitat tots els vèrtexs.
  
+En la figura \ref{fig:Dijkstra} es mostra un graf i la taula amb les distàncies calculades per a cada iteració del programa. En aquest cas el node inicial és $v_{0}$. A cada iteració s'agafa la distància més petita (marcada amb un quadre) i es calcularà la distància provisional dels seus nodes, sumant la distància acomulada fins al node més el pes de l'aresta. 
+ 
+\begin{figure}[H]
+\centering
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape]
+		\node[round] (3) at (0,4) {$v_{3}$};
+		\node[round] (4) at (0,0) {$v_{4}$};
+		\node[round] (2) at (4,0) {$v_{2}$};
+		\node[round] (1) at (4,4) {$v_{1}$};
+		\node[round] (0) at (6,2) {$v_{0}$};
 
-(Adjuntar esquema de procediment de Dijkstra)
+		%En aquest graf utilitzo l'objecte Edge per generar arestes en lloc de la funció draw. Això es deu a que és molt més facil posar els pesos a les arestes amb aquest objecte.		
+		\tikzset{EdgeStyle/.style={->,-latex}} %Conjunt de les arestes rectes
+		\Edge[label=$10$](0)(1)
+		\Edge[label=$3$](0)(2)
+		\Edge[label=$2$](1)(3)
+		\Edge[label=$8$](2)(3)
+		\Edge[label=$2$](2)(4)
+		
+		\tikzset{EdgeStyle/.style={->,-latex,bend right=25}} %Arestes múltiples
+		\Edge[label=$1$](1)(2)
+		\Edge[label=$4$](2)(1)
+		\Edge[label=$7$](3)(4)
+		\Edge[label=$9$](4)(3)
+		
+	\end{tikzpicture}
+}
+\subfloat[]{
+	\begin{tabular}{ccccccc|}
+		&&\multicolumn{5}{c}{Distàncies provisionals} \\
+		
+		\cline{3-7}
+		& \multicolumn{1}{c|}{} & \textbf{$v_{0}$} & \textbf{$v_{1}$} & \textbf{$v_{2}$} & \textbf{$v_{3}$} & \textbf{$v_{4}$} \\ \cline{2-7}
+		\multicolumn{1}{c|}{} &\multicolumn{1}{c|}{\textbf{1}} & 0 & 10 & \boxed{3} & $\infty$ & $\infty$  \\
+		\multicolumn{1}{c|}{\multirow{4}{*}{\begin{sideways}\parbox{-1mm}{Iteració}\end{sideways}}} &\multicolumn{1}{c|}{\textbf{2}} & | & 7 & | & 11 & \boxed{5} \\
+		\multicolumn{1}{c|}{} &\multicolumn{1}{c|}{\textbf{3}} & |          & \boxed{7}  & |          & 11         & |        \\
+		\multicolumn{1}{c|}{} &\multicolumn{1}{c|}{\textbf{4}} & |          &    |        & |          & \boxed{9}  & |         \\ \cline{2-7}
+	\end{tabular}
+
+}
+\caption{Graf G (figura a) i taula amb les distàncies provisionals per als nodes de G en cada iteració}
+\label{fig:Dijkstra}
+\end{figure}
+
 
 \subsubsection{Pseudocodi}
 \begin{algorisme}[H]
@@ -1671,9 +1717,14 @@ L'algorisme de Bellman-Ford pot treballar amb pesos negatius ja que no es basa e
 				\node[round] (x) at (4,0){$x$};
 				\node[round] (v) at (2,4){$v$};
 				
-				\draw (s) edge[->,-latex]  node[above]{$3$}(v);
-				\draw (s) edge[->,-latex]  node[above]{$4$}(x);
-				\draw (x) edge[->,-latex]  node[above]{$-2$}(v);
+				%\draw (s) edge[->,-latex]  node[above]{$3$}(v);
+				%\draw (s) edge[->,-latex]  node[above]{$4$}(x);
+				%\draw (x) edge[->,-latex]  node[above]{$-2$}(v);
+				
+				\tikzset{EdgeStyle/.style={->,-latex}}
+				\Edge[label=$3$](s)(v)
+				\Edge[label=$4$](s)(x)
+				\Edge[label=$-2$](x)(v)
 	\end{tikzpicture}
 	\caption{Graf on la desigualtat triangular no es compleix}
 	\label{fig:no_tri}
@@ -1703,6 +1754,39 @@ L'algorisme es basa en les següents propietats:
 \emph{Demostració}: Suposem que $e$ no forma part de l'arbre expansiu mínim. Llavors, si s'afegeix $e$ a aquest arbre expansiu, es genera un cicle $C$. Això comporta que hi ha una altra aresta $f$ amb un un extrem a $S$ i l'altre a $V(G)-S$. D'aquesta manera, si es canvia $f$ per $e$ es genera també un arbre expansiu que és mínim, ja que $w(e) < w(f)$.
 \end{itemize} 
 El que fa l'algorisme és anar construïnt arbres expansius separats per acabar unint-los si el graf és connex. Per aconseguir-ho, l'algorisme crea un conjunt per a cada node del graf (representant cadascun dels arbres) i ordena les arestes amb ordre creixent segons el seu pes i itera sobre elles. Quan es visita una aresta, s'uneixen els conjunts que les contenien (és a dir, es connecten els arbres). Si una aresta uneix nodes que formen part del mateix conjunt (és a dir, es crea un cicle), vol dir que l'aresta en concret no forma part de l'arbre expansiu del graf, tal com estableix la primera propietat. 
+
+\begin{figure}[H]
+\subfloat{
+	\subfloat{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round] (3) at (0,4) {$v_{3}$};
+		\node[round] (4) at (0,0) {$v_{4}$};
+		\node[round] (2) at (4,0) {$v_{2}$};
+		\node[round] (1) at (4,4) {$v_{1}$};
+		\node[round] (0) at (6,2) {$v_{0}$};
+
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$2$](1)(2)
+		\Edge[label=$3$](1)(4)
+		\Edge[label=$4$](2)(4)
+		\Edge[label=$5$](3)(4)
+	\end{tikzpicture}
+	}
+	\par\newline
+	\subfloat{
+	\resizebox{5cm}{!}{
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+ 			$\{v_{0},v_{1}\}$ & $\{v_{1},v_{2}\}$ & $\{v_{1},v_{4}\}$ & $\{v_{2},v_{4}\}$ & $\{v_{3},v_{4}\}$  \\ \hline
+			1 & 2 & 3 & 4 & 5\\ \hline 
+		\end{tabular}
+		}
+
+	}
+}
+
+\end{figure}
+
 \subsubsection{Pseudocodi}
 \begin{algorisme}[H]
 \DontPrintSemicolon
