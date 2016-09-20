@@ -83,15 +83,22 @@ array element/.style = {
 \def\LinkedList#1{%
   \foreach \element in \list {
      \node[node of list, right = of aux, name=\element] {\element};
+     \node[node of list, name=aux2, anchor=west] at ([xshift=-.4pt] \element.east) {};
      \draw[link] (aux) -- (\element);
-     \coordinate (aux) at (\element.east);
+     %\coordinate (aux) at (\element.east);
+     \coordinate (aux) at (aux2);
   } 
+   \fill (aux) circle(2pt);
 }
 
 
+\title{Teoria de Grafs}
+\author{Aniol Garcia i Serrano}
+\date{}
+
 
 \begin{document}
-
+\maketitle
 
 
 \part{Introducció a la teoria de grafs}
@@ -1179,7 +1186,7 @@ iteracions. Amb l'esquema següent es pot veure més clarament:
 	
 	\end{tikzpicture}
 }
-\caption{Un graf $G$(a) i la seva llista d'adjacència (b)}
+\caption{Un graf $G$ (a) i la seva llista d'adjacència (b)}
 \end{figure}
 
 
@@ -1190,7 +1197,7 @@ Un algorisme és un conjunt d'instruccions precises i ben definides que, donada u
 
 A continuació se'n mostren uns quants d'importants per fer operacions sobre grafs.
 
-\subsection{Algorisme BFS}
+\subsection{BFS}
 Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritària (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
 (Adjuntar imatge de BFS)
  
@@ -1753,11 +1760,13 @@ L'algorisme es basa en les següents propietats:
 \item Si en un graf $G=(V,E)$ es fa un \emph{tall}, es paretixen els vèrtex del graf en dos conjunts disjunts $(S, V(G)-S$). D'enrte les arestes que tenen un extrem a $S$ i l'altre a $V(G)-S$, $e$ és la de menor pes i forma part de l'arbre expansiu mínim.
 \emph{Demostració}: Suposem que $e$ no forma part de l'arbre expansiu mínim. Llavors, si s'afegeix $e$ a aquest arbre expansiu, es genera un cicle $C$. Això comporta que hi ha una altra aresta $f$ amb un un extrem a $S$ i l'altre a $V(G)-S$. D'aquesta manera, si es canvia $f$ per $e$ es genera també un arbre expansiu que és mínim, ja que $w(e) < w(f)$.
 \end{itemize} 
-El que fa l'algorisme és anar construïnt arbres expansius separats per acabar unint-los si el graf és connex. Per aconseguir-ho, l'algorisme crea un conjunt per a cada node del graf (representant cadascun dels arbres) i ordena les arestes amb ordre creixent segons el seu pes i itera sobre elles. Quan es visita una aresta, s'uneixen els conjunts que les contenien (és a dir, es connecten els arbres). Si una aresta uneix nodes que formen part del mateix conjunt (és a dir, es crea un cicle), vol dir que l'aresta en concret no forma part de l'arbre expansiu del graf, tal com estableix la primera propietat. 
+El que fa l'algorisme és anar construïnt arbres expansius separats per acabar unint-los si el graf és connex. Per aconseguir-ho, l'algorisme crea un conjunt per a cada node del graf (representant cadascun dels arbres), ordena les arestes amb ordre creixent segons el seu pes i les visita en aquest ordre. Quan es visita una aresta, s'uneixen els conjunts que les contenien (és a dir, es connecten els arbres). Si una aresta uneix nodes que formen part del mateix conjunt (és a dir, es crea un cicle), vol dir que l'aresta en concret no forma part de l'arbre expansiu del graf, tal com estableix la primera propietat. 
+
+En la figura \ref{fig:Kruskal} es mostra el procés que duu a terme l'algorisme de Kruskal. En aquesta figura cada color representa un conjunt diferent i a cada pas s'ajunten diversos grup dins d'un més gran, tinguent en compte quines arestes els uneuxen. Al final tan sols hi ha un únic grup i totes le arestes marcades formen part de l'arbre expansiu mínim.
 
 \begin{figure}[H]
-\subfloat{
-	\subfloat{
+\centering
+\subfloat[]{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
 		\node[round] (3) at (0,4) {$v_{3}$};
 		\node[round] (4) at (0,0) {$v_{4}$};
@@ -1766,25 +1775,115 @@ El que fa l'algorisme és anar construïnt arbres expansius separats per acabar un
 		\node[round] (0) at (6,2) {$v_{0}$};
 
 		\Edge[label=$1$](0)(1)
-		\Edge[label=$2$](1)(2)
-		\Edge[label=$3$](1)(4)
-		\Edge[label=$4$](2)(4)
-		\Edge[label=$5$](3)(4)
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$5$](2)(4)
+		\Edge[label=$2$](3)(4)
+		
 	\end{tikzpicture}
-	}
-	\par\newline
-	\subfloat{
-	\resizebox{5cm}{!}{
-		\begin{tabular}{|c|c|c|c|c|}
-			\hline
- 			$\{v_{0},v_{1}\}$ & $\{v_{1},v_{2}\}$ & $\{v_{1},v_{4}\}$ & $\{v_{2},v_{4}\}$ & $\{v_{3},v_{4}\}$  \\ \hline
-			1 & 2 & 3 & 4 & 5\\ \hline 
-		\end{tabular}
-		}
+}
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round,blue] (3) at (0,4) {$v_{3}$};
+		\node[round,red] (4) at (0,0) {$v_{4}$};
+		\node[round,green] (2) at (4,0) {$v_{2}$};
+		\node[round,purple] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
 
-	}
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$5$](2)(4)
+		\Edge[label=$2$](3)(4)
+		
+	\end{tikzpicture}
+
+	%\par\newline
+	%\subfloat{
+	%\resizebox{5cm}{!}{
+	%	\begin{tabular}{|c|c|c|c|c|}
+	%		\hline
+ 	%		$\{v_{0},v_{1}\}$ & $\{v_{1},v_{2}\}$ & $\{v_{1},v_{4}\}$ & $\{v_{2},v_{4}\}$ & $\{v_{3},v_{4}\}$  \\ \hline
+	%		1 & 2 & 3 & 4 & 5\\ \hline 
+	%	\end{tabular}
+	%	}
+
+	%}
+}
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round,blue] (3) at (0,4) {$v_{3}$};
+		\node[round,red] (4) at (0,0) {$v_{4}$};
+		\node[round,green] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$5$](2)(4)
+		\Edge[label=$2$](3)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+
+	\end{tikzpicture}
 }
 
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round,blue] (3) at (0,4) {$v_{3}$};
+		\node[round,blue] (4) at (0,0) {$v_{4}$};
+		\node[round,green] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$5$](2)(4)
+		\tikzset{EdgeStyle/.style={blue}}
+		\Edge[label=$2$](3)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+
+	\end{tikzpicture}
+}
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round,blue] (3) at (0,4) {$v_{3}$};
+		\node[round,blue] (4) at (0,0) {$v_{4}$};
+		\node[round,orange] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$5$](2)(4)
+		\tikzset{EdgeStyle/.style={blue}}
+		\Edge[label=$2$](3)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+	\end{tikzpicture}
+}
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round,orange] (3) at (0,4) {$v_{3}$};
+		\node[round,orange] (4) at (0,0) {$v_{4}$};
+		\node[round,orange] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		
+		\Edge[label=$5$](2)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$2$](3)(4)
+
+	\end{tikzpicture}
+}
+\caption{Passos corresponents a les diverses unions de grups que fa l'algorisme}
+\label{fig:Kruskal}
 \end{figure}
 
 \subsubsection{Pseudocodi}
@@ -1820,7 +1919,122 @@ L'operació d'ordenar les arestes triga $O(|E|\times log(|E|))$ i el total de les
 \subsection{Prim}
 L'algorisme de Prim, tal com el de Kruskal, serveix per trobar l'arbre expansiu mínim d'un graf ponderat no dirigit. Aquest algorisme funciona amb diccionaris, estructures de dades més normalitzades que les Union-Find. Com a conseqüència, l'algorisme de Prim és més lent en grafs petits, però més ràpid en grafs molt densos. 
 \subsubsection{Funcionament}
-L'algorisme de Prim es basa en la mateixa propietat dels talls que l'algorisme de Kruskal. L'algorisme de Prim divideix els nodes en dos grups $S$ i $V(G)-S$, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon que ebem que formarà part de l'arbre expansiu mínim, i afegeix el node final de l'aresta al primer grup (el que seria euivalent a la funció union de l'algorisme de Kruskal). D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, però executant-lo per a cada node del graf, trobaria el \textit{bosc} (conjunt d'arbres) mínim d'un graf no connex.
+L'algorisme de Prim es basa en la mateixa propietat dels talls que l'algorisme de Kruskal. L'algorisme de Prim divideix els nodes en dos grups $S$ i $V(G)-S$, els que pot arribar amb les arestes de l'arbre que va construïnt i els que encara no. Sempre selecciona l'aresta de menys pes entre les que surten de nodes del primer grup i van a nodes del segon (ja que per la propietat de tall sabem que formarà part de l'arbre expansiu mínim), i afegeix el node final de l'aresta al primer grup (el que seria euivalent a la funció union de l'algorisme de Kruskal). D'aquesta manera obté l'arbre expansiu mínim del graf. Aquest algorisme funciona per grafs connexos, però executant-lo per a cada node del graf, trobaria el \textit{bosc} (conjunt d'arbres) mínim d'un graf no connex.
+
+A la figura \ref{fig:Prim} es pot veure un exemple del funcionament de l'algorisme de Prim sobre un graf poderat. Els dos conjunts es representen mitjançant els colors taronja i negre, i les arestes que formin part de l'arbre expansiu mínim seràn les que estiguin pintades.  
+
+
+
+\begin{figure}[H]
+\centering
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round] (3) at (0,4) {$v_{3}$};
+		\node[round] (4) at (0,0) {$v_{4}$};
+		\node[round] (2) at (4,0) {$v_{2}$};
+		\node[round] (1) at (4,4) {$v_{1}$};
+		\node[round] (0) at (6,2) {$v_{0}$};
+
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$5$](2)(4)
+		\Edge[label=$2$](3)(4)
+		
+	\end{tikzpicture}
+}
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round] (3) at (0,4) {$v_{3}$};
+		\node[round] (4) at (0,0) {$v_{4}$};
+		\node[round] (2) at (4,0) {$v_{2}$};
+		\node[round] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$5$](2)(4)
+		\Edge[label=$2$](3)(4)
+		
+	\end{tikzpicture}
+}
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round] (3) at (0,4) {$v_{3}$};
+		\node[round] (4) at (0,0) {$v_{4}$};
+		\node[round] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$5$](2)(4)
+		\Edge[label=$2$](3)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+
+	\end{tikzpicture}
+}
+
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round] (3) at (0,4) {$v_{3}$};
+		\node[round] (4) at (0,0) {$v_{4}$};
+		\node[round,orange] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$5$](2)(4)
+		\Edge[label=$2$](3)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+
+	\end{tikzpicture}
+}
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round] (3) at (0,4) {$v_{3}$};
+		\node[round,orange] (4) at (0,0) {$v_{4}$};
+		\node[round,orange] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		
+		
+		\Edge[label=$5$](2)(4)
+		\Edge[label=$2$](3)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+	\end{tikzpicture}
+}
+\subfloat[]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round,orange] (3) at (0,4) {$v_{3}$};
+		\node[round,orange] (4) at (0,0) {$v_{4}$};
+		\node[round,orange] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		
+		\Edge[label=$5$](2)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$2$](3)(4)
+
+	\end{tikzpicture}
+}
+\caption{Passos corresponents a les fases d'expansió de l'arbre expansiu mínim}
+\label{fig:Prim}
+\end{figure}
+
  
 \subsubsection{Pseudocodi}
 \begin{algorisme}[H]

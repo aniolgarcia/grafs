@@ -82,10 +82,13 @@ def Dijkstra(Adj, s):
                     Q[v] = Q[u] + Adj[u][v]
                     tree[v] = u
         Q.pop(u)
-    print "Distances:"
-    print dist
-    print "Shortest-path tree:"
-    print tree
+        
+    return dist, tree
+
+#    print "Distances:"
+#    print dist
+#    print "Shortest-path tree:"
+#    print tree
 
 #______________________________________________________________________________
     
@@ -108,11 +111,11 @@ def BellmanFord(Adj, s):
             if dist[v] > dist[u] + Adj[u][v]:
                 print "There are negative-weight cycles"
                 break
-            
-    print "Distances:"
-    print dist
-    print "Shortest-path tree:"
-    print tree
+    return dist, tree
+#    print "Distances:"
+#    print dist
+#    print "Shortest-path tree:"
+#    print tree
     
 #______________________________________________________________________________    
     
@@ -129,7 +132,7 @@ def Prim(Adj):
                 Q[v] = Adj[u][v]
                 tree[v] = u
         Q.pop(u)
-    print tree
+    return tree
                 
 #______________________________________________________________________________                
                 
@@ -142,7 +145,7 @@ def Kruskal(Adj):
                 if subtree[u] != subtree[v]:
                     tree.append((u,v))
                     subtree.union(u,v)
-    print tree
+    return tree
  
 #______________________________________________________________________________
 
@@ -158,7 +161,7 @@ def FloydWarshall(Adj):
             for v in range(len(Adj)):
                 if dist[u][v] > dist[u][x] + dist[x][v]:
                     dist[u][v] = dist[u][x] + dist[x][v]
-    print dist
+    return dist
                     
 #______________________________________________________________________________    
 
@@ -175,9 +178,13 @@ def Hamilton_recursive(Adj, s, e, path):
     
 def Hamilton(Adj, s, e):
     path=[]
-    Hamilton_recursive(Adj, s, e, path)
-    print path    
+    return Hamilton_recursive(Adj, s, e, path)
+
     
+def Hamilton2(Adj):
+    Q=[]
+    ban=[]
+    Q.append(0)
     
 
 #______________________________________________________________________________
@@ -211,14 +218,14 @@ def Euler(Adj):
 #Avis: aixo basicament no fa res, no funciona. S'ha de fer que les funcions que
 #conte retornin el que pertoca i comprovar que la sortida esta en el format que 
 #toca. Tot i aixi, es una bona guia per entendre el que fa.
-def Johnson(Adj, s):
+def Johnson(Adj):
     original = Adj
     new = Adj
     for i in range(len(Adj)):
         new[-1][i] = 0
-    optimized = BellmanFord(new, -1) #Bellman ford ha de tornar alguna cosa...
+    optimized, residual = BellmanFord(new, -1) #Bellman ford ha de tornar alguna cosa...
     
-    for v in original:
+    for v in range(len(Adj)):
         for u in original[v]:
             original[v][u] = original[v][u] + optimized[v] - optimized[u]
     return Dijkstra(original, 0)
@@ -247,9 +254,11 @@ treball={0:[3],1:[],2:[1,4,5,9,11],3:[],4:[0,3,7,9],5:[6,7,10],6:[],7:[],8:[2,7]
 euler={0:[1,3],1:[0,2,4,5],2:[1,3,4,5],3:[0,2],4:[1,2],5:[1,2]}
 euler2={0:[1,2,3],1:[0,2,3],2:[0,1,3,4],3:[0,1,2,4],4:[3,2]}
 proves_dijkstra={0:{1:3,2:4},1:{},2:{1:-2}}
+hamilton2={0:[2,3,5,1],1:[0,2,4,5],2:[0,1,3,4],3:[0,2,4,5],4:[1,2,3,5],5:[0,1,3,4]}
 
 Dijkstra(proves_dijkstra, 0)
 DFS(dag)
+print Hamilton(hamilton2, 0,5)
 print TopologicalSort(dag)
 #print Euler(euler2)
 #print euler2
