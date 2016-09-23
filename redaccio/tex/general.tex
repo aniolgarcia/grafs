@@ -11,7 +11,7 @@
 \usepackage{xcolor}
 \usepackage{graphics, graphicx}
 \usepackage{tikz, tkz-graph}
-\usepackage{pgfplots}
+\usepackage{pgf, pgfplots}
 \usepackage{graphviz, tkz-berge}
 \usepackage{pstricks, pst-node, pst-tree}
 \usepackage[ruled, boxed]{algorithm2e}
@@ -27,6 +27,8 @@
 \usetikzlibrary{shapes}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning,automata}
+
+\graphicspath{ {graphics/} }
 
 %Definim un nou entorn "algorisme"
 \newenvironment{algorisme}[1][htb]
@@ -91,15 +93,19 @@ array element/.style = {
    \fill (aux) circle(2pt);
 }
 
+%Definim el color taronja pel procés de punt de Fermat
+\definecolor{ffwwqq}{rgb}{1,0.4,0}
 
-\title{Teoria de Grafs}
+\title{Teoria de Grafs \\ \large Revisió segona}
+%\subtitle{Revisió segona}
 \author{Aniol Garcia i Serrano}
-\date{}
+\date{23/9/2016}
 
 
 \begin{document}
 \maketitle
-
+\tableofcontents
+\newpage
 
 \part{Introducció a la teoria de grafs}
 
@@ -110,6 +116,7 @@ de grafs pot semblar bastant abstracta i, a vegades, complicada d'entendre,
 però estarà acompanyada de demostracions i exemples propis que pretenen
 facilitar el seguiment del treball. 
 
+(Reescriure la introducció)
 
 \section{Història del grafs}
 
@@ -140,6 +147,13 @@ Els ciutadans de Königsberg sabien que no era possible, però mai ningú ho havia 
 \end{quote}
 
 %Afegir mapa geogràfic dels ponts de Königsberg
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{Konigsberg_bridges}
+	\caption[]{Representació dels ponts de Köingsberg \footnotemark}
+	\label{fig:Königberg}	
+\end{figure}
+\footnotetext{Autor: Bogdan Giu\c{s}c\u{a}. Imatge de domini públic sota la llicència CC BY-SA 3.0 i GNU Free Documentation License (versió 1.2)}
 
 Per aconseguir demostrar que el problema no tenia sol·lució, Euler va haver
 de representar el problema com un mapa topològic, posant les masses
@@ -390,7 +404,7 @@ primers teoremes en teoria de grafs i un dels més importants.
 \label{teorema:Euler}
 \begin{quotation}
 En tot graf $G=(V,E)$, la suma dels graus dels vèrtex és igual al doble del
-nombre d'arestes.\[ \sum_{v\in V(G)}g(v)=2|E|(G) \]
+nombre d'arestes.\[ \sum_{v\in V(G)}g(v)=2|E(G)| \]
 \end{quotation}
 \emph{Demostració}: Només cal veure que cada aresta té dos extrems
 i que suma dos en el total dels graus. La demostració formal és més
@@ -421,8 +435,10 @@ demostració en treiem una altra afirmació:
 
 Fins ara hem vist els conceptes bàsics en teoria de grafs i algunes
 de les propietats que compleixen tots els grafs. No obstant, existeixen
-diversos tipus de grafs que tenen propietats especials. A continuació se'n presenten alguns
+diversos tipus de grafs que tenen propietats especials. A continuació se'n presenten alguns.
 
+
+(Cal ordenar es apartats segons la ordenació topològica del graf de la figura \ref{fig:topological_sort})
 
 \subsection{Grafs complementaris} 
 \label{sec:complementaris}
@@ -431,7 +447,7 @@ El graf complementari del graf $G$ és el graf $H$ amb els mateixos
 vèrtexs que $G$, de manera que dos vèrtexs d'$H$ seran adjacents
 si i només si a $G$ no ho són. Formalment, si $G=(V,E)$ és un graf
 simple i $K=E(K_{n})$ és el conjunt d'arestes derivades de totes les possibles combinacions de
-dos elements de $V$, essent $n=|V(G)|$, llavors $H=(V,K\setminus E)$\footnote{La notació $K\setminus E$ indica el conjunt dels elements de $K$ que no són a $E$}. 
+dos elements de $V$, essent $n=|V(G)|$, llavors $H=(V,K\setminus E)$    	\footnote{La notació $K\setminus E$ indica el conjunt dels elements de $K$ que no són a $E$}. 
 Per indicar el complementari de $G$ s'escriu $\bar{G}$ o $G'$. 
 
 \begin{propietat}
@@ -470,24 +486,25 @@ tenen noms propis, com per exemple els $3$-regulars, que són els
 \textit{cúbics}; els $4$-regulars, \textit{quàrtics}; els $7$-regulars, \textit{grafs de Witt
 truncats dobles}; els $8$-regulars, \textit{grafs de 24 cel·les}... 
 
+A la imatge \ref{fig:regulars} es poden veure diversos exemples de grafs regulars.
+
 \begin{propietat}
 No necessàriament existeix un únic graf $r$-regular, sinó
 que sovint s'en poden fer amb diferent nombre de vèrtexs.
-A l'imatge \ref{fig:complementari} es poden veure diversos exemples de grafs regulars,
-alguns d'ells amb el mateix grau i diferent nombre de vèrtexs.
+
 \end{propietat}
 
 \begin{propietat}
 Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-regulars amb $n$ vèrtexs es compleix que 
 
-\[ |E|(G)=\frac{1}{2}nr \]on $|E|(G)$ és el nombre d'arestes.
+\[ |E(G)|=\frac{1}{2}nr \]on $|E(G)|$ és el nombre d'arestes.
 \end{propietat}
 
 %Cal afegir imatges de més grafs 3-regulars.
 
 \begin{figure}[H]
-\label{fig:regulars}
 \centering
+\subfloat[Graf cúbic (3-regular)]{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
 		\node[round] (a) at (0,0){$v_{2}$};
 		\node[round] (b) at (4,0){$v_{0}$};
@@ -501,7 +518,47 @@ Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-reg
 		\draw (c) edge (d);
 
 	\end{tikzpicture}
-\caption{Graf cúbic (3-regular)}
+	}
+\subfloat[Graf 2-regular]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
+	
+		\node[round] (0) at (3,1){$v_{0}$};
+		\node[round] (1) at (3,3){$v_{1}$};
+		\node[round] (2) at (1.5,4){$v_{2}$};
+		\node[round] (3) at (0,3){$v_{3}$};
+		\node[round] (4) at (0,1){$v_{4}$};
+		\node[round] (5) at (1.5,0){$v_{5}$};
+		
+		\draw (0) edge (4);
+		\draw (0) edge (5);
+		\draw (4) edge (5);
+		\draw (1) edge (2);
+		\draw (1) edge (3);
+		\draw (2) edge (3);
+	\end{tikzpicture}
+}
+\subfloat[Graf 4-regular]{
+	\begin{tikzpicture}[]
+		\grEmptyCycle[RA=2, prefix=v, Math=true]{10}
+		%\EdgeInGraphModLoop{v}{8}{2}{0}
+		\EdgeFromOneToSel{v}{v}{0}{2,4,6,8}
+		\EdgeFromOneToSel{v}{v}{1}{3,5,7,9}
+		\EdgeFromOneToSel{v}{v}{2}{4,6,8}
+		\EdgeFromOneToSel{v}{v}{3}{5,7,9}
+		\EdgeFromOneToSel{v}{v}{4}{6,8}
+		\EdgeFromOneToSel{v}{v}{5}{7,9}
+ 		\EdgeFromOneToSel{v}{v}{6}{8}
+		\EdgeFromOneToSel{v}{v}{7}{9}
+
+
+
+
+
+	
+	\end{tikzpicture}
+}
+\caption{Exemples de grafs regulars}
+\label{fig:regulars}
 \end{figure}
 
 
@@ -999,7 +1056,7 @@ També es pot pensar en grafs elementals com a $G_{n,1}$.
 \begin{quote}
 Un arbre amb $n$ nodes té $n-1$ arestes. 
 \end{quote}
-\emph{Demostració: }Si comprovem el cas on un arbre $T$ té $n=1$ vèrtexs, veiem que no té cap aresta, per tant el teorema es compleix. Si treiem una aresta de l'arbre,en sorgiran 2 arbres més $T_{1}$ i $T_{2}$. Per hipòtesi, $T_{1}$ tindrà $v_{1}=|V|(T_{1})$ vèrtexs i $n_{1}-1=|E(T_{1})|$ arestes, i $T_{2}$ tindrà $n_{2}=|V(T_{2})|$ vèrtexs i $n_{2}-1=|E|(T_{2})$ arestes.  Llavors el nombre d'arestes de $T$ és $(n_{1}-1)+(n_{2}-1)+1 = (n_{1}+n_{2})-1$. Deduïm llavors que el nombre de nodes de $T$ és $n_{1}+n_{2}$. Dit d'una altra manera, $|E(T)|=|V(T)|-1$.
+\emph{Demostració: }Si comprovem el cas on un arbre $T$ té $n=1$ vèrtexs, veiem que no té cap aresta, per tant el teorema es compleix. Si treiem una aresta de l'arbre,en sorgiran 2 arbres més $T_{1}$ i $T_{2}$. Per hipòtesi, $T_{1}$ tindrà $v_{1}=|V(T_{1})|$ vèrtexs i $n_{1}-1=|E(T_{1})|$ arestes, i $T_{2}$ tindrà $n_{2}=|V(T_{2})|$ vèrtexs i $n_{2}-1=|E(T_{2})|$ arestes.  Llavors el nombre d'arestes de $T$ és $(n_{1}-1)+(n_{2}-1)+1 = (n_{1}+n_{2})-1$. Deduïm llavors que el nombre de nodes de $T$ és $n_{1}+n_{2}$. Dit d'una altra manera, $|E(T)|=|V(T)|-1$.
 
 Com a conseqüència d'aquest teorema, en podem arribar a un altre:
 
@@ -1101,7 +1158,7 @@ $2n-1$ espais a la matriu.
 
 \subsubsection*{Matriu d'incidència}
 
-La matriu d'incidència d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1,...,|V|(G),j=1,...,|E|(G)}$, és la matriu binaria de $|V|(G)\times |E|(G)$ on $b_{i,j}$
+La matriu d'incidència d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1,...,|V(G)|,j=1,...,|E(G)|}$, és la matriu binaria de $|V(G)|\times |E(G)|$ on $b_{i,j}$
 indica si la aresta $j$ és incident al node $i$.
 
 (afegir exemple de graf amb les seves dues matrius)
@@ -1134,11 +1191,11 @@ indica si la aresta $j$ és incident al node $i$.
 	}
 	\subfloat[I(G)]{
 		$\begin{bmatrix}
-			1 & 1 & 1 & 0 & 0 & 0 \\
-			1 & 0 & 0 & 1 & 0 & 0 \\
+			1 & 0 & 1 & 0 & 0 & 0 \\
+			1 & 1 & 0 & 1 & 0 & 0 \\
 			0 & 1 & 0 & 0 & 1 & 0 \\
-			0 & 0 & 1 & 0 & 0 & 1 \\
-			0 & 0 & 0 & 1 & 1 & 1  
+			0 & 0 & 1 & 0 & 1 & 1 \\
+			0 & 0 & 0 & 1 & 0 & 1  
 		\end{bmatrix}$	
 	}
 
@@ -1157,7 +1214,6 @@ de tal manera que, a partir de cada element de la llista, es pugui
 accedir a la seva pròpia llista, siguent així molt més senzill fer
 iteracions. Amb l'esquema següent es pot veure més clarament:
 
-(afegir esquema de les llistes d'adjacència)
 \begin{figure}[H]
 \setcounter{subfigure}{0}
 \centering
@@ -1194,13 +1250,12 @@ iteracions. Amb l'esquema següent es pot veure més clarament:
 Un algorisme és un conjunt d'instruccions precises i ben definides que, donada una entrada, calculen la sortida corresponent segons les instruccions que té.
 
 (Reescriure la definició d'algorisme...)
+(Cal fer una breu introducció a la notació de Landau [o cota superior asimptòtica] per poder entendre els temps d'execució dels  algorismes)
 
 A continuació se'n mostren uns quants d'importants per fer operacions sobre grafs.
 
 \subsection{BFS}
-Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritària (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de totes les alternatives posibles per nivells des del vèrtex inicial. A la següent imatge es pot veure com funcionaria aquest algorisme en un graf:
-(Adjuntar imatge de BFS)
- 
+Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritària (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de totes les alternatives posibles per nivells des del vèrtex inicial. A la imatge \ref{fig:bfs} es pot veure com funcionaria aquest algorisme en un graf. 
 Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig de la cua.
 El que farà això és bàsicament imprimir per pantalla la seqüència de vèrtexs ordenada segons l'ordre en que els ha visitat.   
 
@@ -1267,7 +1322,7 @@ nou node $seg\ddot{u}ent$\;
 
 \end{algorisme}
 
-Aquesta és una manera bastant usual de programar l'algorisme BFS, i encara que ès eficient, s'està desaprofitant propietats de l'algorime. Amb l'algorisme BFS es pot saber a quina distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot es pot generar un arbre expansiu mínim, agafant les arestes per on "passa" l'algorisme.
+Aquesta és una manera bastant usual de programar l'algorisme BFS, i encara que és eficient, s'està desaprofitant propietats de l'algorisme. Amb l'algorisme BFS es pot saber a quina distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot es pot generar un arbre expansiu mínim, agafant les arestes per on 'passa' l'algorisme.
 El següent algorisme té en compte aquests detalls. Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té una clau i un valor), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
 
 \begin{algorisme}
@@ -1468,9 +1523,8 @@ A través de l'algorisme es podrien classificar les arestes en 4 tipus diferents:
 \end{itemize}
 En el cas de grafs no dirigits, només hi ha arestes de l'arbre i arestes cap enrere.
 \end{propietat}
-\begin{propietat}
 
-\end{propietat}
+%%Falta la possible propietat 4.
 
 \subsubsection{Aplicacions}
 Aquest algorisme no té tantes utilitats pràctiques com l'algorisme BFS, però també té propietats útils, com per exemple, que passa per totes les arestes. A través d'ell podem obtenir informació importanat d'un graf:
@@ -1584,7 +1638,7 @@ En la figura \ref{fig:Dijkstra} es mostra un graf i la taula amb les distàncies 
 	\end{tabular}
 
 }
-\caption{Graf G (figura a) i taula amb les distàncies provisionals per als nodes de G en cada iteració}
+\caption{Graf G (figura a) i taula amb les distàncies provisionals per als nodes de G en cada iteració (figura b)}
 \label{fig:Dijkstra}
 \end{figure}
 
@@ -2166,13 +2220,37 @@ Donat un triangle acutangle, el punt de Fermat (també anomenat $X(13)$) és el pu
 \item S'uneixen els nous vèrtexs externs dels triangles equilàters amb els vèrtexs oposats de $T$.
 \item L'intersecció d'aquests dos segments dóna la posició del punt de Fermat.
 \end{itemize}
-(adjuntar imatge de punt de fermat)
+
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=.45]
+		\clip(-8.5,-8.02) rectangle (13.19,8.89);
+		\draw [line width=2pt] (-2.05,2.02)-- (1.4,4.62);
+		\draw [line width=2pt] (1.4,4.62)-- (5.16,-1.78);
+		\draw [line width=2pt] (5.16,-1.78)-- (-2.05,2.02);
+		\draw [color=ffwwqq] (-2.58,6.31)-- (5.16,-1.78);
+		\draw [color=ffwwqq] (8.82,4.68)-- (-2.05,2.02);
+		\draw [line width=1.2pt,color=ffwwqq] (-1.74,-6.13)-- (1.4,4.62);
+		\draw [dash pattern=on 5pt off 5pt] (-2.05,2.02)-- (-2.58,6.31);
+		\draw [dash pattern=on 5pt off 5pt] (-2.58,6.31)-- (1.4,4.62);
+		\draw [dash pattern=on 5pt off 5pt] (1.4,4.62)-- (8.82,4.68);
+		\draw [dash pattern=on 5pt off 5pt] (8.82,4.68)-- (5.16,-1.78);
+		\draw [dash pattern=on 5pt off 5pt] (5.16,-1.78)-- 	(-1.74,-6.13);
+		\draw [dash pattern=on 5pt off 5pt] (-1.74,-6.13)-- (-2.05,2.02);
+\end{tikzpicture}
+
+\caption{Procés de construcció del punt de Fermat per a un triangle}
+\label{fig:fermat}
+\end{figure}
+
 Aquest procediment és vàlid per a triangles amb angles menors a $120º$, però en cas contrari, el punt de Fermat s'identificarà amb vèrtex corresponent a l'angle que els superi.
 
 El punt de Fermat es pot generalitzar per a altres polígons convexos a partir de triangulacions d'aquests. Un exemple senzill és el del quadrilàter, on en fer les diagonals ja es generen quatre triangles. En aquest cas, trobant els punts de Fermat en dos dels triangles oposats i unint-los ja es connecten tots els punts del quàdrilàter amb la menor distància possible. 
 (adjuntar imatge del punt de fermat en quadrilàters i superiors)
 
 El problema de connectar amb la mínima distància un nombre determinat de punts essent possible afegir nodes és conegut com el problema de l'arbre de Steiner. Per aquest problema s'ha demostrat que l'arbre òptim té com a màxim $n-2$ nodes afegits (siguent $n$ el nombre inicial de nodes), que aquests tenen sempre grau $3$, i que formen sempre angles de $120º$.   
+
+(Afegir un apartat per parlar de les bombolles de sabó)
 
 \section{Arbres expansius}
 Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitzar els algorismes per trobar arbres expansius que ja s'han vist. Una opció és construïr el graf complet amb totes                         les arestes i els seus corresponents pesos i executar algun algorisme que en trobi l'arbre expansiu mínim. 
@@ -2223,7 +2301,7 @@ Es diu que dos grafs són isomorfs si existeix una funció bijectiva $\varphi$ ent
 \end{figure}
 
 
-
+(S'haurà d'eliminar l'apartat de topologia, encabir els siomorfismes amb l'exemple a algun altre apartat [segurament a conceptes bàsics] i fer l'apartat d'aplicaicions pràctiques)
 
  
 

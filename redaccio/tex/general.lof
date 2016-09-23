@@ -1,0 +1,58 @@
+\select@language {catalan}
+\contentsline {figure}{\numberline {1}{\ignorespaces Representaci\'o topol\`ogica dels ponts de K\@umlaut onigsberg\relax }}{5}
+\contentsline {figure}{\numberline {2}{\ignorespaces Representaci\'o gr\`afica del graf $G=(V,E)$ que s'ha presentat\relax }}{8}
+\contentsline {figure}{\numberline {3}{\ignorespaces Graf amb un lla\c c (a), graf amb arestes m\'ultiples (b) i graf dirigit (c)\relax }}{9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{9}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{9}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{9}
+\contentsline {figure}{\numberline {4}{\ignorespaces Un graf $G$ i el seu complementari $\mathaccentV {bar}016{G}$\relax }}{11}
+\contentsline {figure}{\numberline {5}{\ignorespaces Exemples de grafs regulars\relax }}{12}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Graf c\'ubic (3-regular)}}}{12}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Graf 2-regular}}}{12}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Graf 4-regular}}}{12}
+\contentsline {figure}{\numberline {6}{\ignorespaces Graf buit $N_{6}$\relax }}{12}
+\contentsline {figure}{\numberline {7}{\ignorespaces Grafs complets $K_{7}$(a) i $K_{5}$(b)\relax }}{13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{13}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{13}
+\contentsline {figure}{\numberline {8}{\ignorespaces Cicle $C_{9}$\relax }}{14}
+\contentsline {figure}{\numberline {9}{\ignorespaces Graf bipartit\relax }}{14}
+\contentsline {figure}{\numberline {10}{\ignorespaces Graf bipartit complet $K_{4,5}$\relax }}{15}
+\contentsline {figure}{\numberline {11}{\ignorespaces Graf estrella $S_{7}$\relax }}{15}
+\contentsline {figure}{\numberline {12}{\ignorespaces Proc\'es de construcci\'o d'un graf lineal\relax }}{16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$G$}}}{16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$G+L(G)$}}}{16}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$L(G)$}}}{16}
+\contentsline {figure}{\numberline {13}{\ignorespaces Roda $W_{10}$\relax }}{17}
+\contentsline {figure}{\numberline {14}{\ignorespaces Representaci\'o dels graus dels diferents nodes d'un grau xarxa\relax }}{18}
+\contentsline {figure}{\numberline {15}{\ignorespaces Graf xarxa $G_{3,3}$\relax }}{18}
+\contentsline {figure}{\numberline {16}{\ignorespaces Arbre (a) i graf elemental $P_{4}$ (b)\relax }}{19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Graf G}}}{23}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A(G)}}}{23}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {I(G)}}}{23}
+\contentsline {figure}{\numberline {17}{\ignorespaces Un graf $G$ (a) i la seva llista d'adjac\`encia (b)\relax }}{24}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{24}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{24}
+\contentsline {figure}{\numberline {18}{\ignorespaces Exemple del recorregut que realitzaria l'algorisme\relax }}{25}
+\contentsline {figure}{\numberline {19}{\ignorespaces Exemple del recorregut que realitzaria l'algorisme\relax }}{28}
+\contentsline {figure}{\numberline {20}{\ignorespaces Graf de les depend\`encies de cada apartat\relax }}{31}
+\contentsline {figure}{\numberline {21}{\ignorespaces Graf G (figura a) i taula amb les dist\`ancies provisionals per als nodes de G en cada iteraci\'o\relax }}{32}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{32}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{32}
+\contentsline {figure}{\numberline {22}{\ignorespaces Graf on la desigualtat triangular no es compleix\relax }}{37}
+\contentsline {figure}{\numberline {23}{\ignorespaces Passos corresponents a les diverses unions de grups que fa l'algorisme\relax }}{39}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{39}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{39}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{39}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{39}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{39}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{39}
+\contentsline {figure}{\numberline {24}{\ignorespaces Passos corresponents a les fases d'expansi\'o de l'arbre expansiu m\IeC {\'\i }nim\relax }}{41}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{41}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{41}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{41}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{41}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{41}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{41}
+\contentsline {figure}{\numberline {25}{\ignorespaces Grafs isomorfs\relax }}{46}
