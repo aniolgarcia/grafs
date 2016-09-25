@@ -61,3 +61,8 @@
 \contentsline {section}{\numberline {7}Arbres expansius}{47}
 \contentsline {part}{IV\hspace {1em}Topologia}{47}
 \contentsline {section}{\numberline {8}Isomorfismes}{47}
+\contentsline {part}{V\hspace {1em}Aplicacion pr\`actiques de la teoria de grafs}{48}
+\contentsline {section}{\numberline {9}Algorisme PageRank}{48}
+\contentsline {section}{\numberline {10}Productes relacionats}{49}
+\contentsline {section}{\numberline {11}Coses que es poden fer amb coloraci\'o}{49}
+\contentsline {subsection}{\numberline {11.1}Demostraci\'o i procediment}{49}
