@@ -180,11 +180,11 @@ def Hamilton(Adj, s, e):
     path=[]
     return Hamilton_recursive(Adj, s, e, path)
 
-    
-def Hamilton2(Adj):
-    Q=[]
-    ban=[]
-    Q.append(0)
+#    
+#def Hamilton2(Adj):
+#    Q=[]
+#    ban=[]
+#    Q.append(0)
     
 
 #______________________________________________________________________________
@@ -212,7 +212,34 @@ def Euler(Adj):
             path.append(Q.pop())
             
     return path
+   
+#______________________________________________________________________________
+
+def coloring(Adj):
+    graph = sorted(Adj, key=lambda k:len(Adj[k]), reverse=True)
+    colors = {}
+    usat = False
+    actual = 0
     
+    for i in range(0, len(Adj)):
+        colors[i]=None
+    colors[graph[0]]=0
+    
+    while None in colors.values():     
+        for v in graph:
+            if colors[v] == None:
+                for k in Adj[v]:
+                    if colors[k] == actual:
+                        usat = True
+                        break
+                    
+                if usat == False:
+                    colors[v] = actual
+                usat = False
+        actual = actual + 1
+    return colors
+                    
+   
 #______________________________________________________________________________
     
 #Avis: aixo basicament no fa res, no funciona. S'ha de fer que les funcions que
@@ -255,11 +282,15 @@ euler={0:[1,3],1:[0,2,4,5],2:[1,3,4,5],3:[0,2],4:[1,2],5:[1,2]}
 euler2={0:[1,2,3],1:[0,2,3],2:[0,1,3,4],3:[0,1,2,4],4:[3,2]}
 proves_dijkstra={0:{1:3,2:4},1:{},2:{1:-2}}
 hamilton2={0:[2,3,5,1],1:[0,2,4,5],2:[0,1,3,4],3:[0,2,4,5],4:[1,2,3,5],5:[0,1,3,4]}
+bipartite={0:[4,5,6,7],1:[4,5,6,7],2:[4,5,6,7],3:[4,5,6,7],4:[0,1,2,3],5:[0,1,2,3],6:[0,1,2,3],7:[0,1,2,3]}
 
-Dijkstra(proves_dijkstra, 0)
-DFS(dag)
-print Hamilton(hamilton2, 0,5)
-print TopologicalSort(dag)
+#Dijkstra(proves_dijkstra, 0)
+#DFS(dag)
+#print Hamilton(hamilton2, 0,5)
+#print TopologicalSort(dag)
+print coloring(bipartite)
+#print sorted(euler, key=len)
+#print sorted(proves_dijkstra, key=lambda k: len(proves_dijkstra[k]), reverse=True)
 #print Euler(euler2)
 #print euler2
 #print 6&1

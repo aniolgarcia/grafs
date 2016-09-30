@@ -2312,6 +2312,13 @@ Aquest algorisme conta el nombre de links cap a una pàgina web, així com l'impor
 
 S'ha de pensar el conjunt de pàgines web com un graf dirigit i poderat: cada vèrtex representa una pàgina i hi ha una aresta dirigida de del vèrtex$v_{i}$ fins a $v_{j}$ si hi ha un enllaç a $v_{i}$ que porta a $v_{j}$. El pes de l'aresta $e=(v_{i}, v_{j})$, $w(e)$, serà la probabilitat de passar del vèrtex $v_{i}$ al vtex $v_{j}$ (és a dir, $\frac{1}{n}$, on $n$ és el nombre d'arestes que surten de $v_{i}$).
 \section{Productes relacionats}
+Quan es visita una botiga online i s'està mirant un producte, sovint apareix una secció de productes recomenats o relacionats. Hi ha diverses maneres de saber quins productes estàn relacionats a aquell que s'està mirant, i una de les que més s'utilitza es basa en teoria de grafs. 
+
+El que es fa és anar construïnt un graf a mesura que els usuaris van visitant la web: cada producte és un vèrtex, i es genera una aresta dirigida cap a un altre producte quan aquest és visitat immediatament després del primer. Per exemple, si un usuari busca un ordinador portàtil, el més probable és que al acabar de mirar-ne un en veigi un altre. En aques cas es generaria una aresta des del primer ordinador fins al segon. A mesura que els usuaris van utilitzant la web, es van generant arestes i el graf va creixent. Tot i això, és possible que l'usuari, al acabar de mirar l'ordinador es posi a buscar un altre article que no hi té res a veure, com per exemple un paraigües. Però això no és habitual, i hi haurà molt poques arestes que uneixin l'ordinador i el paraigües.
+
+Sobre aquest graf s'executarà un algorisme de clusterització, que buscarà parts del graf que siguin més denses o altament conexes. Auquestes parts segurament seràn d'una temàtica concreta, com per exemple el grup dels ordinadors i hi haurà molt poques arestes que surtin d'un grup cap a un altre. 
+
+
 \section{Coses que es poden fer amb coloració}
 Un altre exemple és la optimització de sistemes de videovigilància. Amb teoria de grafs es pot saber quin és el màxim nombre de càmeres necessàries per poder vigilar un local, tingui la forma que tingui. Aquest problema és conegut com el problema de la galeria d'art
 
