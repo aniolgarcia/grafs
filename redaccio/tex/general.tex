@@ -155,19 +155,10 @@ Els ciutadans de Königsberg sabien que no era possible, però mai ningú ho havia 
 \end{figure}
 \footnotetext{Autor: Bogdan Giu\c{s}c\u{a}. Imatge de domini públic sota la llicència CC BY-SA 3.0 i GNU Free Documentation License (versió 1.2)}
 
-Per aconseguir demostrar que el problema no tenia sol·lució, Euler va haver
-de representar el problema com un mapa topològic, posant les masses
+Per aconseguir demostrar que el problema no tenia sol·lució, Euler va haver de representar el problema com un mapa topològic, posant les masses
 de terra com a punts i els ponts com a segments que unien aquests
-punts, i creant d'aquesta manera el primer graf de la història. Aquest
-resulat es considera el primer en teoria de grafs ja que conté un
-important teorema d'aquesta branca. A més d'iniciar la teoria de grafs,
-amb aquest resultat també comença l'estudi dels grafs planars, introdueix
-el concepte de característica d'Euler de l'espai i el teorema de poliedres
-d'Euler (teorema que després va utilitzar per demostrar que no hi
-havia mes sòlids regulars que els sòlids platònics). Amb tot això,
-Euler posa les bases, no tan sols de l'estudi dels grafs, sinó també
-de la topologia, una altra branca que també serà tractada en aquest
-treball. 
+punts, i creant d'aquesta manera el primer graf de la història. Euler va observar que, exceptuant el punt inicial i final del trajecte, quan s'aarriba a un punt per un pont, s'ha de sortir per un altre. Això significa que el nombre de vegades que s'ha d'entrar a un punt equival al nombre de vegades que cal sortir-ne (exceptuant, tal com abans, el punt inicial i final), cosa que no és possible si no hi ha un nommbre parell de ponts que vaigin a un punt. Cal observar que en el problema original hi ha 5 masses de terra, i totes elles tenen un nombre imparell de ponts o connexions, i per tant no és possible passar per tots els ponts tan sols una vegada. Euler va arribar a la conclusió de que es pot recòrrer un graf passant només una vegada per les seves arestes només si aquest tenia 0 o 2 arestes de grau senar, corresponents al punt final i inicial. 
+Aquest resulat es considera el primer en teoria de grafs ja que conté un important teorema d'aquesta branca. A més d'iniciar la teoria de grafs, amb aquest resultat també comença l'estudi dels grafs planars, introdueix el concepte de característica d'Euler de l'espai i el teorema de poliedres d'Euler (teorema que després va utilitzar per demostrar que no hi havia mes sòlids regulars que els sòlids platònics). Amb tot això, Euler posa les bases, no tan sols de l'estudi dels grafs, sinó també de la topologia, una altra branca que també serà tractada en aquest treball. 
 
 \begin{figure}[H]
 \centering
@@ -205,7 +196,7 @@ Un cop establert l'inici, és difícil veure com va continuar desesenvolupant-se l
 
 
 \subsubsection*{Francis Guthrie}
-
+\label{sec:Guthrie}
 El 1852, Francis Guthrie, matemàtic britànic, es planteja el següent problema mentre intenta pintar un mapa del Regne Unit:
 \begin{quote}
 \emph{``És possible pintar qualsevol mapa de països de tal manera
@@ -2208,6 +2199,178 @@ A part d'aquesta aplicació, s'utilitza també d'altres maneres:
 \item Estudiar la \textit{clausura transitiva} d'un graf, és a dir, veure quins nodes són accessibles des de cada node. Això es pot veure a la matriu resultant, on els valors $\infty$ indiquen que no es pot accedir a el node concret.
 \end{itemize}
 
+\subsection{Coloració de grafs}
+La coloració de grafs és un problema que consisteix en "pintar" els nodes d'un graf de manera que dos nodes adjacents no tinguin el mateix color. El primer problema plantejat en aquesta branca ser plantejat per Francis Guthrie \footnote{Veure apartat \ref{sec:Guthrie}} i consistia en veure quans colors eren necessaris per pintar qualsevol mapa de manera que es complissin aquests mateixos requisits. 
+
+La majoria d'algorismes que realitzen aquest procediment. Com que cap 
+\subsubsection{Funcionament}
+El que fan la majoria d'algorismes és posar un color a un node i pssignar-ne de diferents als seus adjacents, però aquest procediment no sempre troba una distribució eficient, ja que escull arbitràriament entre els diversos clors al assignar-los a un node. A més, el resultat que dóna l'alorisme depèn del node en el qual es comenci a execturar. Amb l'algorisme que he dissenyat s'utilitzen estrictament els colors necessàris, establint un ordre específic en els grafs, de manera que hi ha una única distribució possible per a cada graf.
+
+Per establir aquest ordre específic s'ordenen els nodes en funció del nombre de nodes adjacents. D'aquesta manera es comença assignant un color als nodes amb més grau, i per tant més complicats de pintar en cas que ja hi hagi nodes adjacents pintats. Un cop els nodes estan ordenats, s'agafa un color $c$ (representat per un enter que inicialment és $0$) i es pinta el node amb grau més alt. A continuació i per nombre decreixent de grau, es comprova per a tots els nodes del graf si són adjacents a un altre pintat amb color $c$. En cas de ser-ho, es pintaran també amb $c$ i la resta es deixaràn igual. Un cop s'haigi recorregut tots els nodes, s'establirà un altre color i es repetirà  tot el procediment fins que tots els nodes tinguin un color assignat.
+
+\begin{figure}[H]
+\centering
+\subfloat{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, a/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, b/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, c/.style={circle, fill=green, text=white, thin, minimum size=.5mm}, transform shape, scale=0.50]
+		\node[round] (6) at (0,2) {$v_{6}$};
+		\node[round] (4) at (2,0) {$v_{4}$};
+		\node[round] (0) at (2,2) {$v_{0}$};
+		\node[round] (5) at (2,4) {$v_{5}$};
+		\node[round] (2) at (4,2) {$v_{2}$};
+		\node[round] (3) at (6,0) {$v_{3}$};
+		\node[round] (1) at (6,4) {$v_{1}$};
+		
+		
+		\draw (6) edge (0);
+		\draw (4) edge (0);
+		\draw (5) edge (0);
+		\draw (5) edge (1);
+		\draw (1) edge (0);
+		\draw (2) edge (0);
+		\draw (4) edge (2);
+		\draw (4) edge (3);
+		\draw (1) edge (2);
+		\draw (2) edge (3);
+		\draw (3) edge (1);
+		
+	\end{tikzpicture}
+}
+\subfloat{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, a/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, b/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, c/.style={circle, fill=green, text=white, thin, minimum size=.5mm}, transform shape, scale=0.50]
+		\node[round] (6) at (0,2) {$v_{6}$};
+		\node[round] (4) at (2,0) {$v_{4}$};
+		\node[a] (0) at (2,2) {$v_{0}$};
+		\node[round] (5) at (2,4) {$v_{5}$};
+		\node[round] (2) at (4,2) {$v_{2}$};
+		\node[a] (3) at (6,0) {$v_{3}$};
+		\node[round] (1) at (6,4) {$v_{1}$};
+		
+		
+		\draw (6) edge (0);
+		\draw (4) edge (0);
+		\draw (5) edge (0);
+		\draw (5) edge (1);
+		\draw (1) edge (0);
+		\draw (2) edge (0);
+		\draw (4) edge (2);
+		\draw (4) edge (3);
+		\draw (1) edge (2);
+		\draw (2) edge (3);
+		\draw (3) edge (1);
+		
+	\end{tikzpicture}
+}	
+\subfloat{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, a/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, b/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, c/.style={circle, fill=green, text=white, thin, minimum size=.5mm}, transform shape, scale=0.50]
+		\node[b] (6) at (0,2) {$v_{6}$};
+		\node[b] (4) at (2,0) {$v_{4}$};
+		\node[a] (0) at (2,2) {$v_{0}$};
+		\node[round] (5) at (2,4) {$v_{5}$};
+		\node[round] (2) at (4,2) {$v_{2}$};
+		\node[a] (3) at (6,0) {$v_{3}$};
+		\node[b] (1) at (6,4) {$v_{1}$};
+		
+		
+		\draw (6) edge (0);
+		\draw (4) edge (0);
+		\draw (5) edge (0);
+		\draw (5) edge (1);
+		\draw (1) edge (0);
+		\draw (2) edge (0);
+		\draw (4) edge (2);
+		\draw (4) edge (3);
+		\draw (1) edge (2);
+		\draw (2) edge (3);
+		\draw (3) edge (1);
+		
+	\end{tikzpicture}
+}
+\subfloat{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, a/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, b/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, c/.style={circle, fill=green, text=white, thin, minimum size=.5mm}, transform shape, scale=0.50]
+		\node[b] (6) at (0,2) {$v_{6}$};
+		\node[b] (4) at (2,0) {$v_{4}$};
+		\node[a] (0) at (2,2) {$v_{0}$};
+		\node[c] (5) at (2,4) {$v_{5}$};
+		\node[c] (2) at (4,2) {$v_{2}$};
+		\node[a] (3) at (6,0) {$v_{3}$};
+		\node[b] (1) at (6,4) {$v_{1}$};
+		
+		
+		\draw (6) edge (0);
+		\draw (4) edge (0);
+		\draw (5) edge (0);
+		\draw (5) edge (1);
+		\draw (1) edge (0);
+		\draw (2) edge (0);
+		\draw (4) edge (2);
+		\draw (4) edge (3);
+		\draw (1) edge (2);
+		\draw (2) edge (3);
+		\draw (3) edge (1);
+		
+	\end{tikzpicture}
+}			
+\caption{Procés de coloració que segueix l'algorisme}
+\end{figure}
+
+\subsubsection{Pseudocodi}
+\begin{algorisme}[H]
+\DontPrintSemicolon
+\KwData{un graf $G$}
+\KwResult{conjunt de nodes de $G$ amb el color corresponent}
+nova llista $nodes$\;
+nova llista $colors$\;
+nou enter $color\_actual$\;
+nou booleà $usat$\;
+
+$usat = False$\;
+$actual = 0$\;
+
+\For{$i$ in range($0, |V|$)}
+{
+	$colors[i] = Nul$\;
+}
+$nodes=$vèrtexs de G ordenats de manera decreixent segons el seu grau\;
+$color[nodes[0]]=0$\;
+\While{no tots els nodes tinguin assignat un color}
+{
+	\ForEach{node $v$ de $G$}
+	{
+		\If{$colors[v]==Nul$}
+		{
+			\ForEach{node $u$ adjacent a $v$}
+			{
+				\If{$colors[u]==color\_actual$}
+				{
+					$usat=True$\;
+					break\;
+				}
+			}
+			\If{$usat==False$}
+			{
+				$colors[v]=color\_actual$\;
+			}
+			$usat=False$\;
+		}
+	}
+	$color\_actual = color\_actual+1$\;
+}
+\caption{Coloració}
+\end{algorisme}
+\subsubsection{Propietats}
+\begin{propietat}
+En el pitjor dels casos, l'algorisme triga $O(|V|^{3})$.
+\emph{Demostració}: El pitjor cas que pot rebre aquest algorisme és un graf complet $K_{n}$ \footnote{Cal observar que en un graf $K_{n}$ tots els nodes estan connectats amb la resta, i que per tant es necessiten $n$ colors}. En aquest cas, caldrà executar $n=|V|$ vegades el bucle principal, on cada vegada recorrerà tots els nodes del graf i els seus adjacents. D'aquesta manera es recorrerà 3 vegades el graf sencer, trgant un temps total de $O(|V|^{3})$.
+\end{propietat}
+\begin{propietat}
+Si el que es vol és pintar les arestes d'un graf en lloc dels vèrtexs, només cal executar l'algorisme sobre el graf lineal d'aquest i un cop pintat tornar a muntar el graf original.
+\end{propietat}
+\subsubsection{Aplicacions}
+\begin{itemize}
+\item Per la manera com està fet l'algorisme, es pot comprovar si un graf és bipartit. Tota execució de l'algorisme en un graf bipartit utilitzarà tan sols dos colors.
+\item S'utilitza la coloració de grafs per a problemes que requereixen separar els nodes en grups separats de manera que dos nodes del mateix grup no siguin adjacents.
+\end{itemize}
+
 \part{Disseny de grafs}
 Fins ara, s'han mostrat i estudiat grafs que ja estan definits sobre els quals s'ha de fer alguna operació. Ara bé, en aplicacions reals de teoria de grafs, sovint no hi ha un graf determinat, sinó que s'ha de generar.  
 
@@ -2310,7 +2473,9 @@ Una de les aplicacions de teoria de grafs que utilitzem cada dia és l'algorisme 
 
 Aquest algorisme conta el nombre de links cap a una pàgina web, així com l'importància de la pàgina web on estan posats, per saber quina importància té una web. La presuposició que fan és que quans més links cap a una web concreta, més important és.
 
-S'ha de pensar el conjunt de pàgines web com un graf dirigit i poderat: cada vèrtex representa una pàgina i hi ha una aresta dirigida de del vèrtex$v_{i}$ fins a $v_{j}$ si hi ha un enllaç a $v_{i}$ que porta a $v_{j}$. El pes de l'aresta $e=(v_{i}, v_{j})$, $w(e)$, serà la probabilitat de passar del vèrtex $v_{i}$ al vtex $v_{j}$ (és a dir, $\frac{1}{n}$, on $n$ és el nombre d'arestes que surten de $v_{i}$).
+S'ha de pensar el conjunt de pàgines web com un graf dirigit i poderat: cada vèrtex representa una pàgina i hi ha una aresta dirigida de del vèrtex$v_{i}$ fins a $v_{j}$ si hi ha un enllaç a $v_{i}$ que porta a $v_{j}$. El pes de l'aresta $e=(v_{i}, v_{j})$, $w(e)$, serà la probabilitat de passar del vèrtex $v_{i}$ al vèrtex $v_{j}$ (és a dir, $\frac{1}{n}$, on $n$ és el nombre d'arestes que surten de $v_{i}$).
+
+Un cop es té la matriu de probabilitats (la matriu d'adjacència del graf) es fa que un programa o bot navegui de manera aleatòria per aquest graf, d'acord amb les probabilitats de passar per cada aresta. Quan el programa ha estat un temps recorrent es fa el recompte de quantes vegades ha passat per a cada pàgina, i a paritr d'aquest valor es determina la posició en els resultats.
 \section{Productes relacionats}
 Quan es visita una botiga online i s'està mirant un producte, sovint apareix una secció de productes recomenats o relacionats. Hi ha diverses maneres de saber quins productes estàn relacionats a aquell que s'està mirant, i una de les que més s'utilitza es basa en teoria de grafs. 
 
@@ -2319,7 +2484,7 @@ El que es fa és anar construïnt un graf a mesura que els usuaris van visitant la
 Sobre aquest graf s'executarà un algorisme de clusterització, que buscarà parts del graf que siguin més denses o altament conexes. Auquestes parts segurament seràn d'una temàtica concreta, com per exemple el grup dels ordinadors i hi haurà molt poques arestes que surtin d'un grup cap a un altre. 
 
 
-\section{Coses que es poden fer amb coloració}
+\section{Instal·lació de càmeres de videovigilància}
 Un altre exemple és la optimització de sistemes de videovigilància. Amb teoria de grafs es pot saber quin és el màxim nombre de càmeres necessàries per poder vigilar un local, tingui la forma que tingui. Aquest problema és conegut com el problema de la galeria d'art
 
 La intució diu que, per una sala poligonal amb $n$ vértexs, es pot posar una càmera a cada cantonada (que resulta amb un total de $n$ càmeres) o de manera més òptima, posant una càmera cada dos vèrtexs (que comporta tenir $\frac{n}{2}$ càmeres). Tot i això, Václav Chvátal afirma en el seu teorema que sempre s'hauràn d'utilitzar com a màxim $\frac{n}{3}$.
