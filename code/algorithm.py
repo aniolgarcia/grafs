@@ -1,3 +1,4 @@
+#coding: utf-8
 from UnionFind import UnionFind
 
 
@@ -85,6 +86,23 @@ def Dijkstra(Adj, s):
         
     return dist, tree
 
+
+def OrderedDijkstra(Adj, s):
+    Q = dict.fromkeys(Adj.keys(), float("inf"))
+    dist = dict.fromkeys(Adj.keys(), float("inf"))
+    tree = {}
+    Q[s] = 0
+    while Q:
+        u = min(Q, key=Q.get)
+        dist[u] = Q[u]
+        for v in Adj[u]:
+            if v in Q:
+                if Q[v] > Q[u] + Adj[u][v]:
+                    Q[v] = Q[u] + Adj[u][v]
+                    tree[v] = u
+        Q.pop(u)
+        
+    return dist, tree
 #    print "Distances:"
 #    print dist
 #    print "Shortest-path tree:"
@@ -283,12 +301,21 @@ euler2={0:[1,2,3],1:[0,2,3],2:[0,1,3,4],3:[0,1,2,4],4:[3,2]}
 proves_dijkstra={0:{1:3,2:4},1:{},2:{1:-2}}
 hamilton2={0:[2,3,5,1],1:[0,2,4,5],2:[0,1,3,4],3:[0,2,4,5],4:[1,2,3,5],5:[0,1,3,4]}
 bipartite={0:[4,5,6,7],1:[4,5,6,7],2:[4,5,6,7],3:[4,5,6,7],4:[0,1,2,3],5:[0,1,2,3],6:[0,1,2,3],7:[0,1,2,3]}
+proves_decimals2={0:{1:10,2:3},1:{2:1,3:2},2:{1:4,3:8,4:2},3:{4:7},4:{3:9}}
+proves_decimals3={100:{101:10,102:3},101:{102:1,103:2},102:{101:4,103:8,104:2},103:{104:7},104:{103:9}}
+proves_decimals={1.0:{1.1:10,1.2:3},1.1:{1.2:1,1.3:2},1.2:{1.1:4,1.3:8,1.4:2},1.3:{1.4:7},1.4:{1.3:9}}
+proves_decimals4={"a":{"a":10,1.2:3},1.1:{1.2:1,1.3:2},1.2:{1.1:4,1.3:8,1.4:2},1.3:{1.4:7},1.4:{1.3:9}}
+metro={"Plaça Catalunya7":{"Provenca7":1},"Provenca7":{"Plaça Catalunya7":1, "Gracia7":1},"Gracia7":{"Provenca7":1,"Placa Molina":1},"Placa Molina":{"Gracia7":1,"Padua":1},"Padua":{"Placa Molina":1,"El Putxet":1},"El Putxet":{"Padua":1, "Avda. Tibidabo":1}, "Avda. Tibidabo":{"El Putxet":1}}
 
+#print OrderedDijkstra(proves_decimals,1.0)
+#print Dijkstra(proves_decimals2,0)
+print OrderedDijkstra(metro,"Provenca7")
+#print FloydWarshall(proves_decimals)
 #Dijkstra(proves_dijkstra, 0)
 #DFS(dag)
 #print Hamilton(hamilton2, 0,5)
 #print TopologicalSort(dag)
-print coloring(bipartite)
+#print coloring(bipartite)
 #print sorted(euler, key=len)
 #print sorted(proves_dijkstra, key=lambda k: len(proves_dijkstra[k]), reverse=True)
 #print Euler(euler2)
@@ -302,7 +329,7 @@ print coloring(bipartite)
 #Kruskal(weight2)
 #Hamilton(hamilton, 0, 0)
 #BFS(non_dir, 0)
-#FloydWarshall(killer)
+#print FloydWarshall(killer)
 #for v in range(len(weight3)):
 #    print "v: %d" %v
 #    for u in weight3[v]:
