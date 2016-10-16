@@ -1,5 +1,6 @@
-#coding: utf-8
+# -*- coding: Latin-1 -*-
 from UnionFind import UnionFind
+
 
 
 parent={}
@@ -275,7 +276,37 @@ def Johnson(Adj):
             original[v][u] = original[v][u] + optimized[v] - optimized[u]
     return Dijkstra(original, 0)
     
+#______________________________________________________________________________    
+
+def metro(Adj, inici, final):
+    recorregut=[]
     
+    print "Punt inicial:", inici.decode("ISO-8859-15")
+    
+    print "Punt final:", final.decode("ISO-8859-15")
+    
+    dist, tree = OrderedDijkstra(Adj, inici)
+    print "Temps total del recorregut:", dist[final]
+
+    print "Recorregut:",
+    
+
+    i = final
+    #recorregut.append(i)
+    while tree[i] != inici:
+        recorregut.append(tree[i])
+        i = tree[i]
+        
+    recorregut.reverse()
+    print "[",
+    for i in range(0,len(recorregut)):
+        print recorregut[i].decode("ISO-8859-15")+",",
+
+    print final.decode("ISO-8859-15"),"]"         
+    
+    
+    
+#______________________________________________________________________________
     
             
 
@@ -305,11 +336,12 @@ proves_decimals2={0:{1:10,2:3},1:{2:1,3:2},2:{1:4,3:8,4:2},3:{4:7},4:{3:9}}
 proves_decimals3={100:{101:10,102:3},101:{102:1,103:2},102:{101:4,103:8,104:2},103:{104:7},104:{103:9}}
 proves_decimals={1.0:{1.1:10,1.2:3},1.1:{1.2:1,1.3:2},1.2:{1.1:4,1.3:8,1.4:2},1.3:{1.4:7},1.4:{1.3:9}}
 proves_decimals4={"a":{"a":10,1.2:3},1.1:{1.2:1,1.3:2},1.2:{1.1:4,1.3:8,1.4:2},1.3:{1.4:7},1.4:{1.3:9}}
-metro={"PlaÃ§a Catalunya7":{"Provenca7":1},"Provenca7":{"PlaÃ§a Catalunya7":1, "Gracia7":1},"Gracia7":{"Provenca7":1,"Placa Molina":1},"Placa Molina":{"Gracia7":1,"Padua":1},"Padua":{"Placa Molina":1,"El Putxet":1},"El Putxet":{"Padua":1, "Avda. Tibidabo":1}, "Avda. Tibidabo":{"El Putxet":1}}
+graf_metro={"7.Plaça Catalunya":{"7.Provença":1,"1.Catalunya":229,"3.Catalunya":1,"6.Plaça Catalunya":1},"7.Provença":{"7.Plaça Catalunya":1, "7.Gràcia":1, "3.Diagona":1, "5.Diagonal":1, "6.Provença":1},"7.Gràcia":{"7.Provença":1,"7.Plaça Molina":1,"6.Gràcia":1},"7.Plaça Molina":{"7.Gràcia":1,"7.Pàdua":1, "6.Sant Gervasi":1},"7.Pàdua":{"7.Plaça Molina":1,"7.El Putxet":1},"7.El Putxet":{"7.Padua":1, "7.Avda. Tibidabo":1}, "7.Avda. Tibidabo":{"7.El Putxet":1}}
 
 #print OrderedDijkstra(proves_decimals,1.0)
 #print Dijkstra(proves_decimals2,0)
-print OrderedDijkstra(metro,"Provenca7")
+#print OrderedDijkstra(graf_metro,"Provença7")
+metro(graf_metro, "7.Provença", "7.El Putxet")
 #print FloydWarshall(proves_decimals)
 #Dijkstra(proves_dijkstra, 0)
 #DFS(dag)
