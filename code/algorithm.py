@@ -286,12 +286,17 @@ def metro(Adj, inici, final):
     print "Punt final:", final.decode("ISO-8859-15")
     
     dist, tree = OrderedDijkstra(Adj, inici)
+    print type(inici)
+    print type(final)
     print "Temps total del recorregut:", dist[final]
 
     print "Recorregut:",
     
+    #inici = inici.encode("latin1")
+    #final = final.encode("latin1")
 
     i = final
+    
     #recorregut.append(i)
     while tree[i] != inici:
         recorregut.append(tree[i])
@@ -336,12 +341,12 @@ proves_decimals2={0:{1:10,2:3},1:{2:1,3:2},2:{1:4,3:8,4:2},3:{4:7},4:{3:9}}
 proves_decimals3={100:{101:10,102:3},101:{102:1,103:2},102:{101:4,103:8,104:2},103:{104:7},104:{103:9}}
 proves_decimals={1.0:{1.1:10,1.2:3},1.1:{1.2:1,1.3:2},1.2:{1.1:4,1.3:8,1.4:2},1.3:{1.4:7},1.4:{1.3:9}}
 proves_decimals4={"a":{"a":10,1.2:3},1.1:{1.2:1,1.3:2},1.2:{1.1:4,1.3:8,1.4:2},1.3:{1.4:7},1.4:{1.3:9}}
-graf_metro={"7.Plaça Catalunya":{"7.Provença":1,"1.Catalunya":229,"3.Catalunya":1,"6.Plaça Catalunya":1},"7.Provença":{"7.Plaça Catalunya":1, "7.Gràcia":1, "3.Diagona":1, "5.Diagonal":1, "6.Provença":1},"7.Gràcia":{"7.Provença":1,"7.Plaça Molina":1,"6.Gràcia":1},"7.Plaça Molina":{"7.Gràcia":1,"7.Pàdua":1, "6.Sant Gervasi":1},"7.Pàdua":{"7.Plaça Molina":1,"7.El Putxet":1},"7.El Putxet":{"7.Padua":1, "7.Avda. Tibidabo":1}, "7.Avda. Tibidabo":{"7.El Putxet":1}}
-
+graf_metro={"1_Hospital de Bellvitge":{"1_Bellvitge":1}, "1_Bellvitge":{"1_Hospital de Bellvitge":1, "1_Av. Carrilet":1},"1_Av. Carrilet":{"1_Bellvitge":1, "1_Rbla. Just Oliveras":1, "8_L'Hospitalet - Av. Carrilet":1}, "1_Rbla. Just Oliveras":{"1_Av. Carrilet":1, "1_Can Serra":1}, "1_Can Serra":{"1_Rbla. Just Oliveras":1, "1_Florida":1}, "1_Florida":{"1_Can Serra":1, "1_Torrassa":1}, "1_Torrassa":{"1_Florida":1, "1_Santa Eulàlia":1, "9S_Torrassa":1}, "1_Santa Eulàlia":{"1_Torrassa":1,"1_Mercat Nou":1}, "1_Mercat Nou":{"1_Santa Eulàlia":1, "1_Plaça de Sants":1}, "1_Plaça de Sants":{"1_Mercat Nou":1, "1_Hostafrancs":1, "5_Plaça de Sants":1}, "1_Hostafrancs":{"1_Plaça de Sants":1, "1_Espanya":1}, "1_Espanya":{"1_Hostafrancs":1, "1_Rocafort":1, "3_Espanya":209, "8_Espanya":1}, "1_Rocafort":{"1_Espanya":1, "1_Urgell":1}, "1_Urgell":{"1_Rocafort":1, "1_Universitat":1}, "1_Universitat":{"1_Urgell":1, "1_Catalunya":50, "2_Universitat":1}, "1_Catalunya":{"1_Universitat":50, "1_Urquinaona":52, "3_Catalunya":229, "6_Catalunya":229, "7_Catalunya":229}, "1_Urquinaona":{"1_Catalunya":52, "1_Arc de Triomf":1, "4_Urquinaona":256}, "1_Arc de Triomf":{"1_Urquinaona":1, "1_Marina":1}, "1_Marina":{"1_Arc de Triomf":1, "1_Glòries":1}, "1_Glòries":{"1_Marina":1, "1_Clot":1}, "1_Clot":{"1_Glòries":1,"1_Navas":1, "2_Clot":180}, "1_Navas":{"1_Clot":1, "1_La Sagrera":1}, "1_La Sagrera":{"1_Navas":1, "1_Fabra i Puig":1, "5_La Sagrera":133, "9N_La Sagrera":133, "10_La Sagrera":133}, "1_Fabra i Puig":{"1_La Sagrera":1, "1_Sant Andreu":1}, "1_Sant Andreu":{"1_Fabra i Puig":1, "1_Torras i Bages":1}, "1_Torras i Bages":{"1_Sant Andreu":1, "1_Trinitat Vella":1}, "1_Trinitat Vella":{"1_Torras i Bages":1, "1_Baró de Viver":1}, "1_Baró de Viver":{"1_Trinitat Vella":1, "1_Santa Coloma":1}, "1_Santa Coloma":{"1_Baró de Viver":1, "1_Fondo":1}, "1_Fondo":{"1_Santa Coloma":1, "9N_Fondo":140}, "2_Paral·lel":{"2_Sant Antoni":1, "3_Paral·lel":83}, "2_Sant Antoni":{"2_Paral·lel":1, "2_Universitat":1}, "2_Universitat":{"2_Sant Antoni":1, "2_Passeig de Gràcia":80, "1_Universitat":144}, "2_Passeig de Gràcia":{"2_Universitat":80, "2_Tetuan":1, "3_Passeig de Gràcia":238, "4_Passeig de Gràcia":238}, "2_Tetuan":{"2_Passeig de Gràcia":1, "2_Monumental":1}, "2_Monumental":{"2_Tetuan":1, "2_Sagrada Família":1}, "2_Sagrada Família":{"2_Monumental":1, "2_Encants":1, "5_Sagrada família":178}, "2_Encants":{"2_Sagrada Família":1, "2_Clot":1}, "2_Clot":{"2_Encants":1, "2_Bac de Roda":1, "1_Clot":180}, "2_Bac de Roda":{"2_Clot":1, "2_Sant Martí":1}, "2_Sant Martí":{"2_Bac de Roda":1, "2_La Pau":1}, "2_La Pau":{"2_Sant Martí":1, "2_Verneda":1, "4_La Pau":165}, "2_Verneda":{"2_La Pau":1, "2_Artigues Sant Adrià":1}, "2_Artigues Sant Adrià":{"2_Verneda":1, "2_Sant Roc":1}, "2_Sant Roc":{"2_Artigues Sant Adrià":1, "2_Gorg":1}, "2_Gorg":{"2_Sant Roc":1, "2_Pep Ventura":1, "10_Gorg":50}, "2_Pep Ventura":{"2_Gorg":1, "2_Badalona Pompeu Fabra":1}, "2_Badalona Pompeu Fabra":{"2_Pep Ventura":1}, "3_Zona Universitària":{"3_Palau Reial":1, "9S_Zona Universitària":1}, "3_Palau Reial":{"3_Zona Universitària":1, "3_Maria Cristina":1}, "3_Maria Cristina":{"3_Palau Reial":1, "3_Les Corts":1}, "3_Les Corts":{"3_Maria Cristina":1, "3_Plaça del Centre":1}, "3_Plaça del Centre":{"3_Les Corts":1, "3_Sants Estació":1},"3_Sants Estació":{"3_Plaça del Centre":1, "3_Tarragona":1, "5_Sants Estació":232},"3_Tarragona":{"3_Sants Estació":1, "3_Espanya":1}, "3_Espanya":{"3_Tarragona":1, "3_Poble Sec":1, "1_Espanya":209, "8_Espanya":209}, "3_Poble Sec":{"3_Espanya":1, "3_Paral·lel":1}, "3_Paral·lel":{"3_Poble Sec":1, "3_Drassanes":1, "2_Paral·lel":83}, "3_Drassanes":{"3_Paral·lel":1, "3_Liceu":1}, "3_Liceu":{"3_Drassanes":1, "3_Catalunya":1}, "3_Catalunya":{"3_Liceu":1, "3_Passeig de Gràcia":98, "1_Catalunya":229, "6_Catalunya":229, "7_Catalunya":229}, "3_Passeig de Gràcia":{"3_Catalunya":98, "3_Diagonal":92, "2_Passig de Gràcia":238, "4_Passeig de Gràcia":238}, "3_Diagonal":{"3_Passeig de Gràcia":92, "3_Fontana":1, "5_Diagonal":217, "6_Provença":1, "7_Provença":1}, "3_Fontana":{"3_Diagonal":1, "3_Lesseps":1}, "3_Lesseps":{"3_Fontana":1, "3_Vallcarca":1}, "3_Vallcarca":{"3_Lesseps":1, "3_Penitents":1}, "3_Penitents":{"3_Vallcarca":1, "3_Vall d'Hebron":1}, "3_Vall d'Hebron":{"3_Penitents":1, "3_Montbau":1, "5_Vall d'Hebron":290}, "3_Montbau":{"3_Vall d'Hebron":1, "3_Mundet":1}, "3_Mundet":{"3_Montbau":1, "3_Valldaura":1}, "3_Valldaura":{"3_Mundet":1, "3_Canyelles":1}, "3_Canyelles":{"3_Valldaura":1, "3_Roquetes":1}, "3_Roquetes":{"3_Canyelles":1, "3_Trinitat Nova":1}, "3_Trinitat Nova":{"3_Roquetes":1, "4_Trinitat Nova":193, "11_Trinitat Nova":193},"7_Catalunya":{"7_Provença":1,"1_Catalunya":1,"3_Catalunya":1,"6_Catalunya":1},"7_Provença":{"7_Catalunya":1, "7_Gràcia":1, "3_Diagonal":1, "5_Diagonal":1, "6_Provença":1},"7_Gràcia":{"7_Provença":1,"7_Plaça Molina":1,"6_Gràcia":1},"7_Plaça Molina":{"7_Gràcia":1,"7_Pàdua":1, "6_Sant Gervasi":1},"7_Pàdua":{"7_Plaça Molina":1,"7_El Putxet":1},"7_El Putxet":{"7_Pàdua":1, "7_Av. Tibidabo":1}, "7_Av. Tibidabo":{"7_El Putxet":1}}
 #print OrderedDijkstra(proves_decimals,1.0)
 #print Dijkstra(proves_decimals2,0)
-#print OrderedDijkstra(graf_metro,"Provença7")
-metro(graf_metro, "7.Provença", "7.El Putxet")
+a,b = OrderedDijkstra(graf_metro,"1_Torrassa")
+print type("1_Catalunya")
+metro(graf_metro, "7_Av. Tibidabo", "3_Palau Reial")
 #print FloydWarshall(proves_decimals)
 #Dijkstra(proves_dijkstra, 0)
 #DFS(dag)
