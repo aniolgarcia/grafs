@@ -27,10 +27,12 @@
 \usetikzlibrary{positioning,automata}
 
 \begin{document}
-Des de feia un cert temps, ja tenia clar que el meu treball de recerca havia de ser d'àmbit científic. Havia pensat en temes de robòtica i informàtica, camps amb els quals ja havia treballat anteriorment, però els treballs que se m'acudien en aquestes disciplines eren massa concrets i es basaven en un sol producte final, cosa que no m'agradava. D'altra banda també hi havia els temes purament matemàtics. Aquestes matemàtiques eren molt distatns a les matemàtiques de l'escola, i també de més dificultat, cosa que afegia un component de risc. Així doncs, vaig decidir de fer un treball que combinés les matemàtiques i la programació, i vaig trobar aquesta unió en la teoria de grafs.
+Des de feia un cert temps, ja tenia clar que el meu treball de recerca havia de ser d'àmbit científic o tècnic. Havia pensat en temes de robòtica i informàtica, camps en els quals ja havia treballat anteriorment, però els treballs que se m'acudien en aquestes disciplines eren massa concrets i es basaven en un sol producte final, cosa que no m'agradava. D'altra banda també hi havia els temes purament matemàtics. Aquestes matemàtiques eren molt distatns a les matemàtiques de l'escola, i també de més dificultat, cosa que afegia un component de risc. Així doncs, vaig decidir de fer un treball que combinés la teoria i rigorositat de les matemàtiques amb una part més aplicada de programació. Aquesta unió en la vaig trobar en la teoria de grafs.
 
-El meu primer contacte amb els grafs va ser a 4t d'ESO en el problema 9 de la Marató de Problemes 2015 \footnote{Veure www.cangur.org/marato/2015/}. En aquest problema, encara que sense saber-ho, vaig calcular els meus primers arbres d'Steiner i vaig 
+El meu primer contacte amb els grafs va ser a 4t d'ESO en el problema 9 de la Marató de Problemes 2015 \footnote{Veure www.cangur.org/marato/2015/}. En aquest problema, encara que sense saber-ho, vaig calcular els meus primers arbres d'Steiner i vaig utilitzar manualment algorismes de grafs com el de Kruskal. L'experiència amb aquest problema va ser molt bona, i segurament és aquest el motiu per el qual vaig recuperar el tema per al treball de recerca.   
 
+\begin{figure}[H]
+\centering
 
 \definecolor{ffdxqq}{rgb}{1,0.843137254901961,0}
 \definecolor{ffqqff}{rgb}{1,0,1}
@@ -43,7 +45,7 @@ El meu primer contacte amb els grafs va ser a 4t d'ESO en el problema 9 de la Ma
 \definecolor{ffqqqq}{rgb}{1,0,0}
 \definecolor{qqqqff}{rgb}{0,0,1}
 \definecolor{cqcqcq}{rgb}{0.752941176470588,0.752941176470588,0.752941176470588}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale= 0.8]
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale= 0.6]
 \draw [color=cqcqcq,dash pattern=on 3pt off 3pt, xstep=2.0cm,ystep=2.0cm] (-5.210241892694826,-4.647328152758077) grid (11.825236628568483,11.990125169410069);
 \draw[->,color=black] (-5.210241892694826,0) -- (11.825236628568483,0);
 \foreach \x in {-4,-2,2,4,6,8,10}
@@ -166,6 +168,8 @@ El meu primer contacte amb els grafs va ser a 4t d'ESO en el problema 9 de la Ma
 \draw[color=ffdxqq] (1.821536624649064,2.915150630045626) node {$k_3$};
 \end{scriptsize}
 \end{tikzpicture}
+\caption{El meu primer graf}
+\end{figure}
 
 
 
