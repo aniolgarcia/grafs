@@ -7,67 +7,69 @@
 \contentsline {section}{\numberline {2}Principis b\`asics}{9}
 \contentsline {subparagraph}{Teorema 1 (Euler)}{10}
 \contentsline {section}{\numberline {3}Tipus de grafs}{11}
-\contentsline {subsection}{\numberline {3.1}Grafs complementaris}{11}
-\contentsline {subsection}{\numberline {3.2}Grafs regulars}{12}
-\contentsline {subsection}{\numberline {3.3}Graf nul i grafs buits}{13}
-\contentsline {subsection}{\numberline {3.4}Grafs complets}{13}
-\contentsline {subsection}{\numberline {3.5}Cicles}{14}
-\contentsline {subsection}{\numberline {3.6}Grafs bipartits}{15}
-\contentsline {subsection}{\numberline {3.7}Grafs bipartits complets}{15}
-\contentsline {subsection}{\numberline {3.8}Grafs estrella}{16}
-\contentsline {subsection}{\numberline {3.9}Graf lineal}{16}
-\contentsline {subsection}{\numberline {3.10}Rodes}{17}
-\contentsline {subsection}{\numberline {3.11}Xarxes}{18}
-\contentsline {subsection}{\numberline {3.12}Arbres}{19}
+\contentsline {subsection}{\numberline {3.1}Graf lineal}{11}
+\contentsline {subsection}{\numberline {3.2}Cicles}{12}
+\contentsline {subsection}{\numberline {3.3}Grafs bipartits}{13}
+\contentsline {subsection}{\numberline {3.4}Grafs bipartits complets}{13}
+\contentsline {subsection}{\numberline {3.5}Xarxes}{14}
+\contentsline {subsection}{\numberline {3.6}Arbres}{15}
+\contentsline {subsection}{\numberline {3.7}Grafs complets}{17}
+\contentsline {subsection}{\numberline {3.8}Rodes}{18}
+\contentsline {subsection}{\numberline {3.9}Grafs estrella}{19}
+\contentsline {subsection}{\numberline {3.10}Grafs complementaris}{19}
+\contentsline {subsection}{\numberline {3.11}Grafs regulars}{20}
+\contentsline {subsection}{\numberline {3.12}Graf nul i grafs buits}{21}
 \contentsline {part}{II\hspace {1em}Camins i algorismes}{21}
-\contentsline {subsection}{\numberline {3.13}Grafs ponderats i dirigits}{22}
-\contentsline {subsection}{\numberline {3.14}Camins}{22}
-\contentsline {section}{\numberline {4}Estructures de dades dels grafs}{23}
-\contentsline {section}{\numberline {5}Algorismes}{25}
-\contentsline {subsection}{\numberline {5.1}BFS}{25}
-\contentsline {subsubsection}{\numberline {5.1.1}Funcionament}{25}
-\contentsline {subsubsection}{\numberline {5.1.2}Pseudocodi}{26}
-\contentsline {subsubsection}{\numberline {5.1.3}Aplicacions}{27}
-\contentsline {subsection}{\numberline {5.2}DFS}{28}
-\contentsline {subsubsection}{\numberline {5.2.1}Funcionament}{28}
-\contentsline {subsubsection}{\numberline {5.2.2}Pseudocodi}{29}
-\contentsline {subsubsection}{\numberline {5.2.3}Propietats}{30}
-\contentsline {subsubsection}{\numberline {5.2.4}Aplicacions}{31}
-\contentsline {subsection}{\numberline {5.3}Dijkstra}{32}
-\contentsline {subsubsection}{\numberline {5.3.1}Funcionament}{32}
-\contentsline {subsubsection}{\numberline {5.3.2}Pseudocodi}{34}
-\contentsline {subsubsection}{\numberline {5.3.3}Propietats}{34}
-\contentsline {subsubsection}{\numberline {5.3.4}Aplicacions}{35}
-\contentsline {subsection}{\numberline {5.4}Bellman-Ford}{36}
-\contentsline {subsubsection}{\numberline {5.4.1}Funcionament}{36}
-\contentsline {subsubsection}{\numberline {5.4.2}Pseudocodi}{37}
-\contentsline {subsubsection}{\numberline {5.4.3}Propietats}{37}
-\contentsline {subsection}{\numberline {5.5}Kruskal}{38}
-\contentsline {subsubsection}{\numberline {5.5.1}Funcionament}{39}
-\contentsline {subsubsection}{\numberline {5.5.2}Pseudocodi}{40}
-\contentsline {subsubsection}{\numberline {5.5.3}Propietats}{40}
-\contentsline {subsection}{\numberline {5.6}Prim}{41}
-\contentsline {subsubsection}{\numberline {5.6.1}Funcionament}{41}
-\contentsline {subsubsection}{\numberline {5.6.2}Pseudocodi}{42}
-\contentsline {subsubsection}{\numberline {5.6.3}Propietats}{43}
-\contentsline {subsubsection}{\numberline {5.6.4}Aplicacions}{43}
-\contentsline {subsection}{\numberline {5.7}Floyd-Warshall}{43}
-\contentsline {subsubsection}{\numberline {5.7.1}Funcionament}{43}
-\contentsline {subsubsection}{\numberline {5.7.2}Pseudocodi}{44}
-\contentsline {subsubsection}{\numberline {5.7.3}Propietats}{45}
-\contentsline {subsubsection}{\numberline {5.7.4}Aplicacions}{45}
-\contentsline {subsection}{\numberline {5.8}Coloraci\'o de grafs}{45}
-\contentsline {subsubsection}{\numberline {5.8.1}Funcionament}{45}
-\contentsline {subsubsection}{\numberline {5.8.2}Pseudocodi}{47}
-\contentsline {subsubsection}{\numberline {5.8.3}Propietats}{47}
-\contentsline {subsubsection}{\numberline {5.8.4}Aplicacions}{48}
+\contentsline {section}{\numberline {4}Grafs ponderats i dirigits}{22}
+\contentsline {subsection}{\numberline {4.1}Grafs ponderats}{22}
+\contentsline {section}{\numberline {5}Camins}{22}
+\contentsline {subsection}{\numberline {5.1}Camins Eulerians}{23}
+\contentsline {section}{\numberline {6}Estructures de dades dels grafs}{23}
+\contentsline {section}{\numberline {7}Algorismes}{25}
+\contentsline {subsection}{\numberline {7.1}BFS}{25}
+\contentsline {subsubsection}{\numberline {7.1.1}Funcionament}{25}
+\contentsline {subsubsection}{\numberline {7.1.2}Pseudocodi}{26}
+\contentsline {subsubsection}{\numberline {7.1.3}Aplicacions}{27}
+\contentsline {subsection}{\numberline {7.2}DFS}{28}
+\contentsline {subsubsection}{\numberline {7.2.1}Funcionament}{28}
+\contentsline {subsubsection}{\numberline {7.2.2}Pseudocodi}{29}
+\contentsline {subsubsection}{\numberline {7.2.3}Propietats}{30}
+\contentsline {subsubsection}{\numberline {7.2.4}Aplicacions}{31}
+\contentsline {subsection}{\numberline {7.3}Dijkstra}{32}
+\contentsline {subsubsection}{\numberline {7.3.1}Funcionament}{32}
+\contentsline {subsubsection}{\numberline {7.3.2}Pseudocodi}{34}
+\contentsline {subsubsection}{\numberline {7.3.3}Propietats}{35}
+\contentsline {subsubsection}{\numberline {7.3.4}Aplicacions}{35}
+\contentsline {subsection}{\numberline {7.4}Bellman-Ford}{36}
+\contentsline {subsubsection}{\numberline {7.4.1}Funcionament}{36}
+\contentsline {subsubsection}{\numberline {7.4.2}Pseudocodi}{37}
+\contentsline {subsubsection}{\numberline {7.4.3}Propietats}{37}
+\contentsline {subsection}{\numberline {7.5}Kruskal}{38}
+\contentsline {subsubsection}{\numberline {7.5.1}Funcionament}{39}
+\contentsline {subsubsection}{\numberline {7.5.2}Pseudocodi}{40}
+\contentsline {subsubsection}{\numberline {7.5.3}Propietats}{40}
+\contentsline {subsection}{\numberline {7.6}Prim}{41}
+\contentsline {subsubsection}{\numberline {7.6.1}Funcionament}{41}
+\contentsline {subsubsection}{\numberline {7.6.2}Pseudocodi}{42}
+\contentsline {subsubsection}{\numberline {7.6.3}Propietats}{43}
+\contentsline {subsubsection}{\numberline {7.6.4}Aplicacions}{43}
+\contentsline {subsection}{\numberline {7.7}Floyd-Warshall}{43}
+\contentsline {subsubsection}{\numberline {7.7.1}Funcionament}{43}
+\contentsline {subsubsection}{\numberline {7.7.2}Pseudocodi}{44}
+\contentsline {subsubsection}{\numberline {7.7.3}Propietats}{45}
+\contentsline {subsubsection}{\numberline {7.7.4}Aplicacions}{45}
+\contentsline {subsection}{\numberline {7.8}Coloraci\'o de grafs}{45}
+\contentsline {subsubsection}{\numberline {7.8.1}Funcionament}{45}
+\contentsline {subsubsection}{\numberline {7.8.2}Pseudocodi}{47}
+\contentsline {subsubsection}{\numberline {7.8.3}Propietats}{47}
+\contentsline {subsubsection}{\numberline {7.8.4}Aplicacions}{48}
 \contentsline {part}{III\hspace {1em}Disseny de grafs}{48}
-\contentsline {section}{\numberline {6}Punt de Fermat i l'arbre de Steiner}{48}
-\contentsline {section}{\numberline {7}Arbres expansius}{50}
+\contentsline {section}{\numberline {8}Punt de Fermat i l'arbre de Steiner}{48}
+\contentsline {section}{\numberline {9}Arbres expansius}{50}
 \contentsline {part}{IV\hspace {1em}Topologia}{50}
-\contentsline {section}{\numberline {8}Isomorfismes}{50}
-\contentsline {part}{V\hspace {1em}Aplicacion pr\`actiques de la teoria de grafs}{51}
-\contentsline {section}{\numberline {9}Algorisme PageRank}{51}
-\contentsline {section}{\numberline {10}Productes relacionats}{51}
-\contentsline {section}{\numberline {11}Instal\IeC {\textperiodcentered }laci\'o de c\`ameres de videovigil\`ancia}{52}
-\contentsline {subsection}{\numberline {11.1}Demostraci\'o i procediment}{52}
+\contentsline {section}{\numberline {10}Isomorfismes}{50}
+\contentsline {part}{V\hspace {1em}Aplicacion pr\`actiques de la teoria de grafs}{50}
+\contentsline {section}{\numberline {11}Algorisme PageRank}{51}
+\contentsline {section}{\numberline {12}Productes relacionats}{51}
+\contentsline {section}{\numberline {13}Instal\IeC {\textperiodcentered }laci\'o de c\`ameres de videovigil\`ancia}{52}
+\contentsline {subsection}{\numberline {13.1}Demostraci\'o i procediment}{52}

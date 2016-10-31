@@ -431,320 +431,6 @@ diversos tipus de grafs que tenen propietats especials. A continuació se'n prese
 
 (Cal ordenar es apartats segons la ordenació topològica del graf de la figura \ref{fig:topological_sort})
 
-\subsection{Grafs complementaris} 
-\label{sec:complementaris}
-
-El graf complementari del graf $G$ és el graf $H$ amb els mateixos
-vèrtexs que $G$, de manera que dos vèrtexs d'$H$ seran adjacents
-si i només si a $G$ no ho són. Formalment, si $G=(V,E)$ és un graf
-simple i $K=E(K_{n})$ és el conjunt d'arestes derivades de totes les possibles combinacions de
-dos elements de $V$, essent $n=|V(G)|$, llavors $H=(V,K\setminus E)$    	\footnote{La notació $K\setminus E$ indica el conjunt dels elements de $K$ que no són a $E$}. 
-Per indicar el complementari de $G$ s'escriu $\bar{G}$ o $G'$. 
-
-\begin{propietat}
-Per obtenir el graf complementari
-de $G$ tan sols s'han de posar les arestes que falten per obtenir
-un graf complet i treure totes les que hi eren inicialment (ja que
-$|E(G)|+|E(\bar{{G}})|=|K|$). Veure figura \ref{fig:complementari}.
-\end{propietat}
-
-\begin{figure}[H]
-\centering
-	\subfloat{
-		\begin{tikzpicture}[scale=.5]
-			\grCirculant[RA=3, prefix=v,Math=true]{6}{2,3}
-		\end{tikzpicture}
-	}
-	\subfloat{
-		\begin{tikzpicture}[scale=.5]
-			\grCirculant[RA=3, prefix=v,Math=true]{6}{1}
-		\end{tikzpicture}
-	}
-\caption{Un graf $G$ i el seu complementari $\bar{G}$}
-\label{fig:complementari}
-\end{figure}
-
-
-\subsection{Grafs regulars} 
-\label{sec:regulars}
-
-Es diu que un graf $G=(V,E)$ és \textit{regular de grau $r$} quan tots els seus vèrtexs
-tenen grau $r$. Formalment, un graf és $r$-regular quan $\Delta(G)=\delta(G)=r$.
-Un graf $0$-regular és un graf nul \footnote{Veure apartat \ref{sec:buits}}, un graf $1$-regular
-consisteix en arestes separades entre elles i un graf $2$-regular
-consisteix en un o més cicles \footnote{Veure apartat \ref{sec:cicles}} separats. A partir d'aquí, els grafs regulars més importants
-tenen noms propis, com per exemple els $3$-regulars, que són els
-\textit{cúbics}; els $4$-regulars, \textit{quàrtics}; els $7$-regulars, \textit{grafs de Witt
-truncats dobles}; els $8$-regulars, \textit{grafs de 24 cel·les}... 
-
-A la imatge \ref{fig:regulars} es poden veure diversos exemples de grafs regulars.
-
-\begin{propietat}
-No necessàriament existeix un únic graf $r$-regular, sinó
-que sovint s'en poden fer amb diferent nombre de vèrtexs.
-
-\end{propietat}
-
-\begin{propietat}
-Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-regulars amb $n$ vèrtexs es compleix que 
-
-\[ |E(G)|=\frac{1}{2}nr \]on $|E(G)|$ és el nombre d'arestes.
-\end{propietat}
-
-%Cal afegir imatges de més grafs 3-regulars.
-
-\begin{figure}[H]
-\centering
-\subfloat[Graf cúbic (3-regular)]{
-	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
-		\node[round] (a) at (0,0){$v_{2}$};
-		\node[round] (b) at (4,0){$v_{0}$};
-		\node[round] (c) at (2,1.5){$v_{3}$};
-		\node[round] (d) at (2,4){$v_{1}$};
-		\draw (a) edge (b);
-		\draw (a) edge (c);
-		\draw (a) edge (d);
-		\draw (b) edge (c);
-		\draw (b) edge (d);
-		\draw (c) edge (d);
-
-	\end{tikzpicture}
-	}
-\subfloat[Graf 2-regular]{
-	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
-	
-		\node[round] (0) at (3,1){$v_{0}$};
-		\node[round] (1) at (3,3){$v_{1}$};
-		\node[round] (2) at (1.5,4){$v_{2}$};
-		\node[round] (3) at (0,3){$v_{3}$};
-		\node[round] (4) at (0,1){$v_{4}$};
-		\node[round] (5) at (1.5,0){$v_{5}$};
-		
-		\draw (0) edge (4);
-		\draw (0) edge (5);
-		\draw (4) edge (5);
-		\draw (1) edge (2);
-		\draw (1) edge (3);
-		\draw (2) edge (3);
-	\end{tikzpicture}
-}
-\subfloat[Graf 4-regular]{
-	\begin{tikzpicture}[]
-		\grEmptyCycle[RA=2, prefix=v, Math=true]{10}
-		%\EdgeInGraphModLoop{v}{8}{2}{0}
-		\EdgeFromOneToSel{v}{v}{0}{2,4,6,8}
-		\EdgeFromOneToSel{v}{v}{1}{3,5,7,9}
-		\EdgeFromOneToSel{v}{v}{2}{4,6,8}
-		\EdgeFromOneToSel{v}{v}{3}{5,7,9}
-		\EdgeFromOneToSel{v}{v}{4}{6,8}
-		\EdgeFromOneToSel{v}{v}{5}{7,9}
- 		\EdgeFromOneToSel{v}{v}{6}{8}
-		\EdgeFromOneToSel{v}{v}{7}{9}
-
-
-
-
-
-	
-	\end{tikzpicture}
-}
-\caption{Exemples de grafs regulars}
-\label{fig:regulars}
-\end{figure}
-
-
-\subsection{Graf nul i grafs buits}
-\label{sec:buits}
-
-Els \textit{grafs buits} són grafs sense arestes, és a dir, conjunts d'$n$ vértexs.
-Són els complementaris dels grafs complets $K_{n}$ \footnote{Veure apartat \ref{sec:Complets}}, i per tant la seva nomenclatura
-és $\bar{K}_{n}$ o, simplement, $N_{n}$. Estrictament s'anomena \textit{graf nul} a $N_{0}$
-i buits a la resta, però com que normalment no s'utilitza $N_{0}$,
-convencionalment es diuen nuls tots els elements del conjunt dels buits.
-
-\begin{figure}[H]
-\centering
-	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
-		\node[round] (a) at (0,0){$v_{0}$};
-		\node[round] (b) at (4,0){$v_{1}$};
-		\node[round] (c) at (8,0){$v_{2}$};
-		\node[round] (d) at (0,2){$v_{3}$};
-		\node[round] (d) at (4,2){$v_{4}$};
-		\node[round] (d) at (8,2){$v_{5}$};
-	\end{tikzpicture}
-\caption{Graf buit $N_{6}$}
-\end{figure}
-
-
-\subsection{Grafs complets}
-\label{sec:Complets}
-
-Un \textit{graf complet} és un graf on cada vèrtex està unit a tots els altres
-una sola vegada. Un graf complet amb $n$ nodes és un graf simple
-i $(n-1)$-regular i la seva nomenclatura és $K_{n}$. 
-
-\begin{propietat}
-Els grafs complets tenen ${n\choose 2}=\frac{n(n-1)}{2}$ arestes. 
-\end{propietat}
-
-\begin{propietat}
-El nombre de cicles que conté un graf complet queda determinat per la següent igualtat:
-
-\[ C_{n} =\sum_{K=3}^{n}\frac{1}{2}{n\choose k}(k-1)! \]
-
-On:
-\begin{description}
-\item[$\frac{1}{2}$] es multiplica perquè es conten dues vegades els cicles, ja que no són dirigits.
-\item[$n\choose k$] és el nombre de grups de $k$ elements que es poden agafar.
-\item[$(k-1)!$] és el nombre de permutacions circulars de $k$ elements.
-\end{description}
-
-\end{propietat}
-
-\begin{figure}[H]
-\centering
-	\subfloat[]{	
-		\begin{tikzpicture}
-			\grComplete[RA=2, prefix=v, Math=true]{7}
-		\end{tikzpicture}
-	}
-	\subfloat[]{
-		\begin{tikzpicture}
-			\grComplete[RA=2, prefix=v, Math=true]{5}
-		\end{tikzpicture}
-	}
-\caption{Grafs complets $K_{7}$(a) i $K_{5}$(b)}
-\end{figure}
-
-
-
-\subsection{Cicles}
-\label{sec:cicles}
-
-Els \textit{cicles} són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i
-s'anomenen $C_{n}$.
- 
-\begin{propietat}
-El graf lineal \footnote{Veure apartat\ref{sec:lineal}} d'un cicle és ell mateix.
-\end{propietat}
-
-\begin{figure}[H]
-\centering	
-	\begin{tikzpicture}
-		\grCycle[RA=2, prefix=v, Math=true]{9}
-	\end{tikzpicture}
-\caption{Cicle $C_{9}$}
-\end{figure}
-
-
-\subsection{Grafs bipartits}
-\label{sec:bipartits}
-
-Els \textit{grafs bipartits} són aquells en els quals els vèrtexs es poden
-separar en dos conjunts disjunts $U$ i $W$ (és a dir, que els dos
-conjunts no tinguin elements comuns) de tal manera que un vèrtex d'un
-conjunt no sigui mai adjacent a un altre vèrtex del mateix conjunt.
-Es pot dir també que un graf és bipartit si i sols si no conté cicles de longitud
-senar. 
-
-\begin{propietat}
-Tots els grafs $C_{n}$ amb $n$ parell, són també grafs bipartits.
-\end{propietat}
-
-\begin{figure}[H]
-\centering	
-	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, u/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
-		\node[v] (a) at (0,0){$v_{0}$};
-		\node[v] (b) at (2,0){$v_{1}$};
-		\node[v] (c) at (4,0){$v_{2}$};
-		\node[v] (d) at (6,0){$v_{3}$};
-		\node[u] (e) at (1,2){$u_{0}$};
-		\node[u] (f) at (3,2){$u_{1}$};
-		\node[u] (g) at (5,2){$u_{2}$};
-		\draw (a) edge (e);
-		\draw (b) edge (e);
-		\draw (b) edge (f);
-		\draw (b) edge (g);
-		\draw (c) edge (e);
-		\draw (c) edge (f);
-		\draw (d) edge (f);
-		\draw (d) edge (g);
-	\end{tikzpicture}
-\caption{Graf bipartit}
-\end{figure}
-
-
-\subsection{Grafs bipartits complets}
-\label{sec:bipartits_complets}
-
-Els \textit{grafs bipartits complets} són grafs bipartits \footnote{Veure apartat \ref{sec:bipartits}} en els quals cada
-element del conjunt $U$ està unit a tots els elements dels del conjunt
-$W$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|W|$.
-
-\begin{propietat}
-En els grafs bipartits $K_{m,n}=K_{n,m}$ , $|V|=n+m$ i $|E|=mn$.
-\end{propietat}
-
-\begin{figure}[H]
-\centering	
-	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, u/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
-		\node[v] (a) at (0,0){$v_{0}$};
-		\node[v] (b) at (2,0){$v_{1}$};
-		\node[v] (c) at (4,0){$v_{2}$};
-		\node[v] (d) at (6,0){$v_{3}$};
-		\node[v] (h) at (8,0){$v_{4}$};
-		\node[u] (e) at (1,2){$u_{0}$};
-		\node[u] (f) at (3,2){$u_{1}$};
-		\node[u] (g) at (5,2){$u_{2}$};
-		\node[u] (i) at (7,2){$u_{3}$};
-		\draw (a) edge (e);
-		\draw (a) edge (f);
-		\draw (a) edge (g);
-		\draw (a) edge (i);
-		\draw (b) edge (e);
-		\draw (b) edge (f);
-		\draw (b) edge (g);
-		\draw (b) edge (i);
-		\draw (c) edge (e);
-		\draw (c) edge (f);
-		\draw (c) edge (g);
-		\draw (c) edge (i);
-		\draw (d) edge (e);
-		\draw (d) edge (f);
-		\draw (d) edge (g);
-		\draw (d) edge (i);
-		\draw (h) edge (e);
-		\draw (h) edge (f);
-		\draw (h) edge (g);
-		\draw (h) edge (i);
-	\end{tikzpicture}
-\caption{Graf bipartit complet $K_{4,5}$}
-\end{figure}
-
-
-\subsection{Grafs estrella}	
-\label{sec:estrella}
-
-Un \textit{graf estrella} de grau $n$ és aquell que conté un vèrtex amb grau $n-1$ i els
-$n-1$ vèrtexs restants de grau 1.
-La seva nomenclatura és $S_{n}$. 
-
-\begin{propietat}
-Són estrelles tots els grafs bipartits de la forma $K_{1,n-1}$ o $K_{n-1,1}$. 
-\end{propietat}
-\begin{propietat}
-El graf lineal de $S_{n}$ és $K_{n-1}$.
-\end{propietat}
-
-\begin{figure}[H]
-\centering
-	\begin{tikzpicture}
-		\grStar[RA=2, prefix=v, Math=true]{7}
-	\end{tikzpicture}
-\caption{Graf estrella $S_{7}$}
-\end{figure}
-
-
 \subsection{Graf lineal}
 \label{sec:lineal}
 Un graf lineal $L(G)$ d'un graf $G$ és un graf que representa les
@@ -883,27 +569,104 @@ Tal com s'ha vist a l'apartat \ref{sec:Complets}, un graf complet té ${n\choose 
 \caption{Procés de construcció d'un graf lineal}
 \end{figure}
 
-\subsection{Rodes}
-\label{sec:rodes}
+\subsection{Cicles}
+\label{sec:cicles}
 
-Un \textit{graf roda} amb $n$ vèrtex ès un graf que conté un cicle de longitud $n-1$, on tots els vèrtex del cicle estan connectats a un vèrtex fora del cicle, anomenat node central. S'escriu $W_{n}$, i a vegades simplement s'estudia com a $C_{n-1}+K_{1}$. 
-
+Els \textit{cicles} són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i s'anomenen $C_{n}$.
+ 
 \begin{propietat}
-El node central té grau $n-1$, i la resta de nodes tenen grau $3$.
+El graf lineal \footnote{Veure apartat\ref{sec:lineal}} d'un cicle és ell mateix.
 \end{propietat}
-\begin{propietat}
-El nombre de cicles que conté un graf roda amb $n$ vètrexs està determinat per $n^{2}-3n+3$.
-\\
-\emph{Demostració}: El nombre de cicles que conté un graf roda és la suma del nombre de cicles de longitud des de 3 fins a $n$ ($\sum_{i=3}^{n}C_{i}$). Amb l'exepció de $C_{n-1}$, el nombre de cicles per a cada $i$ és $n-1$. En el cas de $C_{n-1}$ n'hi ha $n$ de possibles, però ho representem de la manera $n-1+1$, per tal que sigui més còmode operar. Com que els cicles són possibles a partir de longitud 3, en total hi ha $n-2$ longituds possibles. D'aquesta manera podem escriure $(n-2)(n-1)+1=\boxed{n^{2}-3n+3}$.  
-\end{propietat}
-
 
 \begin{figure}[H]
-\centering
+\centering	
 	\begin{tikzpicture}
-		\grWheel[RA=2, prefix=v, Math=true]{10}
+		\grCycle[RA=2, prefix=v, Math=true]{9}
 	\end{tikzpicture}
-\caption{Roda $W_{10}$}
+\caption{Cicle $C_{9}$}
+\end{figure}
+
+\subsection{Grafs bipartits}
+\label{sec:bipartits}
+
+Els \textit{grafs bipartits} són aquells en els quals els vèrtexs es poden
+separar en dos conjunts disjunts $U$ i $W$ (és a dir, que els dos
+conjunts no tinguin elements comuns) de tal manera que un vèrtex d'un
+conjunt no sigui mai adjacent a un altre vèrtex del mateix conjunt.
+Es pot dir també que un graf és bipartit si i sols si no conté cicles de longitud
+senar. 
+
+\begin{propietat}
+Tots els grafs $C_{n}$ amb $n$ parell, són també grafs bipartits.
+\end{propietat}
+
+\begin{figure}[H]
+\centering	
+	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, u/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
+		\node[v] (a) at (0,0){$v_{0}$};
+		\node[v] (b) at (2,0){$v_{1}$};
+		\node[v] (c) at (4,0){$v_{2}$};
+		\node[v] (d) at (6,0){$v_{3}$};
+		\node[u] (e) at (1,2){$u_{0}$};
+		\node[u] (f) at (3,2){$u_{1}$};
+		\node[u] (g) at (5,2){$u_{2}$};
+		\draw (a) edge (e);
+		\draw (b) edge (e);
+		\draw (b) edge (f);
+		\draw (b) edge (g);
+		\draw (c) edge (e);
+		\draw (c) edge (f);
+		\draw (d) edge (f);
+		\draw (d) edge (g);
+	\end{tikzpicture}
+\caption{Graf bipartit}
+\end{figure}
+
+\subsection{Grafs bipartits complets}
+\label{sec:bipartits_complets}
+
+Els \textit{grafs bipartits complets} són grafs bipartits \footnote{Veure apartat \ref{sec:bipartits}} en els quals cada
+element del conjunt $U$ està unit a tots els elements dels del conjunt
+$W$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|W|$.
+
+\begin{propietat}
+En els grafs bipartits $K_{m,n}=K_{n,m}$ , $|V|=n+m$ i $|E|=mn$.
+\end{propietat}
+
+\begin{figure}[H]
+\centering	
+	\begin{tikzpicture}[v/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, u/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
+		\node[v] (a) at (0,0){$v_{0}$};
+		\node[v] (b) at (2,0){$v_{1}$};
+		\node[v] (c) at (4,0){$v_{2}$};
+		\node[v] (d) at (6,0){$v_{3}$};
+		\node[v] (h) at (8,0){$v_{4}$};
+		\node[u] (e) at (1,2){$u_{0}$};
+		\node[u] (f) at (3,2){$u_{1}$};
+		\node[u] (g) at (5,2){$u_{2}$};
+		\node[u] (i) at (7,2){$u_{3}$};
+		\draw (a) edge (e);
+		\draw (a) edge (f);
+		\draw (a) edge (g);
+		\draw (a) edge (i);
+		\draw (b) edge (e);
+		\draw (b) edge (f);
+		\draw (b) edge (g);
+		\draw (b) edge (i);
+		\draw (c) edge (e);
+		\draw (c) edge (f);
+		\draw (c) edge (g);
+		\draw (c) edge (i);
+		\draw (d) edge (e);
+		\draw (d) edge (f);
+		\draw (d) edge (g);
+		\draw (d) edge (i);
+		\draw (h) edge (e);
+		\draw (h) edge (f);
+		\draw (h) edge (g);
+		\draw (h) edge (i);
+	\end{tikzpicture}
+\caption{Graf bipartit complet $K_{4,5}$}
 \end{figure}
 
 \subsection{Xarxes}
@@ -1003,7 +766,6 @@ mn-2m-2n+4+m-2+n-2+mn = 2mn-m-n=\boxed{m(n-1)+n(m-1)}
 \caption{Graf xarxa $G_{3,3}$}
 \end{figure}
 
-
 \subsection{Arbres}
 \label{sec:arbres}
 
@@ -1072,6 +834,232 @@ El nombre de fulles d'un arbre $T$ és més gran o igual a $\Delta$.
 \end{quote}
 \emph{Demostració: }Si eliminem un node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs disconnexos. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles. Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent al node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi haurà com a mínim $\Delta$ fulles.
 
+\subsection{Grafs complets}
+\label{sec:Complets}
+
+Un \textit{graf complet} és un graf on cada vèrtex està unit a tots els altres
+una sola vegada. Un graf complet amb $n$ nodes és un graf simple
+i $(n-1)$-regular i la seva nomenclatura és $K_{n}$. 
+
+\begin{propietat}
+Els grafs complets tenen ${n\choose 2}=\frac{n(n-1)}{2}$ arestes. 
+\end{propietat}
+
+\begin{propietat}
+El nombre de cicles que conté un graf complet queda determinat per la següent igualtat:
+
+\[ C_{n} =\sum_{K=3}^{n}\frac{1}{2}{n\choose k}(k-1)! \]
+
+On:
+\begin{description}
+\item[$\frac{1}{2}$] es multiplica perquè es conten dues vegades els cicles, ja que no són dirigits.
+\item[$n\choose k$] és el nombre de grups de $k$ elements que es poden agafar.
+\item[$(k-1)!$] és el nombre de permutacions circulars de $k$ elements.
+\end{description}
+
+\end{propietat}
+
+\begin{figure}[H]
+\centering
+	\subfloat[]{	
+		\begin{tikzpicture}
+			\grComplete[RA=2, prefix=v, Math=true]{7}
+		\end{tikzpicture}
+	}
+	\subfloat[]{
+		\begin{tikzpicture}
+			\grComplete[RA=2, prefix=v, Math=true]{5}
+		\end{tikzpicture}
+	}
+\caption{Grafs complets $K_{7}$(a) i $K_{5}$(b)}
+\end{figure}
+
+\subsection{Rodes}
+\label{sec:rodes}
+
+Un \textit{graf roda} amb $n$ vèrtex ès un graf que conté un cicle de longitud $n-1$, on tots els vèrtex del cicle estan connectats a un vèrtex fora del cicle, anomenat node central. S'escriu $W_{n}$, i a vegades simplement s'estudia com a $C_{n-1}+K_{1}$. 
+
+\begin{propietat}
+El node central té grau $n-1$, i la resta de nodes tenen grau $3$.
+\end{propietat}
+\begin{propietat}
+El nombre de cicles que conté un graf roda amb $n$ vètrexs està determinat per $n^{2}-3n+3$.
+\\
+\emph{Demostració}: El nombre de cicles que conté un graf roda és la suma del nombre de cicles de longitud des de 3 fins a $n$ ($\sum_{i=3}^{n}C_{i}$). Amb l'exepció de $C_{n-1}$, el nombre de cicles per a cada $i$ és $n-1$. En el cas de $C_{n-1}$ n'hi ha $n$ de possibles, però ho representem de la manera $n-1+1$, per tal que sigui més còmode operar. Com que els cicles són possibles a partir de longitud 3, en total hi ha $n-2$ longituds possibles. D'aquesta manera podem escriure $(n-2)(n-1)+1=\boxed{n^{2}-3n+3}$.  
+\end{propietat}
+
+
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}
+		\grWheel[RA=2, prefix=v, Math=true]{10}
+	\end{tikzpicture}
+\caption{Roda $W_{10}$}
+\end{figure}
+
+\subsection{Grafs estrella}	
+\label{sec:estrella}
+
+Un \textit{graf estrella} de grau $n$ és aquell que conté un vèrtex amb grau $n-1$ i els
+$n-1$ vèrtexs restants de grau 1.
+La seva nomenclatura és $S_{n}$. 
+
+\begin{propietat}
+Són estrelles tots els grafs bipartits de la forma $K_{1,n-1}$ o $K_{n-1,1}$. 
+\end{propietat}
+\begin{propietat}
+El graf lineal de $S_{n}$ és $K_{n-1}$.
+\end{propietat}
+
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}
+		\grStar[RA=2, prefix=v, Math=true]{7}
+	\end{tikzpicture}
+\caption{Graf estrella $S_{7}$}
+\end{figure}
+
+\subsection{Grafs complementaris} 
+\label{sec:complementaris}
+
+El graf complementari del graf $G$ és el graf $H$ amb els mateixos
+vèrtexs que $G$, de manera que dos vèrtexs d'$H$ seran adjacents
+si i només si a $G$ no ho són. Formalment, si $G=(V,E)$ és un graf
+simple i $K=E(K_{n})$ és el conjunt d'arestes derivades de totes les possibles combinacions de
+dos elements de $V$, essent $n=|V(G)|$, llavors $H=(V,K\setminus E)$    	\footnote{La notació $K\setminus E$ indica el conjunt dels elements de $K$ que no són a $E$}. 
+Per indicar el complementari de $G$ s'escriu $\bar{G}$ o $G'$. 
+
+\begin{propietat}
+Per obtenir el graf complementari
+de $G$ tan sols s'han de posar les arestes que falten per obtenir
+un graf complet i treure totes les que hi eren inicialment (ja que
+$|E(G)|+|E(\bar{{G}})|=|K|$). Veure figura \ref{fig:complementari}.
+\end{propietat}
+
+\begin{figure}[H]
+\centering
+	\subfloat{
+		\begin{tikzpicture}[scale=.5]
+			\grCirculant[RA=3, prefix=v,Math=true]{6}{2,3}
+		\end{tikzpicture}
+	}
+	\subfloat{
+		\begin{tikzpicture}[scale=.5]
+			\grCirculant[RA=3, prefix=v,Math=true]{6}{1}
+		\end{tikzpicture}
+	}
+\caption{Un graf $G$ i el seu complementari $\bar{G}$}
+\label{fig:complementari}
+\end{figure}
+
+
+\subsection{Grafs regulars} 
+\label{sec:regulars}
+
+Es diu que un graf $G=(V,E)$ és \textit{regular de grau $r$} quan tots els seus vèrtexs
+tenen grau $r$. Formalment, un graf és $r$-regular quan $\Delta(G)=\delta(G)=r$.
+Un graf $0$-regular és un graf nul \footnote{Veure apartat \ref{sec:buits}}, un graf $1$-regular
+consisteix en arestes separades entre elles i un graf $2$-regular
+consisteix en un o més cicles \footnote{Veure apartat \ref{sec:cicles}} separats. A partir d'aquí, els grafs regulars més importants
+tenen noms propis, com per exemple els $3$-regulars, que són els
+\textit{cúbics}; els $4$-regulars, \textit{quàrtics}; els $7$-regulars, \textit{grafs de Witt
+truncats dobles}; els $8$-regulars, \textit{grafs de 24 cel·les}... 
+
+A la imatge \ref{fig:regulars} es poden veure diversos exemples de grafs regulars.
+
+\begin{propietat}
+No necessàriament existeix un únic graf $r$-regular, sinó
+que sovint s'en poden fer amb diferent nombre de vèrtexs.
+
+\end{propietat}
+
+\begin{propietat}
+Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-regulars amb $n$ vèrtexs es compleix que 
+
+\[ |E(G)|=\frac{1}{2}nr \]on $|E(G)|$ és el nombre d'arestes.
+\end{propietat}
+
+%Cal afegir imatges de més grafs 3-regulars.
+
+\begin{figure}[H]
+\centering
+\subfloat[Graf cúbic (3-regular)]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
+		\node[round] (a) at (0,0){$v_{2}$};
+		\node[round] (b) at (4,0){$v_{0}$};
+		\node[round] (c) at (2,1.5){$v_{3}$};
+		\node[round] (d) at (2,4){$v_{1}$};
+		\draw (a) edge (b);
+		\draw (a) edge (c);
+		\draw (a) edge (d);
+		\draw (b) edge (c);
+		\draw (b) edge (d);
+		\draw (c) edge (d);
+
+	\end{tikzpicture}
+	}
+\subfloat[Graf 2-regular]{
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
+	
+		\node[round] (0) at (3,1){$v_{0}$};
+		\node[round] (1) at (3,3){$v_{1}$};
+		\node[round] (2) at (1.5,4){$v_{2}$};
+		\node[round] (3) at (0,3){$v_{3}$};
+		\node[round] (4) at (0,1){$v_{4}$};
+		\node[round] (5) at (1.5,0){$v_{5}$};
+		
+		\draw (0) edge (4);
+		\draw (0) edge (5);
+		\draw (4) edge (5);
+		\draw (1) edge (2);
+		\draw (1) edge (3);
+		\draw (2) edge (3);
+	\end{tikzpicture}
+}
+\subfloat[Graf 4-regular]{
+	\begin{tikzpicture}[]
+		\grEmptyCycle[RA=2, prefix=v, Math=true]{10}
+		%\EdgeInGraphModLoop{v}{8}{2}{0}
+		\EdgeFromOneToSel{v}{v}{0}{2,4,6,8}
+		\EdgeFromOneToSel{v}{v}{1}{3,5,7,9}
+		\EdgeFromOneToSel{v}{v}{2}{4,6,8}
+		\EdgeFromOneToSel{v}{v}{3}{5,7,9}
+		\EdgeFromOneToSel{v}{v}{4}{6,8}
+		\EdgeFromOneToSel{v}{v}{5}{7,9}
+ 		\EdgeFromOneToSel{v}{v}{6}{8}
+		\EdgeFromOneToSel{v}{v}{7}{9}	
+	\end{tikzpicture}
+}
+\caption{Exemples de grafs regulars}
+\label{fig:regulars}
+\end{figure}
+
+\subsection{Graf nul i grafs buits}
+\label{sec:buits}
+
+Els \textit{grafs buits} són grafs sense arestes, és a dir, conjunts d'$n$ vértexs.
+Són els complementaris dels grafs complets $K_{n}$ \footnote{Veure apartat \ref{sec:Complets}}, i per tant la seva nomenclatura
+és $\bar{K}_{n}$ o, simplement, $N_{n}$. Estrictament s'anomena \textit{graf nul} a $N_{0}$
+i buits a la resta, però com que normalment no s'utilitza $N_{0}$,
+convencionalment es diuen nuls tots els elements del conjunt dels buits.
+
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
+		\node[round] (a) at (0,0){$v_{0}$};
+		\node[round] (b) at (4,0){$v_{1}$};
+		\node[round] (c) at (8,0){$v_{2}$};
+		\node[round] (d) at (0,2){$v_{3}$};
+		\node[round] (d) at (4,2){$v_{4}$};
+		\node[round] (d) at (8,2){$v_{5}$};
+	\end{tikzpicture}
+\caption{Graf buit $N_{6}$}
+\end{figure}
+
+
+
+
+
 \part{Camins i algorismes}
 
 Sovint, quan utilitzem un graf per modelitzar quelcom, ens interessa
@@ -1083,18 +1071,18 @@ els camins, que trobarem o generarem mitjnçant diversos algorismes.
 En aquesta secció es mostraran i s'implementaran diverses maneres de recòrrer un graf, torbant
 la manera més eficient per a cada cas.
 
-\subsection{Grafs ponderats i dirigits}
-\subsubsection*{Grafs ponderats}
+\section{Grafs ponderats i dirigits}
+\subsection{Grafs ponderats}
 Els grafs ponderats són grafs on cada aresta $e$ està asociada a un nombre $w(e)$ anomenat pes o cost, tal que $w(e)\in \mathbb{R}$. El pes pot representar diverses quantitats, segons el que es vulgui modelitzar. 
 Moltes vegades s'utilitza per representar distàncies, però si per exemple modelitzem una xarxa de distribució d'aigua, ens pot interessar representar el cabal de les canonades, o en una xarxa de bus, la densitat de trànsit de cada tram. 
 
-\subsubsection*{Grafs dirigits}
+\subsection*{Grafs dirigits}
 Els grafs dirigits són grafs les arestes dels quals només admeten una direcció. D'aquesta manera, una aresta $e_{0}=(v_{0},v_{1}) \neq e_{1}=(v_{1},v_{0})$ \footnote{Observi's la diferència de notació per a les arestes dels grafs dirigits i no dirigits, atenent al fet que l'ordre dels vèrtexs en un cas importa i en l'altre no}. De fet, no necessàriament ha d'existir una aresta contrària a una altra. 
 
 Aquest tipus de grafs poden ser útils per representar carreteres, o moviments vàlids en algun joc. 
 
 
-\subsection{Camins}
+\section{Camins}
 
 Un \textit{camí} $p$ és una seqüència finita i ordenada d'arestes que connecta
 una seqüència ordenada de vèrtexs. Un camí $p$ de longitud $k$ (expressat com a $l(p)=k$) entre el vèrtex inicial $v_{0}$ i el vèrtex final $v_{k}$ (sempre que $v_{0}\neq v_{k}$) és una successió de $k$ arestes i $k+1$ vèrtexs de la forma $\overline{v_{0},v_{1}}, \overline{v_{1},v_{2}},\cdots, \overline{v_{k-1},v_{k}}$  . Per definició, també es pot representar un camí $p$ entre $v_{0}$ i $v_{k}$ com a successió de vèrtex $p=v_{0}v_{1}\cdots v_{k}$. En aquest cas, pot ser tractat com un graf elemental $P_{n}$. 
@@ -1108,6 +1096,13 @@ En els grafs, ponderats, la \textit{longitud} d'un camí $p=v_{0}v_{1}\cdots v_{n
 
 La \textit{distància} entre dos vèrtexs $v$ i $u$, $d_{w}(v,u)$, és la que s'obté a l'agafar la menor longitud d'entre tots els camins elementals entre $v$ i $u$. 
 (adjuntar exemple de distància)
+
+\subsection{Camins Eulerians}
+Un camí Eulerià d'un graf és un camí que recorre totes les arestes d'un graf una sola vegada. De la mateixa manera, un cicle Eulerià consisteix en un camí que utilitza totes les arestes d'un graf una sola vegada i el punt inicial i final és el mateix. 
+Un graf connex té un camí Eulerià si i només si té $0$ o $2$ vèrtexs de grau imparell, i té un cicle Eulerià si i només sí tots els vèrtex del graf tenen grau parell.
+
+\subsection{Camins Hamiltonians}
+Un camí Hamiltonià és un camí que passa una sola vegada per cadascún dels vèrtexs d'un graf. Un cicle Hamiltonià és un camí Hamiltonià en el qual el vèrtex inicial és igual al vèrtex final.
 
 
 \section{Estructures de dades dels grafs}
@@ -1198,7 +1193,7 @@ indica si la aresta $j$ és incident al node $i$.
 
 Aquesta estructura de dades és molt utilitzada per tractar grafs,
 ja que ocupa menys memòria i només inclou l'informació necessària.
-Les llistes d'adjacència consisteixen en un conjunt de $n$ llistes.
+Les llistes d'adjacència d'un graf $G$ consisteixen en un conjunt de $|V(G)|$ llistes.
 Cada llista correspon a un node del graf, i conté els nodes al quals
 és adjacent. En informàtica s'acostumen a fer mitjançant apuntadors,
 de tal manera que, a partir de cada element de la llista, es pugui
@@ -1247,8 +1242,8 @@ A continuació se'n mostren uns quants d'importants per fer operacions sobre graf
 
 \subsection{BFS}
 Aquest algorisme serveix per examinar l'estructura d'un graf o fer-ne un recorregut sistemàtic. La recerca per amplada prioritària (\emph{breadht-first serch} en anglès, d'aquí \textbf{BFS}) fa l'exploració en paral·lel de totes les alternatives posibles per nivells des del vèrtex inicial. A la imatge \ref{fig:bfs} es pot veure com funcionaria aquest algorisme en un graf. 
-Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig de la cua.
-El que farà això és bàsicament imprimir per pantalla la seqüència de vèrtexs ordenada segons l'ordre en que els ha visitat.   
+Per programar aquest algorisme s'acotuma a utilitzar un contenidor de tipus cua, que només permet afegir elements al final de la cua i treure'n de l'inici, sense poder accedir a elements del mig.
+El que farà el programa serà imprimir per pantalla la seqüència de vèrtexs ordenada segons l'ordre en que els ha visitat.   
 
 \subsubsection{Funcionament}
 
@@ -1313,6 +1308,8 @@ nou node $seg\ddot{u}ent$\;
 
 \end{algorisme}
 
+\leavevmode
+\\\\
 Aquesta és una manera bastant usual de programar l'algorisme BFS, i encara que és eficient, s'està desaprofitant propietats de l'algorisme. Amb l'algorisme BFS es pot saber a quina distància del punt inicial està cada node, el camí més curt per anar del node inicial a qualsevol altre i fins i tot es pot generar un arbre expansiu mínim, agafant les arestes per on 'passa' l'algorisme.
 El següent algorisme té en compte aquests detalls. Està pensat per ser implementat en el llengüatge Python, i per aquest motiu utilitza diccionaris (llistes on cada element té una clau i un valor), però en llenguatges basats en C, es poden utilitzar maps de la mateixa manera.
 
@@ -1358,7 +1355,7 @@ Encara que aquest algorisme sembli molt senzill, ens pot aportar informació impo
 Aquest algorisme s'utilitza també per operacions més complexes, com les següents: 
 \begin{itemize}
 
-\item Google l'utilitza per indexar pàgines web noves al seu buscador. Amb l'algorisme BFS pot recòrrer tota la xarxa d'internet sencera, i, si cada pàgina web és un node i cada enllaç és una aresta, si es posa un link d'una pàgina no indexada a una que sí ho està, l'algorisme trobarà el nou node).
+\item Buscadors com Google l'utilitzen per indexar pàgines web noves. Amb l'algorisme BFS pot recòrrer tota la xarxa d'internet sencera, i, si cada pàgina web és un node i cada enllaç és una aresta, si es posa un link d'una pàgina no indexada a una que sí ho està, l'algorisme trobarà el nou node.
 \item Les xarxes socials l'utilitzen per suggerir amistats. Amb aquest algorisme es poden trobar els amics d'una persona (els nodes que estàn a distància 2 d'aquesta), que són susceptibles a ser amics seus. Com més amistats en comú amb la persona a distància 2, més probable és que es coneguin. 
 \item Es pot sol·lucionar un cub de rubik. Si s'aconsegueix generar un graf on cada node sigui un estat diferent del cub i les arestes siguin un moviment d'una cara, donat un estat inicial, amb BFS es pot arribar a l'estat resolt amb els mínims moviments possibles.
 
@@ -1366,14 +1363,11 @@ Aquest algorisme s'utilitza també per operacions més complexes, com les següents
  
 
 \subsection{DFS}
-La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'aquí \textbf{DFS}) és un algorime que utilitza uns proncipis semblants als de l'algorisme BFS, però en lloc de cobrir tota l'amplada d'un nivell abans de passar al següent, el que fa és cobrir tota la profunditat possible (arribar el més lluny possible) abans de tornar enrere. En la següent imatge es pot veure un esquema del funcionament de l'algorisme:
-
+La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'aquí \textbf{DFS}) és un algorime que utilitza uns proncipis semblants als de l'algorisme BFS, però en lloc de cobrir tota l'amplada d'un nivell abans de passar al següent, el que fa és cobrir tota la profunditat possible (arribar el més lluny possible) abans de tornar enrere.
 
 \subsubsection{Funcionament}
 L'algorisme DFS arriba el mes lluny possible abans de retrocedir. Això significa que quan arriba a un node se'n va a un d'adjacent no visitat i va emmagatzemant l'ordre amb el qual els visita. Quan un node no té nodes adjacents no visitats, torna al node anterior i continua a partir d'allà. 
 A la figura \ref{fig:bfs} es mostra un graf amb els nodes numerats segons l'ordre en el qual es visiten i amb el recorregut que faria l'algorisme:
-
-
 
 \begin{figure}[H]
 \centering
@@ -1415,7 +1409,7 @@ A la figura \ref{fig:bfs} es mostra un graf amb els nodes numerats segons l'ordr
  
 \subsubsection{Pseudocodi}
 
-Tal com en el BFS, també hi ha diverses maneres d'implementar l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegir o treure l'element de dalt de tot de la pila.
+Tal com en el BFS, també hi ha diverses maneres d'implementar l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegir o treure l'element de dalt de tot de la pila. \\
 
 \begin{algorisme}[H]
 \DontPrintSemicolon
@@ -1446,10 +1440,9 @@ afegeix $v$ a la pila $S$\;
 
 \caption{DFS}
 \end{algorisme}
-
-Aquest métode, però, té un problema, i és que només funciona per a grafs no dirigits. Hi ha la possibilitat que, treballant amb un graf dirigit, un node del graf no sigui accessible des del node inicial que hem determinat. Aquest cas excepcional es pot arreglar fent que cada node no visitat per les iteracions anteriors sigui l'inicial. El segon algorisme, a part d'arreglar això, utilitza una funció recursiva (una funció que es crida a si mateixa).
-
-
+\leavevmode
+\\
+Aquest métode, però, té un problema, i és que només funciona per a grafs no dirigits. Hi ha la possibilitat que, treballant amb un graf dirigit, un node del graf no sigui accessible des del node inicial que hem determinat. Aquest cas excepcional es pot arreglar fent que cada node no visitat per les iteracions anteriors sigui l'inicial. El segon algorisme, a part d'arreglar això, utilitza una funció recursiva (una funció que es crida a si mateixa).\\
 
 \begin{algorithm}[H]
 \KwData{Un graf $G$}
@@ -1590,7 +1583,7 @@ A partir del node $v$, es busquen els seus adjacents i es calcula la distància a
  
 En la figura \ref{fig:Dijkstra} es mostra un graf i la taula amb les distàncies calculades per a cada iteració del programa. En aquest cas el node inicial és $v_{0}$. A cada iteració s'agafa la distància més petita (marcada amb un quadre) i es calcularà la distància provisional dels seus nodes, sumant la distància acomulada fins al node més el pes de l'aresta. 
  
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \subfloat[]{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape]
@@ -2138,7 +2131,6 @@ Per funcionar, l'algorisme de Floyd-Warshall manté una matriu $D^{(x)}$ de mida 
 D_{vu}^{(x)}=min(D_{vu}^{(x-1)}, D_{vk}^{(x-1)}+D_{ku}^{(x-1)})
 \]
 on $D^{(x)}$ és la matriu on hi ha les distàncies amb camins de com a màxim $x$ nodes intermitjos.
-(Comprovar notació: $k$ vs. $x$)
 
 \subsubsection{Pseudocodi}
 \begin{algorisme}[H]
@@ -2185,11 +2177,8 @@ nova matriu $dist$ de $|V|x|V|$\;
 
 \subsubsection{Propietats}
 \begin{propietat}
-Assumint que l'entrada de l'algorisme és $D^{0}$, el temps d'execució de l'algorisme és de $O(|V|^{3})$. Tan sols cal veure que hi ha tres bucles un dins l'altre, i cadascun fa $|V|$ iteracions.
+Assumint que l'entrada de l'algorisme és $D^{(0)}$, el temps d'execució de l'algorisme és de $O(|V|^{3})$. Tan sols cal veure que hi ha tres bucles un dins l'altre, i cadascun fa $|V|$ iteracions.
 \end{propietat}
-
-(afegir propietats de l'algorisme)
-
  
 \subsubsection{Aplicacions}
 Aquest algorisme es pot utilitzar per a qualsevol de les aplicacions en que s'utilitzaria Dijkstra amb més d'un node. S'utilitza sobretot quan es vol mantenir una base de dades de pesos precalculats, per no haver d'executar Dijkstra en cada cas concret. 
@@ -2208,7 +2197,7 @@ El que fan la majoria d'algorismes és posar un color a un node i pssignar-ne de 
 
 Per establir aquest ordre específic s'ordenen els nodes en funció del nombre de nodes adjacents. D'aquesta manera es comença assignant un color als nodes amb més grau, i per tant més complicats de pintar en cas que ja hi hagi nodes adjacents pintats. Un cop els nodes estan ordenats, s'agafa un color $c$ (representat per un enter que inicialment és $0$) i es pinta el node amb grau més alt. A continuació i per nombre decreixent de grau, es comprova per a tots els nodes del graf si són adjacents a un altre pintat amb color $c$. En cas de ser-ho, es pintaran també amb $c$ i la resta es deixaràn igual. Un cop s'haigi recorregut tots els nodes, s'establirà un altre color i es repetirà  tot el procediment fins que tots els nodes tinguin un color assignat.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \subfloat{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, a/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, b/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, c/.style={circle, fill=green, text=white, thin, minimum size=.5mm}, transform shape, scale=0.50]
@@ -2375,7 +2364,7 @@ Si el que es vol és pintar les arestes d'un graf en lloc dels vèrtexs, només cal
 Fins ara, s'han mostrat i estudiat grafs que ja estan definits sobre els quals s'ha de fer alguna operació. Ara bé, en aplicacions reals de teoria de grafs, sovint no hi ha un graf determinat, sinó que s'ha de generar.  
 
 \section{Punt de Fermat i l'arbre de Steiner}
-Normalment, quan s'utilitzen els grafs com a mdels matemàtics de situacions reals,els nodes ja estaran determinats i el problema consistirà a trobar les arestes.
+Normalment, quan s'utilitzen els grafs com a mdels matemàtics de situacions reals, els nodes ja estaran determinats i el problema consistirà a trobar les arestes.
 Si això és així, segurament es podràn afegir altres nodes. Un exemple d'aquest cas consistiria a haver d'unir tres ciutats amb carreteres de tal manera que des d'una es pugui arribar directament a les altres dues. La primera sol·lució en que sol pensar una persona és fer un triangle en el qual les ciutats siguin els vèrtexs (l'equivalent a un graf $K_{3}$). Aquesta sol·lució és òptima si es vol anar d'una ciutat a l'altra amb la mínima distància possible, però si es vol construïr el mínim de carreteres possibles per a la xarxa conjunta, aquesta sol·lució no és la millor. En aquest cas, el millor és posar un altre node en el punt de Fermat del triangle que formen i obtenir un graf $S_{4}$.
 Donat un triangle acutangle, el punt de Fermat (també anomenat $X(13)$) és el punt tal que la suma de les distàncies des de cada vèrtex fins a aquest punt és la mínima. El punt de Fermat es determina gràficament amb el procediment següent:
 \begin{itemize}
@@ -2409,7 +2398,6 @@ Donat un triangle acutangle, el punt de Fermat (també anomenat $X(13)$) és el pu
 Aquest procediment és vàlid per a triangles amb angles menors a $120º$, però en cas contrari, el punt de Fermat s'identificarà amb vèrtex corresponent a l'angle que els superi.
 
 El punt de Fermat es pot generalitzar per a altres polígons convexos a partir de triangulacions d'aquests. Un exemple senzill és el del quadrilàter, on en fer les diagonals ja es generen quatre triangles. En aquest cas, trobant els punts de Fermat en dos dels triangles oposats i unint-los ja es connecten tots els punts del quàdrilàter amb la menor distància possible. 
-(adjuntar imatge del punt de fermat en quadrilàters i superiors)
 
 El problema de connectar amb la mínima distància un nombre determinat de punts essent possible afegir nodes és conegut com el problema de l'arbre de Steiner. Per aquest problema s'ha demostrat que l'arbre òptim té com a màxim $n-2$ nodes afegits (siguent $n$ el nombre inicial de nodes), que aquests tenen sempre grau $3$, i que formen sempre angles de $120º$.   
 

@@ -349,6 +349,7 @@ graf_metro={"1_Hospital de Bellvitge":{"1_Bellvitge":90}, "1_Bellvitge":{"1_Hosp
 a,b = OrderedDijkstra(graf_metro,"1_Torrassa")
 print type("1_Catalunya")
 metro(graf_metro, "2_Paral·lel", "11_Casa de l'Aigua")
+print DFS(treball)
 #print FloydWarshall(proves_decimals)
 #Dijkstra(proves_dijkstra, 0)
 #DFS(dag)
