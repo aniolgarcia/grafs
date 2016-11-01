@@ -1,6 +1,6 @@
 %% LyX 2.1.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[catalan, a4, 12pt]{article}
+\documentclass[a4, 12pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage[catalan]{babel}
@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathtools}
+\usepackage[backend=biber, style=alphabetic]{biblatex} %Llibreria de gestió de bibliografia
 \usepackage{xcolor}
 \usepackage{graphics, graphicx}
 \usepackage{tikz, tkz-graph}
@@ -17,8 +18,9 @@
 \usepackage[ruled, boxed]{algorithm2e}
 \usepackage{multicol, multirow, rotating} %Paquets de taules
 \usepackage[a4paper]{geometry}
-\usepackage{float}
+\usepackage{float} %Imatges múltiples
 \usepackage{verbatim}
+\usepackage{csquotes}
 \usepackage{cancel}
 \usepackage[position=top]{subfig}
 \usetikzlibrary{arrows,%
@@ -96,8 +98,13 @@ array element/.style = {
 %Definim el color taronja pel procés de punt de Fermat
 \definecolor{ffwwqq}{rgb}{1,0.4,0}
 
+%Afegim una categoria de Liblatex per tal d'agafar només la bibliografia citada
+\DeclareBibliographyCategory{citats}
+\AtEveryCitekey{\addtocategory{citats}{\thefield{entrykey}}}
+
+\addbibresource{biblio.bib}
+
 \title{Teoria de Grafs \\ \large Revisió segona}
-%\subtitle{Revisió segona}
 \author{Aniol Garcia i Serrano}
 \date{23/9/2016}
 
@@ -2606,10 +2613,10 @@ Cal puntualitzar que hi ha casos on amb aquest procediment no es troba la soluci
 		\fill [color=qqqqff] (3.47,2.63) circle (2.5pt);
 	\end{scriptsize}
 \end{tikzpicture}
-
 }
-\caption{Exemple del procés de triangulació i coloració d'un polígon irregular}
+\caption{Exemple del procés de triangulació i coloració d'un polígon irregular \cite{foo1999}, \cite{EUL1}}
 
 \end{figure}
+\printbibliography[title={Bibliografia}]
 
 \end{document}
