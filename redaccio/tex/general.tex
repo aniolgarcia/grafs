@@ -20,7 +20,7 @@
 \usepackage[a4paper]{geometry}
 \usepackage{float} %Imatges múltiples
 \usepackage{verbatim}
-\usepackage{csquotes}
+\usepackage[style=english]{csquotes}
 \usepackage{cancel}
 \usepackage[position=top]{subfig}
 \usetikzlibrary{arrows,%
@@ -147,7 +147,7 @@ per tots els ponts tan sols una vegada?''}
 \end{quote}
 Els ciutadans de Königsberg sabien que no era possible, però mai ningú ho havia demostrat fins que Leonhard Euler ho va fer. La demostració de que això no era possible queda recollida en el \emph{``Solutio problematis ad geometriam situs pertinentis}'' publicat el 1736, i l'article també va ser inclòs en el volum 8 de
 \emph{``Commentarii Academiae Scientiarum Imperialis Petropolitanae''
-}publicat el 1741. En aquest text, Euler diu el següent:
+}publicat el 1741 \cite{EUL41}. En aquest text, Euler diu el següent:
 \begin{quote}
 
 \emph{"A més d'aquella part de la geometria que s'ocupa de les quantitats, la qual sempre ha generat un interés preferent, hi ha una altra part -encara pràcticament desconeguda- que ja fou esmentada per Leibniz amb el nom de geometria de posició. Aquesta part de la geometria estudia tot allò que pot ésser determinat únicament per la posició, així com les propietats de la posició; en aquest camp hom no hauria de preocupar-se de quantitats ni de com obtenir-les. No obstant això, els tipus de problemes que pertanyen a aquesta geometria de posició i els mètodes usats per resoldre'ls encara no són suficientment definits. Així doncs, quan darrerement se'm va plantejar un problema que semblava bàsicament geomètric, però que no demanava l'obtenció de quantitats ni admetia una sol·lució basada en el càlcul de quantitats, em vaig adonar que pertanyia a la geometria de posició, sobretot perquè només es podia usar la posició per resolde'l, mentre que el càlcul es mostrava inútil. Així, he decidit exposar ací, com a mostra de la geometria de posició, el mètode que he deduït per a resoldre problemes d'aquesta mena."}
@@ -164,8 +164,8 @@ Els ciutadans de Königsberg sabien que no era possible, però mai ningú ho havia 
 
 Per aconseguir demostrar que el problema no tenia sol·lució, Euler va haver de representar el problema com un mapa topològic, posant les masses
 de terra com a punts i els ponts com a segments que unien aquests
-punts, i creant d'aquesta manera el primer graf de la història. Euler va observar que, exceptuant el punt inicial i final del trajecte, quan s'aarriba a un punt per un pont, s'ha de sortir per un altre. Això significa que el nombre de vegades que s'ha d'entrar a un punt equival al nombre de vegades que cal sortir-ne (exceptuant, tal com abans, el punt inicial i final), cosa que no és possible si no hi ha un nommbre parell de ponts que vaigin a un punt. Cal observar que en el problema original hi ha 5 masses de terra, i totes elles tenen un nombre imparell de ponts o connexions, i per tant no és possible passar per tots els ponts tan sols una vegada. Euler va arribar a la conclusió de que es pot recòrrer un graf passant només una vegada per les seves arestes només si aquest tenia 0 o 2 arestes de grau senar, corresponents al punt final i inicial. 
-Aquest resulat es considera el primer en teoria de grafs ja que conté un important teorema d'aquesta branca. A més d'iniciar la teoria de grafs, amb aquest resultat també comença l'estudi dels grafs planars, introdueix el concepte de característica d'Euler de l'espai i el teorema de poliedres d'Euler (teorema que després va utilitzar per demostrar que no hi havia mes sòlids regulars que els sòlids platònics). Amb tot això, Euler posa les bases, no tan sols de l'estudi dels grafs, sinó també de la topologia, una altra branca que també serà tractada en aquest treball. 
+punts, i creant d'aquesta manera el primer graf de la història. Euler va observar que, exceptuant el punt inicial i final del trajecte, quan s'arriba a un punt per un pont, s'ha de sortir per un altre. Això significa que el nombre de vegades que s'entra a un punt equival al nombre de vegades que cal sortir-ne (exceptuant, tal com abans, el punt inicial i final), cosa que no és possible si no hi ha un nombre parell de ponts que vaigin a un punt. Cal observar que en el problema original hi ha 5 masses de terra, i totes elles tenen un nombre imparell de ponts o connexions, i per tant no és possible passar per tots els ponts tan sols una vegada. Euler va arribar a la conclusió de que es pot recòrrer un graf passant només una vegada per les seves arestes només si aquest tenia 0 o 2 arestes de grau senar, corresponents al punt final i inicial. 
+Aquest resulat es considera el primer en teoria de grafs ja que conté un important teorema d'aquesta branca. A més d'iniciar la teoria de grafs, amb aquest resultat també comença l'estudi dels grafs planars, introdueix el concepte de característica d'Euler de l'espai i el teorema de poliedres d'Euler (teorema que després va utilitzar per demostrar que no hi havia mes sòlids regulars que els sòlids platònics). Amb tot això, Euler posa les bases, no tan sols de l'estudi dels grafs, sinó també de la topologia. 
 
 \begin{figure}[H]
 \centering
@@ -194,7 +194,7 @@ Aquest resulat es considera el primer en teoria de grafs ja que conté un importa
 
 A partir de l'article d'Euler, diversos matemàtics van començar a
 interessar-se pel camp de la topologia (o geometria de la posició,
-com li deien en aquell moment). Un d'ells fou Alexandre-Théophile Vandermonde. Vandermonde va treballar i estudiar el problema dels cavalls, que pregunta quins moviments hem de fer per tal que un cavall passi per totes les caselles del tauler d'escacs, problema que també va tractar Euler. Els estudis que Vandermonde va fer sobre aquest problema van ser publicats el 1771 en el ``\emph{Remarques sur des problèmes de situation''}, i per la relativa proximitat als treballs d'Euler, encara no parlava de grafs, tot i que en l'actualitat el problema es resol mitjançant aquests. Aquest treball inicia l'estudi de la teoria de nusos, una altra branca de la topologia. 
+com li deien en aquell moment). Un d'ells fou Alexandre-Théophile Vandermonde. Vandermonde va treballar i estudiar el problema dels cavalls, que pregunta quins moviments hem de fer per tal que un cavall passi per totes les caselles del tauler d'escacs, problema que també va tractar Euler. Els estudis que Vandermonde va fer sobre aquest problema van ser publicats el 1771 en el ``\emph{Remarques sur des problèmes de situation''} \cite{VAN71}, i per la relativa proximitat als treballs d'Euler, encara no parlava de grafs, tot i que en l'actualitat el problema es resol mitjançant aquests. Aquest treball inicia l'estudi de la teoria de nusos, una altra branca de la topologia. 
 
 
 \subsection{Les primeres descobertes i aplicacions}
@@ -212,9 +212,9 @@ tan sols quatre colors?''}
 \end{quote}
 D'aquest problema en surt el teorema a partir del qual s'sestableix que qualsevol mapa pot ser pintat únicament amb quatre colors diferents, de tal manera que dues regions adjacents (entenem com a adjacents dues regions que comparteixiin frontera, no tan sols un punt) no tinguin colors iguals. Aquest problema, que pot semblar tan trivial, no va ser demostrat fins l'any 1976. Va passar
 per mans de pioners com De Morgan, Hamilton, Cayley, Kempe (que
-va fer una demostració publicada el 1879), Heawood (que va concloure que la demostració de Kempe no era correcta)... Finalment el 1976
+va fer una demostració publicada el 1879 \cite{KEM79}), Heawood (que va concloure que la demostració de Kempe no era correcta)... Finalment el 1976
 Appel i Hanken van demostrar, mitjançant un programa d'ordinador, que
-tot mapa es podia pintar només amb quatre colors. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demostració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne un demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
+tot mapa es podia pintar només amb quatre colors \cite{AH77a} \cite{AH77b} \cite{AH77c}. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demostració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne un demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
 
 
 \subsubsection*{Arthur Cayley}
@@ -2614,7 +2614,7 @@ Cal puntualitzar que hi ha casos on amb aquest procediment no es troba la soluci
 	\end{scriptsize}
 \end{tikzpicture}
 }
-\caption{Exemple del procés de triangulació i coloració d'un polígon irregular \cite{foo1999}, \cite{EUL1}}
+\caption{Exemple del procés de triangulació i coloració d'un polígon irregular \cite{foo1999}, \cite{EUL_bridges}, \cite{APP_HANKEN}}
 
 \end{figure}
 \printbibliography[title={Bibliografia}]

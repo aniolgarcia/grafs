@@ -19,26 +19,34 @@
 
 \refsection{0}
   \sortlist[entry]{anyt/global}
-    \entry{foo1999}{article}{}
-      \name{author}{1}{}{%
-        {{hash=bd051a2f7a5f377e3a62581b0e0f8577}{%
-           family={Doe},
-           family_i={D\bibinitperiod},
-           given={John},
-           given_i={J\bibinitperiod}}}%
+    \entry{APP_HANKEN}{article}{}
+      \name{author}{2}{}{%
+        {{hash=55c764f81305c9e56717d2181358207f}{%
+           family={APPEL},
+           family_i={A\bibinitperiod},
+           given={K.},
+           given_i={K\bibinitperiod}}}%
+        {{hash=4505510459197c1444c9e200efdf3cf6}{%
+           family={HANKEN},
+           family_i={H\bibinitperiod},
+           given={W.},
+           given_i={W\bibinitperiod}}}%
       }
-      \strng{namehash}{bd051a2f7a5f377e3a62581b0e0f8577}
-      \strng{fullhash}{bd051a2f7a5f377e3a62581b0e0f8577}
-      \field{labelalpha}{Doe99}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \strng{namehash}{e1955f359ece65481ebfb79bfa9be07b}
+      \strng{fullhash}{e1955f359ece65481ebfb79bfa9be07b}
+      \field{labelalpha}{AH77}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{International Journal of Nonsense}
-      \field{title}{Title}
-      \field{year}{1999}
+      \field{journaltitle}{Scientific American}
+      \field{number}{27}
+      \field{title}{The Solution of the Four-Color Map Problem}
+      \field{year}{1977}
+      \field{pages}{108\bibrangedash 121}
+      \range{pages}{14}
     \endentry
-    \entry{EUL1}{incollection}{}
+    \entry{EUL_bridges}{incollection}{}
       \name{author}{1}{}{%
         {{hash=313151264cbe77aca604de197d093583}{%
            family={EULER},
@@ -55,9 +63,13 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Commentarii academiae scientiarum Petropolitanae}
       \field{title}{Solutio problematis ad geometriam situs pertinentis}
+      \field{volume}{8}
       \field{year}{1741}
+      \field{pages}{128\bibrangedash 140}
+      \range{pages}{13}
     \endentry
   \endsortlist
+  \missing{foo1999}
 \endrefsection
 \endinput
 

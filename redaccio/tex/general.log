@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  1 NOV 2016 18:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  3 NOV 2016 09:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1152,7 +1152,10 @@ Package csquotes Info: ... configuration file loaded successfully.
 
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
-))
+)
+Package csquotes Info: Disabling multilingual quotes.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
@@ -1290,15 +1293,6 @@ Package biblatex Info: ... file 'catalan.lbx' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/catalan.lbx
 File: catalan.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
 )
-Package csquotes Info: Checking for multilingual support...
-Package csquotes Info: ... found 'babel' package.
-Package csquotes Info: Adjusting default style.
-
-
-Package csquotes Warning: No style for language 'catalan'.
-(csquotes)                Using fallback style on input line 112.
-
-Package csquotes Info: Redefining alias 'default' -> 'fallback'.
 
 LaTeX Warning: Unused global option(s):
     [a4].
@@ -1327,11 +1321,18 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'general.bbl' found.
- (./general.bbl)
+ (./general.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                foo1999
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 112.
 Package biblatex Info: Reference segment=0 on input line 112.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count395
 \scratchdimen=\dimen309
@@ -1566,7 +1567,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 2414--2416
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <17.28> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 2482.
 
- [52] [53] (./general.aux)
+ [52]
+Overfull \hbox (16.4442pt too wide) in paragraph at lines 2620--2620
+\T1/cmr/m/it/12 Com-men-ta-rii aca-de-mi-ae sci-en-ti-a-rum Pe-tro-po-li-ta-nae
+\T1/cmr/m/n/12 . Vol. 8. 1741, pàg. 128 -
+ []
+
+[53] [54] (./general.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1575,10 +1582,10 @@ Package logreq Info: Writing requests to 'general.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38480 strings out of 494850
- 870572 string characters out of 6178024
- 1427714 words of memory out of 5000000
- 41093 multiletter control sequences out of 15000+600000
+ 38483 strings out of 494850
+ 870623 string characters out of 6178024
+ 1427718 words of memory out of 5000000
+ 41096 multiletter control sequences out of 15000+600000
  25514 words of font info for 67 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  61i,22n,96p,1397b,1544s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1608,10 +1615,10 @@ s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/li
 ne10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on general.pdf (53 pages, 476951 bytes).
+Output written on general.pdf (54 pages, 476762 bytes).
 PDF statistics:
- 812 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
+ 813 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

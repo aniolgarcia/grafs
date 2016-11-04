@@ -2052,9 +2052,11 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">foo1999</bcf:citekey>
-    <bcf:citekey order="2">EUL1</bcf:citekey>
-    <bcf:citekey order="3">foo1999</bcf:citekey>
-    <bcf:citekey order="4">EUL1</bcf:citekey>
+    <bcf:citekey order="2">EUL_bridges</bcf:citekey>
+    <bcf:citekey order="3">APP_HANKEN</bcf:citekey>
+    <bcf:citekey order="4">foo1999</bcf:citekey>
+    <bcf:citekey order="5">EUL_bridges</bcf:citekey>
+    <bcf:citekey order="6">APP_HANKEN</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="anyt/global" type="entry" sortscheme="anyt" sortnamekeyscheme="global">
   <bcf:sorting>
