@@ -1,16 +1,16 @@
-[1] Config.pm:340> INFO - This is Biber 2.4
-[2] Config.pm:343> INFO - Logfile is 'general.blg'
-[60] biber:287> INFO - === ds nov  5, 2016, 01:45:45
-[171] Biber.pm:348> INFO - Reading 'general.bcf'
-[351] Biber.pm:742> INFO - Found 4 citekeys in bib section 0
-[360] Biber.pm:3151> INFO - Processing section 0
-[397] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio.bib' for section 0
-[414] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
-[424] bibtex.pm:974> INFO - Found BibTeX data source 'biblio.bib'
-[456] Utils.pm:147> WARN - I didn't find a database entry for 'VAN71' (section 0)
-[514] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[514] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
-[515] Biber.pm:3028> INFO - Sorting list 'anyt/global' of type 'entry' with scheme 'anyt' and locale 'ca-AD'
-[520] bbl.pm:519> INFO - Writing 'general.bbl' with encoding 'latin9'
-[544] bbl.pm:615> INFO - Output to general.bbl
-[544] Biber.pm:109> INFO - WARNINGS: 1
+[3] Config.pm:325> INFO - This is Biber 2.1
+[4] Config.pm:328> INFO - Logfile is 'general.blg'
+[369] biber:276> INFO - === ds nov  5, 2016, 16:06:32
+[371] Biber.pm:334> INFO - Reading 'general.bcf'
+[1479] Biber.pm:646> INFO - Found 4 citekeys in bib section 0
+[1618] Biber.pm:2978> INFO - Processing section 0
+[1728] Biber.pm:3116> INFO - Looking for bibtex format file 'biblio.bib' for section 0
+[1736] bibtex.pm:1010> INFO - Decoding LaTeX character macros into UTF-8
+[1739] bibtex.pm:884> INFO - Found BibTeX data source 'biblio.bib'
+[1785] Utils.pm:146> WARN - I didn't find a database entry for 'VAN71' (section 0)
+[2278] UCollate.pm:66> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2279] UCollate.pm:66> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2280] Biber.pm:2855> INFO - Sorting list 'anyt' of type 'entry' with scheme 'anyt' and locale 'ca-AD'
+[2321] bbl.pm:505> INFO - Writing 'general.bbl' with encoding 'latin9'
+[2327] bbl.pm:596> INFO - Output to general.bbl
+[2329] Biber.pm:107> INFO - WARNINGS: 1

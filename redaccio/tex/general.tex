@@ -1,6 +1,6 @@
 %% LyX 2.1.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[a4, 12pt]{article}
+\documentclass[a4, 12pt, titlepage]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage[catalan]{babel}
@@ -111,6 +111,7 @@ array element/.style = {
 
 \begin{document}
 \maketitle
+\vfill
 \tableofcontents
 \newpage
 
@@ -1069,6 +1070,11 @@ convencionalment es diuen nuls tots els elements del conjunt dels buits.
 
 \part{Camins i algorismes}
 
+\begin{flushright}
+\textit{"Simplicity is a prerequisite for reliability"}
+\\Edsger W. Dijkstra
+\end{flushright}
+
 Sovint, quan utilitzem un graf per modelitzar quelcom, ens interessa
 poder-hi fer algunes operacions. Podem, per exemple, voler trobar
 un camí entre dos punts, recòrrer el graf sencer o trobar el camí
@@ -1244,8 +1250,7 @@ Un algorisme és un conjunt d'instruccions precises i ben definides que, donada u
 
 Per automatitzar diversos càlculs sobre grafs, molts científics han treballat desenvolupant processos universals que poden ser duts a terme per ordinadors. Aquests processos, anomenats \emph{algorismes}, consisteixen en conjunts específics d'ordres que s'executen sobre unes estructures de dades que contenen el graf.   
 
-(Reescriure la definició d'algorisme...)
-(Cal fer una breu introducció a la notació de Landau [o cota superior asimptòtica] per poder entendre els temps d'execució dels  algorismes)
+Per fer l'anàlisi dels algorismes, s'haurà de fer l'anàlisi de la cota superior asimptòtica, és a dir, analitzar el temps d'execució de l'algorisme quan l'entrada és la més gran i complexa possible. Per a aquest propòsit s'utiltizarà la notació de Landau, també anomenada notació de la gran "O". Es temps majoritariament es calcularan en funció del nombre d'atestes o de nodes. Cal tenir present que tots els logarismes que apareguin en funcions de Landau són logaritmes en base 2, sempre que no s'indiqui el contrari.
 
 A continuació se'n mostren uns quants d'importants per fer operacions sobre grafs.
 
@@ -1262,7 +1267,7 @@ Donat un node incial $v$, es busquen tots els nodes no visitats que estiguin a d
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[round/.style={circle, draw=black, black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
+\begin{tikzpicture}[round/.style={circle, draw=black, black, thin, minimum size=.5mm}, transform shape, scale=0.80]
 		\tikzstyle{level 1}=[level distance=15mm,sibling distance=60mm]
 		\tikzstyle{level 2}=[level distance=15mm,sibling distance=30mm]
 		\node(0)[round](0){$0$}
@@ -1418,7 +1423,7 @@ A la figura \ref{fig:bfs} es mostra un graf amb els nodes numerats segons l'ordr
  
 \subsubsection{Pseudocodi}
 
-Tal com en el BFS, també hi ha diverses maneres d'implementar l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegir o treure l'element de dalt de tot de la pila. \\
+Tal com en el BFS, també hi ha diverses maneres d'implementar l'algorisme, i en presentaré dues. La primera utilitza un contenidor de tipus pila, on només es pot manipular, afegir o treure l'element de dalt de tot d'aquest. \\
 
 \begin{algorisme}[H]
 \DontPrintSemicolon
@@ -1451,7 +1456,7 @@ afegeix $v$ a la pila $S$\;
 \end{algorisme}
 \leavevmode
 \\
-Aquest métode, però, té un problema, i és que només funciona per a grafs no dirigits. Hi ha la possibilitat que, treballant amb un graf dirigit, un node del graf no sigui accessible des del node inicial que hem determinat. Aquest cas excepcional es pot arreglar fent que cada node no visitat per les iteracions anteriors sigui l'inicial. El segon algorisme, a part d'arreglar això, utilitza una funció recursiva (una funció que es crida a si mateixa).\\
+Aquest métode, però, té un problema, i és que només funciona per a grafs no dirigits. Hi ha la possibilitat que, treballant amb un graf dirigit, un node del graf no sigui accessible des del node inicial que hem determinat. Aquest cas excepcional es pot arreglar fent que cada node no visitat per les iteracions anteriors sigui l'inicial. El segon algorisme, a part d'arreglar això, utilitza una funció recursiva \footnote{S'anomena funció recursiva a aquella que es crida a si mateixa}.\\
 
 \begin{algorithm}[H]
 \KwData{Un graf $G$}
@@ -2200,9 +2205,9 @@ A part d'aquesta aplicació, s'utilitza també d'altres maneres:
 \subsection{Coloració de grafs}
 La coloració de grafs és un problema que consisteix en "pintar" els nodes d'un graf de manera que dos nodes adjacents no tinguin el mateix color. El primer problema plantejat en aquesta branca ser plantejat per Francis Guthrie \footnote{Veure apartat \ref{sec:Guthrie}} i consistia en veure quans colors eren necessaris per pintar qualsevol mapa de manera que es complissin aquests mateixos requisits. 
 
-La majoria d'algorismes que realitzen aquest procediment. Com que cap 
+La majoria d'algorismes que realitzen aquest procediment són lents i relativament poc eficients. Per aquest motiu vaig decidir no utilitzar els que vaig trobar i dissenyar-ne un jo mateix.  
 \subsubsection{Funcionament}
-El que fan la majoria d'algorismes és posar un color a un node i pssignar-ne de diferents als seus adjacents, però aquest procediment no sempre troba una distribució eficient, ja que escull arbitràriament entre els diversos clors al assignar-los a un node. A més, el resultat que dóna l'alorisme depèn del node en el qual es comenci a execturar. Amb l'algorisme que he dissenyat s'utilitzen estrictament els colors necessàris, establint un ordre específic en els grafs, de manera que hi ha una única distribució possible per a cada graf.
+El que fan la majoria d'algorismes és posar un color a un node i assignar-ne de diferents als seus adjacents, però aquest procediment no sempre troba una distribució eficient, ja que escull arbitràriament entre els diversos colors al assignar-los a un node. A més, el resultat que dóna l'alorisme depèn del node en el qual es comenci a execturar. Amb l'algorisme que he dissenyat s'utilitzen estrictament els colors necessàris, establint un ordre específic en els grafs, de manera que hi ha una única distribució possible per a cada graf.
 
 Per establir aquest ordre específic s'ordenen els nodes en funció del nombre de nodes adjacents. D'aquesta manera es comença assignant un color als nodes amb més grau, i per tant més complicats de pintar en cas que ja hi hagi nodes adjacents pintats. Un cop els nodes estan ordenats, s'agafa un color $c$ (representat per un enter que inicialment és $0$) i es pinta el node amb grau més alt. A continuació i per nombre decreixent de grau, es comprova per a tots els nodes del graf si són adjacents a un altre pintat amb color $c$. En cas de ser-ho, es pintaran també amb $c$ i la resta es deixaràn igual. Un cop s'haigi recorregut tots els nodes, s'establirà un altre color i es repetirà  tot el procediment fins que tots els nodes tinguin un color assignat.
 
@@ -2328,7 +2333,7 @@ $actual = 0$\;
 {
 	$colors[i] = Nul$\;
 }
-$nodes=$vèrtexs de G ordenats de manera decreixent segons el seu grau\;
+$nodes=$vèrtexs de $G$ ordenats de manera decreixent segons el seu grau\;
 $color[nodes[0]]=0$\;
 \While{no tots els nodes tinguin assignat un color}
 {
@@ -2724,6 +2729,6 @@ imprimeix("Recorregut:")\;
 
 \end{algorisme}
 %\nocite{*}
-\printbibliography[title={Bibliografia}, category=citats]
+%\printbibliography[title={Bibliografia}, category=citats]
 %\printbibliography[heading=bibintoc]
 \end{document}
