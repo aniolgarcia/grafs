@@ -1,0 +1,19 @@
+[9] Config.pm:325> INFO - This is Biber 2.1
+[14] Config.pm:328> INFO - Logfile is 'general.blg'
+[451] biber:276> INFO - === dv nov  4, 2016, 15:53:42
+[452] Biber.pm:334> INFO - Reading 'general.bcf'
+[1609] Biber.pm:646> INFO - Found 9 citekeys in bib section 0
+[1839] Biber.pm:2978> INFO - Processing section 0
+[2060] Biber.pm:3116> INFO - Looking for bibtex format file 'biblio.bib' for section 0
+[2069] bibtex.pm:1010> INFO - Decoding LaTeX character macros into UTF-8
+[2081] bibtex.pm:884> INFO - Found BibTeX data source 'biblio.bib'
+[2179] Utils.pm:146> WARN - I didn't find a database entry for 'VAN71' (section 0)
+[2180] Utils.pm:146> WARN - I didn't find a database entry for 'foo1999' (section 0)
+[2181] Utils.pm:146> WARN - I didn't find a database entry for 'EUL_bridges' (section 0)
+[2182] Utils.pm:146> WARN - I didn't find a database entry for 'APP_HANKEN' (section 0)
+[3063] UCollate.pm:66> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
+[3064] UCollate.pm:66> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[3065] Biber.pm:2855> INFO - Sorting list 'anyt' of type 'entry' with scheme 'anyt' and locale 'ca-AD'
+[3161] bbl.pm:505> INFO - Writing 'general.bbl' with encoding 'latin9'
+[3171] bbl.pm:596> INFO - Output to general.bbl
+[3172] Biber.pm:107> INFO - WARNINGS: 4

@@ -214,7 +214,7 @@ D'aquest problema en surt el teorema a partir del qual s'sestableix que qualsevo
 per mans de pioners com De Morgan, Hamilton, Cayley, Kempe (que
 va fer una demostració publicada el 1879 \cite{KEM79}), Heawood (que va concloure que la demostració de Kempe no era correcta)... Finalment el 1976
 Appel i Hanken van demostrar, mitjançant un programa d'ordinador, que
-tot mapa es podia pintar només amb quatre colors \cite{AH77a} \cite{AH77b} \cite{AH77c}. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demostració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne un demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
+tot mapa es podia pintar només amb quatre colors \cite{AH77a}. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demostració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne un demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
 
 
 \subsubsection*{Arthur Cayley}
@@ -281,7 +281,7 @@ d'arestes que uneixen alguns d'aquests punts. El nombre de vèrtexs
 d'un graf queda determinat pel nombre d'elements que hi ha en el conjunt
 $V$, per tant ens referirem a ell com a $|V|$ (cardinal de $V$).
 Amb les arestes passa el mateix, i també utilitzarem $|E|$ per indicar
-el nombre d'arestes d'un graf. Definim també que dos vèrtexs són \textit{adjacents} si estàn units per una aresta i, com a conseqüència, són \textit{incidents} a l'aresta. 
+el nombre d'arestes d'un graf. Definim també que dos vèrtexs són \textit{adjacents} si estan units per una aresta i, com a conseqüència, són \textit{incidents} a l'aresta. 
 \\
 La idea intuitiva de graf convida a utilitzar representacions gràfiques. Així, en la figura \ref{fig:exemple} es mostra un graf simple $G$ format
 per:
@@ -450,7 +450,7 @@ corresponents a $G$ comparteixen un vèrtex.
 El graf lineal d'un graf amb $n$ nodes, $e$ arestes i amb vèrtexs de graus
 $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]arestes.
 \\
-\emph{Demostració}: Cada node $v_{i}$ amb grau $g(v_{i})$ del graf original generarà un graf complet de $g(v_{i})$ nodes ($K_{g(v_{i})}$).
+\emph{Demostració}: Cada node $v_{i}$ amb grau $g(v_{i})$ del graf original generarà un graf complet de $g(v_{i})$ nodes ($K_{g(v_{i})}$) \footnote{Veure apartat \ref{sec:Complets}}.
 
 	\begin{figure}[H]
 		\centering
@@ -493,7 +493,7 @@ $g(v_{i})$ té $n'=e$ nodes i \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]ar
 	\end{figure}
 
 
-Tal com s'ha vist a l'apartat \ref{sec:Complets}, un graf complet té ${n\choose k} = \frac{n(n-1)}{2}$, per tant en aquest cas se'n generen $\frac{g(v_{i})(g(v_{i})-1)}{2}$. Però això es compleix per a cada vèrtex, i llavors podem escriure \[ \sum_{i=1}^{n}\frac{1}{2}g(v_{i})(g(v_{i})-1) = \frac{1}{2}\sum_{i=1}^{n}(g(v_{i})^{2}-g(v_{i})) = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2} - \underbracket{\frac{1}{2}\underbracket{\sum_{i=0}^{n}g(v_{i})}_{2|E|}}_{|E|} = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2}-e\]
+Un graf complet té ${n\choose k} = \frac{n(n-1)}{2}$, per tant en aquest cas se'n generen $\frac{g(v_{i})(g(v_{i})-1)}{2}$. Però això es compleix per a cada vèrtex, i llavors podem escriure \[ \sum_{i=1}^{n}\frac{1}{2}g(v_{i})(g(v_{i})-1) = \frac{1}{2}\sum_{i=1}^{n}(g(v_{i})^{2}-g(v_{i})) = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2} - \underbracket{\frac{1}{2}\underbracket{\sum_{i=0}^{n}g(v_{i})}_{2|E|}}_{|E|} = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2}-e\]
 \end{propietat}
 \begin{figure}[H]
 \centering
@@ -582,7 +582,7 @@ Tal com s'ha vist a l'apartat \ref{sec:Complets}, un graf complet té ${n\choose 
 Els \textit{cicles} són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i s'anomenen $C_{n}$.
  
 \begin{propietat}
-El graf lineal \footnote{Veure apartat\ref{sec:lineal}} d'un cicle és ell mateix.
+El graf lineal d'un cicle és ell mateix.
 \end{propietat}
 
 \begin{figure}[H]
@@ -632,7 +632,7 @@ Tots els grafs $C_{n}$ amb $n$ parell, són també grafs bipartits.
 \subsection{Grafs bipartits complets}
 \label{sec:bipartits_complets}
 
-Els \textit{grafs bipartits complets} són grafs bipartits \footnote{Veure apartat \ref{sec:bipartits}} en els quals cada
+Els \textit{grafs bipartits complets} són grafs bipartits en els quals cada
 element del conjunt $U$ està unit a tots els elements dels del conjunt
 $W$. S'anomenen $K_{m,n}$, on $m=|U|$ i $n=|W|$.
 
@@ -1365,7 +1365,7 @@ Aquest algorisme s'utilitza també per operacions més complexes, com les següents
 \begin{itemize}
 
 \item Buscadors com Google l'utilitzen per indexar pàgines web noves. Amb l'algorisme BFS pot recòrrer tota la xarxa d'internet sencera, i, si cada pàgina web és un node i cada enllaç és una aresta, si es posa un link d'una pàgina no indexada a una que sí ho està, l'algorisme trobarà el nou node.
-\item Les xarxes socials l'utilitzen per suggerir amistats. Amb aquest algorisme es poden trobar els amics d'una persona (els nodes que estàn a distància 2 d'aquesta), que són susceptibles a ser amics seus. Com més amistats en comú amb la persona a distància 2, més probable és que es coneguin. 
+\item Les xarxes socials l'utilitzen per suggerir amistats. Amb aquest algorisme es poden trobar els amics d'una persona (els nodes que estan a distància 2 d'aquesta), que són susceptibles a ser amics seus. Com més amistats en comú amb la persona a distància 2, més probable és que es coneguin. 
 \item Es pot sol·lucionar un cub de rubik. Si s'aconsegueix generar un graf on cada node sigui un estat diferent del cub i les arestes siguin un moviment d'una cara, donat un estat inicial, amb BFS es pot arribar a l'estat resolt amb els mínims moviments possibles.
 
 \end{itemize}
@@ -1720,7 +1720,7 @@ L'algorisme de Bellman-Ford utilitza una part de l'algorisme de Dijkstra, concre
 
 \begin{algorisme}[H]
 \SetKwFunction{Range}{range}%%
-\KwData{Un graf ponderat $G$ i un node inicia $s$}
+\KwData{Un graf ponderat $G$ i un node inicial $s$}
 \KwResult{Distància mínima entre $s$ i la resta de nodes del graf, arbre expansiu mínim}
 nou diccionari $dist$\;
 nou diccionari $anterior$\;
@@ -2616,11 +2616,114 @@ Cal puntualitzar que hi ha casos on amb aquest procediment no es troba la soluci
 	\end{scriptsize}
 \end{tikzpicture}
 }
-\caption{Exemple del procés de triangulació i coloració d'un polígon irregular \cite{foo1999}, \cite{EUL_bridges}, \cite{APP_HANKEN}}
-
-Ei com va tot.
-
+\caption{Exemple del procés de triangulació i coloració d'un polígon irregular}
 \end{figure}
-\printbibliography[title={Bibliografia}]
 
+\section{Metro}
+Una xarxa de metro és un altre bon exemple de graf: es pot pensar com un conjunt de grafs elementals $P_{n}$ amb la propietat de que alguns d'aquests comparteixen nodes. Així doncs, com a una última aplicació pràctica, em vaig proposar fer un programa que sigués capaç de calcular un trajecte entre dues estacions qualsevols i el temps aproximat de recorregut que es trigaria, incloent-hi els possibles transbords entre línies. 
+
+\subsection{Metodologia de treball}
+
+El primer gran repte consistia en representar la basta xarxa de metro de Barcelona en forma de graf. Cada estació correspondria a un node i dos nodes serien adjacents si i només si les estacions estan connectades, ja sigui a través del propi metro o a través de passadissos (cas que tan sols apareix quan diverses línies comparteixen estació). Això comporta representar totes les adjacències de cadascuna de les estacions. Per fer-ho, es va dividir la xarxa total en cadascuna de les línies. Per poder tenir en compte els temps de transbord entre línies d'una mateixa estació, es va crear una estació diferent per a cada línia. 
+
+Un cop l'adjacència del graf va estar completa, calia posar pesos a cadascuna de les arestes, corresponents al temps de viatge entre estacions mitjançant el metro o, en cas dels transbords, el temps caminant entre les andanes. Per aconseguir aquests temps, es va anar un dia a recòrrer la xarxa sencera, tot cronometrant els intervals de temps necessaris. Tots els temps van ser introduïts al graf en segons, per tal de facilitar el posterior càlcul del temps total.
+
+\subsection{Consideracions}
+
+Cal tenir remarcar que els temps introuïts al graf són els temps que va trigar el metro el duimenge 30 d'octubre de 2016, i que aquests no són constants, sinó que poden variar en funció del dia, l'hora i molts altres factors que no es poden tenir en compte. El mateix passa amb el temps de les parades. Es va observar que el temps que el metro estava parat en una estació incrementava en 5 segons a estacions concretes i a mesura que s'anava apropant al centre de la ciutat. Com que és un factor que també varia en funció de molts paràmetres i massa comlex per tenir-lo en compte, s'ha establert que el temps de parada és d'uns 25 segons de mitjana. Aquest temps s'afegeix al total multiplicat pel nombre de parades menys dues (la inicial i la final). 
+Així doncs, els valors de temps que calculi el programa seràn relatius i aproximats.
+
+El format de les estacions en el graf és el següent:
+\[ (\text{número de línia})\_(\text{nom d'estació})\]
+Els noms de les estacions estan posats d'acord el plànol de la xarxa de metro que proporciona TMB (Veure figura\ref{fig:metro}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{metro}
+	\caption[]{Plànol de la xarxa de metro de Barcelona \footnotemark}
+	\label{fig:metro}	
+\end{figure}
+\footnotetext{Autor: Ferrocarril Metropolità de Barcelona, S.A. Tots els drets reservats a l'autor}
+
+\subsection{Algorisme}
+El programa que fa els càlculs funciona a partir d'una execució de l'algorisme de Dijkstra (en realitat en una versió modificada que pot tractar amb paraules com a noms de nodes).
+
+\begin{algorisme}[H]
+\SetKwFunction{DijkstraOrdenat}{DijkstraOrdenat}
+\SetKwFunction{FMain}{Programa principal}
+\SetKwProg{Fn}{Funció}{}{}
+\DontPrintSemicolon
+\Fn{\DijkstraOrdenat{$G$, $s$}}
+{
+nou diccionari $dist$ amb les mateixes claus que $G$\;
+nou diccionari $Q$ amb les mateixes claus que $G$\;
+nou diccionari $arbre$\;
+\ForEach{node $v$ de $G$}
+{
+	$Q[v]=\infty$\;
+	$dist[v]=\infty$\;
+}
+$Q[s]=0$\;
+
+\While{$Q$ no estigui buit}
+{
+	$u=min\{\text{valor de } Q\}$\;
+	$dist[u]=Q[u]$\;
+	\ForEach{node $v$ adjacent a $u$}
+	{
+		\If{$v$ existeix dins $Q$}
+		{
+			
+			\If{$Q[v]>Q[u]+w(u,v)$}
+			{
+				$Q[v]=Q[u]+w(u,v)$\;
+				$arbre[v] = u$\;
+				
+			}
+		}
+	}
+	elimina($Q[u]$)\;
+}
+return $dist$, $arbre$	     
+}
+\end{algorisme}
+\leavevmode
+\\
+Dijkstra retorna un diccionari amb els temps des del node inicial $s$ fins a la resta de nodes i un segon diccionari amb l'arbre expansiu que té $s$ com a arrel. Per saber el recorregut a fer, només cal seguir l'arbre de manera inversa, és a dir des del punt final fins a $s$. Al ser un arbre, només hi haurà un camí possible a seguir.
+
+Per obtenir el temps caldrà buscar l'entrada corresponent al node final al diccionari dels temps. A aquest temps se li afegiran els temps per a cada parada i es farà la conversió de segons a minuts i segons.
+
+\begin{algorisme}[H]
+\KwData{Graf $G$ del metro, un node inicial $inici$ i un node final $final$}
+\KwResult{Temps total del trajecte, trajecte}
+\DontPrintSemicolon
+nou vector $recorregut$\;
+imprimeix("Punt inicial:", $inici$)\;
+imprimeix("Punt final:", $final$)\;
+
+dist, arbre = DijkstraOrdenat($G$, $inici$)\;
+
+$i$ = $final$\;
+\While{$arbre[i]$ sigui diferent a $inici$}
+{
+	afegeix $arbre[i]$ a $recorregut$\;
+	$i=arbre[i]$\;
+}
+afegeix $inici$ a $recorregut$\;
+inverteix l'ordre dels elements de $recorregut$\;
+
+$TempsTotal=dist[final]+(25\times (len(recorregut)-2)$\;
+$minuts=$ part entera de $TempsTotal/60$\;
+$segons=$ (residu de $TempsTotal/60$)$\times 0'60$\;
+imprimeix("Temps total del recorregut:", $minuts$, "minuts i", $segons$, "segons")\;
+imprimeix("Recorregut:")\;
+\For{$i$ in $range(0, len(recorregut))$}
+{
+	imprimeix($recorregut[i]$)\;
+}
+
+\end{algorisme}
+%\nocite{*}
+\printbibliography[title={Bibliografia}, category=citats]
+%\printbibliography[heading=bibintoc]
 \end{document}

@@ -2055,6 +2055,12 @@
     <bcf:citekey order="2">VAN71</bcf:citekey>
     <bcf:citekey order="3">KEM79</bcf:citekey>
     <bcf:citekey order="4">AH77a</bcf:citekey>
+    <bcf:citekey order="5">foo1999</bcf:citekey>
+    <bcf:citekey order="6">EUL_bridges</bcf:citekey>
+    <bcf:citekey order="7">APP_HANKEN</bcf:citekey>
+    <bcf:citekey order="8">foo1999</bcf:citekey>
+    <bcf:citekey order="9">EUL_bridges</bcf:citekey>
+    <bcf:citekey order="10">APP_HANKEN</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="anyt/global" type="entry" sortscheme="anyt" sortnamekeyscheme="global">
   <bcf:sorting>

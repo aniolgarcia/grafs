@@ -1,5 +1,5 @@
-[0] Config.pm:340> INFO - This is Biber 2.4
-[0] Config.pm:343> INFO - Logfile is 'biblio.blg'
-[56] biber:287> INFO - === dt nov  1, 2016, 16:55:37
-[91] Utils.pm:163> ERROR - Cannot find control file 'biblio.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
-[91] Biber.pm:113> INFO - ERRORS: 1
+[1] Config.pm:340> INFO - This is Biber 2.4
+[1] Config.pm:343> INFO - Logfile is 'biblio.blg'
+[55] biber:287> INFO - === ds nov  5, 2016, 01:37:15
+[92] Utils.pm:163> ERROR - Cannot find control file 'biblio.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
+[93] Biber.pm:113> INFO - ERRORS: 1
