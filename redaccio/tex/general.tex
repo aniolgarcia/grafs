@@ -112,8 +112,200 @@ array element/.style = {
 \begin{document}
 \maketitle
 \vfill
+\begin{flushright}
+\textit{Qualsevol que siguin els girs i les voltes dels fils en l'espai, un sempre pot obtenir una expressió per al càlcul de les seves dimensions [dels fils], tot i que tal expressió serà d'escassa utilitat en la pràctica. Els artesans que construeixen una xarxa, una trena o alguns nusos estaran més preocupats no per assumptes de mesura, sinó de posició: el que li importarà serà la manera en què els fils s'entrellacen.}
+\\ A. Vandermonde
+\end{flushright}
+\vfill
+\newpage	
 \tableofcontents
 \newpage
+
+\part{Presentació}
+
+El tema d'aquest treball, tal com diu el títol, tracta sobre els grafs: xarxes, camins i connexions. Pretén fer el pas de la matemàtica discreta a la realitat. El cert és que l'entorn que ens envolta és ple de matemàtiques; sovint en som usuaris però poques vegades ens n'adonem. Desconeixem, encara més,  quin és l?entramat de mecanismes que fan que moltes de les coses que ens envoltem,  i útilment utilitzem, funcionin. 
+Al llarg del treball intento crear lligams entre la part més teòrica i abstracta i les aplicacions que se'n deriven. Intento endinsar-me en el coneixement per comprendre aquests mecanismes; Intento crear els mecanismes per que el coneixement esdevingui una eina pràctica i funcional. 
+
+\subsection*{Justificació}
+Des de feia un cert temps, ja tenia clar que el meu treball de recerca havia de ser d'àmbit científic o tècnic. Havia pensat en temes de robòtica i informàtica, camps en els quals ja havia treballat anteriorment, però els treballs que se m'acudien en aquestes disciplines eren massa concrets i es basaven en un sol producte final, cosa que no m'acabava de convèncer.
+D'altra banda també hi havia els temes purament matemàtics. Aquesta opció suposava tractar unes matemàtiques a les quals no estava del tot avesat. Souposava més dificultat, cosa que afegia un component de risc.
+Finalment, doncs, vaig decidir de fer un treball que combinés la teoria i rigorositat de les matemàtiques amb una part més aplicada de programació. Aquesta unió en la vaig trobar en la teoria de grafs.
+
+El meu primer contacte amb els grafs va ser amb el problema 9 de la Marató de Problemes 2015 \footnote{Veure www.cangur.org/marato/2015/}. Sense saber-ho, vaig calcular els meus primers arbres d'Steiner i vaig utilitzar manualment algorismes de grafs com el de Kruskal. L'experiència amb aquest problema va ser molt bona.El cert és que vaig percebre una porta oberta davant meu amb un llarg camí per endavant, un camí per descobrir, molt engrescador. I segurament és aquest el motiu per el qual vaig recuperar el tema i vaig decidir endisar-m'hi en el meu treball de recerca.   
+
+\begin{figure}[H]
+\centering
+
+\definecolor{ffdxqq}{rgb}{1,0.843137254901961,0}
+\definecolor{ffqqff}{rgb}{1,0,1}
+\definecolor{ccwwff}{rgb}{0.8,0.4,1}
+\definecolor{ffqqtt}{rgb}{1,0,0.2}
+\definecolor{ffttww}{rgb}{1,0.2,0.4}
+\definecolor{uuuuuu}{rgb}{0.266666666666667,0.266666666666667,0.266666666666667}
+\definecolor{ttzzqq}{rgb}{0.2,0.6,0}
+\definecolor{qqzzcc}{rgb}{0,0.6,0.8}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{cqcqcq}{rgb}{0.752941176470588,0.752941176470588,0.752941176470588}
+
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale= 0.4]
+\draw [color=cqcqcq,dash pattern=on 3pt off 3pt, xstep=2.0cm,ystep=2.0cm] (-5.210241892694826,-4.647328152758077) grid (11.825236628568483,11.990125169410069);
+\draw[->,color=black] (-5.210241892694826,0) -- (11.825236628568483,0);
+\foreach \x in {-4,-2,2,4,6,8,10}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-4.647328152758077) -- (0,11.990125169410069);
+\foreach \y in {-4,-2,2,4,6,8,10}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-5.210241892694826,-4.647328152758077) rectangle (11.825236628568483,11.990125169410069);
+\draw (0,0)-- (5,-1);
+\draw (0,9)-- (1,3);
+\draw (0,9)-- (7,10);
+\draw (7,10)-- (3,3);
+\draw (3,3)-- (1,3);
+\draw (3,3)-- (5,-1);
+\draw [color=ttzzqq] (0,0)-- (1.95,0.99);
+\draw [color=ttzzqq] (1.95,0.99)-- (5,-1);
+\draw [color=ttzzqq] (1.95,0.99)-- (2,2.42);
+\draw [color=ttzzqq] (2,2.42)-- (3,3);
+\draw (1,3)-- (0,0);
+\draw [color=ttzzqq] (1,3)-- (2,2.42);
+\draw [color=qqzzcc] (1,3)-- (1.44,2.05);
+\draw (1.44,2.05)-- (2.62,2.08);
+\draw [color=qqzzcc] (2.62,2.08)-- (3,3);
+\draw [color=qqzzcc] (2.62,2.08)-- (5,-1);
+\draw [color=qqzzcc] (1.44,2.05)-- (0,0);
+\draw [color=ffqqtt] (1,3)-- (2.188309128214945,3.561892025304509);
+\draw [color=ffqqtt] (2.365261414982659,7.526875255855325)-- (2.188309128214945,3.561892025304509);
+\draw [color=ffqqtt] (0,9)-- (2.365261414982659,7.526875255855325);
+\draw [color=ffqqtt] (2.365261414982659,7.526875255855325)-- (7,10);
+\draw [color=ffqqtt] (2.188309128214945,3.561892025304509)-- (3,3);
+\draw [color=ccwwff] (1,3)-- (2.061660681748013,4.492802006171414);
+\draw [color=ccwwff] (2.061660681748013,4.492802006171414)-- (2.454380848472936,4.442437815523712);
+\draw [color=ccwwff] (2.454380848472936,4.442437815523712)-- (3,3);
+\draw [color=ccwwff] (0,9)-- (2.061660681748013,4.492802006171414);
+\draw [color=ccwwff] (2.454380848472936,4.442437815523712)-- (7,10);
+\draw [color=ffdxqq] (2.188309128214945,3.561892025304509)-- (2.188309128214945,3);
+\draw [color=ffdxqq] (2,3)-- (2,2.42);
+\begin{scriptsize}
+\fill [color=qqqqff] (0,0) circle (1.5pt);
+\draw[color=qqqqff] (0.38864590790729,0.341254342565067) node {$A_1$};
+\fill [color=qqqqff] (5,-1) circle (1.5pt);
+\draw[color=qqqqff] (5.218018323592528,-0.66707616180876) node {$B$};
+\fill [color=qqqqff] (3,3) circle (1.5pt);
+\draw[color=qqqqff] (3.201357314844846,3.339710842413553) node {$C$};
+\fill [color=qqqqff] (1,3) circle (1.5pt);
+\draw[color=qqqqff] (1.21123131937016,3.339710842413553) node {$D$};
+\fill [color=qqqqff] (7,10) circle (1.5pt);
+\draw[color=qqqqff] (7.208144319067213,10.344954346484352) node {$E$};
+\fill [color=qqqqff] (0,9) circle (1.5pt);
+\draw[color=qqqqff] (0.176365801723324,9.336623842110525) node {$F$};
+\draw[color=black] (2.617587022838938,-0.720146188354751) node {$AB$};
+\draw[color=black] (0.176365801723324,6.125887236078075) node {$b$};
+\draw[color=black] (3.652452540485775,9.283553815564535) node {$e$};
+\draw[color=black] (4.713853071405607,6.921937634267938) node {$g$};
+\draw[color=black] (2.007281717560035,3.631595988416503) node {$j$};
+\draw[color=black] (3.678987553758771,1.004629674389953) node {$k$};
+\fill [color=ffqqqq] (1.44,2.05) circle (1.5pt);
+\draw[color=ffqqqq] (1.635791531738093,2.384450364585716) node {$K$};
+\fill [color=ffqqqq] (2,2.42) circle (1.5pt);
+\draw[color=ffqqqq] (2.193026810471006,2.755940550407653) node {$L$};
+\fill [color=qqzzcc] (2.62,2.08) circle (1.5pt);
+\draw[color=qqzzcc] (2.856402142295901,2.437520391131708) node {$M$};
+\fill [color=qqqqff] (18.414738212899152,8.553390907792599) circle (1.5pt);
+\draw[color=qqqqff] (18.618200026455412,8.885528616469601) node {$A$};
+\fill [color=ffqqqq] (1.95,0.99) circle (1.5pt);
+\draw[color=ffqqqq] (2.16649179719801,1.323049833665899) node {$O$};
+\draw[color=ttzzqq] (1.184696306097165,0.314719329292072) node {$l$};
+\draw[color=ttzzqq] (3.360567394482821,-0.162910909621846) node {$m$};
+\draw[color=ttzzqq] (2.484911956473959,1.880285112398803) node {$n$};
+\draw[color=ttzzqq] (2.803332115749909,2.543660444223689) node {$p$};
+\draw[color=black] (0.20290081499632,1.827215085852812) node {$q$};
+\draw[color=ttzzqq] (1.317371372462144,2.543660444223689) node {$r$};
+\draw[color=qqzzcc] (0.892811160094211,2.543660444223689) node {$s$};
+\draw[color=black] (2.086886757379022,1.827215085852812) node {$t$};
+\draw[color=qqzzcc] (3.4932424608478,2.570195457496685) node {$a_1$};
+\draw[color=qqzzcc] (3.758592593577758,0.473929408930044) node {$b_1$};
+\draw[color=qqzzcc] (0.627461027364253,1.455724900030876) node {$c_1$};
+\fill [color=qqqqff] (-3.065559915740067,10.167346657643796) circle (1.5pt);
+\draw[color=qqqqff] (-2.848625711398198,10.504164426122324) node {$H$};
+\fill [color=uuuuuu] (11.06217782649107,3.035898384862243) circle (1.5pt);
+\draw[color=uuuuuu] (11.188396310016584,3.392780868959544) node {$I$};
+\fill [color=uuuuuu] (-0.154350915650843,11.339067702136814) circle (1.5pt);
+\draw[color=uuuuuu] (0.070225748631341,11.671705010134124) node {$N$};
+\fill [color=ffttww] (2.454380848472936,4.442437815523712) circle (1.5pt);
+\draw[color=ffttww] (2.67065704938493,4.799136572428303) node {$P$};
+\fill [color=uuuuuu] (2.633974596215563,15.56217782649107) circle (1.5pt);
+\draw[color=uuuuuu] (-5.104101839602842,12.175870262321038) node {$Q$};
+\fill [color=uuuuuu] (9.417508810387687,3.134616508389499) circle (1.5pt);
+\draw[color=uuuuuu] (9.622830526909832,3.47238590877853) node {$R$};
+\fill [color=ffttww] (2.365261414982659,7.526875255855325) circle (1.5pt);
+\draw[color=ffttww] (2.564516996292947,7.877198112095775) node {$S$};
+\fill [color=uuuuuu] (-4.696152422706632,5.133974596215563) circle (1.5pt);
+\draw[color=uuuuuu] (-4.520331547596935,5.489046917526185) node {$T$};
+\fill [color=uuuuuu] (5.05148340660325,8.69679433488057) circle (1.5pt);
+\draw[color=uuuuuu] (5.271088350138519,9.044738696107574) node {$U$};
+\fill [color=ffttww] (2.061660681748013,4.492802006171414) circle (1.5pt);
+\draw[color=ffttww] (2.272631850289993,4.825671585701298) node {$V$};
+\fill [color=uuuuuu] (2,1.267949192431123) circle (1.5pt);
+\draw[color=uuuuuu] (2.246096837016997,1.614934979668849) node {$W$};
+\fill [color=uuuuuu] (0.355330983896616,4.830768931096134) circle (1.5pt);
+\draw[color=uuuuuu] (0.574391000818261,5.170626758250239) node {$Z$};
+\fill [color=ffttww] (2.188309128214945,3.561892025304509) circle (1.5pt);
+\draw[color=ffttww] (2.591052009565943,3.896946121146457) node {$B_1$};
+\draw[color=ffqqtt] (2.007281717560035,3.100895722956594) node {$r_2$};
+\draw[color=ffqqtt] (2.113421770652018,5.754397050256139) node {$s_2$};
+\draw[color=ffqqtt] (1.184696306097165,8.089478218279739) node {$t_2$};
+\draw[color=ffqqtt] (5.164948297046536,8.593643470466652) node {$a_3$};
+\draw[color=ffqqtt] (2.644122036111934,3.127430736229589) node {$b_3$};
+\draw[color=ccwwff] (2.139956783925014,3.711201028235489) node {$c_3$};
+\draw[color=ccwwff] (2.484911956473959,4.241901293695398) node {$d_3$};
+\draw[color=ccwwff] (2.617587022838938,3.76427105478148) node {$e_3$};
+\draw[color=ccwwff] (0.866276146821215,6.762727554629966) node {$f_3$};
+\draw[color=ccwwff] (5.324158376684512,7.160752753724898) node {$g_3$};
+\fill [color=ffqqff] (2,3) circle (1.5pt);
+\draw[color=ffqqff] (2.405306916654972,3.339710842413553) node {$C_1$};
+\fill [color=ffqqff] (2.188309128214945,3) circle (1.5pt);
+\draw[color=ffqqff] (2.591052009565943,3.339710842413553) node {$D_1$};
+\draw[color=ffdxqq] (1.954211691014043,3.47238590877853) node {$j_3$};
+\draw[color=ffdxqq] (1.821536624649064,2.915150630045626) node {$k_3$};
+\end{scriptsize}
+\end{tikzpicture}
+\caption{El meu primer graf}
+\end{figure}
+
+\subsection*{Objectius}
+A partir d?aquest primer graf  em vaig plantejar una sèrie de qüestions amb la intenció de trobar les respostes adients:
+\begin{itemize}
+\item Què són els grafs?
+\item Quins son els procediments, mecanismes i/o eines per aconseguir anar des del concepte abstracte de grafs fins a dades concretes i reals?
+\item A on es poden aplicar?
+\end{itemize}               
+
+Els objectius del treball són, doncs:
+\begin{itemize}
+\item Conèixer la teoria de grafs.
+\item Crear algorismes que permetin solucionar problemes de grafs.
+\item Mostrar que la matemàtica discreta està present en la realitat que ens envolta.
+\end{itemize}                     
+
+\subsection*{Formulació de la hipòtesi de partida}
+
+La matemàtica discreta, en concret la teoria de grafs, té aplicacions práctiques a la vida quotidiana i existeixen procediments que ens permeten fer el pas de la teoria a la realitat. En aquest treball he intentat validar aquesta hipòtesi.
+
+\subsection*{Estructura del treball i fonts d'informació}
+
+La història de la teoria de grafs em va permetre conèixer els orígens i l'evolució. Tot seguit em vaig endinsar en la part matemàtica. Havia de buscar respostes a les preguntes que m'havia formulat, però primer necessitava  conèixer el concepte clau del meu treball: els grafs. El meu punt de partida era molt bàsic. De bon començament doncs, vaig haver de familiaritzar-me amb el llenguatge matemàtic emprat i tot seguit van venir les fórmules i les demostracions. Amb tot, cada cop es va anar fent més gran la distància entre els meus coneixements del nivell de primer de Batxillerat i tot allò que anava incorporant al meu bagatge. En aquest procés he tingut la sort de comptar amb el guiatge de la UB que m'ha ofert un acompanyament incondicional.  Quan em vaig posar a escriure em vaig adonar d'un petit entrebanc: com dibuixaria esquemes de grafs i com escriuria fórmules? Un editor de text convencional no era el més adient, així que em van recomanar fer servir el programa  \LaTeX: nou repte afegit. Uns dies de pràctiques i unes quantes converses amb l'ordinador em van permetre començar a avançar de nou. Amb tot, havia completat la part II. 
+
+La part III va ser tota una altra descoberta. Un cop familiaritzat amb els grafs calia recorre'ls, de node a node, d'aresta a aresta, un passeig que es pot fer de moltes maneres diferents i amb finalitats diferents. Tot fent camí amb les matemàtiques, mitjançant el programa de "Bojos per les matemàtiques" \footnote{Programa organitzat per FEEMCAT, SCM i Fundació Catalunya La Pedrera} i el "Math Summer Camp"\footnote{Activitat organitzada per Fundació Privada Cellex, UPC-FME i CFIS}, aquests passejos s'han fet amens i una mica més  propers. Ha estat fantàstic trobar punts de confluència que m'anaven aclarint idees i aportant fluïdesa als nous coneixements. Però, com els havia de recórrer? En aquest moment del treball la programació entra en joc. En els annexos he adjuntat els programes amb  llenguatge Python que m'han ofert la possibilitat de gaudir del recorregut. També m'han estat molt útils les classes del MIT que es poden consultar a través de la xarxa.
+
+A la part IV, encara que de manera breu, he tractat tots aquells problemes que requereixen crear el graf. 
+
+Finalment, en la darrera part, la V, he descrit alguns exemples que poden formar part del nostre dia a dia. Sense ser-ne massa conscients,  algunes persones treballen i fan que les coses funcionin d?una manera determinada, ens faciliten certes tasques, ens proporcionen seguretat, fan possible que puguem establir contactes... No acabaríem la llista. M'he decantat per dos exemples concrets: situar càmeres de vigilància en els carrers del nucli antic de Malgrat i, l'altre, facilitar el recorregut del metro, indicant les estacions i el temps que es triga per anar d?una estació a qualsevol altra escollides per l'usuari, tot trigant el mínim temps possible.   
+
+
+
 
 \part{Introducció a la teoria de grafs}
 
@@ -412,8 +604,8 @@ complicada, i comporta desenvolupar una inducció respecte del nombre d'arestes:
 \begin{itemize}
 
 
-\item Si $|E|=0$, no cal considerar el cas. Si $|E|=1$, o $|V|=2$ i cada
-vèrtex té grau 1 o la aresta és un llaç i hi ha un sol vèrtex de grau
+\item Si $|E|=0$, no cal considerar el cas. Si $|E|=1$, o bé $|V|=2$ i cada
+vèrtex té grau 1 o bé la aresta és un llaç i hi ha un sol vèrtex de grau
 2. En qualsevol d'aquests dos casos, el teorema es verifica.
 \item Ara suposem que el teorema està demostrat per a $|E|\leq k$ i que $G$ és un
 graf amb $|E|=k+1$. Si $e$ és una aresta de $G$ prenem $H=G-e$.
@@ -428,6 +620,45 @@ demostració en treiem una altra afirmació:
 \begin{quotation}
 \emph{En tot graf, el nombre de vèrtex amb grau imparell, és parell.}
 \end{quotation}
+
+\section{Isomorfismes}
+Es diu que dos grafs són isomorfs si existeix una funció bijectiva $\varphi$ entre els seus vèrtexs que conservi les arestes. Formalment dos grafs $G$ i $H$ són isomorfs si
+
+\[\exists\varphi:V(G)\rightarrow V(H) \text{ tal que } \forall u, v \in V(G)\text{, } \overline{\varphi(v)\varphi(u)}\in E(H) \text{ si i només si } \overline{vu}\in E(G)\]
+
+\begin{figure}[H]
+\centering
+	\subfloat{
+		\begin{tikzpicture}[round/.style={circle, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
+			\node[round, fill=blue] (a) at (0,0){2};
+			\node[round, fill=red] (b) at (4,0){0};
+			\node[round, fill=green] (c) at (2,1.5){3};
+			\node[round, fill=purple] (d) at (2,4){1};
+			\draw (a) edge (b);
+			\draw (a) edge (c);
+			\draw (a) edge (d);
+			\draw (b) edge (c);
+			\draw (b) edge (d);
+			\draw (c) edge (d);
+		\end{tikzpicture}
+	}
+	\subfloat{
+		\begin{tikzpicture}[round/.style={circle, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
+			\node[round, fill=blue] (a) at (0,0){c};
+			\node[round, fill=red] (b) at (4,0){a};
+			\node[round, fill=green] (c) at (0,4){d};
+			\node[round, fill=purple] (d) at (4,4){b};
+			\draw (a) edge (b);
+			\draw (a) edge (c);
+			\draw (a) edge (d);
+			\draw (b) edge (c);
+			\draw (b) edge (d);
+			\draw (c) edge (d);
+		\end{tikzpicture}
+	}
+	\caption{Grafs isomorfs}
+\end{figure}
+
 
 \section{Tipus de grafs}
 \label{Sec:tipus}
@@ -580,7 +811,7 @@ Un graf complet té ${n\choose k} = \frac{n(n-1)}{2}$, per tant en aquest cas se'
 \subsection{Cicles}
 \label{sec:cicles}
 
-Els \textit{cicles} són grafs 2-regulars amb $n$ vèrtexs i $n$ arestes, i s'anomenen $C_{n}$.
+Els \textit{cicles} són grafs 2-regulars\footnote{Veure apartat \ref{sec:regulars}} amb $n$ vèrtexs i $n$ arestes, i s'anomenen $C_{n}$.
  
 \begin{propietat}
 El graf lineal d'un cicle és ell mateix.
@@ -592,6 +823,46 @@ El graf lineal d'un cicle és ell mateix.
 		\grCycle[RA=2, prefix=v, Math=true]{9}
 	\end{tikzpicture}
 \caption{Cicle $C_{9}$}
+\end{figure}
+
+\subsection{Grafs complets}
+\label{sec:Complets}
+
+Un \textit{graf complet} és un graf on cada vèrtex està unit a tots els altres
+una sola vegada. Un graf complet amb $n$ nodes és un graf simple
+i $(n-1)$-regular i la seva nomenclatura és $K_{n}$. 
+
+\begin{propietat}
+Els grafs complets tenen ${n\choose 2}=\frac{n(n-1)}{2}$ arestes. 
+\end{propietat}
+
+\begin{propietat}
+El nombre de cicles que conté un graf complet queda determinat per la següent igualtat:
+
+\[ C_{n} =\sum_{K=3}^{n}\frac{1}{2}{n\choose k}(k-1)! \]
+
+On:
+\begin{description}
+\item[$\frac{1}{2}$] es multiplica perquè es conten dues vegades els cicles, ja que no són dirigits.
+\item[$n\choose k$] és el nombre de grups de $k$ elements que es poden agafar.
+\item[$(k-1)!$] és el nombre de permutacions circulars de $k$ elements.
+\end{description}
+
+\end{propietat}
+
+\begin{figure}[H]
+\centering
+	\subfloat[]{	
+		\begin{tikzpicture}
+			\grComplete[RA=2, prefix=v, Math=true]{7}
+		\end{tikzpicture}
+	}
+	\subfloat[]{
+		\begin{tikzpicture}
+			\grComplete[RA=2, prefix=v, Math=true]{5}
+		\end{tikzpicture}
+	}
+\caption{Grafs complets $K_{7}$(a) i $K_{5}$(b)}
 \end{figure}
 
 \subsection{Grafs bipartits}
@@ -704,7 +975,6 @@ mn-2m-2n+4+m-2+n-2+mn = 2mn-m-n=\boxed{m(n-1)+n(m-1)}
 \]
 
 	\begin{figure}[H]
-	\label{fig:graus_xarxes}
 	\centering
 		\begin{tikzpicture}[round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}, invisible/.style={shape=coordinate}, central/.style={circle, draw=white, fill=white, thin, minimum size=1mm}, transform shape]
 			\node (a)[round,label=grau 2] at (0,0){};
@@ -739,6 +1009,7 @@ mn-2m-2n+4+m-2+n-2+mn = 2mn-m-n=\boxed{m(n-1)+n(m-1)}
 
 		\end{tikzpicture}
 		\caption{Representació dels graus dels diferents nodes d'un grau xarxa}
+		\label{fig:graus_xarxes}
 	\end{figure}
 
 
@@ -842,45 +1113,7 @@ El nombre de fulles d'un arbre $T$ és més gran o igual a $\Delta$.
 \end{quote}
 \emph{Demostració: }Si eliminem un node de grau $\Delta$ de l'arbre, juntament amb totes les seves arestes incidents, obtenim un conjunt de $\Delta$ grafs disconnexos. Si alguns d'aquests grafs consisteixen en tan sols un node, vol dir que abans eren adjacents al node que hem eliminat, per tant, només tenien grau 1. Si, pel contrari, formen nous arbres, pel teorema 3 podem dir que hi haurà com a mínim dues fulles. Encara que hi ha la possibilitat que un dels nodes amb grau 1 sigués l'adjacent al node que hem tret, sempre podem garantir que hi ha com a mínim una fulla. Per tant, també podem garantir que que hi haurà com a mínim $\Delta$ fulles.
 
-\subsection{Grafs complets}
-\label{sec:Complets}
 
-Un \textit{graf complet} és un graf on cada vèrtex està unit a tots els altres
-una sola vegada. Un graf complet amb $n$ nodes és un graf simple
-i $(n-1)$-regular i la seva nomenclatura és $K_{n}$. 
-
-\begin{propietat}
-Els grafs complets tenen ${n\choose 2}=\frac{n(n-1)}{2}$ arestes. 
-\end{propietat}
-
-\begin{propietat}
-El nombre de cicles que conté un graf complet queda determinat per la següent igualtat:
-
-\[ C_{n} =\sum_{K=3}^{n}\frac{1}{2}{n\choose k}(k-1)! \]
-
-On:
-\begin{description}
-\item[$\frac{1}{2}$] es multiplica perquè es conten dues vegades els cicles, ja que no són dirigits.
-\item[$n\choose k$] és el nombre de grups de $k$ elements que es poden agafar.
-\item[$(k-1)!$] és el nombre de permutacions circulars de $k$ elements.
-\end{description}
-
-\end{propietat}
-
-\begin{figure}[H]
-\centering
-	\subfloat[]{	
-		\begin{tikzpicture}
-			\grComplete[RA=2, prefix=v, Math=true]{7}
-		\end{tikzpicture}
-	}
-	\subfloat[]{
-		\begin{tikzpicture}
-			\grComplete[RA=2, prefix=v, Math=true]{5}
-		\end{tikzpicture}
-	}
-\caption{Grafs complets $K_{7}$(a) i $K_{5}$(b)}
-\end{figure}
 
 \subsection{Rodes}
 \label{sec:rodes}
@@ -960,6 +1193,27 @@ $|E(G)|+|E(\bar{{G}})|=|K|$). Veure figura \ref{fig:complementari}.
 \label{fig:complementari}
 \end{figure}
 
+\subsection{Graf nul i grafs buits}
+\label{sec:buits}
+
+Els \textit{grafs buits} són grafs sense arestes, és a dir, conjunts d'$n$ vértexs.
+Són els complementaris dels grafs complets $K_{n}$, i per tant la seva nomenclatura
+és $\bar{K}_{n}$ o, simplement, $N_{n}$. Estrictament s'anomena \textit{graf nul} a $N_{0}$
+i buits a la resta, però com que normalment no s'utilitza $N_{0}$,
+convencionalment es diuen nuls tots els elements del conjunt dels buits.
+
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
+		\node[round] (a) at (0,0){$v_{0}$};
+		\node[round] (b) at (4,0){$v_{1}$};
+		\node[round] (c) at (8,0){$v_{2}$};
+		\node[round] (d) at (0,2){$v_{3}$};
+		\node[round] (d) at (4,2){$v_{4}$};
+		\node[round] (d) at (8,2){$v_{5}$};
+	\end{tikzpicture}
+\caption{Graf buit $N_{6}$}
+\end{figure}
 
 \subsection{Grafs regulars} 
 \label{sec:regulars}
@@ -968,7 +1222,7 @@ Es diu que un graf $G=(V,E)$ és \textit{regular de grau $r$} quan tots els seus 
 tenen grau $r$. Formalment, un graf és $r$-regular quan $\Delta(G)=\delta(G)=r$.
 Un graf $0$-regular és un graf nul \footnote{Veure apartat \ref{sec:buits}}, un graf $1$-regular
 consisteix en arestes separades entre elles i un graf $2$-regular
-consisteix en un o més cicles \footnote{Veure apartat \ref{sec:cicles}} separats. A partir d'aquí, els grafs regulars més importants
+consisteix en un o més cicles separats. A partir d'aquí, els grafs regulars més importants
 tenen noms propis, com per exemple els $3$-regulars, que són els
 \textit{cúbics}; els $4$-regulars, \textit{quàrtics}; els $7$-regulars, \textit{grafs de Witt
 truncats dobles}; els $8$-regulars, \textit{grafs de 24 cel·les}... 
@@ -1042,27 +1296,7 @@ Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-reg
 \label{fig:regulars}
 \end{figure}
 
-\subsection{Graf nul i grafs buits}
-\label{sec:buits}
 
-Els \textit{grafs buits} són grafs sense arestes, és a dir, conjunts d'$n$ vértexs.
-Són els complementaris dels grafs complets $K_{n}$ \footnote{Veure apartat \ref{sec:Complets}}, i per tant la seva nomenclatura
-és $\bar{K}_{n}$ o, simplement, $N_{n}$. Estrictament s'anomena \textit{graf nul} a $N_{0}$
-i buits a la resta, però com que normalment no s'utilitza $N_{0}$,
-convencionalment es diuen nuls tots els elements del conjunt dels buits.
-
-\begin{figure}[H]
-\centering
-	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
-		\node[round] (a) at (0,0){$v_{0}$};
-		\node[round] (b) at (4,0){$v_{1}$};
-		\node[round] (c) at (8,0){$v_{2}$};
-		\node[round] (d) at (0,2){$v_{3}$};
-		\node[round] (d) at (4,2){$v_{4}$};
-		\node[round] (d) at (8,2){$v_{5}$};
-	\end{tikzpicture}
-\caption{Graf buit $N_{6}$}
-\end{figure}
 
 
 
@@ -1531,7 +1765,7 @@ Aquest algorisme no té tantes utilitats pràctiques com l'algorisme BFS, però tam
 \item Es pot saber si un graf és bipartit assignant un color (entre un total de 2 colors possibles) a cada node mentre es recorre el graf, de manera que un node tingui un color diferent al dels nodes adjacents. Si això és possible voldrà dir que el graf és bipartit.
 \item Es pot dur a terme una ordenació topològica, si es tracta d'un graf dirigit sence cicles. Un exemple d'ordenció topològica és quan hi ha una llista de tasques a fer però per fer-ne una determinada, cal haver-ne fet primer una altra. Amb l'algorisme DFS, podem obtenir una de les seqüències vàlides per completar totes les tasques. A continuació es presenta un exemple d'ordenació topològica utilitzat dirant la creació d'aquest treball:
 
-Resulta que, a la secció \ref{Sec:tipus}, quan explicava un tipus concret de graf, sovint utilitzava altres tipus de graf. Per determinar en quin ordre havien d'estar els apartats, de tal manera que quan apareixès un tipus de graf (a una altra definició) aquest ja s'hagués explicat, es va utilitzar una ordenació topològica. Es va construïr un graf dirigit representant les dependències de cada apartat (veure figura \ref{fig:topological_sort}), i es va executar l'algorisme d'ordenació topològica.
+Resulta que, a la secció \ref{Sec:tipus}, quan explicava un tipus concret de graf, sovint utilitzava altres tipus de graf. Per determinar en quin ordre havien d'estar els apartats, de tal manera que quan apareixès un tipus de graf (a una altra definició) aquest ja s'hagués explicat, es va utilitzar una ordenació topològica. Es va construïr un graf dirigit representant les dependències de cada apartat (veure figura \ref{fig:topological_sort}), i es va executar l'algorisme d'ordenació topològica. El problema és que aquest graf té diversos cicles, i, per tant, en aquests cicles no és possible evitar que apareguin referències a altres apartats.
 \end{itemize}
 
 \begin{figure}[H]
@@ -1565,6 +1799,9 @@ Resulta que, a la secció \ref{Sec:tipus}, quan explicava un tipus concret de gra
 		\draw (h) edge[->,-latex] (l);
 		\draw (j) edge[->,-latex] (g);
 		\draw (j) edge[->,-latex] (k);
+		\draw (i) edge[->,-latex] (d);
+		\draw (i) edge[->,-latex] (g);
+		\draw (h) edge[->,-latex] (j);
 		\draw (l) edge[->,-latex, bend left=50] (d);
 		
 		
@@ -2415,58 +2652,33 @@ El punt de Fermat es pot generalitzar per a altres polígons convexos a partir de
 
 El problema de connectar amb la mínima distància un nombre determinat de punts essent possible afegir nodes és conegut com el problema de l'arbre de Steiner. Per aquest problema s'ha demostrat que l'arbre òptim té com a màxim $n-2$ nodes afegits (siguent $n$ el nombre inicial de nodes), que aquests tenen sempre grau $3$, i que formen sempre angles de $120º$.   
 
-(Afegir un apartat per parlar de les bombolles de sabó)
+\subsection{Els arbres de Steiner amb bombolles de sabó}
+El problema dels arbres de Steiner és relativament complex per a conjunts de molts punts, i a més, actualment no hi ha bons algorismes per trobar-ne la solució. Un dels procediments que es pot utilitzar és omplir l'espai delimitat pel polígon que formen els punts inicials amb altres punts com si es tractés d'un graf xarxa i trobar el camí mínim que uneix els punts inicials. Tot i això, és tan sols una aproximació, i a més, no gaire precisa.
 
-\section{Arbres expansius}
-Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitzar els algorismes per trobar arbres expansius que ja s'han vist. Una opció és construïr el graf complet amb totes                         les arestes i els seus corresponents pesos i executar algun algorisme que en trobi l'arbre expansiu mínim. 
-\\
-
-
-\part{Topologia}
-
-La topologia és la branca de les matemàtiques que estudia les propietats de l'espai i si aquestes es conserven després de deformacions. Des d'un punt de vista teòric, 
-
-\section{Isomorfismes}
-
-Es diu que dos grafs són isomorfs si existeix una funció bijectiva $\varphi$ entre els seus vèrtexs que conservi les arestes. Formalment dos grafs $G$ i $H$ són isomorfs si
-
-\[\exists\varphi:V(G)\rightarrow V(H) \text{ tal que } \overline{\varphi(v)\varphi(u)}\in E(H) \text{ si i només si } \overline{vu}\in E(G)\]
+Les bombolles de sabó, sense utilitzar algorismes són capaces de trobar arbres de Steiner amb precisió donats diversos punts. A les imatges de la figura \ref{fig:Steiner} es poden veure diferents arbres de Steiner generats a partir de submergir les plaques amb els punts en sabó. 
 
 \begin{figure}[H]
-\centering
-	\subfloat{
-		\begin{tikzpicture}[round/.style={circle, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
-			\node[round, fill=blue] (a) at (0,0){2};
-			\node[round, fill=red] (b) at (4,0){0};
-			\node[round, fill=green] (c) at (2,1.5){3};
-			\node[round, fill=purple] (d) at (2,4){1};
-			\draw (a) edge (b);
-			\draw (a) edge (c);
-			\draw (a) edge (d);
-			\draw (b) edge (c);
-			\draw (b) edge (d);
-			\draw (c) edge (d);
-		\end{tikzpicture}
+	\centering
+	\subfloat[]{
+		\includegraphics[scale=0.25]{steiner1}
 	}
-	\subfloat{
-		\begin{tikzpicture}[round/.style={circle, text=white, thin, minimum size=.5mm}, transform shape, scale=0.80]
-			\node[round, fill=blue] (a) at (0,0){c};
-			\node[round, fill=red] (b) at (4,0){a};
-			\node[round, fill=green] (c) at (0,4){d};
-			\node[round, fill=purple] (d) at (4,4){b};
-			\draw (a) edge (b);
-			\draw (a) edge (c);
-			\draw (a) edge (d);
-			\draw (b) edge (c);
-			\draw (b) edge (d);
-			\draw (c) edge (d);
-		\end{tikzpicture}
+	\subfloat[]{
+		\includegraphics[scale=0.27]{steiner2}
 	}
-	\caption{Grafs isomorfs}
+	\subfloat[]{
+		\includegraphics[scale=0.25]{steiner3}
+	}
+	\
+	
+	\caption[]{Arbres de Steiner amb bombolles de sabó\footnotemark}
+	\label{fig:Steiner}	
 \end{figure}
+\footnotetext{Autor: Anton Aubanell}
 
+\section{Arbres expansius}
+Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitzar els algorismes per trobar arbres expansius que ja s'han vist. Una opció és construïr el graf complet amb totes les arestes i els seus corresponents pesos i executar algun algorisme que en trobi l'arbre expansiu mínim. 
+\\
 
-(S'haurà d'eliminar l'apartat de topologia, encabir els siomorfismes amb l'exemple a algun altre apartat [segurament a conceptes bàsics] i fer l'apartat d'aplicaicions pràctiques)
 
 \part{Aplicacion pràctiques de la teoria de grafs}
 
@@ -2478,12 +2690,13 @@ Aquest algorisme conta el nombre de links cap a una pàgina web, així com l'impor
 S'ha de pensar el conjunt de pàgines web com un graf dirigit i poderat: cada vèrtex representa una pàgina i hi ha una aresta dirigida de del vèrtex$v_{i}$ fins a $v_{j}$ si hi ha un enllaç a $v_{i}$ que porta a $v_{j}$. El pes de l'aresta $e=(v_{i}, v_{j})$, $w(e)$, serà la probabilitat de passar del vèrtex $v_{i}$ al vèrtex $v_{j}$ (és a dir, $\frac{1}{n}$, on $n$ és el nombre d'arestes que surten de $v_{i}$).
 
 Un cop es té la matriu de probabilitats (la matriu d'adjacència del graf) es fa que un programa o bot navegui de manera aleatòria per aquest graf, d'acord amb les probabilitats de passar per cada aresta. Quan el programa ha estat un temps recorrent es fa el recompte de quantes vegades ha passat per a cada pàgina, i a paritr d'aquest valor es determina la posició en els resultats.
+
 \section{Productes relacionats}
 Quan es visita una botiga online i s'està mirant un producte, sovint apareix una secció de productes recomenats o relacionats. Hi ha diverses maneres de saber quins productes estàn relacionats a aquell que s'està mirant, i una de les que més s'utilitza es basa en teoria de grafs. 
 
 El que es fa és anar construïnt un graf a mesura que els usuaris van visitant la web: cada producte és un vèrtex, i es genera una aresta dirigida cap a un altre producte quan aquest és visitat immediatament després del primer. Per exemple, si un usuari busca un ordinador portàtil, el més probable és que al acabar de mirar-ne un en veigi un altre. En aques cas es generaria una aresta des del primer ordinador fins al segon. A mesura que els usuaris van utilitzant la web, es van generant arestes i el graf va creixent. Tot i això, és possible que l'usuari, al acabar de mirar l'ordinador es posi a buscar un altre article que no hi té res a veure, com per exemple un paraigües. Però això no és habitual, i hi haurà molt poques arestes que uneixin l'ordinador i el paraigües.
 
-Sobre aquest graf s'executarà un algorisme de clusterització, que buscarà parts del graf que siguin més denses o altament conexes. Auquestes parts segurament seràn d'una temàtica concreta, com per exemple el grup dels ordinadors i hi haurà molt poques arestes que surtin d'un grup cap a un altre. 
+Sobre aquest graf s'executarà un algorisme de clusterització, que buscarà parts del graf que siguin més denses o altament conexes. Auquestes parts segurament seràn d'una temàtica concreta, com per exemple el grup dels ordinadors i hi haurà molt poques arestes que surtin d'un grup cap a un altre. Així doncs, els productes relacionats seràn aquells que es trobin dins del mateix clúster.
 
 
 \section{Instal·lació de càmeres de videovigilància}
@@ -2728,6 +2941,19 @@ imprimeix("Recorregut:")\;
 }
 
 \end{algorisme}
+\vfill
+\section*{Conclusions}
+
+Durant aquest treball hem fet un camí juntament amb la teoria de grafs: l'hem vist néixer del pensament d'Euler; l'hem vist créixer acompanyada d'alguns dels més grans matemàtics de l'història; n'hem vist la seva manera d'entendre i modelitzar el món; l'hem acompanyada fins a la seva maduresa on, juntament amb més matemàtics i teòrics de les ciències de computació, ha col·laborat amb una infinitat d'àrees que en un principi semblaven distants a ella; i finalment ens ha ajudat a resoldre problemes quotidians.
+
+Personalment, el treball m'ha ajudat molt. He après moltíssim de teoria de grafs, però el que és també molt important és el rerefons més abstracte: el tipus de raonament matemàtic, la formalització de conceptes i idees, les tècniques de demostració, la metodologia matemàtica... Amb tot això he pogut descobrir la capacitat modelitzadora de les matemàtiques.
+Amb aquest treball també m'he iniciat a la programació en Phyton. En un principi tenia pensat escriure els algorismes en C++, llenguatge que he utilitzat molt més, però vaig decidir intentar-ho fer amb un llenguatge que aportés una visió diferent de la programació a la que tenia dels basats en C. Mitjançant la programació he viscut l'aventura de relacionar i aplicar idees matemàtiques a algorismes i posteriorment "dotar-los de vida" implementant-los en programes.   
+També cal afegir-hi l'existència d'un component més emocional. És el camp d'un dels primers "grans" problemes a els quals em vaig enfrontar, i m'ho he passat molt bé aprenent més sobre aquesta branca. 
+Tot aqusts coneixemets adquirits em fan veure el món d'una manera lleugerament diferent, i de ben segur que em seràn útils pels meus estudis futurs en el camp de les matemàtiques i la informàtica.
+
+Encara que el treball final no contingui tots els aspectes que m'hagués agradat tractar, el camí que n'ha resultat és fins i tot més ampli del que en un principi podia imaginar. 
+
+Això sí: tot i que el camí sempre ha fet pujada, cal pensar que cada vegada som més aprop del cim.
 %\nocite{*}
 %\printbibliography[title={Bibliografia}, category=citats]
 %\printbibliography[heading=bibintoc]
