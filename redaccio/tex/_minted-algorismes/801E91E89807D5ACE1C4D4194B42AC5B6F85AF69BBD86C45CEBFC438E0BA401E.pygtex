@@ -1,0 +1,34 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{metro}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{inici}\PYG{p}{,} \PYG{n}{final}\PYG{p}{):}
+    \PYG{n}{recorregut}\PYG{o}{=}\PYG{p}{[]}
+
+    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Punt inicial:\PYGZdq{}}\PYG{p}{,} \PYG{n}{inici}\PYG{o}{.}\PYG{n}{decode}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ISO\PYGZhy{}8859\PYGZhy{}15\PYGZdq{}}\PYG{p}{)}
+
+    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Punt final:\PYGZdq{}}\PYG{p}{,} \PYG{n}{final}\PYG{o}{.}\PYG{n}{decode}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ISO\PYGZhy{}8859\PYGZhy{}15\PYGZdq{}}\PYG{p}{)}
+
+    \PYG{n}{dist}\PYG{p}{,} \PYG{n}{tree} \PYG{o}{=} \PYG{n}{OrderedDijkstra}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{inici}\PYG{p}{)}
+    \PYG{k}{print} \PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{inici}\PYG{p}{)}
+    \PYG{k}{print} \PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{final}\PYG{p}{)}
+
+    \PYG{n}{i} \PYG{o}{=} \PYG{n}{final}
+    \PYG{k}{while} \PYG{n}{tree}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{inici}\PYG{p}{:}
+        \PYG{n}{recorregut}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{tree}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+        \PYG{n}{i} \PYG{o}{=} \PYG{n}{tree}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+
+    \PYG{n}{recorregut}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{inici}\PYG{p}{)}
+    \PYG{n}{recorregut}\PYG{o}{.}\PYG{n}{reverse}\PYG{p}{()}
+
+    \PYG{n}{total}\PYG{o}{=} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{final}\PYG{p}{]}\PYG{o}{+}\PYG{p}{(}\PYG{l+m+mi}{25}\PYG{o}{*}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{recorregut}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{))}
+
+    \PYG{n}{minuts} \PYG{o}{=} \PYG{n}{total}\PYG{o}{/}\PYG{l+m+mi}{60}
+    \PYG{n}{segons} \PYG{o}{=} \PYG{p}{(}\PYG{n}{total}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{60}\PYG{p}{)}\PYG{o}{*}\PYG{l+m+mf}{0.60}
+    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Temps net del recorregut:\PYGZdq{}}\PYG{p}{,} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{final}\PYG{p}{]}
+    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Temps total del recorregut:\PYGZdq{}}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{minuts}\PYG{p}{),}\PYG{l+s+s2}{\PYGZdq{}minuts i\PYGZdq{}}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{segons}\PYG{p}{),} \PYG{l+s+s2}{\PYGZdq{}segons\PYGZdq{}}
+
+    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Recorregut:\PYGZdq{}}\PYG{p}{,}
+    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}[\PYGZdq{}}\PYG{p}{,}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{recorregut}\PYG{p}{)):}
+        \PYG{k}{print} \PYG{n}{recorregut}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{decode}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ISO\PYGZhy{}8859\PYGZhy{}15\PYGZdq{}}\PYG{p}{)}\PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{},\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{k}{print} \PYG{n}{final}\PYG{o}{.}\PYG{n}{decode}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ISO\PYGZhy{}8859\PYGZhy{}15\PYGZdq{}}\PYG{p}{),}\PYG{l+s+s2}{\PYGZdq{}]\PYGZdq{}}
+\end{Verbatim}

@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>general.bcf</file>
+      <file>algorismes.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>general.bbl</file>
+      <file>algorismes.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -64,22 +64,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>general</infile>
+      <infile>algorismes</infile>
     </cmdline>
     <input>
-      <file>general.bcf</file>
+      <file>algorismes.bcf</file>
     </input>
     <output>
-      <file>general.bbl</file>
+      <file>algorismes.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>general.bbl</file>
+      <file>algorismes.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>general.bcf</file>
-    </requires>
-    <requires type="editable">
-      <file>biblio.bib</file>
+      <file>algorismes.bcf</file>
     </requires>
   </external>
 </requests>

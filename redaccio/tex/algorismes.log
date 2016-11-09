@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  9 NOV 2016 00:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  9 NOV 2016 01:15
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
-**general.tex
-(./general.tex
+**algorismes.tex
+(./algorismes.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 8 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1195,6 +1195,97 @@ Package caption Info: rotating package is loaded.
 \sf@top=\skip91
 \sf@bottom=\skip92
 )
+(/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2015/09/09 v2.1 Yet another Pygments shim for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count394
+\FV@InFile=\read4
+\FV@TabBox=\box82
+\c@FancyVerbLine=\count395
+\FV@StepNumber=\count396
+\FV@OutFile=\write5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
+)
+runsystem(uname -s > "algorismes.w18")...executed.
+
+
+(./algorismes.w18)
+runsystem(rm -- "algorismes.w18")...executed.
+
+)
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write6
+\integerpart=\count397
+\decimalpart=\count398
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count399
+\output=\toks53
+\linenoprevgraf=\count400
+\linenumbersep=\dimen305
+\linenumberwidth=\dimen306
+\c@linenumber=\count401
+\c@pagewiselinenumber=\count402
+\c@LN@truepage=\count403
+\c@internallinenumber=\count404
+\c@internallinenumbers=\count405
+\quotelinenumbersep=\dimen307
+\bframerule=\dimen308
+\bframesep=\dimen309
+\bframebox=\box83
+
+
+LaTeX Warning: Command \@parboxrestore  has changed.
+               Check if current package is valid.
+
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\minted@appexistsfile=\read5
+\FV@BreakIndent=\dimen310
+\FV@BreakSymbolSepLeft=\dimen311
+\FV@BreakSymbolSepRight=\dimen312
+\FV@BreakSymbolIndentLeft=\dimen313
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 688.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+\FV@BreakSymbolIndentRight=\dimen314
+\c@FancyVerbLineBreakLast=\count406
+\FV@LineBox=\box84
+\FV@LineIndentBox=\box85
+\minted@bgbox=\box86
+\minted@code=\write7
+\c@minted@FancyVerbLineTemp=\count407
+\@float@every@listing=\toks54
+\c@listing=\count408
+)
+runsystem(mkdir -p "_minted-algorismes")...executed.
+
+
+(./_minted-algorismes/default.pygstyle)
 (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
@@ -1253,34 +1344,34 @@ File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
 
-\pgfnodepartlowerbox=\box82
-\pgfnodeparttwobox=\box83
-\pgfnodepartthreebox=\box84
-\pgfnodepartfourbox=\box85
-\pgfnodeparttwentybox=\box86
-\pgfnodepartnineteenbox=\box87
-\pgfnodeparteighteenbox=\box88
-\pgfnodepartseventeenbox=\box89
-\pgfnodepartsixteenbox=\box90
-\pgfnodepartfifteenbox=\box91
-\pgfnodepartfourteenbox=\box92
-\pgfnodepartthirteenbox=\box93
-\pgfnodeparttwelvebox=\box94
-\pgfnodepartelevenbox=\box95
-\pgfnodeparttenbox=\box96
-\pgfnodepartninebox=\box97
-\pgfnodeparteightbox=\box98
-\pgfnodepartsevenbox=\box99
-\pgfnodepartsixbox=\box100
-\pgfnodepartfivebox=\box101
+\pgfnodepartlowerbox=\box87
+\pgfnodeparttwobox=\box88
+\pgfnodepartthreebox=\box89
+\pgfnodepartfourbox=\box90
+\pgfnodeparttwentybox=\box91
+\pgfnodepartnineteenbox=\box92
+\pgfnodeparteighteenbox=\box93
+\pgfnodepartseventeenbox=\box94
+\pgfnodepartsixteenbox=\box95
+\pgfnodepartfifteenbox=\box96
+\pgfnodepartfourteenbox=\box97
+\pgfnodepartthirteenbox=\box98
+\pgfnodeparttwelvebox=\box99
+\pgfnodepartelevenbox=\box100
+\pgfnodeparttenbox=\box101
+\pgfnodepartninebox=\box102
+\pgfnodeparteightbox=\box103
+\pgfnodepartsevenbox=\box104
+\pgfnodepartsixbox=\box105
+\pgfnodepartfivebox=\box106
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
 code.tex
 File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
-\pgfarrowinset=\dimen305
-\pgfarrowlength=\dimen306
-\pgfarrowwidth=\dimen307
-\pgfarrowlinewidth=\dimen308
+\pgfarrowinset=\dimen315
+\pgfarrowlength=\dimen316
+\pgfarrowwidth=\dimen317
+\pgfarrowlinewidth=\dimen318
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypositioning.code.tex
@@ -1290,74 +1381,63 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 zlibraryautomata.code.tex
 File: tikzlibraryautomata.code.tex 2008/07/14 v3.0.1a (rcs-revision 1.3)
 )
-\c@propietat=\count394
 Package biblatex Info: Trying to load language 'catalan'...
 Package biblatex Info: ... file 'catalan.lbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/catalan.lbx
 File: catalan.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
 )
+runsystem(which "pygmentize" && touch "algorismes.aex")...executed.
+
+runsystem(rm "algorismes.aex")...executed.
+
+
 
 LaTeX Warning: Unused global option(s):
     [a4].
 
-(./general.aux)
-\openout1 = `general.aux'.
+(./algorismes.aux)
+\openout1 = `algorismes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Info: Redefining \l on input line 117.
-LaTeX Info: Redefining \L on input line 117.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Info: Redefining \l on input line 35.
+LaTeX Info: Redefining \L on input line 35.
 Package biblatex Info: Input encoding 'latin9' detected.
 Package biblatex Info: Data encoding 'ISO-8859-1' specified.
 (biblatex)             Backend will reencode on the fly.
-\openout3 = `general.bcf'.
+\openout3 = `algorismes.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'general.bbl' found.
- (./general.bbl
+Package biblatex Info: ... file 'algorismes.bbl' not found.
 
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                VAN71
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
-Package biblatex Info: Reference section=0 on input line 117.
-Package biblatex Info: Reference segment=0 on input line 117.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+No file algorismes.bbl.
+Package biblatex Info: Reference section=0 on input line 35.
+Package biblatex Info: Reference segment=0 on input line 35.
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count395
-\scratchdimen=\dimen309
-\scratchbox=\box102
-\nofMPsegments=\count396
-\nofMParguments=\count397
-\everyMPshowfont=\toks53
-\MPscratchCnt=\count398
-\MPscratchDim=\dimen310
-\MPnumerator=\count399
-\makeMPintoPDFobject=\count400
-\everyMPtoPDFconversion=\toks54
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+\scratchcounter=\count409
+\scratchdimen=\dimen319
+\scratchbox=\box107
+\nofMPsegments=\count410
+\nofMParguments=\count411
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count412
+\MPscratchDim=\dimen320
+\MPnumerator=\count413
+\makeMPintoPDFobject=\count414
+\everyMPtoPDFconversion=\toks56
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -1380,7 +1460,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 117.
+ on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1419,15 +1499,20 @@ your preamble.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 118.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+(./_minted-algorismes/default-pyg-prefix.pygstyle)
+\openout5 = `algorismes.pyg'.
+
+
+(./_minted-algorismes/ACD8EF0AF2029B715737EBC684AE81E86F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 4.
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 118.
+\openout5 = `algorismes.pyg'.
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+
+(./_minted-algorismes/427D4C4A9EBAC138C33D5581E8A6C8D66F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex [1
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -1438,218 +1523,76 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
-Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-[1] (./general.toc [2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 153.
+Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+\openout5 = `algorismes.pyg'.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 153.
-)
-\tf@toc=\write5
-\openout5 = `general.toc'.
-
- [4]
-Overfull \hbox (18.37877pt too wide) in paragraph at lines 279--280
- [][] 
- []
-
-[5]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 286.
- [6] [7] [8]
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 349.
- [9]
-<graphics/Konigsberg_bridges.png, id=53, 303.1325pt x 238.8925pt>
-File: graphics/Konigsberg_bridges.png Graphic file (type png)
-
-<use graphics/Konigsberg_bridges.png>
-Package pdftex.def Info: graphics/Konigsberg_bridges.png used on input line 355
-.
-(pdftex.def)             Requested size: 212.1913pt x 167.2236pt.
- [10 <./graphics/Konigsberg_bridges.png>]
-[11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 592--596
-
- []
+(./_minted-algorismes/18FD36B906FA04AB040AC4B3B6B59D5F6F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex [2])
+\openout5 = `algorismes.pyg'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--596
-
- []
-
-[15]
-Overfull \hbox (15.97025pt too wide) detected at line 630
-\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 V\OT1/c
-mr/m/n/12 (\OML/cmm/m/it/12 G\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ! \OML/cmm/m/it
-/12 V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 )[]\OMS/cmsy/m/n/12 8\O
-ML/cmm/m/it/12 u; v \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 V\OT1/cmr/m/n/12 (\OML/
-cmm/m/it/12 G\OT1/cmr/m/n/12 )[][] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E\OT1/cm
-r/m/n/12 (\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 )[][] \OMS/cmsy/m/n/12 2 \OML/cmm/m
-/it/12 E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G\OT1/cmr/m/n/12 )
- []
-
-[16] [17]
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 731.
+(./_minted-algorismes/3BB9B3ED6D3A55E887E70662234B031D6F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex)
+\openout5 = `algorismes.pyg'.
 
 
-Overfull \hbox (24.2764pt too wide) detected at line 731
-[] []\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v[]\OT1/cmr/m/n/12 )(\
-OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v[]\OT1/cmr/m/n/12 ) \OMS/cm
-sy/m/n/12 ^^@ \OT1/cmr/m/n/12 1) = [] [](\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OM
-L/cmm/m/it/12 v[]\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 g\OT
-1/cmr/m/n/12 (\OML/cmm/m/it/12 v[]\OT1/cmr/m/n/12 )) = [] [] \OML/cmm/m/it/12 g
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v[]\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ [
-] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v
-[]\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 e
- []
-
-[18] [19] [20]
-Overfull \hbox (29.12871pt too wide) detected at line 970
-[] \OT1/cmr/m/n/12 = 2(\OML/cmm/m/it/12 m \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 
-2)(\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2) + 3(\OML/cmm/m/it
-/12 m \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2) + 3(\OML/cmm/m/it/12 n \OMS/cmsy/
-m/n/12 ^^@ \OT1/cmr/m/n/12 2) + 4
- []
+(./_minted-algorismes/8E83249E80CF88F2287CE6BDFB2E59286F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex [3])
+\openout5 = `algorismes.pyg'.
 
 
-Overfull \hbox (11.52757pt too wide) in paragraph at lines 1013--1014
- [][] 
- []
-
-[21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1560--1564
-
- []
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 1597
-.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1661--1662
-
- []
-
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 1692--1695
-
- []
-
-[37] [38] [39] [40]
-Overfull \hbox (41.67186pt too wide) in paragraph at lines 1876--1876
-[]\T1/cmr/m/n/12 Iteració 
- []
+(./_minted-algorismes/A6E934BCBAA3CFA3124D69453BF06ED56F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex)
+\openout5 = `algorismes.pyg'.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+(./_minted-algorismes/553B795F57D4349943702CFDA5630FAE6F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex [4])
+\openout5 = `algorismes.pyg'.
 
-[41]
-Overfull \vbox (25.56537pt too high) has occurred while \output is active []
+
+(./_minted-algorismes/50450B7CE4202932AF5923A41DDBF4376F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex)
+\openout5 = `algorismes.pyg'.
 
 
-[42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54]
-Overfull \hbox (2.28734pt too wide) in paragraph at lines 2478--2554
- [][][][][] 
- []
+(./_minted-algorismes/43536B558E03F3779B3682E14FD4348B6F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex [5])
+\openout5 = `algorismes.pyg'.
 
-[55] [56] [57]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 265
-0.
+(./_minted-algorismes/493E4797F34FF77CCD2A4219829C61196F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex)
+\openout5 = `algorismes.pyg'.
 
-[58]
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 265
-4.
+(./_minted-algorismes/801E91E89807D5ACE1C4D4194B42AC5B6F85AF69BBD86C45CEBFC438E
+0BA401E.pygtex [6])
+runsystem(rm "algorismes.pyg")...executed.
 
-<graphics/steiner1.png, id=223, 496.85625pt x 368.37625pt>
-File: graphics/steiner1.png Graphic file (type png)
-
-<use graphics/steiner1.png>
-Package pdftex.def Info: graphics/steiner1.png used on input line 2666.
-(pdftex.def)             Requested size: 173.90228pt x 128.93361pt.
-
-<graphics/steiner3.png, id=224, 511.9125pt x 372.39125pt>
-File: graphics/steiner3.png Graphic file (type png)
-
-<use graphics/steiner3.png>
-Package pdftex.def Info: graphics/steiner3.png used on input line 2669.
-(pdftex.def)             Requested size: 179.17206pt x 130.33888pt.
-
-<graphics/steiner2.png, id=225, 504.88625pt x 343.2825pt>
-File: graphics/steiner2.png Graphic file (type png)
-
-<use graphics/steiner2.png>
-Package pdftex.def Info: graphics/steiner2.png used on input line 2672.
-(pdftex.def)             Requested size: 191.85875pt x 130.4487pt.
- [59]
-Underfull \hbox (badness 10000) in paragraph at lines 2681--2683
-
- []
-
-[60 <./graphics/steiner1.png> <./graphics/steiner3.png> <./graphics/steiner2.pn
-g>] [61]
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <17.28> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 2704.
-
- [62] [63] [64] <graphics/metro.jpg, id=245, 1284.8pt x 930.47626pt>
-File: graphics/metro.jpg Graphic file (type jpg)
-
-<use graphics/metro.jpg>
-Package pdftex.def Info: graphics/metro.jpg used on input line 2862.
-(pdftex.def)             Requested size: 513.9109pt x 372.18391pt.
- [65] [66 <./graphics/metro.jpg>] [67] [68] [69]
-(./general.aux)
-Package logreq Info: Writing requests to 'general.run.xml'.
-\openout1 = `general.run.xml'.
+ [7] (./algorismes.aux)
+Package logreq Info: Writing requests to 'algorismes.run.xml'.
+\openout1 = `algorismes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38578 strings out of 494850
- 872629 string characters out of 6178024
- 1429153 words of memory out of 5000000
- 41183 multiletter control sequences out of 15000+600000
- 25514 words of font info for 67 fonts, out of 8000000 for 9000
+ 39363 strings out of 494850
+ 895074 string characters out of 6178024
+ 1479809 words of memory out of 5000000
+ 41945 multiletter control sequences out of 15000+600000
+ 8869 words of font info for 22 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 61i,22n,96p,1397b,1544s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/a
-niol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/aniol/.texmf
--var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/aniol/.texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecrm0800.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-ecbx2488.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.60
-0pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home
-/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/aniol/.tex
-mf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/aniol/.texmf-var/font
-s/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecrm1440.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecrm2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/li
-ne10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
-m10.pfb>
-Output written on general.pdf (70 pages, 1891145 bytes).
+ 61i,5n,96p,819b,1401s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/a
+niol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/aniol/.texmf
+-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/aniol/.texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1728.600pk>
+Output written on algorismes.pdf (7 pages, 49131 bytes).
 PDF statistics:
- 901 PDF objects out of 1000 (max. 8388607)
- 253 compressed objects within 3 object streams
+ 188 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
