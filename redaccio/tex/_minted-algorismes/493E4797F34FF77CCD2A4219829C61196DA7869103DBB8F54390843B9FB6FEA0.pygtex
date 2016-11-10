@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{coloring}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{):}
+    \PYGdefault{n}{graph} \PYGdefault{o}{=} \PYGdefault{n+nb}{sorted}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{key}\PYGdefault{o}{=}\PYGdefault{k}{lambda} \PYGdefault{n}{k}\PYGdefault{p}{:}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{]),} \PYGdefault{n}{reverse}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{True}\PYGdefault{p}{)}
+    \PYGdefault{n}{colors} \PYGdefault{o}{=} \PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{}}
+    \PYGdefault{n}{usat} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{False}
+    \PYGdefault{n}{actual} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}
+
+    \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+        \PYGdefault{n}{colors}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{]}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{None}
+    \PYGdefault{n}{colors}\PYGdefault{p}{[}\PYGdefault{n}{graph}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]]}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}
+
+    \PYGdefault{k}{while} \PYGdefault{n+nb+bp}{None} \PYGdefault{o+ow}{in} \PYGdefault{n}{colors}\PYGdefault{o}{.}\PYGdefault{n}{values}\PYGdefault{p}{():}
+        \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n}{graph}\PYGdefault{p}{:}
+            \PYGdefault{k}{if} \PYGdefault{n}{colors}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]} \PYGdefault{o}{==} \PYGdefault{n+nb+bp}{None}\PYGdefault{p}{:}
+                \PYGdefault{k}{for} \PYGdefault{n}{k} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]:}
+                    \PYGdefault{k}{if} \PYGdefault{n}{colors}\PYGdefault{p}{[}\PYGdefault{n}{k}\PYGdefault{p}{]} \PYGdefault{o}{==} \PYGdefault{n}{actual}\PYGdefault{p}{:}
+                        \PYGdefault{n}{usat} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{True}
+                        \PYGdefault{k}{break}
+
+                \PYGdefault{k}{if} \PYGdefault{n}{usat} \PYGdefault{o}{==} \PYGdefault{n+nb+bp}{False}\PYGdefault{p}{:}
+                    \PYGdefault{n}{colors}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{actual}
+                \PYGdefault{n}{usat} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{False}
+        \PYGdefault{n}{actual} \PYGdefault{o}{=} \PYGdefault{n}{actual} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{1}
+    \PYGdefault{k}{return} \PYGdefault{n}{colors}
+\end{Verbatim}

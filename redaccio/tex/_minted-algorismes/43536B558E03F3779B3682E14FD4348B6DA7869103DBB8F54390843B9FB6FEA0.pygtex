@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{Euler}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{):}
+    \PYGdefault{n}{graf} \PYGdefault{o}{=} \PYGdefault{n}{Adj}
+    \PYGdefault{n}{senar} \PYGdefault{o}{=} \PYGdefault{p}{[}\PYGdefault{n}{v} \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n}{graf}\PYGdefault{o}{.}\PYGdefault{n}{keys}\PYGdefault{p}{()} \PYGdefault{k}{if} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{graf}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{])}\PYGdefault{o}{\PYGdefaultZpc{}}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{!=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}
+    \PYGdefault{n}{senar}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{graf}\PYGdefault{o}{.}\PYGdefault{n}{keys}\PYGdefault{p}{()[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{])}
+    \PYGdefault{k}{print} \PYGdefault{n}{senar}
+
+    \PYGdefault{k}{if} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{senar}\PYGdefault{p}{)}\PYGdefault{o}{\PYGdefaultZgt{}}\PYGdefault{l+m+mi}{3}\PYGdefault{p}{:}
+        \PYGdefault{k}{return} \PYGdefault{n+nb+bp}{None}
+
+    \PYGdefault{n}{Q} \PYGdefault{o}{=} \PYGdefault{p}{[}\PYGdefault{n}{senar}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]]}
+    \PYGdefault{n}{path} \PYGdefault{o}{=} \PYGdefault{p}{[]}
+    \PYGdefault{k}{while} \PYGdefault{n}{Q}\PYGdefault{p}{:}
+        \PYGdefault{n}{v} \PYGdefault{o}{=} \PYGdefault{n}{Q}\PYGdefault{p}{[}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}
+        \PYGdefault{k}{if} \PYGdefault{n}{graf}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]:}
+            \PYGdefault{n}{u} \PYGdefault{o}{=} \PYGdefault{n}{graf}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{][}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}
+            \PYGdefault{n}{Q}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{u}\PYGdefault{p}{)}
+            \PYGdefault{k}{del} \PYGdefault{n}{graf}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{][}\PYGdefault{n}{graf}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{index}\PYGdefault{p}{(}\PYGdefault{n}{v}\PYGdefault{p}{)]}
+            \PYGdefault{k}{del} \PYGdefault{n}{graf}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{][}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}
+        \PYGdefault{k}{else}\PYGdefault{p}{:}
+            \PYGdefault{n}{path}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{Q}\PYGdefault{o}{.}\PYGdefault{n}{pop}\PYGdefault{p}{())}
+
+    \PYGdefault{k}{return} \PYGdefault{n}{path}
+\end{Verbatim}

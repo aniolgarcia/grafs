@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{Hamilton\PYGdefaultZus{}recursive}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{,} \PYGdefault{n}{e}\PYGdefault{p}{,} \PYGdefault{n}{path}\PYGdefault{p}{):}
+    \PYGdefault{n}{path} \PYGdefault{o}{=} \PYGdefault{n}{path} \PYGdefault{o}{+} \PYGdefault{p}{[}\PYGdefault{n}{s}\PYGdefault{p}{]}
+    \PYGdefault{k}{if} \PYGdefault{n}{s} \PYGdefault{o}{==} \PYGdefault{n}{e}\PYGdefault{p}{:}
+        \PYGdefault{k}{return} \PYGdefault{n}{path}
+    \PYGdefault{k}{for} \PYGdefault{n}{n} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{s}\PYGdefault{p}{]:}
+        \PYGdefault{k}{if} \PYGdefault{n}{n} \PYGdefault{o+ow}{not} \PYGdefault{o+ow}{in} \PYGdefault{n}{path}\PYGdefault{p}{:}
+            \PYGdefault{n}{nou\PYGdefaultZus{}path} \PYGdefault{o}{=} \PYGdefault{n}{Hamilton\PYGdefaultZus{}recursive}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{n}\PYGdefault{p}{,} \PYGdefault{n}{e}\PYGdefault{p}{,} \PYGdefault{n}{path}\PYGdefault{p}{)}
+            \PYGdefault{k}{if} \PYGdefault{n}{nou\PYGdefaultZus{}path}\PYGdefault{p}{:}
+                \PYGdefault{k}{return} \PYGdefault{n}{nou\PYGdefaultZus{}path}
+    \PYGdefault{k}{return} \PYGdefault{n+nb+bp}{None}
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{Hamilton}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{,} \PYGdefault{n}{e}\PYGdefault{p}{):}
+    \PYGdefault{n}{path}\PYGdefault{o}{=}\PYGdefault{p}{[]}
+    \PYGdefault{k}{return} \PYGdefault{n}{Hamilton\PYGdefaultZus{}recursive}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{,} \PYGdefault{n}{e}\PYGdefault{p}{,} \PYGdefault{n}{path}\PYGdefault{p}{)}
+\end{Verbatim}

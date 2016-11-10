@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{n}{parent}\PYGdefault{o}{=}\PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{}}
+\PYGdefault{n}{topo}\PYGdefault{o}{=}\PYGdefault{p}{[]}
+\PYGdefault{k}{def} \PYGdefault{n+nf}{DFS}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{):}
+    \PYGdefault{n}{node}\PYGdefault{o}{=}\PYGdefault{p}{[]}
+    \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+        \PYGdefault{n}{node}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{i}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{for} \PYGdefault{n}{s} \PYGdefault{o+ow}{in} \PYGdefault{n}{node}\PYGdefault{p}{:}
+        \PYGdefault{k}{if} \PYGdefault{n}{s} \PYGdefault{o+ow}{not} \PYGdefault{o+ow}{in} \PYGdefault{n}{parent}\PYGdefault{p}{:}
+            \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZdq{}From node }\PYGdefault{l+s+si}{\PYGdefaultZpc{}d}\PYGdefault{l+s}{:\PYGdefaultZdq{}} \PYGdefault{o}{\PYGdefaultZpc{}}\PYGdefault{n}{s}
+            \PYGdefault{k}{print} \PYGdefault{n}{s}
+            \PYGdefault{n}{parent}\PYGdefault{p}{[}\PYGdefault{n}{s}\PYGdefault{p}{]}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{None}
+            \PYGdefault{n}{DFS\PYGdefaultZus{}recursive}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{)}
+    \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZdq{}Recursion order (topological sort for directed acyclic graphs):\PYGdefaultZdq{}}
+    \PYGdefault{n}{topo}\PYGdefault{o}{.}\PYGdefault{n}{reverse}\PYGdefault{p}{()}
+    \PYGdefault{k}{print} \PYGdefault{n}{topo}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{DFS\PYGdefaultZus{}recursive}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{):}
+    \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{s}\PYGdefault{p}{]:}
+        \PYGdefault{k}{if} \PYGdefault{n}{v} \PYGdefault{o+ow}{not} \PYGdefault{o+ow}{in} \PYGdefault{n}{parent}\PYGdefault{p}{:}
+            \PYGdefault{k}{print} \PYGdefault{n}{v}
+            \PYGdefault{n}{parent}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]}\PYGdefault{o}{=}\PYGdefault{n}{s}
+            \PYGdefault{n}{DFS\PYGdefaultZus{}recursive}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{v}\PYGdefault{p}{)}
+    \PYGdefault{n}{topo}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{s}\PYGdefault{p}{)}
+\end{Verbatim}

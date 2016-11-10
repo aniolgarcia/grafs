@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{FloydWarshall}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{):}
+    \PYGdefault{n}{dist}\PYGdefault{o}{=}\PYGdefault{p}{[[}\PYGdefault{n+nb}{float}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}inf\PYGdefaultZdq{}}\PYGdefault{p}{)} \PYGdefault{k}{for} \PYGdefault{n}{x} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{))]} \PYGdefault{k}{for} \PYGdefault{n}{y} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{))]}
+    \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+       \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{][}\PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}
+    \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+        \PYGdefault{k}{for} \PYGdefault{n}{u} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]:}
+            \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{][}\PYGdefault{n}{u}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{][}\PYGdefault{n}{u}\PYGdefault{p}{]}
+    \PYGdefault{k}{for} \PYGdefault{n}{x} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+        \PYGdefault{k}{for} \PYGdefault{n}{u} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+            \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+                \PYGdefault{k}{if} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{][}\PYGdefault{n}{v}\PYGdefault{p}{]} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{][}\PYGdefault{n}{x}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{x}\PYGdefault{p}{][}\PYGdefault{n}{v}\PYGdefault{p}{]:}
+                    \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{][}\PYGdefault{n}{v}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{][}\PYGdefault{n}{x}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{x}\PYGdefault{p}{][}\PYGdefault{n}{v}\PYGdefault{p}{]}
+    \PYGdefault{k}{return} \PYGdefault{n}{dist}
+\end{Verbatim}

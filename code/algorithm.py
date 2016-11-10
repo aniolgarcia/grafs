@@ -286,8 +286,8 @@ def metro(Adj, inici, final):
     print "Punt final:", final.decode("ISO-8859-15")
     
     dist, tree = OrderedDijkstra(Adj, inici)
-    print type(inici)
-    print type(final)
+    #print type(inici)
+    #print type(final)
 
     i = final    
     while tree[i] != inici:
@@ -348,9 +348,9 @@ graf_metro={"1_Hospital de Bellvitge":{"1_Bellvitge":90}, "1_Bellvitge":{"1_Hosp
 #print OrderedDijkstra(proves_decimals,1.0)
 #print Dijkstra(proves_decimals2,0)
 a,b = OrderedDijkstra(graf_metro,"1_Torrassa")
-print type("1_Catalunya")
+#print type("1_Catalunya")
 metro(graf_metro, "2_Paral·lel", "11_Casa de l'Aigua")
-print DFS(treball2)
+#print DFS(treball2)
 #print FloydWarshall(proves_decimals)
 #Dijkstra(proves_dijkstra, 0)
 #DFS(dag)

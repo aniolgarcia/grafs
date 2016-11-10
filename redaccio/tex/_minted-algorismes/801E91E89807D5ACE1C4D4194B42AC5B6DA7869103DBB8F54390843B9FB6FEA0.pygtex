@@ -1,0 +1,34 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{metro}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{inici}\PYGdefault{p}{,} \PYGdefault{n}{final}\PYGdefault{p}{):}
+    \PYGdefault{n}{recorregut}\PYGdefault{o}{=}\PYGdefault{p}{[]}
+
+    \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZdq{}Punt inicial:\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{inici}\PYGdefault{o}{.}\PYGdefault{n}{decode}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}ISO\PYGdefaultZhy{}8859\PYGdefaultZhy{}15\PYGdefaultZdq{}}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZdq{}Punt final:\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{final}\PYGdefault{o}{.}\PYGdefault{n}{decode}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}ISO\PYGdefaultZhy{}8859\PYGdefaultZhy{}15\PYGdefaultZdq{}}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{dist}\PYGdefault{p}{,} \PYGdefault{n}{tree} \PYGdefault{o}{=} \PYGdefault{n}{OrderedDijkstra}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{inici}\PYGdefault{p}{)}
+    \PYGdefault{k}{print} \PYGdefault{n+nb}{type}\PYGdefault{p}{(}\PYGdefault{n}{inici}\PYGdefault{p}{)}
+    \PYGdefault{k}{print} \PYGdefault{n+nb}{type}\PYGdefault{p}{(}\PYGdefault{n}{final}\PYGdefault{p}{)}
+
+    \PYGdefault{n}{i} \PYGdefault{o}{=} \PYGdefault{n}{final}
+    \PYGdefault{k}{while} \PYGdefault{n}{tree}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o}{!=} \PYGdefault{n}{inici}\PYGdefault{p}{:}
+        \PYGdefault{n}{recorregut}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{tree}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{])}
+        \PYGdefault{n}{i} \PYGdefault{o}{=} \PYGdefault{n}{tree}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{]}
+
+    \PYGdefault{n}{recorregut}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{inici}\PYGdefault{p}{)}
+    \PYGdefault{n}{recorregut}\PYGdefault{o}{.}\PYGdefault{n}{reverse}\PYGdefault{p}{()}
+
+    \PYGdefault{n}{total}\PYGdefault{o}{=} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{final}\PYGdefault{p}{]}\PYGdefault{o}{+}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{25}\PYGdefault{o}{*}\PYGdefault{p}{(}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{recorregut}\PYGdefault{p}{)}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{))}
+
+    \PYGdefault{n}{minuts} \PYGdefault{o}{=} \PYGdefault{n}{total}\PYGdefault{o}{/}\PYGdefault{l+m+mi}{60}
+    \PYGdefault{n}{segons} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{total}\PYGdefault{o}{\PYGdefaultZpc{}}\PYGdefault{l+m+mi}{60}\PYGdefault{p}{)}\PYGdefault{o}{*}\PYGdefault{l+m+mf}{0.60}
+    \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZdq{}Temps net del recorregut:\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{final}\PYGdefault{p}{]}
+    \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZdq{}Temps total del recorregut:\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n+nb}{int}\PYGdefault{p}{(}\PYGdefault{n}{minuts}\PYGdefault{p}{),}\PYGdefault{l+s}{\PYGdefaultZdq{}minuts i\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n+nb}{int}\PYGdefault{p}{(}\PYGdefault{n}{segons}\PYGdefault{p}{),} \PYGdefault{l+s}{\PYGdefaultZdq{}segons\PYGdefaultZdq{}}
+
+    \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZdq{}Recorregut:\PYGdefaultZdq{}}\PYGdefault{p}{,}
+    \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZdq{}[\PYGdefaultZdq{}}\PYGdefault{p}{,}
+    \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{recorregut}\PYGdefault{p}{)):}
+        \PYGdefault{k}{print} \PYGdefault{n}{recorregut}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{decode}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}ISO\PYGdefaultZhy{}8859\PYGdefaultZhy{}15\PYGdefaultZdq{}}\PYGdefault{p}{)}\PYGdefault{o}{+}\PYGdefault{l+s}{\PYGdefaultZdq{},\PYGdefaultZdq{}}\PYGdefault{p}{,}
+
+    \PYGdefault{k}{print} \PYGdefault{n}{final}\PYGdefault{o}{.}\PYGdefault{n}{decode}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}ISO\PYGdefaultZhy{}8859\PYGdefaultZhy{}15\PYGdefaultZdq{}}\PYGdefault{p}{),}\PYGdefault{l+s}{\PYGdefaultZdq{}]\PYGdefaultZdq{}}
+\end{Verbatim}

@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{BellmanFord}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{):}
+    \PYGdefault{n}{dist}\PYGdefault{o}{=}\PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{}}
+    \PYGdefault{n}{tree}\PYGdefault{o}{=}\PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{}}
+    \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+        \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{]}\PYGdefault{o}{=}\PYGdefault{n+nb}{float}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}inf\PYGdefaultZdq{}}\PYGdefault{p}{)}
+        \PYGdefault{n}{tree}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{]}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{None}
+    \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{s}\PYGdefault{p}{]}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}
+
+    \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{):}
+        \PYGdefault{k}{for} \PYGdefault{n}{u} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+            \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]:}
+                \PYGdefault{k}{if} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{][}\PYGdefault{n}{v}\PYGdefault{p}{]:}
+                    \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{][}\PYGdefault{n}{v}\PYGdefault{p}{]}
+                    \PYGdefault{n}{tree}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]}\PYGdefault{o}{=}\PYGdefault{n}{u}
+    \PYGdefault{k}{for} \PYGdefault{n}{u} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{)):}
+        \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]:}
+            \PYGdefault{k}{if} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{dist}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{][}\PYGdefault{n}{v}\PYGdefault{p}{]:}
+                \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZdq{}There are negative\PYGdefaultZhy{}weight cycles\PYGdefaultZdq{}}
+                \PYGdefault{k}{break}
+    \PYGdefault{k}{return} \PYGdefault{n}{dist}\PYGdefault{p}{,} \PYGdefault{n}{tree}
+\end{Verbatim}

@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{Kruskal}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{):}
+    \PYGdefault{n}{subtree} \PYGdefault{o}{=} \PYGdefault{n}{UnionFind}\PYGdefault{p}{()}
+    \PYGdefault{n}{tree} \PYGdefault{o}{=} \PYGdefault{p}{[]}
+    \PYGdefault{k}{for} \PYGdefault{n}{e}\PYGdefault{p}{,} \PYGdefault{n}{u}\PYGdefault{p}{,} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{sorted}\PYGdefault{p}{((}\PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{][}\PYGdefault{n}{v}\PYGdefault{p}{],}\PYGdefault{n}{u}\PYGdefault{p}{,}\PYGdefault{n}{v}\PYGdefault{p}{)} \PYGdefault{k}{for} \PYGdefault{n}{u} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj} \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]):}
+        \PYGdefault{k}{for} \PYGdefault{n}{u} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{:}
+            \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]:}
+                \PYGdefault{k}{if} \PYGdefault{n}{subtree}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]} \PYGdefault{o}{!=} \PYGdefault{n}{subtree}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]:}
+                    \PYGdefault{n}{tree}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{((}\PYGdefault{n}{u}\PYGdefault{p}{,}\PYGdefault{n}{v}\PYGdefault{p}{))}
+                    \PYGdefault{n}{subtree}\PYGdefault{o}{.}\PYGdefault{n}{union}\PYGdefault{p}{(}\PYGdefault{n}{u}\PYGdefault{p}{,}\PYGdefault{n}{v}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{tree}
+\end{Verbatim}

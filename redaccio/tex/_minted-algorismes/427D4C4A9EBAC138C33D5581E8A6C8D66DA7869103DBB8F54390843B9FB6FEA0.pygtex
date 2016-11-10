@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{BFS}\PYGdefault{p}{(}\PYGdefault{n}{Adj}\PYGdefault{p}{,} \PYGdefault{n}{s}\PYGdefault{p}{):}
+    \PYGdefault{n}{level}\PYGdefault{o}{=}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{s}\PYGdefault{p}{:}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{\PYGdefaultZcb{}}
+    \PYGdefault{n}{parent}\PYGdefault{o}{=}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{n}{s}\PYGdefault{p}{:}\PYGdefault{n+nb+bp}{None}\PYGdefault{p}{\PYGdefaultZcb{}}
+    \PYGdefault{n}{i}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{1}
+    \PYGdefault{n}{frontier}\PYGdefault{o}{=}\PYGdefault{p}{[}\PYGdefault{n}{s}\PYGdefault{p}{]}
+    \PYGdefault{k}{print} \PYGdefault{n}{s}
+    \PYGdefault{k}{while} \PYGdefault{n}{frontier}\PYGdefault{p}{:}
+        \PYGdefault{n+nb}{next}\PYGdefault{o}{=}\PYGdefault{p}{[]}
+        \PYGdefault{k}{for} \PYGdefault{n}{u} \PYGdefault{o+ow}{in} \PYGdefault{n}{frontier}\PYGdefault{p}{:}
+            \PYGdefault{k}{for} \PYGdefault{n}{v} \PYGdefault{o+ow}{in} \PYGdefault{n}{Adj}\PYGdefault{p}{[}\PYGdefault{n}{u}\PYGdefault{p}{]:}
+                \PYGdefault{k}{if} \PYGdefault{n}{v} \PYGdefault{o+ow}{not} \PYGdefault{o+ow}{in}  \PYGdefault{n}{level}\PYGdefault{p}{:}
+                    \PYGdefault{n}{level}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]}\PYGdefault{o}{=}\PYGdefault{n}{i}
+                    \PYGdefault{n}{parent}\PYGdefault{p}{[}\PYGdefault{n}{v}\PYGdefault{p}{]}\PYGdefault{o}{=}\PYGdefault{n}{u}
+                    \PYGdefault{n+nb}{next}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{v}\PYGdefault{p}{)}
+                    \PYGdefault{k}{print} \PYGdefault{n}{v}
+        \PYGdefault{n}{frontier}\PYGdefault{o}{=}\PYGdefault{n+nb}{next}
+        \PYGdefault{n}{i}\PYGdefault{o}{+=}\PYGdefault{l+m+mi}{1}
+    \PYGdefault{k}{print} \PYGdefault{n}{level}
+\end{Verbatim}
