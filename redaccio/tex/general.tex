@@ -9,6 +9,8 @@
 \usepackage{amsfonts}
 \usepackage{mathtools}
 \usepackage[backend=biber, style=numeric, bibencoding=ISO-8859-1]{biblatex} %Llibreria de gestió de bibliografia
+%\usepackage{cite}
+%\usepackage{catalanbib}
 \usepackage{xcolor}
 \usepackage{graphics, graphicx}
 \usepackage{tikz, tkz-graph}
@@ -16,7 +18,7 @@
 \usepackage{graphviz, tkz-berge}
 \usepackage{pstricks, pst-node, pst-tree}
 \usepackage[ruled, boxed]{algorithm2e}
-\usepackage{multicol, multirow, rotating} %Paquets de taules
+\usepackage{multicol, multiro, rotating} %Paquets de taules
 \usepackage[a4paper]{geometry}
 \usepackage{float} %Imatges múltiples
 \usepackage{verbatim}
@@ -104,10 +106,8 @@ array element/.style = {
 %Afegim una categoria de Liblatex per tal d'agafar només la bibliografia citada
 \DeclareBibliographyCategory{citats}
 \AtEveryCitekey{\addtocategory{citats}{\thefield{entrykey}}}
+\addbibresource{biblio2.bib}
 
-\addbibresource{biblio.bib}
-%\nocite{*}
-%\bibliography{biblio}
 
 \title{Teoria de Grafs \\ \large Revisió segona}
 \author{Aniol Garcia i Serrano}
@@ -343,7 +343,7 @@ per tots els ponts tan sols una vegada?''}
 \end{quote}
 Els ciutadans de Königsberg sabien que no era possible, però mai ningú ho havia demostrat fins que Leonhard Euler ho va fer. La demostració de que això no era possible queda recollida en el \emph{``Solutio problematis ad geometriam situs pertinentis}'' publicat el 1736, i l'article també va ser inclòs en el volum 8 de
 \emph{``Commentarii Academiae Scientiarum Imperialis Petropolitanae''
-}publicat el 1741 \autocite{EUL41}. En aquest text, Euler diu el següent:
+}publicat el 1741 \cite{EUL41}. En aquest text, Euler diu el següent:
 \begin{quote}
 
 \emph{"A més d'aquella part de la geometria que s'ocupa de les quantitats, la qual sempre ha generat un interés preferent, hi ha una altra part -encara pràcticament desconeguda- que ja fou esmentada per Leibniz amb el nom de geometria de posició. Aquesta part de la geometria estudia tot allò que pot ésser determinat únicament per la posició, així com les propietats de la posició; en aquest camp hom no hauria de preocupar-se de quantitats ni de com obtenir-les. No obstant això, els tipus de problemes que pertanyen a aquesta geometria de posició i els mètodes usats per resoldre'ls encara no són suficientment definits. Així doncs, quan darrerement se'm va plantejar un problema que semblava bàsicament geomètric, però que no demanava l'obtenció de quantitats ni admetia una sol·lució basada en el càlcul de quantitats, em vaig adonar que pertanyia a la geometria de posició, sobretot perquè només es podia usar la posició per resolde'l, mentre que el càlcul es mostrava inútil. Així, he decidit exposar ací, com a mostra de la geometria de posició, el mètode que he deduït per a resoldre problemes d'aquesta mena."}
@@ -390,7 +390,7 @@ Aquest resulat es considera el primer en teoria de grafs ja que conté un importa
 
 A partir de l'article d'Euler, diversos matemàtics van començar a
 interessar-se pel camp de la topologia (o geometria de la posició,
-com li deien en aquell moment). Un d'ells fou Alexandre-Théophile Vandermonde. Vandermonde va treballar i estudiar el problema dels cavalls, que pregunta quins moviments hem de fer per tal que un cavall passi per totes les caselles del tauler d'escacs, problema que també va tractar Euler. Els estudis que Vandermonde va fer sobre aquest problema van ser publicats el 1771 en el ``\emph{Remarques sur des problèmes de situation''} \autocite{VAN71}, i per la relativa proximitat als treballs d'Euler, encara no parlava de grafs, tot i que en l'actualitat el problema es resol mitjançant aquests. Aquest treball inicia l'estudi de la teoria de nusos, una altra branca de la topologia. 
+com li deien en aquell moment). Un d'ells fou Alexandre-Théophile Vandermonde. Vandermonde va treballar i estudiar el problema dels cavalls, que pregunta quins moviments hem de fer per tal que un cavall passi per totes les caselles del tauler d'escacs, problema que també va tractar Euler. Els estudis que Vandermonde va fer sobre aquest problema van ser publicats el 1771 en el ``\emph{Remarques sur des problèmes de situation''} \cite{VAN71}, i per la relativa proximitat als treballs d'Euler, encara no parlava de grafs, tot i que en l'actualitat el problema es resol mitjançant aquests. Aquest treball inicia l'estudi de la teoria de nusos, una altra branca de la topologia. 
 
 
 \subsection{Les primeres descobertes i aplicacions}
@@ -408,9 +408,9 @@ tan sols quatre colors?''}
 \end{quote}
 D'aquest problema en surt el teorema a partir del qual s'sestableix que qualsevol mapa pot ser pintat únicament amb quatre colors diferents, de tal manera que dues regions adjacents (entenem com a adjacents dues regions que comparteixiin frontera, no tan sols un punt) no tinguin colors iguals. Aquest problema, que pot semblar tan trivial, no va ser demostrat fins l'any 1976. Va passar
 per mans de pioners com De Morgan, Hamilton, Cayley, Kempe (que
-va fer una demostració publicada el 1879 \autocite{KEM79}), Heawood (que va concloure que la demostració de Kempe no era correcta)... Finalment el 1976
+va fer una demostració publicada el 1879 \cite{KEM79}), Heawood (que va concloure que la demostració de Kempe no era correcta)... Finalment el 1976
 Appel i Hanken van demostrar, mitjançant un programa d'ordinador, que
-tot mapa es podia pintar només amb quatre colors \autocite{AH77a}. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demostració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne un demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
+tot mapa es podia pintar només amb quatre colors \cite{AH77a}. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demostració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne un demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
 
 
 \subsubsection*{Arthur Cayley}
@@ -2949,7 +2949,7 @@ imprimeix("Recorregut:")\;
 Durant aquest treball hem fet un camí juntament amb la teoria de grafs: l'hem vist néixer del pensament d'Euler; l'hem vist créixer acompanyada d'alguns dels més grans matemàtics de l'història; n'hem vist la seva manera d'entendre i modelitzar el món; l'hem acompanyada fins a la seva maduresa on, juntament amb més matemàtics i teòrics de les ciències de computació, ha col·laborat amb una infinitat d'àrees que en un principi semblaven distants a ella; i finalment ens ha ajudat a resoldre problemes quotidians.
 
 Càmeres de vigilància, navegadors GPS, xarxes socials, xarxes telemàtiques, xarxes elàctriques, planificació d'horaris, organització d'un treball, clavagueram... Tots aquest són exemples clars de que lateoria de grafs forma part de la nostra realitat. Verifico, doncs, la meva hipòtesi inicial i com a conclusió afegiria: difícilment algú pot quedar-ne al marge. 
-En la segona part de l'hipòtesi exposava que hi havia mecanismes que permetien fer el pas de la teoria a l a realitat. Com a usuaris és cert que ens queden lluny i difícilment són visibles o apreciables. Aquests mecanismes són els algorismes que a partir d'unes dades concretes ofereixen una resolució, una resposta. Al llarg del treball hem anat analitzant pam a pam alguns dels algorismes més utilitzats 
+En la segona part de l'hipòtesi exposava que hi havia mecanismes que permetien fer el pas de la teoria a la realitat. El que és cert és que, com a usuaris, ens queden lluny i difícilment són visibles o apreciables. Aquests mecanismes són els algorismes que a partir d'unes dades concretes ofereixen una resolució, una resposta. Al llarg del treball he vist i he demostrat que al darrere d'aquests procediments hi ha matemàtiques, tal com es pretenia validar. Podríem dir que he ampliat es objectius incials al poder comprendre i analitzar el funcionament de tots aquests algorismes, i encara més al generar-ne de nous. 
 
 
 Personalment, el treball m'ha ajudat molt. He après moltíssim de teoria de grafs, però el que és també molt important és el rerefons més abstracte: el tipus de raonament matemàtic, la formalització de conceptes i idees, les tècniques de demostració, la metodologia matemàtica... Amb tot això he pogut descobrir la capacitat modelitzadora de les matemàtiques.
@@ -2971,6 +2971,9 @@ Això sí: tot i que el camí sempre ha fet pujada, cal pensar que cada vegada som 
 %\printbibliography[title={Bibliografia}]
 %\printbibliography[heading=bibintoc]
 %\mbox{}
-%\printbibliography
-%\printbibliography[title={Further Reading},notcategory=cited]
+\nocite{*}
+\printbibliography
+%\printbibliography[title={Bibliografia}]%,notcategory=citats]
+%\bibliography{biblio2}{}
+%\bibliographystyle{ieeetr}
 \end{document}
