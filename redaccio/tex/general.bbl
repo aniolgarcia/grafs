@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.6 $
+% $ biblatex bbl format version 2.5 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,14 +18,10 @@
 
 
 \refsection{0}
-  \sortlist[entry]{nty/global}
+  \sortlist{nty}{nty}
     \entry{BAS94}{book}{}
       \name{author}{1}{}{%
-        {{hash=167915fe10991e7029fa1401bc6ebbb8}{%
-           family={BASART},
-           family_i={B\bibinitperiod},
-           given={J.},
-           given_i={J\bibinitperiod}}}%
+        {{hash=167915fe10991e7029fa1401bc6ebbb8}{BASART}{B\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
       }
       \list{publisher}{1}{%
         {Universitat Autònoma de Barcelona}%
@@ -41,16 +37,8 @@
     \endentry
     \entry{AH77b}{article}{}
       \name{author}{2}{}{%
-        {{hash=55c764f81305c9e56717d2181358207f}{%
-           family={APPEL},
-           family_i={A\bibinitperiod},
-           given={K.},
-           given_i={K\bibinitperiod}}}%
-        {{hash=4505510459197c1444c9e200efdf3cf6}{%
-           family={HANKEN},
-           family_i={H\bibinitperiod},
-           given={W.},
-           given_i={W\bibinitperiod}}}%
+        {{hash=55c764f81305c9e56717d2181358207f}{APPEL}{A\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=4505510459197c1444c9e200efdf3cf6}{HANKEN}{H\bibinitperiod}{W.}{W\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{e1955f359ece65481ebfb79bfa9be07b}
       \strng{fullhash}{e1955f359ece65481ebfb79bfa9be07b}
@@ -67,16 +55,8 @@
     \endentry
     \entry{AH77c}{article}{}
       \name{author}{2}{}{%
-        {{hash=55c764f81305c9e56717d2181358207f}{%
-           family={APPEL},
-           family_i={A\bibinitperiod},
-           given={K.},
-           given_i={K\bibinitperiod}}}%
-        {{hash=4505510459197c1444c9e200efdf3cf6}{%
-           family={HANKEN},
-           family_i={H\bibinitperiod},
-           given={W.},
-           given_i={W\bibinitperiod}}}%
+        {{hash=55c764f81305c9e56717d2181358207f}{APPEL}{A\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=4505510459197c1444c9e200efdf3cf6}{HANKEN}{H\bibinitperiod}{W.}{W\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{e1955f359ece65481ebfb79bfa9be07b}
       \strng{fullhash}{e1955f359ece65481ebfb79bfa9be07b}
@@ -93,16 +73,8 @@
     \endentry
     \entry{AH77a}{article}{}
       \name{author}{2}{}{%
-        {{hash=55c764f81305c9e56717d2181358207f}{%
-           family={APPEL},
-           family_i={A\bibinitperiod},
-           given={K.},
-           given_i={K\bibinitperiod}}}%
-        {{hash=4505510459197c1444c9e200efdf3cf6}{%
-           family={HANKEN},
-           family_i={H\bibinitperiod},
-           given={W.},
-           given_i={W\bibinitperiod}}}%
+        {{hash=55c764f81305c9e56717d2181358207f}{APPEL}{A\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=4505510459197c1444c9e200efdf3cf6}{HANKEN}{H\bibinitperiod}{W.}{W\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{e1955f359ece65481ebfb79bfa9be07b}
       \strng{fullhash}{e1955f359ece65481ebfb79bfa9be07b}
@@ -119,11 +91,7 @@
     \endentry
     \entry{CAY89}{article}{}
       \name{author}{1}{}{%
-        {{hash=a0092bfe4a36ff5d752a0c7d63e1caa6}{%
-           family={CAYLEY},
-           family_i={C\bibinitperiod},
-           given={A.},
-           given_i={A\bibinitperiod}}}%
+        {{hash=a0092bfe4a36ff5d752a0c7d63e1caa6}{CAYLEY}{C\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{a0092bfe4a36ff5d752a0c7d63e1caa6}
       \strng{fullhash}{a0092bfe4a36ff5d752a0c7d63e1caa6}
@@ -140,16 +108,8 @@
     \endentry
     \entry{OCW2}{online}{}
       \name{author}{2}{}{%
-        {{hash=4b7dd6aa69cf441864db177c415d1f43}{%
-           family={DEMAINE},
-           family_i={D\bibinitperiod},
-           given={E.},
-           given_i={E\bibinitperiod}}}%
-        {{hash=b2ed906a8120084ef667a34e9b92f56d}{%
-           family={DEVADAS},
-           family_i={D\bibinitperiod},
-           given={S.},
-           given_i={S\bibinitperiod}}}%
+        {{hash=4b7dd6aa69cf441864db177c415d1f43}{DEMAINE}{D\bibinitperiod}{E.}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=b2ed906a8120084ef667a34e9b92f56d}{DEVADAS}{D\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
       }
       \list{organization}{1}{%
         {Massachusetts Institute of Technology: MIT OpenCourseWare}%
@@ -168,21 +128,9 @@
     \endentry
     \entry{OCW1}{online}{}
       \name{author}{3}{}{%
-        {{hash=4b7dd6aa69cf441864db177c415d1f43}{%
-           family={DEMAINE},
-           family_i={D\bibinitperiod},
-           given={E.},
-           given_i={E\bibinitperiod}}}%
-        {{hash=b2ed906a8120084ef667a34e9b92f56d}{%
-           family={DEVADAS},
-           family_i={D\bibinitperiod},
-           given={S.},
-           given_i={S\bibinitperiod}}}%
-        {{hash=720043f6d19e46a4edb12be81cbdcf8f}{%
-           family={LYNCH},
-           family_i={L\bibinitperiod},
-           given={N.},
-           given_i={N\bibinitperiod}}}%
+        {{hash=4b7dd6aa69cf441864db177c415d1f43}{DEMAINE}{D\bibinitperiod}{E.}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=b2ed906a8120084ef667a34e9b92f56d}{DEVADAS}{D\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=720043f6d19e46a4edb12be81cbdcf8f}{LYNCH}{L\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
       }
       \list{organization}{1}{%
         {Massachusetts Institute of Technology: MIT OpenCourseWare}%
@@ -201,11 +149,7 @@
     \endentry
     \entry{DIJ59}{article}{}
       \name{author}{1}{}{%
-        {{hash=8e8d70867e756ece2fe2eca8c65aee5c}{%
-           family={DIJKSTRA},
-           family_i={D\bibinitperiod},
-           given={E.\bibnamedelimi W.},
-           given_i={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=8e8d70867e756ece2fe2eca8c65aee5c}{DIJKSTRA}{D\bibinitperiod}{E.\bibnamedelimi W.}{E\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{8e8d70867e756ece2fe2eca8c65aee5c}
       \strng{fullhash}{8e8d70867e756ece2fe2eca8c65aee5c}
@@ -222,11 +166,7 @@
     \endentry
     \entry{EUL41}{incollection}{}
       \name{author}{1}{}{%
-        {{hash=313151264cbe77aca604de197d093583}{%
-           family={EULER},
-           family_i={E\bibinitperiod},
-           given={L.},
-           given_i={L\bibinitperiod}}}%
+        {{hash=313151264cbe77aca604de197d093583}{EULER}{E\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{313151264cbe77aca604de197d093583}
       \strng{fullhash}{313151264cbe77aca604de197d093583}
@@ -243,11 +183,7 @@
     \endentry
     \entry{GIM11}{incollection}{}
       \name{author}{1}{}{%
-        {{hash=f7c866e489b98988048280d8575e0dfe}{%
-           family={GIMBERT},
-           family_i={G\bibinitperiod},
-           given={J.},
-           given_i={J\bibinitperiod}}}%
+        {{hash=f7c866e489b98988048280d8575e0dfe}{GIMBERT}{G\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{f7c866e489b98988048280d8575e0dfe}
       \strng{fullhash}{f7c866e489b98988048280d8575e0dfe}
@@ -265,11 +201,7 @@
     \endentry
     \entry{KEM79}{article}{}
       \name{author}{1}{}{%
-        {{hash=fd19ebb19874947fef94625a860302bb}{%
-           family={KEMPE},
-           family_i={K\bibinitperiod},
-           given={A.\bibnamedelimi B.},
-           given_i={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=fd19ebb19874947fef94625a860302bb}{KEMPE}{K\bibinitperiod}{A.\bibnamedelimi B.}{A\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{fd19ebb19874947fef94625a860302bb}
       \strng{fullhash}{fd19ebb19874947fef94625a860302bb}
@@ -286,11 +218,7 @@
     \endentry
     \entry{KÖN36}{book}{}
       \name{author}{1}{}{%
-        {{hash=02b119a93e8da95c1b682bf52358cf91}{%
-           family={KÖNIG},
-           family_i={K\bibinitperiod},
-           given={D.},
-           given_i={D\bibinitperiod}}}%
+        {{hash=02b119a93e8da95c1b682bf52358cf91}{KÖNIG}{K\bibinitperiod}{D.}{D\bibinitperiod}{}{}{}{}}%
       }
       \list{publisher}{1}{%
         {Akademische Verlagsgesellschaft}%
@@ -306,11 +234,7 @@
     \endentry
     \entry{KRU56}{article}{}
       \name{author}{1}{}{%
-        {{hash=3a44ae22b3441f258e38e44b82d868e6}{%
-           family={KRUSKAL},
-           family_i={K\bibinitperiod},
-           given={J.\bibnamedelimi B.},
-           given_i={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=3a44ae22b3441f258e38e44b82d868e6}{KRUSKAL}{K\bibinitperiod}{J.\bibnamedelimi B.}{J\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{3a44ae22b3441f258e38e44b82d868e6}
       \strng{fullhash}{3a44ae22b3441f258e38e44b82d868e6}
@@ -345,11 +269,7 @@
     \endentry
     \entry{PRI57}{article}{}
       \name{author}{1}{}{%
-        {{hash=70b3d7b3274fd3f56a4e9a4a15d90b14}{%
-           family={PRIM},
-           family_i={P\bibinitperiod},
-           given={R.\bibnamedelimi C.},
-           given_i={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=70b3d7b3274fd3f56a4e9a4a15d90b14}{PRIM}{P\bibinitperiod}{R.\bibnamedelimi C.}{R\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{70b3d7b3274fd3f56a4e9a4a15d90b14}
       \strng{fullhash}{70b3d7b3274fd3f56a4e9a4a15d90b14}
@@ -375,11 +295,7 @@
     \endentry
     \entry{VAN71S}{article}{}
       \name{author}{1}{}{%
-        {{hash=07d4bbf43ed7d7dc91ef55050fa6cd8a}{%
-           family={Vandermonde},
-           family_i={V\bibinitperiod},
-           given={Alexandre-Théophile},
-           given_i={A\bibinithyphendelim T\bibinitperiod}}}%
+        {{hash=07d4bbf43ed7d7dc91ef55050fa6cd8a}{Vandermonde}{V\bibinitperiod}{Alexandre-Théophile}{A\bibinithyphendelim T\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{07d4bbf43ed7d7dc91ef55050fa6cd8a}
       \strng{fullhash}{07d4bbf43ed7d7dc91ef55050fa6cd8a}
@@ -395,11 +311,7 @@
     \endentry
     \entry{WMW}{online}{}
       \name{author}{1}{}{%
-        {{hash=be7438fcedb22b304c7586936933fd06}{%
-           family={WEISSTEIN},
-           family_i={W\bibinitperiod},
-           given={ERIC\bibnamedelima W.},
-           given_i={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=be7438fcedb22b304c7586936933fd06}{WEISSTEIN}{W\bibinitperiod}{ERIC\bibnamedelima W.}{E\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
       }
       \strng{namehash}{be7438fcedb22b304c7586936933fd06}
       \strng{fullhash}{be7438fcedb22b304c7586936933fd06}

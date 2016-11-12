@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.4)  9 NOV 2016 01:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.4)  12 NOV 2016 08:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1394,7 +1394,7 @@ File: catalan.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 LaTeX Warning: Unused global option(s):
     [a4].
 
-No file algorismes.aux.
+(./algorismes.aux)
 \openout1 = `algorismes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -1418,6 +1418,7 @@ Package biblatex Info: Data encoding 'ISO-8859-1' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'algorismes.bbl' not found.
+
 No file algorismes.bbl.
 Package biblatex Info: Reference section=0 on input line 35.
 Package biblatex Info: Reference segment=0 on input line 35.
@@ -1498,10 +1499,6 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 \openout5 = `algorismes.pyg'.
 
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/ACD8EF0AF2029B715737EBC684AE81E86DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
-
 
 (./_minted-algorismes/ACD8EF0AF2029B715737EBC684AE81E86DA7869103DBB8F54390843B9
 FB6FEA0.pygtex
@@ -1509,10 +1506,6 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 4.
 )
 \openout5 = `algorismes.pyg'.
-
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/427D4C4A9EBAC138C33D5581E8A6C8D66DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
 
 
 (./_minted-algorismes/427D4C4A9EBAC138C33D5581E8A6C8D66DA7869103DBB8F54390843B9
@@ -1530,117 +1523,188 @@ Non-PDF special ignored!
 Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \openout5 = `algorismes.pyg'.
 
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/18FD36B906FA04AB040AC4B3B6B59D5F6DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
-
 
 (./_minted-algorismes/18FD36B906FA04AB040AC4B3B6B59D5F6DA7869103DBB8F54390843B9
 FB6FEA0.pygtex [2])
 \openout5 = `algorismes.pyg'.
 
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/3BB9B3ED6D3A55E887E70662234B031D6DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
-
 
 (./_minted-algorismes/3BB9B3ED6D3A55E887E70662234B031D6DA7869103DBB8F54390843B9
-FB6FEA0.pygtex)
-\openout5 = `algorismes.pyg'.
-
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/8E83249E80CF88F2287CE6BDFB2E59286DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
-
-
-(./_minted-algorismes/8E83249E80CF88F2287CE6BDFB2E59286DA7869103DBB8F54390843B9
 FB6FEA0.pygtex [3])
 \openout5 = `algorismes.pyg'.
 
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/A6E934BCBAA3CFA3124D69453BF06ED56DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
+
+(./_minted-algorismes/8E83249E80CF88F2287CE6BDFB2E59286DA7869103DBB8F54390843B9
+FB6FEA0.pygtex [4])
+\openout5 = `algorismes.pyg'.
 
 
 (./_minted-algorismes/A6E934BCBAA3CFA3124D69453BF06ED56DA7869103DBB8F54390843B9
 FB6FEA0.pygtex)
 \openout5 = `algorismes.pyg'.
 
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/553B795F57D4349943702CFDA5630FAE6DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
-
 
 (./_minted-algorismes/553B795F57D4349943702CFDA5630FAE6DA7869103DBB8F54390843B9
-FB6FEA0.pygtex [4])
-\openout5 = `algorismes.pyg'.
-
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/50450B7CE4202932AF5923A41DDBF4376DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
-
-
-(./_minted-algorismes/50450B7CE4202932AF5923A41DDBF4376DA7869103DBB8F54390843B9
-FB6FEA0.pygtex)
-\openout5 = `algorismes.pyg'.
-
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/43536B558E03F3779B3682E14FD4348B6DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
-
-
-(./_minted-algorismes/43536B558E03F3779B3682E14FD4348B6DA7869103DBB8F54390843B9
 FB6FEA0.pygtex [5])
 \openout5 = `algorismes.pyg'.
 
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/493E4797F34FF77CCD2A4219829C61196DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
+
+(./_minted-algorismes/50450B7CE4202932AF5923A41DDBF4376DA7869103DBB8F54390843B9
+FB6FEA0.pygtex [6])
+\openout5 = `algorismes.pyg'.
 
 
-(./_minted-algorismes/493E4797F34FF77CCD2A4219829C61196DA7869103DBB8F54390843B9
+(./_minted-algorismes/43536B558E03F3779B3682E14FD4348B6DA7869103DBB8F54390843B9
 FB6FEA0.pygtex)
 \openout5 = `algorismes.pyg'.
 
-runsystem(pygmentize -l python -f latex -F tokenmerge -P style=default -P comma
-ndprefix=PYGdefault -o "_minted-algorismes/801E91E89807D5ACE1C4D4194B42AC5B6DA7
-869103DBB8F54390843B9FB6FEA0.pygtex" "algorismes.pyg" )...executed.
+
+(./_minted-algorismes/493E4797F34FF77CCD2A4219829C61196DA7869103DBB8F54390843B9
+FB6FEA0.pygtex [7])
+\openout5 = `algorismes.pyg'.
 
 
 (./_minted-algorismes/801E91E89807D5ACE1C4D4194B42AC5B6DA7869103DBB8F54390843B9
-FB6FEA0.pygtex [6])
+FB6FEA0.pygtex [8] [9])
+\openout5 = `algorismes.pyg'.
+
+
+(./_minted-algorismes/8695841147E2B8E57FEF106A458F7F386DA7869103DBB8F54390843B9
+FB6FEA0.pygtex
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 2.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 2.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textperiodcentered' on input line 2.
+
+
+Overfull \hbox (495.4232pt too wide) in paragraph at lines 2--2
+\T1/cmtt/m/n/12 Elisenda"[]:{[]"6_Sarrià"[]:[]120[]},[]"7_Catalunya"[]:{[]"7_Pr
+ovença"[]:[]120[],[]"1_Catalunya"[]:[]360[],[]"3_Catalunya"[]:[]180[],[]"6_Cata
+lunya"[]:[]5[]},[]"7_Provença"[]:{[]"7_Catalunya"[]:[]120[], 
+ []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [10]
+Overfull \vbox (2625.4679pt too high) has occurred while \output is active []
+
+
+[11])
+! Missing $ inserted.
+<inserted text> 
+                $
+l.353 Punt inicial: 2_
+                      Paral·lel\\
+? 
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 3
+53.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 353.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 353.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 3
+53.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 3
+57.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 3
+57.
+
+
+LaTeX Warning: Command \` invalid in math mode on input line 357.
+
+
+LaTeX Warning: Command \` invalid in math mode on input line 357.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 357.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 357.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.358 
+      
+? 
+Missing character: There is no à in font cmr12!
+Missing character: There is no à in font cmr12!
+Missing character: There is no ó in font cmr12!
+Missing character: There is no ú in font cmr12!
+
+Overfull \hbox (849.43813pt too wide) in paragraph at lines 353--358
+\OML/cmm/m/it/12 Recorregut \OT1/cmr/m/n/12 : [2[]\OML/cmm/m/it/12 aral\OT1/cmr
+/m/n/12 ^^A\OML/cmm/m/it/12 lel; \OT1/cmr/m/n/12 2[]\OML/cmm/m/it/12 antAntoni;
+ \OT1/cmr/m/n/12 2[]\OML/cmm/m/it/12 niversitat; \OT1/cmr/m/n/12 2[]\OML/cmm/m/
+it/12 asseigdeGrcia; \OT1/cmr/m/n/12 4[]\OML/cmm/m/it/12 asseigdeGrcia; \OT1/cm
+r/m/n/12 4[]\OML/cmm/m/it/12 irona; \OT1/cmr/m/n/12 4[]\OML/cmm/m/it/12 erdague
+r; \OT1/cmr/m/n/12 4[]\OML/cmm/m/it/12 oanic; \OT1/cmr/m/n/12 4[]\OML/cmm/m/it/
+12 lfonsX; \OT1/cmr/m/n/12 4[]\OML/cmm/m/it/12 uinardHospitaldeSantPau; \OT1/cm
+r/m/n/12 4[]\OML/cmm/m/it/12 aragall; \OT1/cmr/m/n/12 4[]\OML/cmm/m/it/12 lucma
+jor; \OT1/cmr/m/n/12 4[]\OML/cmm/m/it/12 iaJlia; \OT1/cmr/m/n/12 4[]\OML/cmm/m/
+it/12 rinitatNova; \OT1/cmr/m/n/12 11[]\OML/cmm/m/it/12 rinitatNova; \OT1/cmr/m
+/n/12 11[]\OML/cmm/m/it/12 asadel[]Aigua\OT1/cmr/m/n/12 ][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--358
+
+ []
+
 runsystem(rm "algorismes.pyg")...executed.
 
- [7] (./algorismes.aux)
+[12] (./algorismes.aux)
 
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                algorismes
-(biblatex)                and rerun LaTeX afterwards.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package logreq Info: Writing requests to 'algorismes.run.xml'.
 \openout1 = `algorismes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38966 strings out of 494957
- 873523 string characters out of 6180029
- 1484827 words of memory out of 5000000
- 41495 multiletter control sequences out of 15000+600000
- 8869 words of font info for 22 fonts, out of 8000000 for 9000
+ 39046 strings out of 494957
+ 874957 string characters out of 6180029
+ 1658062 words of memory out of 5000000
+ 41542 multiletter control sequences out of 15000+600000
+ 14950 words of font info for 44 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 61i,5n,96p,819b,1401s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,10n,96p,84047b,1401s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/a
 niol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/aniol/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/aniol/.texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecbx1728.600pk>
-Output written on algorismes.pdf (7 pages, 49131 bytes).
+pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1440.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on algorismes.pdf (12 pages, 132910 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 284 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
