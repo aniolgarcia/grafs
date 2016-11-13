@@ -1,14 +1,14 @@
-[4] Config.pm:325> INFO - This is Biber 2.1
-[5] Config.pm:328> INFO - Logfile is 'general.blg'
-[300] biber:276> INFO - === dv nov 11, 2016, 09:43:36
-[301] Biber.pm:334> INFO - Reading 'general.bcf'
-[950] Biber.pm:643> INFO - Using all citekeys in bib section 0
-[1262] Biber.pm:2978> INFO - Processing section 0
-[1507] Biber.pm:3116> INFO - Looking for bibtex format file 'biblio2.bib' for section 0
-[1513] bibtex.pm:1010> INFO - Decoding LaTeX character macros into UTF-8
-[1523] bibtex.pm:884> INFO - Found BibTeX data source 'biblio2.bib'
-[3354] UCollate.pm:66> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
-[3355] UCollate.pm:66> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[3356] Biber.pm:2855> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'ca-AD'
-[3636] bbl.pm:505> INFO - Writing 'general.bbl' with encoding 'latin9'
-[3654] bbl.pm:596> INFO - Output to general.bbl
+[0] Config.pm:340> INFO - This is Biber 2.4
+[0] Config.pm:343> INFO - Logfile is 'general.blg'
+[53] biber:287> INFO - === dg nov 13, 2016, 01:59:56
+[164] Biber.pm:348> INFO - Reading 'general.bcf'
+[347] Biber.pm:739> INFO - Using all citekeys in bib section 0
+[355] Biber.pm:3151> INFO - Processing section 0
+[393] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio2.bib' for section 0
+[414] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[433] bibtex.pm:974> INFO - Found BibTeX data source 'biblio2.bib'
+[898] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
+[898] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[898] Biber.pm:3028> INFO - Sorting list 'nty/global' of type 'entry' with scheme 'nty' and locale 'ca-AD'
+[945] bbl.pm:519> INFO - Writing 'general.bbl' with encoding 'latin9'
+[1068] bbl.pm:615> INFO - Output to general.bbl

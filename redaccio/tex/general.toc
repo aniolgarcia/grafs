@@ -28,136 +28,136 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3}Grafs complets}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Grafs bipartits}{20}
+\contentsline {subsection}{\numberline {4.4}Grafs bipartits}{19}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.5}Grafs bipartits complets}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6}Xarxes}{21}
+\contentsline {subsection}{\numberline {4.6}Grafs xarxes}{20}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.7}Arbres}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.8}Rodes}{25}
+\contentsline {subsection}{\numberline {4.8}Graf roda}{24}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.9}Grafs estrella}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.10}Grafs complementaris}{26}
+\contentsline {subsection}{\numberline {4.10}Grafs complementaris}{25}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.11}Graf nul i grafs buits}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.12}Grafs regulars}{27}
+\contentsline {subsection}{\numberline {4.12}Grafs regulars}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{III\hspace {1em}Camins i algorismes}{28}
+\contentsline {part}{III\hspace {1em}Camins i algorismes}{27}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Grafs ponderats i dirigits}{28}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.1}Grafs ponderats}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Camins}{29}
+\contentsline {section}{\numberline {6}Camins}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Camins Eulerians}{30}
+\contentsline {subsection}{\numberline {6.1}Camins Eulerians}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Camins Hamiltonians}{30}
+\contentsline {subsection}{\numberline {6.2}Camins Hamiltonians}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Estructures de dades dels grafs}{30}
+\contentsline {section}{\numberline {7}Estructures de dades dels grafs}{29}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8}Algorismes}{32}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.1}BFS}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.1.1}Funcionament}{33}
+\contentsline {subsubsection}{\numberline {8.1.1}Funcionament}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.1.2}Pseudocodi}{34}
+\contentsline {subsubsection}{\numberline {8.1.2}Pseudocodi}{33}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {8.1.3}Aplicacions}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}DFS}{36}
+\contentsline {subsection}{\numberline {8.2}DFS}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.2.1}Funcionament}{36}
+\contentsline {subsubsection}{\numberline {8.2.1}Funcionament}{35}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {8.2.2}Pseudocodi}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.2.3}Propietats}{38}
+\contentsline {subsubsection}{\numberline {8.2.3}Propietats}{37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.2.4}Aplicacions}{39}
+\contentsline {subsubsection}{\numberline {8.2.4}Aplicacions}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Dijkstra}{40}
+\contentsline {subsection}{\numberline {8.3}Dijkstra}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.1}Funcionament}{40}
+\contentsline {subsubsection}{\numberline {8.3.1}Funcionament}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.2}Pseudocodi}{42}
+\contentsline {subsubsection}{\numberline {8.3.2}Pseudocodi}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.3}Propietats}{43}
+\contentsline {subsubsection}{\numberline {8.3.3}Propietats}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.4}Aplicacions}{43}
+\contentsline {subsubsection}{\numberline {8.3.4}Aplicacions}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Bellman-Ford}{44}
+\contentsline {subsection}{\numberline {8.4}Bellman-Ford}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.4.1}Funcionament}{44}
+\contentsline {subsubsection}{\numberline {8.4.1}Funcionament}{43}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.4.2}Pseudocodi}{45}
+\contentsline {subsubsection}{\numberline {8.4.2}Pseudocodi}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.4.3}Propietats}{46}
+\contentsline {subsubsection}{\numberline {8.4.3}Propietats}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Kruskal}{47}
+\contentsline {subsection}{\numberline {8.5}Kruskal}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.5.1}Funcionament}{47}
+\contentsline {subsubsection}{\numberline {8.5.1}Funcionament}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.5.2}Pseudocodi}{49}
+\contentsline {subsubsection}{\numberline {8.5.2}Pseudocodi}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.5.3}Propietats}{49}
+\contentsline {subsubsection}{\numberline {8.5.3}Propietats}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.6}Prim}{49}
+\contentsline {subsection}{\numberline {8.6}Prim}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.6.1}Funcionament}{50}
+\contentsline {subsubsection}{\numberline {8.6.1}Funcionament}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.6.2}Pseudocodi}{51}
+\contentsline {subsubsection}{\numberline {8.6.2}Pseudocodi}{50}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.6.3}Propietats}{51}
+\contentsline {subsubsection}{\numberline {8.6.3}Propietats}{50}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.6.4}Aplicacions}{52}
+\contentsline {subsubsection}{\numberline {8.6.4}Aplicacions}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.7}Floyd-Warshall}{52}
+\contentsline {subsection}{\numberline {8.7}Floyd-Warshall}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.7.1}Funcionament}{52}
+\contentsline {subsubsection}{\numberline {8.7.1}Funcionament}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.7.2}Pseudocodi}{53}
+\contentsline {subsubsection}{\numberline {8.7.2}Pseudocodi}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.7.3}Propietats}{53}
+\contentsline {subsubsection}{\numberline {8.7.3}Propietats}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.7.4}Aplicacions}{54}
+\contentsline {subsubsection}{\numberline {8.7.4}Aplicacions}{53}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.8}Coloraci\'o de grafs}{54}
+\contentsline {subsection}{\numberline {8.8}Coloraci\'o de grafs}{53}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.8.1}Funcionament}{54}
+\contentsline {subsubsection}{\numberline {8.8.1}Funcionament}{53}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.8.2}Pseudocodi}{56}
+\contentsline {subsubsection}{\numberline {8.8.2}Pseudocodi}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.8.3}Propietats}{56}
+\contentsline {subsubsection}{\numberline {8.8.3}Propietats}{55}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.8.4}Aplicacions}{57}
+\contentsline {subsubsection}{\numberline {8.8.4}Aplicacions}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{IV\hspace {1em}Disseny de grafs}{57}
+\contentsline {part}{IV\hspace {1em}Disseny de grafs}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Punt de Fermat i l'arbre de Steiner}{57}
+\contentsline {section}{\numberline {9}Punt de Fermat i l'arbre de Steiner}{56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}Els arbres de Steiner amb bombolles de sab\'o}{59}
+\contentsline {subsection}{\numberline {9.1}Els arbres de Steiner amb bombolles de sab\'o}{58}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Arbres expansius}{60}
+\contentsline {section}{\numberline {10}Arbres expansius}{59}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{V\hspace {1em}Aplicacions pr\`actiques de la teoria de grafs}{60}
+\contentsline {part}{V\hspace {1em}Aplicacions pr\`actiques de la teoria de grafs}{59}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11}Algorisme PageRank}{61}
+\contentsline {section}{\numberline {11}Algorisme PageRank}{60}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12}Comer\c c online: productes relacionats}{61}
+\contentsline {section}{\numberline {12}Comer\c c online: productes relacionats}{60}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {13}Instal\IeC {\textperiodcentered }laci\'o de c\`ameres de videovigil\`ancia}{62}
+\contentsline {section}{\numberline {13}Instal\IeC {\textperiodcentered }laci\'o de c\`ameres de videovigil\`ancia}{61}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {13.1}Demostraci\'o i procediment}{62}
+\contentsline {subsection}{\numberline {13.1}Demostraci\'o i procediment}{61}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {14}Xarxa de metro}{64}
+\contentsline {section}{\numberline {14}Xarxa de metro}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {14.1}Metodologia de treball}{64}
+\contentsline {subsection}{\numberline {14.1}Metodologia de treball}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {14.2}Consideracions}{65}
+\contentsline {subsection}{\numberline {14.2}Consideracions}{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {14.3}Algorisme}{67}
+\contentsline {subsection}{\numberline {14.3}Algorisme}{66}
