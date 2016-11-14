@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{Kruskal}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{):}
+    \PYG{n}{subtree} \PYG{o}{=} \PYG{n}{UnionFind}\PYG{p}{()}
+    \PYG{n}{tree} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{k}{for} \PYG{n}{e}\PYG{p}{,} \PYG{n}{u}\PYG{p}{,} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n+nb}{sorted}\PYG{p}{((}\PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{v}\PYG{p}{],}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)} \PYG{k}{for} \PYG{n}{u} \PYG{o+ow}{in} \PYG{n}{Adj} \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]):}
+        \PYG{k}{for} \PYG{n}{u} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]:}
+                \PYG{k}{if} \PYG{n}{subtree}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{subtree}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]:}
+                    \PYG{n}{tree}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{))}
+                    \PYG{n}{subtree}\PYG{o}{.}\PYG{n}{union}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{tree}
+\end{Verbatim}

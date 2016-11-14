@@ -8,7 +8,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathtools}
-\usepackage[backend=biber, style=numeric, bibencoding=ISO-8859-1]{biblatex} %Llibreria de gestió de bibliografia
+\usepackage[backend=biber, style=numeric, sorting=none, bibencoding=ISO-8859-1]{biblatex} %Llibreria de gestió de bibliografia
 %\usepackage{cite}
 %\usepackage{catalanbib}
 \usepackage{xcolor}
@@ -27,6 +27,8 @@
 \usepackage[position=top]{subfig}
 \usepackage{rotating}
 %\usepackage{url}
+\usepackage{minted}
+\usepackage{etoolbox}
 \usepackage{parskip}
 \usetikzlibrary{arrows,%
                 petri,%
@@ -107,21 +109,102 @@ array element/.style = {
 \DeclareBibliographyCategory{citats}
 \AtEveryCitekey{\addtocategory{citats}{\thefield{entrykey}}}
 \addbibresource{biblio2.bib}
+\addbibresource{biblio3.bib}
+
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \perdatasource{biblio2.bib}
+      \step[fieldset=keywords, fieldvalue={, refer}, append]
+    }
+    \map{
+      \perdatasource{biblio3.bib}
+      \step[fieldset=keywords, fieldvalue={, biblio}, append]
+    }
+  }
+}
+
+\makeatletter
+\define@key{blx@bib2}{prefixnumbers}{%
+  \def\blx@prefixnumbers{#1}%
+  \iftoggle{blx@defernumbers}
+    {}% here was a resetnumbers statement before
+    {\iftoggle{blx@labelnumber}
+       {\blx@warning{%
+          Option 'prefixnumbers' requires global\MessageBreak
+          'defernumbers=true'}}
+       {}}}
+\makeatother
 
 
-\title{Teoria de Grafs \\ \large Revisió segona}
-\author{Aniol Garcia i Serrano}
-\date{23/9/2016}
+\AtBeginEnvironment{minted}{\singlespacing%
+    \fontsize{11}{11}\selectfont}
+
+
+
+
+
+\title{Els Grafs: xarxes, camins i connexions \\ \large De la matemàtica discreta a la realitat}
+\author{Aniol Garcia i Serrano \\ \small{Xavier Aguilera Colmenero}}
+\date{14/11/2016}
 
 
 \begin{document}
 \maketitle
 \vfill
+\begin{figure}
+\centering
+\begin{tikzpicture}[transform shape,line width=0.2pt]
+  \foreach \x in {1,...,16}{%
+    \pgfmathparse{(\x-1)*45+floor(\x/9)*22.5}
+    \node[draw,circle,inner sep=0.25cm] (N-\x) at (\pgfmathresult:5.4cm) [thick] {};
+  } 
+  \foreach \x [count=\xi from 1] in {2,...,16}{%
+    \foreach \y in {\x,...,16}{%
+        \path (N-\xi) edge[-] (N-\y);
+  }
+}
+\end{tikzpicture}
+\end{figure}
+
 \begin{flushright}
 \textit{Qualssevol que siguin els girs i les voltes dels fils en l'espai, un sempre pot obtenir una expressió per al càlcul de les seves dimensions [dels fils], tot i que tal expressió serà d'escassa utilitat en la pràctica. Els artesans que construeixen una xarxa, una trena o alguns nusos estaran més preocupats no per assumptes de mesura, sinó de posició: el que li importarà serà la manera en què els fils s'entrellacen.}
 \\ A. Vandermonde
 \end{flushright}
-\vfill
+\newpage
+
+Aquest treball vol ser un agraïment  a totes aquelles persones que en un moment o un altre m'he anat trobant pel camí de les matemàtiques. Potser no ens hem aturat a parlar de la teoria de grafs, o sí;   però, en qualsevol cas,  totes les aportacions han estat un pilar indispensable. Cadascú, des del seu punt de vista, des de la seva experiència, des del seu camp de treball, ha anat enriquint el meu bagatge i aportant les dosis d'entusiasme necessàries per ajudar-me a avançar.  
+
+Gràcies doncs ...
+
+a en  Jordi Zanca, que em  va començar a parlar de matrius;
+ 
+a en Jordi Vergés, amb qui puc comptar quan tinc dubtes i entrebancs;
+ 
+als professors i als companys del programa de "Bojos per les matemàtiques", per les vivències, per les hores compartides... per l'experiència;
+
+als companys del Math Summer Camp, en especial a en Marc Felipe, amb qui vam gaudir de llargues hores  de converses, d'enigmes i de problemes; i a en Pere Pascual, per formar part de l'equip que ho va fer possible;
+
+a l'equip de l'IRI (Institut de Robòtica i Informàtica Industrial), en especial a en Sergi Foix, en Gerard Canal i en Guillem Alenyà, per permetre'm de passar uns dies amb ells, encoratjar-me i donar-me savis consells.  Ha estat un plaer. 
+
+M'agradaria agrair-ho també...
+
+a la Iolanda Guevara, coordinadora del programa de "Bojos per les matemàtiques", per fer-me d'enllaç i donar-me suport; 
+
+a en Robert Salla i l'Antoni Benseny, que m'han atès molt amablement i m'han estat acompanyant en tot moment;
+
+a l'Anton Aubanell, per obrir-me la porta de casa seva, per escoltar-me, per interrogar-me,  per rectificar-me, per explicar-me, per la seva paciència... per haver obert traça i deixar-me caminar per les seves petjades; 
+
+al tutor del treball, Xavier Aguilera, professor de l'escola Vedruna de Malgrat de Mar, pel seu acompanyament i per confiar en mi; 
+
+a la meva família, per la seva infinita paciència i la seva dedicació;  
+
+i a tots els que s'han interessat pel meu treball.
+
+Moltes gràcies a tots!
+
+
+
 \newpage	
 \tableofcontents
 \newpage
@@ -305,12 +388,21 @@ El treball comença amb la història de la teoria de grafs, la qual em va permetre
 
 La part III va ser tota una altra descoberta. Un cop familiaritzat amb els grafs calia recorre'ls, de node a node, d'aresta a aresta, un passeig que es pot fer de moltes maneres diferents i amb finalitats diferents. Tot fent camí amb les matemàtiques, mitjançant el programa de "Bojos per les matemàtiques" \footnote{Programa organitzat per FEEMCAT, SCM i Fundació Catalunya La Pedrera} i el "Math Summer Camp"\footnote{Activitat organitzada per Fundació Privada Cellex, UPC-FME i CFIS}, aquests passejos s'han fet amens i una mica més  propers. Ha estat fantàstic trobar punts de confluència que m'anaven aclarint idees i aportant fluïdesa als nous coneixements. Però, com els havia de recórrer? En aquest moment del treball, la programació entra en joc. En els annexos he adjuntat els programes amb  llenguatge Python que m'han ofert la possibilitat de gaudir del recorregut. També m'han estat molt útils les classes del MIT que es poden consultar a través de la xarxa.
 
-A la part IV, em vaig allunyar em vaig allunyar de la topologia, per tal de no deixar fora del treball tots aquells grafs on sí que importen les distàncies i posicions en el pla.
+La part IV utilitza un punt de vista diferent als altres apartats. La particularitat és que en aquesta ocasió els grafs no només s'estudien, sinó que es creen. Descobreixo que les bombolles de sabó ens n'ofereixen exemples magnífics.
 
-Finalment, en la darrera part, la V, he descrit alguns exemples que poden formar part del nostre dia a dia. Sense ser-ne massa conscients,  algunes persones treballen i fan que les coses funcionin d'una manera determinada, ens faciliten certes tasques, ens proporcionen seguretat, fan possible que puguem establir contactes... No acabaríem la llista. M'he decantat per dos exemples concrets: situar càmeres de vigilància en un edifici familiar i, l'altre, trobar el recorregut del metro de Barcelona que permet anar d'una estació a una altra qualssevol amb el mínim temps posible, tot indicant les línies i les estacions per on transcorrerà i el temps que trigarà.   
+Finalment, en la darrera part, la V, he descrit alguns exemples que poden formar part del nostre dia a dia. Sense ser-ne massa conscients,  algunes persones treballen i fan que les coses funcionin d'una manera determinada, ens faciliten certes tasques, ens proporcionen seguretat, fan possible que puguem establir contactes... No acabaríem la llista. M'he decantat per dos exemples concrets: situar càmeres de vigilància en un edifici familiar i, l'altre, trobar el recorregut del metro de Barcelona que permet anar d'una estació a una altra qualssevol amb el mínim temps posible, tot indicant les línies i les estacions per on transcorrerà i el temps que trigarà.  
+
+He afegit a més, dos annexes:
+El primer conté gran part del programari utilitzat, eines indispensables per a la creació de tot el procés.
+En el segon hi ha tots els programes que he creat, totes les implementacions d'algorismes tractats durant el treball.
+
+Com a annexes he afegit, d'una banda, tot el conjunt de programari utilitzat
+
+A més de les fonts d'informació ja esmentades, cal afegir les persones que m'han ofert els seus coneixements (ja citades a l'agraïment) i, finalment, la Xarxa de Xarxes: Internet. A l'apartat de bibliografia es es detallen les pàgines web que he anat consultant al llarg del treball.
+ 
 
 
-
+\newpage
 \part{Introducció a la teoria de grafs}
 
 Aquest primer apartat consisteix en la part més teòrica del treball.
@@ -1287,7 +1379,7 @@ Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-reg
 
 
 
-
+\newpage
 \part{Camins i algorismes}
 
 \begin{flushright}
@@ -2598,6 +2690,7 @@ Si el que es vol és pintar les arestes d'un graf en lloc dels vèrtexs, només cal
 \item S'utilitza la coloració de grafs per a problemes que requereixen separar els nodes en grups disjunts de manera que dos nodes del mateix grup no siguin adjacents.
 \end{itemize}
 
+\newpage
 \part{Disseny de grafs}
 Fins ara, s'han mostrat i estudiat grafs que ja estan definits sobre els quals s'ha de fer alguna operació. Ara bé, en aplicacions reals de teoria de grafs, sovint no hi ha un graf determinat, sinó que s'ha de generar. Cal observar que en aquesta part de disseny de grafs els grafs són físics, és a dir, que existeixen com a tals situats en alguna superfície. En aquest cas no s'utilitzen com a modelitzacions abstractes i, per tant, les distàncies i situacions dels punts són importants. 
 
@@ -2667,7 +2760,7 @@ Com es pot observar a la figura i tal com prediuen les lleis de Plateau, tots el
 Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitzar els algorismes per trobar arbres expansius que ja s'han vist. Una opció és construir el graf complet amb totes les arestes i els seus corresponents pesos i executar algun algorisme que en trobi l'arbre expansiu mínim. 
 \\
 
-
+\newpage
 \part{Aplicacions pràctiques de la teoria de grafs}
 
 \section{Algorisme PageRank}
@@ -2786,7 +2879,7 @@ Cal puntualitzar que hi ha casos on amb aquest procediment no es troba la soluci
 \subfloat[]{
 \centering
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-	\clip(0.61,-0.09) rectangle (5.12,5.1);
+	\clip(0.56,-0.09) rectangle (5.12,5.1);
 	\draw [line width=1.2pt] (0.58,0.9)-- (3.08,0.74);
 	\draw [line width=1.2pt] (2.76,1.61)-- (3.08,0.74);
 	\draw [line width=1.2pt] (2.76,1.61)-- (5,1.42);
@@ -2824,6 +2917,7 @@ Cal puntualitzar que hi ha casos on amb aquest procediment no es troba la soluci
 }
 \caption{Exemple del procés de triangulació i coloració d'un polígon irregular}
 \end{figure}
+
 
 \section{Xarxa de metro}
 Una xarxa de metro és un altre bon exemple de graf: es pot pensar com un conjunt de grafs elementals $P_{n}$ (equivalents a les diverses línies) amb la propietat que alguns d'aquests comparteixen nodes. Així doncs, com a una última aplicació pràctica, em vaig proposar fer un programa que sigués capaç de calcular un trajecte entre dues estacions qualssevol i el temps aproximat de recorregut que es trigaria, incloent-hi els possibles transbords entre línies. 
@@ -2929,13 +3023,42 @@ imprimeix("Recorregut:")\;
 }
 
 \end{algorisme}
-\vfill
-\section*{Conclusions}
+
+El funcionament seria el següent:
+\subsubsection*{Exemple d'entrada 1}
+\begin{minted}[breaklines=true, frame=lines]{python}
+metro(graf_metro, "4_Llucmajor", "9S_Aeroport T1")
+\end{minted}
+\subsubsection*{Exemple de sortida 1}
+\begin{minted}[breaklines=true, frame=lines]{text}
+Punt inicial: 4_Llucmajor
+Punt final: 9S_Aeroport T1
+Temps net del recorregut: 2915
+Temps total del recorregut: 59 minuts i 0 segons
+Recorregut: [ 4_Llucmajor, 4_Maragall, 4_Guinardó Hospital de Sant Pau, 4_Alfons X, 4_Joanic, 4_Verdaguer, 5_Verdaguer, 5_Diagonal, 5_Hospital Clínic, 5_Entença, 5_Sants Estació, 5_Plaça de Sants, 5_Badal, 5_Collblanc, 9S_Collblanc, 9S_Torrassa, 9S_Can Tries Gornal, 9S_Europa Fira, 9S_Fira, 9S_Parc Logístic, 9S_Mercabarna, 9S_Les Moreres, 9S_El Prat Estació, 9S_Cèntric, 9S_Parc Nou, 9S_Mas Blau, 9S_Aeroport T2, 9S_Aeroport T1 ]
+\end{minted}
+
+\subsubsection*{Exemple d'entrada 2}
+\begin{minted}[breaklines=true, frame=lines]{python}
+metro(graf_metro, "3_Zona Universitària", "5_Sagrada Família")
+\end{minted}
+\subsubsection*{Exemple de sortida 2}
+\begin{minted}[breaklines=true, frame=lines]{text}
+Punt inicial: 3_Zona Universitària
+Punt final: 5_Sagrada Família
+Temps net del recorregut: 920
+Temps total del recorregut: 19 minuts i 3 segons
+Recorregut: [ 3_Zona Universitària, 3_Palau Reial, 3_Maria Cristina, 3_Les Corts, 3_Plaça del Centre, 3_Sants Estació, 5_Sants Estació, 5_Entença, 5_Hospital Clínic, 5_Diagonal, 5_Verdaguer, 5_Sagrada Família ]
+\end{minted}
+
+\newpage
+\part{Conclusions}
 
 Durant aquest treball hem fet un camí juntament amb la teoria de grafs: l'hem vist néixer del pensament d'Euler; l'hem vist créixer acompanyada d'alguns dels més grans matemàtics de l'història; n'hem vist la seva manera d'entendre i modelitzar el món; l'hem acompanyada fins a la seva maduresa on, juntament amb més matemàtics i teòrics de les ciències de computació, ha col·laborat amb una infinitat d'àrees que en un principi semblaven distants a ella; i finalment ens ha ajudat a resoldre problemes quotidians.
 
-Càmeres de vigilància, navegadors GPS, xarxes socials, xarxes telemàtiques, xarxes elàctriques, planificació d'horaris, organització d'un treball, clavagueram... Tots aquest són exemples clars de que lateoria de grafs forma part de la nostra realitat. Verifico, doncs, la meva hipòtesi inicial i com a conclusió afegiria: difícilment algú pot quedar-ne al marge. 
-En la segona part de l'hipòtesi exposava que hi havia mecanismes que permetien fer el pas de la teoria a la realitat. El que és cert és que, com a usuaris, ens queden lluny i difícilment són visibles o apreciables. Aquests mecanismes són els algorismes que a partir d'unes dades concretes ofereixen una resolució, una resposta. Al llarg del treball he vist i he demostrat que al darrere d'aquests procediments hi ha matemàtiques, tal com es pretenia validar. Podríem dir que he ampliat es objectius incials al poder comprendre i analitzar el funcionament de tots aquests algorismes, i encara més al generar-ne de nous. 
+Càmeres de vigilància, navegadors GPS, xarxes socials, xarxes telemàtiques, xarxes elàctriques, planificació d'horaris, organització d'un treball, clavagueram... Tots aquest són exemples clars de que lateoria de grafs forma part de la nostra realitat. Verifico, doncs, la meva hipòtesi inicial: la teoria de grafs ofereix aplicacions práctiques a la vida quotidiana. I, com a conclusió, afegiria: difícilment algú pot quedar-ne al marge. 
+En la segona part de l'hipòtesi exposava que hi havia mecanismes que permetien fer el pas de la teoria a la realitat. El que és cert és que, com a usuaris, ens queden lluny i difícilment són visibles o apreciables. Aquests mecanismes són els algorismes que, a partir d'unes dades concretes, ofereixen una resolució, una resposta. Al llarg del treball he vist i he demostrat que al darrere d'aquests procediments hi ha matemàtiques, tal com es pretenia validar. Podríem dir que he ampliat es objectius incials al poder comprendre i analitzar el funcionament de tots aquests algorismes i, encara més, al generar-ne de nous. 
+Una altra conclusió és que tota la matemàtica vinculada a la teoria de grafs esdevé complexa i requereix, en general, de l'ús dels ordinadors. Així ho van començar a veure Appel i Hanken en la seva demostració del teorema dels quatre colors i així ho he pogut constatar mitjançant programes com el del metro.  
 
 
 Personalment, el treball m'ha ajudat molt. He après moltíssim de teoria de grafs, però el que és també molt important és el rerefons més abstracte: el tipus de raonament matemàtic, la formalització de conceptes i idees, les tècniques de demostració, la metodologia matemàtica... Amb tot això he pogut descobrir la capacitat modelitzadora de les matemàtiques.
@@ -2947,19 +3070,507 @@ Encara que el treball final no contingui tots els aspectes que m'hagués agradat 
 
 Això sí: tot i que el camí sempre ha fet pujada, cal pensar que cada vegada som més aprop del cim.
 
-%\begin{refsection}[biblio.bib]
-%\nocite{*}
-%\printbibliography
-%\end{refsection}
+\newpage
 
-%\nocite{EUL41, AH77a, AH77b, AH77c, CAY89, KEM79, DIJ59, KRU56, PRI57, GIM11, BAS94, KON36, VAN71, WIKI, WMW, MOV, MSE, TEX, OCW1, OCW2}
-%\nocite{*}
-%\printbibliography[title={Bibliografia}]
-%\printbibliography[heading=bibintoc]
-%\mbox{}
+\printbibliography[keyword=refer, prefixnumbers=A, title=Referències]
 \nocite{*}
-\printbibliography
-%\printbibliography[title={Bibliografia}]%,notcategory=citats]
-%\bibliography{biblio2}{}
+\newpage
+\printbibliography[keyword=biblio, prefixnumbers=B, title=Bibliografia]
 %\bibliographystyle{ieeetr}
+
+\newpage
+
+\appendix
+\part{Annexes}
+\section{Programari}
+Per poder realitzar aquest treball ha sigut necessari fer un ús extensiu d'eines informàtiques. Penso que és important posar en valor totes aquestes eines utilitzades que, directa o indirectament han afectat en el desenvolupament del treball. Tot el programari que s'ha utliitzat durant el transcurs del treball és programari lliure, de codi obert i gratuït.
+
+\subsection{Sistemes operatius}
+Encara que la majoria de programes utilitzats tenen versions per a altres sistemes operatius, jo els he utilitzat sobre sistemes GNU/Linux, concretament amb distribucions Ubuntu i Debian.
+
+\subsection{Processador de text}
+Per tal de poder redactar el treball ha sigut necessari un processador de textos especial. Ha sigut necessari escriure un gran nombre de fórmules i expressions matemàtiques, pseudocodi, programes complets... i en aquest aspecte \LaTeX  ha ajudat molt. LaTeX és un "sistema de composició de text" amb una "alta qualitat tipogràfica", on en lloc d'escriure el text podríem dir que es programa. D'aquesta manera s'aconsegueix exactament el que es desitja, essent possible modificar tots i cadascun dels paràmetres del document.
+Per exemple: 
+la fórmula
+\[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]
+s'escriu a LaTeX com a 
+\begin{minted}[breaklines=true]{tex}
+\[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]
+\end{minted}
+Posteriorment, tot el codi es compila i es genera un fitxer .pdf amb tot el codi interpretat.
+
+També permet la utilització de diversos paquets que afegeixen funcionalitats. Durant la redaccó d'aquesta memòria se n'han utilitzat un total de 32. Els següents són els més importants:
+
+\subsubsection{Tikz i tkz-berge}
+La gran majoria de imatges fetes per mi mateix s'han fet a través d'aquests paquets. Inclouen diverses funcions orientades a grafs i permeten dibuixar-los tal com es desitgin. La següent imatge d'un graf 
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round,orange] (3) at (0,4) {$v_{3}$};
+		\node[round,orange] (4) at (0,0) {$v_{4}$};
+		\node[round,orange] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		
+		\Edge[label=$5$](2)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$2$](3)(4)
+
+	\end{tikzpicture}
+\end{figure}
+
+s'escriu a LaTeX com a 
+
+\begin{minted}[breaklines=true]{tex}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+		\node[round,orange] (3) at (0,4) {$v_{3}$};
+		\node[round,orange] (4) at (0,0) {$v_{4}$};
+		\node[round,orange] (2) at (4,0) {$v_{2}$};
+		\node[round,orange] (1) at (4,4) {$v_{1}$};
+		\node[round,orange] (0) at (6,2) {$v_{0}$};
+
+		
+		\Edge[label=$5$](2)(4)
+		\tikzset{EdgeStyle/.style={orange}}
+		\Edge[label=$1$](0)(1)
+		\Edge[label=$3$](1)(2)
+		\Edge[label=$4$](1)(4)
+		\Edge[label=$2$](3)(4)
+
+	\end{tikzpicture}
+\end{figure}
+
+\end{minted}
+
+\subsubsection{Minted i Algorithm2e}
+Minted és el paquet que permet introduïr codi amb el seu format corresponent i ressaltant la sintaxi. D'altra banda, algorithm2e és l'encarregat de donar format al pseudocodi.
+
+\subsection{GeoGebra}
+GeoGebra és un porgrama muliús, útil tant en el camp de la geometria, com en l'àlgebra o el càlcul. En aquest cas ha estat utilitzat per a generar les imatges dels punts de Fermat i alguna altra figura concreta com el polígon del problema de les càmeres de seguretat.
+
+\subsection{Python} 
+Python és un lenguatge de propòsit general i d'alt nivell que busca senzillesa i eficiència fent que la sintaxi sigui més senzilla de llegir. Aquest llenguatge permet escriure programes més entenedors i en menys línies que altres llenguatges com C/C++.
+
+\newpage
+\section{Algorismes}
+\subsection{DFS}
+\subsubsection{Codi}
+\begin{minted}[frame=lines, breaklines=true]{python}
+parent={}
+topo=[] 
+def DFS(Adj):
+    node=[]
+    for i in range(0, len(Adj)):
+        node.append(i)
+
+    for s in node:
+        if s not in parent:
+            print "From node %d:" %s
+            print s            
+            parent[s]=None
+            DFS_recursive(Adj, s)
+    print "Recursion order (topological sort for directed acyclic graphs):"
+    topo.reverse()    
+    print topo
+
+
+def DFS_recursive(Adj, s):
+    for v in Adj[s]:
+        if v not in parent:                
+            print v
+            parent[v]=s
+            DFS_recursive(Adj, v)
+    topo.append(s)
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+G={0:[1,2,3], 1:[3,4], 2:[4], 3:[4], 4:[]}
+print DFS(G)
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines, breaklines=true]{text}
+Des de 0 es pot arribar a:
+0
+1
+3
+4
+2
+Ordenació topològica:
+[0, 2, 1, 3, 4]
+\end{minted}
+
+\subsection{BFS}
+\subsubsection{Codi}
+\begin{minted}[frame=lines, breaklines=true]{python}
+def BFS(Adj, s):
+    level={s:0}
+    parent={s:None}
+    i=1
+    frontier=[s]
+    print s
+    while frontier:
+        next=[]
+        for u in frontier:
+            for v in Adj[u]:
+                if v not in  level:
+                    level[v]=i
+                    parent[v]=u
+                    next.append(v)
+                    print v
+        frontier=next
+        i+=1
+    print level
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+G={0:[1,2,3], 1:[3,4], 2:[4], 3:[4], 4:[]}
+print BFS(G, 0)
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines, breaklines=true]{text}
+{0: 0, 1: 1, 2: 1, 3: 1, 4: 2}
+\end{minted}
+
+
+\subsection{Dijkstra}
+\subsubsection{Codi}
+\begin{minted}[frame=lines, breaklines=true]{python}
+def Dijkstra(Adj, s):
+    Q={}
+    dist={}
+    tree={}
+    for i in range(0, len(Adj)):
+        Q[i]=float("inf")
+        dist[i]=float("inf")
+    Q[s]=0
+    while Q:
+        u = min(Q, key=Q.get)
+        dist[u] = Q[u]
+        for v in Adj[u]:
+            if v in Q:
+                if Q[v] > Q[u] + Adj[u][v]:
+                    Q[v] = Q[u] + Adj[u][v]
+                    tree[v] = u
+        Q.pop(u)
+        
+    return dist, tree
+
+
+def OrderedDijkstra(Adj, s):
+    Q = dict.fromkeys(Adj.keys(), float("inf"))
+    dist = dict.fromkeys(Adj.keys(), float("inf"))
+    tree = {}
+    Q[s] = 0
+    while Q:
+        u = min(Q, key=Q.get)
+        dist[u] = Q[u]
+        for v in Adj[u]:[0, 2, 1, 4, 3, 5]
+            if v in Q:
+                if Q[v] > Q[u] + Adj[u][v]:
+                    Q[v] = Q[u] + Adj[u][v]
+                    tree[v] = u
+        Q.pop(u)
+        
+    return dist, tree
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+G={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
+distancies, arbre_anteriors = Dijkstra(G, 0)
+print distancies
+print arbre_apuntadors
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines, breaklines=true]{text}
+{0: 0, 1: 7, 2: 3, 3: 9, 4: 5}
+{1: 2, 2: 0, 3: 1, 4: 2}
+\end{minted}
+\subsection{Bellman-Ford}
+\subsubsection{Codi}
+\begin{minted}[frame=lines, breaklines=true]{python}
+def BellmanFord(Adj, s):
+    dist={}
+    tree={}
+    for i in range(0, len(Adj)):
+        dist[i]=float("inf")
+        tree[i]=None
+    dist[s]=0
+    
+    for i in range(0, len(Adj)-1):
+        for u in range(0, len(Adj)):
+            for v in Adj[u]:
+                if dist[v] > dist[u] + Adj[u][v]:
+                    dist[v] = dist[u] + Adj[u][v]
+                    tree[v]=u
+    for u in range(0, len(Adj)):
+        for v in Adj[u]:
+            if dist[v] > dist[u] + Adj[u][v]:
+                print "There are negative-weight cycles"
+                break
+    return dist, tree
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+G={0:{1:16,2:0}, 1:{2:-32}, 2:{3:8,4:0}, 3:{4:-16}, 4:{5:4,6:0}, 5:{6:-8}, 6:{7:2,8:0}, 7:{8:-4}, 8:{9:1,10:0}, 9:{10:-2},10:{}}
+distancies, arbre_apuntadors = BellmanFord(G, 0)
+print distancies
+print arbre_apuntadors
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines, breaklines=true]{text}
+{0: 0, 1: 16, 2: -16, 3: -8, 4: -24, 5: -20, 6: -28, 7: -26, 8: -30, 9: -29, 10: -31}
+{0: None, 1: 0, 2: 1, 3: 2, 4: 3, 5: 4, 6: 5, 7: 6, 8: 7, 9: 8, 10: 9}
+\end{minted}
+\subsection{Prim}
+\subsubsection{Codi}
+\begin{minted}[frame=lines, breaklines=true]{python}
+def Prim(Adj):
+    Q={}
+    tree={}
+    for i in range(0,len(Adj)):
+        Q[i]=float("inf")
+    Q[0]=0
+    while Q:
+        u = min(Q, key=Q.get)
+        for v in Adj[u]:
+            if v in Q and Adj[u][v] < Q[v]:
+                Q[v] = Adj[u][v]
+                tree[v] = u
+        Q.pop(u)
+    return tree
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+G={1:{2:1, 3:2},0:{1:10,2:3},2:{1:4, 3:8, 4:2},4:{3:9},3:{4:7}}
+print Prim(G)
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines, breaklines=true]{text}
+{1: 2, 2: 0, 3: 1, 4: 2}
+\end{minted}
+
+\subsection{Kruskal}
+\subsubsection{Codi}
+\begin{minted}[frame=lines, breaklines=true]{python}
+def Kruskal(Adj):
+    subtree = UnionFind()
+    tree = [] 
+    for e, u, v in sorted((Adj[u][v],u,v) for u in Adj for v in Adj[u]):
+        for u in Adj:
+            for v in Adj[u]:
+                if subtree[u] != subtree[v]:
+                    tree.append((u,v))
+                    subtree.union(u,v)
+    return tree
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+G={0:{1:8,3:2},1:{0:8,2:5,3:3,4:1},2:{1:5,3:2,4:4},3:{0:2,1:3,2:2},4:{1:1,2:4}}
+print Prim(G)
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines, breaklines=true]{text}
+[(0, 1), (0, 3), (1, 2), (1, 4)]
+\end{minted}
+
+\subsection{Floyd-Warshall}
+\begin{minted}[frame=lines, breaklines=true]{python}
+def FloydWarshall(Adj):
+    dist=[[float("inf") for x in range(len(Adj))] for y in range(len(Adj))]
+    for i in range(0,len(Adj)):
+       dist[i][i] = 0
+    for v in range(len(Adj)):
+        for u in Adj[v]:
+            dist[v][u] = Adj[v][u]
+    for x in range(len(Adj)):
+        for u in range(len(Adj)):
+            for v in range(len(Adj)):
+                if dist[u][v] > dist[u][x] + dist[x][v]:
+                    dist[u][v] = dist[u][x] + dist[x][v]
+    return dist
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+G={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
+print FloydWarshall(G)
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines, breaklines=true]{text}
+[[0, 7, 3, 9, 5], 
+[inf, 0, 1, 2, 3], 
+[inf, 4, 0, 6, 2], 
+[inf, inf, inf, 0, 7], 
+[inf, inf, inf, 9, 0]]
+\end{minted}
+
+
+\subsection{Hamilton}
+\subsubsection{Codi}
+\begin{minted}[frame=lines, breaklines=true]{python}
+def Hamilton_recursive(Adj, s, e, path):
+    path = path + [s]
+    if s == e:
+        return path
+    for n in Adj[s]:
+        if n not in path:
+            nou_path = Hamilton_recursive(Adj, n, e, path)
+            if nou_path: 
+                return nou_path
+    return None
+    
+def Hamilton(Adj, s, e):
+    path=[]
+    return Hamilton_recursive(Adj, s, e, path)
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+G={0:[2,3,5,1],1:[0,2,4,5],2:[0,1,3,4],3:[0,2,4,5],4:[1,2,3,5],5:[0,1,3,4]}
+print Hamilton(G, 0, 5)
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines, breaklines=true]{text}
+[0, 2, 1, 4, 3, 5]
+\end{minted}
+
+\subsection{Euler}
+\subsubsection{Codi}
+\begin{minted}[frame=lines, breaklines=true]{python}
+def Euler(Adj):
+    graf = Adj
+    senar = [v for v in graf.keys() if len(graf[v])%2 != 0]
+    senar.append(graf.keys()[0])
+    print senar
+    
+    if len(senar)>3:
+        return None
+        
+    Q = [senar[0]]
+    path = []
+    while Q:
+        v = Q[-1]
+        if graf[v]:
+            u = graf[v][0]
+            Q.append(u)
+            del graf[u][graf[u].index(v)]
+            del graf[v][0]
+        else:
+            path.append(Q.pop())
+            
+    return path
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+G={0:[1,2,3],1:[0,2,3],2:[0,1,3,4],3:[0,1,2,4],4:[3,2]}
+print Euler(G)
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines, breaklines=true]{text}
+[1, 3, 4, 2, 3, 0, 2, 1, 0]
+\end{minted}
+
+
+\subsection{Coloració}
+\subsubsection{Codi}
+\begin{minted}[frame=lines, breaklines=true]{python}
+def coloring(Adj):
+    graph = sorted(Adj, key=lambda k:len(Adj[k]), reverse=True)
+    colors = {}
+    usat = False
+    actual = 0
+    
+    for i in range(0, len(Adj)):
+        colors[i]=None
+    colors[graph[0]]=0
+    
+    while None in colors.values():     
+        for v in graph:
+            if colors[v] == None:
+                for k in Adj[v]:
+                    if colors[k] == actual:
+                        usat = True
+                        break
+                    
+                if usat == False:
+                    colors[v] = actual
+                usat = False
+        actual = actual + 1
+    return colors
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[frame=lines, breaklines=true]{python}
+bipartite={0:[4,5,6,7], 1:[4,5,6,7], 2:[4,5,6,7], 3:[4,5,6,7], 4:[0,1,2,3], 5:[0,1,2,3], 6:[0,1,2,3], 7:[0,1,2,3]}
+print coloring(bipartite)
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[frame=lines]{text}
+{0: 0, 1: 0, 2: 0, 3: 0, 4: 1, 5: 1, 6: 1, 7: 1}
+\end{minted}
+
+
+\subsection{Metro}
+\subsubsection{Codi}
+\begin{minted}[frame=lines]{python}
+def metro(Adj, inici, final):
+    recorregut=[]
+    
+    print "Punt inicial:", inici.decode("ISO-8859-15")
+    
+    print "Punt final:", final.decode("ISO-8859-15")
+    
+    dist, tree = OrderedDijkstra(Adj, inici)
+    print type(inici)
+    print type(final)
+
+    i = final    
+    while tree[i] != inici:
+        recorregut.append(tree[i])
+        i = tree[i]
+    
+    recorregut.append(inici)        
+    recorregut.reverse()
+
+    total= dist[final]+(25*(len(recorregut)-2))
+        
+    minuts = total/60
+    segons = (total%60)*0.60
+    print "Temps net del recorregut:", dist[final]
+    print "Temps total del recorregut:", int(minuts),"minuts i", int(segons), "segons"
+
+    print "Recorregut:",   
+    print "[",
+    for i in range(0,len(recorregut)):
+        print recorregut[i].decode("ISO-8859-15")+",",
+
+    print final.decode("ISO-8859-15"),"]"    
+\end{minted}
+\subsubsection{Exemple d'entrada}
+\begin{minted}[breaklines=true, mathescape, frame=lines]{python}
+graf_metro={"1_Hospital de Bellvitge":{"1_Bellvitge":90}, "1_Bellvitge":{"1_Hospital de Bellvitge":90, "1_Av. Carrilet":100},"1_Av. Carrilet":{"1_Bellvitge":100, "1_Rbla. Just Oliveras":65, "8_L'Hospitalet - Av. Carrilet":180}, "1_Rbla. Just Oliveras":{"1_Av. Carrilet":65, "1_Can Serra":60}, "1_Can Serra":{"1_Rbla. Just Oliveras":60, "1_Florida":60}, "1_Florida":{"1_Can Serra":60, "1_Torrassa":60}, "1_Torrassa":{"1_Florida":60, "1_Santa Eulàlia":85, "9S_Torrassa":240}, "1_Santa Eulàlia":{"1_Torrassa":85,"1_Mercat Nou":75}, "1_Mercat Nou":{"1_Santa Eulàlia":75, "1_Plaça de Sants":60}, "1_Plaça de Sants":{"1_Mercat Nou":60, "1_Hostafrancs":50, "5_Plaça de Sants":282}, "1_Hostafrancs":{"1_Plaça de Sants:":50, "1_Espanya":55}, "1_Espanya":{"1_Hostafrancs":55, "1_Rocafort":60, "3_Espanya":209, "8_Espanya":120}, "1_Rocafort":{"1_Espanya":60, "1_Urgell":55}, "1_Urgell":{"1_Rocafort":55, "1_Universitat":58}, "1_Universitat":{"1_Urgell":58, "1_Catalunya":50, "2_Universitat":144}, "1_Catalunya":{"1_Universitat":50, "1_Urquinaona":58, "3_Catalunya":180, "6_Catalunya":360, "7_Catalunya":360}, "1_Urquinaona":{"1_Catalunya":58, "1_Arc de Triomf":85, "4_Urquinaona":256}, "1_Arc de Triomf":{"1_Urquinaona":85, "1_Marina":54}, "1_Marina":{"1_Arc de Triomf":54, "1_Glòries":80}, "1_Glòries":{"1_Marina":80, "1_Clot":78}, "1_Clot":{"1_Glòries":78,"1_Navas":65, "2_Clot":120}, "1_Navas":{"1_Clot":65, "1_La Sagrera":80}, "1_La Sagrera":{"1_Navas":80, "1_Fabra i Puig":89, "5_La Sagrera":100, "9N_La Sagrera":178, "10_La Sagrera":178}, "1_Fabra i Puig":{"1_La Sagrera":89, "1_Sant Andreu":101}, "1_Sant Andreu":{"1_Fabra i Puig":101, "1_Torras i Bages":88}, "1_Torras i Bages":{"1_Sant Andreu":88, "1_Trinitat Vella":77}, "1_Trinitat Vella":{"1_Torras i Bages":77, "1_Baró de Viver":60}, "1_Baró de Viver":{"1_Trinitat Vella":60, "1_Santa Coloma":83}, "1_Santa Coloma":{"1_Baró de Viver":83, "1_Fondo":84}, "1_Fondo":{"1_Santa Coloma":84, "9N_Fondo":140}, "2_Paral·lel":{"2_Sant Antoni":80, "3_Paral·lel":83}, "2_Sant Antoni":{"2_Paral·lel":80, "2_Universitat":66}, "2_Universitat":{"2_Sant Antoni":66, "2_Passeig de Gràcia":80, "1_Universitat":144}, "2_Passeig de Gràcia":{"2_Universitat":80, "2_Tetuan":95, "3_Passeig de Gràcia":360, "4_Passeig de Gràcia":120}, "2_Tetuan":{"2_Passeig de Gràcia":95, "2_Monumental":93}, "2_Monumental":{"2_Tetuan":93, "2_Sagrada Família":63}, "2_Sagrada Família":{"2_Monumental":63, "2_Encants":114, "5_Sagrada Família":178}, "2_Encants":{"2_Sagrada Família":114, "2_Clot":53}, "2_Clot":{"2_Encants":53, "2_Bac de Roda":89, "1_Clot":120}, "2_Bac de Roda":{"2_Clot":89, "2_Sant Martí":61}, "2_Sant Martí":{"2_Bac de Roda":61, "2_La Pau":74}, "2_La Pau":{"2_Sant Martí":74, "2_Verneda":76, "4_La Pau":60}, "2_Verneda":{"2_La Pau":76, "2_Artigues Sant Adrià":81}, "2_Artigues Sant Adrià":{"2_Verneda":81, "2_Sant Roc":91}, "2_Sant Roc":{"2_Artigues Sant Adrià":91, "2_Gorg":60}, 
+
+"2_Gorg":{"2_Sant Roc":60, "2_Pep Ventura":58, "10_Gorg":78}, "2_Pep Ventura":{"2_Gorg":58, "2_Badalona Pompeu Fabra":74}, "2_Badalona Pompeu Fabra":{"2_Pep Ventura":74}, "3_Zona Universitària":{"3_Palau Reial":67, "9S_Zona Universitària":265}, "3_Palau Reial":{"3_Zona Universitària":67, "3_Maria Cristina":65}, "3_Maria Cristina":{"3_Palau Reial":65, "3_Les Corts":68}, "3_Les Corts":{"3_Maria Cristina":68, "3_Plaça del Centre":63}, "3_Plaça del Centre":{"3_Les Corts":63, "3_Sants Estació":57},"3_Sants Estació":{"3_Plaça del Centre":57, "3_Tarragona":55, "5_Sants Estació":232},"3_Tarragona":{"3_Sants Estació":55, "3_Espanya":65}, "3_Espanya":{"3_Tarragona":65, "3_Poble Sec":67, "1_Espanya":209, "8_Espanya":360}, "3_Poble Sec":{"3_Espanya":67, "3_Paral·lel":70}, "3_Paral·lel":{"3_Poble Sec":70, "3_Drassanes":72, "2_Paral·lel":83}, "3_Drassanes":{"3_Paral·lel":72, "3_Liceu":75}, "3_Liceu":{"3_Drassanes":75, "3_Catalunya":60}, "3_Catalunya":{"3_Liceu":60, "3_Passeig de Gràcia":70, "1_Catalunya":180, "6_Catalunya":180, "7_Catalunya":180}, "3_Passeig de Gràcia":{"3_Catalunya":70, "3_Diagonal":77, "2_Passig de Gràcia":360, "4_Passeig de Gràcia":238}, "3_Diagonal":{"3_Passeig de Gràcia":77, "3_Fontana":75, "5_Diagonal":217, "6_Provença":360, "7_Provença":360}, "3_Fontana":{"3_Diagonal":75, "3_Lesseps":55}, "3_Lesseps":{"3_Fontana":55, "3_Vallcarca":85}, "3_Vallcarca":{"3_Lesseps":85, "3_Penitents":90}, "3_Penitents":{"3_Vallcarca":90, "3_Vall d'Hebron":80}, "3_Vall d'Hebron":{"3_Penitents":80, "3_Montbau":62, "5_Vall d'Hebron":204}, "3_Montbau":{"3_Vall d'Hebron":62, "3_Mundet":64}, "3_Mundet":{"3_Montbau":64, "3_Valldaura":78}, "3_Valldaura":{"3_Mundet":78, "3_Canyelles":79}, "3_Canyelles":{"3_Valldaura":79, "3_Roquetes":94}, "3_Roquetes":{"3_Canyelles":94, "3_Trinitat Nova":84}, "3_Trinitat Nova":{"3_Roquetes":84, "4_Trinitat Nova":210, "11_Trinitat Nova":210}, "4_Trinitat Nova":{"4_Via Júlia":99, "3_Trinitat Nova":210, "11_Trinitat Nova":0}, "4_Via Júlia":{"4_Trinitat Nova":99, "4_Llucmajor":87}, "4_Llucmajor":{"4_Via Júlia":87, "4_Maragall":161}, "4_Maragall":{"4_Llucmajor":161, "4_Guinardó Hospital de Sant Pau":88, "5_Maragall":191}, "4_Guinardó Hospital de Sant Pau":{"4_Maragall":88, "4_Alfons X":86}, "4_Alfons X":{"4_Guinardó Hospital de Sant Pau":86, "4_Joanic":77}, "4_Joanic":{"4_Alfons X":77, "4_Verdaguer":89}, "4_Verdaguer":{"4_Joanic":89, "4_Girona":86, "5_Verdaguer":218}, "4_Girona":{"4_Verdaguer":86, "4_Passeig de Gràcia":83}, "4_Passeig de Gràcia":{"4_Girona":83, "4_Urquinaona":92, "2_Passeig de Gràcia":120, "3_Passeig de Gràcia":238}, "4_Urquinaona":{"4_Passeig de Gràcia":92, "4_Jaume I":60, "1_Urquinaona":256}, "4_Jaume I":{"4_Urquinaona":60, "4_Barceloneta":78}, "4_Barceloneta":{"4_Jaume I":78, "4_Ciutadella Vila Olímpica":82}, "4_Ciutadella Vila Olímpica":{"4_Barceloneta":82, "4_Bogatell":113}, "4_Bogatell":{"4_Ciutadella Vila Olímpica":113, "4_Llacuna":62}, "4_Llacuna":{"4_Bogatell":62, "4_Poblenou":64}, "4_Poblenou":{"4_Llacuna":64, "4_Selva del Mar":66}, "4_Selva del Mar":{"4_Poblenou":66, "4_El Maresme Fòrum":86}, "4_El Maresme Fòrum":{"4_Selva del Mar":86, "4_Besòs Mar":65},
+
+"4_Besòs Mar":{"4_El Maresme Fòrum":65, "4_Besòs":67}, "4_Besòs":{"4_Besòs Mar":67, "4_La Pau":76}, "4_La Pau":{"4_Besòs":76, "2_La Pau":60}, "5_Cornellà Centre":{"5_Gavarra":90}, "5_Gavarra":{"5_Cornellà Centre":90, "5_Sant Ildefons":85}, "5_Sant Ildefons":{"5_Gavarra":85, "5_Can Boixeres":74}, "5_Can Boixeres":{"5_Sant Ildefons":74, "5_Can Vidalet":90}, "5_Can Vidalet":{"5_Can Boixeres":90, "5_Pubilla Cases":83}, "5_Pubilla Cases":{"5_Can Vidalet":83, "5_Collblanc":105}, "5_Collblanc":{"5_Pubilla Cases":105, "5_Badal":70, "9S_Collblanc":240}, "5_Badal":{"5_Collblanc":70, "5_Plaça de Sants":74}, "5_Plaça de Sants":{"5_Badal":74, "5_Sants Estació":79, "1_Plaça de Sants":282}, "5_Sants Estació":{"5_Plaça de Sants":79, "5_Entença":73, "3_Sants Estació":232}, "5_Entença":{"5_Sants Estació":73, "5_Hospital Clínic":64}, "5_Hospital Clínic":{"5_Entença":64, "5_Diagonal":78}, "5_Diagonal":{"5_Hospital Clínic":78, "5_Verdaguer":78, "3_Diagonal":217, "6_Provença":180, "7_Provença":180}, "5_Verdaguer":{"5_Diagonal":78, "5_Sagrada Família":75, "4_Verdaguer":218}, "5_Sagrada Família":{"5_Verdaguer":75, "5_Sant Pau Dos de Maig":85, "2_Sagrada Família":178}, "5_Sant Pau Dos de Maig":{"5_Sagrada Família":85, "5_Camp de l'Arpa":63}, "5_Camp de l'Arpa":{"5_Sant Pau Dos de Maig":63, "5_La Sagrera":93}, "5_La Sagrera":{"5_Camp de l'Arpa":93, "5_Congrés":85, "1_La Sagrera":100, "9N_La Sagrera":233, "10_La Sagrera":233}, "5_Congrés":{"5_La Sagrera":85, "5_Maragall":60}, "5_Maragall":{"5_Congrés":60, "5_Virrei Amat":60, "4_Maragall":191}, "5_Virrei Amat":{"5_Maragall":60, "5_Vilapicina":74}, "5_Vilapicina":{"5_Virrei Amat":74, "5_Horta":75}, "5_Horta":{"5_Vilapicina":75, "5_El Carmel":78}, "5_El Carmel":{"5_Horta":78, "5_El Coll La Teixonera":80}, "5_El Coll La Teixonera":{"5_El Carmel":80, "5_Vall d'Hebron":81}, "5_Vall d'Hebron":{"5_El Coll La Teixonera":81, "3_Vall d'Hebron":204}, "6_Catalunya":{"6_Provença":120, "1_Catalunya":360, "3_Catalunya":180, "7_Catalunya":5}, "6_Provença":{"6_Catalunya":120, "6_Gràcia":120, "3_Diagonal":360, "5_Diagonal":180, "7_Provença":5}, "6_Gràcia":{"6_Provença":120, "6_Sant Gervasi":60, "7_Gràcia":5}, "6_Sant Gervasi":{"6_Gràcia":60, "6_Muntaner":120, "7_Plaça Molina":5}, "6_Muntaner":{"6_Sant Gervasi":120, "6_La Bonanova":60}, "6_La Bonanova":{"6_Muntaner":60, "6_Les Tres Torres":120}, "6_Les Tres Torres":{"6_La Bonanova":120, "6_Sarrià":60}, "6_Sarrià":{"6_Les Tres Torres":60, "6_Reina Elisenda":120}, "6_Reina Elisenda":{"6_Sarrià":120},"7_Catalunya":{"7_Provença":120, "1_Catalunya":360,"3_Catalunya":180, "6_Catalunya":5},"7_Provença":{"7_Catalunya":120, "7_Gràcia":120, "3_Diagonal":360, "5_Diagonal":180, "6_Provença":5},"7_Gràcia":{"7_Provença":120,"7_Plaça Molina":60,"6_Gràcia":5},"7_Plaça Molina":{"7_Gràcia":60,"7_Pàdua":120, "6_Sant Gervasi":5},"7_Pàdua":{"7_Plaça Molina":120,"7_El Putxet":60},"7_El Putxet":{"7_Pàdua":60, "7_Av. Tibidabo":60}, "7_Av. Tibidabo":{"7_El Putxet":60}, "8_Espanya":{"8_Magòria La Campana":120, "1_Espanya":120, "3_Espanya":360}, "8_Magòria La Campana":{"8_Espanya":120, "8_Ildefons Cerdà":120}, 
+
+"8_Ildefons Cerdà":{"8_Magòria La Campana":120, "8_Europa Fira":120}, "8_Europa Fira":{"8_Ildefons Cerdà":120, "8_Gornal":120, "9S_Europa Fira":180}, "8_Gornal":{"8_Europa Fira":120, "8_Sant Josep":120}, "8_Sant Josep":{"8_Gornal":120, "8_L'Hospitalet - Av. Carrilet":60}, "8_L'Hospitalet - Av. Carrilet":{"8_Sant Josep":60, "8_Almeda":180, "1_Av. Carrilet":180}, "8_Almeda":{"8_L'Hospitalet - Av. Carrilet":180, "8_Cornellà - Riera":120}, "8_Cornellà - Riera":{"8_Almeda":120, "8_Sant Boi":180}, "8_Sant Boi":{"8_Cornellà - Riera":180, "8_Molí Nou - Ciutat Cooperativa":120}, "8_Molí Nou - Ciutat Cooperativa":{"8_Sant Boi":120}, "9N_La Sagrera":{"9N_Onze de Setembre":116, "1_La Sagrera":178, "5_La Sagrera":233, "10_La Sagrera":5}, "9N_Onze de Setembre":{"9N_La Sagrera":116, "9N_Bon Pastor":115, "10_Onze de Setembre":5}, "9N_Bon Pastor":{"9N_Onze de Setembre":114, "9N_Can Peixauet":125, "10_Bon Pastor":5}, "9N_Can Peixauet":{"9N_Bon Pastor":125, "9N_Santa Rosa":65}, "9N_Santa Rosa":{"9N_Can Peixauet":65, "9N_Fondo":87}, "9N_Fondo":{"9N_Santa Rosa":87, "9N_Esglèsia Major":72, "1_Fondo":140}, "9N_Esglèsia Major":{"9N_Fondo":72, "9N_Singuerlín":76}, "9N_Singuerlín":{"9N_Esglèsia Major":76, "9N_Can Zam":103}, "9N_Can Zam":{"9N_Singuerlín":103}, "9S_Aeroport T1":{"9S_Aeroport T2":240}, "9S_Aeroport T2":{"9S_Aeroport T1":240, "9S_Mas Blau":80}, "9S_Mas Blau":{"9S_Aeroport T2":80, "9S_Parc Nou":120}, "9S_Parc Nou":{"9S_Mas Blau":120, "9S_Cèntric":85}, "9S_Cèntric":{"9S_Parc Nou":85, "9S_El Prat Estació":95}, "9S_El Prat Estació":{"9S_Cèntric":95, "9S_Les Moreres":150}, "9S_Les Moreres":{"9S_El Prat Estació":150, "9S_Mercabarna":100}, "9S_Mercabarna":{"9S_Les Moreres":100, "9S_Parc Logístic":120}, "9S_Parc Logístic":{"9S_Mercabarna":120, "9S_Fira":125}, "9S_Fira":{"9S_Parc Logístic":125, "9S_Europa Fira":70}, "9S_Europa Fira":{"9S_Fira":70, "9S_Can Tries Gornal":70, "8_Europa Fira":180}, "9S_Can Tries Gornal":{"9S_Europa Fira":70, "9S_Torrassa":75}, "9S_Torrassa":{"9S_Can Tries Gornal":75, "9S_Collblanc":110, "1_Torrassa":240}, "9S_Collblanc":{"9S_Torrassa":110, "9S_Zona Universitària":105, "5_Collblanc":240}, "9S_Zona Universitària":{"9S_Collblanc":105, "3_Zona Universitària":265}, "10_La Sagrera":{"10_Onze de Setembre":116, "1_La Sagrera":178, "5_La Sagrera":233, "9N_La Sagrera":5}, "10_Onze de Setembre":{"10_La Sagrera":116, "10_Bon Pastor":115, "9N_Onze de Setembre":5}, "10_Bon Pastor":{"10_Onze de Setembre":115, "10_Llefià":133, "9N_Bon Pastor":5}, "10_Llefià":{"10_Bon Pastor":133, "10_La Salut":59}, "10_La Salut":{"10_Llefià":59, "10_Gorg":111}, "10_Gorg":{"10_La Salut":111, "2_Gorg":78}, "11_Trinitat Nova":{"11_Casa de l'Aigua":43, "3_Trinitat Nova":210, "4_Trinitat Nova":0}, "11_Casa de l'Aigua":{"11_Trinitat Nova":43, "11_Torre Baró Vallbona":111}, "11_Torre Baró Vallbona":{"11_Casa de l'Aigua":111, "11_Ciutat Meridiana":60}, "11_Ciutat Meridiana":{"11_Torre Baró Vallbona":60, "11_Can Cuiàs":45}, "11_Can Cuiàs":{"11_Ciutat Meridiana":45}}
+
+metro(graf_metro, "2_Paral·lel", "11_Casa de l'Aigua")
+\end{minted}
+\subsubsection{Exemple de sortida}
+\begin{minted}[breaklines=true, frame=lines]{text}
+Punt inicial: 2_Paral·lel
+Punt final: 11_Casa de l'Aigua
+Temps net del recorregut: 1245
+Temps total del recorregut: 26 minuts i 6 segons
+Recorregut: [ 2_Paral·lel, 2_Sant Antoni, 2_Universitat, 2_Passeig de Gràcia, 4_Passeig de Gràcia, 4_Girona, 4_Verdaguer, 4_Joanic, 4_Alfons X, 4_Guinardó Hospital de Sant Pau, 4_Maragall, 4_Llucmajor, 4_Via Júlia, 4_Trinitat Nova, 11_Trinitat Nova, 11_Casa de l'Aigua ]
+\end{minted}
+
+
+
 \end{document}

@@ -1,14 +1,17 @@
-[0] Config.pm:340> INFO - This is Biber 2.4
-[0] Config.pm:343> INFO - Logfile is 'general.blg'
-[53] biber:287> INFO - === dg nov 13, 2016, 01:59:56
-[164] Biber.pm:348> INFO - Reading 'general.bcf'
-[347] Biber.pm:739> INFO - Using all citekeys in bib section 0
-[355] Biber.pm:3151> INFO - Processing section 0
-[393] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio2.bib' for section 0
-[414] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
-[433] bibtex.pm:974> INFO - Found BibTeX data source 'biblio2.bib'
-[898] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
-[898] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[898] Biber.pm:3028> INFO - Sorting list 'nty/global' of type 'entry' with scheme 'nty' and locale 'ca-AD'
-[945] bbl.pm:519> INFO - Writing 'general.bbl' with encoding 'latin9'
-[1068] bbl.pm:615> INFO - Output to general.bbl
+[1] Config.pm:340> INFO - This is Biber 2.4
+[1] Config.pm:343> INFO - Logfile is 'general.blg'
+[60] biber:287> INFO - === dl nov 14, 2016, 02:31:17
+[170] Biber.pm:348> INFO - Reading 'general.bcf'
+[348] Biber.pm:739> INFO - Using all citekeys in bib section 0
+[357] Biber.pm:3151> INFO - Processing section 0
+[395] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio2.bib' for section 0
+[409] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[422] bibtex.pm:974> INFO - Found BibTeX data source 'biblio2.bib'
+[566] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio3.bib' for section 0
+[574] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[581] bibtex.pm:974> INFO - Found BibTeX data source 'biblio3.bib'
+[896] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[896] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
+[896] Biber.pm:3028> INFO - Sorting list 'none/global' of type 'entry' with scheme 'none' and locale 'ca-AD'
+[927] bbl.pm:519> INFO - Writing 'general.bbl' with encoding 'latin9'
+[1053] bbl.pm:615> INFO - Output to general.bbl

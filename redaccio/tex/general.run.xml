@@ -80,6 +80,7 @@
     </requires>
     <requires type="editable">
       <file>biblio2.bib</file>
+      <file>biblio3.bib</file>
     </requires>
   </external>
 </requests>

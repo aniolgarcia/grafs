@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{x}{	\PYGZob{}begin\PYGZob{}minted\PYGZcb{}[breaklines=true]\PYGZob{}python\PYGZcb{}\PYGZcb{}}
+\PYG{x}{def DFS\PYGZus{}recursive(Adj, s):}
+\PYG{x}{    for v in Adj[s]:}
+\PYG{x}{        if v not in parent:}
+\PYG{x}{            print v}
+\PYG{x}{            parent[v]=s}
+\PYG{x}{            DFS\PYGZus{}recursive(Adj, v)}
+\PYG{x}{    topo.append(s)}
+\end{Verbatim}

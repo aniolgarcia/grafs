@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{FloydWarshall}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{):}
+    \PYG{n}{dist}\PYG{o}{=}\PYG{p}{[[}\PYG{n+nb}{float}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}inf\PYGZdq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{))]} \PYG{k}{for} \PYG{n}{y} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{))]}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{)):}
+       \PYG{n}{dist}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{)):}
+        \PYG{k}{for} \PYG{n}{u} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]:}
+            \PYG{n}{dist}\PYG{p}{[}\PYG{n}{v}\PYG{p}{][}\PYG{n}{u}\PYG{p}{]} \PYG{o}{=} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{v}\PYG{p}{][}\PYG{n}{u}\PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{)):}
+        \PYG{k}{for} \PYG{n}{u} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{)):}
+            \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{)):}
+                \PYG{k}{if} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{v}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{x}\PYG{p}{]} \PYG{o}{+} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{n}{v}\PYG{p}{]:}
+                    \PYG{n}{dist}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{x}\PYG{p}{]} \PYG{o}{+} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{x}\PYG{p}{][}\PYG{n}{v}\PYG{p}{]}
+    \PYG{k}{return} \PYG{n}{dist}
+\end{Verbatim}

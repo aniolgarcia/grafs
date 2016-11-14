@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+Des de 0 es pot arribar a:
+0
+1
+3
+4
+2
+Ordenació topològica:
+[0, 2, 1, 3, 4]
+\end{Verbatim}

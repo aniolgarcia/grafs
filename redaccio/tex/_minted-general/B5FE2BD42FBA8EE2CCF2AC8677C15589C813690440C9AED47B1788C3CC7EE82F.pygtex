@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{DFS\PYGZus{}recursive}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{s}\PYG{p}{):}
+    \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{s}\PYG{p}{]:}
+        \PYG{k}{if} \PYG{n}{v} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{parent}\PYG{p}{:}
+            \PYG{k}{print} \PYG{n}{v}
+            \PYG{n}{parent}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]}\PYG{o}{=}\PYG{n}{s}
+            \PYG{n}{DFS\PYGZus{}recursive}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{v}\PYG{p}{)}
+    \PYG{n}{topo}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{s}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,57 @@
+\begin{figure}[h]
+\subfloat[]{
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=.2, transform shape]
+\clip(-6,-26.902) rectangle (30,15);
+\draw [line width=1.2pt] (0,10)-- (18.244,10);
+\draw [line width=1.2pt] (18.244,10)-- (20,0);
+\draw [line width=1.2pt] (20,0)-- (14,0);
+\draw [line width=1.2pt] (0,0)-- (5,0);
+\draw [line width=1.2pt] (5,0)-- (14,0);
+\draw [line width=1.2pt] (14,0)-- (20,0);
+\draw [line width=1.2pt] (0,10)-- (0,0);
+\draw [line width=1.2pt] (5,0)-- (5,6.75);
+\draw [line width=1.2pt] (5,6.75)-- (8.648,6.75);
+\draw [line width=1.2pt] (8.648,6.75)-- (8.648,8.4);
+\draw [line width=1.2pt] (14,8.4)-- (8.648,8.4);
+\draw [line width=1.2pt] (14,8.4)-- (14,6.75);
+\draw [line width=1.2pt] (14,6.75)-- (15.5,6.75);
+\draw [line width=1.2pt] (15.5,6.75)-- (15.5,3.133);
+\draw [line width=1.2pt] (15.5,3.133)-- (14,3.133);
+\draw [line width=1.2pt] (14,3.133)-- (14,0);
+\end{tikzpicture}
+}
+\subfloat[]{
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm, scale=.2]
+\clip(-6,-26.902) rectangle (30,15);
+\draw [line width=1.2pt] (0,10)-- (18.244,10);
+\draw [line width=1.2pt] (18.244,10)-- (20,0);
+\draw [line width=1.2pt] (20,0)-- (14,0);
+\draw [line width=1.2pt] (0,0)-- (5,0);
+\draw [line width=1.2pt] (5,0)-- (14,0);
+\draw [line width=1.2pt] (14,0)-- (20,0);
+\draw [line width=1.2pt] (0,10)-- (0,0);
+\draw [line width=1.2pt] (5,0)-- (5,6.75);
+\draw [line width=1.2pt] (5,6.75)-- (8.648,6.75);
+\draw [line width=1.2pt] (8.648,6.75)-- (8.648,8.4);
+\draw [line width=1.2pt] (14,8.4)-- (8.648,8.4);
+\draw [line width=1.2pt] (14,8.4)-- (14,6.75);
+\draw [line width=1.2pt] (14,6.75)-- (15.5,6.75);
+\draw [line width=1.2pt] (15.5,6.75)-- (15.5,3.133);
+\draw [line width=1.2pt] (15.5,3.133)-- (14,3.133);
+\draw [line width=1.2pt] (14,3.133)-- (14,0);
+\draw [dash pattern=on 1pt off 1pt] (0,10)-- (5,0);
+\draw [dash pattern=on 1pt off 1pt] (0,10)-- (5,6.75);
+\draw [dash pattern=on 1pt off 1pt] (0,10)-- (8.648,6.75);
+\draw [dash pattern=on 1pt off 1pt] (0,10)-- (8.648,8.4);
+\draw [dash pattern=on 1pt off 1pt] (8.648,8.4)-- (18.244,10);
+\draw [dash pattern=on 1pt off 1pt] (14,8.4)-- (18.244,10);
+\draw [dash pattern=on 1pt off 1pt] (15.5,6.75)-- (18.244,10);
+\draw [dash pattern=on 1pt off 1pt] (15.5,6.75)-- (14,6.75);
+\draw [dash pattern=on 1pt off 1pt] (14,6.75)-- (18.244,10);
+\draw [dash pattern=on 1pt off 1pt] (15.5,6.75)-- (20,0);
+\draw [dash pattern=on 1pt off 1pt] (15.5,3.133)-- (20,0);
+\draw [dash pattern=on 1pt off 1pt] (14,3.133)-- (20,0);
+\end{tikzpicture}
+}
+\end{figure}
+
