@@ -1,17 +1,17 @@
-[1] Config.pm:340> INFO - This is Biber 2.4
+[0] Config.pm:340> INFO - This is Biber 2.4
 [1] Config.pm:343> INFO - Logfile is 'general.blg'
-[62] biber:287> INFO - === dl nov 14, 2016, 17:09:27
-[193] Biber.pm:348> INFO - Reading 'general.bcf'
-[367] Biber.pm:739> INFO - Using all citekeys in bib section 0
-[447] Biber.pm:3151> INFO - Processing section 0
-[605] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio2.bib' for section 0
-[619] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
-[631] bibtex.pm:974> INFO - Found BibTeX data source 'biblio2.bib'
-[784] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio3.bib' for section 0
-[793] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
-[800] bibtex.pm:974> INFO - Found BibTeX data source 'biblio3.bib'
-[1150] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1151] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1151] Biber.pm:3028> INFO - Sorting list 'none/global' of type 'entry' with scheme 'none' and locale 'ca-AD'
-[1182] bbl.pm:519> INFO - Writing 'general.bbl' with encoding 'latin9'
-[1307] bbl.pm:615> INFO - Output to general.bbl
+[60] biber:287> INFO - === dt nov 15, 2016, 01:03:40
+[164] Biber.pm:348> INFO - Reading 'general.bcf'
+[338] Biber.pm:739> INFO - Using all citekeys in bib section 0
+[347] Biber.pm:3151> INFO - Processing section 0
+[385] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio2.bib' for section 0
+[399] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[412] bibtex.pm:974> INFO - Found BibTeX data source 'biblio2.bib'
+[555] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio3.bib' for section 0
+[566] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[573] bibtex.pm:974> INFO - Found BibTeX data source 'biblio3.bib'
+[900] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[900] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
+[900] Biber.pm:3028> INFO - Sorting list 'none/global' of type 'entry' with scheme 'none' and locale 'ca-AD'
+[931] bbl.pm:519> INFO - Writing 'general.bbl' with encoding 'latin9'
+[1058] bbl.pm:615> INFO - Output to general.bbl

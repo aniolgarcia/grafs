@@ -1,6 +1,6 @@
 %% LyX 2.1.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[a4, 12pt, titlepage]{article}
+\documentclass[a4, 12pt, titlepage]{report}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage[catalan]{babel}
@@ -141,7 +141,8 @@ array element/.style = {
     \fontsize{11}{11}\selectfont}
 
 
-
+\setcounter{chapter}{-1}
+%\renewcommand{\baselinestretch}{1.5}
 
 
 \title{Els Grafs: xarxes, camins i connexions \\ \large De la matemàtica discreta a la realitat}
@@ -150,6 +151,7 @@ array element/.style = {
 
 
 \begin{document}
+%\pagenumbering{Roman}
 \maketitle
 \vfill
 \begin{figure}
@@ -208,8 +210,8 @@ Moltes gràcies a tots!
 \newpage	
 \tableofcontents
 \newpage
-
-\part{Presentació}
+\pagenumbering{arabic}
+\chapter{Presentació}
 
 El tema d'aquest treball, tal com diu el títol, tracta sobre els grafs: xarxes, camins i connexions. Pretén fer el pas de la matemàtica discreta a la realitat. Els grafs són una part d'aquesta matemàtica discreta i han passat a formar part del món en què vivim, un món que l'home ha anat creant al llarg del temps. Sovint desconeixem quin és l'entramat de mecanismes que fan funcionar moltes de les coses que ens envolten. %( El cert és que l'entorn que ens envolta és ple de matemàtiques; sovint en som usuaris però poques vegades ens n'adonem. Desconeixem, encara més,  quin és l'entramat de mecanismes que fan que moltes de les coses que ens envoltem,  i útilment utilitzem, funcionin.) 
 Al llarg del treball intento crear lligams entre la part més teòrica i abstracta i les aplicacions que se'n deriven. Intento endinsar-me en el coneixement per comprendre aquests mecanismes; Intento crear els mecanismes per que el coneixement esdevingui una eina pràctica i funcional. 
@@ -219,7 +221,7 @@ Des de feia un cert temps, ja tenia clar que el meu treball de recerca havia de 
 D'altra banda també hi havia els temes purament matemàtics. Aquesta opció suposava tractar unes matemàtiques a les quals no estava del tot avesat.
 Finalment, doncs, vaig decidir de fer un treball que combinés la teoria i rigorositat de les matemàtiques amb una part més aplicada de programació. Aquesta unió en la vaig trobar en la teoria de grafs.
 
-El meu primer contacte amb els grafs va ser amb el problema 9 de la Marató de Problemes 2015 \footnote{Veure www.cangur.org/marato/2015/}. Sense saber-ho, vaig calcular els meus primers arbres d'Steiner i vaig utilitzar manualment algorismes de grafs com el de Kruskal. El procés de resolució d'aquest problema va ser curió, diferent. El cert és que vaig percebre una porta oberta amb un llarg camí per endavant, un camí per descobrir, molt engrescador. I segurament aquest és el motiu per el qual vaig recuperar el tema i vaig decidir endisar-m'hi en el meu treball de recerca.   
+El meu primer contacte amb els grafs va ser amb el problema 9 de la Marató de Problemes 2015 \footnote{Veure www.cangur.org/marato/2015/}. Sense saber-ho, vaig calcular els meus primers arbres d'Steiner i vaig utilitzar manualment algorismes de grafs com el de Kruskal. El procés de resolució d'aquest problema va ser curiós, diferent. El cert és que vaig percebre una porta oberta amb un llarg camí per endavant, un camí per descobrir, molt engrescador. I segurament aquest és el motiu per el qual vaig recuperar el tema i vaig decidir endisar-m'hi en el meu treball de recerca.   
 
 \begin{figure}[H]
 \centering
@@ -403,7 +405,7 @@ A més de les fonts d'informació ja esmentades, cal afegir les persones que m'han
 
 
 \newpage
-\part{Introducció a la teoria de grafs}
+\chapter{Introducció a la teoria de grafs}
 
 Aquest primer apartat consisteix en la part més teòrica del treball.
 Explicaré breument la història d'aquesta branca de la matemàtica i
@@ -1380,7 +1382,7 @@ Com a conseqüència del teorema \ref{teorema:Euler}, per a tots els grafs $r$-reg
 
 
 \newpage
-\part{Camins i algorismes}
+\chapter{Camins i algorismes}
 
 \begin{flushright}
 \textit{"Simplicity is a prerequisite for reliability"}
@@ -2691,7 +2693,7 @@ Si el que es vol és pintar les arestes d'un graf en lloc dels vèrtexs, només cal
 \end{itemize}
 
 \newpage
-\part{Disseny de grafs}
+\chapter{Disseny de grafs}
 Fins ara, s'han mostrat i estudiat grafs que ja estan definits sobre els quals s'ha de fer alguna operació. Ara bé, en aplicacions reals de teoria de grafs, sovint no hi ha un graf determinat, sinó que s'ha de generar. Cal observar que en aquesta part de disseny de grafs els grafs són físics, és a dir, que existeixen com a tals situats en alguna superfície. En aquest cas no s'utilitzen com a modelitzacions abstractes i, per tant, les distàncies i situacions dels punts són importants. 
 
 \section{Punt de Fermat i l'arbre de Steiner}
@@ -2761,7 +2763,7 @@ Quan hi ha una situació on no es pot afegir cap node, el millor sol ser utilitza
 \\
 
 \newpage
-\part{Aplicacions pràctiques de la teoria de grafs}
+\chapter{Aplicacions pràctiques de la teoria de grafs}
 
 \section{Algorisme PageRank}
 Una de les aplicacions de teoria de grafs que utilitzem cada dia és l'algorisme PageRank de Google. A través d'aquest algorisme, el cercador pot saber quines pàgines web són més valorades per la comunitat d'usuaris en general i, per tant, en quin ordre s'han de presentar els resultats d'una cerca.
@@ -3052,7 +3054,7 @@ Recorregut: [ 3_Zona Universitària, 3_Palau Reial, 3_Maria Cristina, 3_Les Corts
 \end{minted}
 
 \newpage
-\part{Conclusions}
+\chapter{Conclusions}
 
 Durant aquest treball hem fet un camí juntament amb la teoria de grafs: l'hem vist néixer del pensament d'Euler; l'hem vist créixer acompanyada d'alguns dels més grans matemàtics de l'història; n'hem vist la seva manera d'entendre i modelitzar el món; l'hem acompanyada fins a la seva maduresa on, juntament amb més matemàtics i teòrics de les ciències de computació, ha col·laborat amb una infinitat d'àrees que en un principi semblaven distants a ella; i finalment ens ha ajudat a resoldre problemes quotidians.
 
@@ -3081,7 +3083,7 @@ Això sí: tot i que el camí sempre ha fet pujada, cal pensar que cada vegada som 
 \newpage
 
 \appendix
-\part{Annexes}
+\chapter{Annexes}
 \section{Programari}
 Per poder realitzar aquest treball ha sigut necessari fer un ús extensiu d'eines informàtiques. Penso que és important posar en valor totes aquestes eines utilitzades que, directa o indirectament han afectat en el desenvolupament del treball. Tot el programari que s'ha utliitzat durant el transcurs del treball és programari lliure, de codi obert i gratuït.
 
