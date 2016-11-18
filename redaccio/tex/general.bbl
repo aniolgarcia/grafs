@@ -18,98 +18,27 @@
 
 
 \refsection{0}
-  \sortlist[entry]{none/global}
-    \entry{EUL41}{incollection}{}
+  \sortlist[entry]{nty/global}
+    \entry{BAS94}{book}{}
       \name{author}{1}{}{%
-        {{hash=313151264cbe77aca604de197d093583}{%
-           family={EULER},
-           family_i={E\bibinitperiod},
-           given={L.},
-           given_i={L\bibinitperiod}}}%
+        {{hash=167915fe10991e7029fa1401bc6ebbb8}{%
+           family={BASART},
+           family_i={B\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
       }
-      \strng{namehash}{313151264cbe77aca604de197d093583}
-      \strng{fullhash}{313151264cbe77aca604de197d093583}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \list{publisher}{1}{%
+        {Universitat Autònoma de Barcelona}%
+      }
+      \strng{namehash}{167915fe10991e7029fa1401bc6ebbb8}
+      \strng{fullhash}{167915fe10991e7029fa1401bc6ebbb8}
+      \field{sortinit}{8}
+      \field{sortinithash}{ff392057b609ad7b4de0b8e2cc30b687}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Commentarii academiae scientiarum Petropolitanae}
-      \field{title}{Solutio problematis ad geometriam situs pertinentis}
-      \field{volume}{8}
-      \field{year}{1741}
-      \field{pages}{128\bibrangedash 140}
-      \range{pages}{13}
-      \keyw{,refer}
-    \endentry
-    \entry{VAN71}{article}{}
-      \name{author}{1}{}{%
-        {{hash=07d4bbf43ed7d7dc91ef55050fa6cd8a}{%
-           family={Vandermonde},
-           family_i={V\bibinitperiod},
-           given={Alexandre-Théophile},
-           given_i={A\bibinithyphendelim T\bibinitperiod}}}%
-      }
-      \strng{namehash}{07d4bbf43ed7d7dc91ef55050fa6cd8a}
-      \strng{fullhash}{07d4bbf43ed7d7dc91ef55050fa6cd8a}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Mémoires de l'Académie Royale des Sciences}
-      \field{title}{Remarques sur les problèmes de situation}
-      \field{year}{1771}
-      \field{pages}{566\bibrangedash 574}
-      \range{pages}{9}
-      \keyw{,refer}
-    \endentry
-    \entry{KEM79}{article}{}
-      \name{author}{1}{}{%
-        {{hash=fd19ebb19874947fef94625a860302bb}{%
-           family={KEMPE},
-           family_i={K\bibinitperiod},
-           given={A.\bibnamedelimi B.},
-           given_i={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-      }
-      \strng{namehash}{fd19ebb19874947fef94625a860302bb}
-      \strng{fullhash}{fd19ebb19874947fef94625a860302bb}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Amer. Journ. Maths.}
-      \field{number}{23}
-      \field{title}{On the geographical problem of the four colours}
-      \field{year}{1879}
-      \field{pages}{193\bibrangedash 200}
-      \range{pages}{8}
-      \keyw{,refer}
-    \endentry
-    \entry{AH77a}{article}{}
-      \name{author}{2}{}{%
-        {{hash=55c764f81305c9e56717d2181358207f}{%
-           family={APPEL},
-           family_i={A\bibinitperiod},
-           given={K.},
-           given_i={K\bibinitperiod}}}%
-        {{hash=4505510459197c1444c9e200efdf3cf6}{%
-           family={HANKEN},
-           family_i={H\bibinitperiod},
-           given={W.},
-           given_i={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{e1955f359ece65481ebfb79bfa9be07b}
-      \strng{fullhash}{e1955f359ece65481ebfb79bfa9be07b}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Scientific American}
-      \field{number}{27}
-      \field{title}{The Solution of the Four-Color Map Problem}
-      \field{year}{1977}
-      \field{pages}{108\bibrangedash 121}
-      \range{pages}{14}
-      \keyw{,refer}
+      \field{title}{Grafs: fonaments i algorismes}
+      \field{year}{1994}
+      \keyw{,biblio}
     \endentry
     \entry{AH77b}{article}{}
       \name{author}{2}{}{%
@@ -126,8 +55,8 @@
       }
       \strng{namehash}{e1955f359ece65481ebfb79bfa9be07b}
       \strng{fullhash}{e1955f359ece65481ebfb79bfa9be07b}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Illinois Journ. Maths.}
@@ -136,48 +65,6 @@
       \field{year}{1977}
       \field{pages}{429\bibrangedash 490}
       \range{pages}{62}
-      \keyw{,refer}
-    \endentry
-    \entry{KON36}{book}{}
-      \name{author}{1}{}{%
-        {{hash=02b119a93e8da95c1b682bf52358cf91}{%
-           family={KÖNIG},
-           family_i={K\bibinitperiod},
-           given={D.},
-           given_i={D\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Akademische Verlagsgesellschaft}%
-      }
-      \strng{namehash}{02b119a93e8da95c1b682bf52358cf91}
-      \strng{fullhash}{02b119a93e8da95c1b682bf52358cf91}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Theorie der endlichen und unendlichen Graphen}
-      \field{year}{1936}
-      \keyw{,refer}
-    \endentry
-    \entry{HAR69}{book}{}
-      \name{author}{1}{}{%
-        {{hash=5f5f1e758f2f003fc0be4e7acd908ea0}{%
-           family={HARARY},
-           family_i={H\bibinitperiod},
-           given={F.},
-           given_i={F\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Addison-Wesley}%
-      }
-      \strng{namehash}{5f5f1e758f2f003fc0be4e7acd908ea0}
-      \strng{fullhash}{5f5f1e758f2f003fc0be4e7acd908ea0}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Graph Theory}
-      \field{year}{1969}
       \keyw{,refer}
     \endentry
     \entry{AH77c}{article}{}
@@ -195,8 +82,8 @@
       }
       \strng{namehash}{e1955f359ece65481ebfb79bfa9be07b}
       \strng{fullhash}{e1955f359ece65481ebfb79bfa9be07b}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Illinois Journ. Maths.}
@@ -205,6 +92,33 @@
       \field{year}{1977}
       \field{pages}{491\bibrangedash 567}
       \range{pages}{77}
+      \keyw{,refer}
+    \endentry
+    \entry{AH77a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=55c764f81305c9e56717d2181358207f}{%
+           family={APPEL},
+           family_i={A\bibinitperiod},
+           given={K.},
+           given_i={K\bibinitperiod}}}%
+        {{hash=4505510459197c1444c9e200efdf3cf6}{%
+           family={HANKEN},
+           family_i={H\bibinitperiod},
+           given={W.},
+           given_i={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1955f359ece65481ebfb79bfa9be07b}
+      \strng{fullhash}{e1955f359ece65481ebfb79bfa9be07b}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific American}
+      \field{number}{27}
+      \field{title}{The Solution of the Four-Color Map Problem}
+      \field{year}{1977}
+      \field{pages}{108\bibrangedash 121}
+      \range{pages}{14}
       \keyw{,refer}
     \endentry
     \entry{CAY89}{article}{}
@@ -217,8 +131,8 @@
       }
       \strng{namehash}{a0092bfe4a36ff5d752a0c7d63e1caa6}
       \strng{fullhash}{a0092bfe4a36ff5d752a0c7d63e1caa6}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Quart. Journ. Maths.}
@@ -229,173 +143,32 @@
       \range{pages}{3}
       \keyw{,refer}
     \endentry
-    \entry{DIJ59}{article}{}
-      \name{author}{1}{}{%
-        {{hash=8e8d70867e756ece2fe2eca8c65aee5c}{%
-           family={DIJKSTRA},
+    \entry{OCW2}{online}{}
+      \name{author}{2}{}{%
+        {{hash=4b7dd6aa69cf441864db177c415d1f43}{%
+           family={DEMAINE},
            family_i={D\bibinitperiod},
-           given={E.\bibnamedelimi W.},
-           given_i={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+           given={E.},
+           given_i={E\bibinitperiod}}}%
+        {{hash=b2ed906a8120084ef667a34e9b92f56d}{%
+           family={DEVADAS},
+           family_i={D\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
       }
-      \strng{namehash}{8e8d70867e756ece2fe2eca8c65aee5c}
-      \strng{fullhash}{8e8d70867e756ece2fe2eca8c65aee5c}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \list{organization}{1}{%
+        {Massachusetts Institute of Technology: MIT OpenCourseWare}%
+      }
+      \strng{namehash}{59676cc3e152e1946dd7b85aeda4503d}
+      \strng{fullhash}{59676cc3e152e1946dd7b85aeda4503d}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Numerische Mathematik}
-      \field{number}{1}
-      \field{title}{A note on two problems in connection with graphs}
-      \field{year}{1959}
-      \field{pages}{269\bibrangedash 271}
-      \range{pages}{3}
-      \keyw{,refer}
-    \endentry
-    \entry{KRU56}{article}{}
-      \name{author}{1}{}{%
-        {{hash=3a44ae22b3441f258e38e44b82d868e6}{%
-           family={KRUSKAL},
-           family_i={K\bibinitperiod},
-           given={J.\bibnamedelimi B.},
-           given_i={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-      }
-      \strng{namehash}{3a44ae22b3441f258e38e44b82d868e6}
-      \strng{fullhash}{3a44ae22b3441f258e38e44b82d868e6}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proc. Amer. Math. Soc.}
-      \field{number}{7}
-      \field{title}{On the shortest spanning subtree of a graph and the traveling salesman problem}
-      \field{year}{1956}
-      \field{pages}{48\bibrangedash 50}
-      \range{pages}{3}
-      \keyw{,refer}
-    \endentry
-    \entry{PRI57}{article}{}
-      \name{author}{1}{}{%
-        {{hash=70b3d7b3274fd3f56a4e9a4a15d90b14}{%
-           family={PRIM},
-           family_i={P\bibinitperiod},
-           given={R.\bibnamedelimi C.},
-           given_i={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \strng{namehash}{70b3d7b3274fd3f56a4e9a4a15d90b14}
-      \strng{fullhash}{70b3d7b3274fd3f56a4e9a4a15d90b14}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Bell Syst. Tech. Journ.}
-      \field{number}{36}
-      \field{title}{Shortest connection networks and some generalizations}
-      \field{year}{1957}
-      \field{pages}{1389\bibrangedash 1401}
-      \range{pages}{13}
-      \keyw{,refer}
-    \endentry
-    \entry{GIM11}{incollection}{}
-      \name{author}{1}{}{%
-        {{hash=f7c866e489b98988048280d8575e0dfe}{%
-           family={GIMBERT},
-           family_i={G\bibinitperiod},
-           given={J.},
-           given_i={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{f7c866e489b98988048280d8575e0dfe}
-      \strng{fullhash}{f7c866e489b98988048280d8575e0dfe}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Butlletí de la Societat Catalana de Matemàtiques}
-      \field{number}{1}
-      \field{title}{Les matemàtiques de GOOGLE: l'algorisme PageRank}
-      \field{volume}{26}
-      \field{year}{2011}
-      \field{pages}{29\bibrangedash 55}
-      \range{pages}{27}
-      \keyw{,biblio}
-    \endentry
-    \entry{BAS94}{book}{}
-      \name{author}{1}{}{%
-        {{hash=167915fe10991e7029fa1401bc6ebbb8}{%
-           family={BASART},
-           family_i={B\bibinitperiod},
-           given={J.},
-           given_i={J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Universitat Autònoma de Barcelona}%
-      }
-      \strng{namehash}{167915fe10991e7029fa1401bc6ebbb8}
-      \strng{fullhash}{167915fe10991e7029fa1401bc6ebbb8}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Grafs: fonaments i algorismes}
-      \field{year}{1994}
-      \keyw{,biblio}
-    \endentry
-    \entry{WIKI}{online}{}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labeltitlesource}{title}
-      \field{title}{Wikipedia}
+      \field{title}{6.006 Introduction to Algorithms}
+      \field{year}{Fall 2011}
       \verb{url}
-      \verb wikipedia.org
-      \endverb
-      \keyw{,biblio}
-    \endentry
-    \entry{WMW}{online}{}
-      \name{author}{1}{}{%
-        {{hash=be7438fcedb22b304c7586936933fd06}{%
-           family={WEISSTEIN},
-           family_i={W\bibinitperiod},
-           given={ERIC\bibnamedelima W.},
-           given_i={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-      }
-      \strng{namehash}{be7438fcedb22b304c7586936933fd06}
-      \strng{fullhash}{be7438fcedb22b304c7586936933fd06}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Wolfram MathWorld}
-      \verb{url}
-      \verb mathworld.wolfram.com
-      \endverb
-      \keyw{,biblio}
-    \endentry
-    \entry{MOV}{online}{}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labeltitlesource}{title}
-      \field{title}{Math Overflow}
-      \verb{url}
-      \verb mathoverflow.net
-      \endverb
-      \keyw{,biblio}
-    \endentry
-    \entry{MSE}{online}{}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labeltitlesource}{title}
-      \field{title}{Math Stack Exchange}
-      \verb{url}
-      \verb math.stackexchange.com
-      \endverb
-      \keyw{,biblio}
-    \endentry
-    \entry{TEX}{online}{}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labeltitlesource}{title}
-      \field{title}{Texample}
-      \verb{url}
-      \verb texample.net
+      \verb https://ocw.mit.edu
       \endverb
       \keyw{,biblio}
     \endentry
@@ -422,8 +195,8 @@
       }
       \strng{namehash}{356802f5aaf6d2a98a974ae0254f3d97}
       \strng{fullhash}{356802f5aaf6d2a98a974ae0254f3d97}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{6.046J Design and Analysis of Algorithms}
@@ -433,32 +206,259 @@
       \endverb
       \keyw{,biblio}
     \endentry
-    \entry{OCW2}{online}{}
-      \name{author}{2}{}{%
-        {{hash=4b7dd6aa69cf441864db177c415d1f43}{%
-           family={DEMAINE},
+    \entry{DIJ59}{article}{}
+      \name{author}{1}{}{%
+        {{hash=8e8d70867e756ece2fe2eca8c65aee5c}{%
+           family={DIJKSTRA},
            family_i={D\bibinitperiod},
-           given={E.},
-           given_i={E\bibinitperiod}}}%
-        {{hash=b2ed906a8120084ef667a34e9b92f56d}{%
-           family={DEVADAS},
-           family_i={D\bibinitperiod},
-           given={S.},
-           given_i={S\bibinitperiod}}}%
+           given={E.\bibnamedelimi W.},
+           given_i={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
       }
-      \list{organization}{1}{%
-        {Massachusetts Institute of Technology: MIT OpenCourseWare}%
-      }
-      \strng{namehash}{59676cc3e152e1946dd7b85aeda4503d}
-      \strng{fullhash}{59676cc3e152e1946dd7b85aeda4503d}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \strng{namehash}{8e8d70867e756ece2fe2eca8c65aee5c}
+      \strng{fullhash}{8e8d70867e756ece2fe2eca8c65aee5c}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{6.006 Introduction to Algorithms}
-      \field{year}{Fall 2011}
+      \field{journaltitle}{Numerische Mathematik}
+      \field{number}{1}
+      \field{title}{A note on two problems in connection with graphs}
+      \field{year}{1959}
+      \field{pages}{269\bibrangedash 271}
+      \range{pages}{3}
+      \keyw{,refer}
+    \endentry
+    \entry{EUL41}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=313151264cbe77aca604de197d093583}{%
+           family={EULER},
+           family_i={E\bibinitperiod},
+           given={L.},
+           given_i={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{313151264cbe77aca604de197d093583}
+      \strng{fullhash}{313151264cbe77aca604de197d093583}
+      \field{sortinit}{E}
+      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Commentarii academiae scientiarum Petropolitanae}
+      \field{title}{Solutio problematis ad geometriam situs pertinentis}
+      \field{volume}{8}
+      \field{year}{1741}
+      \field{pages}{128\bibrangedash 140}
+      \range{pages}{13}
+      \keyw{,refer}
+    \endentry
+    \entry{GIM11}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=f7c866e489b98988048280d8575e0dfe}{%
+           family={GIMBERT},
+           family_i={G\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7c866e489b98988048280d8575e0dfe}
+      \strng{fullhash}{f7c866e489b98988048280d8575e0dfe}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Butlletí de la Societat Catalana de Matemàtiques}
+      \field{number}{1}
+      \field{title}{Les matemàtiques de GOOGLE: l'algorisme PageRank}
+      \field{volume}{26}
+      \field{year}{2011}
+      \field{pages}{29\bibrangedash 55}
+      \range{pages}{27}
+      \keyw{,biblio}
+    \endentry
+    \entry{HAR69}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5f5f1e758f2f003fc0be4e7acd908ea0}{%
+           family={HARARY},
+           family_i={H\bibinitperiod},
+           given={F.},
+           given_i={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{5f5f1e758f2f003fc0be4e7acd908ea0}
+      \strng{fullhash}{5f5f1e758f2f003fc0be4e7acd908ea0}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Graph Theory}
+      \field{year}{1969}
+      \keyw{,refer}
+    \endentry
+    \entry{KEM79}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fd19ebb19874947fef94625a860302bb}{%
+           family={KEMPE},
+           family_i={K\bibinitperiod},
+           given={A.\bibnamedelimi B.},
+           given_i={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{fd19ebb19874947fef94625a860302bb}
+      \strng{fullhash}{fd19ebb19874947fef94625a860302bb}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Amer. Journ. Maths.}
+      \field{number}{23}
+      \field{title}{On the geographical problem of the four colours}
+      \field{year}{1879}
+      \field{pages}{193\bibrangedash 200}
+      \range{pages}{8}
+      \keyw{,refer}
+    \endentry
+    \entry{KON36}{book}{}
+      \name{author}{1}{}{%
+        {{hash=02b119a93e8da95c1b682bf52358cf91}{%
+           family={KÖNIG},
+           family_i={K\bibinitperiod},
+           given={D.},
+           given_i={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Akademische Verlagsgesellschaft}%
+      }
+      \strng{namehash}{02b119a93e8da95c1b682bf52358cf91}
+      \strng{fullhash}{02b119a93e8da95c1b682bf52358cf91}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Theorie der endlichen und unendlichen Graphen}
+      \field{year}{1936}
+      \keyw{,refer}
+    \endentry
+    \entry{KRU56}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3a44ae22b3441f258e38e44b82d868e6}{%
+           family={KRUSKAL},
+           family_i={K\bibinitperiod},
+           given={J.\bibnamedelimi B.},
+           given_i={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a44ae22b3441f258e38e44b82d868e6}
+      \strng{fullhash}{3a44ae22b3441f258e38e44b82d868e6}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proc. Amer. Math. Soc.}
+      \field{number}{7}
+      \field{title}{On the shortest spanning subtree of a graph and the traveling salesman problem}
+      \field{year}{1956}
+      \field{pages}{48\bibrangedash 50}
+      \range{pages}{3}
+      \keyw{,refer}
+    \endentry
+    \entry{MOV}{online}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labeltitlesource}{title}
+      \field{title}{Math Overflow}
       \verb{url}
-      \verb https://ocw.mit.edu
+      \verb mathoverflow.net
+      \endverb
+      \keyw{,biblio}
+    \endentry
+    \entry{MSE}{online}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labeltitlesource}{title}
+      \field{title}{Math Stack Exchange}
+      \verb{url}
+      \verb math.stackexchange.com
+      \endverb
+      \keyw{,biblio}
+    \endentry
+    \entry{PRI57}{article}{}
+      \name{author}{1}{}{%
+        {{hash=70b3d7b3274fd3f56a4e9a4a15d90b14}{%
+           family={PRIM},
+           family_i={P\bibinitperiod},
+           given={R.\bibnamedelimi C.},
+           given_i={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{70b3d7b3274fd3f56a4e9a4a15d90b14}
+      \strng{fullhash}{70b3d7b3274fd3f56a4e9a4a15d90b14}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bell Syst. Tech. Journ.}
+      \field{number}{36}
+      \field{title}{Shortest connection networks and some generalizations}
+      \field{year}{1957}
+      \field{pages}{1389\bibrangedash 1401}
+      \range{pages}{13}
+      \keyw{,refer}
+    \endentry
+    \entry{TEX}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labeltitlesource}{title}
+      \field{title}{Texample}
+      \verb{url}
+      \verb texample.net
+      \endverb
+      \keyw{,biblio}
+    \endentry
+    \entry{VAN71}{article}{}
+      \name{author}{1}{}{%
+        {{hash=07d4bbf43ed7d7dc91ef55050fa6cd8a}{%
+           family={Vandermonde},
+           family_i={V\bibinitperiod},
+           given={Alexandre-Théophile},
+           given_i={A\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{07d4bbf43ed7d7dc91ef55050fa6cd8a}
+      \strng{fullhash}{07d4bbf43ed7d7dc91ef55050fa6cd8a}
+      \field{sortinit}{V}
+      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mémoires de l'Académie Royale des Sciences}
+      \field{title}{Remarques sur les problèmes de situation}
+      \field{year}{1771}
+      \field{pages}{566\bibrangedash 574}
+      \range{pages}{9}
+      \keyw{,refer}
+    \endentry
+    \entry{WMW}{online}{}
+      \name{author}{1}{}{%
+        {{hash=be7438fcedb22b304c7586936933fd06}{%
+           family={WEISSTEIN},
+           family_i={W\bibinitperiod},
+           given={ERIC\bibnamedelima W.},
+           given_i={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{be7438fcedb22b304c7586936933fd06}
+      \strng{fullhash}{be7438fcedb22b304c7586936933fd06}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Wolfram MathWorld}
+      \verb{url}
+      \verb mathworld.wolfram.com
+      \endverb
+      \keyw{,biblio}
+    \endentry
+    \entry{WIKI}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labeltitlesource}{title}
+      \field{title}{Wikipedia}
+      \verb{url}
+      \verb wikipedia.org
       \endverb
       \keyw{,biblio}
     \endentry

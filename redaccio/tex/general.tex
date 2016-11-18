@@ -8,7 +8,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathtools}
-\usepackage[backend=biber, style=numeric, sorting=none, bibencoding=ISO-8859-1]{biblatex} %Llibreria de gestió de bibliografia
+\usepackage[backend=biber, style=numeric, bibencoding=ISO-8859-1, defernumbers=true]{biblatex} %Llibreria de gestió de bibliografia
 %\usepackage{cite}
 %\usepackage{catalanbib}
 \usepackage{xcolor}
@@ -45,6 +45,9 @@
    \begin{algorithm}[#1]%
   }{\end{algorithm}}
  
+%Canviem el nom de Apèndix per Annex 
+\addto{\captionscatalan}{\renewcommand*{\appendixname}{Annex}}
+
 %Definim una orfre per subratllar amb color verd
 \newcommand{\important}[1]{%
   \colorbox{green!25}{$\displaystyle#1$}}
@@ -105,12 +108,15 @@ array element/.style = {
 %Definim el color taronja pel procés de punt de Fermat
 \definecolor{ffwwqq}{rgb}{1,0.4,0}
 
-%Afegim una categoria de Liblatex per tal d'agafar només la bibliografia citada
+%Afegim una categoria de Liblatex per tal d'agafar només la bibliografia citada (no funciona)
 \DeclareBibliographyCategory{citats}
 \AtEveryCitekey{\addtocategory{citats}{\thefield{entrykey}}}
+
+%Importem els fitxers de la bibliografia
 \addbibresource{biblio2.bib}
 \addbibresource{biblio3.bib}
 
+%Creem dues classes diferentes per a les entrades de la bibliografia
 \DeclareSourcemap{
   \maps[datatype=bibtex]{
     \map{
@@ -124,11 +130,12 @@ array element/.style = {
   }
 }
 
+%Arreglem els nombres de la bibliografia ( que siguin continus)
 \makeatletter
 \define@key{blx@bib2}{prefixnumbers}{%
   \def\blx@prefixnumbers{#1}%
   \iftoggle{blx@defernumbers}
-    {}% here was a resetnumbers statement before
+    {}
     {\iftoggle{blx@labelnumber}
        {\blx@warning{%
           Option 'prefixnumbers' requires global\MessageBreak
@@ -136,12 +143,25 @@ array element/.style = {
        {}}}
 \makeatother
 
+%Creem unentorn de BibLaTeX sense numeració d'entrades bibliogràfiques
+\defbibenvironment{nolabelbib}
+  {\list
+     {}
+     {\setlength{\leftmargin}{\bibhang}%
+      \setlength{\itemindent}{-\leftmargin}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}}
+  {\endlist}
+  {\item}
 
+%definim la mida de la lletra dels programes en 11 ( causa diversos warnings)
 \AtBeginEnvironment{minted}{\singlespacing%
     \fontsize{11}{11}\selectfont}
 
-
+%Posem el contador de capítols a -1, de manera que comenci per 0
 \setcounter{chapter}{-1}
+
+%Per posar l'interlineat a (1.5). Recomanable comentar-ho i deixar l'interlineat per defecte...
 %\renewcommand{\baselinestretch}{1.5}
 
 
@@ -156,6 +176,8 @@ array element/.style = {
 \vfill
 \begin{figure}
 \centering
+
+
 \begin{tikzpicture}[transform shape,line width=0.2pt]
   \foreach \x in {1,...,16}{%
     \pgfmathparse{(\x-1)*45+floor(\x/9)*22.5}
@@ -164,14 +186,16 @@ array element/.style = {
   \foreach \x [count=\xi from 1] in {2,...,16}{%
     \foreach \y in {\x,...,16}{%
         \path (N-\xi) edge[-] (N-\y);
-  }
+ }
 }
 \end{tikzpicture}
 \end{figure}
 
-\begin{flushright}
+%&\begin{flushright}
 \textit{Qualssevol que siguin els girs i les voltes dels fils en l'espai, un sempre pot obtenir una expressió per al càlcul de les seves dimensions [dels fils], tot i que tal expressió serà d'escassa utilitat en la pràctica. Els artesans que construeixen una xarxa, una trena o alguns nusos estaran més preocupats no per assumptes de mesura, sinó de posició: el que li importarà serà la manera en què els fils s'entrellacen.}
-\\ A. Vandermonde
+\\ 
+\begin{flushright}
+A. Vandermonde
 \end{flushright}
 \newpage
 
@@ -436,7 +460,7 @@ per tots els ponts tan sols una vegada?''}
 \end{quote}
 Els ciutadans de Königsberg sabien que no era possible, però mai ningú ho havia demostrat fins que Leonhard Euler ho va fer. La demostració de que això no era possible queda recollida en el \emph{``Solutio problematis ad geometriam situs pertinentis}'' publicat el 1736, i l'article també va ser inclòs en el volum 8 de
 \emph{``Commentarii Academiae Scientiarum Imperialis Petropolitanae''
-}publicat el 1741 \cite{EUL41}. En aquest text, Euler diu el següent:
+}publicat el 1741 (veure \cite{EUL41}). En aquest text, Euler diu el següent:
 \begin{quote}
 
 \emph{"A més d'aquella part de la geometria que s'ocupa de les quantitats, la qual sempre ha generat un interés preferent, hi ha una altra part -encara pràcticament desconeguda- que ja fou esmentada per Leibniz amb el nom de geometria de posició. Aquesta part de la geometria estudia tot allò que pot ésser determinat únicament per la posició, així com les propietats de la posició; en aquest camp hom no hauria de preocupar-se de quantitats ni de com obtenir-les. No obstant això, els tipus de problemes que pertanyen a aquesta geometria de posició i els mètodes usats per resoldre'ls encara no són suficientment definits. Així doncs, quan darrerament se'm va plantejar un problema que semblava bàsicament geomètric, però que no demanava l'obtenció de quantitats ni admetia una sol·lució basada en el càlcul de quantitats, em vaig adonar que pertanyia a la geometria de posició, sobretot perquè només es podia usar la posició per resolde'l, mentre que el càlcul es mostrava inútil. Així, he decidit exposar ací, com a mostra de la geometria de posició, el mètode que he deduït per a resoldre problemes d'aquesta mena."}
@@ -483,7 +507,7 @@ Aquest resultat es considera el primer en teoria de grafs ja que conté un import
 
 A partir de l'article d'Euler, diversos matemàtics van començar a
 interessar-se pel camp de la topologia (o geometria de la posició,
-com li deien en aquell moment). Un d'ells fou Alexandre-Théophile Vandermonde. Vandermonde va treballar i estudiar el problema dels cavalls, que planteja quins moviments hem de fer per tal que un cavall passi per totes les caselles del tauler d'escacs, problema que també va tractar Euler. Els estudis que Vandermonde va fer sobre aquest problema van ser publicats el 1771 en el ``\emph{Remarques sur des problèmes de situation''} \cite{VAN71}, on encara no es feia referència al concepte de graf, tot i que el problema es resol mitjançant aquests. Aquest treball inicia l'estudi de la teoria de nusos, una altra branca de la topologia. 
+com li deien en aquell moment). Un d'ells fou Alexandre-Théophile Vandermonde. Vandermonde va treballar i estudiar el problema dels cavalls, que planteja quins moviments hem de fer per tal que un cavall passi per totes les caselles del tauler d'escacs, problema que també va tractar Euler. Els estudis que Vandermonde va fer sobre aquest problema van ser publicats el 1771 en el ``\emph{Remarques sur des problèmes de situation''}, veure \cite{VAN71}, on encara no es feia referència al concepte de graf, tot i que el problema es resol mitjançant aquests. Aquest treball inicia l'estudi de la teoria de nusos, una altra branca de la topologia. 
 
 
 \subsection{Les primeres descobertes i aplicacions}
@@ -501,9 +525,9 @@ tan sols quatre colors?''}
 \end{quote}
 D'aquest problema en surt el teorema a partir del qual s'sestableix que qualsevol mapa pot ser pintat únicament amb quatre colors diferents, de tal manera que dues regions adjacents (entenem com a adjacents dues regions que comparteixiin frontera, no tan sols un punt) no tinguin colors iguals. Aquest problema, que pot semblar tan trivial, no va ser demostrat fins l'any 1976. Va passar
 per mans de pioners com De Morgan, Hamilton, Cayley, Kempe (que
-va fer una demostració publicada el 1879 \cite{KEM79}), Heawood (que va concloure que la demostració de Kempe no era correcta)... Finalment el 1976
+va fer una demostració publicada el 1879, veure \cite{KEM79}), Heawood (que va concloure que la demostració de Kempe no era correcta)... Finalment el 1976
 Appel i Hanken van demostrar, mitjançant un programa d'ordinador, que
-tot mapa es podia pintar només amb quatre colors \cite{AH77a, AH77b}. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demostració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne una demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
+tot mapa es podia pintar només amb quatre colors. Aquesta demostració i queda recollida a \cite{AH77a, AH77b}. Pel fet de basar-se en un programa d'ordinador, no va acabar de convèncer la demostració. Així doncs, aquest problema no va ser solucionat de manera formal fins l'any 1996 quan, recorrent a la teoria de grafs ja desenvolupada, Neil Robertson, Daniel P. Anders, Paul Seymour i Robin Thomas van publicar-ne una demostració. En els treballs d'Appel i Hanken es van definir alguns dels conceptes i fonaments de l'actual teoria de grafs. 
 
 
 \subsubsection*{Arthur Cayley}
@@ -543,8 +567,8 @@ tipus arbre i, amb la investigació que va dur a terme, va formular el teorema de
 Durant el segle XX, la teoria de grafs es va continuar desenvolupant.
 Amb les bases ja establertes durant el segle XIX, els matemàtics hi
 van començar a treballar i el 1936 Dénes König va escriure el primer
-llibre de teoria de grafs: Theorie der endlichen und unendlichen Graphen \cite{KON36}. Frank Harary va escriure el llibre "Graph Theory"
-l'any 1969 \cite{HAR69}, fent més accessible la teoria de grafs. El desenvolupament de la informàtica i les noves tècniques de computació van permetre treballar amb grafs a molt més gran escala, fent possible, per exemple, la ja citada primera demostració del teorema dels quatre colors per Appel i Hanken. 
+llibre de teoria de grafs: Theorie der endlichen und unendlichen Graphen (veure \cite{KON36}). Frank Harary va escriure el llibre "Graph Theory"
+l'any 1969 (veure \cite{HAR69}), fent més accessible la teoria de grafs. El desenvolupament de la informàtica i les noves tècniques de computació van permetre treballar amb grafs a molt més gran escala, fent possible, per exemple, la ja citada primera demostració del teorema dels quatre colors per Appel i Hanken. 
 
 Actualment la teoria de grafs és una part molt important de la matemàtica
 discreta i està relacionada amb molts àmbits diferents, com per exemple
@@ -2121,7 +2145,7 @@ L'algorisme de Bellman-Ford té un temps d'execució de $O(|E|\times |V|)$. Es fan
 
 
 \subsection{Kruskal}
-L'algorisme de Kruskal serveix per trobar un arbre expansiu mínim. Aquest algorisme utilitza una estructura de dades especial, anomenada union-find. Aquesta estructura permet fer tres operacions diferents: crear conjunts (\textit{make set}), determinar a quin conjunt està un element (\textit{find}) i unir dos subconjunts en un de nou (\textit{union}). L'ús d'aquesta estructura especialitzada fa que en grafs petits o poc densos l'algorisme sigui molt ràpid, però en grafs més grans es relantitzi el procés, essent més eficient,en aquest cas, utilitzar altres. 
+L'algorisme de Kruskal, descrit a \cite{KRU56}, serveix per trobar un arbre expansiu mínim. Aquesta implementació de l'algorisme utilitza una estructura de dades especial, anomenada union-find. Aquesta estructura permet fer tres operacions diferents: crear conjunts (\textit{make set}), determinar a quin conjunt està un element (\textit{find}) i unir dos subconjunts en un de nou (\textit{union}). L'ús d'aquesta estructura especialitzada fa que en grafs petits o poc densos l'algorisme sigui molt ràpid, però en grafs més grans es relantitzi el procés, essent més eficient,en aquest cas, utilitzar altres. 
 \subsubsection{Funcionament}
 L'algorisme es basa en les següents propietats:
 \begin{itemize}
@@ -3074,23 +3098,22 @@ Això sí: tot i que el camí sempre ha fet pujada, cal pensar que cada vegada som 
 
 \newpage
 
-\printbibliography[keyword=refer, prefixnumbers=A, title=Referències]
+\printbibliography[keyword=refer, title=Referències, resetnumbers=true]%, prefixnumbers=A]
 \nocite{*}
 \newpage
-\printbibliography[keyword=biblio, prefixnumbers=B, title=Bibliografia]
+\printbibliography[env=nolabelbib, keyword=biblio, title=Bibliografia, resetnumbers=true]%, prefixnumbers=B]
 %\bibliographystyle{ieeetr}
 
 \newpage
 
 \appendix
-\chapter{Annexes}
-\section{Programari}
+\chapter{Programari}
 Per poder realitzar aquest treball ha sigut necessari fer un ús extensiu d'eines informàtiques. Penso que és important posar en valor totes aquestes eines utilitzades que, directa o indirectament han afectat en el desenvolupament del treball. Tot el programari que s'ha utliitzat durant el transcurs del treball és programari lliure, de codi obert i gratuït.
 
-\subsection{Sistemes operatius}
+\section{Sistemes operatius}
 Encara que la majoria de programes utilitzats tenen versions per a altres sistemes operatius, jo els he utilitzat sobre sistemes GNU/Linux, concretament amb distribucions Ubuntu i Debian.
 
-\subsection{Processador de text}
+\section{Processador de text}
 Per tal de poder redactar el treball ha sigut necessari un processador de textos especial. Ha sigut necessari escriure un gran nombre de fórmules i expressions matemàtiques, pseudocodi, programes complets... i en aquest aspecte \LaTeX  ha ajudat molt. LaTeX és un "sistema de composició de text" amb una "alta qualitat tipogràfica", on en lloc d'escriure el text podríem dir que es programa. D'aquesta manera s'aconsegueix exactament el que es desitja, essent possible modificar tots i cadascun dels paràmetres del document.
 Per exemple: 
 la fórmula
@@ -3103,7 +3126,7 @@ Posteriorment, tot el codi es compila i es genera un fitxer .pdf amb tot el codi
 
 També permet la utilització de diversos paquets que afegeixen funcionalitats. Durant la redaccó d'aquesta memòria se n'han utilitzat un total de 32. Els següents són els més importants:
 
-\subsubsection{Tikz i tkz-berge}
+\subsection{Tikz i tkz-berge}
 La gran majoria de imatges fetes per mi mateix s'han fet a través d'aquests paquets. Inclouen diverses funcions orientades a grafs i permeten dibuixar-los tal com es desitgin. La següent imatge d'un graf 
 
 \begin{figure}[H]
@@ -3161,7 +3184,7 @@ GeoGebra és un porgrama muliús, útil tant en el camp de la geometria, com en l'à
 Python és un lenguatge de propòsit general i d'alt nivell que busca senzillesa i eficiència fent que la sintaxi sigui més senzilla de llegir. Aquest llenguatge permet escriure programes més entenedors i en menys línies que altres llenguatges com C/C++.
 
 \newpage
-\section{Algorismes}
+\chapter{Algorismes}
 \subsection{DFS}
 \subsubsection{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
