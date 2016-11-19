@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  19 NOV 2016 03:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  18 NOV 2016 17:36
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**general.tex
-(./general.tex
+**general3.tex
+(./general3.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 8 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -1225,14 +1225,15 @@ Package pdftexcmds Info: \pdfdraftmode found.
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
 )
-runsystem(uname -s > "general.w18")...executed.
+runsystem(uname -s > "general3.w18")...executed.
 
 
-(./general.w18)
-runsystem(rm -- "general.w18")...executed.
+(./general3.w18)
+runsystem(rm -- "general3.w18")...executed.
 
-) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/te
-xlive/texmf-dist/tex/generic/xstring/xstring.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write6
 \integerpart=\count398
 \decimalpart=\count399
@@ -1282,18 +1283,15 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 \@float@every@listing=\toks54
 \c@listing=\count409
 )
-runsystem(mkdir -p "_minted-general")...executed.
+runsystem(mkdir -p "_minted-general3")...executed.
+
+runsystem(pygmentize -S default -f latex -P commandprefix=PYGdefault > "_minted
+-general3/default.pygstyle")...executed.
 
 
-(./_minted-general/default.pygstyle)
+(./_minted-general3/default.pygstyle)
 (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
-)
-(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
-Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count410
-\c@@ppsavesec=\count411
-\c@@ppsaveapp=\count412
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypetri.code.tex
@@ -1387,62 +1385,61 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 zlibraryautomata.code.tex
 File: tikzlibraryautomata.code.tex 2008/07/14 v3.0.1a (rcs-revision 1.3)
 )
-\c@propietat=\count413
+\c@propietat=\count410
 Package biblatex Info: Trying to load language 'catalan'...
 Package biblatex Info: ... file 'catalan.lbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/catalan.lbx
 File: catalan.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
 )
-runsystem(which "pygmentize" && touch "general.aex")...executed.
+runsystem(which "pygmentize" && touch "general3.aex")...executed.
 
-runsystem(rm "general.aex")...executed.
+runsystem(rm "general3.aex")...executed.
 
 
 
 LaTeX Warning: Unused global option(s):
     [a4].
 
-(./general.aux)
-\openout1 = `general.aux'.
+No file general3.aux.
+\openout1 = `general3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Info: Redefining \l on input line 180.
-LaTeX Info: Redefining \L on input line 180.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Info: Redefining \l on input line 173.
+LaTeX Info: Redefining \L on input line 173.
 Package biblatex Info: Input encoding 'latin9' detected.
 Package biblatex Info: Data encoding 'ISO-8859-1' specified.
 (biblatex)             Backend will reencode on the fly.
-\openout3 = `general.bcf'.
+\openout3 = `general3.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'general.bbl' found.
- (./general.bbl)
-Package biblatex Info: Reference section=0 on input line 180.
-Package biblatex Info: Reference segment=0 on input line 180.
-
+Package biblatex Info: ... file 'general3.bbl' not found.
+No file general3.bbl.
+Package biblatex Info: Reference section=0 on input line 173.
+Package biblatex Info: Reference segment=0 on input line 173.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count414
+\scratchcounter=\count411
 \scratchdimen=\dimen319
 \scratchbox=\box107
-\nofMPsegments=\count415
-\nofMParguments=\count416
+\nofMPsegments=\count412
+\nofMParguments=\count413
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count417
+\MPscratchCnt=\count414
 \MPscratchDim=\dimen320
-\MPnumerator=\count418
-\makeMPintoPDFobject=\count419
+\MPnumerator=\count415
+\makeMPintoPDFobject=\count416
 \everyMPtoPDFconversion=\toks56
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1467,7 +1464,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 180.
+ on input line 173.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1506,13 +1503,16 @@ your preamble.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-(./_minted-general/default-pyg-prefix.pygstyle)
-LaTeX Font Info:    Try loading font information for U+msa on input line 182.
+runsystem(pygmentize -S default -f latex -P commandprefix=PYG > "_minted-genera
+l3/default-pyg-prefix.pygstyle")...executed.
+
+(./_minted-general3/default-pyg-prefix.pygstyle)
+LaTeX Font Info:    Try loading font information for U+msa on input line 175.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 182.
+LaTeX Font Info:    Try loading font information for U+msb on input line 175.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1528,742 +1528,745 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 207--209
+! Missing $ inserted.
+<inserted text> 
+                $
+l.195 ...anera en qu√® els fils s'entrellacen. \\}
+                                                  
+? 
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.195 ...anera en qu√® els fils s'entrellacen. \\}
+                                                  
+? 
 
- []
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
 
-[1] [2] (./general.toc [3
 
-]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 153.
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 195.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 153.
- [4])
-\tf@toc=\write8
-\openout8 = `general.toc'.
-
- [5]
-Cap\'{\i }tol 0.
-[1
-
-]
-Overfull \hbox (18.37877pt too wide) in paragraph at lines 400--401
- [][] 
- []
-
-[2] [3] [4] [5]
-Cap\'{\i }tol 1.
-[6
-
-]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 501.
- <graphics/Konigsberg_bridges.png, id=61, 303.1325pt x 238.8925pt>
-File: graphics/Konigsberg_bridges.png Graphic file (type png)
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 195.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 195.
 
-<use graphics/Konigsberg_bridges.png>
-Package pdftex.def Info: graphics/Konigsberg_bridges.png used on input line 507
+
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 195.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 195.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.195 ...anera en qu√® els fils s'entrellacen. \\}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.196 
+      
+? 
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ≤ in font cmr12!
+
+Overfull \hbox (817.46399pt too wide) in paragraph at lines 195--196
+\T1/cmr/m/it/12 una expressi√$[]\OML/cmm/m/it/12 peralc lculdelessevesdimension
+s\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 delsfils\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; 
+totiquetalexpressi[]ser d[]escassautilitatenlapr ctica:Elsartesansqueconstrueix
+enunaxarxa; unatrenaoalgunsnusosestaranm[]spreocupatsnoperassumptesdemesura; si
+n[]deposici[] \OT1/cmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+[1]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.202 ...lar de la teoria de grafs, o s√≠;   per√≤
+                                                  , en qualsevol cas,  totes...
+
+? 
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.202 ...lar de la teoria de grafs, o s√≠;   per√≤
+                                                  , en qualsevol cas,  totes...
+
+? 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 202.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 202
 .
-(pdftex.def)             Requested size: 212.1913pt x 167.2236pt.
- [7 <./graphics/Konigsberg_bridges.png>]
-[8] [9] [10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 732--736
 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 202.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 202.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 202.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 202.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.203 
+      
+? 
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ≤ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+
+Overfull \hbox (1004.95497pt too wide) in paragraph at lines 202--203
+\T1/cmr/m/it/12 rat a par-lar de la te-o-ria de grafs, o s√-; per√$[]\OML/cmm/m
+/it/12 ; enqualsevolcas; toteslesaportacionshanestatunpilarindispensable:Cadasc
+[]; desdelseupuntdevista; desdelasevaexperincia; desdelseucampdetreball; haanat
+enriquintelmeubagatgeiaportantlesdosisd[]entusiasmenecess riesperajudar \OMS/cm
+sy/m/n/12 ^^@
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.214 a l'equip de l'IRI (Institut de Rob√≤
+                                           tica i Inform√†tica Industrial), ...
+
+? 
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.214 a l'equip de l'IRI (Institut de Rob√≤
+                                           tica i Inform√†tica Industrial), ...
+
+? 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 214.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 214.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.215 
+      
+? 
+Missing character: There is no √ in font cmr12!
+Missing character: There is no √ in font cmr12!
+
+Overfull \hbox (503.82106pt too wide) in paragraph at lines 214--215
+[]\T1/cmr/m/it/12 a l'e-quip de l'I-RI (Ins-ti-tut de Rob√$[]\OML/cmm/m/it/12 t
+icaiInform ticaIndustrial\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; enespecialaenSergi
+Foix; enGerardCanalienGuillemAleny ; perpermetre[]mdepassarunsdiesambells; enco
+ratjar \OMS/cmsy/m/n/12 ^^@
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--736
-
+Overfull \hbox (14.40509pt too wide) in paragraph at lines 222--223
+[]\T1/cmr/m/it/12 a l'An-ton Au-ba-nell, per obrir-me la por-ta de ca-sa se-va,
+ per escoltar-me, per interrogar-
  []
 
-[13]
-Overfull \hbox (15.97025pt too wide) detected at line 770
-\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 V\OT1/c
-mr/m/n/12 (\OML/cmm/m/it/12 G\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ! \OML/cmm/m/it
-/12 V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 )[]\OMS/cmsy/m/n/12 8\O
-ML/cmm/m/it/12 u; v \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 V\OT1/cmr/m/n/12 (\OML/
-cmm/m/it/12 G\OT1/cmr/m/n/12 )[][] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E\OT1/cm
-r/m/n/12 (\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 )[][] \OMS/cmsy/m/n/12 2 \OML/cmm/m
-/it/12 E\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G\OT1/cmr/m/n/12 )
+! Missing $ inserted.
+<inserted text> 
+                $
+l.226 ... infinita paci√®ncia i la seva dedicaci√≥
+                                                  ;
+? 
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.226 ... infinita paci√®ncia i la seva dedicaci√≥
+                                                  ;
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.227 
+      
+? 
+[2]
+No file general3.toc.
+\tf@toc=\write8
+\openout8 = `general3.toc'.
+
+[3
+
+]
+Cap\'{\i }tol 0.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.238 \chapter{Presentaci√≥}
+                            
+? 
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.238 \chapter{Presentaci√≥}
+                            
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.238 \chapter{Presentaci√≥}
+                            
+? 
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <24.88> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 240.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.240 ...ica discreta a la realitat. Els grafs s√≥
+                                                  n una part d'aquesta matem...
+
+? 
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.240 ...ica discreta a la realitat. Els grafs s√≥
+                                                  n una part d'aquesta matem...
+
+? 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 240.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 240.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 240.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 240.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 240.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 240.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 241.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 241.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 241.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.242 
+      
+? 
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no ≤ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+
+Overfull \hbox (3419.09467pt too wide) in paragraph at lines 240--242
+\T1/cmr/bx/n/24.88 s√$[]\OML/cmm/m/it/24.88 nunapartd[]aquestamatem ticadiscret
+aihanpassataformarpartdelm[]nenquvivim; unm[]nquel[]homehaanatcreantalllargdelt
+emps:Sovintdesconeixemquin[]sl[]entramatdemecanismesquefanfuncionarmoltesdelesc
+osesqueensenvolten:Alllargdeltreballintentocrearlligamsentrelapartm[]ste[]ricai
+abstractailesaplicacionsquese[]nderiven:Intentoendinsar \OMS/cmsy/m/n/24.88 ^^@
+ 
  []
 
-[14]
 
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 868.
-
-
-Overfull \hbox (24.2764pt too wide) detected at line 868
-[] []\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v[]\OT1/cmr/m/n/12 )(\
-OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v[]\OT1/cmr/m/n/12 ) \OMS/cm
-sy/m/n/12 ^^@ \OT1/cmr/m/n/12 1) = [] [](\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OM
-L/cmm/m/it/12 v[]\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 g\OT
-1/cmr/m/n/12 (\OML/cmm/m/it/12 v[]\OT1/cmr/m/n/12 )) = [] [] \OML/cmm/m/it/12 g
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v[]\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ [
-] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v
-[]\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 e
+Overfull \hbox (1129.76346pt too wide) in paragraph at lines 240--242
+\OML/cmm/m/it/24.88 meenelconeixementpercomprendreaquestsmecanismes\OT1/cmr/m/n
+/24.88 ; \OML/cmm/m/it/24.88 Intentocrearelsmecanismesperqueelconeixementesdevi
+nguiunaeinapr cticaifuncional:$  
  []
 
-[15] [16] [17]
-Overfull \hbox (29.12871pt too wide) detected at line 1106
-[] \OT1/cmr/m/n/12 = 2(\OML/cmm/m/it/12 m \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 
-2)(\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2) + 3(\OML/cmm/m/it
-/12 m \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2) + 3(\OML/cmm/m/it/12 n \OMS/cmsy/
-m/n/12 ^^@ \OT1/cmr/m/n/12 2) + 4
+! Missing $ inserted.
+<inserted text> 
+                $
+l.243 \subsection*{Justificaci√≥}
+                                 
+? 
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.243 \subsection*{Justificaci√≥}
+                                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.243 \subsection*{Justificaci√≥}
+                                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.243 \subsection*{Justificaci√≥}
+                                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.244 ...o t√®cnic. Havia pensat en temes de rob√≤
+                                                  tica i inform√†tica, camps...
+
+? 
+! Extra }, or forgotten $.
+\mathtwosuperior ->{^2}
+                       
+l.244 ...o t√®cnic. Havia pensat en temes de rob√≤
+                                                  tica i inform√†tica, camps...
+
+? 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 244.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 244.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 244.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 244.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 245.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 245.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 245.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 245.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 246.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 246.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 246.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 246.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 246.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.247 
+      
+? 
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no ≤ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+
+Overfull \hbox (5324.00824pt too wide) in paragraph at lines 244--247
+\T1/cmr/bx/n/24.88 rob√$[]\OML/cmm/m/it/24.88 ticaiinform tica; campsenelsquals
+jahaviatreballatanteriorment; per[]elstreballsquesem[]acudienenaquestesdiscipli
+neserenmassaconcretsiesbasavenenunsolproductefinal; cosaquenom[]acabavadeconvnc
+er:D[]altrabandatamb[]hihaviaelstemespuramentmatem tics:Aquestaopci[]suposavatr
+actarunesmatem tiquesalesqualsnoestavadeltotavesat:Finalment; doncs; vaigdecidi
+rdeferuntreballquecombin[]slateoriairigorositatdelesmatem tiquesambunapartm[]sa
+plicadadeprogramaci[]:Aquestauni[]enlavaigtrobarenlateoriadegrafs:$  
+ []
+
+[4
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.248 ...fs va ser amb el problema 9 de la Marat√≥
+                                                   de Problemes 2015 \footno...
+
+? 
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.248 ...fs va ser amb el problema 9 de la Marat√≥
+                                                   de Problemes 2015 \footno...
+
+? 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 248.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 248.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 248.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 248.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 248.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 248.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 248.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.249 
+      
+? 
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+Missing character: There is no √ in font cmr17!
+
+Overfull \hbox (27.09927pt too wide) in paragraph at lines 248--249
+\T1/cmr/bx/n/24.88 Marat√$[]\OML/cmm/m/it/24.88 deProblemes\OT1/cmr/m/n/24.88 2
+015[]\OML/cmm/m/it/24.88 :Sensesaber \OMS/cmsy/m/n/24.88 ^^@ 
  []
 
 
-Overfull \hbox (11.52757pt too wide) in paragraph at lines 1149--1150
+Overfull \hbox (2065.31158pt too wide) in paragraph at lines 248--249
+\OML/cmm/m/it/24.88 ho; vaigcalcularelsmeusprimersarbresd[]Steinerivaigutilitza
+rmanualmentalgorismesdegrafscomeldeKruskal:Elproc[]sderesoluci[]d[]aquestproble
+mavasercuri[]s; diferent:Elcert[]squevaigpercebreunaportaobertaambunllargcam\T1
+/cmr/bx/n/24.88 - 
+ []
+
+
+Overfull \hbox (807.60149pt too wide) in paragraph at lines 248--249
+\OML/cmm/m/it/24.88 perdescobrir; moltengrescador:Iseguramentaquest[]selmotiupe
+relqualvaigrecuperareltemaivaigdecidirendisar \OMS/cmsy/m/n/24.88 ^^@ 
+ []
+
+
+Overfull \hbox (18.37877pt too wide) in paragraph at lines 388--389
  [][] 
  []
 
-[18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 1244--1248
+[5]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.393 ...una s√®rie de q√ºestions amb la intenci√≥
+                                                   de trobar les respostes a...
 
+? 
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.393 ...una s√®rie de q√ºestions amb la intenci√≥
+                                                   de trobar les respostes a...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.394 \begin{itemize}
+                     
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.394 \begin{itemize}
+                     
+? 
+
+Overfull \hbox (3.43666pt too wide) in paragraph at lines 393--394
+\T1/cmr/bx/n/24.88 intenci√$[]\OML/cmm/m/it/24.88 detrobarlesrespostesadients \
+OT1/cmr/m/n/24.88 :$  
  []
 
-[21] [22] [23] [24] [25]
-Cap\'{\i }tol 2.
-[26
+[6]
 
-] [27] [28] [29] [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1699--1703
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
- []
-
-[32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1800--1801
-
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 1831--1834
-
- []
-
-[35] [36] [37] [38]
-Overfull \hbox (41.67186pt too wide) in paragraph at lines 2015--2015
-[]\T1/cmr/m/n/12 IteraciÛ 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[39]
-Overfull \vbox (25.56537pt too high) has occurred while \output is active []
-
-
-[40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52]
-Overfull \hbox (2.28734pt too wide) in paragraph at lines 2617--2693
- [][][][][] 
- []
-
-[53] [54] [55]
-Cap\'{\i }tol 3.
-[56
-
-]
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 279
-0.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 279
-4.
-
-[57] <graphics/steiner1.png, id=238, 496.85625pt x 368.37625pt>
-File: graphics/steiner1.png Graphic file (type png)
-
-<use graphics/steiner1.png>
-Package pdftex.def Info: graphics/steiner1.png used on input line 2806.
-(pdftex.def)             Requested size: 173.90228pt x 128.93361pt.
-
-<graphics/steiner3.png, id=239, 511.9125pt x 372.39125pt>
-File: graphics/steiner3.png Graphic file (type png)
-
-<use graphics/steiner3.png>
-Package pdftex.def Info: graphics/steiner3.png used on input line 2809.
-(pdftex.def)             Requested size: 179.17206pt x 130.33888pt.
-
-<graphics/steiner2.png, id=240, 504.88625pt x 343.2825pt>
-File: graphics/steiner2.png Graphic file (type png)
-
-<use graphics/steiner2.png>
-Package pdftex.def Info: graphics/steiner2.png used on input line 2812.
-(pdftex.def)             Requested size: 191.85875pt x 130.4487pt.
- [58 <./graphics/steiner1.png> <./graphics/steiner3.png> <./graphics/steiner2.p
-ng>]
-Underfull \hbox (badness 10000) in paragraph at lines 2821--2823
-
- []
-
-[59]
-Cap\'{\i }tol 4.
-[60
-
-]
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <17.28> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 2844.
-
- [61] [62] [63] <graphics/metro.jpg, id=261, 1284.8pt x 930.47626pt>
-File: graphics/metro.jpg Graphic file (type jpg)
-
-<use graphics/metro.jpg>
-Package pdftex.def Info: graphics/metro.jpg used on input line 3003.
-(pdftex.def)             Requested size: 513.9109pt x 372.18391pt.
- [64] [65 <./graphics/metro.jpg>] [66] [67]
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3119 \begin{minted}
-                     [breaklines=true, frame=lines]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/1BCC1394D6128E9B6F98CFE49E0EA2A4C813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3123 \begin{minted}
-                     [breaklines=true, frame=lines]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/91EEAAF4A4B499F34118193E6B32293BDBA75D934583C30F620E36427650
-14C7.pygtex [68])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3132 \begin{minted}
-                     [breaklines=true, frame=lines]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/EA2BC59B5FDDCDDE9C24B8571F89CBE1C813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3136 \begin{minted}
-                     [breaklines=true, frame=lines]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/6109008F1E499F21650EED4AA632E14FDBA75D934583C30F620E36427650
-14C7.pygtex) [69] [70
-
-] [71] [72] [73
-
-] [74
-
-]
-Annex A.
-[75
-
-]
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3213 \begin{minted}
-                     [breaklines=true]{tex}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/A5D838AB45C4B792682BA1383022CF92177A902FCA5FFB89BB9F3326880E
-61BD.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3247 \begin{minted}
-                     [breaklines=true]{tex}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/DACC2B791AD8D3F660931BC311F53BCD177A902FCA5FFB89BB9F3326880E
-61BD.pygtex
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <11> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
- [76]) [77] [78]
-Annex B.
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3287 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/ACD8EF0AF2029B715737EBC684AE81E8C813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3315 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/5C6DE5FAB205F9C13B97E4259E46A8A9C813690440C9AED47B1788C3CC7E
-E82F.pygtex [79
-
-])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3320 \begin{minted}
-                     [frame=lines, breaklines=true]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/3FBE01E4BC4D3385B521FA038C5C86E7DBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3333 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/427D4C4A9EBAC138C33D5581E8A6C8D6C813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3354 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/53A1E86D626D07060E8D29A8CED991E6C813690440C9AED47B1788C3CC7E
-E82F.pygtex [80])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3359 \begin{minted}
-                     [frame=lines, breaklines=true]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/727B6230F874BDE84779469A4318AA73DBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3366 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/663185D43E7F2044A0320E1C18D451F8C813690440C9AED47B1788C3CC7E
-E82F.pygtex [81])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3406 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/9305654EF146E8BFC6D34DE315796E23C813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3413 \begin{minted}
-                     [frame=lines, breaklines=true]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/6659088699E34B9E304DD94B8F2FAAF0DBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3419 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/3BB9B3ED6D3A55E887E70662234B031DC813690440C9AED47B1788C3CC7E
-E82F.pygtex [82])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3442 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/21352AAACF10D4AD41D935E9F5AD3962C813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3449 \begin{minted}
-                     [frame=lines, breaklines=true]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/1E7AD7781C36B2712B62D0632F643B40DBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3455 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/8E83249E80CF88F2287CE6BDFB2E5928C813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3472 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/E692B444E2A4DE09860DFEEC8A25A622C813690440C9AED47B1788C3CC7E
-E82F.pygtex [83])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3477 \begin{minted}
-                     [frame=lines, breaklines=true]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/B59F8C448A0A54176AF3E7AB2BD1F67ADBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3483 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/A6E934BCBAA3CFA3124D69453BF06ED5C813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3496 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/FDC9B566739A3A358A9F96C223C9BBF9C813690440C9AED47B1788C3CC7E
-E82F.pygtex
-Overfull \hbox (28.75763pt too wide) in paragraph at lines 2--2
-| | | |\T1/cmtt/m/n/10.95 G[]=[]{[]0[]:{[]1[]:[]8[],[]3[]:[]2[]},[]1[]:{[]0[]:[
-]8[],[]2[]:[]5[],[]3[]:[]3[],[]4[]:[]1[]},[]2[]:{[]1[]:[]5[],[]3[]:[]2[],[]4[]:
-[]4[]},[]3[]:{[]0[]:[]2[],[]1[]:[]3[],[]2[]:[]2[]},[]4[]:{[]1[]:[]1[],[]2[]:[]4
-[]}}|  
- []
-
-)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3501 \begin{minted}
-                     [frame=lines, breaklines=true]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/664831A12AC037A80930CDB9C7CEA5B6DBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3507 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/553B795F57D4349943702CFDA5630FAEC813690440C9AED47B1788C3CC7E
-E82F.pygtex [84])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3523 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/E82BED31105F08075C3E63A067B097BDC813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3528 \begin{minted}
-                     [frame=lines, breaklines=true]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/7841FD73BD0A4B467D4A3A67132E1E6CDBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3539 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/50450B7CE4202932AF5923A41DDBF437C813690440C9AED47B1788C3CC7E
-E82F.pygtex [85])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3556 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/3CA1A73A7CD4FB4C5DBA68F4B830167DC813690440C9AED47B1788C3CC7E
-E82F.pygtex
-Overfull \hbox (6.12415pt too wide) in paragraph at lines 2--2
-| | | |\T1/cmtt/m/n/10.95 G[]=[]{[]0[]:[[]2[],[]3[],[]5[],[]1[]],[]1[]:[[]0[],[
-]2[],[]4[],[]5[]],[]2[]:[[]0[],[]1[],[]3[],[]4[]],[]3[]:[[]0[],[]2[],[]4[],[]5[
-]],[]4[]:[[]1[],[]2[],[]3[],[]5[]],[]5[]:[[]0[],[]1[],[]3[],[]4[]]}|  
- []
-
-)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3561 \begin{minted}
-                     [frame=lines, breaklines=true]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/A3032DCAB64B269A8A97264E5CBE7420DBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3567 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/43536B558E03F3779B3682E14FD4348BC813690440C9AED47B1788C3CC7E
-E82F.pygtex [86])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3592 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/62021A5C6F27F6CD7A5FA9894943FF1AC813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3597 \begin{minted}
-                     [frame=lines, breaklines=true]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/C086DA65010387CB77F5979784FC2045DBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3604 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/493E4797F34FF77CCD2A4219829C6119C813690440C9AED47B1788C3CC7E
-E82F.pygtex [87])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3630 \begin{minted}
-                     [frame=lines, breaklines=true]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/84CBB1706446CC600737D7896E9FBAD0C813690440C9AED47B1788C3CC7E
-E82F.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3635 \begin{minted}
-                     [frame=lines]{text}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/27469172ACBAA9710B09CED6BE41E8AADBA75D934583C30F620E36427650
-14C7.pygtex)
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3642 \begin{minted}
-                     [frame=lines]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/801E91E89807D5ACE1C4D4194B42AC5BC813690440C9AED47B1788C3CC7E
-E82F.pygtex [88])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3677 \begin{minted}
-                     [breaklines=true, mathescape, frame=lines]{python}
-? 
-\openout5 = `general.pyg'.
-
-
-(./_minted-general/44D19F505528E552800CC341F912287DB7C54B95AB3E22A03452FF69C663
-1AAC.pygtex
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 2.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 2.
-
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textperiodcentered' on input line 2.
-
-! Dimension too large.
-\FV@ListProcessLine ...1}}}\ifdim \wd \FV@LineBox 
-                                                  >\linewidth \setcounter {F...
-l.2 ...YG{p}{:}\PYG{l+m+mi}{60}\PYG{p}{\PYGZcb{},}
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
+l.395 \item Q
+             u√® s√≥n els grafs?
 ? 
-! Dimension too large.
-\FV@ListProcessLine ...1}}}\ifdim \wd \FV@LineBox 
-                                                  >\linewidth \setcounter {F...
-l.4 ...YG{p}{:}\PYG{l+m+mi}{65}\PYG{p}{\PYGZcb{},}
+
+Underfull \hbox (badness 10000) detected at line 395
+[][]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.395 \item Qu√® s√≥
+                    n els grafs?
+? 
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.395 \item Qu√® s√≥
+                    n els grafs?
+? 
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
+l.396 \item
+            Quins s√≥n els procediments, mecanismes i/o eines per aconseguir...
+
 ? 
-[89] [90]
-! Dimension too large.
-\FV@ListProcessLine ...1}}}\ifdim \wd \FV@LineBox 
-                                                  >\linewidth \setcounter {F...
-l.6 ...G{p}{:}\PYG{l+m+mi}{120}\PYG{p}{\PYGZcb{},}
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
+l.396 \item Q
+             uins s√≥n els procediments, mecanismes i/o eines per aconseguir...
+
 ? 
-[91]
-! Dimension too large.
-\FV@ListProcessLine ...1}}}\ifdim \wd \FV@LineBox 
-                                                  >\linewidth \setcounter {F...
-l.8 ...\PYG{l+m+mi}{45}\PYG{p}{\PYGZcb{}\PYGZcb{}}
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
+l.396 \item Q
+             uins s√≥n els procediments, mecanismes i/o eines per aconseguir...
+
 ? 
-[92])
-! Undefined control sequence.
-\@begin@minted@hook ->\singlespacing 
-                                     \fontsize {11}{11}\selectfont 
-l.3689 \begin{minted}
-                     [breaklines=true, frame=lines]{text}
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.396 \item Q
+             uins s√≥n els procediments, mecanismes i/o eines per aconseguir...
+
 ? 
-\openout5 = `general.pyg'.
+
+Underfull \hbox (badness 10000) detected at line 396
+[][]
+ []
 
 
-(./_minted-general/B3DD2167A978C3BD7E195F16FD05B3CCDBA75D934583C30F620E36427650
-14C7.pygtex [93])
-runsystem(rm "general.pyg")...executed.
+LaTeX Warning: Command \~ invalid in math mode on input line 396.
 
- [94] (./general.aux)
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+! LaTeX Error: Command \item invalid in math mode.
 
-Package logreq Info: Writing requests to 'general.run.xml'.
-\openout1 = `general.run.xml'.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.397 \item
+            Quines s√≥n les seves aplicacions?
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.397 \item Q
+             uines s√≥n les seves aplicacions?
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.397 \item Q
+             uines s√≥n les seves aplicacions?
+? 
+Missing character: There is no √ in font cmr17!
 
- ) 
-Here is how much of TeX's memory you used:
- 41163 strings out of 494850
- 933048 string characters out of 6178024
- 1510546 words of memory out of 5000000
- 43601 multiletter control sequences out of 15000+600000
- 28359 words of font info for 72 fonts, out of 8000000 for 9000
- 62 hyphenation exceptions out of 8191
- 61i,22n,96p,14428b,1568s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1200.600pk> </home/a
-niol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/aniol/.texmf
--var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/aniol/.texmf-var/fonts/
-pk/ljfour/jknappen/ec/ectt1000.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecbx1728.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-ecrm1000.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.60
-0pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home
-/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/aniol/.tex
-mf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/aniol/.texmf-var/font
-s/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecrm1200.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecti1200.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.
-600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </ho
-me/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on general.pdf (100 pages, 1991492 bytes).
-PDF statistics:
- 1156 PDF objects out of 1200 (max. 8388607)
- 335 compressed objects within 4 object streams
- 0 named destinations out of 1000 (max. 500000)
- 32 words of extra memory for PDF output out of 10000 (max. 10000000)
+Overfull \hbox (1640.54543pt too wide) in paragraph at lines 395--397
+\T1/cmr/bx/n/24.88 s√$[]\OML/cmm/m/it/24.88 nelsgrafs\OT1/cmr/m/n/24.88 ?\OML/c
+mm/m/it/24.88 Quinss[]nelsprocediments; mecanismesi=oeinesperaconseguiranardesd
+elconcepteabstractedegrafsfinsalesdadesconcretesirealsqueofereixenunaresopstaau
+nplanteiginicial\OT1/cmr/m/n/24.88 ?[][]$  
+ []
 
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.397 \item Q
+             uines s√≥n les seves aplicacions?
+? 
+
+Underfull \hbox (badness 10000) detected at line 397
+[][]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.397 \item Quines s√≥
+                      n les seves aplicacions?
+? 
+! Extra }, or forgotten $.
+\maththreesuperior ->{^3}
+                         
+l.397 \item Quines s√≥
+                      n les seves aplicacions?
+? 
+
+! LaTeX Error: Command \end{document} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.398 \end{itemize}
+                   
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.398 \end{itemize}
+                   
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.398 \end{itemize}
+                   
+? 
+
+! LaTeX Error: \begin{document} ended by \end{itemize}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.398 \end{itemize}
+                   
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.398 \end{itemize}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.398 \end{itemize}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.398 \end{itemize}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.398 \end{itemize}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.398 \end{itemize}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.398 \end{itemize}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.398 \end{itemi

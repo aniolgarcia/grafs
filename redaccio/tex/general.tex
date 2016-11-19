@@ -30,6 +30,7 @@
 \usepackage{minted}
 \usepackage{etoolbox}
 \usepackage{parskip}
+\usepackage[toc,page]{appendix}
 \usetikzlibrary{arrows,%
                 petri,%
                 topaths}%
@@ -164,6 +165,12 @@ array element/.style = {
 %Per posar l'interlineat a (1.5). Recomanable comentar-ho i deixar l'interlineat per defecte...
 %\renewcommand{\baselinestretch}{1.5}
 
+%Afegim l'entrada d'annexos a la llibreria de idioma
+\addto\captionscatalan{%
+   \renewcommand{\appendixtocname}{Annexos}%
+   \renewcommand{\appendixpagename}{Annexos}%
+}
+
 
 \title{Els Grafs: xarxes, camins i connexions \\ \large De la matemàtica discreta a la realitat}
 \author{Aniol Garcia i Serrano \\ \small{Xavier Aguilera Colmenero}}
@@ -179,15 +186,20 @@ array element/.style = {
 
 
 \begin{tikzpicture}[transform shape,line width=0.2pt]
-  \foreach \x in {1,...,16}{%
-    \pgfmathparse{(\x-1)*45+floor(\x/9)*22.5}
-    \node[draw,circle,inner sep=0.25cm] (N-\x) at (\pgfmathresult:5.4cm) [thick] {};
-  } 
-  \foreach \x [count=\xi from 1] in {2,...,16}{%
-    \foreach \y in {\x,...,16}{%
-        \path (N-\xi) edge[-] (N-\y);
- }
-}
+ \SetVertexNoLabel
+  \GraphInit[vstyle=Art]
+  \SetGraphArtColor{black}{gray}
+ %\grBalaban[form=3,RA=7,RB=6.5,RC=5.6,RD=5.6,RE=4.6]
+ \grCirculant[RA=6]{25}{1,2,3,4,5,6,7,8,9,10,11,12}
+%  \foreach \x in {1,...,16}{%
+%    \pgfmathparse{(\x-1)*45+floor(\x/9)*22.5}
+%    \node[draw,circle,inner sep=0.25cm] (N-\x) at (\pgfmathresult:5.4cm) [thick] {};
+%  } 
+%  \foreach \x [count=\xi from 1] in {2,...,16}{%
+%    \foreach \y in {\x,...,16}{%
+%        \path (N-\xi) edge[-] (N-\y);
+% }
+%}
 \end{tikzpicture}
 \end{figure}
 
@@ -237,8 +249,8 @@ Moltes gràcies a tots!
 \pagenumbering{arabic}
 \chapter{Presentació}
 
-El tema d'aquest treball, tal com diu el títol, tracta sobre els grafs: xarxes, camins i connexions. Pretén fer el pas de la matemàtica discreta a la realitat. Els grafs són una part d'aquesta matemàtica discreta i han passat a formar part del món en què vivim, un món que l'home ha anat creant al llarg del temps. Sovint desconeixem quin és l'entramat de mecanismes que fan funcionar moltes de les coses que ens envolten. %( El cert és que l'entorn que ens envolta és ple de matemàtiques; sovint en som usuaris però poques vegades ens n'adonem. Desconeixem, encara més,  quin és l'entramat de mecanismes que fan que moltes de les coses que ens envoltem,  i útilment utilitzem, funcionin.) 
-Al llarg del treball intento crear lligams entre la part més teòrica i abstracta i les aplicacions que se'n deriven. Intento endinsar-me en el coneixement per comprendre aquests mecanismes; Intento crear els mecanismes per que el coneixement esdevingui una eina pràctica i funcional. 
+El tema d'aquest treball, tal com diu el títol, tracta sobre els grafs: xarxes, camins i connexions. Pretén fer el pas de la matemàtica discreta a la realitat. Els grafs són una part d'aquesta matemàtica discreta i han passat a formar part del món en què vivim, un món que l'home ha anat creant al llarg del temps. Sovint desconeixem quin és l'entramat de mecanismes que fan funcionar moltes de les coses que ens envolten. El cert és que l'entorn que ens envolta és ple de matemàtiques; sovint en som usuaris però poques vegades ens n'adonem. Desconeixem, encara més,  quin és l'entramat de mecanismes que fan que moltes de les coses que ens envolten funcionin, tot i ser-ne usuaris. 
+Al llarg del treball intento crear lligams entre la part més teòrica i abstracta i algunes de les aplicacions que se'n deriven. Intento endinsar-me en el coneixement per comprendre aquests mecanismes; Intento crear els mecanismes per que el coneixement esdevingui una eina pràctica i funcional. 
 
 \subsection*{Justificació}
 Des de feia un cert temps, ja tenia clar que el meu treball de recerca havia de ser d'àmbit científic o tècnic. Havia pensat en temes de robòtica i informàtica, camps en els quals ja havia treballat anteriorment, però els treballs que se m'acudien en aquestes disciplines eren massa concrets i es basaven en un sol producte final, cosa que no m'acabava de convèncer.
@@ -400,32 +412,55 @@ A partir d'aquest primer graf  em vaig plantejar una sèrie de qüestions amb la i
 Els objectius del treball són, doncs:
 \begin{itemize}
 \item Conèixer la teoria de grafs.
-\item Crear algorismes que permetin solucionar problemes de grafs.
-\item Mostrar que lateoria de grafs, com a branca de la matemàtica discreta,  està present en la realitat que ens envolta.
+\item Estudiar i implementar algorismes que permetin resoldre problemes de grafs.
+\item Mostrar que la teoria de grafs esta present en diferents àmbits de la realitat que ens envolta.
 \end{itemize}                     
 
 \subsection*{Formulació de la hipòtesi de partida}
 
-La matemàtica discreta, en concret la teoria de grafs, ofereix aplicacions práctiques a la vida quotidiana i existeixen procediments basats en les matemàtiques que ens permeten fer el pas de la teoria a la realitat. En aquest treball he intentat validar aquesta hipòtesi.
+%La teoria de grafs, com a branca de la matemàtica discreta, no només ens proporciona eines per modelitzar, sinó que també ens permet treballar sobre aquests models i crear aplicacions pràctiques
+%La matemàtica discreta, en concret la teoria de grafs, ofereix aplicacions práctiques a la vida quotidiana i existeixen procediments basats en les matemàtiques que ens permeten fer el pas de la teoria a la realitat.   
+
+La teoria de grafs, com a branca de la matemàtica discreta, ens proporciona eines per modelitzar estructures i processos i ens permet crear aplicacions pràctiques mitjançant procediments algorísmics.
+
+En aquest treball he intentat validar aquesta hipòtesi.
 
 \subsection*{Estructura del treball i fonts d'informació}
 
-El treball comença amb la història de la teoria de grafs, la qual em va permetre conèixer els seus orígens i la seva evolució. Tot seguit em vaig endinsar en la part matemàtica. Havia de buscar respostes a les preguntes que m'havia formulat, però primer necessitava  conèixer el concepte clau del meu treball: els grafs. El meu punt de partida era molt bàsic. De bon començament doncs, vaig haver de familiaritzar-me amb el llenguatge matemàtic emprat i tot seguit van venir les fórmules i les demostracions. El cert és que cada cop es va anar fent més gran la distància entre els meus coneixements del nivell de primer de Batxillerat i tot allò que anava incorporant al meu bagatge. En aquest procés he tingut la sort de comptar amb el guiatge de la UB que m'ha ofert un acompanyament incondicional.  Quan em vaig posar a escriure, em vaig adonar d'un petit entrebanc: un editor de text convencional no era el més adient per a dibuixar esquemes de grafs ni escriure fórmules. Així doncs, seguint un bon consell, em vaig decidir a fer servir el programa  \LaTeX: nou repte afegit. Uns dies de pràctiques i unes quantes converses amb l'ordinador em van permetre començar a avançar de nou. Amb tot, havia completat la part II. 
+%El treball comença amb la història de la teoria de grafs, la qual em va permetre conèixer els seus orígens i la seva evolució. Tot seguit em vaig endinsar en la part matemàtica. Havia de buscar respostes a les preguntes que m'havia formulat, però primer necessitava  conèixer el concepte clau del meu treball: els grafs. El meu punt de partida era molt bàsic. De bon començament doncs, vaig haver de familiaritzar-me amb el llenguatge matemàtic emprat i tot seguit van venir les fórmules i les demostracions. El cert és que cada cop es va anar fent més gran la distància entre els meus coneixements del nivell de primer de Batxillerat i tot allò que anava incorporant al meu bagatge. En aquest procés he tingut la sort de comptar amb el guiatge de la UB que m'ha ofert un acompanyament incondicional.  Quan em vaig posar a escriure, em vaig adonar d'un petit entrebanc: un editor de text convencional no era el més adient per a dibuixar esquemes de grafs ni escriure fórmules. Així doncs, seguint un bon consell, em vaig decidir a fer servir el programa  \LaTeX: nou repte afegit. Uns dies de pràctiques i unes quantes converses amb l'ordinador em van permetre començar a avançar de nou. Amb tot, havia completat la part II. 
 
-La part III va ser tota una altra descoberta. Un cop familiaritzat amb els grafs calia recorre'ls, de node a node, d'aresta a aresta, un passeig que es pot fer de moltes maneres diferents i amb finalitats diferents. Tot fent camí amb les matemàtiques, mitjançant el programa de "Bojos per les matemàtiques" \footnote{Programa organitzat per FEEMCAT, SCM i Fundació Catalunya La Pedrera} i el "Math Summer Camp"\footnote{Activitat organitzada per Fundació Privada Cellex, UPC-FME i CFIS}, aquests passejos s'han fet amens i una mica més  propers. Ha estat fantàstic trobar punts de confluència que m'anaven aclarint idees i aportant fluïdesa als nous coneixements. Però, com els havia de recórrer? En aquest moment del treball, la programació entra en joc. En els annexos he adjuntat els programes amb  llenguatge Python que m'han ofert la possibilitat de gaudir del recorregut. També m'han estat molt útils les classes del MIT que es poden consultar a través de la xarxa.
+%La part III va ser tota una altra descoberta. Un cop familiaritzat amb els grafs calia recorre'ls, de node a node, d'aresta a aresta, un passeig que es pot fer de moltes maneres diferents i amb finalitats diferents. Tot fent camí amb les matemàtiques, mitjançant el programa de "Bojos per les matemàtiques" \footnote{Programa organitzat per FEEMCAT, SCM i Fundació Catalunya La Pedrera} i el "Math Summer Camp"\footnote{Activitat organitzada per Fundació Privada Cellex, UPC-FME i CFIS}, aquests passejos s'han fet amens i una mica més  propers. Ha estat fantàstic trobar punts de confluència que m'anaven aclarint idees i aportant fluïdesa als nous coneixements. Però, com els havia de recórrer? En aquest moment del treball, la programació entra en joc. En els annexos he adjuntat els programes amb  llenguatge Python que m'han ofert la possibilitat de gaudir del recorregut. També m'han estat molt útils les classes del MIT que es poden consultar a través de la xarxa.
 
-La part IV utilitza un punt de vista diferent als altres apartats. La particularitat és que en aquesta ocasió els grafs no només s'estudien, sinó que es creen. Descobreixo que les bombolles de sabó ens n'ofereixen exemples magnífics.
+%La part IV utilitza un punt de vista diferent als altres apartats. La particularitat és que en aquesta ocasió els grafs no només s'estudien, sinó que es creen. Descobreixo que les bombolles de sabó ens n'ofereixen exemples magnífics.
 
-Finalment, en la darrera part, la V, he descrit alguns exemples que poden formar part del nostre dia a dia. Sense ser-ne massa conscients,  algunes persones treballen i fan que les coses funcionin d'una manera determinada, ens faciliten certes tasques, ens proporcionen seguretat, fan possible que puguem establir contactes... No acabaríem la llista. M'he decantat per dos exemples concrets: situar càmeres de vigilància en un edifici i, l'altre, trobar el recorregut del metro de Barcelona que permet anar d'una estació a una altra qualssevol amb el mínim temps posible, tot indicant les línies i les estacions per on transcorrerà i el temps que trigarà.  
+%Finalment, en la darrera part, la V, he descrit alguns exemples que poden formar part del nostre dia a dia. Sense ser-ne massa conscients,  algunes persones treballen i fan que les coses funcionin d'una manera determinada, ens faciliten certes tasques, ens proporcionen seguretat, fan possible que puguem establir contactes... No acabaríem la llista. M'he decantat per dos exemples concrets: situar càmeres de vigilància en un edifici i, l'altre, trobar el recorregut del metro de Barcelona que permet anar d'una estació a una altra qualssevol amb el mínim temps posible, tot indicant les línies i les estacions per on transcorrerà i el temps que trigarà.  
 
-He afegit a més, dos annexes:
-El primer conté gran part del programari utilitzat, eines indispensables per a la creació de tot el procés.
-En el segon hi ha tots els programes que he creat, totes les implementacions d'algorismes tractats durant el treball.
+%He afegit a més, dos annexes:
+%El primer conté gran part del programari utilitzat, eines indispensables per a la creació de tot el procés.
+%En el segon hi ha tots els programes que he creat, totes les implementacions d'algorismes tractats durant el treball.
 
-Com a annexes he afegit, d'una banda, tot el conjunt de programari utilitzat
+%Com a annexes he afegit, d'una banda, tot el conjunt de programari utilitzat
 
-A més de les fonts d'informació ja esmentades, cal afegir les persones que m'han ofert els seus coneixements (ja citades a l'agraïment) i, finalment, la Xarxa de Xarxes: Internet. A l'apartat de bibliografia es es detallen les pàgines web que he anat consultant al llarg del treball.
- 
+%A més de les fonts d'informació ja esmentades, cal afegir les persones que m'han ofert els seus coneixements (ja citades a l'agraïment) i, finalment, la Xarxa de Xarxes: Internet. A l'apartat de bibliografia es es detallen les pàgines web que he anat consultant al llarg del treball.
+
+El cos del treball s'estructura en quatre capítols que permeten endinsar-se de manera seqüenciada en el coneixement del grafs i les seves aplicacions.
+
+En el primer capítol es fa una  introducció a la teoria de grafs.  Es comença fent un  recorregut  per la història dels grafs,  des dels seus orígens, amb els primers  problemes on encara no  es coneixia aquest concepte,  fins  la teoria de grafs moderna. Tot seguit s'expliquen els conceptes bàsics: és  la part més  teòrica en la qual es defineix el graf i es fa referència a la seva estructura i els seus components. S'explica també què són els isomorfismes i, finalment  es fa una descripció del diferents tipus de grafs. Cal remarcar que, en aquest apartat,  s'han exposat les propietats fonamentals  i s'han inclòs demostracions  sempre que ha estat possible. Majoritàriament, aquestes demostracions no han estat fruit d'una recerca a la xarxa sinó d'una recerca personal. Les persones i entitats a les qui adreço part dels meus agraïments a l'inici d'aquest treball, hi han tingut molt a veure.
+
+En el segon capítol es fa un pas més enllà: es descriu què són els grafs ponderats i els dirigits, els tipus de camins i les maneres diferents de gestionar tota aquesta informació afegida. Finalment s'estudien diferents algorismes segons la seva finalitat. S'analitza el funcionament, les propietats fonamentals i les aplicacions més comuns de cadascun d'aquests procediments i s'especifica el pseudocodi.  En l'Annex B adjunto els programes, amb llenguatge Python, que permeten resoldre els algorismes, juntament amb exemples d'entrada i de sortida. La implementació d'aquests algorismes  és, també, una aportació personal.
+
+El tercer capítol és un incís al disseny de grafs. Es fa referència al punt de Fermat i a l'arbre de Steiner per la seva rellevància. Se'n mostra un bonic exemple mitjançant les bombolles de sabó.
+
+Finalment, en el darrer capítol s'exposen algunes aplicacions pràctiques. Una d'elles és el recorregut per la xarxa de metro de Barcelona.  Aporto al treball un algorisme que, a partir d'una estació de sortida  i una altra d'arribada, ofereix, com a resposta, el trajecte que permet fer el recorregut amb el mínim temps possible. Aquesta resposta inclou les estacions per on es passarà, els transbordaments que caldrà fer i el temps total que es trigarà per anar d'un punt  a l'altre. En l'Annex B adjunto la codificació d'aquest algorisme així com exemples d'entrades i sortides. 
+
+Les meves conclusions i valoracions esdevenen el punt i final d'aquest treball. 
+
+Les fonts d'informació utilitzades han estat molt diverses. En la bibliografia he detallat els documents i les pagines Webs consultades. Vull remarcar, però,  que el gruix més important de la informació prové d'altres fonts que per a mi han estat més significatives pel fet que han estat més properes i, sobretot, vivencials: el guiatge  de la UB per part de l'Antoni Benseny i, sobretot, el seguiment i l'acompanyament d'en Robert Salla  han estat claus; la participació en el Math Summer Camp també em va aportar moltíssima informació; les xerrades i consells per part dels investigadors de l'IRI m'han obert moltes portes; les converses amb l'Anton Aubanell, imprescindibles. 
+Per a l'elaboració d'aquest treball s'han utilitzat  eines informàtiques provinents, en tots els casos, de programari lliure. Aquest programari m'ha permès escriure les fórmules i confegir els esquemes dels grafs que apareixen en el treball,  els quals són tots d'elaboració pròpia.  Esmentar l'ús del sistema operatiu GNU/Linux, el processador de text \LaTeX, el programa GeoGebra, el llenguatge Python i el sistema de control de versions Git. L'ús d'aquestes eines ha estat una part important del meu aprenentatge i és per aquest motiu que les he detallades en l'Annex  A.  
+
+La presentació d'aquest treball (el tipus de lletra, l'espaiat, les mides, el format...) ha quedat determinada pels valors propis del processador de text LaTeX.
+
+
 
 
 \newpage
@@ -3019,6 +3054,35 @@ Dijkstra retorna un primer diccionari amb els temps des del node inicial $s$ fin
 
 Per obtenir el temps caldrà buscar l'entrada corresponent al node final al diccionari dels temps. A aquest temps se li afegiran els temps per a cada parada i es farà la conversió de segons a minuts i segons.
 
+El temps addicional corresponent a les parades, en un principi, s'afegeigia al total multiplicat pel nombre de parades menys dues (la inicial i la final), però es va observar que aquest procediment no era del tot correcte. Per tal de veure el problema, considerem el següent graf:
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.8]
+    \node[round](0) at (0,0){$v_{0}$};
+    \node[round](1) at (2,0){$v_{1}$};
+    \node[round](2) at (4,0){$v_{2}$};
+    \node[round](3) at (6,0){$v_{3}$};
+    \node[round](4) at (8,0){$v_{4}$};
+    \node[round](5) at (10,0){$v_{5}$};
+
+    \Edge[label=$1$](0)(1)
+    \Edge[label=$1$](1)(2)
+    \Edge[label=$1$](2)(3)
+    \Edge[label=$1$](3)(4)
+    \Edge[label=$1$](4)(5)
+
+    \tikzset{EdgeStyle/.style={bend right=25}} %Arestes múltiples
+    \Edge[label=$6$](0)(5)
+
+
+  \end{tikzpicture}
+  \caption{Exemple abstracte de xarxa de metro}
+  \label{fig:no_metro}
+\end{figure}
+
+En aquest graf, el camí mínim per anar de $v_{0}$ a $v_{5}$ segons Dijkstra és passant per la resta de nodes. Posteriorment l'algorisme del metro afegiria els 25 segons multiplicat pel nombre de parades menys una, afegint llavors 125 segons. El resultat total és de 130 segons. Però el camí mínim no és aquest: si no s'utilitza Dijkstra i s'agafa l'aresta directa entre $v_{0}$ i $v_{5}$ s'obté un temps de 6 segons al que només cal sumar 25 segons, trigant un total de 31 segons. Així doncs, l'algorisme era incorrecte, ja que també cal tenir en compte el nombre de nodes per on es passa. Aquest error està sol·lucionat en el següent algorisme:
+
 \begin{algorisme}[H]
 \KwData{Graf $G$ del metro, un node inicial $inici$ i un node final $final$}
 \KwResult{Temps total del trajecte, trajecte}
@@ -3078,13 +3142,36 @@ Recorregut: [ 3_Zona Universitària, 3_Palau Reial, 3_Maria Cristina, 3_Les Corts
 \end{minted}
 
 \newpage
-\chapter{Conclusions}
+\chapter*{Conclusions}
+\addcontentsline{toc}{chapter}{Conclusions}
 
 Durant aquest treball hem fet un camí juntament amb la teoria de grafs: l'hem vist néixer del pensament d'Euler; l'hem vist créixer acompanyada d'alguns dels més grans matemàtics de l'història; n'hem vist la seva manera d'entendre i modelitzar el món; l'hem acompanyada fins a la seva maduresa on, juntament amb més matemàtics i teòrics de les ciències de computació, ha col·laborat amb una infinitat d'àrees que en un principi semblaven distants a ella; i finalment ens ha ajudat a resoldre problemes quotidians.
 
-Càmeres de vigilància, navegadors GPS, xarxes socials, xarxes telemàtiques, xarxes elàctriques, planificació d'horaris, organització d'un treball, clavagueram... Tots aquest són exemples clars de que lateoria de grafs forma part de la nostra realitat. Verifico, doncs, la meva hipòtesi inicial: la teoria de grafs ofereix aplicacions práctiques a la vida quotidiana. I, com a conclusió, afegiria: difícilment algú pot quedar-ne al marge. 
-En la segona part de l'hipòtesi exposava que hi havia mecanismes que permetien fer el pas de la teoria a la realitat. El que és cert és que, com a usuaris, ens queden lluny i difícilment són visibles o apreciables. Aquests mecanismes són els algorismes que, a partir d'unes dades concretes, ofereixen una resolució, una resposta. Al llarg del treball he vist i he demostrat que al darrere d'aquests procediments hi ha matemàtiques, tal com es pretenia validar. Podríem dir que he ampliat es objectius incials al poder comprendre i analitzar el funcionament de tots aquests algorismes i, encara més, al generar-ne de nous. 
-Una altra conclusió és que tota la matemàtica vinculada a la teoria de grafs esdevé complexa i requereix, en general, de l'ús dels ordinadors. Així ho van començar a veure Appel i Hanken en la seva demostració del teorema dels quatre colors i així ho he pogut constatar mitjançant programes com el del metro.  
+Un cop acabat el treball, puc afirmar que he assolit els objectius proposats. D'una banda, m'he endinsat en el coneixement de la teoria de grafs començant per la seva història, que m'ha permès conèixer el punt de partida l'evolució d'aquest concepte. He constatat que les demostracions són una part molt important de les matemàtiques, i n'he inclòs algunes d'específiques. Mencino, a tall d'exemple, la demostració sobre la relació que s'estableix entre el nombre de nodes i d'arestes d'un graf respecte el seu lineal. En aquest punt, com en tants d'altres, ha estat important compartir coneixements amb persones enteses en la matèria, la qual cosa m'ha permès d'anar avançant amb confiança. 
+
+D'altra banda, també he aconseguit estudiar amb certa profunditat i formalitat alguns dels algorismes més usats en aquest camp. N'he estudiat el temps d'execució, les propietats i les possibles aplicacions pràctiques, i de tots ells n'he fet una implementació en Python, recollida a l'annex B. A més, també he implementat altres algorismes que no es tracten durant el treball (però que estàn estretament relacionats amb conceptes d'aquest), com els algorismes per trobar camins Eulerians i Hamiltonians en un graf. Podríem dir que he ampliat es objectius incials al generar nous algorismes i aplicar-los a problemes reals.  D'aquesta manera també queda assolit el darrer objctiu, que pretenia mostrar que la teoria de grafs està present en diferents àmbits. En aquest sentit el capítol 4, que fa referància a aplicacions pràctiques, aporta matisos concrets a aquest objectiu.  
+
+Amb els objectius acomplerts, la hipòtesi queda verificada. La teoria de grafs ens proporciona eines per modelitzar estructures i processos i ens permet crear aplicacions pràctiques mitjançant procediments algorísmics. Hem vist que podem modelitzar una gran quantitat d'estructures: des de xarxes de telecomunicacions, fins a representar com un graf les dependències de cadascun dels apartats d'un treball, passant per altres situacions com per exemple modelitzar la xarxa de metro. Un cop els models estan definits, ens trobem amb tot un assortiment d'algorismes informàtics que permeten extreure dades de models teòrics i transformar-los en informació útil, resultats. Mitjançant els algorismes hem aconseguit trobar el camí mínim entre dos ordinadors, ordenar el treball de la manera òptima i poder saber el recorregut i distància entre dues estacions de metro qualssevol.
+
+Com a conclusions, a més d'assolir els objectius i verificar la hipòtesi inicial, m'agradaria afegir que:
+\begin{itemize} 
+  \item Els procediments algorísmics que ens permeten crear aplicacions pràctiques, tenen un component matemàtic molt important. Alguns es basen en conceptes matemàtics més generals, com per exemple l'algorisme de Dijkstra amb la desigualtat trianguar; en canvi d'altres com el de Prim es basen en les propietats dels grafs.
+  \item Els grafs, no només formen part de la realitat que ens envolta si no que, a més, ens faciliten moltes gestions i ens proporcionen comoditats de les quals ens seria difícil prescindir: les xarxes socials, Internet, el subministrament elèctric, navegadors GPS...  
+  \item Implementar algorismes, a més de la part matemàtica, en ocasions requereix un treball de camp i/o una recollida de dades, com ha estat el cas de l'algorisme de la Xarxa de metro de Barcelona.
+\end{itemize}
+
+%Càmeres de vigilància, navegadors GPS, xarxes socials, xarxes telemàtiques, xarxes elàctriques, planificació d'horaris, organització d'un treball, clavagueram... Tots aquest són exemples clars de que lateoria de grafs forma part de la nostra realitat. Verifico, doncs, la meva hipòtesi inicial: la teoria de grafs ofereix aplicacions práctiques a la vida quotidiana. I, com a conclusió, afegiria: difícilment algú pot quedar-ne al marge. 
+%En la segona part de l'hipòtesi exposava que hi havia mecanismes que permetien fer el pas de la teoria a la realitat. El que és cert és que, com a usuaris, ens queden lluny i difícilment són visibles o apreciables. Aquests mecanismes són els algorismes que, a partir d'unes dades concretes, ofereixen una resolució, una resposta. Al llarg del treball he vist i he demostrat que al darrere d'aquests procediments hi ha matemàtiques, tal com es pretenia validar. Podríem dir que he ampliat es objectius incials al poder comprendre i analitzar el funcionament de tots aquests algorismes i, encara més, al generar-ne de nous. 
+%Una altra conclusió és que tota la matemàtica vinculada a la teoria de grafs esdevé complexa i requereix, en general, de l'ús dels ordinadors. Així ho van començar a veure Appel i Hanken en la seva demostració del teorema dels quatre colors i així ho he pogut constatar mitjançant programes com el del metro.  
+
+En acabar el treball me n'adono que es podia haver ampliat en diferents sentits:
+\begin{itemize}
+\item D'una banda, queda camí per recòrrer en la teoria.
+\item Han quedat algorismes per tractar, com per exemple el A*.
+\item La topologia és una part ampliable, que té moltes branques i ofereix moltes possibilitats.
+\item Han quedat al marge moltes aplicacions possibles en molts àmbits diferents, com en el camp de la sociologia, la lingüística, la biologia, etc.
+
+\end{itemize}
 
 
 Personalment, el treball m'ha ajudat molt. He après moltíssim de teoria de grafs, però el que és també molt important és el rerefons més abstracte: el tipus de raonament matemàtic, la formalització de conceptes i idees, les tècniques de demostració, la metodologia matemàtica... Amb tot això he pogut descobrir la capacitat modelitzadora de les matemàtiques.
@@ -3107,14 +3194,18 @@ Això sí: tot i que el camí sempre ha fet pujada, cal pensar que cada vegada som 
 \newpage
 
 \appendix
+\addappheadtotoc
+%\begin{appendices}
+
 \chapter{Programari}
-Per poder realitzar aquest treball ha sigut necessari fer un ús extensiu d'eines informàtiques. Penso que és important posar en valor totes aquestes eines utilitzades que, directa o indirectament han afectat en el desenvolupament del treball. Tot el programari que s'ha utliitzat durant el transcurs del treball és programari lliure, de codi obert i gratuït.
+Per poder realitzar aquest treball ha sigut necessari fer un ús extensiu d'eines informàtiques. Penso que és important posar en valor totes aquestes eines utilitzades que, directa o indirectament han afectat en el desenvolupament del treball.
+Tot el programari que s'ha utliitzat durant el transcurs del treball és programari lliure, de codi obert i gratuït.
 
 \section{Sistemes operatius}
-Encara que la majoria de programes utilitzats tenen versions per a altres sistemes operatius, jo els he utilitzat sobre sistemes GNU/Linux, concretament amb distribucions Ubuntu i Debian.
+Encara que la majoria de programes utilitzats tenen versions per a altres sistemes operatius, jo els he utilitzat sobre sistemes GNU/Linux, concretament en distribucions Ubuntu i Debian.
 
 \section{Processador de text}
-Per tal de poder redactar el treball ha sigut necessari un processador de textos especial. Ha sigut necessari escriure un gran nombre de fórmules i expressions matemàtiques, pseudocodi, programes complets... i en aquest aspecte \LaTeX  ha ajudat molt. LaTeX és un "sistema de composició de text" amb una "alta qualitat tipogràfica", on en lloc d'escriure el text podríem dir que es programa. D'aquesta manera s'aconsegueix exactament el que es desitja, essent possible modificar tots i cadascun dels paràmetres del document.
+Per tal de poder redactar el treball ha sigut necessari un processador de textos especial. Ha sigut necessari escriure un gran nombre de fórmules i expressions matemàtiques, pseudocodi, programes complets... i en aquest aspecte \LaTeX  ha ajudat molt. LaTeX és un sistema de composició de text amb una "alta qualitat tipogràfica", on el text s'escriu en forma de codi i se li dona format amb ordres específiques incloses en el document. D'aquesta manera s'aconsegueix exactament el que es desitja, essent possible modificar molts dels paràmetres del document.
 Per exemple: 
 la fórmula
 \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]
@@ -3124,10 +3215,12 @@ s'escriu a LaTeX com a
 \end{minted}
 Posteriorment, tot el codi es compila i es genera un fitxer .pdf amb tot el codi interpretat.
 
-També permet la utilització de diversos paquets que afegeixen funcionalitats. Durant la redaccó d'aquesta memòria se n'han utilitzat un total de 32. Els següents són els més importants:
+Un altre avantatge de LaTeX és que també permet la utilització de diversos paquets que afegeixen funcionalitats addicionals. Durant la redaccó d'aquesta memòria se n'han utilitzat un total de 32, i els següents són els més importants:
 
 \subsection{Tikz i tkz-berge}
-La gran majoria de imatges fetes per mi mateix s'han fet a través d'aquests paquets. Inclouen diverses funcions orientades a grafs i permeten dibuixar-los tal com es desitgin. La següent imatge d'un graf 
+Tikz i tkz-gerge permeten dibuixar (mitjnaçant ordres escrites) directament al document, sense que sigui necessari importar imatges externes. La gran majoria de imatges fetes per mi mateix s'han fet a través d'aquests dos paquets. Aquests tenen un sistema propi de paquets que permet afegir funcions i ordres, i dins d'aquests paquets n'hi ha que inclouen diverses funcions orientades a grafs i permeten dibuixar-los tal com es desitgin. 
+
+La següent imatge d'un graf 
 
 \begin{figure}[H]
 	\centering
@@ -3174,19 +3267,23 @@ s'escriu a LaTeX com a
 
 \end{minted}
 
-\subsubsection{Minted i Algorithm2e}
-Minted és el paquet que permet introduïr codi amb el seu format corresponent i ressaltant la sintaxi. D'altra banda, algorithm2e és l'encarregat de donar format al pseudocodi.
+\subsection{Minted i Algorithm2e}
+Per poder incloure codi en el treball també ha sigut necessari utilitzar diversos paquets. Minted és el paquet que permet introduïr codi amb el seu format corresponent i ressaltant la sintaxi, i algorithm2e és l'encarregat de donar format al pseudocodi. Aquests dos paquets permeten que el codi i pseudocodi quedin diferenciats de la resta del text i que, a més, es respecti la forma del programa.
 
-\subsection{GeoGebra}
+\section{GeoGebra}
 GeoGebra és un porgrama muliús, útil tant en el camp de la geometria, com en l'àlgebra o el càlcul. En aquest cas ha estat utilitzat per a generar les imatges dels punts de Fermat i alguna altra figura concreta com el polígon del problema de les càmeres de seguretat.
 
-\subsection{Python} 
+\section{Python} 
 Python és un lenguatge de propòsit general i d'alt nivell que busca senzillesa i eficiència fent que la sintaxi sigui més senzilla de llegir. Aquest llenguatge permet escriure programes més entenedors i en menys línies que altres llenguatges com C/C++.
+
+\section{Git}
+Per tal de mantenir actualitzats els fitxer de redacció de la memòria i el fitxer amb els programes en Python he utilitzat Git. Git és un sistema de control de versions, és a dir, un conjunt d'eines que permeten tenir una còpia remota dels fitxers a la qual se li van afegint els canvis de cada sistema local. Per exemple: des d'un ordinador es realitxa un canvi en el fitxer de la memòria del treball. Aquests canvis locals es sincronitzen amb la còpia remota i queda arxivat com a una nova versió. Quan es vol treballar des d'un altre ordinador es comprova si la versió local correspona a la versió remota, es a dir, es mira si hi ha hagut canvis que encara no té. En cas afirmatiu, es descarreguen els canvis de la còpia remota i s'integren a la còpia local. D'aquesta manera sempre es té la última versió i sempre hi ha un registre de tots els canvis que, a més, permet tornar a una versió anterior si fos necessari.
+
 
 \newpage
 \chapter{Algorismes}
-\subsection{DFS}
-\subsubsection{Codi}
+\section{DFS}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 parent={}
 topo=[] 
@@ -3214,12 +3311,12 @@ def DFS_recursive(Adj, s):
             DFS_recursive(Adj, v)
     topo.append(s)
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 G={0:[1,2,3], 1:[3,4], 2:[4], 3:[4], 4:[]}
 print DFS(G)
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 Des de 0 es pot arribar a:
 0
@@ -3231,8 +3328,8 @@ Ordenació topològica:
 [0, 2, 1, 3, 4]
 \end{minted}
 
-\subsection{BFS}
-\subsubsection{Codi}
+\section{BFS}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 def BFS(Adj, s):
     level={s:0}
@@ -3253,19 +3350,19 @@ def BFS(Adj, s):
         i+=1
     print level
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 G={0:[1,2,3], 1:[3,4], 2:[4], 3:[4], 4:[]}
 print BFS(G, 0)
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 {0: 0, 1: 1, 2: 1, 3: 1, 4: 2}
 \end{minted}
 
 
-\subsection{Dijkstra}
-\subsubsection{Codi}
+\section{Dijkstra}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 def Dijkstra(Adj, s):
     Q={}
@@ -3305,20 +3402,20 @@ def OrderedDijkstra(Adj, s):
         
     return dist, tree
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 G={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
 distancies, arbre_anteriors = Dijkstra(G, 0)
 print distancies
 print arbre_apuntadors
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 {0: 0, 1: 7, 2: 3, 3: 9, 4: 5}
 {1: 2, 2: 0, 3: 1, 4: 2}
 \end{minted}
-\subsection{Bellman-Ford}
-\subsubsection{Codi}
+\section{Bellman-Ford}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 def BellmanFord(Adj, s):
     dist={}
@@ -3341,20 +3438,20 @@ def BellmanFord(Adj, s):
                 break
     return dist, tree
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 G={0:{1:16,2:0}, 1:{2:-32}, 2:{3:8,4:0}, 3:{4:-16}, 4:{5:4,6:0}, 5:{6:-8}, 6:{7:2,8:0}, 7:{8:-4}, 8:{9:1,10:0}, 9:{10:-2},10:{}}
 distancies, arbre_apuntadors = BellmanFord(G, 0)
 print distancies
 print arbre_apuntadors
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 {0: 0, 1: 16, 2: -16, 3: -8, 4: -24, 5: -20, 6: -28, 7: -26, 8: -30, 9: -29, 10: -31}
 {0: None, 1: 0, 2: 1, 3: 2, 4: 3, 5: 4, 6: 5, 7: 6, 8: 7, 9: 8, 10: 9}
 \end{minted}
-\subsection{Prim}
-\subsubsection{Codi}
+\section{Prim}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 def Prim(Adj):
     Q={}
@@ -3371,18 +3468,18 @@ def Prim(Adj):
         Q.pop(u)
     return tree
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 G={1:{2:1, 3:2},0:{1:10,2:3},2:{1:4, 3:8, 4:2},4:{3:9},3:{4:7}}
 print Prim(G)
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 {1: 2, 2: 0, 3: 1, 4: 2}
 \end{minted}
 
-\subsection{Kruskal}
-\subsubsection{Codi}
+\section{Kruskal}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 def Kruskal(Adj):
     subtree = UnionFind()
@@ -3395,17 +3492,18 @@ def Kruskal(Adj):
                     subtree.union(u,v)
     return tree
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 G={0:{1:8,3:2},1:{0:8,2:5,3:3,4:1},2:{1:5,3:2,4:4},3:{0:2,1:3,2:2},4:{1:1,2:4}}
 print Prim(G)
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 [(0, 1), (0, 3), (1, 2), (1, 4)]
 \end{minted}
 
-\subsection{Floyd-Warshall}
+\section{Floyd-Warshall}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 def FloydWarshall(Adj):
     dist=[[float("inf") for x in range(len(Adj))] for y in range(len(Adj))]
@@ -3421,12 +3519,12 @@ def FloydWarshall(Adj):
                     dist[u][v] = dist[u][x] + dist[x][v]
     return dist
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 G={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
 print FloydWarshall(G)
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 [[0, 7, 3, 9, 5], 
 [inf, 0, 1, 2, 3], 
@@ -3436,8 +3534,8 @@ print FloydWarshall(G)
 \end{minted}
 
 
-\subsection{Hamilton}
-\subsubsection{Codi}
+\section{Hamilton}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 def Hamilton_recursive(Adj, s, e, path):
     path = path + [s]
@@ -3454,18 +3552,18 @@ def Hamilton(Adj, s, e):
     path=[]
     return Hamilton_recursive(Adj, s, e, path)
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 G={0:[2,3,5,1],1:[0,2,4,5],2:[0,1,3,4],3:[0,2,4,5],4:[1,2,3,5],5:[0,1,3,4]}
 print Hamilton(G, 0, 5)
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 [0, 2, 1, 4, 3, 5]
 \end{minted}
 
-\subsection{Euler}
-\subsubsection{Codi}
+\section{Euler}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 def Euler(Adj):
     graf = Adj
@@ -3490,19 +3588,19 @@ def Euler(Adj):
             
     return path
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 G={0:[1,2,3],1:[0,2,3],2:[0,1,3,4],3:[0,1,2,4],4:[3,2]}
 print Euler(G)
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 [1, 3, 4, 2, 3, 0, 2, 1, 0]
 \end{minted}
 
 
-\subsection{Coloració}
-\subsubsection{Codi}
+\section{Coloració}
+\subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
 def coloring(Adj):
     graph = sorted(Adj, key=lambda k:len(Adj[k]), reverse=True)
@@ -3528,19 +3626,19 @@ def coloring(Adj):
         actual = actual + 1
     return colors
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
 bipartite={0:[4,5,6,7], 1:[4,5,6,7], 2:[4,5,6,7], 3:[4,5,6,7], 4:[0,1,2,3], 5:[0,1,2,3], 6:[0,1,2,3], 7:[0,1,2,3]}
 print coloring(bipartite)
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[frame=lines]{text}
 {0: 0, 1: 0, 2: 0, 3: 0, 4: 1, 5: 1, 6: 1, 7: 1}
 \end{minted}
 
 
-\subsection{Metro}
-\subsubsection{Codi}
+\section{Metro}
+\subsection*{Codi}
 \begin{minted}[frame=lines]{python}
 def metro(Adj, inici, final):
     recorregut=[]
@@ -3575,7 +3673,7 @@ def metro(Adj, inici, final):
 
     print final.decode("ISO-8859-15"),"]"    
 \end{minted}
-\subsubsection{Exemple d'entrada}
+\subsection*{Exemple d'entrada}
 \begin{minted}[breaklines=true, mathescape, frame=lines]{python}
 graf_metro={"1_Hospital de Bellvitge":{"1_Bellvitge":90}, "1_Bellvitge":{"1_Hospital de Bellvitge":90, "1_Av. Carrilet":100},"1_Av. Carrilet":{"1_Bellvitge":100, "1_Rbla. Just Oliveras":65, "8_L'Hospitalet - Av. Carrilet":180}, "1_Rbla. Just Oliveras":{"1_Av. Carrilet":65, "1_Can Serra":60}, "1_Can Serra":{"1_Rbla. Just Oliveras":60, "1_Florida":60}, "1_Florida":{"1_Can Serra":60, "1_Torrassa":60}, "1_Torrassa":{"1_Florida":60, "1_Santa Eulàlia":85, "9S_Torrassa":240}, "1_Santa Eulàlia":{"1_Torrassa":85,"1_Mercat Nou":75}, "1_Mercat Nou":{"1_Santa Eulàlia":75, "1_Plaça de Sants":60}, "1_Plaça de Sants":{"1_Mercat Nou":60, "1_Hostafrancs":50, "5_Plaça de Sants":282}, "1_Hostafrancs":{"1_Plaça de Sants:":50, "1_Espanya":55}, "1_Espanya":{"1_Hostafrancs":55, "1_Rocafort":60, "3_Espanya":209, "8_Espanya":120}, "1_Rocafort":{"1_Espanya":60, "1_Urgell":55}, "1_Urgell":{"1_Rocafort":55, "1_Universitat":58}, "1_Universitat":{"1_Urgell":58, "1_Catalunya":50, "2_Universitat":144}, "1_Catalunya":{"1_Universitat":50, "1_Urquinaona":58, "3_Catalunya":180, "6_Catalunya":360, "7_Catalunya":360}, "1_Urquinaona":{"1_Catalunya":58, "1_Arc de Triomf":85, "4_Urquinaona":256}, "1_Arc de Triomf":{"1_Urquinaona":85, "1_Marina":54}, "1_Marina":{"1_Arc de Triomf":54, "1_Glòries":80}, "1_Glòries":{"1_Marina":80, "1_Clot":78}, "1_Clot":{"1_Glòries":78,"1_Navas":65, "2_Clot":120}, "1_Navas":{"1_Clot":65, "1_La Sagrera":80}, "1_La Sagrera":{"1_Navas":80, "1_Fabra i Puig":89, "5_La Sagrera":100, "9N_La Sagrera":178, "10_La Sagrera":178}, "1_Fabra i Puig":{"1_La Sagrera":89, "1_Sant Andreu":101}, "1_Sant Andreu":{"1_Fabra i Puig":101, "1_Torras i Bages":88}, "1_Torras i Bages":{"1_Sant Andreu":88, "1_Trinitat Vella":77}, "1_Trinitat Vella":{"1_Torras i Bages":77, "1_Baró de Viver":60}, "1_Baró de Viver":{"1_Trinitat Vella":60, "1_Santa Coloma":83}, "1_Santa Coloma":{"1_Baró de Viver":83, "1_Fondo":84}, "1_Fondo":{"1_Santa Coloma":84, "9N_Fondo":140}, "2_Paral·lel":{"2_Sant Antoni":80, "3_Paral·lel":83}, "2_Sant Antoni":{"2_Paral·lel":80, "2_Universitat":66}, "2_Universitat":{"2_Sant Antoni":66, "2_Passeig de Gràcia":80, "1_Universitat":144}, "2_Passeig de Gràcia":{"2_Universitat":80, "2_Tetuan":95, "3_Passeig de Gràcia":360, "4_Passeig de Gràcia":120}, "2_Tetuan":{"2_Passeig de Gràcia":95, "2_Monumental":93}, "2_Monumental":{"2_Tetuan":93, "2_Sagrada Família":63}, "2_Sagrada Família":{"2_Monumental":63, "2_Encants":114, "5_Sagrada Família":178}, "2_Encants":{"2_Sagrada Família":114, "2_Clot":53}, "2_Clot":{"2_Encants":53, "2_Bac de Roda":89, "1_Clot":120}, "2_Bac de Roda":{"2_Clot":89, "2_Sant Martí":61}, "2_Sant Martí":{"2_Bac de Roda":61, "2_La Pau":74}, "2_La Pau":{"2_Sant Martí":74, "2_Verneda":76, "4_La Pau":60}, "2_Verneda":{"2_La Pau":76, "2_Artigues Sant Adrià":81}, "2_Artigues Sant Adrià":{"2_Verneda":81, "2_Sant Roc":91}, "2_Sant Roc":{"2_Artigues Sant Adrià":91, "2_Gorg":60}, 
 
@@ -3587,7 +3685,7 @@ graf_metro={"1_Hospital de Bellvitge":{"1_Bellvitge":90}, "1_Bellvitge":{"1_Hosp
 
 metro(graf_metro, "2_Paral·lel", "11_Casa de l'Aigua")
 \end{minted}
-\subsubsection{Exemple de sortida}
+\subsection*{Exemple de sortida}
 \begin{minted}[breaklines=true, frame=lines]{text}
 Punt inicial: 2_Paral·lel
 Punt final: 11_Casa de l'Aigua
@@ -3595,7 +3693,7 @@ Temps net del recorregut: 1245
 Temps total del recorregut: 26 minuts i 6 segons
 Recorregut: [ 2_Paral·lel, 2_Sant Antoni, 2_Universitat, 2_Passeig de Gràcia, 4_Passeig de Gràcia, 4_Girona, 4_Verdaguer, 4_Joanic, 4_Alfons X, 4_Guinardó Hospital de Sant Pau, 4_Maragall, 4_Llucmajor, 4_Via Júlia, 4_Trinitat Nova, 11_Trinitat Nova, 11_Casa de l'Aigua ]
 \end{minted}
-
+%\end{appendices}
 
 
 \end{document}

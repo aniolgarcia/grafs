@@ -11,7 +11,7 @@ def OrderedDijkstra(Adj, s, k):
         for v in Adj[u]:
             if v in Q:
                 if Q[v] > Q[u] + Adj[u][v]:
-                    Q[v] = Q[u] + Adj[u][v] + k
+                    Q[v] = Q[u] + Adj[u][v]
                     tree[v] = u
         Q.pop(u)
         
@@ -23,12 +23,13 @@ def metro(Adj, inici, final, k):
     print "Punt inicial:", inici.decode("ISO-8859-15")
     
     print "Punt final:", final.decode("ISO-8859-15")
-#  
-#    for i in Adj:
-#       for j in Adj[i]:
-#           Adj[i][j] = Adj[i][j] + 25
+    G=dict.fromkeys(Adj.keys(), dict.fromkeys(Adj.values())    
+    
+    for i in G:
+       for j in G[i]:
+           G[i][j] = Adj[i][j] + 25
 
-    dist, tree = OrderedDijkstra(Adj, inici, k)
+    dist, tree = OrderedDijkstra(G, inici, k)
 
     i = final    
     while tree[i] != inici:
@@ -37,8 +38,8 @@ def metro(Adj, inici, final, k):
     
     recorregut.append(inici)        
     recorregut.reverse()
-    print dist
-    total= dist[final]-k #-25
+    #print dist
+    total= dist[final]-k -25
 
     print "Temps amb estacions del recorregut:", dist[final], "Temps real:", total    
     
@@ -60,11 +61,6 @@ graf_metro={"1_Hospital de Bellvitge":{"1_Bellvitge":90}, "1_Bellvitge":{"1_Hosp
 
 
 
-graf_debug={"0":{"1":1, "5":6}, "1":{"0":1, "2":1}, "2":{"1":1, "3":1}, "3":{"2":1, "4":1}, "4":{"3":1, "5":1}, "5":{"0":6, "4":1}}
-metro(graf_metro, "5_Camp de l'Arpa", "2_Artigues Sant Adrià", 25)
-
-#for i in graf_metro:
-#	for j in graf_metro[i]:
-#		graf_metro[i][j] = graf_metro[i][j] + 25
-#
-#print graf_metro
+#graf_debug={"0":{"1":1, "5":6}, "1":{"0":1, "2":1}, "2":{"1":1, "3":1}, "3":{"2":1, "4":1}, "4":{"3":1, "5":1}, "5":{"0":6, "4":1}}
+metro(graf_metro, "5_Camp de l'Arpa", "2_Artigues Sant Adrià", 0)
+print graf_metro["1_Bellvitge"]
