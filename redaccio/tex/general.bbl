@@ -250,6 +250,16 @@
       \range{pages}{13}
       \keyw{,refer}
     \endentry
+    \entry{GFG}{online}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labeltitlesource}{title}
+      \field{title}{Geeks for Geeks}
+      \verb{url}
+      \verb www.geeksforgeeks.org/fundamentals-of-algorithms
+      \endverb
+      \keyw{,biblio}
+    \endentry
     \entry{GIM11}{incollection}{}
       \name{author}{1}{}{%
         {{hash=f7c866e489b98988048280d8575e0dfe}{%
@@ -379,6 +389,58 @@
       \endverb
       \keyw{,biblio}
     \endentry
+    \entry{MAT}{online}{}
+      \name{author}{1}{}{%
+        {{hash=05432d5cfeef4e7dddb09bbefc7ef618}{%
+           family={MATTHES},
+           family_i={M\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{05432d5cfeef4e7dddb09bbefc7ef618}
+      \strng{fullhash}{05432d5cfeef4e7dddb09bbefc7ef618}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Gallery of named graphs}
+      \field{year}{2008}
+      \verb{url}
+      \verb http://altermundus.fr/downloads/documents/NamedGraphs.pdf
+      \endverb
+      \keyw{,biblio}
+    \endentry
+    \entry{MAT2}{online}{}
+      \name{author}{1}{}{%
+        {{hash=05432d5cfeef4e7dddb09bbefc7ef618}{%
+           family={MATTHES},
+           family_i={M\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{05432d5cfeef4e7dddb09bbefc7ef618}
+      \strng{fullhash}{05432d5cfeef4e7dddb09bbefc7ef618}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{tkz-berge.sty}
+      \field{year}{2008}
+      \verb{url}
+      \verb http://www.altermundus.fr/pages/downloads/TKZdoc-berge.pdf
+      \endverb
+      \keyw{,biblio}
+    \endentry
+    \entry{RBG}{online}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labeltitlesource}{title}
+      \field{title}{Pathfinding}
+      \verb{url}
+      \verb http://www.redblobgames.com/pathfinding/
+      \endverb
+      \keyw{,biblio}
+    \endentry
     \entry{PRI57}{article}{}
       \name{author}{1}{}{%
         {{hash=70b3d7b3274fd3f56a4e9a4a15d90b14}{%
@@ -400,6 +462,27 @@
       \field{pages}{1389\bibrangedash 1401}
       \range{pages}{13}
       \keyw{,refer}
+    \endentry
+    \entry{SOR14}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8838f669ffc4c3fabe18939dda34b708}{%
+           family={SORIA},
+           family_i={S\bibinitperiod},
+           given={F.J.},
+           given_i={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Universitat de Barcelona}%
+      }
+      \strng{namehash}{8838f669ffc4c3fabe18939dda34b708}
+      \strng{fullhash}{8838f669ffc4c3fabe18939dda34b708}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Apuntes de grafos}
+      \field{year}{2014}
+      \keyw{,biblio}
     \endentry
     \entry{TEX}{online}{}
       \field{sortinit}{T}

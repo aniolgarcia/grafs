@@ -5,6 +5,6 @@ Des de 0 es pot arribar a:
 3
 4
 2
-Ordenació topològica:
+Ordre de recurssió (Ordenació topologica per a grafs dirigits acíclics):
 [0, 2, 1, 3, 4]
 \end{Verbatim}

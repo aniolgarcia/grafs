@@ -16,7 +16,7 @@
     \PYG{k}{for} \PYG{n}{u} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{)):}
         \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]:}
             \PYG{k}{if} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{dist}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{+} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{v}\PYG{p}{]:}
-                \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}There are negative\PYGZhy{}weight cycles\PYGZdq{}}
+                \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Hi ha cicles de pesos negatius\PYGZdq{}}
                 \PYG{k}{break}
     \PYG{k}{return} \PYG{n}{dist}\PYG{p}{,} \PYG{n}{tree}
 \end{Verbatim}

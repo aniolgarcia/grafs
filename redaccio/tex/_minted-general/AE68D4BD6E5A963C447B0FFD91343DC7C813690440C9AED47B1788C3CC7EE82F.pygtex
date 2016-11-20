@@ -8,11 +8,11 @@
 
     \PYG{k}{for} \PYG{n}{s} \PYG{o+ow}{in} \PYG{n}{node}\PYG{p}{:}
         \PYG{k}{if} \PYG{n}{s} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{parent}\PYG{p}{:}
-            \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}From node }\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s2}{:\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{n}{s}
+            \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Des del node }\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s2}{ es pot arribar a:\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{n}{s}
             \PYG{k}{print} \PYG{n}{s}
             \PYG{n}{parent}\PYG{p}{[}\PYG{n}{s}\PYG{p}{]}\PYG{o}{=}\PYG{n+nb+bp}{None}
             \PYG{n}{DFS\PYGZus{}recursive}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{s}\PYG{p}{)}
-    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Recursion order (topological sort for directed acyclic graphs):\PYGZdq{}}
+    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Ordre de recurssió (Ordenació topologica per a grafs dirigits acíclics):\PYGZdq{}}
     \PYG{n}{topo}\PYG{o}{.}\PYG{n}{reverse}\PYG{p}{()}
     \PYG{k}{print} \PYG{n}{topo}
 

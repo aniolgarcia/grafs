@@ -162,46 +162,46 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.3}Algorisme}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusions}{75}
+\contentsline {chapter}{Conclusions}{76}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Annexos}{80}
+\contentsline {chapter}{Annexos}{81}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Programari}{80}
+\contentsline {chapter}{\numberline {A}Programari}{81}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Sistemes operatius}{80}
+\contentsline {section}{\numberline {A.1}Sistemes operatius}{81}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Processador de text}{80}
+\contentsline {section}{\numberline {A.2}Processador de text}{81}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Tikz i tkz-berge}{81}
+\contentsline {subsection}{\numberline {A.2.1}Tikz i tkz-berge}{82}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.2}Minted i Algorithm2e}{82}
+\contentsline {subsection}{\numberline {A.2.2}Minted i Algorithm2e}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}GeoGebra}{82}
+\contentsline {section}{\numberline {A.3}GeoGebra}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Python}{82}
+\contentsline {section}{\numberline {A.4}Python}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Git}{82}
+\contentsline {section}{\numberline {A.5}Git}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Implementaci\'o d'algorismes}{84}
+\contentsline {chapter}{\numberline {B}Implementaci\'o d'algorismes}{85}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.1}DFS}{84}
+\contentsline {section}{\numberline {B.1}DFS}{86}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.2}BFS}{85}
+\contentsline {section}{\numberline {B.2}BFS}{87}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.3}Dijkstra}{86}
+\contentsline {section}{\numberline {B.3}Dijkstra}{88}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.4}Bellman-Ford}{87}
+\contentsline {section}{\numberline {B.4}Bellman-Ford}{89}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.5}Prim}{88}
+\contentsline {section}{\numberline {B.5}Prim}{90}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.6}Kruskal}{89}
+\contentsline {section}{\numberline {B.6}Kruskal}{90}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.7}Floyd-Warshall}{90}
+\contentsline {section}{\numberline {B.7}Floyd-Warshall}{91}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.8}Hamilton}{90}
+\contentsline {section}{\numberline {B.8}Hamilton}{92}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.9}Euler}{91}
+\contentsline {section}{\numberline {B.9}Euler}{93}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.10}Coloraci\'o}{92}
+\contentsline {section}{\numberline {B.10}Coloraci\'o}{94}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.11}Metro}{93}
+\contentsline {section}{\numberline {B.11}Metro}{95}

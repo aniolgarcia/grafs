@@ -1,4 +1,5 @@
 \begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{UnionFind} \PYG{k+kn}{import} \PYG{n}{UnionFind} \PYG{c+c1}{\PYGZsh{}una bona implementació de UnionFind es troba a https://www.ics.uci.edu/\PYGZti{}eppstein/PADS/UnionFind.py}
 \PYG{k}{def} \PYG{n+nf}{Kruskal}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{):}
     \PYG{n}{subtree} \PYG{o}{=} \PYG{n}{UnionFind}\PYG{p}{()}
     \PYG{n}{tree} \PYG{o}{=} \PYG{p}{[]}
