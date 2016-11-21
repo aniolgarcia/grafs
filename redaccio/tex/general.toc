@@ -6,7 +6,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introducci\'o a la teoria de grafs}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Hist\`oria del grafs}{11}
+\contentsline {section}{\numberline {1.1}Hist\`oria dels grafs}{11}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.1}Els primers passos}{11}
 \defcounter {refsection}{0}\relax 
@@ -52,6 +52,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}Grafs ponderats}{31}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Grafs dirigits}{32}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Camins}{32}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Camins Hamiltonians}{32}
@@ -59,6 +61,14 @@
 \contentsline {subsection}{\numberline {2.2.2}Camins Eulerians}{33}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Estructures de dades dels grafs}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Matrius}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Matriu d'adjac\`encia}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Matriu d'incid\`encia}{34}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Llistes d'adjac\`encia}{34}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Algorismes}{35}
 \defcounter {refsection}{0}\relax 
@@ -170,7 +180,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.1}Sistemes operatius}{81}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Processador de text}{81}
+\contentsline {section}{\numberline {A.2}Processador de text \LaTeX }{81}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {A.2.1}Tikz i tkz-berge}{82}
 \defcounter {refsection}{0}\relax 
@@ -180,7 +190,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.4}Python}{83}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Git}{83}
+\contentsline {section}{\numberline {A.5}Git}{84}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {B}Implementaci\'o d'algorismes}{85}
 \defcounter {refsection}{0}\relax 
@@ -194,14 +204,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {B.5}Prim}{90}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.6}Kruskal}{90}
+\contentsline {section}{\numberline {B.6}Kruskal}{91}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.7}Floyd-Warshall}{91}
+\contentsline {section}{\numberline {B.7}Floyd-Warshall}{92}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.8}Hamilton}{92}
+\contentsline {section}{\numberline {B.8}Hamilton}{93}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.9}Euler}{93}
+\contentsline {section}{\numberline {B.9}Euler}{94}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.10}Coloraci\'o}{94}
+\contentsline {section}{\numberline {B.10}Coloraci\'o}{95}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.11}Metro}{95}
+\contentsline {section}{\numberline {B.11}Metro}{96}

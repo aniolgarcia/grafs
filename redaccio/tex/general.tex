@@ -1,5 +1,3 @@
-%% LyX 2.1.2 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
 \documentclass[a4, 12pt, titlepage]{report}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
@@ -32,6 +30,7 @@
 \usepackage{minted}
 \usepackage{etoolbox}
 \usepackage{parskip}
+\usepackage[bottom]{footmisc}
 \usepackage[toc,page]{appendix}
 \usetikzlibrary{arrows,%
                 petri,%
@@ -175,6 +174,8 @@ array element/.style = {
 
 \interfootnotelinepenalty=10000
 
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+
 \title{\Huge \textbf{Els grafs: xarxes, camins i connexions} \\ \LARGE De la matemàtica discreta a la realitat}
 \author{\LARGE Aniol Garcia i Serrano \\ Tutor: Xavier Aguilera Colmenero\\ \small 2n Batxillerat}
 \date{Curs 2016-2017 \\ 21/11/2016}
@@ -204,13 +205,13 @@ array element/.style = {
 %}
 \end{tikzpicture}
 \end{figure}
-\vfill
-%&\begin{flushright}
+\begin{bottompar}
 \textit{Qualssevol que siguin els girs i les voltes dels fils en l'espai, un sempre pot obtenir una expressió per al càlcul de les seves dimensions [dels fils], tot i que tal expressió serà d'escassa utilitat en la pràctica. Els artesans que construeixen una xarxa, una trena o alguns nusos estaran més preocupats no per assumptes de mesura, sinó de posició: el que li importarà serà la manera en què els fils s'entrellacen.}
 \\ 
 \begin{flushright}
 A. Vandermonde
 \end{flushright}
+\end{bottompar}
 \newpage
 \thispagestyle{empty}
 
@@ -248,7 +249,8 @@ Moltes gràcies a tots!
 
 \newpage
 \tableofcontents
-\newpage
+%\vfill
+%\newpage
 %\pagenumbering{arabic}
 
 \chapter{Presentació}
@@ -466,23 +468,17 @@ La presentació d'aquest treball (el tipus de lletra, l'espaiat, les mides, el fo
 
 
 
-
-\newpage
+%\vfill
+%\newpage
 \chapter{Introducció a la teoria de grafs}
-
 Aquest primer apartat consisteix en la part més teòrica del treball. Explicaré breument la història d'aquesta branca de la matemàtica i, posteriorment, ens endinsarem en la teoria de grafs com a tal. La teoria de grafs pot semblar bastant abstracta i, a vegades, complicada d'entendre, però estarà acompanyada de demostracions i exemples propis que pretenen facilitar el seguiment del treball. 
 
-\section{Història del grafs}
+\section{Història dels grafs}
 
 
 \subsection{Els primers passos}
 
-Tot sovint, les noves branques de la matemàtica sorgeixen de cercar solucions
-a problemes. Problemes que no poden ser resolts ni demostrats amb
-el que coneixem i que forcen a desenvolupar nous mètodes i teories.
-La teoria de grafs no n'és una excepció i, tot seguit, presentaré els
-problemes que van forjar la creació d'aquesta branca.
-
+Tot sovint, les noves branques de la matemàtica sorgeixen de cercar solucions a problemes. Problemes que no poden ser resolts ni demostrats amb el que coneixem i que forcen a desenvolupar nous mètodes i teories. La teoria de grafs no n'és una excepció i, tot seguit, presentaré els problemes que van forjar la creació d'aquesta branca. 
 
 \subsubsection*{Euler i els ponts de Königsberg}
 
@@ -1352,14 +1348,14 @@ Com a conseqüència del teorema 1, per a tots els grafs $r$-regulars amb $n$ vèrt
 
 
 
-\newpage
+%\newpage
 \chapter{Camins i algorismes}
 
 \begin{flushright}
 \textit{``Simplicity is a prerequisite for reliability''}
 \\Edsger W. Dijkstra
 \end{flushright}
-
+\vspace{1cm}
 Sovint, quan utilitzem un graf per modelitzar quelcom, ens interessa poder-hi fer algunes operacions. Podem, per exemple, voler trobar un camí entre dos punts, recórrer el graf sencer o trobar el camí més curt per anar d'un vèrtex a un altre. Per aquest motiu utilitzem els camins, que trobarem o generarem mitjançant diversos algorismes. En aquesta secció se'n mostraran alguns.
 
 \section{Grafs ponderats i dirigits}
@@ -1367,7 +1363,7 @@ Sovint, quan utilitzem un graf per modelitzar quelcom, ens interessa poder-hi fe
 Els \textit{grafs ponderats} són grafs on cada aresta $e$ està associada a un nombre $w(e)$ anomenat \textit{pes o cost}, tal que $w(e)\in \mathbb{R}$. El pes pot representar diverses quantitats, segons el que es vulgui modelitzar. 
 Moltes vegades s'utilitza per representar distàncies, però si per exemple modelitzem una xarxa de distribució d'aigua, ens pot interessar representar el cabal de les canonades, o en una xarxa d'autobusos, la densitat de trànsit de cada tram. 
 
-\subsection*{Grafs dirigits}
+\subsection{Grafs dirigits}
 Els \textit{grafs dirigits} són grafs les arestes dels quals només admeten un sentit. D'aquesta manera, una aresta $e_{0}=(v_{0},v_{1}) \neq e_{1}=(v_{1},v_{0})$ \footnote{Observi's la diferència de notació per a les arestes dels grafs dirigits i no dirigits, atenent al fet que l'ordre dels vèrtexs en un cas importa i en l'altre no.}. De fet, no necessàriament ha d'existir una aresta contrària a una altra. 
 
 Aquest tipus de grafs poden ser útils per representar carreteres, o moviments vàlids en algun joc com les dames o els escacs. 
@@ -1393,7 +1389,7 @@ Un camí Hamiltonià és un camí que passa una sola vegada per cadascún dels vèrtex
 A l'annex B.8 es pot trobar la implementació de l'algorisme que busca camins i/o cicles Hamiltionians.
 \subsection{Camins Eulerians}
 Un \textit{camí Eulerià} d'un graf és un camí que recorre totes les arestes d'un graf una sola vegada. De la mateixa manera, un cicle Eulerià consisteix en un camí que utilitza totes les arestes d'un graf una sola vegada i el punt inicial i final és el mateix. 
-Un graf connex té un camí Eulerià si i només si té $0$ o $2$ vèrtexs de grau imparell, i té un cicle Eulerià si i només sí tots els vèrtex del graf tenen grau parell.
+Un graf connex té un camí Eulerià si i només si té $0$ o $2$ vèrtexs de grau imparell, i té un cicle Eulerià si i només si tots els vèrtex del graf tenen grau parell.
 
 A l'annex B.9 es pot trobar la implementació de l'algorisme que busca camins Eulerians.
 
@@ -1405,10 +1401,10 @@ En els grafs, normalement s'ha de tractar una gran quantitat d'informació: nodes
 Les matrius i llistes d'adjacència són les estructures més utilitzades.
 
 
-\subsection*{Matrius}
+\subsection{Matrius}
 
 
-\subsubsection*{Matriu d'adjacència}
+\subsubsection{Matriu d'adjacència}
 
 La \textit{matriu d'adjacència} d'un graf és una matriu quadrada que conté informació respecte el nombre d'arestes que uneixen qualsevol parella de nodes, i s'organitza de la següent manera:
 
@@ -1419,7 +1415,7 @@ si afegim un nou node al graf, que serà l'$n$-èssim, s'haurà d'afegir $2n-1$ esp
 
 
 
-\subsubsection*{Matriu d'incidència}
+\subsubsection{Matriu d'incidència}
 
 La \textit{matriu d'incidència} d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1,...,|V(G)|,j=1,...,|E(G)|}$, és la matriu binària de $|V(G)|\times |E(G)|$ on $b_{i,j}$ indica si l'aresta $j$ és incident al node $i$. Veure figura \ref{fig:matrix} cas (c).
 
@@ -1466,7 +1462,7 @@ La \textit{matriu d'incidència} d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1
 
 
 
-\subsection*{Llistes d'adjacència}
+\subsection{Llistes d'adjacència}
 
 Aquesta estructura de dades és molt utilitzada per tractar grafs, ja que ocupa menys memòria i només inclou la informació necessària. Les \textit{llistes d'adjacència} d'un graf $G$ consisteixen en un conjunt de $|V(G)|$ llistes. Cada llista correspon a un node del graf, i conté els nodes al quals és adjacent. En informàtica s'acostumen a fer mitjançant apuntadors, de tal manera que, a partir de cada element de la llista, es pugui accedir a la seva pròpia llista, essent així molt més eficient fer iteracions \footnote{Una iteració és cadascuna de les repeticions d'un procés. Sovint els resultats d'una iteració confereixen l'entrada de la següent.}. Amb l'esquema següent es pot veure més clarament:
 
@@ -1520,7 +1516,7 @@ El que farà el programa serà imprimir per pantalla la seqüència de vèrtexs orden
 
 Donat un node incial $v$, es busquen tots els nodes no visitats que estiguin a distància $i$ de $v$. Inicialment $i=0$ i l'únic a distància 0 de $v$ és ell mateix. Després, $i=1$ i per tant, en aquesta iteració es visitaran tots els nodes adjacents a $v$. Quan $i=2$ es visitaran els nodes adjacents als adjacents de $v$ que no s'hagin visitat, i així consecutivament fins a visitar tots els nodes.
 
-
+\vspace{15mm}
 
 \begin{figure}[H]
 \centering
@@ -1641,6 +1637,8 @@ La recerca per profunditat prioritària (\emph{depth-first search} en anglès, d'a
 \subsubsection{Funcionament}
 L'algorisme DFS arriba el més lluny possible abans de retrocedir. Això significa que quan arriba a un node, se'n va a un d'adjacent no visitat i va emmagatzemant l'ordre amb el qual els visita. Quan un node no té nodes adjacents no visitats, torna al node anterior i continua a partir d'allà. 
 A la figura \ref{fig:bfs} es mostra un graf amb els nodes numerats segons l'ordre en el qual es visiten i amb el recorregut que faria l'algorisme:
+
+\vspace{10mm}
 
 \begin{figure}[H]
 \centering
@@ -1907,7 +1905,7 @@ En la figura \ref{fig:Dijkstra} es mostra un graf i la taula amb les distàncies 
 \begin{algorisme}[H]
 \DontPrintSemicolon
 \KwData{Un graf ponderat $G$ i un node inicial $s$}
-\KwResult{Distància mínima entre $s$ i la resta de nodes del graf, arbre expansiu mínim}
+\KwResult{Distància mínima entre $s$ i la resta de nodes, arbre expansiu mínim}
 nou diccionari $dist$\;
 nou diccionari $Q$\;
 \ForEach{node $v$ de $G$}
@@ -1918,7 +1916,7 @@ nou diccionari $Q$\;
 $Q[s]=0$\;
 \While{$Q$ no estigui buit}
 {
-	$u=min{valor de Q}$\;
+	$u=min\{valor de Q\}$\;
 	$dist[u]=Q[u]$\;
 	\ForEach{node $v$ adjacent a $u$}
 	{
@@ -2036,29 +2034,31 @@ Veure annex B.4.
 \subsubsection{Propietats}
 \begin{propietat}
 L'algorisme de Bellman-Ford pot treballar amb pesos negatius ja que no es basa en la desigualtat triangular.  
-\begin{figure}
-\centering
-	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
-				\node[round] (s) at (0,0){$s$};
-				\node[round] (x) at (4,0){$x$};
-				\node[round] (v) at (2,4){$v$};
-				
-				%\draw (s) edge[->,-latex]  node[above]{$3$}(v);
-				%\draw (s) edge[->,-latex]  node[above]{$4$}(x);
-				%\draw (x) edge[->,-latex]  node[above]{$-2$}(v);
-				
-				\tikzset{EdgeStyle/.style={->,-latex}}
-				\Edge[label=$3$](s)(v)
-				\Edge[label=$4$](s)(x)
-				\Edge[label=$-2$](x)(v)
-	\end{tikzpicture}
-	\caption{Graf amb arestes de pes negatiu on la desigualtat triangular no es compleix}
-	\label{fig:no_tri}
-\end{figure}
 
 En el graf de la figura \ref{fig:no_tri}, l'algorisme de Dijkstra calcularia malament el camí mínim entre $s$ i $v$: la distància provisional seria de $3$ per arribar a $v$ i de $4$ per arribar a $x$. Llavors, com que $3$ és la distància més petita que ha trobat (i suposa que és la correcta), visita $v$. Però $v$ no té nodes adjacents, per tant acaba l'iteració del node $v$. El següent node no visitat amb mínim valor és $x$. Encara que $v$ sigui adjacent a $x$, com que $v$ ja ha estat visitat i per la desigualtat triangular s'assegurava que era el mínim, no el pot canviar. 
 
 En canvi, si s'executés l'algorisme de Bellman-Ford en aquest graf, el procediment que faria seria el següent: tal com l'algorisme de Dijkstra, posaria una distància provisional de $3$ per arribar a $v$ i de $4$ per arribar a $x$. Ara visitaria $v$, però com que no té nodes adjacents, no hi faria res. A continuació visitaria $x$, que té $v$ com a node adjacent. Com que la distància calculada des de $x$ és de $4-2=2$ i $2<3$, simplement canviaria el valor de la distància entre $s$ i $v$.
+
+\vspace{1cm}
+\begin{figure}[H]
+\centering
+  \begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.80]
+        \node[round] (s) at (0,0){$s$};
+        \node[round] (x) at (4,0){$x$};
+        \node[round] (v) at (2,4){$v$};
+        
+        %\draw (s) edge[->,-latex]  node[above]{$3$}(v);
+        %\draw (s) edge[->,-latex]  node[above]{$4$}(x);
+        %\draw (x) edge[->,-latex]  node[above]{$-2$}(v);
+        
+        \tikzset{EdgeStyle/.style={->,-latex}}
+        \Edge[label=$3$](s)(v)
+        \Edge[label=$4$](s)(x)
+        \Edge[label=$-2$](x)(v)
+  \end{tikzpicture}
+  \caption{Graf amb arestes de pes negatiu on la desigualtat triangular no es compleix}
+  \label{fig:no_tri}
+\end{figure}
 
 \end{propietat}
 \begin{propietat}
@@ -2146,7 +2146,7 @@ En la figura \ref{fig:Kruskal} es mostra el procés que duu a terme l'algorisme d
 
 	\end{tikzpicture}
 }
-
+\vspace{5mm}
 \subfloat[]{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
 		\node[round,blue] (3) at (0,4) {$v_{3}$};
@@ -2201,6 +2201,7 @@ En la figura \ref{fig:Kruskal} es mostra el procés que duu a terme l'algorisme d
 
 	\end{tikzpicture}
 }
+\vspace{5mm}
 \caption{Passos corresponents a les diverses unions de grups que fa l'algorisme}
 \label{fig:Kruskal}
 \end{figure}
@@ -2298,7 +2299,7 @@ A la figura \ref{fig:Prim} es pot veure un exemple del funcionament de l'algoris
 
 	\end{tikzpicture}
 }
-
+\vspace{5mm}
 \subfloat[]{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
 		\node[round] (3) at (0,4) {$v_{3}$};
@@ -2353,6 +2354,7 @@ A la figura \ref{fig:Prim} es pot veure un exemple del funcionament de l'algoris
 
 	\end{tikzpicture}
 }
+\vspace{5mm}
 \caption{Passos corresponents a les fases d'expansió de l'arbre expansiu mínim}
 \label{fig:Prim}
 \end{figure}
@@ -2487,7 +2489,7 @@ Per establir aquest ordre específic s'ordenen els nodes en funció del nombre de 
 
 \begin{figure}[h!]
 \centering
-\subfloat{
+\subfloat[]{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, a/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, b/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, c/.style={circle, fill=green, text=white, thin, minimum size=.5mm}, transform shape, scale=0.50]
 		\node[round] (6) at (0,2) {$v_{6}$};
 		\node[round] (4) at (2,0) {$v_{4}$};
@@ -2512,7 +2514,7 @@ Per establir aquest ordre específic s'ordenen els nodes en funció del nombre de 
 		
 	\end{tikzpicture}
 }
-\subfloat{
+\subfloat[]{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, a/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, b/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, c/.style={circle, fill=green, text=white, thin, minimum size=.5mm}, transform shape, scale=0.50]
 		\node[round] (6) at (0,2) {$v_{6}$};
 		\node[round] (4) at (2,0) {$v_{4}$};
@@ -2537,7 +2539,7 @@ Per establir aquest ordre específic s'ordenen els nodes en funció del nombre de 
 		
 	\end{tikzpicture}
 }	
-\subfloat{
+\subfloat[]{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, a/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, b/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, c/.style={circle, fill=green, text=white, thin, minimum size=.5mm}, transform shape, scale=0.50]
 		\node[b] (6) at (0,2) {$v_{6}$};
 		\node[b] (4) at (2,0) {$v_{4}$};
@@ -2562,7 +2564,7 @@ Per establir aquest ordre específic s'ordenen els nodes en funció del nombre de 
 		
 	\end{tikzpicture}
 }
-\subfloat{
+\subfloat[]{
 	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, a/.style={circle, fill=red, text=white, thin, minimum size=.5mm}, b/.style={circle, fill=blue, text=white, thin, minimum size=.5mm}, c/.style={circle, fill=green, text=white, thin, minimum size=.5mm}, transform shape, scale=0.50]
 		\node[b] (6) at (0,2) {$v_{6}$};
 		\node[b] (4) at (2,0) {$v_{4}$};
@@ -2586,7 +2588,8 @@ Per establir aquest ordre específic s'ordenen els nodes en funció del nombre de 
 		\draw (3) edge (1);
 		
 	\end{tikzpicture}
-}			
+}
+\vspace{5mm}			
 \caption{Procés de coloració que segueix l'algorisme}
 \end{figure}
 
@@ -2651,7 +2654,7 @@ Si el que es vol és pintar les arestes d'un graf en lloc dels vèrtexs, només cal
 \item S'utilitza la coloració de grafs per a problemes que requereixen separar els nodes en grups disjunts de manera que dos nodes del mateix grup no siguin adjacents.
 \end{itemize}
 
-\newpage
+%\newpage
 \chapter{Disseny de grafs}
 Fins ara, s'han mostrat i estudiat grafs que ja estan definits sobre els quals s'ha de fer alguna operació. Ara bé, en aplicacions reals de teoria de grafs, sovint no hi ha un graf determinat, sinó que s'ha de generar. Cal observar que, en aquesta part de disseny, els grafs són físics, és a dir, que existeixen com a tals situats en alguna superfície. En aquest cas no s'utilitzen com a modelitzacions abstractes i, per tant, les distàncies i situacions dels punts són importants. 
 
@@ -2659,6 +2662,7 @@ Fins ara, s'han mostrat i estudiat grafs que ja estan definits sobre els quals s
 Normalment, quan s'utilitzen els grafs com a models matemàtics de situacions reals, els nodes ja estaran determinats i el problema consistirà a trobar les arestes.
 Si això és així, segurament es podran afegir altres nodes. Un exemple d'aquest cas consistiria a haver d'unir tres ciutats amb carreteres de tal manera que des d'una es pugui arribar directament a les altres dues. La primera solució en què sol pensar una persona és fer un triangle en el qual les ciutats siguin els vèrtexs (l'equivalent a un graf $K_{3}$). Aquesta sol·lució és òptima si es vol anar d'una ciutat a l'altra amb la mínima distància possible, però si es vol construïr el mínim de carreteres possibles per a la xarxa conjunta, aquesta sol·lució no és la millor. En aquest cas, el millor és posar un altre node en el punt de Fermat del triangle que formen i obtenir un graf $S_{4}$.
 Donat un triangle acutangle, el punt de Fermat (també anomenat $X(13)$) és el punt tal que la suma de les distàncies des de cada vèrtex fins a aquest punt és la mínima. El punt de Fermat es determina gràficament amb el procediment següent:
+\vfill
 \begin{itemize}
 \item Donat un triangle $T$, es generen tres triangles equilàters a partir de cadascun dels costats de $T$.
 \item S'uneixen els nous vèrtexs externs dels triangles equilàters amb els vèrtexs oposats de $T$.
@@ -2907,17 +2911,17 @@ Els noms de les estacions estan posats d'acord amb el plànol de la xarxa de metr
 \footnotetext{Autor: Ferrocarril Metropolità de Barcelona, S.A. Tots els drets reservats a l'autor}
 
 \subsection{Algorisme}
-El programa que fa els càlculs funciona a partir d'una execució de l'algorisme de Dijkstra (en realitat en una versió modificada que pot tractar amb paraules com a noms de nodes).
+El programa que fa els càlculs funciona a partir d'una execució de l'algorisme de Dijkstra (en realitat en una versió modificada que pot tractar amb paraules com a noms de nodes i permet afegir un cost en passar per cada node).
 
 \begin{algorisme}[H]
 \SetKwFunction{DijkstraOrdenat}{DijkstraOrdenat}
 \SetKwFunction{FMain}{Programa principal}
 \SetKwProg{Fn}{Funció}{}{}
 \DontPrintSemicolon
-\Fn{\DijkstraOrdenat{$G$, $s$}}
+\Fn{\DijkstraOrdenat{$G$, $s$, $k$}}
 {
-nou diccionari $dist$ amb les mateixes claus que $G$\;
-nou diccionari $Q$ amb les mateixes claus que $G$\;
+nou diccionari $dist$ amb les mateixes claus que $G$ i amb valors de $\infty$\;
+nou diccionari $Q$ amb les mateixes claus que $G$ i amb valors de $\infty$\;
 nou diccionari $arbre$\;
 \ForEach{node $v$ de $G$}
 {
@@ -2937,7 +2941,7 @@ $Q[s]=0$\;
 			
 			\If{$Q[v]>Q[u]+w(u,v)$}
 			{
-				$Q[v]=Q[u]+w(u,v)$\;
+				$Q[v]=Q[u]+w(u,v) + k$\;
 				$arbre[v] = u$\;
 				
 			}
@@ -2945,14 +2949,14 @@ $Q[s]=0$\;
 	}
 	elimina($Q[u]$)\;
 }
-return $dist$, $arbre$	     
+return $dist$, $arbre$\;	     
 }
 \end{algorisme}
 \leavevmode
 \\
-Dijkstra retorna un primer diccionari amb els temps des del node inicial $s$ fins a la resta de nodes i un segon diccionari amb l'arbre expansiu que té $s$ com a arrel. Per saber el recorregut a fer, només cal seguir l'arbre de manera inversa, és a dir des del punt final fins a $s$. Al ser un arbre, només hi haurà un camí possible a seguir.
+Dijkstra retorna un primer diccionari amb els temps des del node inicial $s$ fins a la resta de nodes (incloent-hi els temps de les parades) i un segon diccionari amb l'arbre expansiu que té $s$ com a arrel. Per saber el recorregut a fer, només cal seguir l'arbre de manera inversa, és a dir des del punt final fins a $s$. Al ser un arbre, només hi haurà un camí possible a seguir.
 
-Per obtenir el temps caldrà buscar l'entrada corresponent al node final al diccionari dels temps. A aquest temps se li afegiran els temps per a cada parada i es farà la conversió de segons a minuts i segons.
+Per obtenir el temps caldrà buscar l'entrada corresponent al node final al diccionari dels temps. Sobre aquest temps es farà la conversió de segons a minuts i segons.
 
 El temps addicional corresponent a les parades, en un principi, s'afegiria al total, multiplicat pel nombre de parades menys dues (la inicial i la final), però es va observar que aquest procediment no era del tot correcte. Per tal de veure el problema, considerem el següent graf:
 
@@ -2984,14 +2988,14 @@ El temps addicional corresponent a les parades, en un principi, s'afegiria al to
 En aquest graf, el camí mínim per anar de $v_{0}$ a $v_{5}$ segons Dijkstra és passant per la resta de nodes. Posteriorment l'algorisme del metro afegiria els 25 segons multiplicat pel nombre de parades menys una, afegint llavors 125 segons. El resultat total és de 130 segons. Però el camí mínim no és aquest: si no s'utilitza Dijkstra i s'agafa l'aresta directa entre $v_{0}$ i $v_{5}$ s'obté un temps de 6 segons al que només cal sumar 25 segons, trigant un total de 31 segons. Així doncs, l'algorisme era incorrecte, ja que també cal tenir en compte el nombre de nodes per on es passa. Aquest error està sol·lucionat en el següent algorisme:
 
 \begin{algorisme}[H]
-\KwData{Graf $G$ del metro, un node inicial $inici$ i un node final $final$}
+\KwData{Graf $G$ del metro, un node inicial $inici$ i un node final $final$, temps $k$ de parada a cada estació}
 \KwResult{Temps total del trajecte, trajecte}
 \DontPrintSemicolon
 nou vector $recorregut$\;
 imprimeix("Punt inicial:", $inici$)\;
 imprimeix("Punt final:", $final$)\;
 
-dist, arbre = DijkstraOrdenat($G$, $inici$)\;
+dist, arbre = DijkstraOrdenat($G$, $inici$, $k$)\;
 
 $i$ = $final$\;
 \While{$arbre[i]$ sigui diferent a $inici$}
@@ -3002,10 +3006,21 @@ $i$ = $final$\;
 afegeix $inici$ a $recorregut$\;
 inverteix l'ordre dels elements de $recorregut$\;
 
-$TempsTotal=dist[final]+(25\times (len(recorregut)-2)$\;
-$minuts=$ part entera de $TempsTotal/60$\;
-$segons=$ (residu de $TempsTotal/60$)$\times 0'60$\;
-imprimeix("Temps total del recorregut:", $minuts$, "minuts i", $segons$, "segons")\;
+$TempsTotal=dist[final]-k$\;
+
+imprimeix("Temps net del recorregut:", $TempsTotal$)\;
+
+\If{$TempsTotal<60$}
+{
+  imprimeix("Temps total del recorregut:", $TempsTotal$, "segons")\;
+}
+\Else
+{
+  $minuts=$ part entera de $TempsTotal/60$\;
+  $segons=$ (residu de $TempsTotal\%60$)\;
+  imprimeix("Temps total del recorregut:", $minuts$, "minuts i", $segons$, "segons")\;
+}
+
 imprimeix("Recorregut:")\;
 \For{$i$ in $range(0, len(recorregut))$}
 {
@@ -3019,7 +3034,7 @@ El funcionament seria el següent:
 Suposem que estem a Llucmajor i volem anar a la terminal T1 de l'aeroport. Li proposem a l'algorisme que volem anar des de l'estació de Llucmajor de la línia 4 (4\_Llucmajor) fins l'estació Aeroport T1 de la línia 9 Sud (9S\_Aeroport T1).
 \subsubsection*{Exemple d'entrada 1}
 \begin{minted}[breaklines=true, frame=lines]{python}
-metro(metro_barcelona, "4_Llucmajor", "9S_Aeroport T1")
+metro(metro_barcelona, "4_Llucmajor", "9S_Aeroport T1", 25)
 \end{minted}
 \subsubsection*{Exemple de sortida 1}
 \begin{minted}[breaklines=true, frame=lines]{text}
@@ -3036,7 +3051,7 @@ Descrivim un altre trejecte: Imaginem que un estudiant es troba a la zona univer
 
 \subsubsection*{Exemple d'entrada 2}
 \begin{minted}[breaklines=true, frame=lines]{python}
-metro(metro_barcelona, "3_Zona Universitària", "5_Sagrada Família")
+metro(metro_barcelona, "3_Zona Universitària", "5_Sagrada Família", 25)
 \end{minted}
 \subsubsection*{Exemple de sortida 2}
 \begin{minted}[breaklines=true, frame=lines]{text}
@@ -3051,7 +3066,7 @@ En aquest exemple de sortida s'indica la durada total del trajecte que serà de 1
 
 En l'Annex B.11 s'adjunta la construcció de l'algoritme necessari per realitzar tots aquests càlculs.
 
-\newpage
+%\newpage
 \chapter*{Conclusions}
 \addcontentsline{toc}{chapter}{Conclusions}
 
@@ -3120,26 +3135,26 @@ Tot el programari que s'ha utliitzat durant el transcurs del treball és programa
 \section{Sistemes operatius}
 Encara que la majoria de programes utilitzats tenen versions per a altres sistemes operatius, jo els he utilitzat sobre sistemes GNU/Linux, concretament en distribucions Ubuntu i Debian.
 
-\section{Processador de text}
+\section{Processador de text \LaTeX}
 Per tal de poder redactar el treball ha estat necessari un processador de textos especial. Ha calgut escriure un gran nombre de fórmules i expressions matemàtiques, pseudocodi, programes complets... i en aquest sentit \LaTeX \ ha ajudat molt. \LaTeX\ és un sistema de composició de text amb una ``alta qualitat tipogràfica'', on el text s'escriu en forma de codi i se li dona format amb ordres específiques incloses en el document. D'aquesta manera s'aconsegueix exactament el que es desitja, essent possible modificar molts dels paràmetres del document.
 Per exemple: la fórmula
 \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]
-s'escriu a LaTeX com a 
+s'escriu a \LaTeX\ com a 
 \begin{minted}[breaklines=true]{tex}
 \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(v_{i})^{2}-e \]
 \end{minted}
 Posteriorment, tot el codi es compila i es genera un fitxer .pdf amb tot el codi interpretat.
 
-Un altre avantatge de \LaTeX\ és que també permet la utilització de diversos paquets que afegeixen funcionalitats addicionals. Durant la redaccó d'aquesta memòria se n'han utilitzat un total de 35, i els següents són els més importants:
+Un altre avantatge de \LaTeX\ és que també permet la utilització de diversos paquets que afegeixen funcionalitats addicionals. Durant la redaccó d'aquesta memòria se n'han utilitzat un total de 36, i els següents són els més importants:
 
 \subsection{Tikz i tkz-berge}
 Tikz i tkz-berge permeten dibuixar (mitjançant ordres escrites) directament al document, sense que sigui necessari importar imatges externes. La gran majoria de imatges fetes per mi mateix s'han fet a través d'aquests dos paquets. Aquests, al mateix temps, tenen un sistema propi de paquets que permet afegir funcions i ordres. Dins d'aquests paquets, n'hi ha que inclouen diverses funcions orientades a grafs i permeten dibuixar-los tal com es desitgin. 
 
 La següent imatge d'un graf 
-
+\vspace{1cm}
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.8]
 		\node[round,orange] (3) at (0,4) {$v_{3}$};
 		\node[round,orange] (4) at (0,0) {$v_{4}$};
 		\node[round,orange] (2) at (4,0) {$v_{2}$};
@@ -3157,26 +3172,23 @@ La següent imatge d'un graf
 	\end{tikzpicture}
 \end{figure}
 
-s'escriu a \LaTeX com a 
-
+s'escriu a \LaTeX\ com a 
+\vfill
 \begin{minted}[breaklines=true]{tex}
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.5]
+	\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=2mm}, transform shape, scale=0.8]
 		\node[round,orange] (3) at (0,4) {$v_{3}$};
 		\node[round,orange] (4) at (0,0) {$v_{4}$};
 		\node[round,orange] (2) at (4,0) {$v_{2}$};
 		\node[round,orange] (1) at (4,4) {$v_{1}$};
-		\node[round,orange] (0) at (6,2) {$v_{0}$};
-
-		
+		\node[round,orange] (0) at (6,2) {$v_{0}$};		
 		\Edge[label=$5$](2)(4)
 		\tikzset{EdgeStyle/.style={orange}}
 		\Edge[label=$1$](0)(1)
 		\Edge[label=$3$](1)(2)
 		\Edge[label=$4$](1)(4)
 		\Edge[label=$2$](3)(4)
-
 	\end{tikzpicture}
 \end{figure}
 
@@ -3275,6 +3287,7 @@ def DFS_recursive(Adj, s):
 G={0:[1,2,3], 1:[3,4], 2:[4], 3:[4], 4:[]}
 print DFS(G)
 \end{minted}
+\vfill
 \subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 Des de 0 es pot arribar a:
@@ -3362,10 +3375,10 @@ def OrderedDijkstra(Adj, s, k):
 \end{minted}
 \subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
-G={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
+G={0:{1:10,2:3}, 1:{2:1, 3:2}, 2:{1:4, 3:8, 4:2}, 3:{4:7}, 4:{3:9}}
 distancies, arbre_anteriors = Dijkstra(G, 0)
 print distancies
-print arbre_apuntadors
+print arbre_anteriors
 \end{minted}
 \subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
@@ -3396,9 +3409,10 @@ def BellmanFord(Adj, s):
                 break
     return dist, tree
 \end{minted}
+\vfill
 \subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
-G={0:{1:16,2:0}, 1:{2:-32}, 2:{3:8,4:0}, 3:{4:-16}, 4:{5:4,6:0}, 5:{6:-8}, 6:{7:2,8:0}, 7:{8:-4}, 8:{9:1,10:0}, 9:{10:-2},10:{}}
+G={0:{1:16,2:0}, 1:{2:-32}, 2:{3:8,4:0}, 3:{4:-16}, 4:{5:4,6:0}, 5:{6:-8}, 6:{7:2,8:0}, 7:{8:-4}, 8:{9:1,10:0}, 9:{10:-2}, 10:{}}
 distancies, arbre_apuntadors = BellmanFord(G, 0)
 print distancies
 print arbre_apuntadors
@@ -3428,7 +3442,7 @@ def Prim(Adj):
 \end{minted}
 \subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
-G={1:{2:1, 3:2},0:{1:10,2:3},2:{1:4, 3:8, 4:2},4:{3:9},3:{4:7}}
+G={1:{2:1, 3:2}, 0:{1:10,2:3}, 2:{1:4, 3:8, 4:2}, 4:{3:9}, 3:{4:7}}
 print Prim(G)
 \end{minted}
 \subsection*{Exemple de sortida}
@@ -3453,14 +3467,14 @@ def Kruskal(Adj):
 \end{minted}
 \subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
-G={0:{1:8,3:2},1:{0:8,2:5,3:3,4:1},2:{1:5,3:2,4:4},3:{0:2,1:3,2:2},4:{1:1,2:4}}
+G={0:{1:8,3:2}, 1:{0:8,2:5,3:3,4:1}, 2:{1:5,3:2,4:4}, 3:{0:2,1:3,2:2}, 4:{1:1,2:4}}
 print Prim(G)
 \end{minted}
 \subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 [(0, 1), (0, 3), (1, 2), (1, 4)]
 \end{minted}
-
+\vfill
 \section{Floyd-Warshall}
 \subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
@@ -3480,7 +3494,7 @@ def FloydWarshall(Adj):
 \end{minted}
 \subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
-G={0:{1:10,2:3},1:{2:1, 3:2},2:{1:4, 3:8, 4:2},3:{4:7},4:{3:9}}
+G={0:{1:10,2:3}, 1:{2:1, 3:2}, 2:{1:4, 3:8, 4:2}, 3:{4:7}, 4:{3:9}}
 print FloydWarshall(G)
 \end{minted}
 \subsection*{Exemple de sortida}
@@ -3492,7 +3506,7 @@ print FloydWarshall(G)
 [inf, inf, inf, 9, 0]]
 \end{minted}
 
-
+\vfill
 \section{Hamilton}
 \subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
@@ -3513,14 +3527,14 @@ def Hamilton(Adj, s, e):
 \end{minted}
 \subsection*{Exemple d'entrada}
 \begin{minted}[frame=lines, breaklines=true]{python}
-G={0:[2,3,5,1],1:[0,2,4,5],2:[0,1,3,4],3:[0,2,4,5],4:[1,2,3,5],5:[0,1,3,4]}
+G={0:[2,3,5,1], 1:[0,2,4,5], 2:[0,1,3,4], 3:[0,2,4,5], 4:[1,2,3,5], 5:[0,1,3,4]}
 print Hamilton(G, 0, 5)
 \end{minted}
 \subsection*{Exemple de sortida}
 \begin{minted}[frame=lines, breaklines=true]{text}
 [0, 2, 1, 4, 3, 5]
 \end{minted}
-
+\vfill
 \section{Euler}
 \subsection*{Codi}
 \begin{minted}[frame=lines, breaklines=true]{python}
@@ -3598,7 +3612,7 @@ print coloring(bipartite)
 
 \section{Metro}
 \subsection*{Codi}
-\begin{minted}[frame=lines]{python}
+\begin{minted}[frame=lines, breaklines=true]{python}
 def metro(Adj, inici, final, k): #on k és el temps de parada acada estació
     recorregut=[]
     
@@ -3635,6 +3649,7 @@ def metro(Adj, inici, final, k): #on k és el temps de parada acada estació
     print final.decode("ISO-8859-15"),"]" 
   
 \end{minted}
+\vfill
 \subsection*{Exemple d'entrada}
 \begin{minted}[breaklines=true, mathescape, frame=lines]{python}
 metro_barcelona={"1_Hospital de Bellvitge":{"1_Bellvitge":90}, "1_Bellvitge":{"1_Hospital de Bellvitge":90, "1_Av. Carrilet":100},"1_Av. Carrilet":{"1_Bellvitge":100, "1_Rbla. Just Oliveras":65, "8_L'Hospitalet - Av. Carrilet":180}, "1_Rbla. Just Oliveras":{"1_Av. Carrilet":65, "1_Can Serra":60}, "1_Can Serra":{"1_Rbla. Just Oliveras":60, "1_Florida":60}, "1_Florida":{"1_Can Serra":60, "1_Torrassa":60}, "1_Torrassa":{"1_Florida":60, "1_Santa Eulàlia":85, "9S_Torrassa":240}, "1_Santa Eulàlia":{"1_Torrassa":85,"1_Mercat Nou":75}, "1_Mercat Nou":{"1_Santa Eulàlia":75, "1_Plaça de Sants":60}, "1_Plaça de Sants":{"1_Mercat Nou":60, "1_Hostafrancs":50, "5_Plaça de Sants":282}, "1_Hostafrancs":{"1_Plaça de Sants:":50, "1_Espanya":55}, "1_Espanya":{"1_Hostafrancs":55, "1_Rocafort":60, "3_Espanya":209, "8_Espanya":120}, "1_Rocafort":{"1_Espanya":60, "1_Urgell":55}, "1_Urgell":{"1_Rocafort":55, "1_Universitat":58}, "1_Universitat":{"1_Urgell":58, "1_Catalunya":50, "2_Universitat":144}, "1_Catalunya":{"1_Universitat":50, "1_Urquinaona":58, "3_Catalunya":180, "6_Catalunya":360, "7_Catalunya":360}, "1_Urquinaona":{"1_Catalunya":58, "1_Arc de Triomf":85, "4_Urquinaona":256}, "1_Arc de Triomf":{"1_Urquinaona":85, "1_Marina":54}, "1_Marina":{"1_Arc de Triomf":54, "1_Glòries":80}, "1_Glòries":{"1_Marina":80, "1_Clot":78}, "1_Clot":{"1_Glòries":78,"1_Navas":65, "2_Clot":120}, "1_Navas":{"1_Clot":65, "1_La Sagrera":80}, "1_La Sagrera":{"1_Navas":80, "1_Fabra i Puig":89, "5_La Sagrera":100, "9N_La Sagrera":178, "10_La Sagrera":178}, "1_Fabra i Puig":{"1_La Sagrera":89, "1_Sant Andreu":101}, "1_Sant Andreu":{"1_Fabra i Puig":101, "1_Torras i Bages":88}, "1_Torras i Bages":{"1_Sant Andreu":88, "1_Trinitat Vella":77}, "1_Trinitat Vella":{"1_Torras i Bages":77, "1_Baró de Viver":60}, "1_Baró de Viver":{"1_Trinitat Vella":60, "1_Santa Coloma":83}, "1_Santa Coloma":{"1_Baró de Viver":83, "1_Fondo":84}, "1_Fondo":{"1_Santa Coloma":84, "9N_Fondo":140}, "2_Paral·lel":{"2_Sant Antoni":80, "3_Paral·lel":83}, "2_Sant Antoni":{"2_Paral·lel":80, "2_Universitat":66}, "2_Universitat":{"2_Sant Antoni":66, "2_Passeig de Gràcia":80, "1_Universitat":144}, "2_Passeig de Gràcia":{"2_Universitat":80, "2_Tetuan":95, "3_Passeig de Gràcia":360, "4_Passeig de Gràcia":120}, "2_Tetuan":{"2_Passeig de Gràcia":95, "2_Monumental":93}, "2_Monumental":{"2_Tetuan":93, "2_Sagrada Família":63}, "2_Sagrada Família":{"2_Monumental":63, "2_Encants":114, "5_Sagrada Família":178}, "2_Encants":{"2_Sagrada Família":114, "2_Clot":53}, "2_Clot":{"2_Encants":53, "2_Bac de Roda":89, "1_Clot":120}, "2_Bac de Roda":{"2_Clot":89, "2_Sant Martí":61}, "2_Sant Martí":{"2_Bac de Roda":61, "2_La Pau":74}, "2_La Pau":{"2_Sant Martí":74, "2_Verneda":76, "4_La Pau":60}, "2_Verneda":{"2_La Pau":76, "2_Artigues Sant Adrià":81}, "2_Artigues Sant Adrià":{"2_Verneda":81, "2_Sant Roc":91}, "2_Sant Roc":{"2_Artigues Sant Adrià":91, "2_Gorg":60}, 
