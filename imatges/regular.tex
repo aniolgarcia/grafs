@@ -1,0 +1,30 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+\usepackage{xcolor}
+\usepackage{graphics, graphicx}
+\usepackage{tikz, tkz-graph}
+\usepackage{pgf, pgfplots}
+\usepackage{graphviz, tkz-berge}
+\usepackage{graphics, graphicx}
+\usepackage{pstricks, pst-node, pst-tree}
+
+\usetikzlibrary{arrows, petri, topaths}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning,automata}
+
+
+
+\begin{document}
+		\begin{tikzpicture}
+		\grEmptyCycle[RA=2, prefix=v, Math=true]{10}
+		%\EdgeInGraphModLoop{v}{8}{2}{0}
+		\EdgeFromOneToSel{v}{v}{0}{2,4,6,8}
+		\EdgeFromOneToSel{v}{v}{1}{3,5,7,9}
+		\EdgeFromOneToSel{v}{v}{2}{4,6,8}
+		\EdgeFromOneToSel{v}{v}{3}{5,7,9}
+		\EdgeFromOneToSel{v}{v}{4}{6,8}
+		\EdgeFromOneToSel{v}{v}{5}{7,9}
+ 		\EdgeFromOneToSel{v}{v}{6}{8}
+		\EdgeFromOneToSel{v}{v}{7}{9}	
+		\end{tikzpicture}
+\end{document}

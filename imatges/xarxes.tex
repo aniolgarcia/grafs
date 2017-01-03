@@ -1,0 +1,41 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+\usepackage{xcolor}
+\usepackage{graphics, graphicx}
+\usepackage{tikz, tkz-graph}
+\usepackage{pgf, pgfplots}
+\usepackage{graphviz, tkz-berge}
+\usepackage{graphics, graphicx}
+\usepackage{pstricks, pst-node, pst-tree}
+
+\usetikzlibrary{arrows, petri, topaths}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning,automata}
+
+
+
+\begin{document}
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum 			size=.5mm}, transform shape, scale=0.80]
+		\node[round] (a) at (0,0){$v_{0}$};
+		\node[round] (b) at (4,0){$v_{1}$};
+		\node[round] (c) at (8,0){$v_{2}$};
+		\node[round] (d) at (0,2){$v_{3}$};
+		\node[round] (e) at (4,2){$v_{4}$};
+		\node[round] (f) at (8,2){$v_{5}$};
+		\node[round] (g) at (0,4){$v_{6}$};
+		\node[round] (h) at (4,4){$v_{7}$};
+		\node[round] (i) at (8,4){$v_{8}$};
+		\draw (a) edge (b);
+		\draw (a) edge (d);
+		\draw (b) edge (c);
+		\draw (b) edge (e);
+		\draw (c) edge (f);
+		\draw (d) edge (e);
+		\draw (d) edge (g);
+		\draw (e) edge (h);
+		\draw (e) edge (f);
+		\draw (f) edge (i);
+		\draw (h) edge (i);
+		\draw (h) edge (g);
+		\end{tikzpicture}
+\end{document}

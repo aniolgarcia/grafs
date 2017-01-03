@@ -1,0 +1,28 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+\usepackage{xcolor}
+\usepackage{graphics, graphicx}
+\usepackage{tikz, tkz-graph}
+\usepackage{pgf, pgfplots}
+\usepackage{graphviz, tkz-berge}
+\usepackage{graphics, graphicx}
+\usepackage{pstricks, pst-node, pst-tree}
+
+\begin{document}
+\begin{tikzpicture}[scale=0.75,transform shape]
+  \Vertex[x=0,y=0]0
+  \Vertex[x=0,y=2]1
+  \Vertex[x=0,y=4]2
+  \Vertex[x=5,y=2]3
+  \tikzstyle{LabelStyle}=[fill=white,sloped]
+  \Edge(1)(3)
+  \tikzstyle{EdgeStyle}=[bend left]
+  \Edge(0)(1)
+  \Edge(1)(2)
+  \Edge(2)(3)
+  \tikzstyle{EdgeStyle}=[bend right]
+  \Edge(0)(1)
+  \Edge(1)(2)
+  \Edge(0)(3)
+\end{tikzpicture}
+
+\end{document}

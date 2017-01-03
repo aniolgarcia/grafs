@@ -1,16 +1,24 @@
 \documentclass{beamer}
 \usepackage[latin9]{inputenc}
-
 \usepackage{xcolor}
 \usepackage{graphics, graphicx}
 \usepackage{tikz, tkz-graph}
 \usepackage{pgf, pgfplots}
 \usepackage{graphviz, tkz-berge}
+\usepackage{graphics, graphicx}
+\usepackage{pstricks, pst-node, pst-tree}
+\usepackage{float}
+
+\usetikzlibrary{arrows, petri, topaths}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning,automata}
 
 \usetheme{Warsaw}
-%\usefonttheme{serif}
-
 \mode<presentation>{\usetheme{Warsaw}}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+\graphicspath{ {graphics/} }
 
 
 \title{Els grafs: xarxes, camins i connexions}
@@ -27,152 +35,162 @@
 
 \begin{document}
 
+\begin{frame}{Overview}
+\tableofcontents
+\end{frame}
 
 \frame{\titlepage}
+
 \section{Introducció}
+\subsection{El meu primer graf}
 \begin{frame}
 \frametitle{El meu primer graf}
+	\begin{figure}[H]
+		\includegraphics[scale=0.3]{graf1}
+	\end{figure}
+\end{frame}
+
+\subsection{El primer graf}
+\begin{frame}
+\frametitle{El primer graf}
+\begin{columns}
+ 
+\column{0.5\textwidth}
 \begin{figure}[H]
 \centering
-
-\definecolor{ffdxqq}{rgb}{1,0.843137254901961,0}
-\definecolor{ffqqff}{rgb}{1,0,1}
-\definecolor{ccwwff}{rgb}{0.8,0.4,1}
-\definecolor{ffqqtt}{rgb}{1,0,0.2}
-\definecolor{ffttww}{rgb}{1,0.2,0.4}
-\definecolor{uuuuuu}{rgb}{0.266666666666667,0.266666666666667,0.266666666666667}
-\definecolor{ttzzqq}{rgb}{0.2,0.6,0}
-\definecolor{qqzzcc}{rgb}{0,0.6,0.8}
-\definecolor{ffqqqq}{rgb}{1,0,0}
-\definecolor{qqqqff}{rgb}{0,0,1}
-\definecolor{cqcqcq}{rgb}{0.752941176470588,0.752941176470588,0.752941176470588}
-
-
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm, scale= 0.5]
-\draw [color=cqcqcq,dash pattern=on 3pt off 3pt, xstep=2.0cm,ystep=2.0cm] (-5.210241892694826,-4.647328152758077) grid (11.825236628568483,11.990125169410069);
-\draw[->,color=black] (-5.210241892694826,0) -- (11.825236628568483,0);
-\foreach \x in {-4,-2,2,4,6,8,10}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-4.647328152758077) -- (0,11.990125169410069);
-\foreach \y in {-4,-2,2,4,6,8,10}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-5.210241892694826,-4.647328152758077) rectangle (11.825236628568483,11.990125169410069);
-\draw (0,0)-- (5,-1);
-\draw (0,9)-- (1,3);
-\draw (0,9)-- (7,10);
-\draw (7,10)-- (3,3);
-\draw (3,3)-- (1,3);
-\draw (3,3)-- (5,-1);
-\draw [color=ttzzqq] (0,0)-- (1.95,0.99);
-\draw [color=ttzzqq] (1.95,0.99)-- (5,-1);
-\draw [color=ttzzqq] (1.95,0.99)-- (2,2.42);
-\draw [color=ttzzqq] (2,2.42)-- (3,3);
-\draw (1,3)-- (0,0);
-\draw [color=ttzzqq] (1,3)-- (2,2.42);
-\draw [color=qqzzcc] (1,3)-- (1.44,2.05);
-\draw (1.44,2.05)-- (2.62,2.08);
-\draw [color=qqzzcc] (2.62,2.08)-- (3,3);
-\draw [color=qqzzcc] (2.62,2.08)-- (5,-1);
-\draw [color=qqzzcc] (1.44,2.05)-- (0,0);
-\draw [color=ffqqtt] (1,3)-- (2.188309128214945,3.561892025304509);
-\draw [color=ffqqtt] (2.365261414982659,7.526875255855325)-- (2.188309128214945,3.561892025304509);
-\draw [color=ffqqtt] (0,9)-- (2.365261414982659,7.526875255855325);
-\draw [color=ffqqtt] (2.365261414982659,7.526875255855325)-- (7,10);
-\draw [color=ffqqtt] (2.188309128214945,3.561892025304509)-- (3,3);
-\draw [color=ccwwff] (1,3)-- (2.061660681748013,4.492802006171414);
-\draw [color=ccwwff] (2.061660681748013,4.492802006171414)-- (2.454380848472936,4.442437815523712);
-\draw [color=ccwwff] (2.454380848472936,4.442437815523712)-- (3,3);
-\draw [color=ccwwff] (0,9)-- (2.061660681748013,4.492802006171414);
-\draw [color=ccwwff] (2.454380848472936,4.442437815523712)-- (7,10);
-\draw [color=ffdxqq] (2.188309128214945,3.561892025304509)-- (2.188309128214945,3);
-\draw [color=ffdxqq] (2,3)-- (2,2.42);
-\begin{scriptsize}
-\fill [color=qqqqff] (0,0) circle (1.5pt);
-\draw[color=qqqqff] (0.38864590790729,0.341254342565067) node {$A_1$};
-\fill [color=qqqqff] (5,-1) circle (1.5pt);
-\draw[color=qqqqff] (5.218018323592528,-0.66707616180876) node {$B$};
-\fill [color=qqqqff] (3,3) circle (1.5pt);
-\draw[color=qqqqff] (3.201357314844846,3.339710842413553) node {$C$};
-\fill [color=qqqqff] (1,3) circle (1.5pt);
-\draw[color=qqqqff] (1.21123131937016,3.339710842413553) node {$D$};
-\fill [color=qqqqff] (7,10) circle (1.5pt);
-\draw[color=qqqqff] (7.208144319067213,10.344954346484352) node {$E$};
-\fill [color=qqqqff] (0,9) circle (1.5pt);
-\draw[color=qqqqff] (0.176365801723324,9.336623842110525) node {$F$};
-\draw[color=black] (2.617587022838938,-0.720146188354751) node {$AB$};
-\draw[color=black] (0.176365801723324,6.125887236078075) node {$b$};
-\draw[color=black] (3.652452540485775,9.283553815564535) node {$e$};
-\draw[color=black] (4.713853071405607,6.921937634267938) node {$g$};
-\draw[color=black] (2.007281717560035,3.631595988416503) node {$j$};
-\draw[color=black] (3.678987553758771,1.004629674389953) node {$k$};
-\fill [color=ffqqqq] (1.44,2.05) circle (1.5pt);
-\draw[color=ffqqqq] (1.635791531738093,2.384450364585716) node {$K$};
-\fill [color=ffqqqq] (2,2.42) circle (1.5pt);
-\draw[color=ffqqqq] (2.193026810471006,2.755940550407653) node {$L$};
-\fill [color=qqzzcc] (2.62,2.08) circle (1.5pt);
-\draw[color=qqzzcc] (2.856402142295901,2.437520391131708) node {$M$};
-\fill [color=qqqqff] (18.414738212899152,8.553390907792599) circle (1.5pt);
-\draw[color=qqqqff] (18.618200026455412,8.885528616469601) node {$A$};
-\fill [color=ffqqqq] (1.95,0.99) circle (1.5pt);
-\draw[color=ffqqqq] (2.16649179719801,1.323049833665899) node {$O$};
-\draw[color=ttzzqq] (1.184696306097165,0.314719329292072) node {$l$};
-\draw[color=ttzzqq] (3.360567394482821,-0.162910909621846) node {$m$};
-\draw[color=ttzzqq] (2.484911956473959,1.880285112398803) node {$n$};
-\draw[color=ttzzqq] (2.803332115749909,2.543660444223689) node {$p$};
-\draw[color=black] (0.20290081499632,1.827215085852812) node {$q$};
-\draw[color=ttzzqq] (1.317371372462144,2.543660444223689) node {$r$};
-\draw[color=qqzzcc] (0.892811160094211,2.543660444223689) node {$s$};
-\draw[color=black] (2.086886757379022,1.827215085852812) node {$t$};
-\draw[color=qqzzcc] (3.4932424608478,2.570195457496685) node {$a_1$};
-\draw[color=qqzzcc] (3.758592593577758,0.473929408930044) node {$b_1$};
-\draw[color=qqzzcc] (0.627461027364253,1.455724900030876) node {$c_1$};
-\fill [color=qqqqff] (-3.065559915740067,10.167346657643796) circle (1.5pt);
-\draw[color=qqqqff] (-2.848625711398198,10.504164426122324) node {$H$};
-\fill [color=uuuuuu] (11.06217782649107,3.035898384862243) circle (1.5pt);
-\draw[color=uuuuuu] (11.188396310016584,3.392780868959544) node {$I$};
-\fill [color=uuuuuu] (-0.154350915650843,11.339067702136814) circle (1.5pt);
-\draw[color=uuuuuu] (0.070225748631341,11.671705010134124) node {$N$};
-\fill [color=ffttww] (2.454380848472936,4.442437815523712) circle (1.5pt);
-\draw[color=ffttww] (2.67065704938493,4.799136572428303) node {$P$};
-\fill [color=uuuuuu] (2.633974596215563,15.56217782649107) circle (1.5pt);
-\draw[color=uuuuuu] (-5.104101839602842,12.175870262321038) node {$Q$};
-\fill [color=uuuuuu] (9.417508810387687,3.134616508389499) circle (1.5pt);
-\draw[color=uuuuuu] (9.622830526909832,3.47238590877853) node {$R$};
-\fill [color=ffttww] (2.365261414982659,7.526875255855325) circle (1.5pt);
-\draw[color=ffttww] (2.564516996292947,7.877198112095775) node {$S$};
-\fill [color=uuuuuu] (-4.696152422706632,5.133974596215563) circle (1.5pt);
-\draw[color=uuuuuu] (-4.520331547596935,5.489046917526185) node {$T$};
-\fill [color=uuuuuu] (5.05148340660325,8.69679433488057) circle (1.5pt);
-\draw[color=uuuuuu] (5.271088350138519,9.044738696107574) node {$U$};
-\fill [color=ffttww] (2.061660681748013,4.492802006171414) circle (1.5pt);
-\draw[color=ffttww] (2.272631850289993,4.825671585701298) node {$V$};
-\fill [color=uuuuuu] (2,1.267949192431123) circle (1.5pt);
-\draw[color=uuuuuu] (2.246096837016997,1.614934979668849) node {$W$};
-\fill [color=uuuuuu] (0.355330983896616,4.830768931096134) circle (1.5pt);
-\draw[color=uuuuuu] (0.574391000818261,5.170626758250239) node {$Z$};
-\fill [color=ffttww] (2.188309128214945,3.561892025304509) circle (1.5pt);
-\draw[color=ffttww] (2.591052009565943,3.896946121146457) node {$B_1$};
-\draw[color=ffqqtt] (2.007281717560035,3.100895722956594) node {$r_2$};
-\draw[color=ffqqtt] (2.113421770652018,5.754397050256139) node {$s_2$};
-\draw[color=ffqqtt] (1.184696306097165,8.089478218279739) node {$t_2$};
-\draw[color=ffqqtt] (5.164948297046536,8.593643470466652) node {$a_3$};
-\draw[color=ffqqtt] (2.644122036111934,3.127430736229589) node {$b_3$};
-\draw[color=ccwwff] (2.139956783925014,3.711201028235489) node {$c_3$};
-\draw[color=ccwwff] (2.484911956473959,4.241901293695398) node {$d_3$};
-\draw[color=ccwwff] (2.617587022838938,3.76427105478148) node {$e_3$};
-\draw[color=ccwwff] (0.866276146821215,6.762727554629966) node {$f_3$};
-\draw[color=ccwwff] (5.324158376684512,7.160752753724898) node {$g_3$};
-\fill [color=ffqqff] (2,3) circle (1.5pt);
-\draw[color=ffqqff] (2.405306916654972,3.339710842413553) node {$C_1$};
-\fill [color=ffqqff] (2.188309128214945,3) circle (1.5pt);
-\draw[color=ffqqff] (2.591052009565943,3.339710842413553) node {$D_1$};
-\draw[color=ffdxqq] (1.954211691014043,3.47238590877853) node {$j_3$};
-\draw[color=ffdxqq] (1.821536624649064,2.915150630045626) node {$k_3$};
-\end{scriptsize}
+\begin{tikzpicture}[scale=0.75,transform shape]
+  \Vertex[x=0,y=0]0
+  \Vertex[x=0,y=2]1
+  \Vertex[x=0,y=4]2
+  \Vertex[x=5,y=2]3
+  \tikzstyle{LabelStyle}=[fill=white,sloped]
+  \Edge(1)(3)
+  \tikzstyle{EdgeStyle}=[bend left]
+  \Edge(0)(1)
+  \Edge(1)(2)
+  \Edge(2)(3)
+  \tikzstyle{EdgeStyle}=[bend right]
+  \Edge(0)(1)
+  \Edge(1)(2)
+  \Edge(0)(3)
 \end{tikzpicture}
 \end{figure}
+
+\pause
+
+\column{0.5\textwidth}
+\includegraphics[scale=0.5]{Konigsberg_bridges}
+
+\end{columns}
 \end{frame}
+
+\subsection{Breu història}
+\begin{frame}
+\frametitle{Breu història}
+\begin{columns}
+ 
+\column{0.5\textwidth}
+	\begin{figure}[H]
+		\includegraphics[scale=0.21405]{Euler}
+		\caption{Leonhard Euler}
+	\end{figure}
+\column{0.5\textwidth}
+	\begin{figure}[H]
+		\includegraphics[scale=0.4]{Leibniz}
+		\caption{Gottfried W. Leibniz}
+	\end{figure}
+\end{columns}
+\end{frame}
+
+\frame{\titlepage}
+
+
+\section{Organització}
+\begin{frame}
+\tableofcontents
+No hi ha d'haver aquest índex, sinó el del treball (simplificat, evidentment)
+\end{frame}
+
+
+\subsection{Tipus de grafs}
+\begin{frame}
+\begin{columns}
+\column{0.5\textwidth}
+	\begin{figure}[H]
+		\begin{tikzpicture}[round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}, transform shape]
+			\node[round] (a) at (0,0){};
+			\node[round] (b) at (0,2) {};
+			\node[round] (c) at (2,0) {};
+			\node[round] (d) at (2,2) {};
+			\draw (a) edge[->, -Latex] (b);
+			\draw (c) edge[->, -Latex] (a);
+			\draw (b) edge[->, -Latex] (d);
+			\draw (c) edge[->, -Latex] (d);
+		\end{tikzpicture}
+		\caption{Graf dirigit}
+	\end{figure}
+\column{0.5\textwidth}
+\begin{figure}[H]
+		\begin{tikzpicture}[round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}, transform shape]
+			\node[round] (a) at (0,0){};
+			\node[round] (b) at (0,2) {};
+			\node[round] (c) at (2,0) {};
+			\node[round] (d) at (2,2) {};
+			\Edge[label=$10$](a)(b)
+			\Edge[label=$3$](c)(a)
+			\Edge[label=$2$](b)(d)
+			\Edge[label=$8$](c)(d)
+		\end{tikzpicture}
+		\caption{Graf ponderat}
+	\end{figure}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[H]
+		\begin{tikzpicture}[round/.style={circle, draw=black, thin, minimum size=.5mm}, transform shape, scale=0.5]
+			\node[round] (a) at (8,4){$v_{0}$};
+			\node[round] (b) at (4,8){$v_{1}$};
+			\node[round] (c) at (0,8){$v_{2}$};
+			\node[round] (d) at (0,4){$v_{3}$};
+			\node[round] (e) at (4,0){$v_{4}$};
+			\node[draw, diamond] (f) at (6,6){$u_{0}$};
+			\node[draw, diamond] (g) at (2,8){$u_{1}$};
+			\node[draw, diamond] (h) at (2,6){$u_{2}$};
+			\node[draw, diamond] (i) at (2,2){$u_{3}$};
+			\node[draw, diamond] (j) at (6,2){$u_{4}$};
+			\node[draw, diamond] (k) at (4,4){$u_{5}$};
+			\draw (a) edge (f);
+			\draw (a) edge (j);
+			\draw (a) edge (k);
+			\draw (f) edge (b);
+			\draw (j) edge (e);
+			\draw (k) edge (d);
+			\draw (b) edge (g);
+			\draw (g) edge (c);
+			\draw (b) edge (h);
+			\draw (h) edge (d);
+			\draw (d) edge (i);
+			\draw (i) edge (e);
+			
+			\draw (f) edge[dashed] (h);
+			\draw (k) edge[dashed] (f);
+			\draw (k) edge[dashed] (j);
+			\draw (k) edge[dashed] (i);
+			\draw (k) edge[dashed] (h);
+			\draw (f) edge[dashed] (h);
+			\draw (i) edge[dashed] (j);
+			\draw (g) edge[dashed] (h);
+			\draw (f) edge[dashed] (j);
+			\draw (h) edge[dashed] (i);
+			\draw (g) edge[dashed, bend left=75] (f);
+			
+		\end{tikzpicture}	
+\end{figure}
+\caption{Graf Lineal}
+\end{frame}
+
 
 \begin{frame}
 \begin{enumerate}
