@@ -1,0 +1,33 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+\usepackage{xcolor}
+\usepackage{graphics, graphicx}
+\usepackage{tikz, tkz-graph}
+\usepackage{pgf, pgfplots}
+\usepackage{graphviz, tkz-berge}
+\usepackage{graphics, graphicx}
+\usepackage{pstricks, pst-node, pst-tree}
+
+\usetikzlibrary{arrows, petri, topaths}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning,automata}
+
+
+
+\begin{document}
+		\begin{tikzpicture}[red/.style={circle, draw=red, thin, minimum 			size=.5mm},blue/.style={circle, draw=blue, thin, minimum size=.5mm}, transform shape, scale=0.80]
+		\node[blue] (a) at (0,0){$v_{0}$};
+		\node[blue] (b) at (4,0){$v_{1}$};
+		\node[blue] (c) at (8,0){$v_{2}$};
+		\node[red] (d) at (0,2){$u_{0}$};
+		\node[red] (e) at (4,2){$u_{1}$};
+		\node[red] (f) at (8,2){$u_{2}$};
+		\node[blue] (g) at (12, 0){$v_{3}$};
+		\draw (a) edge[draw=blue] (b);
+		\draw (b) edge[draw=blue] (c);
+		\draw (b) edge[draw=black, dashed] (e);
+		\draw (d) edge[draw=red] (e);
+		\draw (e) edge[draw=red] (f);
+		\draw (c) edge[draw=blue] (g);
+		\end{tikzpicture}
+\end{document}

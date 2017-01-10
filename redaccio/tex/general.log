@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  21 NOV 2016 00:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  28 DEC 2016 13:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1747,7 +1747,12 @@ Package pdftex.def Info: graphics/metro.jpg used on input line 2907.
                                      \fontsize {11}{11}\selectfont 
 l.3036 \begin{minted}
                      [breaklines=true, frame=lines]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1758,7 +1763,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3040 \begin{minted}
                      [breaklines=true, frame=lines]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1769,7 +1779,12 @@ l.3040 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3053 \begin{minted}
                      [breaklines=true, frame=lines]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1780,7 +1795,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3057 \begin{minted}
                      [breaklines=true, frame=lines]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1798,7 +1818,12 @@ Annex A.
                                      \fontsize {11}{11}\selectfont 
 l.3143 \begin{minted}
                      [breaklines=true]{tex}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1811,7 +1836,12 @@ l.3143 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3177 \begin{minted}
                      [breaklines=true]{tex}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1826,7 +1856,12 @@ Annex B.
                                      \fontsize {11}{11}\selectfont 
 l.3216 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1837,7 +1872,12 @@ l.3216 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3221 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1848,7 +1888,12 @@ l.3221 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3258 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1861,7 +1906,12 @@ E82F.pygtex [85
                                      \fontsize {11}{11}\selectfont 
 l.3286 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1872,7 +1922,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3292 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1883,7 +1938,12 @@ l.3292 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3305 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1894,7 +1954,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3326 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1905,7 +1970,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3331 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1916,7 +1986,12 @@ l.3331 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3338 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1927,7 +2002,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3377 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1938,7 +2018,12 @@ E82F.pygtex [88])
                                      \fontsize {11}{11}\selectfont 
 l.3384 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1949,7 +2034,12 @@ l.3384 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3390 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1960,7 +2050,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3414 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1971,7 +2066,12 @@ E82F.pygtex [89])
                                      \fontsize {11}{11}\selectfont 
 l.3421 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1982,7 +2082,12 @@ l.3421 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3427 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -1993,7 +2098,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3444 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2004,7 +2114,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3449 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2015,7 +2130,12 @@ l.3449 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3455 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2026,7 +2146,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3469 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2037,7 +2162,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3474 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2048,7 +2178,12 @@ l.3474 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3480 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2059,7 +2194,12 @@ E82F.pygtex [91])
                                      \fontsize {11}{11}\selectfont 
 l.3496 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2070,7 +2210,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3501 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2081,7 +2226,12 @@ l.3501 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3512 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2092,7 +2242,12 @@ E82F.pygtex [92])
                                      \fontsize {11}{11}\selectfont 
 l.3529 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2103,7 +2258,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3534 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2114,7 +2274,12 @@ l.3534 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3540 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2125,7 +2290,12 @@ E82F.pygtex [93])
                                      \fontsize {11}{11}\selectfont 
 l.3565 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2136,7 +2306,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3570 \begin{minted}
                      [frame=lines, breaklines=true]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2147,7 +2322,12 @@ l.3570 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3577 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2158,7 +2338,12 @@ E82F.pygtex [94])
                                      \fontsize {11}{11}\selectfont 
 l.3603 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2169,7 +2354,12 @@ E82F.pygtex)
                                      \fontsize {11}{11}\selectfont 
 l.3608 \begin{minted}
                      [frame=lines]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2180,7 +2370,12 @@ l.3608 \begin{minted}
                                      \fontsize {11}{11}\selectfont 
 l.3615 \begin{minted}
                      [frame=lines, breaklines=true]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2191,7 +2386,12 @@ E82F.pygtex [95])
                                      \fontsize {11}{11}\selectfont 
 l.3654 \begin{minted}
                      [breaklines=true, mathescape, frame=lines]{python}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2210,34 +2410,47 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
                                                   >\linewidth \setcounter {F...
 l.2 ...YG{p}{:}\PYG{l+m+mi}{60}\PYG{p}{\PYGZcb{},}
                                                   
-? 
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
 ! Dimension too large.
 \FV@ListProcessLine ...1}}}\ifdim \wd \FV@LineBox 
                                                   >\linewidth \setcounter {F...
 l.4 ...YG{p}{:}\PYG{l+m+mi}{65}\PYG{p}{\PYGZcb{},}
                                                   
-? 
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
 [96] [97]
 ! Dimension too large.
 \FV@ListProcessLine ...1}}}\ifdim \wd \FV@LineBox 
                                                   >\linewidth \setcounter {F...
 l.6 ...G{p}{:}\PYG{l+m+mi}{120}\PYG{p}{\PYGZcb{},}
                                                   
-? 
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
 [98]
 ! Dimension too large.
 \FV@ListProcessLine ...1}}}\ifdim \wd \FV@LineBox 
                                                   >\linewidth \setcounter {F...
 l.8 ...\PYG{l+m+mi}{45}\PYG{p}{\PYGZcb{}\PYGZcb{}}
                                                   
-? 
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
 [99])
 ! Undefined control sequence.
 \@begin@minted@hook ->\singlespacing 
                                      \fontsize {11}{11}\selectfont 
 l.3666 \begin{minted}
                      [breaklines=true, frame=lines]{text}
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 \openout5 = `general.pyg'.
 
 
@@ -2256,7 +2469,7 @@ Package logreq Info: Writing requests to 'general.run.xml'.
 Here is how much of TeX's memory you used:
  41297 strings out of 494850
  935819 string characters out of 6178024
- 1516905 words of memory out of 5000000
+ 1516907 words of memory out of 5000000
  43719 multiletter control sequences out of 15000+600000
  30221 words of font info for 79 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191

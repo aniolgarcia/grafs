@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{OrderedDijkstra}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{s}\PYG{p}{,} \PYG{n}{k}\PYG{p}{):}
+    \PYG{n}{Q} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{o}{.}\PYG{n}{fromkeys}\PYG{p}{(}\PYG{n}{Adj}\PYG{o}{.}\PYG{n}{keys}\PYG{p}{(),} \PYG{n+nb}{float}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}inf\PYGZdq{}}\PYG{p}{))}
+    \PYG{n}{dist} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{o}{.}\PYG{n}{fromkeys}\PYG{p}{(}\PYG{n}{Adj}\PYG{o}{.}\PYG{n}{keys}\PYG{p}{(),} \PYG{n+nb}{float}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}inf\PYGZdq{}}\PYG{p}{))}
+    \PYG{n}{tree} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{n}{Q}\PYG{p}{[}\PYG{n}{s}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{while} \PYG{n}{Q}\PYG{p}{:}
+        \PYG{n}{u} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{,} \PYG{n}{key}\PYG{o}{=}\PYG{n}{Q}\PYG{o}{.}\PYG{n}{get}\PYG{p}{)}
+        \PYG{n}{dist}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{=} \PYG{n}{Q}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]}
+        \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]:}
+            \PYG{k}{if} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Q}\PYG{p}{:}
+                \PYG{k}{if} \PYG{n}{Q}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{n}{Q}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{+} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{v}\PYG{p}{]:}
+                    \PYG{n}{Q}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n}{Q}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]} \PYG{o}{+} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{v}\PYG{p}{]} \PYG{o}{+} \PYG{n}{k}
+                    \PYG{n}{tree}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n}{u}
+        \PYG{n}{Q}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{n}{u}\PYG{p}{)}
+
+    \PYG{k}{return} \PYG{n}{dist}\PYG{p}{,} \PYG{n}{tree}
+\end{Verbatim}

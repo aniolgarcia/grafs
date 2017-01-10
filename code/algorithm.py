@@ -278,7 +278,7 @@ def Johnson(Adj):
     
 #______________________________________________________________________________    
 
-def metro(Adj, inici, final):
+def metro_fail(Adj, inici, final):
     recorregut=[]
     
     print "Punt inicial:", inici.decode("ISO-8859-15")
@@ -312,6 +312,46 @@ def metro(Adj, inici, final):
     
     
     
+#______________________________________________________________________________
+
+def metro(Adj, inici, final, k):
+    recorregut=[]
+    
+    print "Punt inicial:", inici.decode("ISO-8859-15")
+    
+    print "Punt final:", final.decode("ISO-8859-15") 
+    
+    for i in Adj:
+        for j in Adj[i]:
+           Adj[i][j] = Adj[i][j] + 25
+
+    dist, tree = OrderedDijkstra(Adj, inici, k)
+
+    i = final    
+    while tree[i] != inici:
+        recorregut.append(tree[i])
+        i = tree[i]
+    
+    recorregut.append(inici)        
+    recorregut.reverse()
+    total= dist[final]-k -25
+
+    print "Temps amb estacions del recorregut:", dist[final], "Temps real:", total    
+    
+    if total < 60:
+        print "Temps total del recorregut:",int(total), "segons"        
+    else:
+        minuts = total/60
+        segons = (total%60)
+        print "Temps total del recorregut:", int(minuts),"minuts i", int(segons), "segons"
+
+    print "Recorregut:",   
+    print "[",
+    for i in range(0,len(recorregut)):
+        print recorregut[i].decode("ISO-8859-15")+",",
+
+    print final.decode("ISO-8859-15"),"]" 
+
 #______________________________________________________________________________
     
             
@@ -355,7 +395,7 @@ a,b = OrderedDijkstra(graf_metro,"1_Torrassa")
 #print type("1_Catalunya")
 #graf_debug={"0":{"1":1, "5":6}, "1":{"0":1, "2":1}, "2":{"1":1, "3":1}, "3":{"2":1, "4":1}, "4":{"3":1, "5":1}, "5":{"0":6, "4":1}}
 #metro(graf_debug, "0", "5")
-metro(graf_metro, "1_Rocafort", "3_Palau Reial")
+metro(graf_metro, "2_Clot", "2_Sagrada Família")
 #print DFS(treball2)
 #print Kruskal(non_dir2)
 #print Dijkstra(weight2, 0)

@@ -1,0 +1,11 @@
+\frametitle{Exemple d'execució}
+\begin{minted}[breaklines=true, frame=lines, fontsize=\footnotesize]{python}
+metro(metro_barcelona, "4_Llucmajor", "9S_Aeroport T1", 25)
+\end{minted}
+\begin{minted}[breaklines=true, frame=lines, fontsize=\footnotesize]{text}
+Punt inicial: 4_Llucmajor
+Punt final: 9S_Aeroport T1
+Temps net del recorregut: 3565
+Temps total del recorregut: 59 minuts i 25 segons
+Recorregut: [ 4_Llucmajor, 4_Maragall, 4_Guinardó Hospital de Sant Pau, 4_Alfons X, 4_Joanic, 4_Verdaguer, 5_Verdaguer, 5_Diagonal, 5_Hospital Clínic, 5_Entença, 5_Sants Estació, 5_Plaça de Sants, 5_Badal, 5_Collblanc, 9S_Collblanc, 9S_Torrassa, 9S_Can Tries Gornal, 9S_Europa Fira, 9S_Fira, 9S_Parc Logístic, 9S_Mercabarna, 9S_Les Moreres, 9S_El Prat Estació, 9S_Cèntric, 9S_Parc Nou, 9S_Mas Blau, 9S_Aeroport T2, 9S_Aeroport T1 ]
+\end{minted}

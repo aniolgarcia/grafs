@@ -1,7 +1,12 @@
 \beamer@endinputifotherversion {3.36pt}
-\beamer@sectionintoc {1}{Introducci\'o}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{El meu primer graf}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{El primer graf}{4}{0}{1}
-\beamer@subsectionintoc {1}{3}{Breu hist\`oria}{6}{0}{1}
-\beamer@sectionintoc {2}{Organitzaci\'o}{8}{0}{2}
-\beamer@subsectionintoc {2}{1}{Tipus de grafs}{9}{0}{2}
+\beamer@sectionintoc {1}{Introducci\'o}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{El meu primer graf}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{El primer graf}{3}{0}{1}
+\beamer@subsectionintoc {1}{3}{Breu hist\`oria}{5}{0}{1}
+\beamer@sectionintoc {2}{Organitzaci\'o}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{Objectius}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Tipus de grafs}{8}{0}{2}
+\beamer@subsectionintoc {2}{3}{Algorismes}{22}{0}{2}
+\beamer@sectionintoc {3}{Aplicacions}{23}{0}{3}
+\beamer@subsectionintoc {3}{1}{Metro}{23}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{30}{0}{4}

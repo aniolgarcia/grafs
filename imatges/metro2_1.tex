@@ -1,0 +1,33 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+\usepackage{xcolor}
+\usepackage{graphics, graphicx}
+\usepackage{tikz, tkz-graph}
+\usepackage{pgf, pgfplots}
+\usepackage{graphviz, tkz-berge}
+\usepackage{graphics, graphicx}
+\usepackage{pstricks, pst-node, pst-tree}
+
+\usetikzlibrary{arrows, petri, topaths}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning,automata}
+
+
+
+\begin{document}
+		\begin{tikzpicture}[round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}, transform shape]
+		\node[round] (a) at (0,0){};
+		\node[round] (b) at (4,0){};
+		\node[round] (c) at (8,0){};
+		\node[round] (d) at (0,2){};
+		\node[round] (e) at (4,2){};
+		\node[round] (f) at (8,2){};
+		\node[round] (g) at (12, 0){};
+		\draw (a) edge (b);
+		\draw (b) edge (c);
+		\draw (b) edge (e);
+		\draw (d) edge (e);
+		\draw (e) edge (f);
+		\draw (c) edge (g);
+		\end{tikzpicture}
+\end{document}

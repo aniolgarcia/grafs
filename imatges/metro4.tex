@@ -1,0 +1,43 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+%\usepackage[catalan]{babel}
+\usepackage{xcolor}
+\usepackage{graphics, graphicx}
+\usepackage{tikz, tkz-graph}
+\usepackage{pgf, pgfplots}
+\usepackage{graphviz, tkz-berge}
+\usepackage{graphics, graphicx}
+\usepackage{pstricks, pst-node, pst-tree}
+
+\usetikzlibrary{arrows, petri, topaths}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning,automata}
+
+
+
+\begin{document}
+		\begin{tikzpicture}[red/.style={circle, fill= red, draw=red, thin, minimum size=.5mm},blue/.style={circle, fill=green, draw=green, thin, minimum size=.5mm}, invisible/.style={shape=coordinate}, transform shape, scale=0.80]
+		
+		\node[blue, label=below:{3\_Liceu}] (a) at (2,0){};
+		\node[blue, label=below:{3\_Catalunya}] (b) at (6,0){};
+		\node[blue, label=below:{3\_Passeig de Gràcia}] (c) at (10,0){};
+		\node[red, label={1\_Universitat}] (d) at (2,2){};
+		\node[red, label={1\_Catalunya}] (e) at (6,2){};
+		\node[red, label={1\_Urquinaona}] (f) at (10,2){};
+		\node[invisible] (g) at (11, 0){};
+		\node[invisible] (h) at (1, 0){};
+		\node[invisible] (i) at (1, 2){};
+		\node[invisible] (j) at (11, 2){};
+		\draw (a) edge[draw=green, thick] node[midway, style={circle, fill=white}]{60"} (b);
+		\draw (b) edge[draw=green, thick] node[midway, style={circle, fill=white}]{70"} (c);
+		\draw (b) edge[draw=black, dashed, thick] node[midway, left,style={circle, fill=white, minimum size=.5mm}]{180"} (e);
+		\draw (d) edge[draw=red, thick] node[midway, style={circle, fill=white}]{50"} (e);
+		\draw (e) edge[draw=red, thick] node[midway, style={circle, fill=white}]{58"} (f);
+		\draw (c) edge[draw=green, dotted, thick] (g);
+		\draw (a) edge[draw=green, dotted, thick] (h);
+		\draw (d) edge[draw=red, dotted, thick] (i);
+		\draw (f) edge[draw=red, dotted, thick] (j);
+		\end{tikzpicture}
+\end{document}

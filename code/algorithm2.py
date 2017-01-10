@@ -25,9 +25,9 @@ def metro(Adj, inici, final, k):
     print "Punt final:", final.decode("ISO-8859-15")
     #G=dict.fromkeys(Adj.keys(), dict.fromkeys(Adj.values())    
     
-    for i in Adj:
-        for j in Adj[i]:
-           Adj[i][j] = Adj[i][j] + 25
+#    for i in Adj:
+#        for j in Adj[i]:
+#           Adj[i][j] = Adj[i][j] + 25
 
     dist, tree = OrderedDijkstra(Adj, inici, k)
 
@@ -62,5 +62,5 @@ graf_metro={"1_Hospital de Bellvitge":{"1_Bellvitge":90}, "1_Bellvitge":{"1_Hosp
 
 
 #graf_debug={"0":{"1":1, "5":6}, "1":{"0":1, "2":1}, "2":{"1":1, "3":1}, "3":{"2":1, "4":1}, "4":{"3":1, "5":1}, "5":{"0":6, "4":1}}
-metro(graf_metro, "4_Alfons X", "5_Camp de l'Arpa", 0)
+metro(graf_metro, "2_El Clot", "2_Sagrada Família", 0)
 print graf_metro["1_Bellvitge"]
