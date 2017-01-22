@@ -150,9 +150,661 @@
 
 	<div class="col-sm-10">
 	  <div class="article_body">
-	  <p>Ep, no correu tant, que la presentació encara no s’ha dut a terme!
-Però tranquils, serà d’aquí a molt poc i la preentació no trigarà gaire a ser pública.
-Pròximament hi haurà publicades totes les versions de la presentació i tots els recursos usats.</p>
+	  <p>Aquí hi ha les dues versions de la presentació: la principal, feta amb HTML i utilitzant el framework reveal.js, i una segona feta amb la classe Beamer de LaTeX.</p>
+	  <p> <a class="btn btn-default" href="files/mod6.html">Versió HTML</a> <a class="btn btn-default" href="files/beamer.pdf">Versió LaTeX</a> </p>
+
+
+	  <p> Aquest és el codi de la presentació feta amb LaTeX, utilitzant la classe Beamer. El codi de la presentació és massa gran per posar-lo en aquesta pàgina, així que d'aquí a 2 minuts us publicaré l'enllaç a github.
+
+	  <figure class="highlight"><pre><code class="language-tex" data-lang="tex"><span></span><span class="k">\documentclass</span><span class="nb">{</span>beamer<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[latin9]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>xcolor<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>graphics, graphicx<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>tikz, tkz-graph<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>pgf, pgfplots<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>graphviz, tkz-berge<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>graphics, graphicx<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>pstricks, pst-node, pst-tree<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>float<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>amstext<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>amsfonts<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>mathtools<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>minted<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[ruled, boxed]</span><span class="nb">{</span>algorithm2e<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>multicol, multirow, rotating<span class="nb">}</span> <span class="c">%Paquets de taules</span>
+<span class="k">\usepackage</span><span class="nb">{</span>float<span class="nb">}</span> <span class="c">%Imatges múltiples</span>
+<span class="k">\usepackage</span><span class="nb">{</span>verbatim<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[style=english]</span><span class="nb">{</span>csquotes<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>cancel<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[position=top]</span><span class="nb">{</span>subfig<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>rotating<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>etoolbox<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>parskip<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[bottom]</span><span class="nb">{</span>footmisc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[toc,page]</span><span class="nb">{</span>appendix<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>caption<span class="nb">}</span>
+<span class="k">\captionsetup</span><span class="na">[figure]</span><span class="nb">{</span>labelformat=empty<span class="nb">}</span>
+
+
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>arrows, petri, topaths<span class="nb">}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>shapes<span class="nb">}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>arrows.meta<span class="nb">}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>positioning,automata<span class="nb">}</span>
+
+<span class="k">\usetheme</span><span class="nb">{</span>Warsaw<span class="nb">}</span>
+<span class="k">\mode</span>&lt;presentation&gt;<span class="nb">{</span><span class="k">\usetheme</span><span class="nb">{</span>Warsaw<span class="nb">}}</span>
+<span class="k">\setbeamertemplate</span><span class="nb">{</span>caption<span class="nb">}{</span><span class="k">\raggedright\insertcaption\par</span><span class="nb">}</span>
+
+<span class="k">\graphicspath</span><span class="nb">{</span> <span class="nb">{</span>altres/graphics/<span class="nb">}</span> <span class="nb">}</span>
+
+
+<span class="k">\title</span><span class="nb">{</span>Els grafs: xarxes, camins i connexions<span class="nb">}</span>
+ 
+<span class="k">\subtitle</span><span class="nb">{</span>De la matemàtica discreta a la realitat<span class="nb">}</span>
+ 
+<span class="k">\author</span><span class="nb">{</span>Aniol Garcia i Serrano<span class="nb">}</span>
+ 
+
+<span class="k">\date</span><span class="na">[Presentació TDR]</span> <span class="c">% (optional)</span>
+<span class="nb">{</span>Presentació del treball, Gener 2017<span class="nb">}</span>
+
+
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="k">\setbeamertemplate</span><span class="nb">{</span>caption<span class="nb">}{</span><span class="k">\raggedright\insertcaption\par</span><span class="nb">}</span>
+<span class="c">%\begin{frame}{Overview}</span>
+<span class="c">%\tableofcontents</span>
+<span class="c">%\end{frame}</span>
+
+<span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}</span>
+
+<span class="k">\section</span><span class="nb">{</span>Introducció<span class="nb">}</span>
+<span class="k">\subsection</span><span class="nb">{</span>El meu primer graf<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>El meu primer graf<span class="nb">}</span>
+	<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\includegraphics</span><span class="na">[scale=0.3]</span><span class="nb">{</span>graf1<span class="nb">}</span>
+	<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\subsection</span><span class="nb">{</span>El primer graf<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>El primer graf<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>columns<span class="nb">}</span>
+ 
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+<span class="k">\includegraphics</span><span class="na">[scale=0.5]</span><span class="nb">{</span>Konigsberg<span class="nb">_</span>bridges<span class="nb">}</span>
+
+<span class="k">\pause</span>
+
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+<span class="k">\centering</span>
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=0.75,transform shape]
+  <span class="k">\Vertex</span><span class="na">[x=0,y=0]</span>0
+  <span class="k">\Vertex</span><span class="na">[x=0,y=2]</span>1
+  <span class="k">\Vertex</span><span class="na">[x=0,y=4]</span>2
+  <span class="k">\Vertex</span><span class="na">[x=5,y=2]</span>3
+  <span class="k">\tikzstyle</span><span class="nb">{</span>LabelStyle<span class="nb">}</span>=[fill=white,sloped]
+  <span class="k">\Edge</span>(1)(3)
+  <span class="k">\tikzstyle</span><span class="nb">{</span>EdgeStyle<span class="nb">}</span>=[bend left]
+  <span class="k">\Edge</span>(0)(1)
+  <span class="k">\Edge</span>(1)(2)
+  <span class="k">\Edge</span>(2)(3)
+  <span class="k">\tikzstyle</span><span class="nb">{</span>EdgeStyle<span class="nb">}</span>=[bend right]
+  <span class="k">\Edge</span>(0)(1)
+  <span class="k">\Edge</span>(1)(2)
+  <span class="k">\Edge</span>(0)(3)
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>columns<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\subsection</span><span class="nb">{</span>Breu història<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Breu història<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>columns<span class="nb">}</span>
+ 
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+	<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\includegraphics</span><span class="na">[scale=0.21405]</span><span class="nb">{</span>Euler<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Leonhard Euler<span class="nb">}</span>
+	<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+	<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\includegraphics</span><span class="na">[scale=0.4]</span><span class="nb">{</span>Leibniz<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Gottfried W. Leibniz<span class="nb">}</span>
+	<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>columns<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\subsection</span><span class="nb">{</span>Geometria de la posició<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Geometria de la posició<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>columns<span class="nb">}</span>
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+	<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[round/.style=<span class="nb">{</span>circle, text=white, thin, minimum size=.5mm<span class="nb">}</span>, transform shape, scale=0.80]
+			<span class="k">\node</span><span class="na">[round, fill=blue]</span> (a) at (0,0)<span class="nb">{</span>2<span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round, fill=red]</span> (b) at (4,0)<span class="nb">{</span>0<span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round, fill=green]</span> (c) at (2,1.5)<span class="nb">{</span>3<span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round, fill=purple]</span> (d) at (2,4)<span class="nb">{</span>1<span class="nb">}</span>;
+			<span class="k">\draw</span> (a) edge (b);
+			<span class="k">\draw</span> (a) edge (c);
+			<span class="k">\draw</span> (a) edge (d);
+			<span class="k">\draw</span> (b) edge (c);
+			<span class="k">\draw</span> (b) edge (d);
+			<span class="k">\draw</span> (c) edge (d);
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+	<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+	<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[round/.style=<span class="nb">{</span>circle, text=white, thin, minimum size=.5mm<span class="nb">}</span>, transform shape, scale=0.80]
+			<span class="k">\node</span><span class="na">[round, fill=blue]</span> (a) at (0,0)<span class="nb">{</span>c<span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round, fill=red]</span> (b) at (4,0)<span class="nb">{</span>a<span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round, fill=green]</span> (c) at (0,4)<span class="nb">{</span>d<span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round, fill=purple]</span> (d) at (4,4)<span class="nb">{</span>b<span class="nb">}</span>;
+			<span class="k">\draw</span> (a) edge (b);
+			<span class="k">\draw</span> (a) edge (c);
+			<span class="k">\draw</span> (a) edge (d);
+			<span class="k">\draw</span> (b) edge (c);
+			<span class="k">\draw</span> (b) edge (d);
+			<span class="k">\draw</span> (c) edge (d);
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+	<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>columns<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\frame</span><span class="nb">{</span><span class="k">\titlepage</span><span class="nb">}</span>
+
+
+<span class="k">\section</span><span class="nb">{</span>Organització<span class="nb">}</span>
+<span class="c">%\begin{frame}</span>
+<span class="c">%\tableofcontents</span>
+<span class="c">%No hi ha d&#39;haver aquest índex, sinó el del treball (simplificat, evidentment)</span>
+<span class="c">%\end{frame}</span>
+<span class="k">\subsection</span><span class="nb">{</span>Objectius<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Objectius i Hipòtesi<span class="nb">}</span>
+<span class="k">\textbf</span><span class="nb">{</span>Objectius<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span> Conèixer la teoria de grafs
+<span class="k">\item</span> Estudiar i implementar algorismes
+<span class="k">\item</span> Mostrar-ne algunes de les aplicacions
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\textbf</span><span class="nb">{</span>Hipòtesi<span class="nb">}</span><span class="k">\\</span>
+La teoria de grafs, com a branca de la matemàtica discreta, ens proporciona eines per modelitzar estructures i processos i ens permet crear aplicacions pràctiques mitjançant procediments algorísmics.
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+
+<span class="k">\subsection</span><span class="nb">{</span>Tipus de grafs<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Tipus de grafs<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+				<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>	
+		<span class="k">\grCycle</span><span class="na">[RA=2, prefix=v, Math=true]</span><span class="nb">{</span>9<span class="nb">}</span>
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Cicle<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>	
+			<span class="k">\grComplete</span><span class="na">[RA=2, prefix=v, Math=true]</span><span class="nb">{</span>7<span class="nb">}</span>
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Complet<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>	
+		<span class="k">\grStar</span><span class="na">[RA=2, prefix=v, Math=true]</span><span class="nb">{</span>7<span class="nb">}</span>	
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Estrella<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>	
+		<span class="k">\grWheel</span><span class="na">[RA=2, prefix=v, Math=true]</span><span class="nb">{</span>10<span class="nb">}</span>	
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Roda<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[round/.style=<span class="nb">{</span>circle, draw=black, thin, minimum 			size=.5mm<span class="nb">}</span>, transform shape, scale=0.80]
+		<span class="k">\node</span><span class="na">[round]</span> (a) at (0,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (b) at (4,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (c) at (8,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (d) at (0,2)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (e) at (4,2)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (f) at (8,2)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">5</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (g) at (0,4)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">6</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (h) at (4,4)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">7</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (i) at (8,4)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">8</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\draw</span> (a) edge (b);
+		<span class="k">\draw</span> (a) edge (d);
+		<span class="k">\draw</span> (b) edge (c);
+		<span class="k">\draw</span> (b) edge (e);
+		<span class="k">\draw</span> (c) edge (f);
+		<span class="k">\draw</span> (d) edge (e);
+		<span class="k">\draw</span> (d) edge (g);
+		<span class="k">\draw</span> (e) edge (h);
+		<span class="k">\draw</span> (e) edge (f);
+		<span class="k">\draw</span> (f) edge (i);
+		<span class="k">\draw</span> (h) edge (i);
+		<span class="k">\draw</span> (h) edge (g);
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Xarxa<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>columns<span class="nb">}</span>
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=0.7]	
+		<span class="k">\grCirculant</span><span class="na">[RA=3, prefix=v,Math=true]</span><span class="nb">{</span>6<span class="nb">}{</span>2,3<span class="nb">}</span>
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>	
+		<span class="k">\caption</span><span class="nb">{</span>Graf G<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[scale=0.7]	
+				<span class="k">\grCirculant</span><span class="na">[RA=3, prefix=v,Math=true]</span><span class="nb">{</span>6<span class="nb">}{</span>1<span class="nb">}</span>
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Complementari de G<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>columns<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[v/.style=<span class="nb">{</span>circle, fill=red, text=white, thin, minimum size=.5mm<span class="nb">}</span>, u/.style=<span class="nb">{</span>circle, fill=blue, text=white, thin, minimum size=.5mm<span class="nb">}</span>, transform shape, scale=0.90]
+		<span class="k">\node</span><span class="na">[v]</span> (a) at (0,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[v]</span> (b) at (2,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[v]</span> (c) at (4,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[v]</span> (d) at (6,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[u]</span> (e) at (1,2)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[u]</span> (f) at (3,2)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[u]</span> (g) at (5,2)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\draw</span> (a) edge (e);
+		<span class="k">\draw</span> (b) edge (e);
+		<span class="k">\draw</span> (b) edge (f);
+		<span class="k">\draw</span> (b) edge (g);
+		<span class="k">\draw</span> (c) edge (e);
+		<span class="k">\draw</span> (c) edge (f);
+		<span class="k">\draw</span> (d) edge (f);
+		<span class="k">\draw</span> (d) edge (g);
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Bipartit<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[v/.style=<span class="nb">{</span>circle, fill=red, text=white, thin, minimum size=.5mm<span class="nb">}</span>, u/.style=<span class="nb">{</span>circle, fill=blue, text=white, thin, minimum size=.5mm<span class="nb">}</span>, transform shape, scale=0.80]
+		<span class="k">\node</span><span class="na">[v]</span> (a) at (0,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[v]</span> (b) at (2,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[v]</span> (c) at (4,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[v]</span> (d) at (6,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[v]</span> (h) at (8,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[u]</span> (e) at (1,2)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[u]</span> (f) at (3,2)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[u]</span> (g) at (5,2)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[u]</span> (i) at (7,2)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\draw</span> (a) edge (e);
+		<span class="k">\draw</span> (a) edge (f);
+		<span class="k">\draw</span> (a) edge (g);
+		<span class="k">\draw</span> (a) edge (i);
+		<span class="k">\draw</span> (b) edge (e);
+		<span class="k">\draw</span> (b) edge (f);
+		<span class="k">\draw</span> (b) edge (g);
+		<span class="k">\draw</span> (b) edge (i);
+		<span class="k">\draw</span> (c) edge (e);
+		<span class="k">\draw</span> (c) edge (f);
+		<span class="k">\draw</span> (c) edge (g);
+		<span class="k">\draw</span> (c) edge (i);
+		<span class="k">\draw</span> (d) edge (e);
+		<span class="k">\draw</span> (d) edge (f);
+		<span class="k">\draw</span> (d) edge (g);
+		<span class="k">\draw</span> (d) edge (i);
+		<span class="k">\draw</span> (h) edge (e);
+		<span class="k">\draw</span> (h) edge (f);
+		<span class="k">\draw</span> (h) edge (g);
+		<span class="k">\draw</span> (h) edge (i);
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Bipartit complet<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[round/.style=<span class="nb">{</span>circle, draw=black, thin, minimum 			size=.5mm<span class="nb">}</span>, transform shape, scale=0.80]
+		<span class="k">\node</span><span class="na">[round]</span> (a) at (0,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (b) at (4,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (c) at (8,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (d) at (0,2)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (d) at (4,2)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\node</span><span class="na">[round]</span> (d) at (8,2)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">5</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Buit<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>	
+
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Nul<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[round/.style=<span class="nb">{</span>circle, draw=black, thin, minimum 			size=.5mm<span class="nb">}</span>, transform shape, scale=0.80]
+			<span class="k">\tikzstyle</span><span class="nb">{</span>level 1<span class="nb">}</span>=[level distance=15mm,sibling distance=35mm]
+			<span class="k">\node</span>(0)[round]<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>
+				child<span class="nb">{</span>node[round]<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>
+					child<span class="nb">{</span>node[round]<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}}}</span>
+				child<span class="nb">{</span>node[round]<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>
+					child<span class="nb">{</span>node[round]<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span><span class="nb">}}</span>
+					child<span class="nb">{</span>node[round]<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">5</span><span class="nb">}</span><span class="s">$</span><span class="nb">}}</span>
+			<span class="nb">}</span>;
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Arbre<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[round/.style=<span class="nb">{</span>circle, draw=black, thin, minimum size=.5mm<span class="nb">}</span>, transform shape, scale=0.5]
+			<span class="k">\node</span><span class="na">[round]</span> (a) at (8,4)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (b) at (4,8)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (c) at (0,8)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (d) at (0,4)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (e) at (4,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[draw, diamond]</span> (f) at (6,6)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[draw, diamond]</span> (g) at (2,8)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[draw, diamond]</span> (h) at (2,6)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[draw, diamond]</span> (i) at (2,2)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[draw, diamond]</span> (j) at (6,2)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\node</span><span class="na">[draw, diamond]</span> (k) at (4,4)<span class="nb">{</span><span class="s">$</span><span class="nb">u_{</span><span class="m">5</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+			<span class="k">\draw</span> (a) edge (f);
+			<span class="k">\draw</span> (a) edge (j);
+			<span class="k">\draw</span> (a) edge (k);
+			<span class="k">\draw</span> (f) edge (b);
+			<span class="k">\draw</span> (j) edge (e);
+			<span class="k">\draw</span> (k) edge (d);
+			<span class="k">\draw</span> (b) edge (g);
+			<span class="k">\draw</span> (g) edge (c);
+			<span class="k">\draw</span> (b) edge (h);
+			<span class="k">\draw</span> (h) edge (d);
+			<span class="k">\draw</span> (d) edge (i);
+			<span class="k">\draw</span> (i) edge (e);
+			
+			<span class="k">\draw</span> (f) edge[dashed] (h);
+			<span class="k">\draw</span> (k) edge[dashed] (f);
+			<span class="k">\draw</span> (k) edge[dashed] (j);
+			<span class="k">\draw</span> (k) edge[dashed] (i);
+			<span class="k">\draw</span> (k) edge[dashed] (h);
+			<span class="k">\draw</span> (f) edge[dashed] (h);
+			<span class="k">\draw</span> (i) edge[dashed] (j);
+			<span class="k">\draw</span> (g) edge[dashed] (h);
+			<span class="k">\draw</span> (f) edge[dashed] (j);
+			<span class="k">\draw</span> (h) edge[dashed] (i);
+			<span class="k">\draw</span> (g) edge[dashed, bend left=75] (f);
+			
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Graf Lineal<span class="nb">}</span>	
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Propietats i demostracions<span class="nb">}</span>
+A tall d&#39;exemple:
+
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\includegraphics</span><span class="na">[scale=0.2]</span><span class="nb">{</span>propietat<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Altres classificacions<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>columns<span class="nb">}</span>
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+	<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[round/.style=<span class="nb">{</span>circle, draw=black, fill=black, thin, minimum size=1mm<span class="nb">}</span>, transform shape]
+			<span class="k">\node</span><span class="na">[round]</span> (a) at (0,0)<span class="nb">{}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (b) at (0,2) <span class="nb">{}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (c) at (2,0) <span class="nb">{}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (d) at (2,2) <span class="nb">{}</span>;
+			<span class="k">\draw</span> (a) edge[-&gt;, -Latex] (b);
+			<span class="k">\draw</span> (c) edge[-&gt;, -Latex] (a);
+			<span class="k">\draw</span> (b) edge[-&gt;, -Latex] (d);
+			<span class="k">\draw</span> (c) edge[-&gt;, -Latex] (d);
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Graf dirigit<span class="nb">}</span>
+	<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\column</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[round/.style=<span class="nb">{</span>circle, draw=black, fill=black, thin, minimum size=1mm<span class="nb">}</span>, transform shape]
+			<span class="k">\node</span><span class="na">[round]</span> (a) at (0,0)<span class="nb">{}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (b) at (0,2) <span class="nb">{}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (c) at (2,0) <span class="nb">{}</span>;
+			<span class="k">\node</span><span class="na">[round]</span> (d) at (2,2) <span class="nb">{}</span>;
+			<span class="k">\Edge</span><span class="na">[label=$10$]</span>(a)(b)
+			<span class="k">\Edge</span><span class="na">[label=$3$]</span>(c)(a)
+			<span class="k">\Edge</span><span class="na">[label=$2$]</span>(b)(d)
+			<span class="k">\Edge</span><span class="na">[label=$8$]</span>(c)(d)
+		<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+		<span class="k">\caption</span><span class="nb">{</span>Graf ponderat<span class="nb">}</span>
+	<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>columns<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\subsection</span><span class="nb">{</span>Algorismes<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Algorismes<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span> Camins
+	<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+	<span class="k">\item</span> Euler
+	<span class="k">\item</span> Hamilton
+	<span class="k">\item</span> Dijkstra
+	<span class="k">\item</span> Bellman-Ford
+	<span class="k">\item</span> Floyd-Warshall
+	<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span> MST
+	<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+	<span class="k">\item</span> Kruskal
+	<span class="k">\item</span> Prim
+	<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span> Exploració
+	<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+	<span class="k">\item</span> DFS
+	<span class="k">\item</span> BFS
+	<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span> Coloració
+	<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+	<span class="k">\item</span> DFS
+	<span class="k">\item</span> El meu propi algorisme
+	<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\section</span><span class="nb">{</span>Aplicacions<span class="nb">}</span>
+<span class="k">\subsection</span><span class="nb">{</span>Metro<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Plantejament<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\includegraphics</span><span class="na">[scale=0.2]</span><span class="nb">{</span>metro<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Organització<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\includegraphics</span><span class="na">[scale=0.25]</span><span class="nb">{</span>metro4<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+<span class="k">\begin</span><span class="nb">{</span>minted<span class="nb">}</span>[frame=lines, breaklines=true, baselinestretch=1, fontsize=<span class="k">\fontsize</span><span class="nb">{</span>4<span class="nb">}{</span>6<span class="nb">}</span>]<span class="nb">{</span>python<span class="nb">}</span>
+def metro(Adj, inici, final, k): #on k és el temps de parada acada estació
+    recorregut=[]
+    
+    print &quot;Punt inicial:&quot;, inici.decode(&quot;ISO-8859-15&quot;)
+    
+    print &quot;Punt final:&quot;, final.decode(&quot;ISO-8859-15&quot;)
+
+    dist, tree = OrderedDijkstra(Adj, inici, k)
+
+    i = final    
+    while tree[i] != inici:
+        recorregut.append(tree[i])
+        i = tree[i]
+    
+    recorregut.append(inici)        
+    recorregut.reverse()
+
+    total= dist[final]-k
+
+    print &quot;Temps amb estacions del recorregut:&quot;, dist[final], &quot;Temps real:&quot;, total    
+    
+    if total &lt; 60:
+        print &quot;Temps total del recorregut:&quot;,int(total), &quot;segons&quot;        
+    else:
+        minuts = total/60
+        segons = (total<span class="c">%60)</span>
+        print &quot;Temps total del recorregut:&quot;, int(minuts),&quot;minuts i&quot;, int(segons), &quot;segons&quot;
+
+    print &quot;Recorregut:&quot;,   
+    print &quot;[&quot;,
+    for i in range(0,len(recorregut)):
+        print recorregut[i].decode(&quot;ISO-8859-15&quot;)+&quot;,&quot;,
+
+    print final.decode(&quot;ISO-8859-15&quot;),&quot;]&quot; 
+<span class="k">\end</span><span class="nb">{</span>minted<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+<span class="k">\begin</span><span class="nb">{</span>minted<span class="nb">}</span>[frame=lines, breaklines=true]<span class="nb">{</span>python<span class="nb">}</span>
+def OrderedDijkstra(Adj, s, k):
+    Q = dict.fromkeys(Adj.keys(), float(&quot;inf&quot;))
+    dist = dict.fromkeys(Adj.keys(), float(&quot;inf&quot;))
+    tree = <span class="nb">{}</span>
+    Q[s] = 0
+    while Q:
+        u = min(Q, key=Q.get)
+        dist[u] = Q[u]
+        for v in Adj[u]:
+            if v in Q:
+                if Q[v] &gt; Q[u] + Adj[u][v]:
+                    Q[v] = Q[u] + Adj[u][v] + k
+                    tree[v] = u
+        Q.pop(u)
+        
+    return dist, tree
+<span class="k">\end</span><span class="nb">{</span>minted<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\includegraphics</span><span class="na">[scale=0.19]</span><span class="nb">{</span>metro<span class="nb">_</span>graf<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+		<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[round/.style=<span class="nb">{</span>circle, draw=black, thin, minimum size=.5mm<span class="nb">}</span>, transform shape, scale=1]
+    <span class="k">\node</span><span class="na">[round]</span>(0) at (0,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">0</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[round]</span>(1) at (2,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[round]</span>(2) at (4,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[round]</span>(3) at (6,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[round]</span>(4) at (8,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">4</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+    <span class="k">\node</span><span class="na">[round]</span>(5) at (10,0)<span class="nb">{</span><span class="s">$</span><span class="nb">v_{</span><span class="m">5</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+
+    <span class="k">\Edge</span><span class="na">[label=$1$]</span>(0)(1)
+    <span class="k">\Edge</span><span class="na">[label=$1$]</span>(1)(2)
+    <span class="k">\Edge</span><span class="na">[label=$1$]</span>(2)(3)
+    <span class="k">\Edge</span><span class="na">[label=$1$]</span>(3)(4)
+    <span class="k">\Edge</span><span class="na">[label=$1$]</span>(4)(5)
+
+    <span class="k">\tikzset</span><span class="nb">{</span>EdgeStyle/.style=<span class="nb">{</span>bend right=25<span class="nb">}}</span> <span class="c">%Arestes múltiples</span>
+    <span class="k">\Edge</span><span class="na">[label=$6$]</span>(0)(5)
+    <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+<span class="k">\frametitle</span><span class="nb">{</span>Exemple d&#39;execució<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>minted<span class="nb">}</span>[breaklines=true, frame=lines, fontsize=<span class="k">\footnotesize</span>]<span class="nb">{</span>python<span class="nb">}</span>
+metro(metro<span class="nb">_</span>barcelona, &quot;4<span class="nb">_</span>Llucmajor&quot;, &quot;9S<span class="nb">_</span>Aeroport T1&quot;, 25)
+<span class="k">\end</span><span class="nb">{</span>minted<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>minted<span class="nb">}</span>[breaklines=true, frame=lines, fontsize=<span class="k">\footnotesize</span>]<span class="nb">{</span>text<span class="nb">}</span>
+Punt inicial: 4<span class="nb">_</span>Llucmajor
+Punt final: 9S<span class="nb">_</span>Aeroport T1
+Temps net del recorregut: 3565
+Temps total del recorregut: 59 minuts i 25 segons
+Recorregut: [ 4<span class="nb">_</span>Llucmajor, 4<span class="nb">_</span>Maragall, 4<span class="nb">_</span>Guinardó Hospital de Sant Pau, 4<span class="nb">_</span>Alfons X, 4<span class="nb">_</span>Joanic, 4<span class="nb">_</span>Verdaguer, 5<span class="nb">_</span>Verdaguer, 5<span class="nb">_</span>Diagonal, 5<span class="nb">_</span>Hospital Clínic, 5<span class="nb">_</span>Entença, 5<span class="nb">_</span>Sants Estació, 5<span class="nb">_</span>Plaça de Sants, 5<span class="nb">_</span>Badal, 5<span class="nb">_</span>Collblanc, 9S<span class="nb">_</span>Collblanc, 9S<span class="nb">_</span>Torrassa, 9S<span class="nb">_</span>Can Tries Gornal, 9S<span class="nb">_</span>Europa Fira, 9S<span class="nb">_</span>Fira, 9S<span class="nb">_</span>Parc Logístic, 9S<span class="nb">_</span>Mercabarna, 9S<span class="nb">_</span>Les Moreres, 9S<span class="nb">_</span>El Prat Estació, 9S<span class="nb">_</span>Cèntric, 9S<span class="nb">_</span>Parc Nou, 9S<span class="nb">_</span>Mas Blau, 9S<span class="nb">_</span>Aeroport T2, 9S<span class="nb">_</span>Aeroport T1 ]
+<span class="k">\end</span><span class="nb">{</span>minted<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\section</span><span class="nb">{</span>Conclusions<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Conclusions<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span> Objectius assolits.
+<span class="k">\item</span> Podem trobar grafs a una gran quantitat d&#39;àmbits i amb moltes aplicacions diferents.
+<span class="k">\item</span> Importància de la computació en procediments matemàtics.
+<span class="k">\item</span> Queda molta feina per fer.
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Programari lliure<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span> Ubuntu i Debian com a S.O.
+<span class="k">\item</span> Python com a llenguatge de programació
+<span class="k">\item</span> LaTeX i els seus paquets per a la redacció de la memòria
+<span class="k">\item</span> Git com a sistema de control de versions
+<span class="k">\item</span> Geogebra, Spyder, Scilab, Vim, Meld... i molts d&#39;altres!
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\centering</span>
+Més informació del treball a<span class="k">\\</span>
+<span class="k">\Large</span><span class="nb">{</span><span class="k">\textbf</span><span class="nb">{</span>aniolgarcia.github.io/grafs<span class="nb">}}</span><span class="k">\\</span>
+<span class="k">\vspace</span><span class="nb">{</span>1cm<span class="nb">}</span>
+
+<span class="k">\Huge</span><span class="nb">{</span><span class="k">\textbf</span><span class="nb">{</span>Moltes gràcies!<span class="nb">}}</span><span class="k">\\</span>
+<span class="k">\vspace</span><span class="nb">{</span>1cm<span class="nb">}</span>
+
+<span class="k">\large</span><span class="nb">{</span><span class="k">\textbf</span><span class="nb">{</span>Aniol Garcia i Serrano<span class="nb">}}</span><span class="k">\\</span>
+aniolgarcia@gmail.com
+
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></code></pre></figure>
+
 
 	  </div>
 
