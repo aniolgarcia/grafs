@@ -233,7 +233,7 @@ M'agradaria agrair-ho també...
 
 a la Iolanda Guevara, coordinadora del programa de Bojos per les matemàtiques, per fer-me d'enllaç i donar-me suport; 
 
-a l'Antoni Benseny i en Robert Salla, que m'han atès molt amablement i m'han estat acompanyant en tot moment;
+al Dr. Antoni Benseny i a en Robert Salla, que m'han atès molt amablement i m'han estat acompanyant en tot moment;
 
 a l'Anton Aubanell, per obrir-me la porta de casa seva, per escoltar-me, per interrogar-me,  per rectificar-me, per explicar-me, per la seva paciència... i sempre amb un somriure i les mans esteses; 
 
@@ -460,7 +460,7 @@ Finalment, en el darrer capítol, s'exposen algunes aplicacions pràctiques. Una d
 
 Les meves conclusions i valoracions esdevenen el punt i final d'aquest treball. 
 
-Les fonts d'informació utilitzades han estat molt diverses. En la bibliografia he detallat els documents i les pagines Webs consultades. Vull remarcar, però, que el gruix més important de la informació prové d'altres fonts que per a mi han estat més significatives pel fet que han estat més properes i, sobretot, vivencials: el guiatge de la UB per part de l'Antoni Benseny i, sobretot, el seguiment i l'acompanyament d'en Robert Salla han estat claus; la participació en el Math Summer Camp\footnote{Activitat organitzada per Fundació Privada Cellex, UPC-FME i CFIS} i en el programa Bojos per les matemàtiques\footnote{Programa organitzat per FEEMCAT, SCM i Fundació Catalunya La Pedrera} també em va aportar moltíssima informació; les xerrades i consells per part dels investigadors de l'IRI m'han obert moltes portes; les converses amb l'Anton Aubanell, imprescindibles. 
+Les fonts d'informació utilitzades han estat molt diverses. En la bibliografia he detallat els documents i les pagines Webs consultades. Vull remarcar, però, que el gruix més important de la informació prové d'altres fonts que per a mi han estat més significatives pel fet que han estat més properes i, sobretot, vivencials: el guiatge de la UB per part del Dr. Antoni Benseny i, sobretot, el seguiment i l'acompanyament d'en Robert Salla han estat claus; la participació en el Math Summer Camp\footnote{Activitat organitzada per Fundació Privada Cellex, UPC-FME i CFIS} i en el programa Bojos per les matemàtiques\footnote{Programa organitzat per FEEMCAT, SCM i Fundació Catalunya La Pedrera} també em va aportar moltíssima informació; les xerrades i consells per part dels investigadors de l'IRI m'han obert moltes portes; les converses amb l'Anton Aubanell, imprescindibles. 
 
 Per a l'elaboració d'aquest treball s'han utilitzat eines informàtiques provinents, en tots els casos, de programari lliure. Aquest programari m'ha permès escriure les fórmules i confegir els esquemes dels grafs que apareixen en el treball, els quals són tots d'elaboració pròpia. Esmentar l'ús del sistema operatiu GNU/Linux, el processador de text \LaTeX, el programa GeoGebra, el llenguatge Python i el sistema de control de versions Git. L'ús d'aquestes eines ha estat una part important del meu aprenentatge i és per aquest motiu que les he detallades en l'Annex A.  
 
@@ -801,7 +801,7 @@ $g(v_{i})$ té $n'=e$ nodes i $e'$ arestes, on \[ e'=\frac{1}{2} \sum_{i=1}^{n}g(
 	\end{figure}
 
 
-Un graf complet té ${n\choose k} = \frac{n(n-1)}{2}$ arestes, per tant, en aquest cas se'n generen $\frac{g(v_{i})(g(v_{i})-1)}{2}$. Però això es compleix per a cada vèrtex, i llavors podem escriure \[ \sum_{i=1}^{n}\frac{1}{2}g(v_{i})(g(v_{i})-1) = \frac{1}{2}\sum_{i=1}^{n}(g(v_{i})^{2}-g(v_{i})) = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2} - \underbracket{\frac{1}{2}\underbracket{\sum_{i=0}^{n}g(v_{i})}_{2|E|}}_{|E|} = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2}-e\]
+Un graf complet té ${n\choose 2} = \frac{n(n-1)}{2}$ arestes, per tant, en aquest cas se'n generen $\frac{g(v_{i})(g(v_{i})-1)}{2}$. Però això es compleix per a cada vèrtex, i llavors podem escriure \[ \sum_{i=1}^{n}\frac{1}{2}g(v_{i})(g(v_{i})-1) = \frac{1}{2}\sum_{i=1}^{n}(g(v_{i})^{2}-g(v_{i})) = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2} - \underbracket{\frac{1}{2}\underbracket{\sum_{i=1}^{n}g(v_{i})}_{2|E|}}_{|E|} = \frac{1}{2}\sum_{i=1}^{n}g(v_{i})^{2}-e\]
 \end{propietat}
 \begin{figure}[H]
 \centering
@@ -1417,7 +1417,7 @@ si afegim un nou node al graf, que serà l'$n$-èssim, s'haurà d'afegir $2n-1$ esp
 
 \subsubsection{Matriu d'incidència}
 
-La \textit{matriu d'incidència} d'un graf $G$ sense llaços, $I(G)=(b_{i,j})_{i=1,...,|V(G)|,j=1,...,|E(G)|}$, és la matriu binària de $|V(G)|\times |E(G)|$ on $b_{i,j}$ indica si l'aresta $j$ és incident al node $i$. Veure figura \ref{fig:matrix} cas (c).
+La \textit{matriu d'incidència} d'un graf $G$ sense llaços, $I(G)=(b_{ij})_{i=1,...,|V(G)|,j=1,...,|E(G)|}$, és la matriu binària de $|V(G)|\times |E(G)|$ on $b_{ij}$ indica si l'aresta $j$ és incident al node $i$. Veure figura \ref{fig:matrix} cas (c).
 
 \begin{figure}[H]
 \centering
@@ -3106,7 +3106,7 @@ Ara per ara, el pas més immediat seria acabar de programar la pàgina web \texttt
 
 
 Personalment, el treball m'ha ajudat molt. He après moltíssim de teoria de grafs, però el que és també molt important és el rerefons més abstracte: el tipus de raonament matemàtic, la formalització de conceptes i idees, les tècniques de demostració, la metodologia matemàtica... Amb tot això he pogut descobrir la capacitat modelitzadora de les matemàtiques.
-Amb aquest treball també m'he iniciat a la programació en Phyton. En un principi tenia pensat escriure els algorismes en C++, llenguatge que he utilitzat molt més, però vaig decidir intentar fer-ho amb un llenguatge que aportés una visió diferent de la programació a la que tenia dels basats en C. Mitjançant la programació he viscut l'aventura de relacionar i aplicar idees matemàtiques a algorismes i posteriorment ``dotar-los de vida'' implementant-los en programes.   
+Amb aquest treball també m'he iniciat a la programació en Python. En un principi tenia pensat escriure els algorismes en C++, llenguatge que he utilitzat molt més, però vaig decidir intentar fer-ho amb un llenguatge que aportés una visió diferent de la programació a la que tenia dels basats en C. Mitjançant la programació he viscut l'aventura de relacionar i aplicar idees matemàtiques a algorismes i posteriorment ``dotar-los de vida'' implementant-los en programes.   
 També cal afegir-hi l'existència d'un component més emocional. És el camp d'un dels primers ``grans'' problemes a els quals em vaig enfrontar, i m'ho he passat molt bé aprenent més sobre aquesta branca. 
 Tots aquests coneixemets adquirits em fan veure el món d'una manera lleugerament diferent, i de ben segur que em seràn útils pels meus estudis futurs en el camp de les matemàtiques i la informàtica.
 
