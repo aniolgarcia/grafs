@@ -1,12 +1,12 @@
-\documentclass[a4, 12pt, catalan]{report}
-%\usepackage[T1]{fontenc}
-\usepackage[latin1]{inputenc}
+\documentclass[a4, 12pt, titlepage]{report}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
 \usepackage[catalan]{babel}
 \usepackage{amstext}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathtools}
-%\usepackage[backend=biber, style=numeric, bibencoding=ISO-8859-1, defernumbers=true]{biblatex} %Llibreria de gesti√≥ de bibliografia
+\usepackage[backend=biber, style=numeric, bibencoding=ISO-8859-1, defernumbers=true]{biblatex} %Llibreria de gestiÛ de bibliografia
 %\usepackage{cite}
 %\usepackage{catalanbib}
 \usepackage{chngcntr}
@@ -20,7 +20,7 @@
 \usepackage[ruled, boxed]{algorithm2e}
 \usepackage{multicol, multirow, rotating} %Paquets de taules
 \usepackage[a4paper]{geometry}
-\usepackage{float} %Imatges m√∫ltiples
+\usepackage{float} %Imatges m˙ltiples
 \usepackage{verbatim}
 \usepackage[style=english]{csquotes}
 \usepackage{cancel}
@@ -28,7 +28,7 @@
 \usepackage{rotating}
 %\usepackage{url}
 %\usepackage{minted}
-\usepackage{etoolbox}
+%\usepackage{etoolbox}
 \usepackage{parskip}
 \usepackage[bottom]{footmisc}
 \usepackage[toc,page]{appendix}
@@ -47,7 +47,7 @@
    \begin{algorithm}[#1]%
   }{\end{algorithm}}
  
-%Canviem el nom de Ap√®ndix per Annex 
+%Canviem el nom de ApËndix per Annex 
 \addto{\captionscatalan}{\renewcommand*{\appendixname}{Annex}}
 
 %Definim una orfre per subratllar amb color verd
@@ -58,17 +58,17 @@
 \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
 \SetCommentSty{mycommfont}
 
-%Definim un apartat de funci√≥ per al pseudocodi
-\SetKwProg{Fn}{Funci√≥}{}
+%Definim un apartat de funciÛ per al pseudocodi
+\SetKwProg{Fn}{FunciÛ}{}
 
-%Definim el contador per les propietats (que fa un reset cada subsecci√≥)
+%Definim el contador per les propietats (que fa un reset cada subsecciÛ)
 \newcounter{propietat}[subsection]
 %Definim l'entorn per a les propietats
 \newenvironment{propietat}[1][]{\refstepcounter{propietat}\par\medskip
   \noindent \textbf{Propietat~\thepropietat #1} \rmfamily}
    {\medskip}
 
-%Redefinim el lla√ß de tikz (l'original √©s esquifit i no m'agrada massa), i s√≠, el nom que he definit √©s "looop", amb 3 "o". 
+%Redefinim el llaÁ de tikz (l'original Ès esquifit i no m'agrada massa), i sÌ, el nom que he definit Ès "looop", amb 3 "o". 
 \makeatletter
 \tikzset{looop/.style =  {to path={
   \pgfextra{\let\tikztotarget=\tikztostart}
@@ -77,7 +77,7 @@
   }}  
 \makeatletter 
 
-%Creem els conjunts per a les llistes d'adjac√®ncia
+%Creem els conjunts per a les llistes d'adjacËncia
 \tikzset{
 node of list/.style = { 
              draw, 
@@ -107,60 +107,59 @@ array element/.style = {
    \fill (aux) circle(2pt);
 }
 
-%Definim el color taronja pel proc√©s de punt de Fermat
+%Definim el color taronja pel procÈs de punt de Fermat
 \definecolor{ffwwqq}{rgb}{1,0.4,0}
 
-%Afegim una categoria de Liblatex per tal d'agafar nom√©s la bibliografia citada (no funciona)
-%\DeclareBibliographyCategory{citats}
-%\AtEveryCitekey{\addtocategory{citats}{\thefield{entrykey}}}
+%Afegim una categoria de Liblatex per tal d'agafar nomÈs la bibliografia citada (no funciona)
+\DeclareBibliographyCategory{citats}
+\AtEveryCitekey{\addtocategory{citats}{\thefield{entrykey}}}
 
 %Importem els fitxers de la bibliografia
-%\addbibresource{biblio2.bib}
-%\addbibresource{biblio3.bib}
+\addbibresource{biblio4.bib}
 
 %Creem dues classes diferentes per a les entrades de la bibliografia
-%\DeclareSourcemap{
-%  \maps[datatype=bibtex]{
-%    \map{
-%      \perdatasource{biblio2.bib}
-%      \step[fieldset=keywords, fieldvalue={, refer}, append]
-%    }
-%    \map{
-%      \perdatasource{biblio3.bib}
-%      \step[fieldset=keywords, fieldvalue={, biblio}, append]
-%    }
-%  }
-%}
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \perdatasource{biblio2.bib}
+      \step[fieldset=keywords, fieldvalue={, refer}, append]
+    }
+    \map{
+      \perdatasource{biblio3.bib}
+      \step[fieldset=keywords, fieldvalue={, biblio}, append]
+    }
+  }
+}
 
 %Arreglem els nombres de la bibliografia ( que siguin continus)
-%\makeatletter
-%\define@key{blx@bib2}{prefixnumbers}{%
-%  \def\blx@prefixnumbers{#1}%
-%  \iftoggle{blx@defernumbers}
-%   {}
-%    {\iftoggle{blx@labelnumber}
-%       {\blx@warning{%
-%          Option 'prefixnumbers' requires global\MessageBreak
-%          'defernumbers=true'}}
-%       {}}}
-%\makeatother
+\makeatletter
+\define@key{blx@bib2}{prefixnumbers}{%
+  \def\blx@prefixnumbers{#1}%
+  \iftoggle{blx@defernumbers}
+    {}
+    {\iftoggle{blx@labelnumber}
+       {\blx@warning{%
+          Option 'prefixnumbers' requires global\MessageBreak
+          'defernumbers=true'}}
+       {}}}
+\makeatother
 
-%Creem unentorn de BibLaTeX sense numeraci√≥ d'entrades bibliogr√†fiques
-%\defbibenvironment{nolabelbib}
-%  {\list
-%     {}
-%     {\setlength{\leftmargin}{\bibhang}%
-%      \setlength{\itemindent}{-\leftmargin}%
-%      \setlength{\itemsep}{\bibitemsep}%
-%      \setlength{\parsep}{\bibparsep}}}
-%  {\endlist}
-%  {\item}
+%Creem unentorn de BibLaTeX sense numeraciÛ d'entrades bibliogr‡fiques
+\defbibenvironment{nolabelbib}
+  {\list
+     {}
+     {\setlength{\leftmargin}{\bibhang}%
+      \setlength{\itemindent}{-\leftmargin}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}}
+  {\endlist}
+  {\item}
 
 %definim la mida de la lletra dels programes en 11 ( causa diversos warnings)
 \AtBeginEnvironment{minted}{\singlespacing%
     \fontsize{11}{11}\selectfont}
 
-%Posem el contador de cap√≠tols a -1, de manera que comenci per 0
+%Posem el contador de capÌtols a -1, de manera que comenci per 0
 \setcounter{chapter}{-1}
 
 %Per posar l'interlineat a (1.5). Recomanable comentar-ho i deixar l'interlineat per defecte...
@@ -176,7 +175,9 @@ array element/.style = {
 
 \newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
 
-\title{\Huge \textbf{Els grafs: xarxes, camins i connexions} \\ \LARGE De la matem√†tica discreta a la realitat}
+\graphicspath{ {../../presentacio/altres/graphics/} }
+
+\title{\Huge \textbf{Els grafs: xarxes, camins i connexions} \\ \LARGE De la matem√ tica discreta a la realitat}
 \author{\LARGE Aniol Garcia i Serrano \\ Tutor: Xavier Aguilera Colmenero\\ \small 2n Batxillerat}
 \date{Curs 2016-2017 \\ 21/11/2016}
 
@@ -187,49 +188,63 @@ array element/.style = {
     
     \vspace{0.1cm}
     \large
-    De la matem√†tica discreta a la realitat
+    De la matem‡tica discreta a la realitat
     
     \vspace{0.3cm}
     \textbf{Aniol Garcia i Serrano \\ \small Tutor: Xavier Aguilera Colmenero}
 \end{center}
 
-\section*{Presentaci√≥}
-El tema d'aquest treball, tal com diu el t√≠tol, tracta sobre els grafs: xarxes, camins i connexions. Pret√©n fer el pas de la matem√†tica discreta a la realitat. La matem√†tica discreta s'escarrega de l'estudi de conjunts, estructures i processos formats per elements que es poden comptar un a un i de manera separada. La teoria de grafs n'√©s una branca. Els grafs sovint formen part de l'entramat de mecanismes que fan funcionar moltes de les coses que ens envolten, que ens permeten relacionar-nos, o b√© que ens faciliten el dia a dia, per exemple. Per√≤, malgrat tot, s√≥n uns grans desconeguts. Al llarg del treball intento crear lligams entre la part m√©s te√≤rica i abstracta i algunes de les aplicacions que se'n deriven. Intento endinsar-me en el coneixement per comprendre aquests mecanismes. Intento crear els mecanismes per que el coneixement esdevingui una eina pr√†ctica i funcional. 
+\section*{PresentaciÛ}
+El tema d'aquest treball, tal com diu el tÌtol, tracta sobre els grafs: xarxes, camins i connexions. PretÈn fer el pas de la matem‡tica discreta a la realitat. La matem‡tica discreta s'encarrega de l'estudi de conjunts, estructures i processos formats per elements que es poden comptar un a un i de manera separada. La teoria de grafs n'Ès una branca. Els grafs sovint formen part de l'entramat de mecanismes que fan funcionar moltes de les coses que ens envolten, que ens permeten relacionar-nos, o bÈ que ens faciliten el dia a dia, per exemple. PerÚ, malgrat tot, sÛn uns grans desconeguts. Al llarg del treball intento crear lligams entre la part mÈs teÚrica i abstracta i algunes de les aplicacions que se'n deriven. Intento endinsar-me en el coneixement per comprendre aquests mecanismes. Intento crear els mecanismes per que el coneixement esdevingui una eina pr‡ctica i funcional. 
 
-\section*{Estructura i Metodologia}
-El cos del treball s'estructura en quatre cap√≠tols que permeten endinsar-se, de manera seq√ºenciada, en el coneixement del grafs i les seves aplicacions.
+\section*{Metodologia}
+Al tractar-se d'un treball fonamentalment teÚric, primer va caldre familiaritzar-me amb els grafs en sÌ i tots els conceptes que d'ells se'n deriven. A partir d'aquest punt el treball esdevÈ un procÈs de descoberta que enllaÁa amb la part mÈs pr‡ctica: es demostren propietats de diversos tipus de grafs, s'estudia el funcionament d'algorismes que es basen en aquestes propietats i, finalment, es creen diversos algorismes gr‡cies al conjunt de tot el coneixement adquirit.
+ 
+Les fonts d'informaciÛ utilitzades han estat molt diverses. En la bibliografia he detallat els documents i les p‡gines Webs consultades. Malgrat tot, el gruix mÈs important de la informaciÛ provÈ d'altres fonts que per a mi han estat mÈs significatives pel fet que han estat mÈs properes i, sobretot, vivencials: el guiatge de la UB ha estat clau; la participaciÛ en el Math Summer Camp i en el programa Bojos per les Matem‡tiques tambÈ em va aportar moltÌssima informaciÛ; les xerrades i consells per part dels investigadors de l'IRI m'han obert moltes portes; les converses amb l'Anton Aubanell, imprescindibles. 
 
-En el primer cap√≠tol es fa una introducci√≥ a la teoria de grafs. Es comen√ßa fent un recorregut per la hist√≤ria dels grafs, des dels seus or√≠gens, amb el planteig dels primers problemes, fins la teoria de grafs moderna. Tot seguit s'expliquen els conceptes b√†sics: √©s la part m√©s te√≤rica en la qual es defineix el graf i es fa refer√®ncia a la seva estructura i els seus components. S'explica tamb√© qu√® s√≥n els isomorfismes i, finalment, es fa una descripci√≥ dels diferents tipus de grafs. Cal remarcar que, en aquest apartat, s'han exposat les propietats fonamentals i s'han incl√≤s demostracions  sempre que ha estat possible. Majorit√†riament, aquestes demostracions no han estat fruit d'una recerca a la xarxa sin√≥ d'una recerca personal. Les persones i entitats a les qui adre√ßo part dels meus agra√Øments a l'inici d'aquest treball hi han tingut molt a veure.
-
-En el segon cap√≠tol es fa un pas m√©s enll√†: es descriu qu√® s√≥n els grafs ponderats i els dirigits, els tipus de camins i les maneres diferents de gestionar tota aquesta informaci√≥ afegida. Finalment s'estudien diferents algorismes segons la seva finalitat. S'analitza el funcionament, les propietats fonamentals i les aplicacions m√©s comuns de cadascun d'aquests procediments i s'especifica el pseudocodi. En l'Annex B adjunto els programes, amb llenguatge Python, que permeten resoldre els algorismes, juntament amb exemples d'entrada i de sortida. La implementaci√≥ d'aquests algorismes √©s, tamb√©, una aportaci√≥ personal.
-
-El tercer cap√≠tol √©s un inc√≠s al disseny de grafs. Es fa refer√®ncia al punt de Fermat i a l'arbre de Steiner per la seva rellev√†ncia. Se'n mostra un bonic exemple mitjan√ßant les bombolles de sab√≥.
-
-Finalment, en el darrer cap√≠tol, s'exposen algunes aplicacions pr√†ctiques. Una d'elles √©s el recorregut per la xarxa de metro de Barcelona. Aporto al treball un algorisme que, a partir d'una estaci√≥ de sortida i una altra d'arribada, ofereix, com a resposta, el trajecte que permet fer el recorregut amb el m√≠nim temps possible. Aquesta resposta inclou les estacions per on es passar√†, els transbordaments que caldr√† fer i el temps total que es trigar√† per anar d'un punt a l'altre. En l'Annex B adjunto la codificaci√≥ d'aquest algorisme aix√≠ com exemples d'entrades i sortides. 
-
-Les meves conclusions i valoracions esdevenen el punt i final d'aquest treball. 
-
-Les fonts d'informaci√≥ utilitzades han estat molt diverses. En la bibliografia he detallat els documents i les pagines Webs consultades. Vull remarcar, per√≤, que el gruix m√©s important de la informaci√≥ prov√© d'altres fonts que per a mi han estat m√©s significatives pel fet que han estat m√©s properes i, sobretot, vivencials: el guiatge de la UB per part del Dr. Antoni Benseny i, sobretot, el seguiment i l'acompanyament d'en Robert Salla han estat claus; la participaci√≥ en el Math Summer Camp\footnote{Activitat organitzada per Fundaci√≥ Privada Cellex, UPC-FME i CFIS} i en el programa Bojos per les matem√†tiques\footnote{Programa organitzat per FEEMCAT, SCM i Fundaci√≥ Catalunya La Pedrera} tamb√© em va aportar molt√≠ssima informaci√≥; les xerrades i consells per part dels investigadors de l'IRI m'han obert moltes portes; les converses amb l'Anton Aubanell, imprescindibles. 
+Per a l'elaboraciÛ d'aquest treball s'han utilitzat eines inform‡tiques provinents, en tots els casos, de programari lliure. Aquest programari m'ha permËs escriure les fÛrmules i confegir els esquemes dels grafs que apareixen en el treball, els quals sÛn tots d'elaboraciÛ prÚpia. Esmentar l'˙s del sistema operatiu GNU/Linux, el processador de text \LaTeX, el programa GeoGebra, el llenguatge Python i el sistema de control de versions Git. L'˙s d'aquestes eines ha estat una part important del meu aprenentatge.
 
 \section*{Cos del treball}
-Ni faba de qu√® posar aqu√≠.
+El cos del treball s'estructura en quatre capÌtols que permeten endinsar-se, de manera seq¸enciada, en el coneixement del grafs i les seves aplicacions.
+
+En el primer capÌtol es fa una introducciÛ a la teoria de grafs. Es comenÁa fent un recorregut per la histÚria dels grafs, des dels seus orÌgens, amb el planteig dels primers problemes, fins la teoria de grafs moderna. Tot seguit s'expliquen els conceptes b‡sics: Ès la part mÈs teÚrica en la qual es defineix el graf i es fa referËncia a la seva estructura i els seus components. S'explica tambÈ quË sÛn els isomorfismes i, finalment, es fa una descripciÛ dels diferents tipus de grafs. En aquest apartat s'han exposat les propietats fonamentals i s'han inclÚs demostracions  sempre que ha estat possible. 
+
+\begin{center}
+
+\begin{figure}[H]
+\centering
+	\includegraphics[scale=.3]{konigsberg_bridges2}
+	\caption{El primer graf de la histÚria; modelitzaciÛ dels ponts de Kˆnigsberg }
+\end{figure}
+
+\end{center}
+En el segon capÌtol es fa un pas mÈs enll‡: es descriu quË sÛn els grafs ponderats i els dirigits, els tipus de camins i les maneres diferents de gestionar tota aquesta informaciÛ afegida. Finalment s'estudien diferents algorismes segons la seva finalitat. S'analitza el funcionament, les propietats fonamentals i les aplicacions mÈs comuns de cadascun d'aquests procediments i s'especifica el pseudocodi. En el treball, adjunto els programes amb llenguatge Python que permeten resoldre els algorismes, juntament amb exemples d'entrada i de sortida. 
+
+El tercer capÌtol Ès un incÌs al disseny de grafs. Es fa referËncia al punt de Fermat i a l'arbre de Steiner per la seva rellev‡ncia. Se'n mostra un bonic exemple mitjanÁant les bombolles de sabÛ.
+
+Finalment, en el darrer capÌtol, s'exposen algunes aplicacions pr‡ctiques. Una d'elles Ès el recorregut per la xarxa de metro de Barcelona. Aporto al treball un algorisme que, a partir d'una estaciÛ de sortida i una altra d'arribada, ofereix, com a resposta, el trajecte que permet fer el recorregut amb el mÌnim temps possible. Aquesta resposta inclou les estacions per on es passar‡, els transbordaments que caldr‡ fer i el temps total que es trigar‡ per anar d'un punt a l'altre. 
+ 
 \section*{Conclusions}
-Durant aquest treball hem fet un cam√≠ juntament amb la teoria de grafs: l'hem vist n√©ixer del pensament de Leonhard Euler; l'hem vist cr√©ixer acompanyada d'alguns dels m√©s grans matem√†tics de l'hist√≤ria; n'hem vist la seva manera d'entendre i modelitzar el m√≥n; l'hem acompanyada fins a la seva maduresa on, juntament amb m√©s matem√†tics i te√≤rics de les ci√®ncies de computaci√≥, ha col¬∑laborat amb una infinitat d'√†rees que en un principi semblaven distants a ella; i finalment ens ha ajudat a resoldre problemes quotidians.
+Algunes de les conclusions a les que he arribat mentre he estat fent la recerca han estat les seg¸ents:
 
-Un cop acabat el treball, puc afirmar que he assolit els objectius proposats. D'una banda, m'he endinsat en el coneixement de la teoria de grafs comen√ßant per la seva hist√≤ria, que m'ha perm√®s con√®ixer l'evoluci√≥. He definit diferents tipus de grafs i les seves propietats. Ha calgut incloure demostracions i me n'he adonat que s√≥n una part molt important de les matem√†tiques. He demostrat, a tall d'exemple, la relaci√≥ que s'estableix entre el nombre de nodes i d'arestes d'un graf lineal respecte el graf original, o b√© l'expressi√≥ matem√†tica que defineix el nombre d'arestes d'un graf xarxa. En aquest punt, com en tants d'altres, ha estat important compartir coneixements amb persones enteses en la mat√®ria, la qual cosa m'ha perm√®s d'anar avan√ßant amb confian√ßa. 
+La teoria de grafs ens proporciona eines per modelitzar estructures i processos i ens permet crear aplicacions pr‡ctiques mitjanÁant procediments algorÌsmics. Es poden  modelitzar una gran quantitat d'estructures: des de xarxes de telecomunicacions, fins a la panificaciÛ de moviments d'un robot o bÈ el funcionament de inteligËncies artificials, per exemple. Un cop els models estan definits, ens trobem amb tot un assortiment d'algorismes inform‡tics que permeten extreure dades de models teÚrics i transformar-los en informaciÛ ˙til, resultats. MitjanÁant els algorismes he aconseguit solucionar el problema de la coloraciÛ de grafs, ordenar aquest treball de manera Úptima i poder conËixer el recorregut i temps de viatge entre dues estacions qualssevol del metro de Barcelona, entre d'altres.
 
-D'altra banda, tamb√© he aconseguit estudiar amb certa profunditat i formalitat alguns dels algorismes m√©s usats en aquest camp. N'he estudiat el temps d'execuci√≥, les propietats i les possibles aplicacions pr√†ctiques i, de tots ells, n'he fet una implementaci√≥ en Python, recollida a l'annex B. A m√©s, tamb√© he implementat altres algorismes que no es tracten durant el treball, per√≤ que est√†n estretament relacionats amb conceptes d'aquest, com els algorismes per trobar camins Eulerians i Hamiltonians en un graf. Podr√≠em dir que he ampliat es objectius incials al generar nous algorismes i aplicar-los a problemes reals. 
-El cap√≠tol 4 √©s la concreci√≥ de tots aquests objectius mitjan√ßant una cas pr√†ctic: a partir del coneixement del graf es planteja una situaci√≥ que cal resoldre. Es crea un algorisme, s'aporten unes dades a partir d'un treball de camp i, finalment, s'obt√© un resultat que ens aporta la informaci√≥ desitjada.
+A mÈs, els procediments algorÌsmics tenen un component matem‡tic molt important. Alguns es basen en conceptes matem‡tics mÈs generals, com per exemple l'algorisme de Dijkstra amb la desigualtat triangular; en canvi d'altres, com el de Prim, es basen en propietats singulars dels grafs.
 
-Amb els objectius acomplerts, la hip√≤tesi queda verificada. La teoria de grafs ens proporciona eines per modelitzar estructures i processos i ens permet crear aplicacions pr√†ctiques mitjan√ßant procediments algor√≠smics. Hem vist que podem modelitzar una gran quantitat d'estructures: des de xarxes de telecomunicacions, fins a representar com a graf les depend√®ncies de cadascun dels apartats d'un treball, passant per altres situacions com per exemple modelitzar la xarxa de metro. Un cop els models estan definits, ens trobem amb tot un assortiment d'algorismes inform√†tics que permeten extreure dades de models te√≤rics i transformar-los en informaci√≥ √∫til, resultats. Mitjan√ßant els algorismes hem aconseguit solucionar el problema de la coloraci√≥ de grafs, ordenar aquest treball de manera √≤ptima i poder con√®ixer el recorregut i temps de viatge entre dues estacions qualssevol del metro de Barcelona, entre d'altres.
+Els grafs, no nomÈs formen part de la realitat que ens envolta si no que, a mÈs, ens faciliten moltes gestions i ens proporcionen comoditats de les quals ens seria difÌcil prescindir: les xarxes socials, Internet, el subministrament elËctric, navegadors GPS...  
 
-Com a conclusions, a m√©s d'assolir els objectius i verificar la hip√≤tesi inicial, m'agradaria afegir que:
-\begin{itemize} 
-  \item Els procediments algor√≠smics tenen un component matem√†tic molt important. Alguns es basen en conceptes matem√†tics m√©s generals, com per exemple l'algorisme de Dijkstra amb la desigualtat triangular; en canvi d'altres, com el de Prim, es basen en propietats singulars dels grafs.
-  \item Els grafs, no nom√©s formen part de la realitat que ens envolta si no que, a m√©s, ens faciliten moltes gestions i ens proporcionen comoditats de les quals ens seria dif√≠cil prescindir: les xarxes socials, Internet, el subministrament el√®ctric, navegadors GPS...  
-  \item Implementar algorismes, a m√©s de la part matem√†tica, en ocasions requereix un treball de camp i/o una recollida de dades, com ha estat el cas de l'algorisme de la Xarxa de metro de Barcelona: per tal de treballar amb valors precisos ha estat necessari mesurar els temps reals de viatge entre les estacions de totes les l√≠nies.
+Implementar algorismes, a mÈs de la part matem‡tica, en ocasions requereix un treball de camp i/o una recollida de dades, com ha estat el cas de l'algorisme de la Xarxa de metro de Barcelona: per tal de treballar amb valors precisos ha estat necessari mesurar els temps reals de viatge entre les estacions de totes les lÌnies.
 
-\end{itemize}
+La darrera conclusiÛ Ès que em queda molt camÌ per fer: la teoria va mÈs enll‡ d'on jo he arribat; hi ha algorismes que no he tractat com el de Johnson o el de A*, per exemple; i sobretot m'agradaria endinsar-me mÈs en la topologia, una de les branques mÈs curioses de les matem‡tiques.
 
+Per tal de compartir tot aquest aprenentatge m'ha semblat adient publicar tant el treball en sÌ com tots els programes que he generat. Tot plegat ho trobareu a \texttt{https://aniolgarcia.github.io/grafs/}
+
+
+\newpage
+\nocite{*}
+\printbibliography[env=nolabelbib, title=Bibliografia, resetnumbers=true]%, prefixnumbers=A]
+
+
+\newpage
 
 \end{document}

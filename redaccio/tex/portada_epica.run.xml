@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>ressenya.bcf</file>
+      <file>portada_epica.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>ressenya.bbl</file>
+      <file>portada_epica.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -64,22 +64,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>ressenya</infile>
+      <infile>portada_epica</infile>
     </cmdline>
     <input>
-      <file>ressenya.bcf</file>
+      <file>portada_epica.bcf</file>
     </input>
     <output>
-      <file>ressenya.bbl</file>
+      <file>portada_epica.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>ressenya.bbl</file>
+      <file>portada_epica.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>ressenya.bcf</file>
-    </requires>
-    <requires type="editable">
-      <file>biblio4.bib</file>
+      <file>portada_epica.bcf</file>
     </requires>
   </external>
 </requests>
