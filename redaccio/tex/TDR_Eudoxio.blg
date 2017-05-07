@@ -1,0 +1,17 @@
+[1] Config.pm:340> INFO - This is Biber 2.4
+[1] Config.pm:343> INFO - Logfile is 'TDR_Eudoxio.blg'
+[64] biber:287> INFO - === dg abr 23, 2017, 20:22:54
+[194] Biber.pm:348> INFO - Reading 'TDR_Eudoxio.bcf'
+[376] Biber.pm:739> INFO - Using all citekeys in bib section 0
+[459] Biber.pm:3151> INFO - Processing section 0
+[611] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio2.bib' for section 0
+[626] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[638] bibtex.pm:974> INFO - Found BibTeX data source 'biblio2.bib'
+[791] Biber.pm:3308> INFO - Looking for bibtex format file 'biblio3.bib' for section 0
+[803] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[813] bibtex.pm:974> INFO - Found BibTeX data source 'biblio3.bib'
+[1326] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1326] UCollate.pm:65> INFO - Overriding locale 'ca-AD' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1326] Biber.pm:3028> INFO - Sorting list 'nty/global' of type 'entry' with scheme 'nty' and locale 'ca-AD'
+[1386] bbl.pm:519> INFO - Writing 'TDR_Eudoxio.bbl' with encoding 'latin9'
+[1541] bbl.pm:615> INFO - Output to TDR_Eudoxio.bbl

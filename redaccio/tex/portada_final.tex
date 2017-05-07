@@ -1,0 +1,107 @@
+\documentclass[a4, 12pt, titlepage]{report}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage[backend=biber, style=numeric, bibencoding=ISO-8859-1, defernumbers=true]{biblatex} %Llibreria de gestió de bibliografia
+%\usepackage{cite}
+%\usepackage{catalanbib}
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphics, graphicx}
+\usepackage{tikz, tkz-graph}
+\usepackage{pgf, pgfplots}
+\usepackage{graphviz, tkz-berge}
+\usepackage[dvipsnames, prologue, table]{pstricks}
+\usepackage{pst-node, pst-tree}
+\usepackage{pst-grad, pst-ghsb, pst-slpe}
+\usepackage[ruled, boxed]{algorithm2e}
+\usepackage{multicol, multirow, rotating} %Paquets de taules
+\usepackage[a4paper]{geometry}
+\usepackage{float} %Imatges múltiples
+\usepackage{verbatim}
+\usepackage[style=english]{csquotes}
+\usepackage{cancel}
+\usepackage[position=top]{subfig}
+\usepackage{rotating}
+%\usepackage{url}
+\usepackage{minted}
+\usepackage{etoolbox}
+\usepackage{parskip}
+\usepackage[bottom]{footmisc}
+\usepackage[toc,page]{appendix}
+\usepackage{pagecolor}
+\usepackage{afterpage}
+\usepackage{background}
+\usepackage{blindtext}
+\usetikzlibrary{arrows,%
+                petri,%
+                topaths}%
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning,automata}
+
+\graphicspath{ {graphics/} }
+
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+
+\backgroundsetup{
+scale=1,
+angle=0,
+opacity=1,
+contents={\begin{tikzpicture}[remember picture,overlay]
+ \path [left color = NavyBlue, middle color = BlueGreen, right color = white] (current page.south west)rectangle (current page.north east);   % Adjust the position of the logo.
+\end{tikzpicture}}
+}
+
+\begin{document}
+
+\newpage
+%\pagecolor{blue!40!white}
+\afterpage{\nopagecolor}
+\vfill
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\clearpage
+\thispagestyle{empty}
+\begin{figure}
+\centering
+\begin{tikzpicture}[transform shape,line width=0.2pt, round/.style={circle, draw=black, fill=black, thin, minimum size=1mm}]
+ \SetVertexNoLabel
+ \GraphInit[vstyle=Art]
+ \SetGraphArtColor{yellow!50!orange}{Fuchsia}%gray!10!white}
+ %\grBalaban[form=2,RA=4,RB=6.5,RC=5.6,RD=5.6,RE=4.6]
+ \grCycle[RA=6,prefix=a]{14}
+    \begin{scope}[rotate=-20]\grEmptyCycle[RA=5,prefix=b]{14}\end{scope}
+    \grCirculant[RA=4,prefix=c]{14}{4}
+    %\grCirculant[RA=1.4,prefix=d]{8}{3}
+    \grCirculant[RA=2.4, prefix=d]{14}{1, 3, 5, 7}
+    \EdgeIdentity{a}{b}{14}
+    \EdgeIdentity{b}{c}{14}
+    \EdgeIdentity{b}{d}{14}
+
+\end{tikzpicture}
+
+\centering
+\begin{minipage}[H]{37em}
+\vspace*{3cm}
+\centering
+\Huge{\textbf{Els grafs: xarxes, camins i connexions}} \\
+\Large{\textbf{De la matemàtica discreta a la realitat}}\\
+
+\vspace*{1cm}
+
+\Large{\textit{Autor:}}\huge{ Eudoxio}
+\end{minipage}
+
+\end{figure}
+\clearpage
+\pagenumbering{arabic}
+
+\end{document}

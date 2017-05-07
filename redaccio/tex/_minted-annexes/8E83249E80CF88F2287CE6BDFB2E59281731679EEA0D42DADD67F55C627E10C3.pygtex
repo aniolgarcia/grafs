@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{Prim}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{):}
+    \PYG{n}{Q}\PYG{o}{=}\PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{n}{tree}\PYG{o}{=}\PYG{p}{\PYGZob{}\PYGZcb{}}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{)):}
+        \PYG{n}{Q}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{n+nb}{float}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}inf\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{Q}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+m+mi}{0}
+    \PYG{k}{while} \PYG{n}{Q}\PYG{p}{:}
+        \PYG{n}{u} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{,} \PYG{n}{key}\PYG{o}{=}\PYG{n}{Q}\PYG{o}{.}\PYG{n}{get}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]:}
+            \PYG{k}{if} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Q} \PYG{o+ow}{and} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{v}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{n}{Q}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]:}
+                \PYG{n}{Q}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{][}\PYG{n}{v}\PYG{p}{]}
+                \PYG{n}{tree}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]} \PYG{o}{=} \PYG{n}{u}
+        \PYG{n}{Q}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{n}{u}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{tree}
+\end{Verbatim}

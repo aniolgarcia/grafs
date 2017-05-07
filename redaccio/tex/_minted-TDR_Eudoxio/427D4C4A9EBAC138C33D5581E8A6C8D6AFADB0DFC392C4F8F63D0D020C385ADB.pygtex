@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{BFS}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{s}\PYG{p}{):}
+    \PYG{n}{level}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n}{s}\PYG{p}{:}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{}}
+    \PYG{n}{parent}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{n}{s}\PYG{p}{:}\PYG{n+nb+bp}{None}\PYG{p}{\PYGZcb{}}
+    \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{1}
+    \PYG{n}{frontier}\PYG{o}{=}\PYG{p}{[}\PYG{n}{s}\PYG{p}{]}
+    \PYG{k}{print} \PYG{n}{s}
+    \PYG{k}{while} \PYG{n}{frontier}\PYG{p}{:}
+        \PYG{n+nb}{next}\PYG{o}{=}\PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{u} \PYG{o+ow}{in} \PYG{n}{frontier}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{u}\PYG{p}{]:}
+                \PYG{k}{if} \PYG{n}{v} \PYG{o+ow}{not} \PYG{o+ow}{in}  \PYG{n}{level}\PYG{p}{:}
+                    \PYG{n}{level}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]}\PYG{o}{=}\PYG{n}{i}
+                    \PYG{n}{parent}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]}\PYG{o}{=}\PYG{n}{u}
+                    \PYG{n+nb}{next}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)}
+                    \PYG{k}{print} \PYG{n}{v}
+        \PYG{n}{frontier}\PYG{o}{=}\PYG{n+nb}{next}
+        \PYG{n}{i}\PYG{o}{+=}\PYG{l+m+mi}{1}
+    \PYG{k}{print} \PYG{n}{level}
+\end{Verbatim}

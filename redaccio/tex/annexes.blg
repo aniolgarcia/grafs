@@ -1,0 +1,9 @@
+[0] Config.pm:340> INFO - This is Biber 2.4
+[0] Config.pm:343> INFO - Logfile is 'annexes.blg'
+[57] biber:287> INFO - === dl abr 17, 2017, 23:47:28
+[166] Biber.pm:348> INFO - Reading 'annexes.bcf'
+[346] Biber.pm:742> INFO - Found 0 citekeys in bib section 0
+[346] Utils.pm:147> WARN - The file 'annexes.bcf' does not contain any citations!
+[354] bbl.pm:519> INFO - Writing 'annexes.bbl' with encoding 'latin9'
+[356] bbl.pm:615> INFO - Output to annexes.bbl
+[357] Biber.pm:109> INFO - WARNINGS: 1

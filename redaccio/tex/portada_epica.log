@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  27 FEB 2017 21:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  17 APR 2017 22:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -416,7 +416,10 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
+))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
@@ -986,6 +989,25 @@ Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
 )
 File: pst-tree.tex 2011/02/28 1.12 `pst-tree' (tvz,hv)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/pst-grad/pst-grad.sty
+Package: pst-grad 2004/07/15 package wrapper for pst-grad.tex (hv)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pst-grad/pst-grad.tex
+`pst-grad' v1.06, 2006/11/27 (tvz,dg,hv))
+File: pst-grad.tex 2006/11/27 1.06 `pst-grad' (tvz)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pst-ghsb/pst-ghsb.sty
+Package: pst-ghsb 1997/05/14: package wrapper for PSTricks pst-ghsb.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pst-ghsb/pst-ghsb.tex
+ v1.2, 2004/06/23))
+(/usr/share/texlive/texmf-dist/tex/latex/pst-slpe/pst-slpe.sty
+Package: pst-slpe 2005/03/05 package wrapper for `pst-slpe.tex'
+
+(/usr/share/texlive/texmf-dist/tex/generic/pst-slpe/pst-slpe.tex
+ v1.31, 2011/10/25)
+File: pst-slpe.tex 2011/10/25 v1.31 `pst-slpe' (mg,hv)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 \c@AlgoLine=\count363
@@ -1313,6 +1335,42 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \c@@ppsavesec=\count412
 \c@@ppsaveapp=\count413
 )
+(/usr/share/texlive/texmf-dist/tex/latex/pagecolor/pagecolor.sty
+Package: pagecolor 2015/06/20 v1.0h Provides thepagecolor (HMM)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks56
+\AP@partial=\box87
+\AP@footins=\box88
+)
+(/usr/share/texlive/texmf-dist/tex/latex/background/background.sty
+Package: background 2014/03/04 v2.1 background material
+
+(/usr/share/texlive/texmf-dist/tex/latex/everypage/everypage.sty
+Package: everypage 2007/06/20 1.1 Hooks to run on every page
+))
+(/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+\c@blindtext=\count414
+\c@Blindtext=\count415
+\c@blind@countparstart=\count416
+\blind@countxx=\count417
+\blindtext@numBlindtext=\count418
+\blind@countyy=\count419
+\c@blindlist=\count420
+\c@blindlistlevel=\count421
+\c@blindlist@level=\count422
+\blind@listitem=\count423
+\c@blind@listcount=\count424
+\c@blind@levelcount=\count425
+\blind@mathformula=\count426
+\blind@Mathformula=\count427
+\c@blind@randomcount=\count428
+\c@blind@randommax=\count429
+\c@blind@pangramcount=\count430
+\c@blind@pangrammax=\count431
+)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypetri.code.tex
 File: tikzlibrarypetri.code.tex 2013/07/17 v3.0.1a (rcs-revision 1.3)
@@ -1368,26 +1426,26 @@ File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
 
-\pgfnodepartlowerbox=\box87
-\pgfnodeparttwobox=\box88
-\pgfnodepartthreebox=\box89
-\pgfnodepartfourbox=\box90
-\pgfnodeparttwentybox=\box91
-\pgfnodepartnineteenbox=\box92
-\pgfnodeparteighteenbox=\box93
-\pgfnodepartseventeenbox=\box94
-\pgfnodepartsixteenbox=\box95
-\pgfnodepartfifteenbox=\box96
-\pgfnodepartfourteenbox=\box97
-\pgfnodepartthirteenbox=\box98
-\pgfnodeparttwelvebox=\box99
-\pgfnodepartelevenbox=\box100
-\pgfnodeparttenbox=\box101
-\pgfnodepartninebox=\box102
-\pgfnodeparteightbox=\box103
-\pgfnodepartsevenbox=\box104
-\pgfnodepartsixbox=\box105
-\pgfnodepartfivebox=\box106
+\pgfnodepartlowerbox=\box89
+\pgfnodeparttwobox=\box90
+\pgfnodepartthreebox=\box91
+\pgfnodepartfourbox=\box92
+\pgfnodeparttwentybox=\box93
+\pgfnodepartnineteenbox=\box94
+\pgfnodeparteighteenbox=\box95
+\pgfnodepartseventeenbox=\box96
+\pgfnodepartsixteenbox=\box97
+\pgfnodepartfifteenbox=\box98
+\pgfnodepartfourteenbox=\box99
+\pgfnodepartthirteenbox=\box100
+\pgfnodeparttwelvebox=\box101
+\pgfnodepartelevenbox=\box102
+\pgfnodeparttenbox=\box103
+\pgfnodepartninebox=\box104
+\pgfnodeparteightbox=\box105
+\pgfnodepartsevenbox=\box106
+\pgfnodepartsixbox=\box107
+\pgfnodepartfivebox=\box108
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
 code.tex
@@ -1423,20 +1481,20 @@ LaTeX Warning: Unused global option(s):
 (./portada_epica.aux)
 \openout1 = `portada_epica.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Info: Redefining \l on input line 46.
-LaTeX Info: Redefining \L on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Info: Redefining \l on input line 64.
+LaTeX Info: Redefining \L on input line 64.
 Package biblatex Info: Input encoding 'latin9' detected.
 Package biblatex Info: Data encoding 'ISO-8859-1' specified.
 (biblatex)             Backend will reencode on the fly.
@@ -1446,21 +1504,21 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'portada_epica.bbl' not found.
 
 No file portada_epica.bbl.
-Package biblatex Info: Reference section=0 on input line 46.
-Package biblatex Info: Reference segment=0 on input line 46.
+Package biblatex Info: Reference section=0 on input line 64.
+Package biblatex Info: Reference segment=0 on input line 64.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count414
+\scratchcounter=\count432
 \scratchdimen=\dimen320
-\scratchbox=\box107
-\nofMPsegments=\count415
-\nofMParguments=\count416
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count417
+\scratchbox=\box109
+\nofMPsegments=\count433
+\nofMParguments=\count434
+\everyMPshowfont=\toks57
+\MPscratchCnt=\count435
 \MPscratchDim=\dimen321
-\MPnumerator=\count418
-\makeMPintoPDFobject=\count419
-\everyMPtoPDFconversion=\toks57
+\MPnumerator=\count436
+\makeMPintoPDFobject=\count437
+\everyMPtoPDFconversion=\toks58
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1484,7 +1542,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 46.
+ on input line 64.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1528,25 +1586,64 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
-Non-PDF special ignored!] [2{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-] (./portada_epica.aux)
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+LaTeX Font Info:    Try loading font information for U+msa on input line 121.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 121.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (16.39018pt too wide) in paragraph at lines 112--122
+ []$[]$ 
+ []
+
+[2{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+]
+Overfull \hbox (232.17632pt too wide) in paragraph at lines 162--163
+[][] 
+ []
+
+
+Overfull \vbox (365.325pt too high) has occurred while \output is active []
+
+
+[2] (./portada_epica.aux)
 Package logreq Info: Writing requests to 'portada_epica.run.xml'.
 \openout1 = `portada_epica.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40170 strings out of 494850
- 905555 string characters out of 6178024
- 1513822 words of memory out of 5000000
- 42780 multiletter control sequences out of 15000+600000
- 5015 words of font info for 17 fonts, out of 8000000 for 9000
+ 40739 strings out of 494850
+ 916396 string characters out of 6178024
+ 1527248 words of memory out of 5000000
+ 43283 multiletter control sequences out of 15000+600000
+ 13140 words of font info for 39 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 61i,8n,96p,824b,1339s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>
-Output written on portada_epica.pdf (2 pages, 14131 bytes).
+ 61i,9n,96p,824b,1419s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/aniol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/a
+niol/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2488.600pk> </home/aniol/.texmf
+-var/fonts/pk/ljfour/jknappen/ec/ecti1728.600pk> </home/aniol/.texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/aniol/.texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx2488.600pk>
+Output written on portada_epica.pdf (4 pages, 39458 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 12 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

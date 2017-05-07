@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  29 JAN 2017 22:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  17 APR 2017 23:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1852,7 +1852,7 @@ l.3258 \begin{minted}
 \openout5 = `general.pyg'.
 
 
-(./_minted-general/AE68D4BD6E5A963C447B0FFD91343DC7C813690440C9AED47B1788C3CC7E
+(./_minted-general/66F1FC3022BA94435BA8F4A1015B4448C813690440C9AED47B1788C3CC7E
 E82F.pygtex [85
 
 ])
@@ -1876,7 +1876,7 @@ l.3292 \begin{minted}
 \openout5 = `general.pyg'.
 
 
-(./_minted-general/401EF150D3BC1A5AD2CA0709F0927D8CDBA75D934583C30F620E36427650
+(./_minted-general/AE1D92C7C733764177AD72004C86B952DBA75D934583C30F620E36427650
 14C7.pygtex [86])
 ! Undefined control sequence.
 \@begin@minted@hook ->\singlespacing 
@@ -2291,9 +2291,9 @@ st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on general.pdf (102 pages, 2017908 bytes).
+Output written on general.pdf (102 pages, 2018124 bytes).
 PDF statistics:
- 1225 PDF objects out of 1440 (max. 8388607)
+ 1226 PDF objects out of 1440 (max. 8388607)
  343 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  32 words of extra memory for PDF output out of 10000 (max. 10000000)

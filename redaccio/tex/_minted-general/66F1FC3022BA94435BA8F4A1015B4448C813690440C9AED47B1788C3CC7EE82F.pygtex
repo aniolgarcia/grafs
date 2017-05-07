@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{parent}\PYG{o}{=}\PYG{p}{\PYGZob{}\PYGZcb{}}
+\PYG{n}{topo}\PYG{o}{=}\PYG{p}{[]}
+\PYG{k}{def} \PYG{n+nf}{DFS}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{):}
+    \PYG{n}{node}\PYG{o}{=}\PYG{p}{[]}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{)):}
+        \PYG{n}{node}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+
+    \PYG{k}{for} \PYG{n}{s} \PYG{o+ow}{in} \PYG{n}{node}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{s} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{parent}\PYG{p}{:}
+            \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Des del node }\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s2}{ es pot arribar a:\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{n}{s}
+            \PYG{k}{print} \PYG{n}{s}
+            \PYG{n}{parent}\PYG{p}{[}\PYG{n}{s}\PYG{p}{]}\PYG{o}{=}\PYG{n+nb+bp}{None}
+            \PYG{n}{DFS\PYGZus{}recursive}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{s}\PYG{p}{)}
+    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Ordre de recursió (Ordenació topològica per a grafs dirigits acíclics):\PYGZdq{}}
+    \PYG{n}{topo}\PYG{o}{.}\PYG{n}{reverse}\PYG{p}{()}
+    \PYG{k}{print} \PYG{n}{topo}
+
+
+\PYG{k}{def} \PYG{n+nf}{DFS\PYGZus{}recursive}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{s}\PYG{p}{):}
+    \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{Adj}\PYG{p}{[}\PYG{n}{s}\PYG{p}{]:}
+        \PYG{k}{if} \PYG{n}{v} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{parent}\PYG{p}{:}
+            \PYG{k}{print} \PYG{n}{v}
+            \PYG{n}{parent}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]}\PYG{o}{=}\PYG{n}{s}
+            \PYG{n}{DFS\PYGZus{}recursive}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{v}\PYG{p}{)}
+    \PYG{n}{topo}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{s}\PYG{p}{)}
+\end{Verbatim}

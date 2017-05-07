@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}[H]
+	\PYG{k}{\PYGZbs{}centering}
+	\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}[round/.style=\PYG{n+nb}{\PYGZob{}}circle, draw=black, thin, minimum size=2mm\PYG{n+nb}{\PYGZcb{}}, transform shape, scale=0.8]
+		\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[round,orange]} (3) at (0,4) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{v\PYGZus{}\PYGZob{}}\PYG{l+m}{3}\PYG{n+nb}{\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+		\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[round,orange]} (4) at (0,0) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{v\PYGZus{}\PYGZob{}}\PYG{l+m}{4}\PYG{n+nb}{\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+		\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[round,orange]} (2) at (4,0) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{v\PYGZus{}\PYGZob{}}\PYG{l+m}{2}\PYG{n+nb}{\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+		\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[round,orange]} (1) at (4,4) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{v\PYGZus{}\PYGZob{}}\PYG{l+m}{1}\PYG{n+nb}{\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+		\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[round,orange]} (0) at (6,2) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{v\PYGZus{}\PYGZob{}}\PYG{l+m}{0}\PYG{n+nb}{\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+		\PYG{k}{\PYGZbs{}Edge}\PYG{n+na}{[label=\PYGZdl{}5\PYGZdl{}]}(2)(4)
+		\PYG{k}{\PYGZbs{}tikzset}\PYG{n+nb}{\PYGZob{}}EdgeStyle/.style=\PYG{n+nb}{\PYGZob{}}orange\PYG{n+nb}{\PYGZcb{}\PYGZcb{}}
+		\PYG{k}{\PYGZbs{}Edge}\PYG{n+na}{[label=\PYGZdl{}1\PYGZdl{}]}(0)(1)
+		\PYG{k}{\PYGZbs{}Edge}\PYG{n+na}{[label=\PYGZdl{}3\PYGZdl{}]}(1)(2)
+		\PYG{k}{\PYGZbs{}Edge}\PYG{n+na}{[label=\PYGZdl{}4\PYGZdl{}]}(1)(4)
+		\PYG{k}{\PYGZbs{}Edge}\PYG{n+na}{[label=\PYGZdl{}2\PYGZdl{}]}(3)(4)
+	\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}figure\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

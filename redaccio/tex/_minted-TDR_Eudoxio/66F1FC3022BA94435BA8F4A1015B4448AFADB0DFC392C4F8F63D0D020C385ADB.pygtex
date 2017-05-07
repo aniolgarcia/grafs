@@ -12,7 +12,7 @@
             \PYG{k}{print} \PYG{n}{s}
             \PYG{n}{parent}\PYG{p}{[}\PYG{n}{s}\PYG{p}{]}\PYG{o}{=}\PYG{n+nb+bp}{None}
             \PYG{n}{DFS\PYGZus{}recursive}\PYG{p}{(}\PYG{n}{Adj}\PYG{p}{,} \PYG{n}{s}\PYG{p}{)}
-    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Ordre de recurssió (Ordenació topologica per a grafs dirigits acíclics):\PYGZdq{}}
+    \PYG{k}{print} \PYG{l+s+s2}{\PYGZdq{}Ordre de recursió (Ordenació topològica per a grafs dirigits acíclics):\PYGZdq{}}
     \PYG{n}{topo}\PYG{o}{.}\PYG{n}{reverse}\PYG{p}{()}
     \PYG{k}{print} \PYG{n}{topo}
 
