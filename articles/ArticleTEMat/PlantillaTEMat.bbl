@@ -1,0 +1,230 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{1}
+  \sortlist[entry]{nyvt/global}
+    \entry{bezosTE}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a09bd44790d5e829e246beb8a2350305}{%
+           family={Bezos},
+           family_i={B\bibinitperiod},
+           given={Javier},
+           given_i={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a09bd44790d5e829e246beb8a2350305}
+      \strng{fullhash}{a09bd44790d5e829e246beb8a2350305}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tipografía española con \TeX{}}
+      \verb{url}
+      \verb http://www.texnia.com/archive/tipografia.pdf
+      \endverb
+    \endentry
+    \entry{bezosOM}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a09bd44790d5e829e246beb8a2350305}{%
+           family={Bezos},
+           family_i={B\bibinitperiod},
+           given={Javier},
+           given_i={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a09bd44790d5e829e246beb8a2350305}
+      \strng{fullhash}{a09bd44790d5e829e246beb8a2350305}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{01}
+      \field{month}{09}
+      \field{note}{Versión 0.17}
+      \field{title}{Ortotipografía y notaciones matemáticas}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://www.texnia.com/archive/ortomatem.pdf
+      \endverb
+    \endentry
+    \entry{graphics}{online}{}
+      \name{author}{1}{}{%
+        {{hash=1aa7676833a7b132610870e94ef3442e}{%
+           family={Carlisle},
+           family_i={C\bibinitperiod},
+           given={David\bibnamedelima P.},
+           given_i={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{1aa7676833a7b132610870e94ef3442e}
+      \strng{fullhash}{1aa7676833a7b132610870e94ef3442e}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{23}
+      \field{month}{12}
+      \field{title}{Packages in the `graphics' bundle}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://mirrors.ctan.org/macros/latex/required/graphics/grfguide.pdf
+      \endverb
+    \endentry
+    \entry{algorithmicx}{online}{}
+      \name{author}{1}{}{%
+        {{hash=dc7088c0f8ea621d7ac45471ac3407da}{%
+           family={János},
+           family_i={J\bibinitperiod},
+           given={Szász},
+           given_i={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc7088c0f8ea621d7ac45471ac3407da}
+      \strng{fullhash}{dc7088c0f8ea621d7ac45471ac3407da}
+      \field{sortinit}{J}
+      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{14}
+      \field{month}{09}
+      \field{note}{Versión 1.2}
+      \field{title}{The algorithmicx package}
+      \field{year}{2005}
+      \verb{url}
+      \verb http://mirrors.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf
+      \endverb
+    \endentry
+    \entry{wiki:latex}{incollection}{}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Wikibooks{,} The Free Textbook Project}
+      \field{title}{LaTeX}
+      \field{urlday}{30}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://en.wikibooks.org/w/index.php?title=LaTeX&oldid=3126115
+      \endverb
+    \endentry
+    \entry{biblatex}{online}{}
+      \name{author}{4}{}{%
+        {{hash=97afecc8539f253db93a1c737d62212c}{%
+           family={Lehman},
+           family_i={L\bibinitperiod},
+           given={Philipp},
+           given_i={P\bibinitperiod}}}%
+        {{hash=518f52ea2d73db1cfac0095db0482363}{%
+           family={Kime},
+           family_i={K\bibinitperiod},
+           given={Philip},
+           given_i={P\bibinitperiod}}}%
+        {{hash=f551f4df6b727289e225343a679ca7ab}{%
+           family={Boruvka},
+           family_i={B\bibinitperiod},
+           given={Audrey},
+           given_i={A\bibinitperiod}}}%
+        {{hash=93c71fed62527d4c8c6ae13ee771fcdd}{%
+           family={Wright},
+           family_i={W\bibinitperiod},
+           given={Joseph},
+           given_i={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{34e4cbaf0989c9ce668a625f61e8360c}
+      \strng{fullhash}{96e626debfe2ab90d98b9d4ddc331691}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{14}
+      \field{month}{09}
+      \field{note}{Versión 3.5}
+      \field{subtitle}{Programmable Bibliographies and Citations}
+      \field{title}{The biblatex Package}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf
+      \endverb
+    \endentry
+    \entry{standalone}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8f7a59c703e0776368474dde5dc0cc85}{%
+           family={Scharrer},
+           family_i={S\bibinitperiod},
+           given={Martin},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f7a59c703e0776368474dde5dc0cc85}
+      \strng{fullhash}{8f7a59c703e0776368474dde5dc0cc85}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{15}
+      \field{month}{07}
+      \field{note}{Versión 1.2}
+      \field{title}{The standalone Package}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://mirrors.ctan.org/macros/latex/contrib/standalone/standalone.pdf
+      \endverb
+    \endentry
+    \entry{stackexchange}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labeltitlesource}{title}
+      \field{title}{TeX - LaTeX Stack Exchange}
+      \verb{url}
+      \verb http://tex.stackexchange.com/
+      \endverb
+    \endentry
+    \entry{texample}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labeltitlesource}{title}
+      \field{title}{\TeX ample.net}
+      \verb{url}
+      \verb http://www.texample.net/
+      \endverb
+    \endentry
+    \entry{siunitx}{online}{}
+      \name{author}{1}{}{%
+        {{hash=93c71fed62527d4c8c6ae13ee771fcdd}{%
+           family={Wright},
+           family_i={W\bibinitperiod},
+           given={Joseph},
+           given_i={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{93c71fed62527d4c8c6ae13ee771fcdd}
+      \strng{fullhash}{93c71fed62527d4c8c6ae13ee771fcdd}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{02}
+      \field{month}{09}
+      \field{note}{Versión 2.6s}
+      \field{subtitle}{A comprehensive (SI) units packge}
+      \field{title}{siunitx}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx.pdf
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

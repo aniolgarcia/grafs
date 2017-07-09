@@ -1,0 +1,16 @@
+[0] Config.pm:340> INFO - This is Biber 2.4
+[1] Config.pm:343> INFO - Logfile is 'PlantillaTEMat.blg'
+[71] biber:287> INFO - === dg jul  9, 2017, 23:07:47
+[182] Biber.pm:348> INFO - Reading 'PlantillaTEMat.bcf'
+[363] Biber.pm:742> INFO - Found 0 citekeys in bib section 0
+[364] Biber.pm:739> INFO - Using all citekeys in bib section 1
+[364] Biber.pm:742> INFO - Found 0 citekeys in bib section 0
+[399] Biber.pm:3151> INFO - Processing section 1
+[555] Biber.pm:3308> INFO - Looking for bibtex format file 'plantilla.bib' for section 1
+[569] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[581] bibtex.pm:974> INFO - Found BibTeX data source 'plantilla.bib'
+[913] UCollate.pm:65> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[913] UCollate.pm:65> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[913] Biber.pm:3028> INFO - Sorting list 'nyvt/global' of type 'entry' with scheme 'nyvt' and locale 'es-ES'
+[936] bbl.pm:519> INFO - Writing 'PlantillaTEMat.bbl' with encoding 'UTF-8'
+[970] bbl.pm:615> INFO - Output to PlantillaTEMat.bbl

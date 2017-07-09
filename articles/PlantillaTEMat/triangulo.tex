@@ -1,0 +1,14 @@
+\documentclass[standalone,
+  tikz, %
+  % más opciones para la clase standalone
+]{revistaanem}
+
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+\draw (0,0) node[anchor=north]{$A$}
+  -- (4,0) node[anchor=north]{$C$}
+  -- (4,4) node[anchor=south]{$B$}
+  -- cycle;
+\end{tikzpicture}
+\end{document}

@@ -6,3 +6,7 @@ Idees sobre què explicar:
 -Algorismes eficients de coloració
 -Aplicacions pràctiques dels grafs
 
+
+Per fer funcionar la plantilla:
+- sudo apt-get install texlive-fonts-extra
+

@@ -1,0 +1,4 @@
+$hash_calc_ignore_pattern{'pdf'} = '^/(CreationDate|ModDate|ID) ';
+$pdflatex = 'lualatex --shell-escape --file-line-error %O %S';
+$pdf_mode = 1;
+$postscript_mode = $dvi_mode = 0;
