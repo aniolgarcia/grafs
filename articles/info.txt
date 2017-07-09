@@ -1,0 +1,8 @@
+Directori de l'article per la revista TEMat.
+
+Idees sobre què explicar:
+-Història dels grafs
+-Algorisme de Dijkstra, els seus problemes, com solucionar-los i aplicacions pràctiques
+-Algorismes eficients de coloració
+-Aplicacions pràctiques dels grafs
+
